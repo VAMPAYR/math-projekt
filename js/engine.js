@@ -744,6 +744,7 @@ const MathEngine = (() => {
     `;
 
     content.innerHTML = html;
+    resetMathFlags();
     renderAllMath();
 
     if (topic.visualizations) {
@@ -1228,7 +1229,7 @@ const MathEngine = (() => {
       return;
     }
     /* Universal selector: catch every container that could hold $...$ math */
-    document.querySelectorAll('.math-block, .phase-content, .step-content, .step-why, .exercise-question, .option-btn, .exercise-feedback, .hint-content, .callout, .prereq-definition, .why-box-body, .topic-description, .free-response-card, .problem-setup, .fb-expression, .matching-grid, .mp-part-question, .mp-part-feedback, .drill-question, .sb-step-btn, .sb-placed-step, .drill-results, .match-item, .fc-back, .fc-front, .flash-card, .concept-text, .why-content, .definition-text, .example-text, #content-inner p, #content-inner li, #content-inner td, #content-inner h3, #content-inner h4, .solution-steps li, .solution-steps p').forEach(el => {
+    document.querySelectorAll('.math-block, .phase-content, .step-content, .step-why, .exercise-question, .option-btn, .exercise-feedback, .hint-content, .callout, .prereq-definition, .why-box-body, .topic-description, .free-response-card, .problem-setup, .fb-expression, .matching-grid, .mp-part-question, .mp-part-feedback, .drill-question, .sb-step-btn, .sb-placed-step, .drill-results, .match-item, .fc-back, .fc-front, .flash-card, .concept-text, .why-content, .definition-text, .example-text, #content-inner p, #content-inner li, #content-inner td, #content-inner h3, #content-inner h4, .solution-steps li, .solution-steps p, .formal-def-body, .formal-def-symbol, .mg-answer, .mg-question, .background-section p, .balance-visual, .game-steps li, .game-prompt, .pattern-rule, .game-hint, .coming-soon-card p').forEach(el => {
       if (el.dataset.mathRendered === 'true') return;
       let html = el.innerHTML;
       if (!html.includes('$')) return; /* skip elements without math */
