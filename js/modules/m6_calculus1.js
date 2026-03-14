@@ -273,7 +273,7 @@ topics: [
     <p><strong>Why applications?</strong> Derivatives answer real questions: What dimensions maximize volume? Where is profit maximized? When does a projectile reach peak height? The derivative's sign tells us WHERE a function increases/decreases and WHERE extrema occur.</p>
   ` },
   formalDefinitions: [
-      { term: 'Critical Point', symbol: '', definition: 'A value $c$ in the domain of $f$ where $f\\prime(c) = 0$ or $f\\prime(c)$ does not exist. Local extrema can only occur at critical points (Fermat\\u2019s Theorem).' },
+      { term: 'Critical Point', symbol: '', definition: 'A value $c$ in the domain of $f$ where $f\\prime(c) = 0$ or $f\\prime(c)$ does not exist. Local extrema can only occur at critical points (Fermat\'s Theorem).' },
       { term: 'Mean Value Theorem', symbol: '', definition: 'If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists $c \\in (a,b)$ such that $f\\prime(c) = \\frac{f(b) - f(a)}{b - a}$. The average rate of change equals the instantaneous rate somewhere.' },
       { term: 'Concavity', symbol: '', definition: '$f$ is concave up on an interval if $f\\prime\\prime > 0$ (tangent lines lie below the graph). Concave down if $f\\prime\\prime < 0$. Inflection point: where concavity changes.' }
     ],

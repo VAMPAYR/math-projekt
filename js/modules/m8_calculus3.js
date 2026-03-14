@@ -278,7 +278,7 @@ topics: [
   formalDefinitions: [
       { term: 'Double Integral', symbol: '$\\iint_R f(x,y)\\,dA$', definition: 'The volume under the surface $z = f(x,y)$ over region $R$. Computed as iterated integrals: $\\int_a^b \\int_{g_1(x)}^{g_2(x)} f(x,y)\\,dy\\,dx$.' },
       { term: 'Triple Integral', symbol: '$\\iiint_E f(x,y,z)\\,dV$', definition: 'Integrates a function over a 3D region $E$. Applications: mass, center of mass, moments of inertia. Can use cylindrical or spherical coordinates.' },
-      { term: "Green\\u2019s Theorem", symbol: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA$', definition: 'Relates a line integral around a simple closed curve $C$ to a double integral over the enclosed region $D$. Connects circulation and flux.' }
+      { term: "Green\'s Theorem", symbol: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA$', definition: 'Relates a line integral around a simple closed curve $C$ to a double integral over the enclosed region $D$. Connects circulation and flux.' }
     ],
     concept: { html: `
 

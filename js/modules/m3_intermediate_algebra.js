@@ -38,7 +38,7 @@ topics: [
     mathGrammar: [
       { question: 'What does the exponent (the small raised number) mean?', answer: '$x^3$ means $x \\times x \\times x$ (multiply $x$ by itself 3 times). The exponent counts how many copies of the base you are multiplying together. $2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$.' },
       { question: 'Why does $x^0 = 1$?', answer: 'Follow the pattern: $x^3 = x \\cdot x \\cdot x$, $x^2 = x \\cdot x$, $x^1 = x$. Each time the exponent drops by 1, you divide by $x$. So $x^0 = x^1 \\div x = x \\div x = 1$. The pattern forces it. Math follows its own logic here, and $x^0 = 1$ is the only answer that keeps everything consistent.' },
-      { question: 'Why do exponents add when you multiply? ($x^a \\cdot x^b = x^{a+b}$)', answer: '$x^2 \\cdot x^3 = (x \\cdot x) \\cdot (x \\cdot x \\cdot x) = x^5$. You are just counting the total number of $x$\\u2019s being multiplied. Two copies times three copies equals five copies.' },
+      { question: 'Why do exponents add when you multiply? ($x^a \\cdot x^b = x^{a+b}$)', answer: '$x^2 \\cdot x^3 = (x \\cdot x) \\cdot (x \\cdot x \\cdot x) = x^5$. You are just counting the total number of $x$\'s being multiplied. Two copies times three copies equals five copies.' },
       { question: 'What is a square root and why does it exist?', answer: '$\\sqrt{x}$ asks: "What number, multiplied by itself, gives $x$?" $\\sqrt{9} = 3$ because $3 \\times 3 = 9$. It reverses what squaring does. Squaring makes things bigger; the square root brings them back. We need it to reverse the operation $x^2$, just as subtraction reverses addition.' }
     ],
     concept: { html: `

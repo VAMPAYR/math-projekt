@@ -31,7 +31,7 @@ topics: [
       { term: 'Sample Space', symbol: '$\\Omega$', definition: 'The set of all possible outcomes of an experiment. For rolling a die: $\\Omega = \\{1,2,3,4,5,6\\}$.' },
       { term: 'Event', symbol: '$A \\subseteq \\Omega$', definition: 'A subset of the sample space. The event "rolling even" is $A = \\{2,4,6\\}$.' },
       { term: 'Probability Axioms (Kolmogorov)', symbol: '', definition: '(1) $P(A) \\geq 0$ for all events $A$. (2) $P(\\Omega) = 1$. (3) For mutually exclusive events: $P(A \\cup B) = P(A) + P(B)$.' },
-      { term: 'Conditional Probability', symbol: '$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$', definition: 'The probability of $A$ given that $B$ has occurred. Defined only when $P(B) > 0$. Foundation of Bayes\\u2019 Theorem.' },
+      { term: 'Conditional Probability', symbol: '$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$', definition: 'The probability of $A$ given that $B$ has occurred. Defined only when $P(B) > 0$. Foundation of Bayes\' Theorem.' },
       { term: 'Independence', symbol: '$P(A \\cap B) = P(A) \\cdot P(B)$', definition: 'Events $A$ and $B$ are independent if the occurrence of one does not affect the probability of the other.' }
     ],
     background: {
