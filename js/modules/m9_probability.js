@@ -330,7 +330,7 @@ topics: [
     <ol><li><strong>Identify the distribution:</strong> Binomial? Normal? Poisson?</li>
     <li><strong>$E[X]$:</strong> Weighted average of outcomes.</li>
     <li><strong>$\\text{Var}(X)$:</strong> $E[X^2] - (E[X])^2$. Measures spread.</li>
-    <li><strong>Normal:</strong \\gt 68-95-99.7 for within 1-2-3 σ of the mean.</li></ol></div>` }
+    <li><strong>Normal:</strong> 68-95-99.7 for within 1-2-3 σ of the mean.</li></ol></div>` }
 }
 
 ] // end topics array
