@@ -355,8 +355,11 @@ topics: [
   ],
   freeResponse: [
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Area of unit square = 1.' },
+    { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 xy\\,dy\\,dx =$?', accept: [9, '9'], placeholder: 'Number', explanation: 'Inner: $\\int_0^3 xy\\,dy = x \\cdot 9/2$. Outer: $\\int_0^2 9x/2\\,dx = 9$.' },
     { difficulty: 'medium', question: 'In polar coordinates, $dA =$? (include $r$)', accept: ['r dr dtheta', 'r*dr*dtheta', 'r dr d\\theta'], placeholder: 'e.g. r dr dtheta', explanation: '$dA = r\\,dr\\,d\\theta$.' },
-    { difficulty: 'hard', question: 'The Jacobian for spherical coordinates is $\\rho^2 \\sin$?', accept: ['phi', 'φ', '\\phi'], placeholder: 'which angle?', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' }
+    { difficulty: 'medium', question: 'Area of a disk of radius 2 using polar: $\\int_0^{2\\pi} \\int_0^2 r\\,dr\\,d\\theta =$?', accept: ['4pi', '4\\pi'], placeholder: 'Answer', explanation: '$\\int_0^2 r\\,dr = 2$. $\\int_0^{2\\pi} 2\\,d\\theta = 4\\pi$.' },
+    { difficulty: 'hard', question: 'The Jacobian for spherical coordinates is $\\rho^2 \\sin$?', accept: ['phi', 'φ', '\\phi'], placeholder: 'which angle?', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' },
+    { difficulty: 'hard', question: 'Volume of sphere radius $R$: $\\frac{4}{3}\\pi R^3$. For $R=3$, volume $=$?', accept: ['36pi', '36\\pi', '113.1'], placeholder: 'Volume', explanation: '$\\frac{4}{3}\\pi(27) = 36\\pi \\approx 113.1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [
