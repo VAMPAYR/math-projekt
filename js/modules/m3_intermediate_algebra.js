@@ -56,7 +56,7 @@ topics: [
     <ul>
       <li><strong>Polynomial:</strong> Sum of terms: $a_n x^n + a_{n-1}x^{n-1} + \\cdots + a_1 x + a_0$.</li>
       <li><strong>Degree:</strong> Highest exponent. $3x^4 + 2x - 1$ has degree 4.</li>
-      <li><strong>Monomial/Binomial/Trinomial:</strong \\gt 1, 2, or 3 terms.</li>
+      <li><strong>Monomial/Binomial/Trinomial:</strong> 1, 2, or 3 terms.</li>
     </ul></div>
     <div class="callout callout-key"><h4>Multiplying Polynomials (FOIL for Binomials)</h4>
     <p>$(a+b)(c+d) = ac + ad + bc + bd$</p>
@@ -187,9 +187,9 @@ topics: [
       <li><strong>GCF first:</strong> Factor out the greatest common factor of all terms.</li>
       <li><strong>Count terms:</strong>
         <ul>
-          <p>2 terms: Check for difference of squares ($a^2 - b^2$), sum/difference of cubes.</li>
-          <p>3 terms: Try trinomial factoring ($x^2 + bx + c$ or $ax^2 + bx + c$).</li>
-          <p>4 terms: Try factoring by grouping.</li>
+          <li>2 terms: Check for difference of squares ($a^2 - b^2$), sum/difference of cubes.</li>
+          <li>3 terms: Try trinomial factoring ($x^2 + bx + c$ or $ax^2 + bx + c$).</li>
+          <li>4 terms: Try factoring by grouping.</li>
         </ul>
       </li>
       <li><strong>Check:</strong> Multiply the factors back to verify.</li>
@@ -287,8 +287,8 @@ topics: [
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Factoring Strategy</h4>
     <ol><li><strong>Always GCF first.</strong></li>
-    <li><p>2 terms:</strong> Difference of squares or cubes?</li>
-    <li><p>3 terms:</strong> Find two numbers that multiply to $ac$ and add to $b$.</li>
+    <li><strong>2 terms:</strong> Difference of squares or cubes?</li>
+    <li><strong>3 terms:</strong> Find two numbers that multiply to $ac$ and add to $b$.</li>
     <li><strong>Verify</strong> by multiplying back.</li></ol></div>` }
 },
 
@@ -453,8 +453,8 @@ topics: [
     { difficulty: 'easy', question: 'For which value is $\\frac{5}{x-3}$ undefined?', options: ['$x = 0$', '$x = 5$', '$x = 3$', '$x = -3$'], correctIndex: 2, hint: '<p>A fraction is undefined when its denominator equals zero.</p>', correctExplanation: '$x - 3 = 0 \\Rightarrow x = 3$. The expression is undefined at $x = 3$.', wrongExplanations: { 0: '$x = 0$: $\\frac{5}{0-3} = \\frac{5}{-3}$, which is defined.', 1: '$x = 5$: $\\frac{5}{2}$, which is defined.', 3: '$x = -3$: $\\frac{5}{-6}$, which is defined.' } },
     { difficulty: 'medium', question: 'Simplify: $\\frac{x^2-1}{x+1}$', options: ['$x - 1$', '$x + 1$', '$x^2 - x$', '$1$'], correctIndex: 0, hint: '<p>Factor the numerator as a difference of squares.</p>', correctExplanation: '$\\frac{(x+1)(x-1)}{x+1} = x - 1$ ($x \\neq -1$).', wrongExplanations: { 1: 'You canceled wrong. The remaining factor is $(x-1)$, not $(x+1)$.', 2: 'Factor first, then cancel. $x^2 - 1 = (x+1)(x-1)$.', 3: '$(x+1)(x-1) \\neq (x+1)$, so the result is not 1.' } },
     { difficulty: 'medium', question: '$\\frac{2}{x} + \\frac{3}{x} = $?', options: ['$\\frac{5}{x}$', '$\\frac{5}{2x}$', '$\\frac{6}{x^2}$', '$\\frac{5}{x^2}$'], correctIndex: 0, hint: '<p>Same denominator: just add numerators.</p>', correctExplanation: 'Same denominator $x$: $\\frac{2+3}{x} = \\frac{5}{x}$.', wrongExplanations: { 1: 'Do not change the denominator when it is already common.', 2: 'Add NUMERATORS, not multiply. Denominators stay the same.', 3: 'The denominator stays $x$, not $x^2$.' } },
-    { difficulty: 'hard', question: 'Solve: $\\frac{1}{x} + \\frac{1}{x-2} = \\frac{5}{4}$', options: ['$x = 4, x = -\\frac{2}{5}$', '$x = 4$ only', '$x = 2, x = 4$', '$x = 1$'], correctIndex: 0, hint: '<p>Multiply through by $4x(x-2)$ to clear denominators. Check for extraneous solutions.</p>', correctExplanation: 'LCD = $4x(x-2)$. $4(x-2) + 4x = 5x(x-2)$. $8x - 8 = 5x^2 - 10x$. $5x^2 - 18x + 8 = 0$. Discriminant: $324 - 160 = 164$. $x = \\frac{18 \\pm \\sqrt{164}}{10}$... Actually let me recompute. $4(x-2) + 4x = 5x(x-2)$ gives $4x - 8 + 4x = 5x^2 - 10x$, so $8x - 8 = 5x^2 - 10x$, giving $5x^2 - 18x + 8 = 0$. $(5x - 2)(x - 4) = 0$: $x = 2/5$ or $x = 4$. Neither makes a denominator zero. ✓', wrongExplanations: { 1: '$x = 4$ is one solution but $x = 2/5$ also works (check: denominators nonzero).', 2: '$x = 2$ makes $\\frac{1}{x-2}$ undefined. It is extraneous.', 3: '$x = 1$: $\\frac{1}{1} + \\frac{1}{-1} = 0 \\neq \\frac{5}{4}$.' } },
-    { difficulty: 'hard', question: '$\\frac{x}{x+2} - \\frac{3}{x-2} = \\frac{x^2+12}{x^2-4}$. How many valid solutions?', options: ['2', '1', '0 (both extraneous)', 'Infinitely many'], correctIndex: 2, hint: '<p>$x^2 - 4 = (x+2)(x-2)$. Clear denominators and solve, then check for extraneous solutions at $x = \\pm 2$.</p>', correctExplanation: 'LCD = $(x+2)(x-2)$. $x(x-2) - 3(x+2) = x^2+12$. $x^2 - 2x - 3x - 6 = x^2 + 12$. $-5x - 6 = 12$. $x = -\\frac{18}{5}$. Wait, checking: that should work. Let me recompute. $x^2 - 5x - 6 = x^2 + 12 \\Rightarrow -5x = 18 \\Rightarrow x = -18/5$. Check: denominators $(-18/5+2) = -8/5 \\neq 0$ and $(-18/5 - 2) = -28/5 \\neq 0$. So $x = -18/5$ is valid. Actually this has 1 solution, making the answer B. I apologize for the exercise construction.', wrongExplanations: { 0: 'Check whether both solutions satisfy the original denominators.', 1: 'This particular setup yields a linear equation with 1 solution after simplification.', 3: 'A rational equation has finitely many solutions (or none).' } }
+    { difficulty: 'hard', question: 'Solve: $\\frac{1}{x} + \\frac{1}{x-2} = \\frac{5}{4}$', options: ['$x = 4, x = \\frac{2}{5}$', '$x = 4$ only', '$x = 2, x = 4$', '$x = 1$'], correctIndex: 0, hint: '<p>Multiply through by $4x(x-2)$ to clear denominators. Check for extraneous solutions.</p>', correctExplanation: 'LCD = $4x(x-2)$. Clearing: $4(x-2) + 4x = 5x(x-2)$. Expanding: $8x - 8 = 5x^2 - 10x$. Rearranging: $5x^2 - 18x + 8 = 0$. Factoring: $(5x-2)(x-4) = 0$. Solutions: $x = 2/5$ or $x = 4$. Neither makes a denominator zero: both valid.', wrongExplanations: { 1: '$x = 4$ is one solution but $x = 2/5$ also works (check: denominators nonzero).', 2: '$x = 2$ makes $\\frac{1}{x-2}$ undefined. It is extraneous.', 3: '$x = 1$: $\\frac{1}{1} + \\frac{1}{-1} = 0 \\neq \\frac{5}{4}$.' } },
+    { difficulty: 'hard', question: 'Simplify: $\\frac{x^2 - 4x + 3}{x^2 - 1}$', options: ['$\\frac{x-3}{x+1}$', '$\\frac{x-3}{x-1}$', '$\\frac{x+3}{x+1}$', '$\\frac{x-1}{x+1}$'], correctIndex: 0, hint: '<p>Factor numerator and denominator.</p>', correctExplanation: 'Numerator: $x^2-4x+3 = (x-1)(x-3)$. Denominator: $x^2-1 = (x+1)(x-1)$. Cancel $(x-1)$: $\\frac{x-3}{x+1}$ ($x \\neq 1$).', wrongExplanations: { 1: 'The remaining denominator factor is $(x+1)$, not $(x-1)$.', 2: 'The numerator factors as $(x-1)(x-3)$, not $(x-1)(x+3)$.', 3: 'Factor carefully: numerator is $(x-1)(x-3)$, not just $(x-1)$.' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Simplify: $\\frac{6x^2}{3x} =$?', accept: ['2x'], placeholder: 'e.g. 2x', explanation: '$6x^2 / 3x = 2x$.' },
