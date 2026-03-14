@@ -41,7 +41,7 @@
     ],
     background: {
       title: 'Why Geometry? Measuring the Earth',
-      content: '<p>The word <strong>geometry</strong> comes from Greek: <em>geo</em> (earth) + <em>metron</em> (measure). It literally means "measuring the earth." Egyptians needed it to re-survey farmland after the Nile flooded every year.</p><p><strong>Euclid\\u2019s Elements</strong> (300 BCE) organized geometry into axioms, definitions, and proofs. It remained the standard textbook for over 2,000 years. The axiomatic method Euclid used (start with obvious truths, derive everything else) became the model for all of mathematics.</p><p><strong>Why angles are measured in degrees:</strong> The Babylonians used a base-60 number system. Since 360 is close to 365 (days in a year) and divisible by 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, and 180, they chose $360^\\circ$ for a full rotation. This convention persists today.</p>'
+      content: '<p>The word <strong>geometry</strong> comes from Greek: <em>geo</em> (earth) + <em>metron</em> (measure). It literally means "measuring the earth." Egyptians needed it to re-survey farmland after the Nile flooded every year.</p><p><strong>Euclid\'s Elements</strong> (300 BCE) organized geometry into axioms, definitions, and proofs. It remained the standard textbook for over 2,000 years. The axiomatic method Euclid used (start with obvious truths, derive everything else) became the model for all of mathematics.</p><p><strong>Why angles are measured in degrees:</strong> The Babylonians used a base-60 number system. Since 360 is close to 365 (days in a year) and divisible by 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, and 180, they chose $360^\\circ$ for a full rotation. This convention persists today.</p>'
     },
     mathGrammar: [
       { question: 'Why do angles in a triangle always add to $180^\\circ$?', answer: 'Draw a triangle and extend one side. The exterior angle plus the interior angle form a straight line ($180^\\circ$). Now use the fact that alternate interior angles (from parallel lines) are equal. This forces the three interior angles to sum to exactly $180^\\circ$.' },
@@ -183,7 +183,28 @@
       { sentence: 'The sum of all angles in a triangle is always ____ degrees.', answer: '180', hint: 'Tear the three corners: they form a straight line.' }
     ],
       freeResponse: [
-        { difficulty: 'easy', question: 'The supplement of a $115°$ angle is:', accept: [65, '65', '65°'], placeholder: 'Degrees', explanation: '$180° - 115° = 65°$.' }
+        { difficulty: 'easy', question: 'The supplement of a $115°$ angle is:', accept: [65, '65', '65°'], placeholder: 'Degrees', explanation: '$180° - 115° = 65°$.' },
+        { difficulty: 'easy', question: 'The complement of a $37°$ angle is:', accept: [53, '53', '53°'], placeholder: 'Degrees', explanation: '$90° - 37° = 53°$.' },
+        { difficulty: 'medium', question: 'Two supplementary angles differ by $40°$. Find the larger angle:', accept: [110, '110', '110°'], placeholder: 'Degrees', hint: '<p>$x + (x + 40) = 180$.</p>', explanation: '$2x + 40 = 180$, $2x = 140$, $x = 70$. Larger = $110°$.' },
+        { difficulty: 'medium', question: 'A triangle has angles $x$, $2x$, and $3x$. Find $x$:', accept: [30, '30', '30°'], placeholder: 'Degrees', hint: '<p>$x + 2x + 3x = 180$.</p>', explanation: '$6x = 180$, $x = 30°$. Angles: $30°, 60°, 90°$ (a 30-60-90 triangle).' },
+        { difficulty: 'hard', question: 'In a parallelogram, one angle is $65°$. Find the adjacent angle:', accept: [115, '115', '115°'], placeholder: 'Degrees', explanation: 'Adjacent angles in a parallelogram are supplementary: $180° - 65° = 115°$.' }
+      ],
+      stepBuilder: [
+        { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
+          { content: 'The given angle is $72°$.' },
+          { content: 'Its supplementary angle (adjacent): $180° - 72° = 108°$.' },
+          { content: 'Vertical angle to $72°$: also $72°$.' },
+          { content: 'Vertical angle to $108°$: also $108°$.' },
+          { content: 'Corresponding angles at the second parallel line are equal: $72°, 108°, 72°, 108°$.' },
+          { content: 'All eight angles: four at $72°$ and four at $108°$.' }
+        ], explanation: 'When a transversal crosses parallel lines, only two distinct angle measures exist. Every angle is either the given angle or its supplement.' }
+      ],
+      multiPart: [
+        { difficulty: 'medium', question: 'A triangle has angles in ratio $2:3:4$.', parts: [
+          { question: 'What is the sum of the ratios?', accept: [9, '9'], placeholder: 'Sum', explanation: '$2 + 3 + 4 = 9$.' },
+          { question: 'What is the smallest angle?', accept: [40, '40', '40°'], placeholder: 'Degrees', explanation: '$\\frac{2}{9} \\times 180° = 40°$.' },
+          { question: 'What is the largest angle?', accept: [80, '80', '80°'], placeholder: 'Degrees', explanation: '$\\frac{4}{9} \\times 180° = 80°$.' }
+        ], completionMessage: 'Ratio problems: divide the total (180°) in the given ratio.' }
       ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Angle Problem Strategy</h4><ol><li><strong>Identify the relationship:</strong> complementary ($90°$), supplementary ($180°$), vertical (equal), or parallel-line property.</li><li><strong>Set up an equation</strong> using that relationship.</li><li><strong>Solve</strong> and verify.</li></ol></div>` }
     },
@@ -329,7 +350,20 @@
       { sentence: 'If a triangle has sides 3, 4, and 5, the right angle is opposite the side of length ____.', answer: '5', hint: 'The hypotenuse is across from the right angle.' }
     ],
       freeResponse: [
-        { difficulty: 'easy', question: 'A right triangle has legs $8$ and $15$. Find the hypotenuse:', accept: [17, '17'], placeholder: 'Length', explanation: '$8^2 + 15^2 = 64 + 225 = 289 = 17^2$. Pythagorean triple: $(8, 15, 17)$.' }
+        { difficulty: 'easy', question: 'A right triangle has legs $8$ and $15$. Find the hypotenuse:', accept: [17, '17'], placeholder: 'Length', explanation: '$8^2 + 15^2 = 64 + 225 = 289 = 17^2$. Pythagorean triple: $(8, 15, 17)$.' },
+        { difficulty: 'easy', question: 'An equilateral triangle has all angles equal. Each angle measures:', accept: [60, '60', '60°'], placeholder: 'Degrees', explanation: '$180° / 3 = 60°$.' },
+        { difficulty: 'medium', question: 'A right triangle has hypotenuse $13$ and one leg $5$. The other leg is:', accept: [12, '12'], placeholder: 'Length', hint: '<p>$a^2 + 5^2 = 13^2$.</p>', explanation: '$a^2 = 169 - 25 = 144$, $a = 12$. Triple: $(5, 12, 13)$.' },
+        { difficulty: 'medium', question: 'Similar triangles have scale factor $3:5$. If the smaller perimeter is $24$ cm, the larger perimeter is:', accept: [40, '40'], placeholder: 'cm', explanation: 'Perimeter scales linearly: $24 \\times \\frac{5}{3} = 40$ cm.' },
+        { difficulty: 'hard', question: 'A 45-45-90 triangle has hypotenuse $10$. Each leg measures (to 2 decimal places):', accept: ['7.07', '5√2'], placeholder: 'Length', explanation: 'In a 45-45-90 triangle, leg $= \\frac{\\text{hypotenuse}}{\\sqrt{2}} = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2} \\approx 7.07$.' }
+      ],
+      stepBuilder: [
+        { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
+          { content: 'Triangle $ABC$: $\\angle A = 50°$, $\\angle B = 70°$. So $\\angle C = 60°$.' },
+          { content: 'Triangle $DEF$: $\\angle D = 50°$, $\\angle E = 70°$. So $\\angle F = 60°$.' },
+          { content: 'Both triangles have angles $50°, 70°, 60°$. By AA, $\\triangle ABC \\sim \\triangle DEF$.' },
+          { content: 'If $AB = 15$, $DE = 10$, the scale factor is $15/10 = 3/2$.' },
+          { content: 'If $EF = 8$, then $BC = 8 \\times (3/2) = 12$.' }
+        ], explanation: 'AA similarity: two equal angles guarantee all three match. Corresponding sides scale proportionally.' }
       ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Triangle Strategy</h4><ol><li><strong>Right triangle?</strong> Use Pythagorean theorem.</li><li><strong>Congruence?</strong> Check SSS, SAS, ASA, or AAS.</li><li><strong>Similarity?</strong> Check AA (two equal angles) or proportional sides.</li><li><strong>Area?</strong> $A = \\frac{1}{2}bh$ or Heron's formula.</li></ol></div>` }
     },
@@ -453,7 +487,17 @@
       { sentence: 'The ratio of circumference to diameter is the constant ____.', answer: 'pi', hint: 'Approximately 3.14159...' }
     ],
       freeResponse: [
-        { difficulty: 'easy', question: 'The circumference of a circle with radius $5$ is:', accept: ['10π', '10pi', '31.42', '31.4'], placeholder: '(use π)', explanation: '$C = 2\\pi(5) = 10\\pi \\approx 31.42$.' }
+        { difficulty: 'easy', question: 'The circumference of a circle with radius $5$ is:', accept: ['10π', '10pi', '31.42', '31.4'], placeholder: '(use π)', explanation: '$C = 2\\pi(5) = 10\\pi \\approx 31.42$.' },
+        { difficulty: 'easy', question: 'The area of a circle with diameter $12$:', accept: ['36π', '36pi', '113.1', '113.10'], placeholder: 'use π', explanation: '$r = 6$. $A = \\pi(6)^2 = 36\\pi \\approx 113.10$.' },
+        { difficulty: 'medium', question: 'An arc subtends $60°$ in a circle of radius $9$. Arc length (exact):', accept: ['3π', '3pi'], placeholder: 'use π', hint: '<p>$s = r\\theta$ with $\\theta$ in radians.</p>', explanation: '$60° = \\pi/3$ rad. $s = 9(\\pi/3) = 3\\pi$.' },
+        { difficulty: 'hard', question: 'A sector has area $50\\pi$ cm² and radius $10$ cm. Central angle in degrees:', accept: [180, '180', '180°'], placeholder: 'Degrees', explanation: '$A = \\frac{1}{2}r^2\\theta$. $50\\pi = \\frac{1}{2}(100)\\theta$. $\\theta = \\pi$ rad $= 180°$.' }
+      ],
+      stepBuilder: [
+        { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [
+          { content: 'Outer circle area: $\\pi(8)^2 = 64\\pi$.' },
+          { content: 'Inner circle area: $\\pi(5)^2 = 25\\pi$.' },
+          { content: 'Ring area = outer $-$ inner: $64\\pi - 25\\pi = 39\\pi \\approx 122.52$ sq units.' }
+        ], explanation: 'Annulus area = $\\pi(R^2 - r^2)$. Subtract the hole from the full disk.' }
       ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Circle Strategy</h4><ol><li>Identify what you know: radius, diameter, angle, arc, area?</li><li>Convert angles to radians if using $s = r\\theta$ or $A = \\frac{1}{2}r^2\\theta$.</li><li>Use the appropriate formula and solve for the unknown.</li></ol></div>` }
     },
@@ -563,7 +607,26 @@
       { sentence: 'The volume of a sphere with radius r is ____.', answer: '(4/3)*pi*r^3', hint: 'Four-thirds pi r-cubed.' }
     ],
       freeResponse: [
-        { difficulty: 'easy', question: 'Area of a triangle with base $10$ and height $6$:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(10)(6) = 30$ square units.' }
+        { difficulty: 'easy', question: 'Area of a triangle with base $10$ and height $6$:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(10)(6) = 30$ square units.' },
+        { difficulty: 'easy', question: 'Volume of a cube with side length $4$:', accept: [64, '64'], placeholder: 'Cubic units', explanation: '$V = 4^3 = 64$ cubic units.' },
+        { difficulty: 'medium', question: 'A cone has radius $3$ and height $12$. Volume (use $\\pi$):', accept: ['36π', '36pi', '113.1'], placeholder: 'use π', explanation: '$V = \\frac{1}{3}\\pi(9)(12) = 36\\pi \\approx 113.1$.' },
+        { difficulty: 'medium', question: 'A sphere has radius $6$. Surface area (use $\\pi$):', accept: ['144π', '144pi', '452.4'], placeholder: 'use π', explanation: '$SA = 4\\pi(36) = 144\\pi \\approx 452.39$.' },
+        { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' }
+      ],
+      stepBuilder: [
+        { difficulty: 'hard', question: 'A rectangular tank is $8$ m × $5$ m × $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
+          { content: 'Total volume: $8 \\times 5 \\times 3 = 120$ m³.' },
+          { content: 'Water volume: $8 \\times 5 \\times 2 = 80$ m³.' },
+          { content: 'Empty volume: $120 - 80 = 40$ m³.' },
+          { content: 'Need $40$ m³ (= $40{,}000$ liters) more water to fill the tank.' }
+        ], explanation: 'Volume of a partial fill uses the same base area with reduced height.' }
+      ],
+      multiPart: [
+        { difficulty: 'medium', question: 'A cylindrical can has diameter $10$ cm and height $15$ cm.', parts: [
+          { question: 'Radius:', accept: [5, '5'], placeholder: 'cm', explanation: '$r = d/2 = 5$ cm.' },
+          { question: 'Volume (use π):', accept: ['375π', '375pi'], placeholder: 'cm³', explanation: '$V = \\pi(25)(15) = 375\\pi$.' },
+          { question: 'Total surface area (use π):', accept: ['200π', '200pi'], placeholder: 'cm²', explanation: '$SA = 2\\pi(25) + 2\\pi(5)(15) = 50\\pi + 150\\pi = 200\\pi$.' }
+        ], completionMessage: 'Cylinder: $V = \\pi r^2 h$, $SA = 2\\pi r^2 + 2\\pi rh$.' }
       ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Area/Volume Strategy</h4><ol><li>Identify the shape (2D or 3D).</li><li>Select the correct formula.</li><li>Identify the measurements: radius? base? height? slant height?</li><li>Substitute and compute. Include units (cm², cm³).</li></ol></div>` }
     },
@@ -658,7 +721,19 @@
         { difficulty: 'medium', question: 'The slope of a line perpendicular to $y = \\frac{3}{4}x + 1$ is:', options: ['$\\frac{3}{4}$', '$-\\frac{3}{4}$', '$-\\frac{4}{3}$', '$\\frac{4}{3}$'], correctIndex: 2, hint: '<p>Perpendicular slopes: $m_1 \\cdot m_2 = -1$.</p>', correctExplanation: 'Original slope = $3/4$. Perpendicular: $-1/(3/4) = -4/3$. Product: $(3/4)(-4/3) = -1$ ✓.', wrongExplanations: { 0: 'Same slope means parallel, not perpendicular.', 1: 'Negating the slope gives $-3/4$, but perpendicular requires the negative RECIPROCAL.', 3: '$4/3$ is the reciprocal but positive. Must also negate.' } }
       ],
       freeResponse: [
-        { difficulty: 'easy', question: 'Slope of the line through $(1, 2)$ and $(5, 10)$:', accept: [2, '2'], placeholder: 'm = ?', explanation: '$m = (10-2)/(5-1) = 8/4 = 2$.' }
+        { difficulty: 'easy', question: 'Slope of the line through $(1, 2)$ and $(5, 10)$:', accept: [2, '2'], placeholder: 'm = ?', explanation: '$m = (10-2)/(5-1) = 8/4 = 2$.' },
+        { difficulty: 'easy', question: 'Distance between $(0, 0)$ and $(5, 12)$:', accept: [13, '13'], placeholder: 'Distance', explanation: '$d = \\sqrt{25 + 144} = \\sqrt{169} = 13$.' },
+        { difficulty: 'medium', question: 'Midpoint of $(-4, 6)$ and $(2, -2)$:', accept: ['(-1,2)', '(-1, 2)'], placeholder: '(x,y)', explanation: '$((-4+2)/2, (6-2)/2) = (-1, 2)$.' },
+        { difficulty: 'medium', question: 'Line through $(0, 3)$ with slope $-2$. Equation in slope-intercept form:', accept: ['y=-2x+3', 'y = -2x + 3'], placeholder: 'y = ...', explanation: '$y = mx + b = -2x + 3$. The y-intercept $b = 3$ (the point is on the y-axis).' },
+        { difficulty: 'hard', question: 'Distance between $(3, -1)$ and $(-5, 5)$:', accept: [10, '10'], placeholder: 'Distance', explanation: '$d = \\sqrt{(-8)^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$.' }
+      ],
+      stepBuilder: [
+        { difficulty: 'medium', question: 'Find the equation of the line through $(2, 1)$ and perpendicular to $y = 3x + 5$.', steps: [
+          { content: 'Slope of given line: $m = 3$.' },
+          { content: 'Perpendicular slope: $m_{\\perp} = -1/3$.' },
+          { content: 'Point-slope form: $y - 1 = -\\frac{1}{3}(x - 2)$.' },
+          { content: 'Simplify: $y = -\\frac{1}{3}x + \\frac{2}{3} + 1 = -\\frac{1}{3}x + \\frac{5}{3}$.' }
+        ], explanation: 'Perpendicular lines have slopes that are negative reciprocals. Use point-slope form with the given point.' }
       ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Coordinate Geometry Strategy</h4><ol><li><strong>Two points?</strong> Use distance, midpoint, or slope formulas.</li><li><strong>Need equation?</strong> Find slope first, then use point-slope form.</li><li><strong>Parallel?</strong> Same slope. <strong>Perpendicular?</strong> Negative reciprocal slopes.</li></ol></div>` }
     }
