@@ -23,7 +23,25 @@ topics: [
     <p><strong>Why start here?</strong> All of mathematics builds on arithmetic. Algebra generalizes arithmetic with variables. Calculus extends it to continuous change. Statistics applies it to data. Without fluency in basic operations, fractions, and decimals, every subsequent topic becomes inaccessible.</p>
     ${WHY('What IS a number?', '<p>A number is an abstraction for quantity. The symbol "3" represents three of anything: three apples, three meters, three ideas. Mathematics studies the properties of these abstractions, independent of what they count.</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Commutative Property', symbol: '$a + b = b + a$', definition: 'The order of operands does not affect the result. Holds for addition and multiplication over $\\mathbb{R}$. Does NOT hold for subtraction or division.' },
+      { term: 'Associative Property', symbol: '$(a + b) + c = a + (b + c)$', definition: 'Grouping of operands does not affect the result. Holds for addition and multiplication. Allows omission of parentheses in chains.' },
+      { term: 'Distributive Property', symbol: '$a(b + c) = ab + ac$', definition: 'Multiplication distributes over addition. Foundation of all algebraic expansion. Connects addition and multiplication into a coherent structure (ring axiom).' },
+      { term: 'Additive Identity', symbol: '$a + 0 = a$', definition: 'Zero is the unique element such that adding it to any number leaves the number unchanged.' },
+      { term: 'Multiplicative Identity', symbol: '$a \\cdot 1 = a$', definition: 'One is the unique element such that multiplying any number by it leaves the number unchanged.' }
+    ],
+    background: {
+      title: 'Why Do We Have Four Operations?',
+      content: '<p><strong>Addition</strong> is the most natural operation: combining groups. Every human culture invented it independently.</p><p><strong>Subtraction</strong> answers the question "what is left?" It is the inverse of addition. Without subtraction, we cannot measure differences or changes.</p><p><strong>Multiplication</strong> is repeated addition, but it is much more than that. It scales quantities. When you multiply the length and width of a rectangle, you get its area. This connection between multiplication and geometry is fundamental to all of physics and engineering.</p><p><strong>Division</strong> answers "how many groups?" or "how much per group?" It is the inverse of multiplication. Division by zero is undefined because no number times zero produces a nonzero result. This is a logical impossibility, not a convention.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does "$=$" actually mean?', answer: 'The equals sign means "the left side and the right side represent the same number." It is a statement of fact, not an instruction. $2 + 3 = 5$ means these are two names for the same thing.' },
+      { question: 'Why do we subtract?', answer: 'Subtraction answers "how much more?" or "what remains?" $7 - 3 = 4$ means: starting from 7, if you remove 3, you have 4 left. It is the inverse of addition: it undoes what addition does.' },
+      { question: 'Why do we multiply instead of adding repeatedly?', answer: '$5 \\times 4$ means "add five copies of 4": $4 + 4 + 4 + 4 + 4 = 20$. Multiplication is faster notation for repeated addition. But it also has a geometric meaning: the area of a $5 \\times 4$ rectangle is $20$ square units.' },
+      { question: 'Why is division by zero undefined?', answer: 'Division asks "what times the divisor gives the dividend?" $12 \\div 3 = 4$ because $4 \\times 3 = 12$. For $12 \\div 0 = ?$, we need $? \\times 0 = 12$. No number times zero gives 12. There is no number that works, so the operation has no answer. That is what undefined means.' },
+      { question: 'What is PEMDAS/BODMAS and why?', answer: 'Order of operations: Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right). Without this convention, two people could read the same problem and get different answers. The rules exist so everyone agrees. Without it, $2 + 3 \\times 4$ could mean 20 or 14.' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Whole Number Operations</h4>
     <ul>
       <li><strong>Addition (+):</strong> Combining quantities. $3 + 5 = 8$. <em>Commutative</em>: $a + b = b + a$. <em>Associative</em>: $(a + b) + c = a + (b + c)$. Identity: $a + 0 = a$.</li>
@@ -158,7 +176,23 @@ topics: [
   hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle</h4>
     <p>Can you find a fraction $p/q$ (with integers $p, q$) such that $(p/q)^2 = 2$? Try a few: $1/1, 3/2, 7/5, 17/12, ...$</p>
     <p>Each gets closer but never equals $\\sqrt{2}$ exactly. This is because $\\sqrt{2}$ is <strong>irrational</strong>: it cannot be expressed as a ratio of integers.</p></div>` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Natural Numbers', symbol: '$\\mathbb{N}$', definition: 'The set $\\{1, 2, 3, \\ldots\\}$ (or $\\{0, 1, 2, \\ldots\\}$ in some conventions). Closed under addition and multiplication.' },
+      { term: 'Integers', symbol: '$\\mathbb{Z}$', definition: 'The set $\\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$. Extends $\\mathbb{N}$ to include additive inverses. Closed under addition, subtraction, and multiplication.' },
+      { term: 'Rational Numbers', symbol: '$\\mathbb{Q}$', definition: 'Numbers expressible as $\\frac{p}{q}$ where $p, q \\in \\mathbb{Z}$ and $q \\neq 0$. All terminating and repeating decimals are rational.' },
+      { term: 'Real Numbers', symbol: '$\\mathbb{R}$', definition: 'The complete ordered field. Includes all rationals and irrationals. Every Cauchy sequence of reals converges to a real number (completeness axiom).' },
+      { term: 'Complex Numbers', symbol: '$\\mathbb{C}$', definition: 'Numbers of the form $a + bi$ where $a, b \\in \\mathbb{R}$ and $i^2 = -1$. Algebraically closed: every non-constant polynomial has a root in $\\mathbb{C}$.' }
+    ],
+    background: {
+      title: 'Where Do Numbers Come From?',
+      content: '<p>Humans invented counting before writing. Tally marks on bones date to 30,000 BCE. The concept of <strong>zero</strong> as a number (not just a placeholder) was independently discovered by Babylonians, Mayans, and Indians. The Indian mathematician <strong>Brahmagupta</strong> (628 CE) was the first to formalize rules for zero: any number plus zero equals itself, any number times zero equals zero.</p><p><strong>Negative numbers</strong> were resisted in Europe for centuries. As late as the 1700s, mathematicians called them "absurd" or "fictitious." Today, they are essential: bank balances, temperatures below zero, and debts all require negative numbers.</p><p><strong>Irrational numbers</strong> were discovered by the Pythagoreans around 500 BCE when they proved $\\sqrt{2}$ cannot be written as a fraction. This discovery reportedly caused a crisis in their philosophy, since they believed all reality was built from whole-number ratios.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does the symbol "$\\in$" mean?', answer: '"Is an element of." When we write $3 \\in \\mathbb{Z}$, we are saying "3 belongs to the set of integers." Think of it as saying this thing lives inside this group.' },
+      { question: 'What is a set?', answer: 'A collection of distinct objects (just a group of things), written with curly braces. $\\{1, 2, 3\\}$ is a set. The order does not matter: $\\{3, 1, 2\\}$ is the same set. No duplicates allowed.' },
+      { question: 'Why do we need different number sets?', answer: 'Here is the key idea: each number set was invented because the previous one could not handle something. $\\mathbb{N}$ cannot represent "nothing" (so we added $0$). $\\mathbb{Z}$ allows debts (negative). $\\mathbb{Q}$ allows division results. $\\mathbb{R}$ fills in the gaps ($\\sqrt{2}$). $\\mathbb{C}$ allows $\\sqrt{-1}$.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg">

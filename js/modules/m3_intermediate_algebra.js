@@ -30,7 +30,18 @@ topics: [
   ` },
   hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: Area of a Garden</h4>
     <p>A rectangular garden has length $(x + 3)$ meters and width $(x + 2)$ meters. What is its area? You need to multiply two binomials: $(x+3)(x+2)$. After this topic, you will know how.</p></div>` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Polynomial', symbol: '$p(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + a_0$', definition: 'A finite sum of terms of the form $a_kx^k$ where $k \\in \\mathbb{N} \\cup \\{0\\}$ and $a_k \\in \\mathbb{R}$. The degree is the highest power with nonzero coefficient.' },
+      { term: 'Degree', symbol: '$\\deg(p)$', definition: 'The highest exponent appearing in the polynomial with a nonzero coefficient. $\\deg(3x^4 + x) = 4$. The zero polynomial has no defined degree.' },
+      { term: 'Leading Coefficient', symbol: '$a_n$', definition: 'The coefficient of the highest-degree term. Determines end behavior of the polynomial graph.' }
+    ],
+    mathGrammar: [
+      { question: 'What does the exponent (the small raised number) mean?', answer: '$x^3$ means $x \\times x \\times x$ (multiply $x$ by itself 3 times). The exponent counts how many copies of the base you are multiplying together. $2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$.' },
+      { question: 'Why does $x^0 = 1$?', answer: 'Follow the pattern: $x^3 = x \\cdot x \\cdot x$, $x^2 = x \\cdot x$, $x^1 = x$. Each time the exponent drops by 1, you divide by $x$. So $x^0 = x^1 \\div x = x \\div x = 1$. The pattern forces it. Math follows its own logic here, and $x^0 = 1$ is the only answer that keeps everything consistent.' },
+      { question: 'Why do exponents add when you multiply? ($x^a \\cdot x^b = x^{a+b}$)', answer: '$x^2 \\cdot x^3 = (x \\cdot x) \\cdot (x \\cdot x \\cdot x) = x^5$. You are just counting the total number of $x$\\u2019s being multiplied. Two copies times three copies equals five copies.' },
+      { question: 'What is a square root and why does it exist?', answer: '$\\sqrt{x}$ asks: "What number, multiplied by itself, gives $x$?" $\\sqrt{9} = 3$ because $3 \\times 3 = 9$. It reverses what squaring does. Squaring makes things bigger; the square root brings them back. We need it to reverse the operation $x^2$, just as subtraction reverses addition.' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Exponent Rules</h4>
     <p>For $a, b \\neq 0$ and integers $m, n$:</p>
     <ul>
@@ -138,7 +149,17 @@ topics: [
     <p><strong>Why factor?</strong> Factoring converts addition/subtraction into multiplication, unlocking the <strong>Zero Product Property</strong>: if $ab = 0$, then $a = 0$ or $b = 0$. This is how we solve quadratic equations.</p>
     ${WHY('Why does the Zero Product Property work?', '<p>Suppose $ab = 0$ and $a \\neq 0$. Then $b = \\frac{0}{a} = 0$. So at least one factor must be zero. This property holds in $\\mathbb{R}$ and $\\mathbb{C}$ because they have no "zero divisors."</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Factor', symbol: '', definition: 'To express a polynomial as a product of polynomials of lower degree. $x^2 - 5x + 6 = (x-2)(x-3)$. Factoring is the inverse of expansion.' },
+      { term: 'Irreducible Polynomial', symbol: '', definition: 'A polynomial that cannot be factored into polynomials of lower degree over a given number system. $x^2 + 1$ is irreducible over $\\mathbb{R}$ but factors as $(x+i)(x-i)$ over $\\mathbb{C}$.' },
+      { term: 'Factor Theorem', symbol: '', definition: 'If $p(a) = 0$, then $(x - a)$ is a factor of $p(x)$. Conversely, if $(x-a)$ divides $p(x)$, then $p(a) = 0$. This links together two ideas: the values where a polynomial equals zero, and the expressions that multiply to form it.' }
+    ],
+    mathGrammar: [
+      { question: 'What does "factoring" mean?', answer: 'Writing an expression as a product of simpler expressions. $x^2 - 9 = (x+3)(x-3)$. The left side is one expression; the right side shows it is built from two pieces multiplied together. Factoring is like opening up an expression to see what it is made of.' },
+      { question: 'Why do we factor?', answer: 'To solve equations. If $ab = 0$, then $a = 0$ or $b = 0$ (Zero Product Property). So $(x+3)(x-3) = 0$ means $x = -3$ or $x = 3$. Without factoring, you cannot use this property.' },
+      { question: 'How do I factor $x^2 + bx + c$?', answer: 'Find two numbers that multiply to give $c$ AND add to give $b$. For $x^2 + 5x + 6$: what two numbers multiply to 6 and add to 5? Answer: 2 and 3. So $x^2 + 5x + 6 = (x+2)(x+3)$. This works because $(x+2)(x+3) = x^2 + 3x + 2x + 6 = x^2 + 5x + 6$.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 340 200" width="340" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -286,7 +307,12 @@ topics: [
     <p><strong>Why quadratics?</strong> Any phenomenon involving area, projectile motion, or any rate that itself changes gives rise to quadratic equations. A ball thrown upward follows $h(t) = -16t^2 + v_0 t + h_0$. Finding when it hits the ground means solving $h(t) = 0$: a quadratic equation.</p>
     ${WHY('Why three methods?', '<p>Factoring is fast when possible but not always applicable. Completing the square works always and reveals the vertex form. The quadratic formula is a direct application of completing the square and works for ANY quadratic. Each method has its use case.</p>')}
   ` },
-  concept: { html: `
+  graphExplorer: [
+      { latex: 'y = x^2' },
+      { latex: 'y = -x^2 + 4' },
+      { latex: 'y = (x-2)^2 - 1' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Method 1: Factoring + Zero Product Property</h4>
     <p>$x^2 + 5x + 6 = 0 \\Rightarrow (x+2)(x+3) = 0 \\Rightarrow x = -2$ or $x = -3$.</p>
     <p>Works when factors are easy to find. Fastest method when applicable.</p></div>

@@ -314,6 +314,11 @@ const MathEngine = (() => {
             <div class="action-title">Achievements</div>
             <div class="action-desc">${Object.keys(gs.achievements || {}).length} / ${Object.keys(GameState.getAchievements()).length} unlocked</div>
           </div>
+          <div class="game-action-btn" onclick="MathEngine.showMiniGames()">
+            <div class="action-icon">🎮</div>
+            <div class="action-title">Mini Games</div>
+            <div class="action-desc">Equation Balance, Pattern Finder, Expression Builder</div>
+          </div>
         </div>
 
         <!-- Module Cards -->
@@ -333,7 +338,47 @@ const MathEngine = (() => {
       `;
     });
 
-    html += '</div></div>';
+    html += `</div>
+
+        <!-- Coming Soon -->
+        <div class="coming-soon-section">
+          <h3>📋 Coming Soon</h3>
+          <p>This platform is actively expanding. The following subjects are in development:</p>
+          <div class="coming-soon-grid">
+            <div class="coming-soon-card">
+              <div class="cs-icon">📐</div>
+              <h4>Linear Algebra</h4>
+              <p>Vectors, matrices, eigenvalues, linear transformations, and systems of equations in higher dimensions.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="cs-icon">🔄</div>
+              <h4>Differential Equations</h4>
+              <p>Ordinary and partial differential equations. Modeling growth, decay, oscillation, and diffusion.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="cs-icon">🔢</div>
+              <h4>Number Theory</h4>
+              <p>Prime numbers, divisibility, modular arithmetic, and cryptography foundations.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="cs-icon">🧮</div>
+              <h4>Discrete Mathematics</h4>
+              <p>Logic, sets, graph theory, combinatorics, and the mathematics behind computer science.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="cs-icon">🔗</div>
+              <h4>Abstract Algebra</h4>
+              <p>Groups, rings, fields. The deep structure underlying all algebraic systems.</p>
+            </div>
+            <div class="coming-soon-card">
+              <div class="cs-icon">📊</div>
+              <h4>Real Analysis</h4>
+              <p>Rigorous foundations of calculus. Sequences, series, continuity, and measure theory.</p>
+            </div>
+          </div>
+        </div>
+
+    </div>`;
     content.innerHTML = html;
   }
 
@@ -614,6 +659,52 @@ const MathEngine = (() => {
     if (topic.definition) html += renderPhase('definition', 'Definition', 'Definition', topic.definition);
     if (topic.examples) html += renderExamples(topic.examples);
 
+    /* Background: Etymology, History, "Why does this exist?" */
+    if (topic.background) {
+      html += `<div class="background-section">
+        <div class="phase-label hook">Background</div>
+        <h3>${topic.background.title || 'Background'}</h3>
+        <div class="phase-content">${topic.background.content}</div>
+      </div>`;
+    }
+
+    /* Math Grammar: "Why do we use this operation?" */
+    if (topic.mathGrammar && topic.mathGrammar.length) {
+      html += `<div class="math-grammar-section">
+        <div class="phase-label concept">Math Grammar</div>
+        <h3>Reading and Writing Math</h3>
+        <p class="math-grammar-intro">Mathematics has rules (grammar) just like any language. Below is how to read, write, and reason about the symbols and operations in this topic.</p>
+        <div class="math-grammar-grid">`;
+      topic.mathGrammar.forEach(g => {
+        html += `<div class="math-grammar-card">
+          <div class="mg-question">${g.question}</div>
+          <div class="mg-answer">${g.answer}</div>
+        </div>`;
+      });
+      html += `</div></div>`;
+    }
+
+    /* Formal Definitions */
+    if (topic.formalDefinitions && topic.formalDefinitions.length) {
+      html += `<div class="formal-defs-section">
+        <div class="phase-label definition">Formal Definitions</div>
+        <h3>Key Definitions and Theorems</h3>
+        <div class="formal-defs-grid">`;
+      topic.formalDefinitions.forEach(d => {
+        html += `<div class="formal-def-card">
+          <div class="formal-def-term">${d.term}</div>
+          ${d.symbol ? `<div class="formal-def-symbol">${d.symbol}</div>` : ''}
+          <div class="formal-def-body">${d.definition}</div>
+        </div>`;
+      });
+      html += `</div></div>`;
+    }
+
+    /* Interactive Graph Explorer */
+    if (topic.graphExplorer && topic.graphExplorer.length) {
+      html += renderGraphExplorer(topic.graphExplorer, 'Explore: ' + topic.title);
+    }
+
     /* Interactive Problem Types */
     if (topic.exercises) html += renderExercises(topic.exercises, moduleId, topicId);
     if (topic.freeResponse) html += ProblemEngine.renderFreeResponse(topic.freeResponse, moduleId, topicId);
@@ -830,17 +921,11 @@ const MathEngine = (() => {
     } else if (typeof content === 'object' && content.html) {
       bodyHtml = content.html;
     }
-    const phaseId = 'phase-' + type + '-' + Math.random().toString(36).substr(2,6);
     return `
       <div class="phase-section">
         <div class="phase-label ${type}">${label}</div>
-        <div class="phase-header-row">
-          <h3>${title}</h3>
-          <button class="read-aloud-btn" onclick="MathEngine.readAloud('${phaseId}')" title="Listen to this section">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </button>
-        </div>
-        <div class="phase-content" id="${phaseId}">${bodyHtml}</div>
+        <h3>${title}</h3>
+        <div class="phase-content">${bodyHtml}</div>
       </div>
     `;
   }
@@ -1092,12 +1177,61 @@ const MathEngine = (() => {
   }
 
   /* ============================================================
+     INTERACTIVE GRAPH EXPLORER (Desmos)
+     ============================================================ */
+  function renderGraphExplorer(expressions, title) {
+    const containerId = 'desmos-' + Math.random().toString(36).substr(2, 8);
+    let html = `
+      <div class="graph-explorer">
+        <div class="graph-explorer-header">
+          <h4>📊 ${title || 'Interactive Graph Explorer'}</h4>
+          <p class="graph-explorer-hint">Type equations below or modify the preloaded ones. Watch the graph update in real time.</p>
+        </div>
+        <div class="graph-explorer-container" id="${containerId}" style="width:100%;height:400px;border-radius:8px;overflow:hidden;"></div>
+      </div>
+    `;
+
+    setTimeout(() => {
+      const el = document.getElementById(containerId);
+      if (el && typeof Desmos !== 'undefined') {
+        const calc = Desmos.GraphingCalculator(el, {
+          expressions: true,
+          settingsMenu: false,
+          zoomButtons: true,
+          expressionsTopbar: false,
+          border: false,
+          keypad: false,
+          fontSize: 14
+        });
+        if (expressions && expressions.length) {
+          expressions.forEach((expr, i) => {
+            calc.setExpression({
+              id: 'expr' + i,
+              latex: expr.latex,
+              color: expr.color || Desmos.Colors[Object.keys(Desmos.Colors)[i % 6]]
+            });
+          });
+        }
+      }
+    }, 100);
+
+    return html;
+  }
+
+  /* ============================================================
      KATEX MATH RENDERING
      ============================================================ */
   function renderAllMath() {
-    document.querySelectorAll('.math-block, .phase-content, .step-content, .step-why, .exercise-question, .option-btn, .exercise-feedback, .hint-content, .callout, .prereq-definition, .why-box-body, .topic-description, .free-response-card, .problem-setup, .fb-expression, .matching-grid, .mp-part-question, .mp-part-feedback, .drill-question, .sb-step-btn, .sb-placed-step, .drill-results, .match-item').forEach(el => {
+    /* Guard: if KaTeX not loaded yet, retry */
+    if (typeof katex === 'undefined') {
+      setTimeout(renderAllMath, 200);
+      return;
+    }
+    /* Universal selector: catch every container that could hold $...$ math */
+    document.querySelectorAll('.math-block, .phase-content, .step-content, .step-why, .exercise-question, .option-btn, .exercise-feedback, .hint-content, .callout, .prereq-definition, .why-box-body, .topic-description, .free-response-card, .problem-setup, .fb-expression, .matching-grid, .mp-part-question, .mp-part-feedback, .drill-question, .sb-step-btn, .sb-placed-step, .drill-results, .match-item, .fc-back, .fc-front, .flash-card, .concept-text, .why-content, .definition-text, .example-text, #content-inner p, #content-inner li, #content-inner td, #content-inner h3, #content-inner h4, .solution-steps li, .solution-steps p').forEach(el => {
       if (el.dataset.mathRendered === 'true') return;
       let html = el.innerHTML;
+      if (!html.includes('$')) return; /* skip elements without math */
 
       html = html.replace(/\$\$([\s\S]*?)\$\$/g, (match, tex) => {
         try {
@@ -1173,149 +1307,21 @@ const MathEngine = (() => {
     if (overlay) overlay.classList.remove('active');
   }
 
-  /* ---- Text-to-Speech Read Aloud ---- */
-  function readAloud(phaseId) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const el = document.getElementById(phaseId);
-    if (!el) return;
 
-    /* Clone the element to strip MathJax rendered elements */
-    const clone = el.cloneNode(true);
-    clone.querySelectorAll('mjx-container, .MathJax, script[type*="math"], .katex').forEach(m => m.remove());
 
-    let text = clone.innerText || clone.textContent || '';
-
-    /* Clean math notation for speech - ORDER MATTERS */
-    text = text
-      .replace(/\\$/g, '')                                  /* strip $ delimiters */
-
-      /* LaTeX commands → readable */
-      .replace(/\\frac\{([^}]*)\}\{([^}]*)\}/g, '$1 over $2')
-      .replace(/\\sqrt\{([^}]*)\}/g, 'square root of $1')
-      .replace(/\\sqrt\[(\d+)\]\{([^}]*)\}/g, '$1th root of $2')
-      .replace(/\\cdot/g, ' times ')
-      .replace(/\\times/g, ' times ')
-      .replace(/\\div/g, ' divided by ')
-      .replace(/\\le(q)?/g, ' is less than or equal to ')
-      .replace(/\\ge(q)?/g, ' is greater than or equal to ')
-      .replace(/\\ne(q)?/g, ' is not equal to ')
-      .replace(/\\approx/g, ' is approximately ')
-      .replace(/\\infty/g, ' infinity ')
-      .replace(/\\pi/g, ' pi ')
-      .replace(/\\theta/g, ' theta ')
-      .replace(/\\alpha/g, ' alpha ')
-      .replace(/\\beta/g, ' beta ')
-      .replace(/\\gamma/g, ' gamma ')
-      .replace(/\\delta/g, ' delta ')
-      .replace(/\\epsilon/g, ' epsilon ')
-      .replace(/\\sigma/g, ' sigma ')
-      .replace(/\\sum/g, ' the sum of ')
-      .replace(/\\int/g, ' the integral of ')
-      .replace(/\\partial/g, ' partial ')
-      .replace(/\\nabla/g, ' the gradient of ')
-      .replace(/\\log/g, ' log ')
-      .replace(/\\ln/g, ' natural log of ')
-      .replace(/\\sin/g, ' sine ')
-      .replace(/\\cos/g, ' cosine ')
-      .replace(/\\tan/g, ' tangent ')
-      .replace(/\\lim/g, ' the limit of ')
-      .replace(/\\to/g, ' approaches ')
-      .replace(/\\rightarrow/g, ' approaches ')
-      .replace(/\\pm/g, ' plus or minus ')
-      .replace(/\\left[|(]/g, '')
-      .replace(/\\right[|)]/g, '')
-      .replace(/\\[a-zA-Z]+/g, '')                         /* remaining \commands */
-
-      /* Exponents → spoken math (BEFORE stripping ^) */
-      .replace(/\^2(?![0-9])/g, ' squared')
-      .replace(/\^3(?![0-9])/g, ' cubed')
-      .replace(/\^\{([^}]+)\}/g, ' to the power of $1')
-      .replace(/\^(\d+)/g, ' to the power of $1')
-      .replace(/\^([a-zA-Z])/g, ' to the $1')
-      .replace(/\^([-(])/g, ' to the power of $1')
-
-      /* Subscripts → spoken */
-      .replace(/_\{([^}]+)\}/g, ' sub $1 ')
-      .replace(/_(\d)/g, ' sub $1 ')
-      .replace(/_([a-zA-Z])/g, ' sub $1 ')
-
-      /* Fractions without LaTeX (a/b patterns) */
-      .replace(/(\d+)\s*\/\s*(\d+)/g, '$1 over $2')
-
-      /* Common operators */
-      .replace(/([a-zA-Z0-9])\s*=\s*([a-zA-Z0-9])/g, '$1 equals $2')
-      .replace(/([a-zA-Z0-9])\s*\+\s*([a-zA-Z0-9])/g, '$1 plus $2')
-      .replace(/([a-zA-Z0-9])\s*-\s*([a-zA-Z0-9])/g, '$1 minus $2')
-      .replace(/([a-zA-Z0-9])\s*\*\s*([a-zA-Z0-9])/g, '$1 times $2')
-
-      /* Unicode symbols */
-      .replace(/\u2019/g, "'")
-      .replace(/≥/g, ' is greater than or equal to ')
-      .replace(/≤/g, ' is less than or equal to ')
-      .replace(/≠/g, ' is not equal to ')
-      .replace(/→/g, ' approaches ')
-      .replace(/∞/g, ' infinity ')
-      .replace(/π/g, ' pi ')
-      .replace(/θ/g, ' theta ')
-      .replace(/√/g, ' square root of ')
-      .replace(/±/g, ' plus or minus ')
-      .replace(/×/g, ' times ')
-      .replace(/÷/g, ' divided by ')
-      .replace(/∫/g, ' the integral of ')
-      .replace(/∑/g, ' the sum of ')
-      .replace(/∏/g, ' the product of ')
-      .replace(/∂/g, ' partial ')
-      .replace(/∇/g, ' the gradient of ')
-      .replace(/²/g, ' squared ')
-      .replace(/³/g, ' cubed ')
-      .replace(/⁻¹/g, ' inverse ')
-      .replace(/ⁿ/g, ' to the n ')
-
-      /* Strip remaining math artifacts */
-      .replace(/[{}]/g, ' ')
-      .replace(/•/g, '. ')
-      .replace(/\n\s*[-•]\s*/g, '. ')
-      .replace(/\n+/g, '. ')
-      .replace(/\s{2,}/g, ' ')
-      .replace(/\.\s*\./g, '.')
-      .trim();
-
-    if (!text || text.length < 3) return;
-
-    /* Split into sentences for natural pacing */
-    const chunks = text.match(/[^.!?]+[.!?]+/g) || [text];
-    let idx = 0;
-
-    function speakNext() {
-      if (idx >= chunks.length) return;
-      const sentence = chunks[idx].trim();
-      if (!sentence || sentence.length < 2) { idx++; speakNext(); return; }
-
-      const u = new SpeechSynthesisUtterance(sentence);
-      u.rate = 0.92;
-      u.pitch = 1.05;
-
-      /* Prefer female English voice */
-      const voices = window.speechSynthesis.getVoices();
-      const femaleVoice =
-        voices.find(v => v.lang.startsWith('en') && v.name.toLowerCase().includes('female')) ||
-        voices.find(v => v.lang.startsWith('en') && /zira|hazel|susan|jenny|aria|samantha|karen|moira|fiona|victoria/i.test(v.name)) ||
-        voices.find(v => v.lang.startsWith('en') && !v.name.toLowerCase().includes('male')) ||
-        voices.find(v => v.lang.startsWith('en'));
-      if (femaleVoice) u.voice = femaleVoice;
-
-      u.onend = () => { idx++; speakNext(); };
-      u.onerror = () => { idx++; speakNext(); };
-      window.speechSynthesis.speak(u);
+  /* ---- Mini Games Page ---- */
+  function showMiniGames() {
+    const content = document.getElementById('content-inner');
+    const breadcrumbs = document.getElementById('breadcrumbs');
+    if (breadcrumbs) {
+      breadcrumbs.innerHTML = `
+        <span style="cursor:pointer" onclick="MathEngine.goHome()">Home</span>
+        <span class="separator">›</span>
+        <span class="current">Mini Games</span>
+      `;
     }
-
-    /* Voices may load async; wait briefly then speak */
-    if (window.speechSynthesis.getVoices().length === 0) {
-      window.speechSynthesis.onvoiceschanged = () => { speakNext(); };
-    } else {
-      speakNext();
-    }
+    content.innerHTML = MiniGames.renderGameSection();
+    renderAllMath();
   }
 
   /* ============================================================
@@ -1341,7 +1347,8 @@ const MathEngine = (() => {
     showSolution,
     flipCard,
     rateCard,
-    readAloud
+    renderGraphExplorer,
+    showMiniGames
   };
 })();
 

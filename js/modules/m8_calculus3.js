@@ -144,7 +144,12 @@ topics: [
     <p><strong>Why partial derivatives?</strong> Real-world quantities depend on multiple variables: temperature depends on position $(x,y,z)$ AND time $t$. A partial derivative asks: "How does temperature change if I move in the $x$-direction while keeping $y, z, t$ fixed?"</p>
     ${WHY('Why the gradient?', '<p>The gradient $\\nabla f = \\langle f_x, f_y, f_z \\rangle$ points in the direction of steepest increase at each point. Its magnitude is the rate of increase. This is essential for optimization (gradient descent in machine learning) and physics (force = $-\\nabla V$).</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Partial Derivative', symbol: '$\\frac{\\partial f}{\\partial x}$', definition: 'The derivative of $f(x,y)$ with respect to $x$, treating $y$ as a constant. Measures the rate of change in the $x$-direction alone.' },
+      { term: 'Gradient', symbol: '$\\nabla f = \\left\\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\right\\rangle$', definition: 'A vector pointing in the direction of steepest ascent. Its magnitude is the maximum rate of change. Perpendicular to level curves.' },
+      { term: 'Directional Derivative', symbol: '$D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$', definition: 'The rate of change of $f$ in the direction of unit vector $\\hat{u}$. Maximum when $\\hat{u}$ is parallel to $\\nabla f$.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 200" width="400" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -270,7 +275,12 @@ topics: [
     <p><strong>Why multiple integrals?</strong> Single integrals compute area under a curve (1D boundary). Double integrals compute volume under a surface (2D boundary). Triple integrals compute "hypervolume" or mass in 3D regions. Applications: center of mass, moments of inertia, fluid flow, probability.</p>
     ${WHY('Why change coordinates?', '<p>Some regions are simpler in polar ($r, \\theta$), cylindrical ($r, \\theta, z$), or spherical ($\\rho, \\phi, \\theta$) coordinates. Circular regions become rectangles in polar coordinates. The Jacobian accounts for the area/volume distortion when changing variables.</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Double Integral', symbol: '$\\iint_R f(x,y)\\,dA$', definition: 'The volume under the surface $z = f(x,y)$ over region $R$. Computed as iterated integrals: $\\int_a^b \\int_{g_1(x)}^{g_2(x)} f(x,y)\\,dy\\,dx$.' },
+      { term: 'Triple Integral', symbol: '$\\iiint_E f(x,y,z)\\,dV$', definition: 'Integrates a function over a 3D region $E$. Applications: mass, center of mass, moments of inertia. Can use cylindrical or spherical coordinates.' },
+      { term: "Green\\u2019s Theorem", symbol: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA$', definition: 'Relates a line integral around a simple closed curve $C$ to a double integral over the enclosed region $D$. Connects circulation and flux.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 350 220" width="350" height="220" xmlns="http://www.w3.org/2000/svg">

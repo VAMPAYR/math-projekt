@@ -30,7 +30,25 @@
           <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Teleporting Function</h4>
           <p>Consider: $f(x) = \\begin{cases} x^2 & x \\neq 2 \\\\ 10 & x = 2 \\end{cases}$</p>
           <p>As $x \\to 2$, $f(x) \\to 4$. But $f(2) = 10$. The function "teleports" to 10 at $x = 2$. The limit exists ($L = 4$), but the function is <strong>not continuous</strong> at $x = 2$ because $\\lim_{x \\to 2} f(x) \\neq f(2)$.</p></div>` },
-        concept: { html: `
+        formalDefinitions: [
+      { term: 'Limit (Epsilon-Delta)', symbol: '$\\lim_{x \\to a} f(x) = L$', definition: 'For every $\\epsilon > 0$, there exists $\\delta > 0$ such that $0 < |x - a| < \\delta \\implies |f(x) - L| < \\epsilon$. The function value approaches $L$ as $x$ approaches $a$.' },
+      { term: 'Continuity at a Point', symbol: '', definition: '$f$ is continuous at $a$ if: (1) $f(a)$ exists, (2) $\\lim_{x\\to a} f(x)$ exists, and (3) $\\lim_{x\\to a} f(x) = f(a)$. All three conditions must hold.' },
+      { term: 'Intermediate Value Theorem', symbol: '', definition: 'If $f$ is continuous on $[a,b]$ and $N$ is between $f(a)$ and $f(b)$, then there exists $c \\in (a,b)$ such that $f(c) = N$. Continuous functions take all intermediate values.' }
+    ],
+    graphExplorer: [
+      { latex: 'y = \\frac{x^2 - 1}{x - 1}' },
+      { latex: 'y = \\frac{\\sin(x)}{x}' }
+    ],
+    background: {
+      title: 'Why Limits? The Foundation of Calculus',
+      content: '<p>Calculus was invented in the 1600s by <strong>Newton</strong> and <strong>Leibniz</strong> independently. Both needed to solve the same problem: how to compute instantaneous rates of change (derivatives) and accumulated quantities (integrals).</p><p>The concept of a <strong>limit</strong> was not rigorously defined until the 1800s, by <strong>Cauchy</strong> and <strong>Weierstrass</strong>. Before that, Newton used "fluxions" and Leibniz used "infinitesimals," both of which were logically shaky.</p><p>The epsilon-delta definition ($\\forall \\epsilon > 0, \\exists \\delta > 0$) was Weierstrass\\u2019s contribution. It replaced vague notions of "approaching" with a precise logical statement. This is how every calculus theorem is proven today.</p><p><strong>Why limits matter in practice:</strong> The speed of a car at an instant is the limit of average speeds over shorter and shorter intervals. The area under a curve is the limit of sums of thinner and thinner rectangles. Without limits, these concepts have no rigorous meaning.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $\\lim_{x \\to a} f(x) = L$ mean in plain language?', answer: 'As $x$ gets closer and closer to $a$ (from both sides), $f(x)$ gets closer and closer to $L$. You never actually plug in $x = a$; you approach it. The limit cares about the journey. You are asking: where is this heading? You are not asking where it lands.' },
+      { question: 'Why can\\u2019t I just plug in the value?', answer: 'Sometimes you can! If $f$ is continuous at $a$, then $\\lim_{x \\to a} f(x) = f(a)$. But for $\\frac{x^2 - 1}{x - 1}$ at $x = 1$, plugging in gives $\\frac{0}{0}$, which is undefined. The limit still exists ($= 2$) because you factor and cancel: $\\frac{(x+1)(x-1)}{x-1} = x + 1 \\to 2$.' },
+      { question: 'What is $\\frac{0}{0}$? Is it 0 or undefined?', answer: '$\\frac{0}{0}$ is called an "indeterminate form." It does not have a single fixed value. Depending on HOW both numerator and denominator approach zero, the limit could be any number, infinity, or nothing. You must simplify further to find the actual answer.' }
+    ],
+    concept: { html: `
           <div class="callout callout-key"><h4>Intuitive Definition of a Limit</h4>
           <p>We write $\\lim_{x \\to a} f(x) = L$ and say "the limit of $f(x)$ as $x$ approaches $a$ equals $L$" if we can make $f(x)$ as close to $L$ as we wish by restricting $x$ sufficiently close to $a$ (but $x \\neq a$). The value $f(a)$ is irrelevant; limits describe behavior <em>near</em> a point, not <em>at</em> that point.</p></div>
 
@@ -231,7 +249,26 @@
           <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Slope at a Point</h4>
           <p>A straight line has a constant slope. But what is the "slope" of $f(x) = x^2$ at $x = 3$? The curve is bending; there is no single slope.</p>
           <p>Solution: draw the <strong>tangent line</strong> (the line that just touches the curve at that point). Its slope IS the derivative: $f'(3) = 6$.</p></div>` },
-        concept: { html: `
+        formalDefinitions: [
+      { term: 'Derivative', symbol: "$f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}$", definition: 'The instantaneous rate of change of $f$ at $x = a$. Geometrically: the slope of the tangent line to the graph at $(a, f(a))$.' },
+      { term: 'Differentiable', symbol: '', definition: '$f$ is differentiable at $a$ if $f\\prime(a)$ exists. Differentiability implies continuity, but continuity does NOT imply differentiability (e.g., $|x|$ at $x=0$).' },
+      { term: 'Chain Rule', symbol: '$(f \\circ g)\\prime(x) = f\\prime(g(x)) \\cdot g\\prime(x)$', definition: 'The derivative of a composition. Outer derivative evaluated at the inner function, multiplied by the inner derivative.' }
+    ],
+    graphExplorer: [
+      { latex: 'f(x) = x^3 - 3x' },
+      { latex: "g(x) = f'(x)" }
+    ],
+    background: {
+      title: 'Why Derivatives? Instantaneous Change',
+      content: '<p>The derivative answers: "How fast is this quantity changing <em>right now</em>?" Average speed is $\\frac{\\Delta\\text{distance}}{\\Delta\\text{time}}$. Instantaneous speed is the limit as $\\Delta t \\to 0$.</p><p>Leibniz wrote it as $\\frac{dy}{dx}$, suggesting an infinitely small ratio. Newton wrote it as $\\dot{y}$ (a dot above the variable). Both notations are still used: Leibniz notation in most math and physics, Newton\\u2019s in mechanics.</p><p><strong>Why the chain rule works:</strong> If $y$ depends on $u$ which depends on $x$, then a small change in $x$ causes a small change in $u$, which causes a small change in $y$. The chain rule $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$ captures this cascading effect. Leibniz notation makes this look like fraction cancellation, which is intentional.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $\\frac{d}{dx}$ mean?', answer: 'Read it as "the derivative with respect to $x$ of..." It is an operator: you apply it to a function. $\\frac{d}{dx}[x^2] = 2x$. It asks: "How fast does this function change as $x$ changes?"' },
+      { question: 'Why is the power rule $\\frac{d}{dx}[x^n] = nx^{n-1}$?', answer: 'Start from the definition: $\\frac{(x+h)^n - x^n}{h}$ as $h \\to 0$. Expanding $(x+h)^n$ using the binomial theorem, the first term after $x^n$ is $nx^{n-1}h$. Dividing by $h$ gives $nx^{n-1}$ plus terms that vanish as $h \\to 0$. The reason you multiply by $n$ comes from the binomial theorem, which counts how many ways the product can change.' },
+      { question: 'Why do we multiply by the exponent AND reduce it by one?', answer: 'The exponent tells you how many copies of $x$ are multiplied together. The derivative counts how much the product changes when $x$ changes. Each of the $n$ copies contributes to the change, giving factor $n$. One copy gets "used up" by differentiation, dropping the power to $n-1$.' },
+      { question: 'When do I use the chain rule?', answer: 'Whenever you have a function inside another function. $\\sin(x^2)$ is $\\sin(\\text{something})$ where the something is $x^2$. The chain rule says: differentiate the outer ($\\cos(x^2)$), then multiply by the derivative of the inner ($2x$). Result: $2x\\cos(x^2)$.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">

@@ -32,7 +32,23 @@
       hook: { html: `
         <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Angles in a Triangle</h4>
         <p>Draw any triangle. Measure all three angles. Add them up. You always get $180°$. Why? Tear the three corners off a paper triangle and arrange them along a straight line. They fit perfectly. A straight line is $180°$, and the three angles of a triangle reconstruct exactly one straight line.</p></div>` },
-      concept: { html: `
+      formalDefinitions: [
+      { term: 'Point', symbol: '', definition: 'A location in space with no dimension (no length, width, or height). Represented by a dot and named with a capital letter.' },
+      { term: 'Line', symbol: '$\\overleftrightarrow{AB}$', definition: 'A straight path extending infinitely in both directions. Defined by any two distinct points. Has one dimension (length only).' },
+      { term: 'Angle', symbol: '$\\angle ABC$', definition: 'Formed by two rays sharing a common endpoint (vertex). Measured in degrees ($0^\\circ$ to $360^\\circ$) or radians ($0$ to $2\\pi$).' },
+      { term: 'Parallel Lines', symbol: '$\\ell_1 \\parallel \\ell_2$', definition: 'Lines in the same plane that never intersect. Have equal slopes. If cut by a transversal, alternate interior angles are equal.' },
+      { term: 'Perpendicular Lines', symbol: '$\\ell_1 \\perp \\ell_2$', definition: 'Lines that intersect at a $90^\\circ$ angle. The product of their slopes is $-1$: $m_1 \\cdot m_2 = -1$.' }
+    ],
+    background: {
+      title: 'Why Geometry? Measuring the Earth',
+      content: '<p>The word <strong>geometry</strong> comes from Greek: <em>geo</em> (earth) + <em>metron</em> (measure). It literally means "measuring the earth." Egyptians needed it to re-survey farmland after the Nile flooded every year.</p><p><strong>Euclid\\u2019s Elements</strong> (300 BCE) organized geometry into axioms, definitions, and proofs. It remained the standard textbook for over 2,000 years. The axiomatic method Euclid used (start with obvious truths, derive everything else) became the model for all of mathematics.</p><p><strong>Why angles are measured in degrees:</strong> The Babylonians used a base-60 number system. Since 360 is close to 365 (days in a year) and divisible by 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, and 180, they chose $360^\\circ$ for a full rotation. This convention persists today.</p>'
+    },
+    mathGrammar: [
+      { question: 'Why do angles in a triangle always add to $180^\\circ$?', answer: 'Draw a triangle and extend one side. The exterior angle plus the interior angle form a straight line ($180^\\circ$). Now use the fact that alternate interior angles (from parallel lines) are equal. This forces the three interior angles to sum to exactly $180^\\circ$.' },
+      { question: 'What does "perpendicular" mean and why does $m_1 \\cdot m_2 = -1$?', answer: 'Perpendicular means "at right angles" ($90^\\circ$). If one line goes up 2 for every 1 across (slope $2$), the perpendicular line must go down 1 for every 2 across (slope $-\\frac{1}{2}$). The product $2 \\times (-\\frac{1}{2}) = -1$ always holds for perpendicular lines.' },
+      { question: 'Why is area measured in "square units"?', answer: 'Area measures how many unit squares fit inside a shape. A rectangle $3 \\times 4$ contains $12$ squares of size $1 \\times 1$. The word "square" in "square meters" refers to these unit squares, not to the shape being measured.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 500 130" width="500" height="130" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +206,13 @@
       hook: { html: `
         <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Pythagorean Proof</h4>
         <p>Draw a right triangle with legs $3$ and $4$. Build a square on each side. The squares have areas $9$, $16$, and $25$. Notice: $9 + 16 = 25$. The area of the square on the hypotenuse equals the sum of the areas on the legs. This works for ANY right triangle.</p></div>` },
-      concept: { html: `
+      formalDefinitions: [
+      { term: 'Triangle', symbol: '$\\triangle ABC$', definition: 'A polygon with three sides and three angles. The sum of interior angles is always $180^\\circ$.' },
+      { term: 'Pythagorean Theorem', symbol: '$a^2 + b^2 = c^2$', definition: 'In a right triangle, the square of the hypotenuse equals the sum of the squares of the legs. Only holds for right triangles.' },
+      { term: 'Congruence (SSS, SAS, ASA, AAS)', symbol: '$\\triangle ABC \\cong \\triangle DEF$', definition: 'Two triangles are congruent if they have the same shape and size. All corresponding sides and angles are equal.' },
+      { term: 'Similarity', symbol: '$\\triangle ABC \\sim \\triangle DEF$', definition: 'Two triangles are similar if they have the same shape (same angles). Corresponding sides are proportional: $\\frac{a}{d} = \\frac{b}{e} = \\frac{c}{f}$.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 280" width="400" height="280" xmlns="http://www.w3.org/2000/svg">

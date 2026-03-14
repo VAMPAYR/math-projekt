@@ -147,7 +147,28 @@ topics: [
   hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: The Balance Scale</h4>
     <p>Imagine a balance scale perfectly balanced with $2x + 5$ grams on the left and $13$ grams on the right. To find $x$, you remove 5 grams from BOTH sides (keeping balance): $2x = 8$. Then divide both sides by 2: $x = 4$.</p>
     <p>This "balance" metaphor is the core idea: whatever you do to one side, you MUST do to the other.</p></div>` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Linear Equation', symbol: '$ax + b = 0$', definition: 'An equation where the variable appears only to the first power. General form: $ax + b = 0$ where $a \\neq 0$. Has exactly one solution: $x = -b/a$.' },
+      { term: 'Solution Set', symbol: '$\\{x : ax + b = 0\\}$', definition: 'The set of all values of $x$ that make the equation true. For a linear equation in one variable, the solution set contains exactly one element, or is empty (inconsistent), or equals $\\mathbb{R}$ (identity).' },
+      { term: 'Equivalent Equations', symbol: '', definition: 'Two equations with identical solution sets. Operations that preserve equivalence: adding/subtracting the same value from both sides, multiplying/dividing both sides by a nonzero constant.' }
+    ],
+    graphExplorer: [
+      { latex: 'y = 2x + 1' },
+      { latex: 'y = -x + 3' },
+      { latex: 'y = 0.5x - 2' }
+    ],
+    background: {
+      title: 'Why Do We Solve Equations?',
+      content: '<p>An equation is a statement that two expressions are equal. <strong>Solving</strong> an equation means finding all values that make this statement true.</p><p><strong>Why we add/subtract to both sides:</strong> An equation is a balance. If you add the same weight to both sides of a balance scale, it stays balanced. This is the Addition Property of Equality: if $a = b$, then $a + c = b + c$.</p><p><strong>Why we multiply/divide both sides:</strong> Multiplication Property of Equality: if $a = b$, then $ac = bc$ (provided $c \\neq 0$). Division by zero is forbidden because it destroys information: $0 \\cdot 5 = 0 \\cdot 7$ does not mean $5 = 7$.</p><p>Every step in solving an equation must be <em>reversible</em>. If you do something that loses information (like squaring both sides), you must check your answers because you may have introduced false solutions.</p>'
+    },
+    mathGrammar: [
+      { question: 'Why do we "do the same thing to both sides"?', answer: 'An equation is a balance scale. The left side weighs the same as the right. If you add 5 kg to just one side, the scale tips. You must add 5 kg to BOTH sides to keep it balanced. This is the golden rule. Everything in equation-solving comes back to this idea.' },
+      { question: 'How do I decide which operation to use?', answer: 'Look at what is happening TO the variable and do the OPPOSITE. If $x$ is being added to ($x + 3 = 7$), subtract. If $x$ is being multiplied ($3x = 12$), divide. If $x$ is being subtracted from ($x - 5 = 2$), add. You are peeling away layers. Whatever was done to the variable, do the opposite to undo it.' },
+      { question: 'What does "isolate the variable" mean?', answer: 'Get the variable alone on one side of the equation. Everything else goes to the other side using inverse operations. $3x + 5 = 14$ becomes $3x = 9$ (subtract 5), then $x = 3$ (divide by 3). Each step peels away one layer.' },
+      { question: 'When is an equation unsolvable?', answer: 'When simplification leads to a false statement like $0 = 5$. This means no value of $x$ makes the equation true. Example: $2x + 1 = 2x + 5$ simplifies to $1 = 5$, which is never true.' },
+      { question: 'What does a variable represent?', answer: 'A variable is a placeholder for an unknown number. The letter $x$ is the most common, but any letter works. In $3x + 2 = 11$, the variable $x$ represents the one specific number that makes this statement true.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">

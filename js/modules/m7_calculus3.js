@@ -30,7 +30,17 @@
           <div class="callout callout-puzzle"><h4>🧩 Puzzle: The River Crossing</h4>
           <p>You swim at 3 m/s across a river that flows at 4 m/s. In what direction do you actually move, and how fast?</p>
           <p>Your velocity and the river's velocity are <strong>vectors</strong>: they add. The resultant speed is $\\sqrt{3^2 + 4^2} = 5$ m/s at an angle $\\theta = \\arctan(4/3) \\approx 53°$ downstream. Vector addition explains why you drift.</p></div>` },
-        concept: { html: `
+        formalDefinitions: [
+      { term: 'Vector', symbol: '$\\vec{v} = \\langle v_1, v_2, \\ldots, v_n \\rangle$', definition: 'An ordered $n$-tuple of real numbers. Has both magnitude ($|\\vec{v}| = \\sqrt{v_1^2 + \\cdots + v_n^2}$) and direction. Elements of the vector space $\\mathbb{R}^n$.' },
+      { term: 'Dot Product', symbol: '$\\vec{a} \\cdot \\vec{b} = \\sum a_ib_i = |\\vec{a}||\\vec{b}|\\cos\\theta$', definition: 'Returns a scalar. Equal to zero if and only if the vectors are orthogonal (perpendicular). Used to compute projections and angles.' },
+      { term: 'Cross Product', symbol: '$\\vec{a} \\times \\vec{b}$', definition: 'Defined in $\\mathbb{R}^3$ only. Returns a vector perpendicular to both $\\vec{a}$ and $\\vec{b}$. Magnitude: $|\\vec{a}||\\vec{b}|\\sin\\theta$ (area of parallelogram). Anti-commutative: $\\vec{a} \\times \\vec{b} = -(\\vec{b} \\times \\vec{a})$.' }
+    ],
+    mathGrammar: [
+      { question: 'What is a vector and how is it different from a number?', answer: 'A number (scalar) has only magnitude: "5 kilograms." A vector has magnitude AND direction: "5 meters east." In notation: $\\vec{v} = \\langle 3, 4 \\rangle$ means 3 units right and 4 units up. The arrow above the letter signals it is a vector, not a plain number.' },
+      { question: 'Why does the dot product give a number, not a vector?', answer: '$\\vec{a} \\cdot \\vec{b} = a_1b_1 + a_2b_2$ adds up products of matching components. This sum is a single number. It measures how much two vectors point in the same direction. If perpendicular, the dot product is zero.' },
+      { question: 'When do I use dot product vs cross product?', answer: '<strong>Dot product</strong>: when you need an angle, a projection, or a number (e.g., work = force dot displacement). <strong>Cross product</strong>: when you need a vector perpendicular to two others (e.g., torque, surface normals). Dot gives a scalar; cross gives a vector.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 350 250" width="350" height="250" xmlns="http://www.w3.org/2000/svg">

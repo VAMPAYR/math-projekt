@@ -136,7 +136,12 @@ topics: [
     <p><strong>Why sequences?</strong> A sequence $a_1, a_2, a_3, \\ldots$ is the raw material for series ($\\sum a_n$). Knowing whether $a_n \\to 0$ is the first test for series convergence. Sequences model growth patterns: population growth (geometric), even spacing (arithmetic), and decay ($1/n$).</p>
     ${WHY('Sequence vs. Series', '<p>A <strong>sequence</strong> is a list: $1, 1/2, 1/4, 1/8, \\ldots$ A <strong>series</strong> is a sum: $1 + 1/2 + 1/4 + 1/8 + \\cdots$ The sequence gives the individual terms; the series asks what happens when you add them all up.</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Sequence', symbol: '$\\{a_n\\}_{n=1}^\\infty$', definition: 'A function from $\\mathbb{N}$ to $\\mathbb{R}$. Each natural number $n$ maps to a real number $a_n$. A sequence converges to $L$ if $\\lim_{n\\to\\infty} a_n = L$.' },
+      { term: 'Series', symbol: '$\\sum_{n=1}^\\infty a_n$', definition: 'The sum of the terms of a sequence. Defined as $\\lim_{N\\to\\infty} \\sum_{n=1}^N a_n$ (limit of partial sums). Converges if this limit exists and is finite.' },
+      { term: 'Geometric Series', symbol: '$\\sum_{n=0}^\\infty ar^n = \\frac{a}{1-r}$', definition: 'Converges if and only if $|r| < 1$. The sum equals $\\frac{a}{1-r}$. Diverges if $|r| \\geq 1$.' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Arithmetic Sequences</h4>
     <p>Each term differs from the previous by a constant <strong>common difference</strong> $d$:</p>
     <p>$a_n = a_1 + (n-1)d$</p>

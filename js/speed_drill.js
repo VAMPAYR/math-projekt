@@ -392,6 +392,7 @@ const SpeedDrill = (() => {
     const questionEl = document.getElementById('drill-question');
     if (questionEl) {
       questionEl.innerHTML = drillState.currentProblem.question;
+      questionEl.removeAttribute('data-math-rendered');
       setTimeout(() => MathEngine.renderAllMath(), 30);
     }
 

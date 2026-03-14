@@ -272,7 +272,12 @@ topics: [
   whyExists: { html: `
     <p><strong>Why applications?</strong> Derivatives answer real questions: What dimensions maximize volume? Where is profit maximized? When does a projectile reach peak height? The derivative's sign tells us WHERE a function increases/decreases and WHERE extrema occur.</p>
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Critical Point', symbol: '', definition: 'A value $c$ in the domain of $f$ where $f\\prime(c) = 0$ or $f\\prime(c)$ does not exist. Local extrema can only occur at critical points (Fermat\\u2019s Theorem).' },
+      { term: 'Mean Value Theorem', symbol: '', definition: 'If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists $c \\in (a,b)$ such that $f\\prime(c) = \\frac{f(b) - f(a)}{b - a}$. The average rate of change equals the instantaneous rate somewhere.' },
+      { term: 'Concavity', symbol: '', definition: '$f$ is concave up on an interval if $f\\prime\\prime > 0$ (tangent lines lie below the graph). Concave down if $f\\prime\\prime < 0$. Inflection point: where concavity changes.' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Mean Value Theorem (MVT)</h4>
     <p>If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $\\exists c \\in (a,b)$ such that:</p>
     <div class="math-block">$$f'(c) = \\frac{f(b) - f(a)}{b - a}$$</div>
@@ -425,7 +430,22 @@ topics: [
     <p><strong>Why integration?</strong> Differentiation breaks things apart (rates). Integration puts them back together (totals). If you know the velocity at every instant, integration gives total distance. If you know the rate of production, integration gives total output.</p>
     ${WHY('The FTC connects derivatives and integrals', '<p>The <strong>Fundamental Theorem of Calculus</strong> states: $\\int_a^b f(x)\\,dx = F(b) - F(a)$ where $F\' = f$. Computing an area (a geometric problem) reduces to finding an antiderivative (an algebraic problem). This is one of the most important theorems in all of mathematics.</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Definite Integral', symbol: '$\\int_a^b f(x)\\,dx$', definition: 'The signed area between the graph of $f$ and the $x$-axis from $x=a$ to $x=b$. Defined as the limit of Riemann sums: $\\lim_{n\\to\\infty} \\sum_{i=1}^n f(x_i^*)\\Delta x$.' },
+      { term: 'Antiderivative', symbol: '$F\\prime(x) = f(x)$', definition: 'A function $F$ whose derivative is $f$. Not unique: if $F$ is an antiderivative, so is $F + C$ for any constant $C$.' },
+      { term: 'Fundamental Theorem of Calculus', symbol: '', definition: 'Part 1: $\\frac{d}{dx}\\int_a^x f(t)\\,dt = f(x)$. Part 2: $\\int_a^b f(x)\\,dx = F(b) - F(a)$ where $F\\prime = f$. Links differentiation and integration as inverse operations.' }
+    ],
+    background: {
+      title: 'The Fundamental Theorem: Why Integration and Differentiation Are Inverses',
+      content: '<p>The <strong>Fundamental Theorem of Calculus</strong> (FTC) is arguably the most important theorem in mathematics. It says that differentiation and integration are inverse operations, like addition and subtraction.</p><p><strong>Part 1:</strong> If you accumulate a quantity at a rate $f(x)$, then the rate of change of the accumulated total is $f(x)$ again. Accumulating and then differentiating brings you back to where you started.</p><p><strong>Part 2:</strong> To compute $\\int_a^b f(x)\\,dx$, you do not need to sum infinitely many rectangles. You just find any antiderivative $F$ and compute $F(b) - F(a)$. This transforms an impossible infinite sum into a simple subtraction.</p><p>Before the FTC (1600s), computing areas required exhausting geometric constructions. After the FTC, the same computation takes seconds. This is what made modern physics and engineering possible.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $\\int f(x)\\,dx$ mean?', answer: 'Read it as "the integral of $f(x)$ with respect to $x$." It asks: "What function, when differentiated, gives $f(x)$?" The $dx$ tells you which variable you are integrating over. The $\\int$ symbol is a stretched "S" for "sum."' },
+      { question: 'Why is there a $+ C$ at the end of indefinite integrals?', answer: 'Because many functions have the same derivative. $\\frac{d}{dx}[x^2] = 2x$ and $\\frac{d}{dx}[x^2 + 7] = 2x$. The constant vanishes when you differentiate. So the antiderivative of $2x$ is $x^2 + C$ where $C$ is ANY constant. You need more information (an initial condition) to find the specific $C$.' },
+      { question: 'Why does $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$?', answer: 'Because the reverse of the power rule must undo it. If $\\frac{d}{dx}[x^{n+1}] = (n+1)x^n$, then to get $x^n$ from a derivative, the original must have been $\\frac{x^{n+1}}{n+1}$. Dividing by $(n+1)$ cancels the coefficient the power rule creates.' },
+      { question: 'What is the difference between definite and indefinite integrals?', answer: 'Indefinite: $\\int f(x)\\,dx = F(x) + C$ (a family of functions). Definite: $\\int_a^b f(x)\\,dx = F(b) - F(a)$ (a single number). The definite integral computes the accumulated total (area, distance, etc.) between $a$ and $b$.' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Basic Antiderivative Rules</h4>
     <ul>
       <li><strong>Power Rule:</strong> $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (for $n \\neq -1$)</li>

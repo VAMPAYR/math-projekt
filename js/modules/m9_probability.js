@@ -19,7 +19,7 @@ topics: [
   title: 'Counting Principles & Probability',
   description: 'How to count outcomes systematically (permutations and combinations) and assign probabilities to events.',
   prereqRecap: [
-    { term: 'Set', definition: 'A collection of distinct objects. $|A|$ = number of elements (Module 1).' },
+    { term: 'Set', definition: 'A collection of distinct objects (just a group of things). $|A|$ = number of elements (Module 1).' },
     { term: 'Fraction', definition: '$\\frac{a}{b}$ where $a$ is the part and $b$ is the whole. Probability is a fraction between 0 and 1.' },
     { term: 'Factorial', definition: '$n! = n \\times (n-1) \\times \\cdots \\times 2 \\times 1$. $0! = 1$ by convention. $5! = 120$.' }
   ],
@@ -27,7 +27,23 @@ topics: [
     <p><strong>Why probability?</strong> Uncertainty is unavoidable: weather, medical diagnoses, financial markets, experimental outcomes. Probability provides a rigorous mathematical framework for reasoning about uncertain events, replacing guesswork with calculation.</p>
     ${WHY('Why does $0! = 1$?', '<p>Combinatorial reasoning: there is exactly 1 way to arrange 0 objects (do nothing). Algebraically: $n! = n \\times (n-1)!$, so $1! = 1 \\times 0!$, forcing $0! = 1$. The empty product convention in mathematics defines a product over no factors as 1 (the multiplicative identity).</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Sample Space', symbol: '$\\Omega$', definition: 'The set of all possible outcomes of an experiment. For rolling a die: $\\Omega = \\{1,2,3,4,5,6\\}$.' },
+      { term: 'Event', symbol: '$A \\subseteq \\Omega$', definition: 'A subset of the sample space. The event "rolling even" is $A = \\{2,4,6\\}$.' },
+      { term: 'Probability Axioms (Kolmogorov)', symbol: '', definition: '(1) $P(A) \\geq 0$ for all events $A$. (2) $P(\\Omega) = 1$. (3) For mutually exclusive events: $P(A \\cup B) = P(A) + P(B)$.' },
+      { term: 'Conditional Probability', symbol: '$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$', definition: 'The probability of $A$ given that $B$ has occurred. Defined only when $P(B) > 0$. Foundation of Bayes\\u2019 Theorem.' },
+      { term: 'Independence', symbol: '$P(A \\cap B) = P(A) \\cdot P(B)$', definition: 'Events $A$ and $B$ are independent if the occurrence of one does not affect the probability of the other.' }
+    ],
+    background: {
+      title: 'Why Probability? Quantifying Uncertainty',
+      content: '<p><strong>Probability</strong> was born from gambling. In 1654, <strong>Pascal</strong> and <strong>Fermat</strong> exchanged letters about how to split the stakes in an unfinished game of chance. Their correspondence founded probability theory.</p><p><strong>Why counting matters:</strong> To compute probability, you need to count favorable outcomes and total outcomes. Combinatorics (the mathematics of counting) is therefore inseparable from probability.</p><p><strong>Why $P(A) = \\frac{\\text{favorable}}{\\text{total}}$ works:</strong> This formula assumes all outcomes are equally likely (a fair coin, a fair die). When outcomes are not equally likely, you assign weights. The Kolmogorov axioms generalize this to arbitrarily complex situations.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $P(A) = 0.3$ mean?', answer: 'If you repeated the experiment infinitely many times, event $A$ would happen about $30\\%$ of the time. $P = 0$ means impossible. $P = 1$ means certain. Everything else falls between.' },
+      { question: 'Why do we multiply probabilities for independent events?', answer: '$P(A \\text{ and } B) = P(A) \\times P(B)$ when $A$ and $B$ do not affect each other. A coin flip ($0.5$) and a die roll ($\\frac{1}{6}$) are independent. The chance of both happening is $0.5 \\times \\frac{1}{6} = \\frac{1}{12}$. Multiplication counts the fraction of the fraction that satisfies both.' },
+      { question: 'When do I add vs multiply probabilities?', answer: '<strong>Add</strong> when you want $A$ OR $B$ (either one): $P(A \\cup B)$. <strong>Multiply</strong> when you want $A$ AND $B$ (both): $P(A \\cap B)$. "Or" expands possibilities (add). "And" restricts them (multiply).' }
+    ],
+    concept: { html: `
     <div class="callout callout-key"><h4>Counting Principles</h4>
     <ul>
       <li><strong>Multiplication Principle:</strong> If task A has $m$ outcomes and task B has $n$ outcomes, then A followed by B has $m \\times n$ outcomes.</li>

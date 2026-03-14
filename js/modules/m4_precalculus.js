@@ -31,7 +31,30 @@ topics: [
   ` },
   hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: The Vertical Line Test</h4>
     <p>Draw any curve on the coordinate plane. Sweep a vertical line across it. If any vertical line hits the curve more than once, the curve does NOT represent a function. Why? Because for that $x$-value, there would be two $y$-values (two outputs for one input).</p></div>` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Function', symbol: '$f: A \\to B$', definition: 'A rule that assigns to each element $x \\in A$ exactly one element $f(x) \\in B$. $A$ is the domain, $B$ is the codomain. The range is $\\{f(x) : x \\in A\\} \\subseteq B$.' },
+      { term: 'Domain', symbol: '$\\text{Dom}(f)$', definition: 'The set of all input values for which the function is defined. For $f(x) = \\frac{1}{x}$, $\\text{Dom}(f) = \\mathbb{R} \\setminus \\{0\\}$.' },
+      { term: 'Range', symbol: '$\\text{Ran}(f)$', definition: 'The set of all output values that the function actually produces. For $f(x) = x^2$, $\\text{Ran}(f) = [0, \\infty)$.' },
+      { term: 'Injective (One-to-One)', symbol: '', definition: '$f(a) = f(b) \\implies a = b$. Different inputs always produce different outputs. Passes the horizontal line test.' },
+      { term: 'Surjective (Onto)', symbol: '', definition: 'For every $y \\in B$, there exists $x \\in A$ such that $f(x) = y$. Every element of the codomain is hit.' },
+      { term: 'Bijective', symbol: '', definition: 'Both injective and surjective. Has an inverse function $f^{-1}: B \\to A$.' }
+    ],
+    graphExplorer: [
+      { latex: 'y = x^2' },
+      { latex: 'y = \\sqrt{x}' },
+      { latex: 'y = \\frac{1}{x}' }
+    ],
+    background: {
+      title: 'Why Functions? The Language of Science',
+      content: '<p>A <strong>function</strong> is a rule that converts one quantity into another, with no ambiguity. Every input produces exactly one output. This strict definition is what makes functions useful: they are predictable.</p><p><strong>Why domain matters:</strong> You cannot take the square root of a negative number (in $\\mathbb{R}$). You cannot divide by zero. The domain tells you which inputs are valid. Ignoring domain restrictions leads to contradictions and false results.</p><p><strong>Why functions are the language of science:</strong> Every physical law is expressed as a function. $F = ma$ (force is a function of mass and acceleration). $E = mc^2$ (energy is a function of mass). $v = at$ (velocity is a function of time). Without functions, we cannot state any quantitative relationship.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $f(x)$ mean?', answer: '$f(x)$ is read "f of x." It means: apply the function $f$ to the input $x$. If $f(x) = 2x + 1$, then $f(3) = 2(3) + 1 = 7$. The parentheses here do NOT mean multiplication. They mean: feed this value into the function.' },
+      { question: 'Why do we use functions?', answer: 'Functions formalize the idea of a rule that converts inputs to outputs. Every formula in science is a function: distance = speed $\\times$ time, force = mass $\\times$ acceleration. Functions let us predict, compute, and communicate relationships precisely.' },
+      { question: 'How do I find the domain?', answer: 'Ask: "What inputs would break this function?" Two common restrictions: (1) Cannot divide by zero. (2) Cannot take the square root of a negative number (in real numbers). The domain is EVERYTHING ELSE.' },
+      { question: 'What does "undefined" mean?', answer: 'The function has no output for that input. $f(x) = \\frac{1}{x}$ is undefined at $x = 0$ because $\\frac{1}{0}$ has no answer. The function literally has no answer for that input. It breaks.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">

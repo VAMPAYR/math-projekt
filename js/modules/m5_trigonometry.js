@@ -27,7 +27,29 @@ topics: [
     <p><strong>Why radians?</strong> Degrees are arbitrary (360 was chosen by Babylonians for calendar convenience). Radians connect angle measure directly to arc length: an angle of $\\theta$ radians subtends an arc of length $r\\theta$ on a circle of radius $r$. This makes calculus formulas clean: $\\frac{d}{dx}\\sin(x) = \\cos(x)$ works ONLY in radians.</p>
     ${WHY('Why the unit circle?', '<p>The unit circle ($r = 1$) lets us define $\\cos\\theta$ and $\\sin\\theta$ as the $x$ and $y$ coordinates of the point at angle $\\theta$. This extends trig beyond right triangles to ALL angles, including negative and angles $ \\gt 360°$.</p>')}
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Unit Circle', symbol: '$x^2 + y^2 = 1$', definition: 'Circle of radius 1 centered at the origin. For angle $\\theta$ measured from the positive $x$-axis, the point $(\\cos\\theta, \\sin\\theta)$ lies on this circle.' },
+      { term: 'Sine', symbol: '$\\sin\\theta$', definition: 'The $y$-coordinate of the point on the unit circle at angle $\\theta$. Period: $2\\pi$. Range: $[-1, 1]$. Odd function: $\\sin(-\\theta) = -\\sin\\theta$.' },
+      { term: 'Cosine', symbol: '$\\cos\\theta$', definition: 'The $x$-coordinate of the point on the unit circle at angle $\\theta$. Period: $2\\pi$. Range: $[-1, 1]$. Even function: $\\cos(-\\theta) = \\cos\\theta$.' },
+      { term: 'Tangent', symbol: '$\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$', definition: 'Undefined when $\\cos\\theta = 0$ (at $\\theta = \\frac{\\pi}{2} + n\\pi$). Period: $\\pi$. Range: $(-\\infty, \\infty)$.' },
+      { term: 'Radian', symbol: '', definition: 'The angle subtended by an arc equal in length to the radius. $2\\pi$ radians = $360^\\circ$. $1$ radian $\\approx 57.3^\\circ$. Radians are dimensionless.' }
+    ],
+    graphExplorer: [
+      { latex: 'y = \\sin(x)' },
+      { latex: 'y = \\cos(x)' },
+      { latex: 'y = \\tan(x)' }
+    ],
+    background: {
+      title: 'Why "Cosine"? The Etymology of Trigonometry',
+      content: '<p>The word <strong>trigonometry</strong> comes from Greek: <em>trigonon</em> (triangle) + <em>metron</em> (measure). It literally means "triangle measurement."</p><p><strong>Sine</strong> has a bizarre etymology. Indian mathematicians called the half-chord <em>jya-ardha</em>, shortened to <em>jya</em>. Arab translators transliterated this as <em>jiba</em>. Since Arabic is written without vowels, later readers misread <em>jb</em> as <em>jaib</em> (meaning "pocket" or "bay"). Latin translators then translated <em>jaib</em> as <em>sinus</em> (meaning "bay" or "fold"), which became <strong>sine</strong>.</p><p><strong>Cosine</strong> means "complement\\u2019s sine" (Latin: <em>cosinus</em> = co-sinus). It is the sine of the complementary angle: $\\cos\\theta = \\sin(90^\\circ - \\theta)$. This is why it is called <em>co</em>sine.</p><p><strong>Tangent</strong> comes from Latin <em>tangere</em> (to touch). The tangent line touches the circle at exactly one point. The length of this touching line segment, from the point of tangency to the x-axis, gives the tangent ratio.</p><p><strong>Why does trigonometry exist?</strong> Ancient civilizations needed it to navigate by stars, survey land, and build structures. Today, it models anything that oscillates: sound waves, light waves, alternating current, and orbital mechanics.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does $\\sin(\\theta)$ actually compute?', answer: 'Draw a right triangle with angle $\\theta$. $\\sin(\\theta) = \\frac{\\text{opposite side}}{\\text{hypotenuse}}$. On the unit circle (radius 1), it is simply the $y$-coordinate of the point at angle $\\theta$. It tells you how high or low the point sits compared to the center.' },
+      { question: 'Why does $\\cos(\\theta)$ exist separately from $\\sin(\\theta)$?', answer: '$\\cos(\\theta)$ measures the horizontal position (the $x$-coordinate), while $\\sin(\\theta)$ measures the vertical. You need both to fully describe where a point is. Together, $(\\cos\\theta, \\sin\\theta)$ gives the exact position on the unit circle.' },
+      { question: 'Why is the unit circle useful?', answer: 'It extends trigonometry beyond right triangles. Right triangles only have angles up to $90^\\circ$. The unit circle defines sine and cosine for ALL angles: $120^\\circ$, $-45^\\circ$, $720^\\circ$, any number. This is what makes trig useful for modeling waves, rotations, pendulums, and anything circular.' },
+      { question: 'How do I remember the values at standard angles?', answer: 'Use the pattern for $\\sin$: at $0, 30, 45, 60, 90$ degrees, sine takes values $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$. Simplify: $0, \\frac{1}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, 1$. Cosine is the same sequence reversed.' }
+    ],
+    concept: { html: `
 
 <div class="math-diagram">
 <svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +270,16 @@ topics: [
   whyExists: { html: `
     <p><strong>Why identities?</strong> Identities transform complex trig expressions into simpler ones. Integration in calculus relies heavily on trig identities (e.g., $\\int \\sin^2 x\\, dx$ uses the power-reduction identity).</p>
   ` },
-  concept: { html: `
+  formalDefinitions: [
+      { term: 'Pythagorean Identity', symbol: '$\\sin^2\\theta + \\cos^2\\theta = 1$', definition: 'Follows directly from the equation of the unit circle. Dividing by $\\cos^2\\theta$ yields $\\tan^2\\theta + 1 = \\sec^2\\theta$.' },
+      { term: 'Double Angle Formulas', symbol: '', definition: '$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta$. $\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.' },
+      { term: 'Sum/Difference Formulas', symbol: '', definition: '$\\sin(\\alpha \\pm \\beta) = \\sin\\alpha\\cos\\beta \\pm \\cos\\alpha\\sin\\beta$. $\\cos(\\alpha \\pm \\beta) = \\cos\\alpha\\cos\\beta \\mp \\sin\\alpha\\sin\\beta$.' }
+    ],
+    background: {
+      title: 'Why Do Identities Matter?',
+      content: '<p>Trigonometric identities are equations that are <strong>always true</strong>, for every valid angle. They allow us to simplify complex expressions, which is essential in calculus and physics.</p><p>The Pythagorean identity $\\sin^2\\theta + \\cos^2\\theta = 1$ is a direct consequence of the Pythagorean theorem applied to the unit circle. Every point on the unit circle satisfies $x^2 + y^2 = 1$, and since $x = \\cos\\theta$ and $y = \\sin\\theta$, the identity follows.</p><p>Without identities, integrating $\\sin^2(x)$ would be impossible using elementary methods. The identity $\\sin^2(x) = \\frac{1 - \\cos(2x)}{2}$ transforms it into a straightforward integral.</p>'
+    },
+    concept: { html: `
     <div class="callout callout-key"><h4>Fundamental Identities</h4>
     <ul>
       <li><strong>Reciprocal:</strong> $\\csc\\theta = \\frac{1}{\\sin\\theta}$, $\\sec\\theta = \\frac{1}{\\cos\\theta}$, $\\cot\\theta = \\frac{1}{\\tan\\theta}$</li>
