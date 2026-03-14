@@ -241,6 +241,15 @@ const MathEngine = (() => {
                 <li><strong>Calculus 3A-3B</strong>: Vectors, multivariable functions, multiple integrals</li>
                 <li><strong>Probability &amp; Statistics</strong> : Counting, distributions, data analysis</li>
               </ol>
+              <h4 style="margin-top: 1rem; color: var(--accent);">Coming Soon</h4>
+              <p>This platform is actively growing. Future modules will include:</p>
+              <ul>
+                <li><strong>Linear Algebra</strong>: vectors, matrices, eigenvalues, transformations</li>
+                <li><strong>Differential Equations</strong>: ODEs, systems, phase portraits</li>
+                <li><strong>Discrete Mathematics</strong>: logic, proofs, graph theory, combinatorics</li>
+                <li><strong>Number Theory</strong>: primes, modular arithmetic, cryptography</li>
+                <li><strong>Real Analysis</strong>: rigorous limits, continuity, measure theory</li>
+              </ul>
               <p>If you already know some math, click any module to jump in. Each topic has a "Mark Complete" button so you can track your progress.</p>
             </div>
             <div class="guide-section">
