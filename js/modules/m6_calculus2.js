@@ -164,8 +164,11 @@
         freeResponse: [
           { difficulty: 'easy', question: '$\\int 5\\,dx =$? (include + C)', accept: ['5x + C', '5x+C'], placeholder: 'Expression', explanation: '$\\int 5\\,dx = 5x + C$.' },
           { difficulty: 'easy', question: '$\\int_0^1 2x\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' },
+          { difficulty: 'easy', question: '$\\int x^4\\,dx =$? (include + C)', accept: ['x^5/5 + C', '(1/5)x^5 + C'], placeholder: 'Expression', explanation: '$\\frac{x^5}{5} + C$.' },
           { difficulty: 'medium', question: '$\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln|x|]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' },
-          { difficulty: 'hard', question: '$\\int_{-1}^{1} x^3\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^3$ is odd. Integral of odd function over symmetric interval = 0.' }
+          { difficulty: 'medium', question: '$\\int_0^{\\pi/2} \\cos x\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi/2} = 1 - 0 = 1$.' },
+          { difficulty: 'hard', question: '$\\int_{-1}^{1} x^3\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^3$ is odd. Integral of odd function over symmetric interval = 0.' },
+          { difficulty: 'hard', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$\\int x^{1/2}\\,dx = \\frac{2}{3}x^{3/2}$. $[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = \\frac{16}{3}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -336,7 +339,9 @@
         }],
         freeResponse: [
           { difficulty: 'easy', question: '$\\int e^{3x}\\,dx =$? (include + C)', accept: ['e^(3x)/3 + C', '(1/3)e^(3x) + C'], placeholder: 'Expression', explanation: '$u = 3x$, $du = 3dx$. $\\frac{1}{3}e^{3x} + C$.' },
+          { difficulty: 'easy', question: '$\\int \\cos(5x)\\,dx =$? (include + C)', accept: ['sin(5x)/5 + C', '(1/5)sin(5x) + C'], placeholder: 'Expression', explanation: '$u = 5x$. $\\frac{1}{5}\\sin(5x) + C$.' },
           { difficulty: 'medium', question: 'In $\\int x e^x\\,dx$ (IBP), what should $u$ be?', accept: ['x'], placeholder: 'u = ?', explanation: 'LIATE: Algebraic ($x$) before Exponential ($e^x$).' },
+          { difficulty: 'medium', question: '$\\int \\frac{2x}{x^2 + 1}\\,dx =$? (include + C)', accept: ['ln(x^2+1) + C', 'ln(x^2 + 1) + C'], placeholder: 'Expression', explanation: '$u = x^2+1$, $du = 2x\\,dx$. $\\ln(x^2+1) + C$.' },
           { difficulty: 'hard', question: '$\\int \\ln x\\,dx = x\\ln x -$ ? $+ C$', accept: ['x'], placeholder: 'Missing term', explanation: 'IBP: $u = \\ln x, dv = dx$. $x\\ln x - \\int 1\\,dx = x\\ln x - x + C$.' }
         ],
         stepBuilder: [
@@ -445,7 +450,9 @@
         }],
         freeResponse: [
           { difficulty: 'easy', question: 'First 3 terms of $e^x$ Maclaurin series:', accept: ['1 + x + x^2/2', '1+x+x^2/2'], placeholder: 'e.g. 1+x+...', explanation: '$e^x = 1 + x + \\frac{x^2}{2} + \\cdots$' },
+          { difficulty: 'easy', question: 'The Maclaurin series for $\\cos x$ starts with: $1 - $ ? $ + \\cdots$', accept: ['x^2/2', 'x^2/2!'], placeholder: 'Second term', explanation: '$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\cdots$' },
           { difficulty: 'medium', question: 'Approximate $e^1$ using first 4 terms: $1 + 1 + 1/2 + 1/6 =$?', accept: ['2.667', '8/3', '2.67'], placeholder: 'Number', explanation: '$1 + 1 + 0.5 + 0.167 \\approx 2.667$ (true value: $e \\approx 2.718$).' },
+          { difficulty: 'medium', question: 'Radius of convergence of $\\sum x^n/n!$:', accept: ['infinity', 'inf'], placeholder: 'R = ?', explanation: 'Ratio test: $\\frac{|x|}{n+1} \\to 0 < 1$ for all $x$. $R = \\infty$.' },
           { difficulty: 'hard', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^2}$ converge or diverge?', accept: ['converge', 'converges'], placeholder: 'converge/diverge', explanation: 'p-series with $p = 2 \\gt 1$: converges (to $\\pi^2/6$).' }
         ],
         stepBuilder: [
