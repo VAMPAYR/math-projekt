@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 4: Precalculus — Functions & Graphs (4 topics)
+   MODULE 4: Precalculus : Functions & Graphs (4 topics)
    Source: Precalculus (OpenStax/Stitz-Zeager), Thomas' Calculus Ch 1
    ============================================================ */
 (function() {
@@ -13,7 +13,7 @@ title: 'Precalculus: Functions & Graphs',
 description: 'Functions, their graphs, transformations, and behavior. The bridge between algebra and calculus. Requires: advanced algebra (Module 5).',
 topics: [
 
-/* TOPIC 4.1: Functions — Domain, Range, Composition */
+/* TOPIC 4.1: Functions : Domain, Range, Composition */
 {
   id: 'functions-domain-range',
   title: 'Functions: Domain, Range & Composition',

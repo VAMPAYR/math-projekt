@@ -166,7 +166,7 @@
               <h4>🧠 Factoring Decision Tree</h4>
               <ol>
                 <li>Is there a GCF? Factor it out first.</li>
-                <li>How many terms? <>2 terms:</strong> check difference of squares or sum/difference of cubes. <>3 terms:</strong> use the trinomial methods. <>4 terms:</strong> try grouping.</li>
+                <li>How many terms? <p>2 terms:</strong> check difference of squares or sum/difference of cubes. <p>3 terms:</strong> use the trinomial methods. <p>4 terms:</strong> try grouping.</li>
                 <li>After factoring, check: can any factor be factored further?</li>
                 <li>Always verify by multiplying the factors back together.</li>
               </ol>
@@ -478,13 +478,13 @@
             <div class="callout callout-key">
               <h4>Laws of Exponents</h4>
               <ul>
-                <li>$a^m \\cdot a^n = a^{m+n}$ — WHY: $a^3 \\cdot a^2 = (a \\cdot a \\cdot a)(a \\cdot a) = a^5$. You have $m$ copies of $a$ multiplied by $n$ copies, totaling $m+n$ copies.</li>
-                <li>$\\frac{a^m}{a^n} = a^{m-n}$ — WHY: Division cancels copies. $\\frac{a^5}{a^2} = \\frac{a \\cdot a \\cdot a \\cdot a \\cdot a}{a \\cdot a} = a^3$. You cancel $n$ copies from $m$.</li>
-                <li>$(a^m)^n = a^{mn}$ — WHY: $(a^3)^2 = a^3 \\cdot a^3 = a^6$. You have $n$ groups of $m$ copies, totaling $mn$.</li>
-                <li>$(ab)^n = a^n b^n$ — WHY: $(ab)^3 = (ab)(ab)(ab) = (aaa)(bbb) = a^3 b^3$. Multiplication is commutative, so factors rearrange.</li>
-                <li>$a^0 = 1$ for $a \\neq 0$ — WHY: $a^n / a^n = a^{n-n} = a^0$. Any nonzero number divided by itself is $1$.</li>
-                <li>$a^{-n} = \\frac{1}{a^n}$ — WHY: $a^{-n} = a^{0-n} = \\frac{a^0}{a^n} = \\frac{1}{a^n}$. Negative exponents extend the pattern of subtracting.</li>
-                <li>$a^{1/n} = \\sqrt[n]{a}$ — WHY: If $x = a^{1/n}$, then $x^n = (a^{1/n})^n = a^{n/n} = a^1 = a$. So $x$ is the $n$th root of $a$.</li>
+                <li>$a^m \\cdot a^n = a^{m+n}$ : WHY: $a^3 \\cdot a^2 = (a \\cdot a \\cdot a)(a \\cdot a) = a^5$. You have $m$ copies of $a$ multiplied by $n$ copies, totaling $m+n$ copies.</li>
+                <li>$\\frac{a^m}{a^n} = a^{m-n}$ : WHY: Division cancels copies. $\\frac{a^5}{a^2} = \\frac{a \\cdot a \\cdot a \\cdot a \\cdot a}{a \\cdot a} = a^3$. You cancel $n$ copies from $m$.</li>
+                <li>$(a^m)^n = a^{mn}$ : WHY: $(a^3)^2 = a^3 \\cdot a^3 = a^6$. You have $n$ groups of $m$ copies, totaling $mn$.</li>
+                <li>$(ab)^n = a^n b^n$ : WHY: $(ab)^3 = (ab)(ab)(ab) = (aaa)(bbb) = a^3 b^3$. Multiplication is commutative, so factors rearrange.</li>
+                <li>$a^0 = 1$ for $a \\neq 0$ : WHY: $a^n / a^n = a^{n-n} = a^0$. Any nonzero number divided by itself is $1$.</li>
+                <li>$a^{-n} = \\frac{1}{a^n}$ : WHY: $a^{-n} = a^{0-n} = \\frac{a^0}{a^n} = \\frac{1}{a^n}$. Negative exponents extend the pattern of subtracting.</li>
+                <li>$a^{1/n} = \\sqrt[n]{a}$ : WHY: If $x = a^{1/n}$, then $x^n = (a^{1/n})^n = a^{n/n} = a^1 = a$. So $x$ is the $n$th root of $a$.</li>
               </ul>
             </div>
             <p>A <strong>logarithm</strong> answers: "To what power must I raise the base to get this number?"</p>

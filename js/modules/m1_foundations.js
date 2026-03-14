@@ -13,7 +13,280 @@ title: 'Mathematical Foundations',
 description: 'Start here. What numbers are, how arithmetic works, and why. Then: sets, logic, and proof. No prior knowledge needed.',
 topics: [
 
-/* TOPIC 1.0: Basic Arithmetic — The Absolute Starting Point */
+/* TOPIC 1.0: Set Theory */
+{
+  id: 'set-theory',
+  title: 'Set Theory: Operations & Power Sets',
+  description: 'Sets are the language of mathematics. Every mathematical object can be defined in terms of sets.',
+  prereqRecap: [
+    { term: 'Set', definition: 'A well-defined collection of distinct objects, called <strong>elements</strong> or <strong>members</strong>. Notation: $A = \\{1, 2, 3\\}$. $2 \\in A$ means 2 is in $A$.' },
+    { term: 'Subset', definition: '$A \\subseteq B$ means every element of $A$ is also in $B$. Example: $\\{1, 2\\} \\subseteq \\{1, 2, 3\\}$.' },
+    { term: 'Empty Set', definition: '$\\emptyset = \\{\\}$, the set with no elements. $\\emptyset \\subseteq A$ for every set $A$.' }
+  ],
+  whyExists: { html: `
+    <p><strong>Why set theory?</strong> Sets provide a universal language. Numbers, functions, relations, geometric figures, probability spaces: all are defined using sets.</p>
+    ${WHY('Why is this surprising? (Cantors diagonal argument)', '<p>Cantor proved that the set of real numbers is "larger" than the set of natural numbers, even though both are infinite. The proof: suppose you could list all reals $r_1, r_2, \\ldots$ Construct a new number differing from each $r_n$ in its $n$-th digit. This number is not on the list. Contradiction. Therefore no listing is possible.</p>')}
+  ` },
+  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Party Problem</h4>
+    <p>30 people speak English, 20 speak Spanish, 10 speak both. How many total? The answer is 40, not 50: $30 + 20 - 10 = 40$. This is inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p></div>` },
+  concept: { html: `
+    <div class="callout callout-key"><h4>Set Operations</h4>
+    <ul>
+      <li><strong>Union:</strong> $A \\cup B$ = everything in $A$ or $B$ (or both).</li>
+      <li><strong>Intersection:</strong> $A \\cap B$ = everything in BOTH $A$ and $B$.</li>
+      <li><strong>Complement:</strong> $A^c$ (or $\\bar{A}$) = everything NOT in $A$ (relative to a universal set $U$).</li>
+      <li><strong>Difference:</strong> $A \\setminus B$ = elements in $A$ but NOT in $B$.</li>
+      <li><strong>Power Set:</strong> $\\mathcal{P}(A)$ = set of ALL subsets of $A$. If $|A| = n$, then $|\\mathcal{P}(A)| = 2^n$.</li>
+    </ul>
+    ${WHY('Why $2^n$ subsets?', '<p>For each of the $n$ elements, you have 2 choices: include it or exclude it. By the multiplication principle: $2 \\times 2 \\times \\cdots \\times 2 = 2^n$ total subsets.</p>')}</div>
+    <div class="callout callout-key"><h4>De Morgans Laws</h4>
+    <p>$(A \\cup B)^c = A^c \\cap B^c$ and $(A \\cap B)^c = A^c \\cup B^c$.</p>
+    ${WHY('Intuition', '<p>"Not in the union" means not in $A$ AND not in $B$. "Not in the intersection" means not in $A$ OR not in $B$. Negation swaps union/intersection.</p>')}</div>
+  ` },
+  definition: { html: `<p><strong>Set:</strong> A well-defined collection of distinct objects. <strong>Cardinality:</strong> $|A|$ = number of elements.</p>` },
+  examples: [{
+    title: 'Set Operations',
+    problem: 'Let $A = \\{1,2,3,4\\}$, $B = \\{3,4,5,6\\}$, $U = \\{1,\\ldots,7\\}$.',
+    steps: [
+      { title: '$A \\cup B$', content: '$\\{1,2,3,4,5,6\\}$', why: 'Combine all elements from both sets.' },
+      { title: '$A \\cap B$', content: '$\\{3,4\\}$', why: 'Only elements in BOTH sets.' },
+      { title: '$A^c$', content: '$\\{5,6,7\\}$', why: 'Elements in $U$ not in $A$.' },
+      { title: '$|\\mathcal{P}(B)|$', content: '$2^4 = 16$ subsets.', why: '$B$ has 4 elements, so $2^4 = 16$ subsets.' }
+    ]
+  }],
+  flashCards: [
+      { type: 'define', front: 'What is a set?', back: 'An unordered collection of distinct objects. {1,2,3} is a set. Order and repetition do not matter.' },
+      { type: 'how', front: 'Union vs Intersection?', back: 'A union B = everything in A or B or both. A intersect B = only things in BOTH. Union combines, intersection filters.' },
+      { type: 'why', front: 'Why is the empty set important?', back: 'It is a subset of every set. Without it, many theorems need special cases. It is the identity for union.' },
+      { type: 'define', front: 'What does subset mean?', back: 'A is a subset of B means every element of A is also in B. {1,2} is a subset of {1,2,3}.' }
+    ],
+    exercises: [
+    { difficulty: 'easy', question: 'If $A = \\{a,b,c\\}$, then $|\\mathcal{P}(A)| = $?', options: ['$3$', '$6$', '$8$', '$9$'], correctIndex: 2, hint: '<p>$2^n$ where $n = |A|$.</p>', correctExplanation: '$|A| = 3$, so $|\\mathcal{P}(A)| = 2^3 = 8$.', wrongExplanations: { 0: '3 is the cardinality of $A$, not its power set.', 1: '$3! = 6$ counts permutations, not subsets.', 3: '$3^2 = 9$. The formula is $2^n$, not $n^2$.' } },
+    { difficulty: 'easy', question: '$\\{1,2\\} \\cap \\{2,3\\} = $?', options: ['$\\{1,2,3\\}$', '$\\{2\\}$', '$\\{1,3\\}$', '$\\emptyset$'], correctIndex: 1, hint: '<p>Intersection = elements in BOTH sets.</p>', correctExplanation: 'Only 2 is in both sets.', wrongExplanations: { 0: 'That is the union, not intersection.', 2: '1 is only in the first set, 3 only in the second.', 3: 'They share the element 2.' } },
+    { difficulty: 'medium', question: 'Is $\\emptyset \\subseteq \\{1,2,3\\}$?', options: ['Yes', 'No', 'Only if 0 is in the set', 'Undefined'], correctIndex: 0, hint: '<p>The empty set is a subset of every set.</p>', correctExplanation: '$\\emptyset \\subseteq A$ for ALL sets $A$. This is vacuously true: there are no elements in $\\emptyset$ that fail to be in $A$.', wrongExplanations: { 1: 'The empty set IS a subset of every set, by definition.', 2: '0 and $\\emptyset$ are different things.', 3: 'It is well-defined and true.' } },
+    { difficulty: 'medium', question: 'By De Morgans law, $(A \\cup B)^c = $?', options: ['$A^c \\cup B^c$', '$A^c \\cap B^c$', '$(A \\cap B)^c$', '$A \\cup B^c$'], correctIndex: 1, hint: '<p>De Morgan swaps $\\cup$ and $\\cap$ and complements both.</p>', correctExplanation: '$(A \\cup B)^c = A^c \\cap B^c$. "Not in the union" means not in A AND not in B.', wrongExplanations: { 0: 'De Morgan swaps union and intersection: $\\cup$ becomes $\\cap$.', 2: '$(A \\cap B)^c$ is different: it equals $A^c \\cup B^c$.', 3: 'Both sets must be complemented.' } },
+    { difficulty: 'hard', question: 'If $|A| = 5$ and $|B| = 3$ and $A \\cap B = \\emptyset$, then $|A \\cup B| = $?', options: ['$15$', '$8$', '$2$', '$5$'], correctIndex: 1, hint: '<p>Disjoint sets: $|A \\cup B| = |A| + |B|$.</p>', correctExplanation: 'Since $A \\cap B = \\emptyset$ (disjoint), $|A \\cup B| = 5 + 3 - 0 = 8$.', wrongExplanations: { 0: '$5 \\times 3 = 15$ is the Cartesian product size, not union.', 2: '$5 - 3 = 2$ is the difference in sizes, not the union.', 3: 'The union contains all elements from both sets.' } },
+    { difficulty: 'hard', question: 'Which is TRUE for all sets $A, B$?', options: ['$A \\cup B = A \\cap B$', '$A \\subseteq A \\cup B$', '$A \\cup B \\subseteq A$', '$A \\cap B = B$'], correctIndex: 1, hint: '<p>The union always contains at least everything in $A$.</p>', correctExplanation: 'Every element of $A$ is in $A \\cup B$ (by definition of union). So $A \\subseteq A \\cup B$ always.', wrongExplanations: { 0: 'Only if $A = B$.', 2: 'The union is at least as large as $A$, not smaller.', 3: 'Only if $B \\subseteq A$.' } }
+  ,
+
+    {
+      question: 'If A = {1,2,3} and B = {2,3,4}, what is A intersect B?',
+      type: 'mc',
+      options: ['{2,3}', '{1,2,3,4}', '{1,4}', '{2}'],
+      correctIndex: 0,
+      solution: { steps: ['A intersect B contains only elements in BOTH sets.', 'Common elements: 2 and 3.', 'A intersect B = {2,3}.'] }
+    },
+    {
+      question: 'If A = {1,2,3} and B = {2,3,4}, what is A union B?',
+      type: 'mc',
+      options: ['{1,2,3,4}', '{2,3}', '{1,4}', '{1,2,3}'],
+      correctIndex: 0,
+      solution: { steps: ['A union B contains all elements in EITHER set.', 'Combine without duplicates: {1,2,3,4}.'] }
+    }
+    ],
+  freeResponse: [
+    { difficulty: 'easy', question: 'If $A = \\{1, 2, 3, 4, 5\\}$, what is $|A|$?', accept: [5, '5'], placeholder: 'Enter a number', explanation: 'The cardinality $|A|$ counts the elements. $A$ has 5 elements.' },
+    { difficulty: 'easy', question: 'If $A = \\{a, b\\}$, how many subsets does $A$ have?', accept: [4, '4'], placeholder: 'Enter a number', hint: '<p>$2^n$ where $n = |A|$.</p>', explanation: '$2^2 = 4$. The subsets: $\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}$.' },
+    { difficulty: 'medium', question: 'If $|A| = 10$ and $|B| = 7$ and $|A \\cap B| = 3$, what is $|A \\cup B|$?', accept: [14], placeholder: 'Enter a number', hint: '<p>Inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p>', explanation: '$10 + 7 - 3 = 14$.', solution: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 10 + 7 - 3 = 14$.' },
+    { difficulty: 'hard', question: 'How many elements are in $\\mathcal{P}(\\{1,2,3,4,5\\})$?', accept: [32], placeholder: 'Enter a number', explanation: '$2^5 = 32$.' }
+  ],
+  matching: [
+    { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
+      { left: '$A \\cup B$', right: 'Elements in A or B' },
+      { left: '$A \\cap B$', right: 'Elements in both A and B' },
+      { left: '$A^c$', right: 'Elements not in A' },
+      { left: '$A \\setminus B$', right: 'Elements in A but not B' },
+      { left: '$\\mathcal{P}(A)$', right: 'Set of all subsets of A' }
+    ] }
+  ],
+  stepBuilder: [
+    { difficulty: 'medium', question: 'Prove that $A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$ by showing element membership.', steps: [
+      { content: 'Let $x \\in A \\cap (B \\cup C)$.' },
+      { content: 'Then $x \\in A$ AND $x \\in B \\cup C$.' },
+      { content: 'So $x \\in A$ AND ($x \\in B$ OR $x \\in C$).' },
+      { content: 'Case 1: $x \\in A$ and $x \\in B$, so $x \\in A \\cap B$.' },
+      { content: 'Case 2: $x \\in A$ and $x \\in C$, so $x \\in A \\cap C$.' },
+      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' }
+    ], explanation: 'This proves the distributive law for sets by element-chasing.' }
+  ],
+  multiPart: [
+    { difficulty: 'hard', question: 'In a class of 100 students: 60 take math, 45 take physics, 20 take both.', parts: [
+      { question: 'How many take math or physics (or both)?', accept: [85], placeholder: 'Number', explanation: '$60 + 45 - 20 = 85$ by inclusion-exclusion.' },
+      { question: 'How many take neither?', accept: [15], placeholder: 'Number', explanation: '$100 - 85 = 15$.' },
+      { question: 'How many take math but NOT physics?', accept: [40], placeholder: 'Number', explanation: '$60 - 20 = 40$ (math only).' },
+      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' }
+    ], completionMessage: 'Inclusion-exclusion mastered! This technique extends to 3+ sets.' }
+  ],
+  stuckGuide: { html: `<div class="callout callout-tip"><h4>Set Theory Strategy</h4>
+    <ol><li>$\\cup$ = OR (combine). $\\cap$ = AND (overlap). Complement = NOT.</li>
+    <li>Inclusion-Exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</li>
+    <li>Power set: $2^n$ subsets for $n$ elements.</li></ol></div>` }
+},
+
+/* TOPIC 1.1: Number Systems */
+{
+  id: 'number-systems',
+  title: 'Number Systems & Real Number Properties',
+  description: 'From counting to the continuum: how each number system was constructed to solve problems the previous one could not.',
+  prereqRecap: [
+    { term: 'Number', definition: 'An abstract object used to count, measure, or label. The simplest numbers (1, 2, 3, ...) are the <strong>natural numbers</strong>.' },
+    { term: 'Operation', definition: 'A rule that takes numbers and produces another number: addition (+), subtraction, multiplication, division.' },
+    { term: 'Equation', definition: 'A statement that two expressions are equal, written with $=$. Example: $2 + 3 = 5$.' }
+  ],
+  whyExists: { html: `
+    <p><strong>Why do we need different number systems?</strong> Every number system has equations it cannot solve.</p>
+    <ul>
+      <li>$x + 3 = 3$: No natural number works. We need <strong>zero</strong> and the <strong>integers</strong> $\\mathbb{Z}$.</li>
+      <li>$2x = 1$: No integer works. We need <strong>rationals</strong> $\\mathbb{Q}$.</li>
+      <li>$x^2 = 2$: No rational works. We need <strong>irrationals</strong>, completing $\\mathbb{R}$.</li>
+      <li>$x^2 = -1$: No real works. We need <strong>complex numbers</strong> $\\mathbb{C}$.</li>
+    </ul>
+    ${WHY('Why is the square root of 2 irrational?', '<p>Proof by contradiction: Suppose $\\sqrt{2} = p/q$ in lowest terms. Then $2q^2 = p^2$, so $p^2$ is even, so $p$ is even ($p = 2k$). Then $2q^2 = 4k^2$, so $q^2 = 2k^2$, so $q$ is even. But both $p$ and $q$ even contradicts "lowest terms." Therefore $\\sqrt{2}$ is irrational.</p>')}
+  ` },
+  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle</h4>
+    <p>Can you find a fraction $p/q$ (with integers $p, q$) such that $(p/q)^2 = 2$? Try a few: $1/1, 3/2, 7/5, 17/12, ...$</p>
+    <p>Each gets closer but never equals $\\sqrt{2}$ exactly. This is because $\\sqrt{2}$ is <strong>irrational</strong>: it cannot be expressed as a ratio of integers.</p></div>` },
+  formalDefinitions: [
+      { term: 'Natural Numbers', symbol: '$\\mathbb{N}$', definition: 'The set $\\{1, 2, 3, \\ldots\\}$ (or $\\{0, 1, 2, \\ldots\\}$ in some conventions). Closed under addition and multiplication.' },
+      { term: 'Integers', symbol: '$\\mathbb{Z}$', definition: 'The set $\\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$. Extends $\\mathbb{N}$ to include additive inverses. Closed under addition, subtraction, and multiplication.' },
+      { term: 'Rational Numbers', symbol: '$\\mathbb{Q}$', definition: 'Numbers expressible as $\\frac{p}{q}$ where $p, q \\in \\mathbb{Z}$ and $q \\neq 0$. All terminating and repeating decimals are rational.' },
+      { term: 'Real Numbers', symbol: '$\\mathbb{R}$', definition: 'The complete ordered field. Includes all rationals and irrationals. Every Cauchy sequence of reals converges to a real number (completeness axiom).' },
+      { term: 'Complex Numbers', symbol: '$\\mathbb{C}$', definition: 'Numbers of the form $a + bi$ where $a, b \\in \\mathbb{R}$ and $i^2 = -1$. Algebraically closed: every non-constant polynomial has a root in $\\mathbb{C}$.' }
+    ],
+    background: {
+      title: 'Where Do Numbers Come From?',
+      content: '<p>Humans invented counting before writing. Tally marks on bones date to 30,000 BCE. The concept of <strong>zero</strong> as a number (not just a placeholder) was independently discovered by Babylonians, Mayans, and Indians. The Indian mathematician <strong>Brahmagupta</strong> (628 CE) was the first to formalize rules for zero: any number plus zero equals itself, any number times zero equals zero.</p><p><strong>Negative numbers</strong> were resisted in Europe for centuries. As late as the 1700s, mathematicians called them "absurd" or "fictitious." Today, they are essential: bank balances, temperatures below zero, and debts all require negative numbers.</p><p><strong>Irrational numbers</strong> were discovered by the Pythagoreans around 500 BCE when they proved $\\sqrt{2}$ cannot be written as a fraction. This discovery reportedly caused a crisis in their philosophy, since they believed all reality was built from whole-number ratios.</p>'
+    },
+    mathGrammar: [
+      { question: 'What does the symbol "$\\in$" mean?', answer: '"Is an element of." When we write $3 \\in \\mathbb{Z}$, we are saying "3 belongs to the set of integers." Think of it as saying this thing lives inside this group.' },
+      { question: 'What is a set?', answer: 'A collection of distinct objects (just a group of things), written with curly braces. $\\{1, 2, 3\\}$ is a set. The order does not matter: $\\{3, 1, 2\\}$ is the same set. No duplicates allowed.' },
+      { question: 'Why do we need different number sets?', answer: 'Each number set was invented because the previous one could not handle something. $\\mathbb{N}$ cannot represent \"nothing\" (so we added $0$). $\\mathbb{Z}$ allows debts (negative). $\\mathbb{Q}$ allows division results. $\\mathbb{R}$ fills in the gaps ($\\sqrt{2}$). $\\mathbb{C}$ allows $\\sqrt{-1}$.' }
+    ],
+    concept: { html: `
+
+<div class="math-diagram">
+<svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg">
+  <line x1="20" y1="40" x2="480" y2="40" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="480,40 470,35 470,45" fill="#94a3b8"/>
+  <line x1="80" y1="33" x2="80" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="80" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-3</text><line x1="130" y1="33" x2="130" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="130" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-2</text><line x1="180" y1="33" x2="180" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="180" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-1</text><line x1="230" y1="33" x2="230" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="230" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">0</text><line x1="280" y1="33" x2="280" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="280" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">1</text><line x1="330" y1="33" x2="330" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="330" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">2</text><line x1="380" y1="33" x2="380" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="380" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">3</text><line x1="430" y1="33" x2="430" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="430" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">4</text>
+  <circle cx="205" cy="40" r="5" fill="#3b82f6"/>
+  <text x="205" y="25" fill="#3b82f6" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">½</text>
+  <circle cx="350" cy="40" r="5" fill="#10b981"/>
+  <text x="350" y="25" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">√2≈1.41</text>
+  <circle cx="262" cy="40" r="5" fill="#f59e0b"/>
+  <text x="262" y="25" fill="#f59e0b" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">π/4≈0.79</text>
+</svg>
+</div>
+<p class="math-diagram-label">The number line: integers at tick marks, with ½, √2, and π/4 between them</p>
+
+    <div class="callout callout-key"><h4>The Number System Hierarchy</h4>
+    <p>$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$</p>
+    <ul>
+      <li>$\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}$ (Natural numbers: counting)</li>
+      <li>$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$ (Integers: include negatives)</li>
+      <li>$\\mathbb{Q} = \\{p/q : p, q \\in \\mathbb{Z}, q \\neq 0\\}$ (Rationals: fractions)</li>
+      <li>$\\mathbb{R}$ = rationals $\\cup$ irrationals (Real numbers: the complete number line)</li>
+      <li>$\\mathbb{C} = \\{a + bi : a, b \\in \\mathbb{R}\\}$ where $i^2 = -1$ (Complex numbers)</li>
+    </ul></div>
+    <div class="callout callout-key"><h4>Field Axioms (Properties of $\\mathbb{R}$)</h4>
+    <p>For all $a, b, c \\in \\mathbb{R}$:</p>
+    <ul>
+      <li><strong>Commutativity:</strong> $a + b = b + a$ and $a \\cdot b = b \\cdot a$</li>
+      <li><strong>Associativity:</strong> $(a + b) + c = a + (b + c)$</li>
+      <li><strong>Distributivity:</strong> $a(b + c) = ab + ac$</li>
+      <li><strong>Identity:</strong> $a + 0 = a$ and $a \\cdot 1 = a$</li>
+      <li><strong>Inverse:</strong> $a + (-a) = 0$ and $a \\cdot (1/a) = 1$ (for $a \\neq 0$)</li>
+    </ul>
+    ${WHY('Why do these matter?', '<p>Every algebraic manipulation you perform (adding to both sides, factoring, distributing) is justified by one of these axioms. They are the "rules of the game" for algebra. Any system satisfying all these axioms is called a <strong>field</strong>.</p>')}</div>
+  
+    ${WHY('Why was zero invented?', '<p>The concept of "nothing" as a number was revolutionary. Indian mathematicians (Brahmagupta, 7th century) first treated zero as a number with its own arithmetic rules: a + 0 = a, a * 0 = 0. Without zero, we have no place-value system: 103 would be ambiguous (is it 13? 130?).</p>')}
+    ${WHY('Why do we need complex numbers?', '<p>x^2 + 1 = 0 has no real solution (no real number squared gives -1). Define i = sqrt(-1). Now x = i and x = -i are solutions. Complex numbers complete algebra: EVERY polynomial of degree n has exactly n complex roots (Fundamental Theorem of Algebra).</p>')}` },
+  definition: { html: `<p><strong>Field:</strong> A set with two operations (+, $\\cdot$) satisfying commutativity, associativity, distributivity, identity, and inverse axioms.</p>` },
+  examples: [{
+    title: 'Classifying Numbers',
+    problem: 'Classify each number: $-3$, $\\frac{2}{7}$, $\\sqrt{5}$, $3 + 4i$.',
+    steps: [
+      { title: '$-3$', content: '$-3 \\in \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R}$. Integer, rational, real.', why: '$-3 = -3/1$, so it is also rational.' },
+      { title: '$2/7$', content: '$2/7 \\in \\mathbb{Q} \\subset \\mathbb{R}$. Rational, real. Not an integer.', why: 'It is a ratio of integers with $q \\neq 0$.' },
+      { title: '$\\sqrt{5}$', content: '$\\sqrt{5} \\in \\mathbb{R} \\setminus \\mathbb{Q}$. Irrational, real.', why: 'By the same proof technique as $\\sqrt{2}$, $\\sqrt{5}$ cannot be expressed as $p/q$.' },
+      { title: '$3 + 4i$', content: '$3 + 4i \\in \\mathbb{C}$. Complex. Not real (since $b = 4 \\neq 0$).', why: 'A complex number with nonzero imaginary part is not a real number.' }
+    ]
+  },
+  {
+    title: 'Using Field Axioms to Simplify',
+    problem: 'Simplify $3(x + 4) - 2(x - 1)$ and justify each step with the appropriate axiom.',
+    steps: [
+      { title: 'Distribute (Distributive Property)', content: '$3 \\cdot x + 3 \\cdot 4 - 2 \\cdot x - 2 \\cdot (-1) = 3x + 12 - 2x + 2$.', why: '$a(b + c) = ab + ac$. Applied twice: once for $3(x+4)$ and once for $-2(x-1)$. Note: $-2 \\cdot (-1) = +2$ by the rule $(-a)(-b) = ab$.' },
+      { title: 'Combine like terms (Commutativity + Associativity)', content: '$(3x - 2x) + (12 + 2) = x + 14$.', why: 'Commutativity lets us reorder: $3x + 12 - 2x + 2 = 3x - 2x + 12 + 2$. Associativity lets us group the $x$-terms and the constants.' },
+      { title: 'Result', content: '$3(x + 4) - 2(x - 1) = x + 14$.', why: 'Every step is justified by a field axiom. This is why "algebra works."' }
+    ]
+  }],
+  flashCards: [
+      { type: 'define', front: 'What are Natural Numbers?', back: 'N = {1, 2, 3, ...}. The counting numbers, starting from 1.' },
+      { type: 'define', front: 'What are Integers?', back: 'Z = {..., -2, -1, 0, 1, 2, ...}. Naturals plus zero plus negatives.' },
+      { type: 'why', front: 'Why were negative numbers invented?', back: 'To make subtraction always possible. Without negatives, 3 - 5 has no answer.' },
+      { type: 'why', front: 'Why do irrational numbers exist?', back: 'The diagonal of a unit square is sqrt(2), which cannot be written as any fraction a/b.' },
+      { type: 'define', front: 'What is a real number?', back: 'Any point on the number line. Includes all rationals and irrationals. Denoted R.' }
+    ],
+    exercises: [
+    { difficulty: 'easy', question: 'Which set does $\\frac{7}{3}$ belong to?', options: ['$\\mathbb{N}$', '$\\mathbb{Z}$', '$\\mathbb{Q}$', '$\\mathbb{R} \\setminus \\mathbb{Q}$'], correctIndex: 2, hint: '<p>Is it a ratio of two integers?</p>', correctExplanation: '$7/3$ is a ratio of integers ($7$ and $3$), so it belongs to $\\mathbb{Q}$ (rationals).', wrongExplanations: { 0: '$7/3 \\approx 2.33$ is not a counting number.', 1: '$7/3$ is not a whole number.', 3: 'It CAN be written as $p/q$, so it is rational, not irrational.' } },
+    { difficulty: 'easy', question: 'The additive identity is:', options: ['$1$', '$0$', '$-1$', '$\\infty$'], correctIndex: 1, hint: '<p>What number, when added to any $a$, gives $a$ back?</p>', correctExplanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.', wrongExplanations: { 0: '1 is the multiplicative identity ($a \\cdot 1 = a$).', 2: '$-1$ is the additive inverse of 1, not an identity.', 3: '$\\infty$ is not a real number.' } },
+    { difficulty: 'medium', question: 'Which property justifies: $3(x + 5) = 3x + 15$?', options: ['Associativity', 'Commutativity', 'Distributivity', 'Identity'], correctIndex: 2, hint: '<p>$a(b + c) = ab + ac$.</p>', correctExplanation: 'Distributive property: $3(x + 5) = 3 \\cdot x + 3 \\cdot 5 = 3x + 15$.', wrongExplanations: { 0: 'Associativity changes grouping: $(a+b)+c = a+(b+c)$.', 1: 'Commutativity changes order: $a + b = b + a$.', 3: 'Identity involves adding 0 or multiplying by 1.' } },
+    { difficulty: 'medium', question: '$\\sqrt{4}$ is:', options: ['Irrational', 'Rational', 'Complex', 'Undefined'], correctIndex: 1, hint: '<p>$\\sqrt{4} = ?$</p>', correctExplanation: '$\\sqrt{4} = 2$, which is an integer (and therefore rational).', wrongExplanations: { 0: 'Not all square roots are irrational. $\\sqrt{4} = 2$ is rational.', 2: 'It is real, and all reals are complex ($2 = 2 + 0i$), but "rational" is more specific.', 3: '$\\sqrt{4}$ is perfectly defined as 2.' } },
+    { difficulty: 'hard', question: 'Is $\\pi + e$ rational or irrational?', options: ['Rational', 'Irrational', 'Unknown (open problem)', 'Complex'], correctIndex: 2, hint: '<p>Both $\\pi$ and $e$ are individually irrational, but does their sum have to be?</p>', correctExplanation: 'It is an open problem in mathematics. While $\\pi$ and $e$ are each irrational, whether $\\pi + e$ is irrational is unproven as of 2024.', wrongExplanations: { 0: 'No proof exists that $\\pi + e$ is rational.', 1: 'While widely believed to be irrational, no proof exists.', 3: '$\\pi + e$ is a real number, not complex with nonzero imaginary part.' } },
+    { difficulty: 'hard', question: 'The set $\\mathbb{Q}$ is closed under which operation?', options: ['Square root', 'Addition', 'Both', 'Neither'], correctIndex: 1, hint: '<p>Is the sum of two rationals always rational? Is $\\sqrt{p/q}$ always rational?</p>', correctExplanation: '$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd} \\in \\mathbb{Q}$. But $\\sqrt{1/2} = \\frac{1}{\\sqrt{2}}$ is irrational. Closed under addition, not square root.', wrongExplanations: { 0: '$\\sqrt{2/1} = \\sqrt{2}$ is irrational. Not closed under square root.', 2: 'Only addition (and subtraction, multiplication, division by nonzero).', 3: 'Addition IS closed: sum of two rationals is always rational.' } }
+  ],
+  freeResponse: [
+    { difficulty: 'easy', question: 'What is the additive inverse of $-7$?', accept: [7, '7'], placeholder: 'Enter a number', hint: '<p>The additive inverse of $a$ is $-a$, the number that gives 0 when added to $a$.</p>', explanation: '$-7 + 7 = 0$, so the additive inverse of $-7$ is $7$.', solution: '$-(-7) = 7$. Verify: $-7 + 7 = 0$. ✓' },
+    { difficulty: 'easy', question: 'What is the multiplicative identity?', accept: [1, '1'], placeholder: 'Enter a number', explanation: '$a \\cdot 1 = a$ for all $a$.' },
+    { difficulty: 'medium', question: 'Simplify using the distributive property: $5(x + 3) - 2x$', accept: ['3x+15', '3x + 15'], placeholder: 'e.g. 3x+15', inputHelp: 'Write as ax+b', hint: '<p>Distribute: $5 \\cdot x + 5 \\cdot 3 = 5x + 15$. Then subtract $2x$.</p>', explanation: '$5x + 15 - 2x = 3x + 15$.', solution: '$5(x+3) - 2x = 5x + 15 - 2x = 3x + 15$' },
+    { difficulty: 'medium', question: 'Is $\\sqrt{9}$ rational or irrational? Type "rational" or "irrational".', accept: ['rational'], placeholder: 'rational or irrational', explanation: '$\\sqrt{9} = 3$, which is an integer and therefore rational.' },
+    { difficulty: 'hard', question: 'The multiplicative inverse of $\\frac{3}{5}$ is $\\frac{a}{b}$. What is $a + b$?', accept: [8], placeholder: 'Enter a number', hint: '<p>The multiplicative inverse of $\\frac{p}{q}$ is $\\frac{q}{p}$.</p>', explanation: 'Inverse of $\\frac{3}{5}$ is $\\frac{5}{3}$. So $a + b = 5 + 3 = 8$.', solution: '$\\frac{3}{5} \\cdot \\frac{5}{3} = 1$. Answer: $5 + 3 = 8$.' },
+    { difficulty: 'hard', question: 'If $a \\cdot b = 0$, and $a \\neq 0$, what is $b$?', accept: [0, '0'], placeholder: 'Enter a number', explanation: 'By the zero product property, if $ab = 0$ and $a \\neq 0$, then $b = 0$.' }
+  ],
+  matching: [
+    { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
+      { left: '$7$', right: 'Natural number' },
+      { left: '$-3$', right: 'Integer' },
+      { left: '$\\frac{2}{5}$', right: 'Rational' },
+      { left: '$\\sqrt{2}$', right: 'Irrational' },
+      { left: '$3 + 2i$', right: 'Complex' }
+    ], explanation: 'Each number system extends the previous one.' },
+    { difficulty: 'medium', instruction: 'Match each property to its example:', pairs: [
+      { left: 'Commutative (add)', right: '$3 + 5 = 5 + 3$' },
+      { left: 'Associative (mult)', right: '$(2 \\cdot 3) \\cdot 4 = 2 \\cdot (3 \\cdot 4)$' },
+      { left: 'Distributive', right: '$2(x+3) = 2x + 6$' },
+      { left: 'Additive identity', right: '$a + 0 = a$' },
+      { left: 'Multiplicative inverse', right: '$a \\cdot \\frac{1}{a} = 1$' }
+    ] }
+  ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Complete the field axioms:', expression: 'Additive identity: $a +$ {{0}} $= a$. Multiplicative identity: $a \\cdot$ {{1}} $= a$.', blanks: [ { accept: [0, '0'], size: 3 }, { accept: [1, '1'], size: 3 } ], explanation: '0 is the additive identity, 1 is the multiplicative identity.' },
+    { difficulty: 'medium', context: 'Fill in the number system hierarchy:', expression: '$\\mathbb{N} \\subset$ {{0}} $\\subset \\mathbb{Q} \\subset$ {{1}} $\\subset \\mathbb{C}$', blanks: [ { accept: ['Z', 'ℤ', '\\mathbb{Z}'], size: 3 }, { accept: ['R', 'ℝ', '\\mathbb{R}'], size: 3 } ], hint: '<p>Integers come after naturals. Reals come after rationals.</p>', explanation: '$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.' }
+  ],
+  multiPart: [
+    { difficulty: 'hard', question: 'Prove that the sum of two rational numbers is rational.', parts: [
+      { question: 'Let $r_1 = \\frac{a}{b}$ and $r_2 = \\frac{c}{d}$ where $a,b,c,d \\in \\mathbb{Z}$ and $b,d \\neq 0$. What is $r_1 + r_2$ as a single fraction?', accept: ['(ad+bc)/bd', 'ad+bc/bd', '(ad+bc)/(bd)'], placeholder: '(ad+bc)/bd', explanation: '$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd}$.' },
+      { question: 'Is the numerator $ad + bc$ an integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: 'Products and sums of integers are integers.' },
+      { question: 'Is the denominator $bd$ a nonzero integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: '$b \\neq 0$ and $d \\neq 0$ implies $bd \\neq 0$.' },
+      { question: 'Therefore $r_1 + r_2$ is in which number set? (Type the symbol letter)', accept: ['Q', 'ℚ'], placeholder: 'Q', explanation: 'The sum is a ratio of integers with nonzero denominator, so it is in $\\mathbb{Q}$.' }
+    ], completionMessage: 'You just constructed a complete closure proof for rational addition!' }
+  ],
+  stuckGuide: { html: `<div class="callout callout-tip"><h4>Number Systems Strategy</h4>
+    <ol><li><strong>Classification:</strong> Can it be written as $p/q$? Yes = rational. No = irrational.</li>
+    <li><strong>Closure:</strong> Does performing the operation on two elements of the set always produce another element of the set?</li>
+    <li><strong>Hierarchy:</strong> $\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.</li></ol></div>` }
+},
+
+/* TOPIC 1.2: Basic Arithmetic */
 {
   id: 'basic-arithmetic',
   title: 'Basic Arithmetic: Operations, Fractions \u0026 Decimals',
@@ -151,279 +424,6 @@ topics: [
     <li><strong>Fraction multiplication:</strong> Multiply straight across, then simplify.</li>
     <li><strong>Fraction division:</strong> Flip the second fraction, then multiply.</li>
     <li><strong>Order of operations:</strong> PEMDAS. Parentheses first, then exponents, then multiply/divide (left to right), then add/subtract (left to right).</li></ol></div>` }
-},
-
-/* TOPIC 1.1: Number Systems */
-{
-  id: 'number-systems',
-  title: 'Number Systems & Real Number Properties',
-  description: 'From counting to the continuum: how each number system was constructed to solve problems the previous one could not.',
-  prereqRecap: [
-    { term: 'Number', definition: 'An abstract object used to count, measure, or label. The simplest numbers (1, 2, 3, ...) are the <strong>natural numbers</strong>.' },
-    { term: 'Operation', definition: 'A rule that takes numbers and produces another number: addition (+), subtraction, multiplication, division.' },
-    { term: 'Equation', definition: 'A statement that two expressions are equal, written with $=$. Example: $2 + 3 = 5$.' }
-  ],
-  whyExists: { html: `
-    <p><strong>Why do we need different number systems?</strong> Every number system has equations it cannot solve.</p>
-    <ul>
-      <li>$x + 3 = 3$: No natural number works. We need <strong>zero</strong> and the <strong>integers</strong> $\\mathbb{Z}$.</li>
-      <li>$2x = 1$: No integer works. We need <strong>rationals</strong> $\\mathbb{Q}$.</li>
-      <li>$x^2 = 2$: No rational works. We need <strong>irrationals</strong>, completing $\\mathbb{R}$.</li>
-      <li>$x^2 = -1$: No real works. We need <strong>complex numbers</strong> $\\mathbb{C}$.</li>
-    </ul>
-    ${WHY('Why is the square root of 2 irrational?', '<p>Proof by contradiction: Suppose $\\sqrt{2} = p/q$ in lowest terms. Then $2q^2 = p^2$, so $p^2$ is even, so $p$ is even ($p = 2k$). Then $2q^2 = 4k^2$, so $q^2 = 2k^2$, so $q$ is even. But both $p$ and $q$ even contradicts "lowest terms." Therefore $\\sqrt{2}$ is irrational.</p>')}
-  ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle</h4>
-    <p>Can you find a fraction $p/q$ (with integers $p, q$) such that $(p/q)^2 = 2$? Try a few: $1/1, 3/2, 7/5, 17/12, ...$</p>
-    <p>Each gets closer but never equals $\\sqrt{2}$ exactly. This is because $\\sqrt{2}$ is <strong>irrational</strong>: it cannot be expressed as a ratio of integers.</p></div>` },
-  formalDefinitions: [
-      { term: 'Natural Numbers', symbol: '$\\mathbb{N}$', definition: 'The set $\\{1, 2, 3, \\ldots\\}$ (or $\\{0, 1, 2, \\ldots\\}$ in some conventions). Closed under addition and multiplication.' },
-      { term: 'Integers', symbol: '$\\mathbb{Z}$', definition: 'The set $\\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$. Extends $\\mathbb{N}$ to include additive inverses. Closed under addition, subtraction, and multiplication.' },
-      { term: 'Rational Numbers', symbol: '$\\mathbb{Q}$', definition: 'Numbers expressible as $\\frac{p}{q}$ where $p, q \\in \\mathbb{Z}$ and $q \\neq 0$. All terminating and repeating decimals are rational.' },
-      { term: 'Real Numbers', symbol: '$\\mathbb{R}$', definition: 'The complete ordered field. Includes all rationals and irrationals. Every Cauchy sequence of reals converges to a real number (completeness axiom).' },
-      { term: 'Complex Numbers', symbol: '$\\mathbb{C}$', definition: 'Numbers of the form $a + bi$ where $a, b \\in \\mathbb{R}$ and $i^2 = -1$. Algebraically closed: every non-constant polynomial has a root in $\\mathbb{C}$.' }
-    ],
-    background: {
-      title: 'Where Do Numbers Come From?',
-      content: '<p>Humans invented counting before writing. Tally marks on bones date to 30,000 BCE. The concept of <strong>zero</strong> as a number (not just a placeholder) was independently discovered by Babylonians, Mayans, and Indians. The Indian mathematician <strong>Brahmagupta</strong> (628 CE) was the first to formalize rules for zero: any number plus zero equals itself, any number times zero equals zero.</p><p><strong>Negative numbers</strong> were resisted in Europe for centuries. As late as the 1700s, mathematicians called them "absurd" or "fictitious." Today, they are essential: bank balances, temperatures below zero, and debts all require negative numbers.</p><p><strong>Irrational numbers</strong> were discovered by the Pythagoreans around 500 BCE when they proved $\\sqrt{2}$ cannot be written as a fraction. This discovery reportedly caused a crisis in their philosophy, since they believed all reality was built from whole-number ratios.</p>'
-    },
-    mathGrammar: [
-      { question: 'What does the symbol "$\\in$" mean?', answer: '"Is an element of." When we write $3 \\in \\mathbb{Z}$, we are saying "3 belongs to the set of integers." Think of it as saying this thing lives inside this group.' },
-      { question: 'What is a set?', answer: 'A collection of distinct objects (just a group of things), written with curly braces. $\\{1, 2, 3\\}$ is a set. The order does not matter: $\\{3, 1, 2\\}$ is the same set. No duplicates allowed.' },
-      { question: 'Why do we need different number sets?', answer: 'Here is the key idea: each number set was invented because the previous one could not handle something. $\\mathbb{N}$ cannot represent "nothing" (so we added $0$). $\\mathbb{Z}$ allows debts (negative). $\\mathbb{Q}$ allows division results. $\\mathbb{R}$ fills in the gaps ($\\sqrt{2}$). $\\mathbb{C}$ allows $\\sqrt{-1}$.' }
-    ],
-    concept: { html: `
-
-<div class="math-diagram">
-<svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg">
-  <line x1="20" y1="40" x2="480" y2="40" stroke="#94a3b8" stroke-width="2"/>
-  <polygon points="480,40 470,35 470,45" fill="#94a3b8"/>
-  <line x1="80" y1="33" x2="80" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="80" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-3</text><line x1="130" y1="33" x2="130" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="130" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-2</text><line x1="180" y1="33" x2="180" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="180" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">-1</text><line x1="230" y1="33" x2="230" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="230" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">0</text><line x1="280" y1="33" x2="280" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="280" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">1</text><line x1="330" y1="33" x2="330" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="330" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">2</text><line x1="380" y1="33" x2="380" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="380" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">3</text><line x1="430" y1="33" x2="430" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
-    <text x="430" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">4</text>
-  <circle cx="205" cy="40" r="5" fill="#3b82f6"/>
-  <text x="205" y="25" fill="#3b82f6" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">½</text>
-  <circle cx="350" cy="40" r="5" fill="#10b981"/>
-  <text x="350" y="25" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">√2≈1.41</text>
-  <circle cx="262" cy="40" r="5" fill="#f59e0b"/>
-  <text x="262" y="25" fill="#f59e0b" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">π/4≈0.79</text>
-</svg>
-</div>
-<p class="math-diagram-label">The number line: integers at tick marks, with ½, √2, and π/4 between them</p>
-
-    <div class="callout callout-key"><h4>The Number System Hierarchy</h4>
-    <p>$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$</p>
-    <ul>
-      <li>$\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}$ (Natural numbers: counting)</li>
-      <li>$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$ (Integers: include negatives)</li>
-      <li>$\\mathbb{Q} = \\{p/q : p, q \\in \\mathbb{Z}, q \\neq 0\\}$ (Rationals: fractions)</li>
-      <li>$\\mathbb{R}$ = rationals $\\cup$ irrationals (Real numbers: the complete number line)</li>
-      <li>$\\mathbb{C} = \\{a + bi : a, b \\in \\mathbb{R}\\}$ where $i^2 = -1$ (Complex numbers)</li>
-    </ul></div>
-    <div class="callout callout-key"><h4>Field Axioms (Properties of $\\mathbb{R}$)</h4>
-    <p>For all $a, b, c \\in \\mathbb{R}$:</p>
-    <ul>
-      <li><strong>Commutativity:</strong> $a + b = b + a$ and $a \\cdot b = b \\cdot a$</li>
-      <li><strong>Associativity:</strong> $(a + b) + c = a + (b + c)$</li>
-      <li><strong>Distributivity:</strong> $a(b + c) = ab + ac$</li>
-      <li><strong>Identity:</strong> $a + 0 = a$ and $a \\cdot 1 = a$</li>
-      <li><strong>Inverse:</strong> $a + (-a) = 0$ and $a \\cdot (1/a) = 1$ (for $a \\neq 0$)</li>
-    </ul>
-    ${WHY('Why do these matter?', '<p>Every algebraic manipulation you perform (adding to both sides, factoring, distributing) is justified by one of these axioms. They are the "rules of the game" for algebra. Any system satisfying all these axioms is called a <strong>field</strong>.</p>')}</div>
-  
-    ${WHY('Why was zero invented?', '<p>The concept of "nothing" as a number was revolutionary. Indian mathematicians (Brahmagupta, 7th century) first treated zero as a number with its own arithmetic rules: a + 0 = a, a * 0 = 0. Without zero, we have no place-value system: 103 would be ambiguous (is it 13? 130?).</p>')}
-    ${WHY('Why do we need complex numbers?', '<p>x^2 + 1 = 0 has no real solution (no real number squared gives -1). Define i = sqrt(-1). Now x = i and x = -i are solutions. Complex numbers complete algebra: EVERY polynomial of degree n has exactly n complex roots (Fundamental Theorem of Algebra).</p>')}` },
-  definition: { html: `<p><strong>Field:</strong> A set with two operations (+, $\\cdot$) satisfying commutativity, associativity, distributivity, identity, and inverse axioms.</p>` },
-  examples: [{
-    title: 'Classifying Numbers',
-    problem: 'Classify each number: $-3$, $\\frac{2}{7}$, $\\sqrt{5}$, $3 + 4i$.',
-    steps: [
-      { title: '$-3$', content: '$-3 \\in \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R}$. Integer, rational, real.', why: '$-3 = -3/1$, so it is also rational.' },
-      { title: '$2/7$', content: '$2/7 \\in \\mathbb{Q} \\subset \\mathbb{R}$. Rational, real. Not an integer.', why: 'It is a ratio of integers with $q \\neq 0$.' },
-      { title: '$\\sqrt{5}$', content: '$\\sqrt{5} \\in \\mathbb{R} \\setminus \\mathbb{Q}$. Irrational, real.', why: 'By the same proof technique as $\\sqrt{2}$, $\\sqrt{5}$ cannot be expressed as $p/q$.' },
-      { title: '$3 + 4i$', content: '$3 + 4i \\in \\mathbb{C}$. Complex. Not real (since $b = 4 \\neq 0$).', why: 'A complex number with nonzero imaginary part is not a real number.' }
-    ]
-  },
-  {
-    title: 'Using Field Axioms to Simplify',
-    problem: 'Simplify $3(x + 4) - 2(x - 1)$ and justify each step with the appropriate axiom.',
-    steps: [
-      { title: 'Distribute (Distributive Property)', content: '$3 \\cdot x + 3 \\cdot 4 - 2 \\cdot x - 2 \\cdot (-1) = 3x + 12 - 2x + 2$.', why: '$a(b + c) = ab + ac$. Applied twice: once for $3(x+4)$ and once for $-2(x-1)$. Note: $-2 \\cdot (-1) = +2$ by the rule $(-a)(-b) = ab$.' },
-      { title: 'Combine like terms (Commutativity + Associativity)', content: '$(3x - 2x) + (12 + 2) = x + 14$.', why: 'Commutativity lets us reorder: $3x + 12 - 2x + 2 = 3x - 2x + 12 + 2$. Associativity lets us group the $x$-terms and the constants.' },
-      { title: 'Result', content: '$3(x + 4) - 2(x - 1) = x + 14$.', why: 'Every step is justified by a field axiom. This is why "algebra works."' }
-    ]
-  }],
-  flashCards: [
-      { type: 'define', front: 'What are Natural Numbers?', back: 'N = {1, 2, 3, ...}. The counting numbers, starting from 1.' },
-      { type: 'define', front: 'What are Integers?', back: 'Z = {..., -2, -1, 0, 1, 2, ...}. Naturals plus zero plus negatives.' },
-      { type: 'why', front: 'Why were negative numbers invented?', back: 'To make subtraction always possible. Without negatives, 3 - 5 has no answer.' },
-      { type: 'why', front: 'Why do irrational numbers exist?', back: 'The diagonal of a unit square is sqrt(2), which cannot be written as any fraction a/b.' },
-      { type: 'define', front: 'What is a real number?', back: 'Any point on the number line. Includes all rationals and irrationals. Denoted R.' }
-    ],
-    exercises: [
-    { difficulty: 'easy', question: 'Which set does $\\frac{7}{3}$ belong to?', options: ['$\\mathbb{N}$', '$\\mathbb{Z}$', '$\\mathbb{Q}$', '$\\mathbb{R} \\setminus \\mathbb{Q}$'], correctIndex: 2, hint: '<p>Is it a ratio of two integers?</p>', correctExplanation: '$7/3$ is a ratio of integers ($7$ and $3$), so it belongs to $\\mathbb{Q}$ (rationals).', wrongExplanations: { 0: '$7/3 \\approx 2.33$ is not a counting number.', 1: '$7/3$ is not a whole number.', 3: 'It CAN be written as $p/q$, so it is rational, not irrational.' } },
-    { difficulty: 'easy', question: 'The additive identity is:', options: ['$1$', '$0$', '$-1$', '$\\infty$'], correctIndex: 1, hint: '<p>What number, when added to any $a$, gives $a$ back?</p>', correctExplanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.', wrongExplanations: { 0: '1 is the multiplicative identity ($a \\cdot 1 = a$).', 2: '$-1$ is the additive inverse of 1, not an identity.', 3: '$\\infty$ is not a real number.' } },
-    { difficulty: 'medium', question: 'Which property justifies: $3(x + 5) = 3x + 15$?', options: ['Associativity', 'Commutativity', 'Distributivity', 'Identity'], correctIndex: 2, hint: '<p>$a(b + c) = ab + ac$.</p>', correctExplanation: 'Distributive property: $3(x + 5) = 3 \\cdot x + 3 \\cdot 5 = 3x + 15$.', wrongExplanations: { 0: 'Associativity changes grouping: $(a+b)+c = a+(b+c)$.', 1: 'Commutativity changes order: $a + b = b + a$.', 3: 'Identity involves adding 0 or multiplying by 1.' } },
-    { difficulty: 'medium', question: '$\\sqrt{4}$ is:', options: ['Irrational', 'Rational', 'Complex', 'Undefined'], correctIndex: 1, hint: '<p>$\\sqrt{4} = ?$</p>', correctExplanation: '$\\sqrt{4} = 2$, which is an integer (and therefore rational).', wrongExplanations: { 0: 'Not all square roots are irrational. $\\sqrt{4} = 2$ is rational.', 2: 'It is real, and all reals are complex ($2 = 2 + 0i$), but "rational" is more specific.', 3: '$\\sqrt{4}$ is perfectly defined as 2.' } },
-    { difficulty: 'hard', question: 'Is $\\pi + e$ rational or irrational?', options: ['Rational', 'Irrational', 'Unknown (open problem)', 'Complex'], correctIndex: 2, hint: '<p>Both $\\pi$ and $e$ are individually irrational, but does their sum have to be?</p>', correctExplanation: 'It is an open problem in mathematics. While $\\pi$ and $e$ are each irrational, whether $\\pi + e$ is irrational is unproven as of 2024.', wrongExplanations: { 0: 'No proof exists that $\\pi + e$ is rational.', 1: 'While widely believed to be irrational, no proof exists.', 3: '$\\pi + e$ is a real number, not complex with nonzero imaginary part.' } },
-    { difficulty: 'hard', question: 'The set $\\mathbb{Q}$ is closed under which operation?', options: ['Square root', 'Addition', 'Both', 'Neither'], correctIndex: 1, hint: '<p>Is the sum of two rationals always rational? Is $\\sqrt{p/q}$ always rational?</p>', correctExplanation: '$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd} \\in \\mathbb{Q}$. But $\\sqrt{1/2} = \\frac{1}{\\sqrt{2}}$ is irrational. Closed under addition, not square root.', wrongExplanations: { 0: '$\\sqrt{2/1} = \\sqrt{2}$ is irrational. Not closed under square root.', 2: 'Only addition (and subtraction, multiplication, division by nonzero).', 3: 'Addition IS closed: sum of two rationals is always rational.' } }
-  ],
-  freeResponse: [
-    { difficulty: 'easy', question: 'What is the additive inverse of $-7$?', accept: [7, '7'], placeholder: 'Enter a number', hint: '<p>The additive inverse of $a$ is $-a$, the number that gives 0 when added to $a$.</p>', explanation: '$-7 + 7 = 0$, so the additive inverse of $-7$ is $7$.', solution: '$-(-7) = 7$. Verify: $-7 + 7 = 0$. ✓' },
-    { difficulty: 'easy', question: 'What is the multiplicative identity?', accept: [1, '1'], placeholder: 'Enter a number', explanation: '$a \\cdot 1 = a$ for all $a$.' },
-    { difficulty: 'medium', question: 'Simplify using the distributive property: $5(x + 3) - 2x$', accept: ['3x+15', '3x + 15'], placeholder: 'e.g. 3x+15', inputHelp: 'Write as ax+b', hint: '<p>Distribute: $5 \\cdot x + 5 \\cdot 3 = 5x + 15$. Then subtract $2x$.</p>', explanation: '$5x + 15 - 2x = 3x + 15$.', solution: '$5(x+3) - 2x = 5x + 15 - 2x = 3x + 15$' },
-    { difficulty: 'medium', question: 'Is $\\sqrt{9}$ rational or irrational? Type "rational" or "irrational".', accept: ['rational'], placeholder: 'rational or irrational', explanation: '$\\sqrt{9} = 3$, which is an integer and therefore rational.' },
-    { difficulty: 'hard', question: 'The multiplicative inverse of $\\frac{3}{5}$ is $\\frac{a}{b}$. What is $a + b$?', accept: [8], placeholder: 'Enter a number', hint: '<p>The multiplicative inverse of $\\frac{p}{q}$ is $\\frac{q}{p}$.</p>', explanation: 'Inverse of $\\frac{3}{5}$ is $\\frac{5}{3}$. So $a + b = 5 + 3 = 8$.', solution: '$\\frac{3}{5} \\cdot \\frac{5}{3} = 1$. Answer: $5 + 3 = 8$.' },
-    { difficulty: 'hard', question: 'If $a \\cdot b = 0$, and $a \\neq 0$, what is $b$?', accept: [0, '0'], placeholder: 'Enter a number', explanation: 'By the zero product property, if $ab = 0$ and $a \\neq 0$, then $b = 0$.' }
-  ],
-  matching: [
-    { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
-      { left: '$7$', right: 'Natural number' },
-      { left: '$-3$', right: 'Integer' },
-      { left: '$\\frac{2}{5}$', right: 'Rational' },
-      { left: '$\\sqrt{2}$', right: 'Irrational' },
-      { left: '$3 + 2i$', right: 'Complex' }
-    ], explanation: 'Each number system extends the previous one.' },
-    { difficulty: 'medium', instruction: 'Match each property to its example:', pairs: [
-      { left: 'Commutative (add)', right: '$3 + 5 = 5 + 3$' },
-      { left: 'Associative (mult)', right: '$(2 \\cdot 3) \\cdot 4 = 2 \\cdot (3 \\cdot 4)$' },
-      { left: 'Distributive', right: '$2(x+3) = 2x + 6$' },
-      { left: 'Additive identity', right: '$a + 0 = a$' },
-      { left: 'Multiplicative inverse', right: '$a \\cdot \\frac{1}{a} = 1$' }
-    ] }
-  ],
-  fillBlanks: [
-    { difficulty: 'easy', context: 'Complete the field axioms:', expression: 'Additive identity: $a +$ {{0}} $= a$. Multiplicative identity: $a \\cdot$ {{1}} $= a$.', blanks: [ { accept: [0, '0'], size: 3 }, { accept: [1, '1'], size: 3 } ], explanation: '0 is the additive identity, 1 is the multiplicative identity.' },
-    { difficulty: 'medium', context: 'Fill in the number system hierarchy:', expression: '$\\mathbb{N} \\subset$ {{0}} $\\subset \\mathbb{Q} \\subset$ {{1}} $\\subset \\mathbb{C}$', blanks: [ { accept: ['Z', 'ℤ', '\\mathbb{Z}'], size: 3 }, { accept: ['R', 'ℝ', '\\mathbb{R}'], size: 3 } ], hint: '<p>Integers come after naturals. Reals come after rationals.</p>', explanation: '$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.' }
-  ],
-  multiPart: [
-    { difficulty: 'hard', question: 'Prove that the sum of two rational numbers is rational.', parts: [
-      { question: 'Let $r_1 = \\frac{a}{b}$ and $r_2 = \\frac{c}{d}$ where $a,b,c,d \\in \\mathbb{Z}$ and $b,d \\neq 0$. What is $r_1 + r_2$ as a single fraction?', accept: ['(ad+bc)/bd', 'ad+bc/bd', '(ad+bc)/(bd)'], placeholder: '(ad+bc)/bd', explanation: '$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd}$.' },
-      { question: 'Is the numerator $ad + bc$ an integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: 'Products and sums of integers are integers.' },
-      { question: 'Is the denominator $bd$ a nonzero integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: '$b \\neq 0$ and $d \\neq 0$ implies $bd \\neq 0$.' },
-      { question: 'Therefore $r_1 + r_2$ is in which number set? (Type the symbol letter)', accept: ['Q', 'ℚ'], placeholder: 'Q', explanation: 'The sum is a ratio of integers with nonzero denominator, so it is in $\\mathbb{Q}$.' }
-    ], completionMessage: 'You just constructed a complete closure proof for rational addition!' }
-  ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>Number Systems Strategy</h4>
-    <ol><li><strong>Classification:</strong> Can it be written as $p/q$? Yes = rational. No = irrational.</li>
-    <li><strong>Closure:</strong> Does performing the operation on two elements of the set always produce another element of the set?</li>
-    <li><strong>Hierarchy:</strong> $\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.</li></ol></div>` }
-},
-
-/* TOPIC 1.2: Set Theory */
-{
-  id: 'set-theory',
-  title: 'Set Theory: Operations & Power Sets',
-  description: 'Sets are the language of mathematics. Every mathematical object can be defined in terms of sets.',
-  prereqRecap: [
-    { term: 'Set', definition: 'A well-defined collection of distinct objects, called <strong>elements</strong> or <strong>members</strong>. Notation: $A = \\{1, 2, 3\\}$. $2 \\in A$ means 2 is in $A$.' },
-    { term: 'Subset', definition: '$A \\subseteq B$ means every element of $A$ is also in $B$. Example: $\\{1, 2\\} \\subseteq \\{1, 2, 3\\}$.' },
-    { term: 'Empty Set', definition: '$\\emptyset = \\{\\}$, the set with no elements. $\\emptyset \\subseteq A$ for every set $A$.' }
-  ],
-  whyExists: { html: `
-    <p><strong>Why set theory?</strong> Sets provide a universal language. Numbers, functions, relations, geometric figures, probability spaces: all are defined using sets.</p>
-    ${WHY('Why is this surprising? (Cantors diagonal argument)', '<p>Cantor proved that the set of real numbers is "larger" than the set of natural numbers, even though both are infinite. The proof: suppose you could list all reals $r_1, r_2, \\ldots$ Construct a new number differing from each $r_n$ in its $n$-th digit. This number is not on the list. Contradiction. Therefore no listing is possible.</p>')}
-  ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Party Problem</h4>
-    <>30 people speak English, 20 speak Spanish, 10 speak both. How many total? Not 50: $30 + 20 - 10 = 40$. This is inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p></div>` },
-  concept: { html: `
-    <div class="callout callout-key"><h4>Set Operations</h4>
-    <ul>
-      <li><strong>Union:</strong> $A \\cup B$ = everything in $A$ or $B$ (or both).</li>
-      <li><strong>Intersection:</strong> $A \\cap B$ = everything in BOTH $A$ and $B$.</li>
-      <li><strong>Complement:</strong> $A^c$ (or $\\bar{A}$) = everything NOT in $A$ (relative to a universal set $U$).</li>
-      <li><strong>Difference:</strong> $A \\setminus B$ = elements in $A$ but NOT in $B$.</li>
-      <li><strong>Power Set:</strong> $\\mathcal{P}(A)$ = set of ALL subsets of $A$. If $|A| = n$, then $|\\mathcal{P}(A)| = 2^n$.</li>
-    </ul>
-    ${WHY('Why $2^n$ subsets?', '<p>For each of the $n$ elements, you have 2 choices: include it or exclude it. By the multiplication principle: $2 \\times 2 \\times \\cdots \\times 2 = 2^n$ total subsets.</p>')}</div>
-    <div class="callout callout-key"><h4>De Morgans Laws</h4>
-    <p>$(A \\cup B)^c = A^c \\cap B^c$ and $(A \\cap B)^c = A^c \\cup B^c$.</p>
-    ${WHY('Intuition', '<p>"Not in the union" means not in $A$ AND not in $B$. "Not in the intersection" means not in $A$ OR not in $B$. Negation swaps union/intersection.</p>')}</div>
-  ` },
-  definition: { html: `<p><strong>Set:</strong> A well-defined collection of distinct objects. <strong>Cardinality:</strong> $|A|$ = number of elements.</p>` },
-  examples: [{
-    title: 'Set Operations',
-    problem: 'Let $A = \\{1,2,3,4\\}$, $B = \\{3,4,5,6\\}$, $U = \\{1,\\ldots,7\\}$.',
-    steps: [
-      { title: '$A \\cup B$', content: '$\\{1,2,3,4,5,6\\}$', why: 'Combine all elements from both sets.' },
-      { title: '$A \\cap B$', content: '$\\{3,4\\}$', why: 'Only elements in BOTH sets.' },
-      { title: '$A^c$', content: '$\\{5,6,7\\}$', why: 'Elements in $U$ not in $A$.' },
-      { title: '$|\\mathcal{P}(B)|$', content: '$2^4 = 16$ subsets.', why: '$B$ has 4 elements, so $2^4 = 16$ subsets.' }
-    ]
-  }],
-  flashCards: [
-      { type: 'define', front: 'What is a set?', back: 'An unordered collection of distinct objects. {1,2,3} is a set. Order and repetition do not matter.' },
-      { type: 'how', front: 'Union vs Intersection?', back: 'A union B = everything in A or B or both. A intersect B = only things in BOTH. Union combines, intersection filters.' },
-      { type: 'why', front: 'Why is the empty set important?', back: 'It is a subset of every set. Without it, many theorems need special cases. It is the identity for union.' },
-      { type: 'define', front: 'What does subset mean?', back: 'A is a subset of B means every element of A is also in B. {1,2} is a subset of {1,2,3}.' }
-    ],
-    exercises: [
-    { difficulty: 'easy', question: 'If $A = \\{a,b,c\\}$, then $|\\mathcal{P}(A)| = $?', options: ['$3$', '$6$', '$8$', '$9$'], correctIndex: 2, hint: '<p>$2^n$ where $n = |A|$.</p>', correctExplanation: '$|A| = 3$, so $|\\mathcal{P}(A)| = 2^3 = 8$.', wrongExplanations: { 0: '3 is the cardinality of $A$, not its power set.', 1: '$3! = 6$ counts permutations, not subsets.', 3: '$3^2 = 9$. The formula is $2^n$, not $n^2$.' } },
-    { difficulty: 'easy', question: '$\\{1,2\\} \\cap \\{2,3\\} = $?', options: ['$\\{1,2,3\\}$', '$\\{2\\}$', '$\\{1,3\\}$', '$\\emptyset$'], correctIndex: 1, hint: '<p>Intersection = elements in BOTH sets.</p>', correctExplanation: 'Only 2 is in both sets.', wrongExplanations: { 0: 'That is the union, not intersection.', 2: '1 is only in the first set, 3 only in the second.', 3: 'They share the element 2.' } },
-    { difficulty: 'medium', question: 'Is $\\emptyset \\subseteq \\{1,2,3\\}$?', options: ['Yes', 'No', 'Only if 0 is in the set', 'Undefined'], correctIndex: 0, hint: '<p>The empty set is a subset of every set.</p>', correctExplanation: '$\\emptyset \\subseteq A$ for ALL sets $A$. This is vacuously true: there are no elements in $\\emptyset$ that fail to be in $A$.', wrongExplanations: { 1: 'The empty set IS a subset of every set, by definition.', 2: '0 and $\\emptyset$ are different things.', 3: 'It is well-defined and true.' } },
-    { difficulty: 'medium', question: 'By De Morgans law, $(A \\cup B)^c = $?', options: ['$A^c \\cup B^c$', '$A^c \\cap B^c$', '$(A \\cap B)^c$', '$A \\cup B^c$'], correctIndex: 1, hint: '<p>De Morgan swaps $\\cup$ and $\\cap$ and complements both.</p>', correctExplanation: '$(A \\cup B)^c = A^c \\cap B^c$. "Not in the union" means not in A AND not in B.', wrongExplanations: { 0: 'De Morgan swaps union and intersection: $\\cup$ becomes $\\cap$.', 2: '$(A \\cap B)^c$ is different: it equals $A^c \\cup B^c$.', 3: 'Both sets must be complemented.' } },
-    { difficulty: 'hard', question: 'If $|A| = 5$ and $|B| = 3$ and $A \\cap B = \\emptyset$, then $|A \\cup B| = $?', options: ['$15$', '$8$', '$2$', '$5$'], correctIndex: 1, hint: '<p>Disjoint sets: $|A \\cup B| = |A| + |B|$.</p>', correctExplanation: 'Since $A \\cap B = \\emptyset$ (disjoint), $|A \\cup B| = 5 + 3 - 0 = 8$.', wrongExplanations: { 0: '$5 \\times 3 = 15$ is the Cartesian product size, not union.', 2: '$5 - 3 = 2$ is the difference in sizes, not the union.', 3: 'The union contains all elements from both sets.' } },
-    { difficulty: 'hard', question: 'Which is TRUE for all sets $A, B$?', options: ['$A \\cup B = A \\cap B$', '$A \\subseteq A \\cup B$', '$A \\cup B \\subseteq A$', '$A \\cap B = B$'], correctIndex: 1, hint: '<p>The union always contains at least everything in $A$.</p>', correctExplanation: 'Every element of $A$ is in $A \\cup B$ (by definition of union). So $A \\subseteq A \\cup B$ always.', wrongExplanations: { 0: 'Only if $A = B$.', 2: 'The union is at least as large as $A$, not smaller.', 3: 'Only if $B \\subseteq A$.' } }
-  ,
-
-    {
-      question: 'If A = {1,2,3} and B = {2,3,4}, what is A intersect B?',
-      type: 'mc',
-      options: ['{2,3}', '{1,2,3,4}', '{1,4}', '{2}'],
-      correctIndex: 0,
-      solution: { steps: ['A intersect B contains only elements in BOTH sets.', 'Common elements: 2 and 3.', 'A intersect B = {2,3}.'] }
-    },
-    {
-      question: 'If A = {1,2,3} and B = {2,3,4}, what is A union B?',
-      type: 'mc',
-      options: ['{1,2,3,4}', '{2,3}', '{1,4}', '{1,2,3}'],
-      correctIndex: 0,
-      solution: { steps: ['A union B contains all elements in EITHER set.', 'Combine without duplicates: {1,2,3,4}.'] }
-    }
-    ],
-  freeResponse: [
-    { difficulty: 'easy', question: 'If $A = \\{1, 2, 3, 4, 5\\}$, what is $|A|$?', accept: [5, '5'], placeholder: 'Enter a number', explanation: 'The cardinality $|A|$ counts the elements. $A$ has 5 elements.' },
-    { difficulty: 'easy', question: 'If $A = \\{a, b\\}$, how many subsets does $A$ have?', accept: [4, '4'], placeholder: 'Enter a number', hint: '<p>$2^n$ where $n = |A|$.</p>', explanation: '$2^2 = 4$. The subsets: $\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}$.' },
-    { difficulty: 'medium', question: 'If $|A| = 10$ and $|B| = 7$ and $|A \\cap B| = 3$, what is $|A \\cup B|$?', accept: [14], placeholder: 'Enter a number', hint: '<p>Inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p>', explanation: '$10 + 7 - 3 = 14$.', solution: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 10 + 7 - 3 = 14$.' },
-    { difficulty: 'hard', question: 'How many elements are in $\\mathcal{P}(\\{1,2,3,4,5\\})$?', accept: [32], placeholder: 'Enter a number', explanation: '$2^5 = 32$.' }
-  ],
-  matching: [
-    { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
-      { left: '$A \\cup B$', right: 'Elements in A or B' },
-      { left: '$A \\cap B$', right: 'Elements in both A and B' },
-      { left: '$A^c$', right: 'Elements not in A' },
-      { left: '$A \\setminus B$', right: 'Elements in A but not B' },
-      { left: '$\\mathcal{P}(A)$', right: 'Set of all subsets of A' }
-    ] }
-  ],
-  stepBuilder: [
-    { difficulty: 'medium', question: 'Prove that $A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$ by showing element membership.', steps: [
-      { content: 'Let $x \\in A \\cap (B \\cup C)$.' },
-      { content: 'Then $x \\in A$ AND $x \\in B \\cup C$.' },
-      { content: 'So $x \\in A$ AND ($x \\in B$ OR $x \\in C$).' },
-      { content: 'Case 1: $x \\in A$ and $x \\in B$, so $x \\in A \\cap B$.' },
-      { content: 'Case 2: $x \\in A$ and $x \\in C$, so $x \\in A \\cap C$.' },
-      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' }
-    ], explanation: 'This proves the distributive law for sets by element-chasing.' }
-  ],
-  multiPart: [
-    { difficulty: 'hard', question: 'In a class of 100 students: 60 take math, 45 take physics, 20 take both.', parts: [
-      { question: 'How many take math or physics (or both)?', accept: [85], placeholder: 'Number', explanation: '$60 + 45 - 20 = 85$ by inclusion-exclusion.' },
-      { question: 'How many take neither?', accept: [15], placeholder: 'Number', explanation: '$100 - 85 = 15$.' },
-      { question: 'How many take math but NOT physics?', accept: [40], placeholder: 'Number', explanation: '$60 - 20 = 40$ (math only).' },
-      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' }
-    ], completionMessage: 'Inclusion-exclusion mastered! This technique extends to 3+ sets.' }
-  ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>Set Theory Strategy</h4>
-    <ol><li>$\\cup$ = OR (combine). $\\cap$ = AND (overlap). Complement = NOT.</li>
-    <li>Inclusion-Exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</li>
-    <li>Power set: $2^n$ subsets for $n$ elements.</li></ol></div>` }
 },
 
 /* TOPIC 1.3: Propositional Logic */

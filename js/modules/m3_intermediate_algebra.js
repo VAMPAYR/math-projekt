@@ -187,9 +187,9 @@ topics: [
       <li><strong>GCF first:</strong> Factor out the greatest common factor of all terms.</li>
       <li><strong>Count terms:</strong>
         <ul>
-          <>2 terms: Check for difference of squares ($a^2 - b^2$), sum/difference of cubes.</li>
-          <>3 terms: Try trinomial factoring ($x^2 + bx + c$ or $ax^2 + bx + c$).</li>
-          <>4 terms: Try factoring by grouping.</li>
+          <p>2 terms: Check for difference of squares ($a^2 - b^2$), sum/difference of cubes.</li>
+          <p>3 terms: Try trinomial factoring ($x^2 + bx + c$ or $ax^2 + bx + c$).</li>
+          <p>4 terms: Try factoring by grouping.</li>
         </ul>
       </li>
       <li><strong>Check:</strong> Multiply the factors back to verify.</li>
@@ -287,8 +287,8 @@ topics: [
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Factoring Strategy</h4>
     <ol><li><strong>Always GCF first.</strong></li>
-    <li><>2 terms:</strong> Difference of squares or cubes?</li>
-    <li><>3 terms:</strong> Find two numbers that multiply to $ac$ and add to $b$.</li>
+    <li><p>2 terms:</strong> Difference of squares or cubes?</li>
+    <li><p>3 terms:</strong> Find two numbers that multiply to $ac$ and add to $b$.</li>
     <li><strong>Verify</strong> by multiplying back.</li></ol></div>` }
 },
 

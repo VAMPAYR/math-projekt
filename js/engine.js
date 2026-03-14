@@ -193,13 +193,22 @@ const MathEngine = (() => {
         <!-- Getting Started Guide -->
         <div class="welcome-guide">
           <div class="guide-header" onclick="this.parentElement.classList.toggle('expanded')">
-            <h3>How to Use This Site</h3>
+            <h3>How to Use this platform</h3>
             <span class="guide-toggle">▼</span>
           </div>
           <div class="guide-body">
             <div class="guide-section">
               <h4>What is mathematics?</h4>
-              <p>Mathematics is the study of patterns, quantities, and structures. It begins with counting objects (1, 2, 3...) and builds upward: addition combines groups, multiplication repeats addition, algebra uses letters as placeholders for unknown numbers, and calculus measures change. Every topic on this site grows from these foundations. If you can count to ten, you have everything you need to start.</p>
+              <p>Mathematics is the study of patterns, quantities, and structures. It begins with counting objects (1, 2, 3...) and builds upward: addition combines groups, multiplication repeats addition, algebra uses letters as placeholders for unknown numbers, and calculus measures change. Every topic on this platform grows from these foundations. If you can count to ten, you have everything you need to start.</p>
+            </div>
+            <div class="guide-section">
+              <h4>Mathematics is a language</h4>
+              <p>Mathematics has grammar, vocabulary, and syntax, just like English or Arabic. The symbol $+$ is a verb: it tells you to combine. The symbol $=$ is a declaration: it states that two things are the same. A variable like $x$ is a pronoun: it stands for a number you have not identified yet. An equation is a sentence. A proof is an argument. When you learn mathematics, you are learning to read, write, and speak in a language that describes the structure of reality itself.</p>
+              <p>This platform treats math as a language. Every section includes a "Math Grammar" block that explains what each symbol means, why each operation exists, and when to use it. The goal is comprehension, not memorization. When you understand the grammar, you can construct your own solutions to problems you have never seen before.</p>
+            </div>
+            <div class="guide-section">
+              <h4>Why study mathematics?</h4>
+              <p>Mathematics trains a specific kind of thinking: the ability to take a complex situation, identify what matters, strip away what does not, and reason precisely about what remains. This skill transfers to every domain: engineering, medicine, finance, law, philosophy, software. The content itself matters, but the way of thinking matters more.</p>
             </div>
             <div class="guide-section">
               <h4>You need zero prior knowledge</h4>
@@ -208,29 +217,29 @@ const MathEngine = (() => {
             <div class="guide-section">
               <h4>How each topic is organized</h4>
               <ul>
-                <li><strong>Why</strong> — The reason this concept was invented. What problem it solves. Why humans needed it.</li>
-                <li><strong>Core Concept</strong> — The main idea, explained step by step with diagrams. Every formula includes a derivation or proof showing where it comes from.</li>
-                <li><strong>Definition</strong> — The precise, formal statement. This is the reference you return to after understanding the concept.</li>
-                <li><strong>Examples</strong> — Worked problems showing every step, with explanations for each decision.</li>
-                <li><strong>Practice</strong> — Problems for you to solve, with hints and immediate feedback.</li>
-                <li><strong>Strategy</strong> — If you get stuck, this section walks you through how to think about the problem.</li>
+                <li><strong>Why</strong>: The reason this concept was invented. What problem it solves. Why humans needed it.</li>
+                <li><strong>Core Concept</strong>: The main idea, explained step by step with diagrams. Every formula includes a derivation or proof showing where it comes from.</li>
+                <li><strong>Definition</strong>: The precise, formal statement. This is the reference you return to after understanding the concept.</li>
+                <li><strong>Examples</strong>: Worked problems showing every step, with explanations for each decision.</li>
+                <li><strong>Practice</strong>: Problems for you to solve, with hints and immediate feedback.</li>
+                <li><strong>Strategy</strong>: If you get stuck, this section walks you through how to think about the problem.</li>
               </ul>
             </div>
             <div class="guide-section">
               <h4>Recommended path</h4>
               <p>Start at Module 1 and work through in order. Each module builds on the one before it. The modules are:</p>
               <ol>
-                <li><strong>Foundations</strong> — Numbers, arithmetic, sets, logic, proof</li>
-                <li><strong>Beginning Algebra</strong> — Variables, equations, inequalities</li>
-                <li><strong>Geometry</strong> — Points, lines, angles, triangles, circles</li>
-                <li><strong>Intermediate Algebra</strong> — Polynomials, factoring, rational expressions</li>
-                <li><strong>Advanced Algebra</strong> — Quadratics, exponentials, logarithms</li>
-                <li><strong>Precalculus</strong> — Functions, graphs, transformations</li>
-                <li><strong>Trigonometry</strong> — Angles, unit circle, identities</li>
-                <li><strong>Calculus 1A-1B</strong> — Limits, derivatives, applications</li>
-                <li><strong>Calculus 2A-2B</strong> — Integration, series, sequences</li>
-                <li><strong>Calculus 3A-3B</strong> — Vectors, multivariable functions, multiple integrals</li>
-                <li><strong>Probability &amp; Statistics</strong> — Counting, distributions, data analysis</li>
+                <li><strong>Foundations</strong>: Numbers, arithmetic, sets, logic, proof</li>
+                <li><strong>Beginning Algebra</strong>: Variables, equations, inequalities</li>
+                <li><strong>Geometry</strong>: Points, lines, angles, triangles, circles</li>
+                <li><strong>Intermediate Algebra</strong>: Polynomials, factoring, rational expressions</li>
+                <li><strong>Advanced Algebra</strong>: Quadratics, exponentials, logarithms</li>
+                <li><strong>Precalculus</strong>: Functions, graphs, transformations</li>
+                <li><strong>Trigonometry</strong>: Angles, unit circle, identities</li>
+                <li><strong>Calculus 1A-1B</strong>: Limits, derivatives, applications</li>
+                <li><strong>Calculus 2A-2B</strong>: Integration, series, sequences</li>
+                <li><strong>Calculus 3A-3B</strong>: Vectors, multivariable functions, multiple integrals</li>
+                <li><strong>Probability &amp; Statistics</strong> : Counting, distributions, data analysis</li>
               </ol>
               <p>If you already know some math, click any module to jump in. Each topic has a "Mark Complete" button so you can track your progress.</p>
             </div>

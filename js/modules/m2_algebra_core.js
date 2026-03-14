@@ -401,9 +401,9 @@ topics: [
     ${WHY('Why does the sign flip?', '<p>Consider $3 \\lt 5$. Multiply both sides by $-1$: $-3$ and $-5$. On the number line, $-3$ is to the RIGHT of $-5$, so $-3 > -5$. Multiplying by a negative reverses the order of numbers. This is because negation reflects the number line around 0.</p>')}</div>
     <div class="callout callout-key"><h4>Interval Notation</h4>
     <ul>
-      <li>$x \\gt 3$: $(3, \\infty)$ — open parenthesis at 3 (not included), extends right forever.</li>
-      <li>$x \\leq -2$: $(-\\infty, -2]$ — square bracket at $-2$ (included), extends left forever.</li>
-      <li>$1 < x \\leq 5$: $(1, 5]$ — open at 1, closed at 5.</li>
+      <li>$x \\gt 3$: $(3, \\infty)$ : open parenthesis at 3 (not included), extends right forever.</li>
+      <li>$x \\leq -2$: $(-\\infty, -2]$ : square bracket at $-2$ (included), extends left forever.</li>
+      <li>$1 < x \\leq 5$: $(1, 5]$ : open at 1, closed at 5.</li>
     </ul>
     ${WHY('Why square vs. round brackets?', '<p>Square bracket $[$ means the endpoint IS included ($\\leq$ or $\\geq$). Round parenthesis $($ means it is NOT included ($<$ or $>$). Infinity always gets $($, because you can never reach infinity.</p>')}</div>
   ` },

@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 6: Calculus 1 — Limits & Derivatives (4 topics)
+   MODULE 6: Calculus 1 : Limits & Derivatives (4 topics)
    Source: Thomas' Calculus Chapters 2-4
    ============================================================ */
 (function() {
@@ -57,7 +57,7 @@ topics: [
       <li>$\\lim \\frac{f}{g} = \\frac{L}{M}$ (if $M \\neq 0$)</li>
       <li>$\\lim [f(x)]^n = L^n$</li>
     </ul></div>
-    <div class="callout callout-key"><h4>Evaluating Limits — Strategies</h4>
+    <div class="callout callout-key"><h4>Evaluating Limits : Strategies</h4>
     <ol>
       <li><strong>Direct substitution:</strong> Try $f(a)$. If defined, that is the limit.</li>
       <li><strong>Factor and cancel:</strong> If $\\frac{0}{0}$ form, factor numerator/denominator, cancel common factor.</li>
@@ -141,7 +141,7 @@ topics: [
     <li><strong>One-sided limits:</strong> If left ≠ right, the two-sided limit DNE.</li></ol></div>` }
 },
 
-/* TOPIC 6.2: Derivatives — Definition & Rules */
+/* TOPIC 6.2: Derivatives : Definition & Rules */
 {
   id: 'derivatives-rules',
   title: 'Derivatives: Definition & Differentiation Rules',
@@ -416,7 +416,7 @@ topics: [
     <li><strong>Verify</strong> with second derivative test or endpoint comparison.</li></ol></div>` }
 },
 
-/* TOPIC 6.4: Integration — Antiderivatives & FTC */
+/* TOPIC 6.4: Integration : Antiderivatives & FTC */
 {
   id: 'integration-ftc',
   title: 'Integration: Antiderivatives & the Fundamental Theorem',
