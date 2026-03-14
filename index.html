@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive math learning platform: foundations through calculus 3 with puzzles, visualizations, and step-by-step solutions.">
+  <title>Mathematics</title>
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon">∑</div>
+          <div>
+            <h1>Mathematics</h1>
+            <div class="subtitle">Free Learning</div>
+          </div>
+        </div>
+        <div class="progress-overview">
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text">
+            <span id="progress-text">0%</span>
+            <span id="progress-count">0 / 0 topics</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    </aside>
+
+    <!-- Mobile overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="content-header">
+        <button class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Toggle sidebar">☰</button>
+        <div class="breadcrumbs" id="breadcrumbs">
+          <span class="current">Home</span>
+        </div>
+        <div class="header-actions">
+          <button class="btn-icon" id="drill-nav-btn" aria-label="Speed Drill" title="Speed Drill" onclick="MathEngine.showDrillSelector()">⚡</button>
+          <button class="btn-icon" id="home-btn" aria-label="Home" title="Home">🏠</button>
+        </div>
+      </header>
+      <div class="content-area">
+        <div class="content-inner" id="content-inner">
+          <!-- Content rendered by engine.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Visualization toolkit -->
+  <script src="js/visualizations.js"></script>
+
+  <!-- Game systems (must load before engine) -->
+  <script src="js/game_state.js"></script>
+  <script src="js/problem_engine.js"></script>
+  <script src="js/speed_drill.js"></script>
+
+  <!-- Content modules (order matters: must load before engine) -->
+  <script src="js/modules/m1_foundations.js"></script>
+  <script src="js/modules/m2_algebra_core.js"></script>
+  <script src="js/modules/m_geometry.js"></script>
+  <script src="js/modules/m3_intermediate_algebra.js"></script>
+  <script src="js/modules/m3_algebra_advanced.js"></script>
+  <script src="js/modules/m4_precalculus.js"></script>
+  <script src="js/modules/m5_trigonometry.js"></script>
+  <script src="js/modules/m5_calculus1.js"></script>
+  <script src="js/modules/m6_calculus1.js"></script>
+  <script src="js/modules/m6_calculus2.js"></script>
+  <script src="js/modules/m7_calculus2.js"></script>
+  <script src="js/modules/m7_calculus3.js"></script>
+  <script src="js/modules/m8_calculus3.js"></script>
+  <script src="js/modules/m9_probability.js"></script>
+
+  <!-- Core engine (must load last) -->
+  <script src="js/engine.js"></script>
+</body>
+</html>
