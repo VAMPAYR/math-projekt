@@ -279,7 +279,9 @@
     ],
         freeResponse: [
           { difficulty: 'easy', question: 'If $f(x,y) = x^2 + y^2$, what is $f_x$?', accept: ['2x'], placeholder: 'e.g. 2x', explanation: '$\\partial/\\partial x[x^2] = 2x$, $\\partial/\\partial x[y^2] = 0$.' },
+          { difficulty: 'easy', question: 'If $f(x,y) = 5xy$, what is $f_y$?', accept: ['5x'], placeholder: 'e.g. 5x', explanation: 'Treat $x$ as constant: $f_y = 5x$.' },
           { difficulty: 'medium', question: '$\\nabla f$ for $f(x,y) = 3x - 2y + 1$:', accept: ['<3,-2>', '3,-2'], placeholder: '<a,b>', explanation: '$f_x = 3$, $f_y = -2$. $\\nabla f = \\langle 3, -2 \\rangle$.' },
+          { difficulty: 'medium', question: 'If $f(x,y) = e^{xy}$, what is $f_x$?', accept: ['ye^(xy)', 'ye^{xy}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{xy} \\cdot y = ye^{xy}$.' },
           { difficulty: 'hard', question: 'Find $f_{xy}$ for $f(x,y) = x^2y^3$:', accept: ['6xy^2', '6xy2'], placeholder: 'Expression', explanation: '$f_x = 2xy^3$. $f_{xy} = \\partial/\\partial y[2xy^3] = 6xy^2$.' }
         ],
         stepBuilder: [
@@ -377,7 +379,9 @@
         }],
         freeResponse: [
           { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dy\\,dx =$? (area of unit square)', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 1\\,dx = 1$. Total: $1$.' },
+          { difficulty: 'easy', question: '$\\int_0^2 \\int_0^1 x\\,dy\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: 'Inner: $\\int_0^1 x\\,dy = x$. Outer: $\\int_0^2 x\\,dx = 2$.' },
           { difficulty: 'medium', question: '$\\int_0^1 \\int_0^x y\\,dy\\,dx =$?', accept: ['1/6'], placeholder: 'Fraction', explanation: 'Inner: $\\frac{x^2}{2}$. Outer: $\\int_0^1 \\frac{x^2}{2}\\,dx = \\frac{1}{6}$.' },
+          { difficulty: 'medium', question: 'In polar coordinates, $dA =$?', accept: ['r dr dtheta', 'r*dr*dtheta'], placeholder: 'e.g. r dr dtheta', explanation: '$dA = r\\,dr\\,d\\theta$. The $r$ is the Jacobian.' },
           { difficulty: 'hard', question: 'In polar, the area of the unit disk ($r \\leq 1$) using $\\int\\int r\\,dr\\,d\\theta$:', accept: ['pi', '\\pi', '3.14'], placeholder: 'Area', explanation: '$\\int_0^{2\\pi}\\int_0^1 r\\,dr\\,d\\theta = 2\\pi \\cdot \\frac{1}{2} = \\pi$.' }
         ],
         stepBuilder: [
