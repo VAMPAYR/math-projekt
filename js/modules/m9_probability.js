@@ -180,6 +180,11 @@ topics: [
       { left: 'Combination', right: '$\\binom{n}{r} = \\frac{n!}{r!(n-r)!}$' },
       { left: 'Complement', right: '$P(A) = 1 - P(A^c)$' },
       { left: 'Inclusion-Exclusion', right: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$' }
+    ] },
+    { difficulty: 'medium', instruction: 'Match each concept to its formula:', pairs: [
+      { left: 'Permutation', right: '$P(n,r) = n!/(n-r)!$' },
+      { left: 'Combination', right: '$C(n,r) = n!/(r!(n-r)!)$' },
+      { left: 'Factorial', right: '$n! = n(n-1)(n-2)\\cdots 1$' }
     ] }
   ],
   fillBlanks: [
@@ -333,6 +338,11 @@ topics: [
       { left: 'Poisson($\\lambda$)', right: '$E[X] = \\lambda$' },
       { left: 'Uniform($a,b$)', right: '$E[X] = (a+b)/2$' },
       { left: 'Normal($\\mu,\\sigma^2$)', right: '$E[X] = \\mu$' }
+    ] },
+    { difficulty: 'medium', instruction: 'Match each distribution to its expected value:', pairs: [
+      { left: 'Binomial', right: '$np$' },
+      { left: 'Poisson', right: '$\\lambda$' },
+      { left: 'Uniform (1 to n)', right: '$(n+1)/2$' }
     ] }
   ],
   fillBlanks: [

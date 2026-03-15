@@ -122,7 +122,8 @@ topics: [
     ] }
   ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'Dot product formula:', expression: '$\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}||\\mathbf{v}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta', 'θ'], size: 6 } ], explanation: 'The dot product equals the product of magnitudes times the cosine of the angle.' }
+    { difficulty: 'easy', context: 'Dot product formula:', expression: '$\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}||\\mathbf{v}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta', 'θ'], size: 6 } ], explanation: 'The dot product equals the product of magnitudes times the cosine of the angle.' },
+    { difficulty: 'medium', context: 'Dot product:', expression: '$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Dot product equals the product of magnitudes times cosine of the angle between them.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Vector Strategy</h4>
     <ol><li><strong>Dot product</strong> for angles and projections (scalar result).</li>
@@ -253,7 +254,8 @@ topics: [
     ], completionMessage: 'Clairaut\'s theorem: $f_{xy} = f_{yx}$ when both are continuous.' }
   ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'Partial derivative rule:', expression: '$\\frac{\\partial}{\\partial x}[f(x,y)]$: treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'When finding $f_x$, hold $y$ constant and differentiate w.r.t. $x$.' }
+    { difficulty: 'easy', context: 'Partial derivative rule:', expression: '$\\frac{\\partial}{\\partial x}[f(x,y)]$: treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'When finding $f_x$, hold $y$ constant and differentiate w.r.t. $x$.' },
+    { difficulty: 'medium', context: 'Cross product magnitude:', expression: '$|\\vec{a} \\times \\vec{b}| = |\\vec{a}||\\vec{b}|$ {{0}} $\\theta$', blanks: [ { accept: ['sin', '\\sin'], size: 4 } ], explanation: 'Cross product magnitude = product of magnitudes times sine of angle.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Partial Derivative Strategy</h4>
     <ol><li><strong>Treat other variables as constants</strong> and differentiate normally.</li>
@@ -382,7 +384,8 @@ topics: [
     ] }
   ],
   fillBlanks: [
-    { difficulty: 'medium', context: 'Order of integration:', expression: 'In $\\int_a^b \\int_{c}^{d} f\\,dy\\,dx$, integrate {{0}} first, then {{1}}.', blanks: [ { accept: ['y', 'dy'], size: 3 }, { accept: ['x', 'dx'], size: 3 } ], explanation: 'Inner variable first, outer variable second.' }
+    { difficulty: 'medium', context: 'Order of integration:', expression: 'In $\\int_a^b \\int_{c}^{d} f\\,dy\\,dx$, integrate {{0}} first, then {{1}}.', blanks: [ { accept: ['y', 'dy'], size: 3 }, { accept: ['x', 'dx'], size: 3 } ], explanation: 'Inner variable first, outer variable second.' },
+    { difficulty: 'hard', context: 'Divergence theorem:', expression: '$\\iint_S \\vec{F} \\cdot d\\vec{S} = \\iiint_V$ {{0}} $\\vec{F}\\,dV$', blanks: [ { accept: ['div', 'nabla cdot', '\\nabla \\cdot'], size: 8 } ], explanation: 'Divergence theorem: surface integral of flux = volume integral of divergence.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'Compute the volume of $z = 4 - x^2 - y^2$ above $z = 0$ using polar.', parts: [
