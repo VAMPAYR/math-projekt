@@ -403,7 +403,8 @@ topics: [
     { difficulty: 'medium', question: '$\\frac{2}{7} + \\frac{3}{7} =$?', accept: ['5/7'], placeholder: 'Fraction', explanation: 'Same denominator: $\\frac{2+3}{7} = \\frac{5}{7}$.' },
     { difficulty: 'hard', question: 'Evaluate: $(2 + 3)^2 - 4 \\times 3 =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$(5)^2 - 12 = 25 - 12 = 13$. Parentheses, exponents, multiplication, subtraction.' },
     { difficulty: 'easy', question: 'If $A = \\{1,2,3\\}$ and $B = \\{2,3,4\\}$, what is $A \\cap B$?', accept: ['{2,3}', '{2, 3}'], placeholder: 'Set', explanation: '$A \\cap B = \\{2, 3\\}$. Elements in both sets.' },
-    { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' }
+    { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' },
+    { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [
@@ -486,7 +487,8 @@ topics: [
     { difficulty: 'medium', question: 'Rewrite $P \\to Q$ using only $\\neg$ and $\\vee$:', accept: ['~p v q', '~pvq', 'not p or q', '¬p∨q', '\\neg P \\vee Q', 'negpvq'], placeholder: 'e.g. ~p v q', hint: '<p>$P \\to Q \\equiv \\neg P \\vee Q$.</p>', explanation: '$P \\to Q \\equiv \\neg P \\vee Q$: a conditional is a disjunction in disguise.' },
     { difficulty: 'hard', question: 'How many rows does a truth table with 4 variables have?', accept: [16], placeholder: 'Enter a number', explanation: '$2^4 = 16$. Each variable has 2 possible values.' },
     { difficulty: 'easy', question: 'If $p$ is true and $q$ is false, then $p \\land q$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'AND requires both to be true. One false makes the conjunction false.' },
-    { difficulty: 'medium', question: 'The contrapositive of "if $p$ then $q$" is:', accept: ['if not q then not p', 'if ~q then ~p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to $p \\to q$.' }
+    { difficulty: 'medium', question: 'The contrapositive of "if $p$ then $q$" is:', accept: ['if not q then not p', 'if ~q then ~p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to $p \\to q$.' },
+    { difficulty: 'hard', question: 'If $p \\to q$ is true and $q$ is false, then $p$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'Modus Tollens: $p \\to q$ and $\\neg q$ implies $\\neg p$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

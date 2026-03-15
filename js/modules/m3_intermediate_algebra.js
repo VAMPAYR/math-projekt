@@ -102,7 +102,8 @@ topics: [
     { difficulty: 'hard', question: 'Simplify: $(3x^2)^3 =$?', accept: ['27x^6', '27x6'], placeholder: 'e.g. 27x^6', explanation: '$3^3 \\cdot (x^2)^3 = 27x^6$.' },
     { difficulty: 'easy', question: 'Simplify: $(x^3)^2 =$?', accept: ['x^6', 'x6'], placeholder: 'Expression', explanation: '$(x^3)^2 = x^{3 \\cdot 2} = x^6$.' },
     { difficulty: 'medium', question: '$\\frac{x^5}{x^2} =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$x^{5-2} = x^3$.' },
-    { difficulty: 'medium', question: 'Simplify: $\\frac{x^{-2}}{x^3} =$?', accept: ['x^{-5}', '1/x^5', 'x^-5'], placeholder: 'Expression', explanation: '$x^{-2-3} = x^{-5} = 1/x^5$.' }
+    { difficulty: 'medium', question: 'Simplify: $\\frac{x^{-2}}{x^3} =$?', accept: ['x^{-5}', '1/x^5', 'x^-5'], placeholder: 'Expression', explanation: '$x^{-2-3} = x^{-5} = 1/x^5$.' },
+    { difficulty: 'hard', question: 'Simplify: $(x^{1/2})^6 =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$(x^{1/2})^6 = x^{6/2} = x^3$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -260,7 +261,8 @@ topics: [
     { difficulty: 'hard', question: 'What is the GCF of $12x^3y^2$ and $18x^2y^4$?', accept: ['6x^2y^2', '6x2y2'], placeholder: 'e.g. 6x^2y^2', explanation: '$\\gcd(12,18)=6$, $\\min(3,2)=2$ for $x$, $\\min(2,4)=2$ for $y$. GCF = $6x^2y^2$.' },
     { difficulty: 'easy', question: 'Factor: $x^2 - 9 =$?', accept: ['(x-3)(x+3)', '(x+3)(x-3)'], placeholder: 'Factored form', explanation: 'Difference of squares: $a^2 - b^2 = (a-b)(a+b)$.' },
     { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6 =$?', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'Factored form', explanation: 'Find two numbers that multiply to 6 and add to 5: 2 and 3.' },
-    { difficulty: 'hard', question: 'Factor completely: $x^3 - x^2 - 6x =$?', accept: ['x(x-3)(x+2)', 'x(x+2)(x-3)'], placeholder: 'Factored', explanation: '$x(x^2 - x - 6) = x(x-3)(x+2)$.' }
+    { difficulty: 'hard', question: 'Factor completely: $x^3 - x^2 - 6x =$?', accept: ['x(x-3)(x+2)', 'x(x+2)(x-3)'], placeholder: 'Factored', explanation: '$x(x^2 - x - 6) = x(x-3)(x+2)$.' },
+    { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [

@@ -93,7 +93,8 @@ topics: [
     { difficulty: 'medium', question: 'Simplify: $4(2x - 3) + 5$', accept: ['8x-7', '8x - 7'], placeholder: 'e.g. 8x-7', hint: '<p>Distribute the 4, then combine constants.</p>', explanation: '$8x - 12 + 5 = 8x - 7$.' },
     { difficulty: 'hard', question: 'If $x = -2$, evaluate $x^3 - 3x^2 + 2x - 1$:', accept: [-25, '-25'], placeholder: 'Enter a number', explanation: '$(-2)^3 - 3(-2)^2 + 2(-2) - 1 = -8 - 12 - 4 - 1 = -25$.' },
     { difficulty: 'easy', question: 'Solve: $x - 7 = 3$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x = 3 + 7 = 10$.' },
-    { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} = 5$. $x =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$x = 5 \\times 4 = 20$.' }
+    { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} = 5$. $x =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$x = 5 \\times 4 = 20$.' },
+    { difficulty: 'hard', question: 'Solve: $|2x - 3| = 7$. Solutions:', accept: ['5, -2', '-2, 5', '5,-2'], placeholder: 'x values', explanation: '$2x - 3 = 7 \\Rightarrow x = 5$. $2x - 3 = -7 \\Rightarrow x = -2$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -243,7 +244,8 @@ topics: [
     { difficulty: 'medium', question: 'Solve: $5x + 2 = 3x + 10$. $x =$?', accept: [4, '4'], placeholder: 'x = ?', hint: '<p>Get all $x$ terms on one side.</p>', explanation: '$5x - 3x = 10 - 2 \\Rightarrow 2x = 8 \\Rightarrow x = 4$.' },
     { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{4} = 7$. $x =$?', accept: [12, '12'], placeholder: 'x = ?', hint: '<p>Multiply everything by 12 to clear fractions.</p>', explanation: '$4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$.' },
     { difficulty: 'easy', question: 'The y-intercept of $y = 3x + 7$ is:', accept: [7, '7'], placeholder: 'Number', explanation: 'Set $x = 0$: $y = 7$.' },
-    { difficulty: 'medium', question: 'Find slope of line through $(1, 2)$ and $(3, 8)$:', accept: [3, '3'], placeholder: 'm = ?', explanation: '$m = (8-2)/(3-1) = 6/2 = 3$.' }
+    { difficulty: 'medium', question: 'Find slope of line through $(1, 2)$ and $(3, 8)$:', accept: [3, '3'], placeholder: 'm = ?', explanation: '$m = (8-2)/(3-1) = 6/2 = 3$.' },
+    { difficulty: 'hard', question: 'Write equation of line perpendicular to $y = 2x + 1$ through $(0, 3)$:', accept: ['y=-x/2+3', 'y=-0.5x+3'], placeholder: 'y = ?', explanation: 'Perpendicular slope: $-1/2$. $y = -x/2 + 3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [

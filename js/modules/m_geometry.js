@@ -362,7 +362,8 @@
         { difficulty: 'medium', question: 'Similar triangles have scale factor $3:5$. If the smaller perimeter is $24$ cm, the larger perimeter is:', accept: [40, '40'], placeholder: 'cm', explanation: 'Perimeter scales linearly: $24 \\times \\frac{5}{3} = 40$ cm.' },
         { difficulty: 'hard', question: 'A 45-45-90 triangle has hypotenuse $10$. Each leg measures (to 2 decimal places):', accept: ['7.07', '5√2'], placeholder: 'Length', explanation: 'In a 45-45-90 triangle, leg $= \\frac{\\text{hypotenuse}}{\\sqrt{2}} = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2} \\approx 7.07$.' },
     { difficulty: 'easy', question: 'If two angles of a triangle are $50°$ and $60°$, the third is:', accept: [70, '70'], placeholder: 'Degrees', explanation: '$180 - 50 - 60 = 70°$.' },
-    { difficulty: 'medium', question: 'Hypotenuse of right triangle with legs 5 and 12:', accept: [13, '13'], placeholder: 'Number', explanation: '$\\sqrt{25 + 144} = \\sqrt{169} = 13$.' }
+    { difficulty: 'medium', question: 'Hypotenuse of right triangle with legs 5 and 12:', accept: [13, '13'], placeholder: 'Number', explanation: '$\\sqrt{25 + 144} = \\sqrt{169} = 13$.' },
+    { difficulty: 'hard', question: 'Area of triangle with base 10 and height 6:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}bh = \\frac{1}{2}(10)(6) = 30$.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -635,7 +636,8 @@
         { difficulty: 'medium', question: 'A sphere has radius $6$. Surface area (use $\\pi$):', accept: ['144π', '144pi', '452.4'], placeholder: 'use π', explanation: '$SA = 4\\pi(36) = 144\\pi \\approx 452.39$.' },
         { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' },
     { difficulty: 'easy', question: 'Diameter of circle with radius 5:', accept: [10, '10'], placeholder: 'Number', explanation: '$d = 2r = 10$.' },
-    { difficulty: 'medium', question: 'Arc length of 90° sector with radius 4:', accept: ['2pi', '6.28'], placeholder: 'Length', explanation: '$\\frac{90}{360} \\cdot 2\\pi(4) = \\frac{1}{4} \\cdot 8\\pi = 2\\pi$.' }
+    { difficulty: 'medium', question: 'Arc length of 90° sector with radius 4:', accept: ['2pi', '6.28'], placeholder: 'Length', explanation: '$\\frac{90}{360} \\cdot 2\\pi(4) = \\frac{1}{4} \\cdot 8\\pi = 2\\pi$.' },
+    { difficulty: 'hard', question: 'Area of sector with radius 6 and central angle $60°$:', accept: ['6pi', '18.85'], placeholder: 'Area', explanation: '$A = \\frac{60}{360} \\cdot \\pi(6)^2 = \\frac{1}{6} \\cdot 36\\pi = 6\\pi$.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
@@ -755,7 +757,8 @@
         { difficulty: 'medium', question: 'Line through $(0, 3)$ with slope $-2$. Equation in slope-intercept form:', accept: ['y=-2x+3', 'y = -2x + 3'], placeholder: 'y = ...', explanation: '$y = mx + b = -2x + 3$. The y-intercept $b = 3$ (the point is on the y-axis).' },
         { difficulty: 'hard', question: 'Distance between $(3, -1)$ and $(-5, 5)$:', accept: [10, '10'], placeholder: 'Distance', explanation: '$d = \\sqrt{(-8)^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$.' },
     { difficulty: 'easy', question: 'Distance from $(0,0)$ to $(3,4)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{9 + 16} = 5$.' },
-    { difficulty: 'medium', question: 'Midpoint of $(2, 6)$ and $(8, 10)$:', accept: ['(5,8)', '(5, 8)'], placeholder: 'Point', explanation: '$(\\frac{2+8}{2}, \\frac{6+10}{2}) = (5, 8)$.' }
+    { difficulty: 'medium', question: 'Midpoint of $(2, 6)$ and $(8, 10)$:', accept: ['(5,8)', '(5, 8)'], placeholder: 'Point', explanation: '$(\\frac{2+8}{2}, \\frac{6+10}{2}) = (5, 8)$.' },
+    { difficulty: 'hard', question: 'Equation of circle with center $(2, 3)$ and radius 5:', accept: ['(x-2)^2+(y-3)^2=25'], placeholder: 'Equation', explanation: '$(x-h)^2 + (y-k)^2 = r^2$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the equation of the line through $(2, 1)$ and perpendicular to $y = 3x + 5$.', steps: [

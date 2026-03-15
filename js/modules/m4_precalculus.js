@@ -128,7 +128,8 @@ topics: [
     { difficulty: 'hard', question: 'Find $f^{-1}(x)$ if $f(x) = 2x + 6$. Write as f^{-1}(x)=...:', accept: ['(x-6)/2', '(x - 6)/2', 'x/2-3', 'x/2 - 3'], placeholder: 'e.g. (x-6)/2', explanation: '$y = 2x+6$. Swap: $x = 2y+6$. Solve: $y = \\frac{x-6}{2}$.' },
     { difficulty: 'hard', question: 'If $f(x) = \\frac{x+1}{x-2}$, find $f(f(3))$.', accept: ['5/2', '2.5', 2.5], placeholder: 'Enter a number', hint: '<p>Compute $f(3)$ first, then apply $f$ again.</p>', explanation: '$f(3) = \\frac{3+1}{3-2} = \\frac{4}{1} = 4$. Then $f(4) = \\frac{4+1}{4-2} = \\frac{5}{2}$.' },
     { difficulty: 'medium', question: 'If $f(x) = x^2$ and $g(x) = x + 1$, then $(f \\circ g)(2) =$?', accept: [9, '9'], placeholder: 'Number', explanation: '$g(2) = 3$. $f(3) = 9$.' },
-    { difficulty: 'hard', question: 'Range of $f(x) = \\sqrt{x - 1}$:', accept: ['[0,inf)', '[0, infinity)', 'y >= 0'], placeholder: 'Interval', explanation: 'Square root outputs $\\geq 0$. Range: $[0, \\infty)$.' }
+    { difficulty: 'hard', question: 'Range of $f(x) = \\sqrt{x - 1}$:', accept: ['[0,inf)', '[0, infinity)', 'y >= 0'], placeholder: 'Interval', explanation: 'Square root outputs $\\geq 0$. Range: $[0, \\infty)$.' },
+    { difficulty: 'hard', question: 'If $f(f^{-1}(x)) = x$, then $f^{-1}(f(x)) =$?', accept: ['x'], placeholder: 'Expression', explanation: 'Inverse functions: $f^{-1}(f(x)) = x$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -354,7 +355,8 @@ topics: [
     { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' },
     { difficulty: 'medium', question: 'Solve: $2^x = 32$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$32 = 2^5$, so $x = 5$.' },
     { difficulty: 'medium', question: 'Express $\\log_8(2)$ as a fraction:', accept: ['1/3'], placeholder: 'Fraction', explanation: '$8^{1/3} = 2$, so $\\log_8(2) = 1/3$.' },
-    { difficulty: 'hard', question: 'Expand: $\\log_2(8x^3)$ using log properties. What is the result?', accept: ['3+3log2(x)', '3 + 3log2(x)', '3+3log_2(x)'], placeholder: 'e.g. 3+3log2(x)', explanation: '$\\log_2(8) + \\log_2(x^3) = 3 + 3\\log_2(x)$.' }
+    { difficulty: 'hard', question: 'Expand: $\\log_2(8x^3)$ using log properties. What is the result?', accept: ['3+3log2(x)', '3 + 3log2(x)', '3+3log_2(x)'], placeholder: 'e.g. 3+3log2(x)', explanation: '$\\log_2(8) + \\log_2(x^3) = 3 + 3\\log_2(x)$.' },
+    { difficulty: 'hard', question: 'Half-life formula: $N(t) = N_0 \\cdot (1/2)^{t/h}$. If $h = 5$ years, fraction remaining after 15 years:', accept: ['1/8', '0.125'], placeholder: 'Fraction', explanation: '$(1/2)^{15/5} = (1/2)^3 = 1/8$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

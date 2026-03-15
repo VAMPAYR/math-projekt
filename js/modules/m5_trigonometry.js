@@ -196,7 +196,8 @@ topics: [
     { difficulty: 'hard', question: '$\\sin(\\frac{7\\pi}{6}) =$?', accept: ['-1/2', '-0.5'], placeholder: 'e.g. -1/2', explanation: 'Q3, ref angle $\\frac{\\pi}{6}$. Sin negative: $-1/2$.' },
     { difficulty: 'hard', question: 'A right triangle has hyp = 10, one angle = 30°. Find the opposite side:', accept: [5, '5'], placeholder: 'Length', explanation: '$\\sin(30°) = \\frac{\\text{opp}}{10}$. $\\text{opp} = 10 \\cdot \\frac{1}{2} = 5$.' },
     { difficulty: 'easy', question: '$\\sin(0) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(0) = 0$.' },
-    { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' }
+    { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
+    { difficulty: 'hard', question: '$\\csc(30°) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\csc(30°) = 1/\\sin(30°) = 1/0.5 = 2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -357,7 +358,8 @@ topics: [
     { difficulty: 'hard', question: '$\\cos(2 \\cdot 60\u00b0) = \\cos(120\u00b0) =$?', accept: ['-1/2', '-0.5'], placeholder: 'e.g. -1/2', explanation: '$2\\cos^2(60\u00b0) - 1 = 2(1/4) - 1 = -1/2$.' },
     { difficulty: 'hard', question: 'Solve $2\\sin^2\\theta - 1 = 0$ on $[0, 2\\pi)$. How many solutions?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\sin^2\\theta = 1/2 \\Rightarrow \\sin\\theta = \\pm \\frac{\\sqrt{2}}{2}$. Four angles: $\\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}$.' },
     { difficulty: 'easy', question: '$\\sin^2 x + \\cos^2 x =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' },
-    { difficulty: 'medium', question: '$\\cos(2 \\cdot 0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' }
+    { difficulty: 'medium', question: '$\\cos(2 \\cdot 0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' },
+    { difficulty: 'hard', question: 'Double angle: $\\sin(2 \\cdot 30°) =$?', accept: ['sqrt(3)/2', '0.866'], placeholder: 'Value', explanation: '$\\sin(60°) = \\sqrt{3}/2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [

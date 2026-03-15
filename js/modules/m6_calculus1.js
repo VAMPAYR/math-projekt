@@ -98,7 +98,8 @@ topics: [
     { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{5x^3 + 1}{2x^3 - x} =$?', accept: ['5/2', '2.5'], placeholder: 'Enter a number', explanation: 'Same degree: ratio of leading coefficients = $5/2$.' },
     { difficulty: 'hard', question: 'Is $f(x) = |x|/x$ continuous at $x = 0$? (yes/no)', accept: ['no', 'No'], placeholder: 'yes or no', explanation: 'Left limit = $-1$, right limit = $1$. Limits differ: discontinuous.' },
     { difficulty: 'easy', question: '$\\int 1\\,dx =$?', accept: ['x+C', 'x + C'], placeholder: 'Expression', explanation: '$\\int 1\\,dx = x + C$.' },
-    { difficulty: 'medium', question: '$\\int (3x^2 + 2x)\\,dx =$?', accept: ['x^3+x^2+C', 'x^3 + x^2 + C'], placeholder: 'Expression', explanation: '$x^3 + x^2 + C$.' }
+    { difficulty: 'medium', question: '$\\int (3x^2 + 2x)\\,dx =$?', accept: ['x^3+x^2+C', 'x^3 + x^2 + C'], placeholder: 'Expression', explanation: '$x^3 + x^2 + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x}}\\,dx =$?', accept: ['2sqrt(x)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\int x^{-1/2}\\,dx = 2x^{1/2} + C = 2\\sqrt{x} + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -393,7 +394,8 @@ topics: [
     { difficulty: 'medium', question: 'Is $x = 3$ a local min or max for $f(x) = x^2 - 6x$?', accept: ['min', 'minimum', 'local min'], placeholder: 'min or max', explanation: '$f\'\'(x) = 2 \\gt 0$, concave up, so local minimum.' },
     { difficulty: 'medium', question: 'How many critical points does $f(x) = x^3 - 3x$ have?', accept: [2, '2'], placeholder: 'Enter a number', explanation: '$f\'(x) = 3x^2 - 3 = 0 \\Rightarrow x = \\pm 1$. Two critical points.' },
     { difficulty: 'hard', question: 'Find the absolute max of $f(x) = -x^2 + 4x$ on $[0, 5]$:', accept: [4, '4'], placeholder: 'Max value', explanation: '$f\'(x) = -2x + 4 = 0 \\Rightarrow x = 2$. $f(0)=0, f(2)=4, f(5)=-5$. Max = 4.' },
-    { difficulty: 'hard', question: 'A farmer has 100m of fence. Maximize rectangular area $A = x(50-x)$. What is $x$?', accept: [25, '25'], placeholder: 'x = ?', explanation: '$A\' = 50 - 2x = 0 \\Rightarrow x = 25$. Max area = $25 \\times 25 = 625$ m\u00b2.' }
+    { difficulty: 'hard', question: 'A farmer has 100m of fence. Maximize rectangular area $A = x(50-x)$. What is $x$?', accept: [25, '25'], placeholder: 'x = ?', explanation: '$A\' = 50 - 2x = 0 \\Rightarrow x = 25$. Max area = $25 \\times 25 = 625$ m\u00b2.' },
+    { difficulty: 'hard', question: 'FTC Part 2: $\\int_a^b f(x)\\,dx = F(b) -$ ?', accept: ['F(a)'], placeholder: 'Expression', explanation: '$\\int_a^b f(x)\\,dx = F(b) - F(a)$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [
