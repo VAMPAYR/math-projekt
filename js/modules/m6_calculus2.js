@@ -347,7 +347,9 @@
           { difficulty: 'easy', question: '$\\int \\cos(5x)\\,dx =$? (include + C)', accept: ['sin(5x)/5 + C', '(1/5)sin(5x) + C'], placeholder: 'Expression', explanation: '$u = 5x$. $\\frac{1}{5}\\sin(5x) + C$.' },
           { difficulty: 'medium', question: 'In $\\int x e^x\\,dx$ (IBP), what should $u$ be?', accept: ['x'], placeholder: 'u = ?', explanation: 'LIATE: Algebraic ($x$) before Exponential ($e^x$).' },
           { difficulty: 'medium', question: '$\\int \\frac{2x}{x^2 + 1}\\,dx =$? (include + C)', accept: ['ln(x^2+1) + C', 'ln(x^2 + 1) + C'], placeholder: 'Expression', explanation: '$u = x^2+1$, $du = 2x\\,dx$. $\\ln(x^2+1) + C$.' },
-          { difficulty: 'hard', question: '$\\int \\ln x\\,dx = x\\ln x -$ ? $+ C$', accept: ['x'], placeholder: 'Missing term', explanation: 'IBP: $u = \\ln x, dv = dx$. $x\\ln x - \\int 1\\,dx = x\\ln x - x + C$.' }
+          { difficulty: 'hard', question: '$\\int \\ln x\\,dx = x\\ln x -$ ? $+ C$', accept: ['x'], placeholder: 'Missing term', explanation: 'IBP: $u = \\ln x, dv = dx$. $x\\ln x - \\int 1\\,dx = x\\ln x - x + C$.' },
+    { difficulty: 'easy', question: '$\\int_0^1 2x\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' },
+    { difficulty: 'medium', question: 'Average value of $f(x) = x^2$ on $[0, 3]$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\frac{1}{3}\\int_0^3 x^2\\,dx = \\frac{1}{3}[x^3/3]_0^3 = \\frac{1}{3}(9) = 3$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [

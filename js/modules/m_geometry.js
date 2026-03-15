@@ -187,7 +187,9 @@
         { difficulty: 'easy', question: 'The complement of a $37°$ angle is:', accept: [53, '53', '53°'], placeholder: 'Degrees', explanation: '$90° - 37° = 53°$.' },
         { difficulty: 'medium', question: 'Two supplementary angles differ by $40°$. Find the larger angle:', accept: [110, '110', '110°'], placeholder: 'Degrees', hint: '<p>$x + (x + 40) = 180$.</p>', explanation: '$2x + 40 = 180$, $2x = 140$, $x = 70$. Larger = $110°$.' },
         { difficulty: 'medium', question: 'A triangle has angles $x$, $2x$, and $3x$. Find $x$:', accept: [30, '30', '30°'], placeholder: 'Degrees', hint: '<p>$x + 2x + 3x = 180$.</p>', explanation: '$6x = 180$, $x = 30°$. Angles: $30°, 60°, 90°$ (a 30-60-90 triangle).' },
-        { difficulty: 'hard', question: 'In a parallelogram, one angle is $65°$. Find the adjacent angle:', accept: [115, '115', '115°'], placeholder: 'Degrees', explanation: 'Adjacent angles in a parallelogram are supplementary: $180° - 65° = 115°$.' }
+        { difficulty: 'hard', question: 'In a parallelogram, one angle is $65°$. Find the adjacent angle:', accept: [115, '115', '115°'], placeholder: 'Degrees', explanation: 'Adjacent angles in a parallelogram are supplementary: $180° - 65° = 115°$.' },
+    { difficulty: 'easy', question: 'If an angle is $40°$, its supplement is:', accept: [140, '140'], placeholder: 'Degrees', explanation: '$180 - 40 = 140$.' },
+    { difficulty: 'medium', question: 'Two complementary angles differ by $20°$. Find the larger:', accept: [55, '55'], placeholder: 'Degrees', explanation: '$x + (x - 20) = 90$. $2x = 110$. $x = 55$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [

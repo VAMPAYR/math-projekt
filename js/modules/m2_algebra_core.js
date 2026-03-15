@@ -23,7 +23,7 @@ topics: [
   description: 'The transition from arithmetic to algebra: using letters to represent unknown quantities and the rules for evaluating expressions.',
   prereqRecap: [
     { term: 'Number', definition: 'An abstract object used to count or measure. Natural numbers: $0, 1, 2, \\ldots$ Integers include negatives: $\\ldots, -2, -1, 0, 1, 2, \\ldots$ (Module 1).' },
-    { term: 'Operation', definition: 'A rule that takes numbers and produces a number: addition (+), subtraction (−), multiplication (�:), division (÷).' },
+    { term: 'Operation', definition: 'A rule that takes numbers and produces a number: addition (+), subtraction (−), multiplication (�:), division (÷).' },
     { term: 'Expression', definition: 'A combination of numbers, variables, and operations. Example: $3x + 5$. An expression does NOT have an equals sign.' },
     { term: 'Equation', definition: 'A statement that two expressions are equal: $3x + 5 = 14$. Contains an equals sign (=).' }
   ],
@@ -91,7 +91,9 @@ topics: [
     { difficulty: 'easy', question: 'Simplify: $5x + 3x$', accept: ['8x'], placeholder: 'e.g. 8x', explanation: '$5x + 3x = 8x$ (combine like terms).' },
     { difficulty: 'easy', question: 'Evaluate $2^4$:', accept: [16, '16'], placeholder: 'Enter a number', explanation: '$2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$.' },
     { difficulty: 'medium', question: 'Simplify: $4(2x - 3) + 5$', accept: ['8x-7', '8x - 7'], placeholder: 'e.g. 8x-7', hint: '<p>Distribute the 4, then combine constants.</p>', explanation: '$8x - 12 + 5 = 8x - 7$.' },
-    { difficulty: 'hard', question: 'If $x = -2$, evaluate $x^3 - 3x^2 + 2x - 1$:', accept: [-25, '-25'], placeholder: 'Enter a number', explanation: '$(-2)^3 - 3(-2)^2 + 2(-2) - 1 = -8 - 12 - 4 - 1 = -25$.' }
+    { difficulty: 'hard', question: 'If $x = -2$, evaluate $x^3 - 3x^2 + 2x - 1$:', accept: [-25, '-25'], placeholder: 'Enter a number', explanation: '$(-2)^3 - 3(-2)^2 + 2(-2) - 1 = -8 - 12 - 4 - 1 = -25$.' },
+    { difficulty: 'easy', question: 'Solve: $x - 7 = 3$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x = 3 + 7 = 10$.' },
+    { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} = 5$. $x =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$x = 5 \\times 4 = 20$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -239,7 +241,9 @@ topics: [
     { difficulty: 'easy', question: 'Solve: $x + 7 = 12$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$x = 12 - 7 = 5$.' },
     { difficulty: 'medium', question: 'Solve: $3x - 9 = 0$. $x =$?', accept: [3, '3'], placeholder: 'x = ?', explanation: '$3x = 9 \\Rightarrow x = 3$.' },
     { difficulty: 'medium', question: 'Solve: $5x + 2 = 3x + 10$. $x =$?', accept: [4, '4'], placeholder: 'x = ?', hint: '<p>Get all $x$ terms on one side.</p>', explanation: '$5x - 3x = 10 - 2 \\Rightarrow 2x = 8 \\Rightarrow x = 4$.' },
-    { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{4} = 7$. $x =$?', accept: [12, '12'], placeholder: 'x = ?', hint: '<p>Multiply everything by 12 to clear fractions.</p>', explanation: '$4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$.' }
+    { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{4} = 7$. $x =$?', accept: [12, '12'], placeholder: 'x = ?', hint: '<p>Multiply everything by 12 to clear fractions.</p>', explanation: '$4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$.' },
+    { difficulty: 'easy', question: 'The y-intercept of $y = 3x + 7$ is:', accept: [7, '7'], placeholder: 'Number', explanation: 'Set $x = 0$: $y = 7$.' },
+    { difficulty: 'medium', question: 'Find slope of line through $(1, 2)$ and $(3, 8)$:', accept: [3, '3'], placeholder: 'm = ?', explanation: '$m = (8-2)/(3-1) = 6/2 = 3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -290,7 +294,7 @@ topics: [
   whyExists: { html: `
     <p><strong>Why negative numbers?</strong> The natural numbers $\\{0, 1, 2, \\ldots\\}$ cannot solve $x + 5 = 2$. Negative integers extend the number line to the left of zero, making subtraction always possible within the integers.</p>
     <p>Real-world negatives: temperatures below zero, debts (negative balance), elevations below sea level, stock market losses.</p>
-    ${WHY('Why does negative �: negative = positive?', '<p>Consider the pattern: $3 \\times (-2) = -6$, $2 \\times (-2) = -4$, $1 \\times (-2) = -2$, $0 \\times (-2) = 0$. Each step adds $+2$ to the result. Continuing: $(-1) \\times (-2) = 2$, $(-2) \\times (-2) = 4$. The pattern forces $(-)(-)=(+)$.</p><p>Formally: we need $(-1)(-1) + (-1)(1) = (-1)(-1+1) = (-1)(0) = 0$. Since $(-1)(1) = -1$, we get $(-1)(-1) = 1$.</p>')}
+    ${WHY('Why does negative �: negative = positive?', '<p>Consider the pattern: $3 \\times (-2) = -6$, $2 \\times (-2) = -4$, $1 \\times (-2) = -2$, $0 \\times (-2) = 0$. Each step adds $+2$ to the result. Continuing: $(-1) \\times (-2) = 2$, $(-2) \\times (-2) = 4$. The pattern forces $(-)(-)=(+)$.</p><p>Formally: we need $(-1)(-1) + (-1)(1) = (-1)(-1+1) = (-1)(0) = 0$. Since $(-1)(1) = -1$, we get $(-1)(-1) = 1$.</p>')}
   ` },
   concept: { html: `
     <div class="callout callout-key"><h4>Sign Rules for Multiplication and Division</h4>
@@ -330,7 +334,7 @@ topics: [
     ],
     exercises: [
     { difficulty: 'easy', question: '$(-5) + (-8) = $?', options: ['$-13$', '$13$', '$3$', '$-3$'], correctIndex: 0, hint: '<p>Same sign: add absolute values, keep the negative sign.</p>', correctExplanation: 'Both negative: $5 + 8 = 13$, sign is negative: $-13$.', wrongExplanations: { 1: 'Both numbers are negative, so the sum must be negative.', 2: 'You subtracted. When signs are the SAME, you ADD absolute values.', 3: 'This would be $(-5) + 8$ or $5 + (-8)$, not $(-5) + (-8)$.' } },
-    { difficulty: 'easy', question: '$(-3)(7) = $?', options: ['$21$', '$-21$', '$-10$', '$10$'], correctIndex: 1, hint: '<p>Different signs → negative result.</p>', correctExplanation: '$3 \\times 7 = 21$. Different signs (negative �: positive) → $-21$.', wrongExplanations: { 0: 'Negative �: positive = negative, not positive.', 2: 'You added instead of multiplying: $(-3) + 7 = 4$, not $-10$.', 3: 'Multiplication, not addition. $3 \\times 7 = 21$.' } },
+    { difficulty: 'easy', question: '$(-3)(7) = $?', options: ['$21$', '$-21$', '$-10$', '$10$'], correctIndex: 1, hint: '<p>Different signs → negative result.</p>', correctExplanation: '$3 \\times 7 = 21$. Different signs (negative �: positive) → $-21$.', wrongExplanations: { 0: 'Negative �: positive = negative, not positive.', 2: 'You added instead of multiplying: $(-3) + 7 = 4$, not $-10$.', 3: 'Multiplication, not addition. $3 \\times 7 = 21$.' } },
     { difficulty: 'medium', question: '$|(-4) - (-9)| = $?', options: ['$13$', '$-5$', '$5$', '$-13$'], correctIndex: 2, hint: '<p>First compute $(-4) - (-9) = (-4) + 9$, then take absolute value.</p>', correctExplanation: '$(-4) - (-9) = (-4) + 9 = 5$. $|5| = 5$.', wrongExplanations: { 0: '$(-4) + (-9) = -13$, but $-(-9) = +9$, not $-9$.', 1: 'Absolute value is always non-negative. $|{\\cdot}| \\geq 0$.', 3: 'Absolute value removes the sign. $|-13| = 13$, and $|-5| = 5$.' } },
     { difficulty: 'medium', question: '$\\frac{(-2)^3}{-4} = $?', options: ['$2$', '$-2$', '$-8$', '$8$'], correctIndex: 0, hint: '<p>$(-2)^3 = (-2)(-2)(-2)$. Then divide by $-4$.</p>', correctExplanation: '$(-2)^3 = -8$. $\\frac{-8}{-4} = 2$ (same signs → positive).', wrongExplanations: { 1: '$(-8) \\div (-4) = +2$, not $-2$. Same signs give positive.', 2: '$-8$ is the numerator, but you still need to divide by $-4$.', 3: '$(-2)^3 = -8$, not $+8$. An odd power preserves the negative sign.' } },
     { difficulty: 'hard', question: 'For which values of $x$ is $|x - 3| = 5$ true?', options: ['$x = 8$ only', '$x = -2$ only', '$x = 8$ and $x = -2$', '$x = 2$ and $x = 8$'], correctIndex: 2, hint: '<p>$|A| = 5$ means $A = 5$ or $A = -5$.</p>', correctExplanation: '$x - 3 = 5 \\Rightarrow x = 8$, or $x - 3 = -5 \\Rightarrow x = -2$. Both solutions are valid.', wrongExplanations: { 0: '$x = 8$ is one solution, but absolute value equations typically have two solutions.', 1: '$x = -2$ is one solution. You also need $x - 3 = 5$, giving $x = 8$.', 3: '$x = 2$: $|2-3| = 1 \\neq 5$. That is incorrect.' } },
@@ -340,7 +344,9 @@ topics: [
     { difficulty: 'easy', question: '$(-5) + (-3) =$?', accept: [-8, '-8'], placeholder: 'Enter a number', explanation: 'Negative + negative: $-8$.' },
     { difficulty: 'easy', question: '$(-4) \\times (-6) =$?', accept: [24, '24'], placeholder: 'Enter a number', explanation: 'Negative times negative: $+24$.' },
     { difficulty: 'medium', question: '$(-2)^5 =$?', accept: [-32, '-32'], placeholder: 'Enter a number', explanation: 'Odd exponent: $-32$.' },
-    { difficulty: 'hard', question: '$\\frac{(-3)^3}{(-3)^2} =$?', accept: [-3, '-3'], placeholder: 'Enter a number', explanation: '$(-3)^{3-2} = -3$.' }
+    { difficulty: 'hard', question: '$\\frac{(-3)^3}{(-3)^2} =$?', accept: [-3, '-3'], placeholder: 'Enter a number', explanation: '$(-3)^{3-2} = -3$.' },
+    { difficulty: 'easy', question: '$(2x + 3) + (4x - 1) =$?', accept: ['6x+2', '6x + 2'], placeholder: 'Expression', explanation: '$2x + 4x = 6x$, $3 + (-1) = 2$.' },
+    { difficulty: 'medium', question: '$(x + 2)(x - 3) =$?', accept: ['x^2-x-6', 'x^2 - x - 6'], placeholder: 'Expression', explanation: 'FOIL: $x^2 - 3x + 2x - 6 = x^2 - x - 6$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [
