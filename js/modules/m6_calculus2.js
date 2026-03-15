@@ -466,7 +466,10 @@
           { difficulty: 'medium', question: 'Radius of convergence of $\\sum x^n/n!$:', accept: ['infinity', 'inf'], placeholder: 'R = ?', explanation: 'Ratio test: $\\frac{|x|}{n+1} \\to 0 < 1$ for all $x$. $R = \\infty$.' },
           { difficulty: 'hard', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^2}$ converge or diverge?', accept: ['converge', 'converges'], placeholder: 'converge/diverge', explanation: 'p-series with $p = 2 \\gt 1$: converges (to $\\pi^2/6$).' },
     { difficulty: 'easy', question: '$\\int \\frac{1}{x}\\,dx =$?', accept: ['ln|x|+C', 'ln(x)+C'], placeholder: 'Expression', explanation: '$\\ln|x| + C$.' },
-    { difficulty: 'medium', question: '$\\int e^{-x}\\,dx =$?', accept: ['-e^(-x)+C', '-e^{-x}+C'], placeholder: 'Expression', explanation: '$-e^{-x} + C$.' }
+    { difficulty: 'medium', question: '$\\int e^{-x}\\,dx =$?', accept: ['-e^(-x)+C', '-e^{-x}+C'], placeholder: 'Expression', explanation: '$-e^{-x} + C$.' },
+    { difficulty: 'easy', question: '$\\int 3x^2\\,dx =$?', accept: ['x^3+C', 'x^3 + C'], placeholder: 'Expression', explanation: '$3 \\cdot \\frac{x^3}{3} + C = x^3 + C$.' },
+    { difficulty: 'medium', question: '$\\int \\sec^2(x)\\,dx =$?', accept: ['tan(x)+C', 'tanx+C', '\\tan x + C'], placeholder: 'Expression', explanation: 'Antiderivative of $\\sec^2 x$ is $\\tan x + C$.' },
+    { difficulty: 'hard', question: '$\\int_0^{\\pi/2} \\sin(x)\\cos(x)\\,dx =$?', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: '$\\sin x \\cos x = \\frac{1}{2}\\sin(2x)$. $\\int_0^{\\pi/2} \\frac{1}{2}\\sin(2x)\\,dx = \\frac{1}{2}[-\\frac{1}{2}\\cos(2x)]_0^{\\pi/2} = \\frac{1}{2}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

@@ -171,7 +171,12 @@
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
             { content: '$\\vec{u} \\cdot \\vec{v} = 4(3) + 2(0) = 12$.' },
             { content: '$\\|\\vec{v}\\|^2 = 9 + 0 = 9$.' },
-            { content: '$\\text{proj}_{\\vec{v}}\\vec{u} = \\frac{12}{9}\\langle 3, 0 \\rangle = \\langle 4, 0 \\rangle$.' }
+            { content: '$\\text{proj}_{\\vec{v}}\\vec{u} = \\frac{12}{9}\\langle 3, 0 \\rangle = \\langle 4, 0 \\rangle$.' },
+    { difficulty: 'hard', question: 'Find the angle between $\\vec{a} = \\langle 1, 1 \\rangle$ and $\\vec{b} = \\langle 1, 0 \\rangle$.', steps: [
+      { content: '$\\vec{a} \\cdot \\vec{b} = 1(1) + 1(0) = 1$.' },
+      { content: '$|\\vec{a}| = \\sqrt{2}$, $|\\vec{b}| = 1$.' },
+      { content: '$\\cos\\theta = \\frac{1}{\\sqrt{2}} \\Rightarrow \\theta = 45°$.' }
+    ], explanation: '$\\cos\\theta = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{a}||\\vec{b}|}$.' }
           ], explanation: 'The projection drops the component perpendicular to $\\vec{v}$.' }
         ],
         matching: [
@@ -314,7 +319,8 @@
           ] }
         ],
         fillBlanks: [
-          { difficulty: 'easy', context: 'Partial derivatives:', expression: 'When computing $\\frac{\\partial f}{\\partial x}$, treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'Hold other variables constant.' }
+          { difficulty: 'easy', context: 'Partial derivatives:', expression: 'When computing $\\frac{\\partial f}{\\partial x}$, treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'Hold other variables constant.' },
+    { difficulty: 'medium', context: 'Gradient:', expression: '$\\nabla f = \\langle \\frac{\\partial f}{\\partial x},$ {{0}} $\\rangle$', blanks: [ { accept: ['df/dy', '\\frac{\\partial f}{\\partial y}'], size: 8 } ], explanation: 'Gradient: partial derivatives as components.' }
         ],
         stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Partial Derivative Strategy</h4>
           <ol><li><strong>Cover up</strong> all other variables: treat them as constants.</li>

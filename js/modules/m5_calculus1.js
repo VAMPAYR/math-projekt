@@ -224,7 +224,12 @@
             { left: 'Removable', right: 'Hole in the graph' },
             { left: 'Jump', right: 'Left and right limits differ' },
             { left: 'Infinite', right: 'Vertical asymptote' }
-          ] }
+          ] },
+    { difficulty: 'medium', instruction: 'Match each limit to its value:', pairs: [
+      { left: '$\\lim_{x\\to 0} \\frac{\\sin x}{x}$', right: '1' },
+      { left: '$\\lim_{x\\to \\infty} \\frac{1}{x}$', right: '0' },
+      { left: '$\\lim_{x\\to 0} \\frac{1-\\cos x}{x}$', right: '0' }
+    ] }
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Continuity at $x = a$:', expression: '$f$ is continuous at $a$ if $\\lim_{x \\to a} f(x) =$ {{0}}.', blanks: [ { accept: ['f(a)'], size: 6 } ], explanation: 'The limit must equal the function value.' },

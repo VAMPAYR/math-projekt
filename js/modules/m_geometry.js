@@ -506,7 +506,11 @@
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [
           { content: 'Outer circle area: $\\pi(8)^2 = 64\\pi$.' },
           { content: 'Inner circle area: $\\pi(5)^2 = 25\\pi$.' },
-          { content: 'Ring area = outer $-$ inner: $64\\pi - 25\\pi = 39\\pi \\approx 122.52$ sq units.' }
+          { content: 'Ring area = outer $-$ inner: $64\\pi - 25\\pi = 39\\pi \\approx 122.52$ sq units.' },
+    { difficulty: 'medium', question: 'Find the area of a trapezoid with bases 6 and 10, height 4.', steps: [
+      { content: 'Formula: $A = \\frac{1}{2}(b_1 + b_2)h$.' },
+      { content: '$A = \\frac{1}{2}(6 + 10)(4) = \\frac{1}{2}(16)(4) = 32$.' }
+    ], explanation: 'Trapezoid area: average of bases times height.' }
         ], explanation: 'Annulus area = $\\pi(R^2 - r^2)$. Subtract the hole from the full disk.' }
       ],
   fillBlanks: [
