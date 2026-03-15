@@ -119,7 +119,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int x^3\\,dx =$?', accept: ['x^4/4+C'], placeholder: 'Expression', explanation: '$x^4/4 + C$.' },
     { difficulty: 'hard', question: 'u-substitution: $\\int 2x \\cos(x^2)\\,dx$. Let $u = x^2$. Result:', accept: ['sin(x^2)+C', 'sin(u)+C'], placeholder: 'Expression', explanation: '$du = 2x\\,dx$. $\\int \\cos u\\,du = \\sin u + C = \\sin(x^2) + C$.' },
     { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', '0 + C'], placeholder: 'Result', explanation: '$C$ (constant of integration).' },
-    { difficulty: 'hard', question: 'Tabular integration for $\\int x^3 e^x\\,dx$: differentiating $x^3$ how many times to reach 0?', accept: [3, '3'], placeholder: 'Times', explanation: '$x^3 \\to 3x^2 \\to 6x \\to 6 \\to 0$. Three non-zero derivatives.' }
+    { difficulty: 'hard', question: 'Tabular integration for $\\int x^3 e^x\\,dx$: differentiating $x^3$ how many times to reach 0?', accept: [3, '3'], placeholder: 'Times', explanation: '$x^3 \\to 3x^2 \\to 6x \\to 6 \\to 0$. Three non-zero derivatives.' },
+    { difficulty: 'medium', question: '$\\int (3x^2 + 2x)\\,dx =$?', accept: ['x^3+x^2+C', 'x^3 + x^2 + C'], placeholder: 'Expression', explanation: '$x^3 + x^2 + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{2x}{x^2+1}\\,dx =$?', accept: ['ln(x^2+1)+C', 'ln|x^2+1|+C'], placeholder: 'Expression', explanation: 'Let $u = x^2+1$: $\\ln|u| + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -266,7 +268,9 @@ topics: [
     { difficulty: 'easy', question: 'Number of subintervals with width $\\Delta x = (b-a)/n$. $n$ is the:', accept: ['number of subintervals', 'partition count'], placeholder: 'What?', explanation: '$n$ subintervals, each of width $\\Delta x$.' },
     { difficulty: 'hard', question: '$\\sum_{i=1}^n i^2 = \\frac{n(n+1)(2n+1)}{$ ? $}$', accept: [6, '6'], placeholder: 'Number', explanation: '$\\sum i^2 = n(n+1)(2n+1)/6$.' },
     { difficulty: 'easy', question: '$\\int_2^2 x^5\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Same limits: $\\int_a^a = 0$.' },
-    { difficulty: 'hard', question: '$\\int_0^4 |x-2|\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Split at $x=2$: $\\int_0^2 (2-x) + \\int_2^4 (x-2) = 2 + 2 = 4$.' }
+    { difficulty: 'hard', question: '$\\int_0^4 |x-2|\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Split at $x=2$: $\\int_0^2 (2-x) + \\int_2^4 (x-2) = 2 + 2 = 4$.' },
+    { difficulty: 'medium', question: 'Right Riemann sum uses which endpoint?', accept: ['right'], placeholder: 'Which?', explanation: 'Right sum: $f(x_i)$ at right endpoint.' },
+    { difficulty: 'hard', question: 'As $n \\to \\infty$, Riemann sum converges to:', accept: ['definite integral', 'the integral'], placeholder: 'What?', explanation: '$\\lim_{n \\to \\infty} \\sum f(x_i^*)\\Delta x = \\int_a^b f\\,dx$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -462,7 +466,9 @@ topics: [
     { difficulty: 'easy', question: 'Net change theorem: $\\int_a^b f\'\\,dx = f(b) - f($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: 'Net change: $\\int_a^b f\'(x)\\,dx = f(b) - f(a)$.' },
     { difficulty: 'hard', question: 'Washer method for volume: $V = \\pi \\int (R^2 - r^2)\\,dx$. This rotates around:', accept: ['x-axis', 'an axis', 'the axis'], placeholder: 'Axis?', explanation: 'Washers: rotation about the $x$-axis (or $y$-axis with adjustments).' },
     { difficulty: 'easy', question: 'FTC Part 2: $\\int_a^b f(x)\\,dx = F(b) - F($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$F(b) - F(a)$ where $F\' = f$.' },
-    { difficulty: 'hard', question: 'Shell method: $V = 2\\pi \\int_a^b x f(x)\\,dx$ for rotation about the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: $2\\pi \\times$ radius $\\times$ height $\\times$ thickness.' }
+    { difficulty: 'hard', question: 'Shell method: $V = 2\\pi \\int_a^b x f(x)\\,dx$ for rotation about the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: $2\\pi \\times$ radius $\\times$ height $\\times$ thickness.' },
+    { difficulty: 'medium', question: 'Linearity: $\\int (cf)\\,dx = c \\int f\\,dx$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Constant factor rule: $\\int cf = c\\int f$.' },
+    { difficulty: 'hard', question: 'Disk method: rotation of $y = \\sqrt{x}$ about $x$-axis from $0$ to $4$: $V =$?', accept: ['8pi', '25.13'], placeholder: 'Volume', explanation: '$\\pi \\int_0^4 x\\,dx = \\pi [x^2/2]_0^4 = 8\\pi$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

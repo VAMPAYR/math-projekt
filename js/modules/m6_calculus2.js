@@ -195,7 +195,9 @@
     { difficulty: 'easy', question: '$\\int \\sin(x)\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' },
     { difficulty: 'hard', question: 'Trig sub for $\\sqrt{a^2 - x^2}$: let $x = a\\sin$ ?', accept: ['theta', '\\theta'], placeholder: 'Variable', explanation: '$x = a\\sin\\theta$. Then $\\sqrt{a^2 - x^2} = a\\cos\\theta$.' },
     { difficulty: 'easy', question: 'Substitution: $\\int f(g(x))g\'(x)\\,dx = F(g(x)) + $ ?', accept: ['C'], placeholder: 'Constant', explanation: '$+C$ (constant of integration).' },
-    { difficulty: 'hard', question: '$\\int \\sqrt{x^2+1}\\,dx$ requires trig sub $x =$?', accept: ['tan(theta)', 'a tan theta'], placeholder: 'Substitution', explanation: 'For $\\sqrt{x^2+a^2}$: let $x = a\\tan\\theta$.' }
+    { difficulty: 'hard', question: '$\\int \\sqrt{x^2+1}\\,dx$ requires trig sub $x =$?', accept: ['tan(theta)', 'a tan theta'], placeholder: 'Substitution', explanation: 'For $\\sqrt{x^2+a^2}$: let $x = a\\tan\\theta$.' },
+    { difficulty: 'medium', question: 'IBP rule: $\\int u\\,dv = uv - \\int $ ? $\\,du$', accept: ['v'], placeholder: 'Variable', explanation: '$\\int u\\,dv = uv - \\int v\\,du$.' },
+    { difficulty: 'hard', question: 'LIATE rule orders: Logarithmic, Inverse trig, _____, Trig, Exponential.', accept: ['Algebraic', 'A'], placeholder: 'Word', explanation: 'LIATE: Log, Inverse trig, Algebraic, Trig, Exponential.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -405,7 +407,9 @@
     { difficulty: 'easy', question: 'Shell method: $V = 2\\pi \\int x f(x)\\,dx$ rotates around the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: rotation about the $y$-axis.' },
     { difficulty: 'hard', question: 'Pappus theorem: volume = $2\\pi \\bar{y} A$ where $\\bar{y}$ is:', accept: ['centroid distance', 'distance from centroid to axis'], placeholder: 'What?', explanation: '$\\bar{y}$: distance from centroid to axis of rotation.' },
     { difficulty: 'easy', question: 'Volume by disk method: $V = \\pi \\int [f(x)]^2\\,dx$. Cross-sections are:', accept: ['circles', 'disks'], placeholder: 'Shape', explanation: 'Disk method: circular cross-sections.' },
-    { difficulty: 'hard', question: 'Catenary curve: $y = a \\cosh(x/a)$. Physics application:', accept: ['hanging chain', 'hanging cable', 'suspension cable'], placeholder: 'What?', explanation: 'Catenary: shape of a freely hanging chain/cable.' }
+    { difficulty: 'hard', question: 'Catenary curve: $y = a \\cosh(x/a)$. Physics application:', accept: ['hanging chain', 'hanging cable', 'suspension cable'], placeholder: 'What?', explanation: 'Catenary: shape of a freely hanging chain/cable.' },
+    { difficulty: 'medium', question: 'Area between curves: $\\int_a^b (f - g)\\,dx$ when $f \\geq g$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Top minus bottom: $\\int (f - g)\\,dx$.' },
+    { difficulty: 'hard', question: 'Centroid $\\bar{x}$ of region under $f$ from $a$ to $b$: $\\frac{\\int_a^b x f(x)\\,dx}{\\int_a^b f(x)\\,dx}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\bar{x} = \\int x f / \\int f$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -549,7 +553,9 @@
     { difficulty: 'easy', question: 'Proper rational function: degree of numerator < degree of:', accept: ['denominator'], placeholder: 'What?', explanation: 'Proper: num degree $<$ denom degree. Otherwise: do long division first.' },
     { difficulty: 'hard', question: 'Comparison test for improper integrals: if $0 \\leq f \\leq g$ and $\\int g$ diverges, can we conclude about $\\int f$?', accept: ['no', 'nothing'], placeholder: 'Conclusion?', explanation: 'If the larger diverges, we cannot conclude about the smaller (it might still converge).' },
     { difficulty: 'easy', question: '$\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' },
-    { difficulty: 'hard', question: 'Gamma function: $\\Gamma(n) = (n-1)!$ for positive integers. $\\Gamma(5) =$?', accept: [24, '24'], placeholder: 'Number', explanation: '$\\Gamma(5) = 4! = 24$.' }
+    { difficulty: 'hard', question: 'Gamma function: $\\Gamma(n) = (n-1)!$ for positive integers. $\\Gamma(5) =$?', accept: [24, '24'], placeholder: 'Number', explanation: '$\\Gamma(5) = 4! = 24$.' },
+    { difficulty: 'medium', question: 'Taylor remainder ensures the polynomial approximation has bounded:', accept: ['error'], placeholder: 'What?', explanation: 'Remainder: bounds the approximation error.' },
+    { difficulty: 'hard', question: 'Parametric arc length: $L = \\int_a^b \\sqrt{(dx/dt)^2 + (dy/dt)^2}\\,$ ?', accept: ['dt'], placeholder: 'Variable', explanation: '$L = \\int \\sqrt{(x\'(t))^2 + (y\'(t))^2}\\,dt$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

@@ -210,7 +210,9 @@
     { difficulty: 'easy', question: 'Vertical angles are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Vertical angles: congruent (formed by intersecting lines).' },
     { difficulty: 'hard', question: 'Menelaus theorem applies to a triangle cut by a:', accept: ['transversal', 'line'], placeholder: 'What?', explanation: 'Menelaus: product of ratios along a transversal equals $-1$.' },
     { difficulty: 'easy', question: 'Supplementary angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: '$180°$.' },
-    { difficulty: 'hard', question: 'Cross-ratio is invariant under:', accept: ['projective transformation', 'projection'], placeholder: 'What?', explanation: 'Cross-ratio: $(A,B;C,D)$ is preserved by projective transformations.' }
+    { difficulty: 'hard', question: 'Cross-ratio is invariant under:', accept: ['projective transformation', 'projection'], placeholder: 'What?', explanation: 'Cross-ratio: $(A,B;C,D)$ is preserved by projective transformations.' },
+    { difficulty: 'medium', question: 'Complementary angles sum to:', accept: [90, '90'], placeholder: 'Degrees', explanation: '$90°$.' },
+    { difficulty: 'hard', question: 'Projective geometry: two distinct lines always intersect in:', accept: ['one point', 'a point', 'exactly one point'], placeholder: 'What?', explanation: 'Projective: no parallel lines. Every pair of lines meets.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -402,7 +404,9 @@
     { difficulty: 'easy', question: '30-60-90 triangle: side ratios are $1 : \\sqrt{3} : $ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Short : medium : hypotenuse = $1 : \\sqrt{3} : 2$.' },
     { difficulty: 'hard', question: 'Ceva\'s theorem: concurrent cevians satisfy $\\frac{AF}{FB} \\cdot \\frac{BD}{DC} \\cdot \\frac{CE}{EA} =$?', accept: [1, '1'], placeholder: 'Value', explanation: 'Ceva: product of ratios along concurrent cevians = 1.' },
     { difficulty: 'easy', question: 'Equilateral triangle: all sides equal and all angles:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$60°$ each ($180°/3$).' },
-    { difficulty: 'hard', question: 'Apollonius circle: locus of points with ratio of distances to two fixed points constant.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Apollonius: for fixed $k \\neq 1$, $|PA|/|PB| = k$ traces a circle.' }
+    { difficulty: 'hard', question: 'Apollonius circle: locus of points with ratio of distances to two fixed points constant.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Apollonius: for fixed $k \\neq 1$, $|PA|/|PB| = k$ traces a circle.' },
+    { difficulty: 'medium', question: 'Angle bisector divides the opposite side in ratio of:', accept: ['adjacent sides', 'the two adjacent sides'], placeholder: 'Ratio', explanation: 'Angle bisector theorem: ratio = adjacent sides.' },
+    { difficulty: 'hard', question: 'Nine-point circle passes through: midpoints, feet of altitudes, and midpoints of segments from vertices to:', accept: ['orthocenter', 'the orthocenter'], placeholder: 'Point', explanation: 'Nine-point circle: 9 special points including those three groups.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -563,7 +567,9 @@
     { difficulty: 'easy', question: 'Tangent to a circle is perpendicular to the _____ at the point of tangency.', accept: ['radius'], placeholder: 'What?', explanation: 'Tangent line is perpendicular to the radius.' },
     { difficulty: 'hard', question: 'Power of a point: for point $P$ outside circle, $PA \\cdot PB = PC \\cdot PD$ where $AB, CD$ are:', accept: ['secants', 'chords'], placeholder: 'What?', explanation: 'Power of a point: constant product along any secant through $P$.' },
     { difficulty: 'easy', question: 'Diameter of a circle with radius 5:', accept: [10, '10'], placeholder: 'Number', explanation: '$d = 2r = 10$.' },
-    { difficulty: 'hard', question: 'Ptolemy\'s theorem: in cyclic quadrilateral $ABCD$, $AC \\cdot BD = AB \\cdot CD + AD \\cdot$ ?', accept: ['BC'], placeholder: 'Side', explanation: 'Ptolemy: product of diagonals = sum of products of opposite sides.' }
+    { difficulty: 'hard', question: 'Ptolemy\'s theorem: in cyclic quadrilateral $ABCD$, $AC \\cdot BD = AB \\cdot CD + AD \\cdot$ ?', accept: ['BC'], placeholder: 'Side', explanation: 'Ptolemy: product of diagonals = sum of products of opposite sides.' },
+    { difficulty: 'medium', question: 'Arc length = radius times _____ (in radians).', accept: ['angle', 'theta', 'central angle'], placeholder: 'What?', explanation: '$s = r\\theta$.' },
+    { difficulty: 'hard', question: 'Gauss-Bonnet theorem: total curvature of a closed surface equals $2\\pi$ times:', accept: ['Euler characteristic', 'chi'], placeholder: 'What?', explanation: '$\\int_M K\\,dA = 2\\pi \\chi(M)$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

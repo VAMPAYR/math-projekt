@@ -115,7 +115,9 @@ topics: [
     { difficulty: 'easy', question: 'Evaluate: $2^5 =$?', accept: [32, '32'], placeholder: 'Number', explanation: '$2^5 = 32$.' },
     { difficulty: 'hard', question: 'Cramer\'s rule: $x = D_x / D$ where $D$ is the determinant of:', accept: ['coefficient matrix', 'the coefficients'], placeholder: 'What?', explanation: 'Cramer: $D = $ determinant of coefficient matrix. $D_x$: replace $x$-column with constants.' },
     { difficulty: 'easy', question: 'Average of 10, 20, 30:', accept: [20, '20'], placeholder: 'Number', explanation: '$(10+20+30)/3 = 20$.' },
-    { difficulty: 'hard', question: 'Fibonacci: $F_1=1, F_2=1, F_3=2, \\ldots$ Golden ratio $\\phi \\approx$?', accept: ['1.618', '1.62'], placeholder: 'Number', explanation: '$\\phi = (1+\\sqrt{5})/2 \\approx 1.618$.' }
+    { difficulty: 'hard', question: 'Fibonacci: $F_1=1, F_2=1, F_3=2, \\ldots$ Golden ratio $\\phi \\approx$?', accept: ['1.618', '1.62'], placeholder: 'Number', explanation: '$\\phi = (1+\\sqrt{5})/2 \\approx 1.618$.' },
+    { difficulty: 'medium', question: 'Proportion: $\\frac{3}{x} = \\frac{6}{10}$. $x =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$6x = 30$. $x = 5$.' },
+    { difficulty: 'hard', question: 'Harmonic mean of $a$ and $b$: $H = \\frac{2ab}{a+b}$. $H(3,6) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$H = 12/3 = 4$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -289,7 +291,9 @@ topics: [
     { difficulty: 'easy', question: 'Standard form of line: $Ax + By = C$. Slope $= -A/$ ?', accept: ['B'], placeholder: 'Variable', explanation: 'Slope $= -A/B$.' },
     { difficulty: 'hard', question: 'Area of triangle with vertices $(0,0), (4,0), (0,3)$:', accept: [6, '6'], placeholder: 'Number', explanation: '$\\frac{1}{2}(4)(3) = 6$.' },
     { difficulty: 'easy', question: 'Point-slope form: $y - y_1 = m(x - $ ? $)$', accept: ['x_1', 'x1'], placeholder: 'Variable', explanation: '$y - y_1 = m(x - x_1)$.' },
-    { difficulty: 'hard', question: 'Equation of circle: $(x-h)^2 + (y-k)^2 = r^2$. Center:', accept: ['(h,k)', '(h, k)'], placeholder: 'Point', explanation: 'Center $(h,k)$, radius $r$.' }
+    { difficulty: 'hard', question: 'Equation of circle: $(x-h)^2 + (y-k)^2 = r^2$. Center:', accept: ['(h,k)', '(h, k)'], placeholder: 'Point', explanation: 'Center $(h,k)$, radius $r$.' },
+    { difficulty: 'medium', question: 'Slope-intercept form: $y = mx + b$. $b$ is the:', accept: ['y-intercept'], placeholder: 'What?', explanation: '$b$: the $y$-intercept (where line crosses $y$-axis).' },
+    { difficulty: 'hard', question: 'Collinear points: three points lie on the same:', accept: ['line'], placeholder: 'What?', explanation: 'Collinear: on the same line. Check via equal slopes.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -416,7 +420,9 @@ topics: [
     { difficulty: 'easy', question: '$\\frac{x^5}{x^2} =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$x^{5-2} = x^3$.' },
     { difficulty: 'hard', question: 'Geometric series finite sum: $S_n = a\\frac{1-r^n}{1-r}$. For $a=2, r=3, n=4$:', accept: [80, '80'], placeholder: 'Number', explanation: '$2 \\cdot \\frac{1-81}{1-3} = 2 \\cdot 40 = 80$.' },
     { difficulty: 'easy', question: '$(x^2)(x^3) =$?', accept: ['x^5'], placeholder: 'Expression', explanation: '$x^{2+3} = x^5$.' },
-    { difficulty: 'hard', question: 'Binomial theorem: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^$ ?', accept: ['k', 'b^k'], placeholder: 'Exponent', explanation: '$(a+b)^n = \\sum \\binom{n}{k}a^{n-k}b^k$.' }
+    { difficulty: 'hard', question: 'Binomial theorem: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^$ ?', accept: ['k', 'b^k'], placeholder: 'Exponent', explanation: '$(a+b)^n = \\sum \\binom{n}{k}a^{n-k}b^k$.' },
+    { difficulty: 'medium', question: '$(-x)^2 =$?', accept: ['x^2', 'x2'], placeholder: 'Expression', explanation: '$(-x)^2 = (-1)^2 x^2 = x^2$.' },
+    { difficulty: 'hard', question: 'Sigma notation: $\\sum_{k=1}^{4} k^2 =$?', accept: [30, '30'], placeholder: 'Number', explanation: '$1 + 4 + 9 + 16 = 30$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

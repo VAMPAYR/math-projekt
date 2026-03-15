@@ -227,7 +227,9 @@
     { difficulty: 'easy', question: 'Continuous function: no breaks, jumps, or:', accept: ['holes', 'gaps'], placeholder: 'What?', explanation: 'Continuous: $\\lim_{x \\to a} f(x) = f(a)$.' },
     { difficulty: 'hard', question: 'L\'Hopital\'s rule applies to _____ forms.', accept: ['indeterminate', '0/0 or inf/inf'], placeholder: 'Type', explanation: 'L\'Hopital: $0/0$ or $\\infty/\\infty$.' },
     { difficulty: 'easy', question: '$\\lim_{x \\to 3} (2x + 1) =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Direct substitution: $2(3)+1 = 7$.' },
-    { difficulty: 'hard', question: 'A cusp is where the derivative:', accept: ['is undefined', 'does not exist'], placeholder: 'Behavior', explanation: 'Cusp: left and right derivatives approach different infinities.' }
+    { difficulty: 'hard', question: 'A cusp is where the derivative:', accept: ['is undefined', 'does not exist'], placeholder: 'Behavior', explanation: 'Cusp: left and right derivatives approach different infinities.' },
+    { difficulty: 'medium', question: 'Piecewise limit: check left and right limits separately.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'At boundary points of piecewise functions, check both sides.' },
+    { difficulty: 'hard', question: 'Order of a pole: $f(x) = 1/(x-2)^3$ has a pole of order:', accept: [3, '3'], placeholder: 'Order', explanation: 'Denominator $(x-2)^3$: pole of order 3 at $x = 2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -483,7 +485,9 @@
     { difficulty: 'easy', question: 'Product rule: $\\frac{d}{dx}(fg) = f\'g +$ ?', accept: ['fg\'', "fg'"], placeholder: 'Term', explanation: '$fg\' + f\'g$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arcsin x) =$?', accept: ['1/sqrt(1-x^2)'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{1-x^2}}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(e^x) =$?', accept: ['e^x', 'e^x'], placeholder: 'Expression', explanation: '$e^x$ is its own derivative.' },
-    { difficulty: 'hard', question: '$\\frac{d}{dx}(a^x) = a^x \\ln($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$\\frac{d}{dx}a^x = a^x \\ln a$.' }
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(a^x) = a^x \\ln($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$\\frac{d}{dx}a^x = a^x \\ln a$.' },
+    { difficulty: 'medium', question: 'Chain rule: $\\frac{d}{dx} f(g(x)) = f\'(g(x)) \\cdot $ ?', accept: ["g'(x)", 'g prime(x)'], placeholder: 'Factor', explanation: '$f\'(g(x)) \\cdot g\'(x)$.' },
+    { difficulty: 'hard', question: 'Antiderivative of $2x\\cos(x^2)$:', accept: ['sin(x^2)+C'], placeholder: 'Expression', explanation: 'Let $u = x^2$: $\\int \\cos u\\,du = \\sin(x^2) + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -635,7 +639,9 @@
     { difficulty: 'easy', question: 'MVT: there exists $c$ in $(a,b)$ where $f\'(c) = $ average rate.', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' },
     { difficulty: 'hard', question: 'Related rates: if $V = \\frac{4}{3}\\pi r^3$, then $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Chain rule: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.' },
     { difficulty: 'easy', question: 'Optimization: set $f\' = 0$ and solve for critical values.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Optimization: find critical points, test for max/min.' },
-    { difficulty: 'hard', question: 'Global max on open interval: might not exist because of:', accept: ['no boundary', 'open endpoints', 'no closed interval'], placeholder: 'Why?', explanation: 'EVT requires closed interval. Open intervals may not achieve extremes.' }
+    { difficulty: 'hard', question: 'Global max on open interval: might not exist because of:', accept: ['no boundary', 'open endpoints', 'no closed interval'], placeholder: 'Why?', explanation: 'EVT requires closed interval. Open intervals may not achieve extremes.' },
+    { difficulty: 'medium', question: 'If $f\'(x) > 0$ on interval, $f$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: 'Positive derivative: function increasing.' },
+    { difficulty: 'hard', question: 'Mean value theorem: there exists $c$ with $f\'(c) = \\frac{f(b)-f(a)}{b-$ ?$}$', accept: ['a'], placeholder: 'Value', explanation: 'MVT: $f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

@@ -176,7 +176,9 @@ topics: [
     { difficulty: 'easy', question: '$\\binom{5}{2} =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$\\frac{5!}{2!3!} = 10$.' },
     { difficulty: 'hard', question: 'Derangement: $D_n = n!(1 - 1/1! + 1/2! - \\ldots + (-1)^n/n!)$. $D_3 =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$3!(1 - 1 + 1/2 - 1/6) = 6(1/3) = 2$.' },
     { difficulty: 'easy', question: 'P(rolling a 6 on fair die):', accept: ['1/6', '0.167'], placeholder: 'Probability', explanation: 'One outcome out of six.' },
-    { difficulty: 'hard', question: 'Geometric distribution: $P(X=k) = (1-p)^{k-1}p$. $E[X] = 1/$ ?', accept: ['p'], placeholder: 'Parameter', explanation: '$E[X] = 1/p$: expected number of trials until first success.' }
+    { difficulty: 'hard', question: 'Geometric distribution: $P(X=k) = (1-p)^{k-1}p$. $E[X] = 1/$ ?', accept: ['p'], placeholder: 'Parameter', explanation: '$E[X] = 1/p$: expected number of trials until first success.' },
+    { difficulty: 'medium', question: 'Permutation with repetition: arranging $n$ items with $n_1$ alike, $n_2$ alike: $\\frac{n!}{n_1! n_2! \\ldots}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Multinomial coefficient.' },
+    { difficulty: 'hard', question: 'Stars and bars: ways to place 10 identical balls in 3 bins: $\\binom{10+3-1}{3-1} =$?', accept: [66, '66'], placeholder: 'Number', explanation: '$\\binom{12}{2} = 66$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -382,7 +384,9 @@ topics: [
     { difficulty: 'easy', question: 'IQR = Q3 $-$ Q1. For Q1=25, Q3=75: IQR $=$?', accept: [50, '50'], placeholder: 'Number', explanation: '$75 - 25 = 50$.' },
     { difficulty: 'hard', question: 'Sufficient statistic captures all information about parameter $\\theta$ in:', accept: ['the data', 'the sample'], placeholder: 'What?', explanation: 'Sufficient statistic: no additional info in the full sample beyond the statistic.' },
     { difficulty: 'easy', question: 'Z-score: $z = (x - \\mu) / \\sigma$. If $x = \\mu$, then $z =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$(\\mu - \\mu) / \\sigma = 0$.' },
-    { difficulty: 'hard', question: 'Type I error: rejecting $H_0$ when it is:', accept: ['true'], placeholder: 'Status', explanation: 'Type I: false positive. Reject true null.' }
+    { difficulty: 'hard', question: 'Type I error: rejecting $H_0$ when it is:', accept: ['true'], placeholder: 'Status', explanation: 'Type I: false positive. Reject true null.' },
+    { difficulty: 'medium', question: '$P(A|B)$: probability of $A$ given $B$. Formula: $P(A \\cap B) / P($ ?$)$', accept: ['B'], placeholder: 'Event', explanation: '$P(A|B) = P(A \\cap B)/P(B)$.' },
+    { difficulty: 'hard', question: 'Markov inequality: $P(X \\geq a) \\leq E[X]/$ ?', accept: ['a'], placeholder: 'Value', explanation: '$P(X \\geq a) \\leq E[X]/a$ for $X \\geq 0$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

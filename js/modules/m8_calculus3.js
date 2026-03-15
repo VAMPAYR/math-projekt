@@ -132,7 +132,9 @@ topics: [
     { difficulty: 'easy', question: 'Divergence of constant vector field:', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Constant field: all partial derivatives are zero. Divergence = 0.' },
     { difficulty: 'hard', question: 'Irrotational: $\\nabla \\times \\vec{F} = \\vec{0}$. Implies $\\vec{F}$ is:', accept: ['conservative', 'gradient field'], placeholder: 'Property', explanation: 'Curl-free (irrotational) in simply connected domain implies conservative.' },
     { difficulty: 'easy', question: 'Conservative vector field: $\\vec{F} = \\nabla \\phi$. $\\phi$ is the:', accept: ['potential function', 'scalar potential'], placeholder: 'Name', explanation: '$\\phi$: scalar potential function.' },
-    { difficulty: 'hard', question: '$\\nabla \\times (\\nabla \\phi) = $ ? (always)', accept: ['0', 'zero', '\\vec{0}'], placeholder: 'Value', explanation: 'Curl of gradient is always zero.' }
+    { difficulty: 'hard', question: '$\\nabla \\times (\\nabla \\phi) = $ ? (always)', accept: ['0', 'zero', '\\vec{0}'], placeholder: 'Value', explanation: 'Curl of gradient is always zero.' },
+    { difficulty: 'medium', question: 'Source: $\\nabla \\cdot \\vec{F} > 0$. Sink: $\\nabla \\cdot \\vec{F} <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Source: positive divergence. Sink: negative divergence.' },
+    { difficulty: 'hard', question: 'Harmonic function: $\\nabla^2 f = 0$. Satisfies the _____ equation.', accept: ['Laplace', 'Laplace\'s'], placeholder: 'Name', explanation: 'Laplace equation: $\\Delta f = 0$. Solutions are harmonic.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -292,7 +294,9 @@ topics: [
     { difficulty: 'easy', question: 'Green\'s theorem relates a _____ integral to a double integral.', accept: ['line', 'closed line'], placeholder: 'Type', explanation: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (Q_x - P_y)\\,dA$.' },
     { difficulty: 'hard', question: 'Area via Green\'s: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Shoelace formula generalized: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$.' },
     { difficulty: 'easy', question: 'Work integral: $W = \\int_C \\vec{F} \\cdot d\\vec{r}$. Units:', accept: ['joules', 'energy', 'force times distance'], placeholder: 'Units', explanation: 'Work = force times displacement. SI: Joules.' },
-    { difficulty: 'hard', question: 'Exact differential equation: $M\\,dx + N\\,dy = 0$ is exact when $M_y =$ ?', accept: ['N_x', 'dN/dx'], placeholder: 'Condition', explanation: 'Exact: $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$.' }
+    { difficulty: 'hard', question: 'Exact differential equation: $M\\,dx + N\\,dy = 0$ is exact when $M_y =$ ?', accept: ['N_x', 'dN/dx'], placeholder: 'Condition', explanation: 'Exact: $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$.' },
+    { difficulty: 'medium', question: 'Orientation of curve matters for line integrals: reversing direction _____ the sign.', accept: ['changes', 'flips', 'reverses'], placeholder: 'What?', explanation: 'Reverse direction: negate the integral.' },
+    { difficulty: 'hard', question: 'Poincare lemma: on a simply connected domain, every closed form is:', accept: ['exact'], placeholder: 'Property', explanation: 'Closed ($d\\omega = 0$) implies exact ($\\omega = d\\eta$) on simply connected domains.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -440,7 +444,9 @@ topics: [
     { difficulty: 'easy', question: 'Temperature at a point is a _____ field.', accept: ['scalar'], placeholder: 'Type', explanation: 'Temperature: assigns a scalar (number) to each point.' },
     { difficulty: 'hard', question: 'Potential function $\\phi$: $\\vec{F} = -\\nabla\\phi$. The negative sign convention comes from:', accept: ['physics', 'potential energy'], placeholder: 'Where?', explanation: 'Physics convention: force = negative gradient of potential energy.' },
     { difficulty: 'easy', question: 'Total surface area includes lateral surface plus:', accept: ['bases', 'top and bottom', 'end caps'], placeholder: 'What?', explanation: 'Total SA = lateral + bases.' },
-    { difficulty: 'hard', question: 'Navier-Stokes equations describe:', accept: ['fluid flow', 'fluid dynamics', 'viscous flow'], placeholder: 'What?', explanation: 'Navier-Stokes: PDEs governing viscous fluid flow. Millennium problem.' }
+    { difficulty: 'hard', question: 'Navier-Stokes equations describe:', accept: ['fluid flow', 'fluid dynamics', 'viscous flow'], placeholder: 'What?', explanation: 'Navier-Stokes: PDEs governing viscous fluid flow. Millennium problem.' },
+    { difficulty: 'medium', question: 'Outward normal convention: for closed surface, normals point:', accept: ['outward'], placeholder: 'Direction', explanation: 'Standard convention: outward-pointing normals on closed surfaces.' },
+    { difficulty: 'hard', question: 'De Rham cohomology measures the failure of _____ on a manifold.', accept: ['exactness', 'closed = exact'], placeholder: 'What?', explanation: 'De Rham cohomology: closed forms modulo exact forms.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

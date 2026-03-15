@@ -149,7 +149,9 @@ topics: [
     { difficulty: 'easy', question: 'Increasing function: as $x$ increases, $f(x)$:', accept: ['increases'], placeholder: 'Behavior', explanation: 'Increasing: $x_1 < x_2 \\Rightarrow f(x_1) < f(x_2)$.' },
     { difficulty: 'hard', question: 'If $f$ and $g$ are inverse functions, then $f(g(x)) =$?', accept: ['x'], placeholder: 'Result', explanation: '$f(g(x)) = x$ and $g(f(x)) = x$.' },
     { difficulty: 'easy', question: 'Domain of $f(x) = \\frac{1}{x}$: all reals except:', accept: [0, '0', 'x=0'], placeholder: 'Value', explanation: 'Division by zero: exclude $x = 0$.' },
-    { difficulty: 'hard', question: 'Symmetry: $f(-x) = -f(x)$ means the function is:', accept: ['odd'], placeholder: 'Type', explanation: 'Odd function: symmetric about the origin.' }
+    { difficulty: 'hard', question: 'Symmetry: $f(-x) = -f(x)$ means the function is:', accept: ['odd'], placeholder: 'Type', explanation: 'Odd function: symmetric about the origin.' },
+    { difficulty: 'medium', question: 'If $f(x) = 2x + 3$, is $f$ one-to-one?', accept: ['yes'], placeholder: 'yes/no', explanation: 'Linear with nonzero slope: one-to-one.' },
+    { difficulty: 'hard', question: 'Parametric equations: $x = t^2, y = t^3$ eliminates to:', accept: ['y^2 = x^3', 'x^3 = y^2'], placeholder: 'Equation', explanation: '$t = x^{1/2}$. $y = (x^{1/2})^3 = x^{3/2}$. $y^2 = x^3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -309,7 +311,9 @@ topics: [
     { difficulty: 'easy', question: 'A polynomial of degree $n$ has at most $n$ real:', accept: ['zeros', 'roots'], placeholder: 'What?', explanation: 'At most $n$ real zeros.' },
     { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, how many sign changes in $f(-x) = x^4 - 1$?', accept: [0, '0'], placeholder: 'Count', explanation: '$x^4 - 1$: $+, -$. One sign change in $f(x)$, zero in $f(-x) = x^4 - 1$. No negative roots.' },
     { difficulty: 'easy', question: 'Leading coefficient of $-2x^5 + 3x^2 - 1$:', accept: [-2, '-2'], placeholder: 'Number', explanation: 'Leading term: $-2x^5$. Leading coefficient: $-2$.' },
-    { difficulty: 'hard', question: 'Conjugate Zero Theorem: if $3+2i$ is a zero, so is:', accept: ['3-2i', '3 - 2i'], placeholder: 'Zero', explanation: 'Complex zeros come in conjugate pairs.' }
+    { difficulty: 'hard', question: 'Conjugate Zero Theorem: if $3+2i$ is a zero, so is:', accept: ['3-2i', '3 - 2i'], placeholder: 'Zero', explanation: 'Complex zeros come in conjugate pairs.' },
+    { difficulty: 'medium', question: 'Bouncing ball: each bounce is fraction $r$ of previous height. Geometric with $r <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: '$0 < r < 1$: decreasing geometric sequence.' },
+    { difficulty: 'hard', question: 'Polar equation of circle centered at origin: $r =$ constant. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$r = a$: circle of radius $a$ centered at origin.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -423,7 +427,9 @@ topics: [
     { difficulty: 'easy', question: 'Exponential decay: base $b$ satisfies $0 < b <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: '$0 < b < 1$: exponential decay.' },
     { difficulty: 'hard', question: 'Logistic growth: $P(t) = \\frac{L}{1 + Ae^{-kt}}$. $L$ represents:', accept: ['carrying capacity', 'max population'], placeholder: 'What?', explanation: '$L$: carrying capacity (upper bound on growth).' },
     { difficulty: 'easy', question: 'Decay rate 3%: multiplier is:', accept: ['0.97'], placeholder: 'Number', explanation: '$1 - 0.03 = 0.97$.' },
-    { difficulty: 'hard', question: 'Change of base: $\\log_a b = \\frac{\\ln b}{\\ln$ ?$}$', accept: ['a'], placeholder: 'Base', explanation: '$\\log_a b = \\frac{\\ln b}{\\ln a}$.' }
+    { difficulty: 'hard', question: 'Change of base: $\\log_a b = \\frac{\\ln b}{\\ln$ ?$}$', accept: ['a'], placeholder: 'Base', explanation: '$\\log_a b = \\frac{\\ln b}{\\ln a}$.' },
+    { difficulty: 'medium', question: '$\\log(x/y) = \\log x - \\log$ ?', accept: ['y', 'log y'], placeholder: 'Term', explanation: 'Quotient rule: $\\log(x/y) = \\log x - \\log y$.' },
+    { difficulty: 'hard', question: 'Solve: $3^{2x} = 27$. $x =$?', accept: ['3/2', '1.5'], placeholder: 'Number', explanation: '$3^{2x} = 3^3$. $2x = 3$. $x = 3/2$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

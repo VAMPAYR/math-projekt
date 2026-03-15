@@ -109,7 +109,9 @@ topics: [
     { difficulty: 'medium', question: 'A countable set can be put in one-to-one correspondence with:', accept: ['N', 'natural numbers', '\\mathbb{N}'], placeholder: 'Set', explanation: 'Countable: bijection with $\\mathbb{N}$ (or is finite).' },
     { difficulty: 'hard', question: 'Cantor-Schroder-Bernstein theorem: if injections $A \\to B$ and $B \\to A$ both exist, then:', accept: ['|A|=|B|', 'A and B have same cardinality'], placeholder: 'Conclusion', explanation: 'CSB: mutual injection implies bijection.' },
     { difficulty: 'medium', question: 'Function composition: $(f \\circ g)(x) = f($ ? $(x))$', accept: ['g'], placeholder: 'Inside', explanation: '$(f \\circ g)(x) = f(g(x))$.' },
-    { difficulty: 'hard', question: 'Axiom of choice: states that from any family of nonempty sets, we can choose one element from:', accept: ['each'], placeholder: 'How many?', explanation: 'AC: a choice function exists selecting one element from each set.' }
+    { difficulty: 'hard', question: 'Axiom of choice: states that from any family of nonempty sets, we can choose one element from:', accept: ['each'], placeholder: 'How many?', explanation: 'AC: a choice function exists selecting one element from each set.' },
+    { difficulty: 'medium', question: 'Ordinal numbers describe:', accept: ['position', 'order'], placeholder: 'What?', explanation: 'Ordinals: first, second, third. Cardinals (1, 2, 3) count quantity.' },
+    { difficulty: 'hard', question: 'Continuum hypothesis: is there a set with cardinality strictly between $|\\mathbb{N}|$ and $|\\mathbb{R}|$?', accept: ['undecidable', 'independent'], placeholder: 'Status', explanation: 'CH is independent of ZFC (proven by Godel and Cohen).' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -302,7 +304,9 @@ topics: [
     { difficulty: 'easy', question: 'Prime number: divisible only by 1 and:', accept: ['itself'], placeholder: 'What?', explanation: 'Prime: exactly two factors, 1 and itself.' },
     { difficulty: 'hard', question: 'Fundamental Theorem of Arithmetic: every integer $> 1$ has a unique _____ factorization.', accept: ['prime'], placeholder: 'Type', explanation: 'FTA: unique prime factorization (up to order).' },
     { difficulty: 'easy', question: 'Even number $\\div$ 2 = integer. Is 14 even?', accept: ['yes'], placeholder: 'yes/no', explanation: '$14 / 2 = 7$. Yes.' },
-    { difficulty: 'hard', question: 'Euler\'s totient: $\\phi(12) =$? (count integers $1 \\leq k \\leq 12$ coprime to 12)', accept: [4, '4'], placeholder: 'Number', explanation: 'Coprime to 12: 1, 5, 7, 11. $\\phi(12) = 4$.' }
+    { difficulty: 'hard', question: 'Euler\'s totient: $\\phi(12) =$? (count integers $1 \\leq k \\leq 12$ coprime to 12)', accept: [4, '4'], placeholder: 'Number', explanation: 'Coprime to 12: 1, 5, 7, 11. $\\phi(12) = 4$.' },
+    { difficulty: 'medium', question: 'Modular arithmetic: $17 \\mod 5 =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$17 = 3(5) + 2$. Remainder is 2.' },
+    { difficulty: 'hard', question: 'Fermat\'s little theorem: $a^p \\equiv a \\pmod{p}$ when $p$ is:', accept: ['prime'], placeholder: 'Type', explanation: 'Fermat: $a^p \\equiv a \\pmod{p}$ for prime $p$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -557,7 +561,9 @@ topics: [
     { difficulty: 'medium', question: 'In a truth table, $p \\to q$ is false only when $p$ is true and $q$ is:', accept: ['false'], placeholder: 'Value', explanation: '$p \\to q$ is false iff $p$ is true and $q$ is false.' },
     { difficulty: 'hard', question: 'Pigeonhole principle: if $n+1$ pigeons occupy $n$ holes, at least one hole has:', accept: ['at least 2', 'two or more', '2+'], placeholder: 'Count', explanation: 'Pigeonhole: $n+1$ objects in $n$ boxes guarantees doubling.' },
     { difficulty: 'medium', question: 'Exclusive or ($\\oplus$): true when exactly one of $p, q$ is:', accept: ['true'], placeholder: 'Value', explanation: 'XOR: true iff exactly one operand is true.' },
-    { difficulty: 'hard', question: 'Godel\'s incompleteness: any consistent system containing arithmetic has _____ statements.', accept: ['undecidable', 'unprovable'], placeholder: 'Type', explanation: 'First incompleteness theorem: there exist true statements that cannot be proved within the system.' }
+    { difficulty: 'hard', question: 'Godel\'s incompleteness: any consistent system containing arithmetic has _____ statements.', accept: ['undecidable', 'unprovable'], placeholder: 'Type', explanation: 'First incompleteness theorem: there exist true statements that cannot be proved within the system.' },
+    { difficulty: 'medium', question: 'Logical equivalence: $p \\iff q$ is the same as $(p \\to q) \\wedge (q \\to$ ?$)$', accept: ['p'], placeholder: 'Variable', explanation: 'Biconditional: both implications hold.' },
+    { difficulty: 'hard', question: 'Axiom schema of specification: for any property $P$, $\\{x \\in A : P(x)\\}$ is a:', accept: ['set'], placeholder: 'What?', explanation: 'Specification (separation): subsets defined by properties are sets.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [
