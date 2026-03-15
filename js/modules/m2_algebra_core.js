@@ -437,7 +437,9 @@ topics: [
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Solve: $x + 5 \\gt 8$. Smallest integer solution:', accept: [4, '4'], placeholder: 'Number', explanation: '$x \\gt 3$, so smallest integer is 4.' },
+    { difficulty: 'easy', question: 'Solve: $|x| = 7$. List both solutions:', accept: ['7, -7', '-7, 7', '7,-7'], placeholder: 'x values', explanation: '$x = 7$ or $x = -7$.' },
     { difficulty: 'medium', question: 'Solve: $-2x \\geq 6$. $x \\leq$ ?', accept: [-3, '-3'], placeholder: 'x \\leq ?', explanation: 'Divide by $-2$, flip: $x \\leq -3$.' },
+    { difficulty: 'medium', question: 'Solve: $|x - 3| < 2$. What is the interval?', accept: ['(1,5)', '1 < x < 5', '1<x<5'], placeholder: 'Interval', explanation: '$-2 < x - 3 < 2 \\Rightarrow 1 < x < 5$.' },
     { difficulty: 'hard', question: 'Solve: $3 \\lt 2x - 1 \\leq 9$. Write as "a < x <= b".', accept: ['2 < x <= 5', '2<x<=5'], placeholder: '? < x <= ?', explanation: '$4 \\lt 2x \\leq 10 \\Rightarrow 2 < x \\leq 5$.' }
   ],
   stepBuilder: [
@@ -566,7 +568,9 @@ topics: [
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Solve: $x + y = 10$, $x - y = 4$. $x =$?', accept: [7, '7'], placeholder: 'x = ?', explanation: 'Add: $2x = 14 \\Rightarrow x = 7$.' },
+    { difficulty: 'easy', question: 'Solve: $x + y = 5$, $y = 2$. $x =$?', accept: [3, '3'], placeholder: 'x = ?', explanation: 'Substitute: $x + 2 = 5 \\Rightarrow x = 3$.' },
     { difficulty: 'medium', question: 'Solve: $y = 3x$, $2x + y = 15$. $x =$?', accept: [3, '3'], placeholder: 'x = ?', explanation: '$2x + 3x = 15 \\Rightarrow 5x = 15 \\Rightarrow x = 3$. $y = 9$.' },
+    { difficulty: 'medium', question: 'System: $2x + y = 7$, $x - y = 2$. Find $y$:', accept: [1, '1'], placeholder: 'y = ?', explanation: 'Add: $3x = 9 \\Rightarrow x = 3$. Then $y = 7 - 6 = 1$.' },
     { difficulty: 'hard', question: 'System: $3x + y = 5$, $6x + 2y = 10$. How many solutions? (0, 1, or infinity)', accept: ['infinity', 'infinite', 'infinitely many'], placeholder: '0, 1, or infinity', explanation: 'Second equation = $2 \\times$ first. Same line. Infinitely many.' }
   ],
   multiPart: [

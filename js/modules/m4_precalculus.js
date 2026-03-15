@@ -343,7 +343,9 @@ topics: [
   ],
   freeResponse: [
     { difficulty: 'easy', question: '$\\log_5(25) =$?', accept: [2, '2'], placeholder: 'Enter a number', explanation: '$5^2 = 25$, so $\\log_5(25) = 2$.' },
+    { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' },
     { difficulty: 'medium', question: 'Solve: $2^x = 32$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$32 = 2^5$, so $x = 5$.' },
+    { difficulty: 'medium', question: 'Express $\\log_8(2)$ as a fraction:', accept: ['1/3'], placeholder: 'Fraction', explanation: '$8^{1/3} = 2$, so $\\log_8(2) = 1/3$.' },
     { difficulty: 'hard', question: 'Expand: $\\log_2(8x^3)$ using log properties. What is the result?', accept: ['3+3log2(x)', '3 + 3log2(x)', '3+3log_2(x)'], placeholder: 'e.g. 3+3log2(x)', explanation: '$\\log_2(8) + \\log_2(x^3) = 3 + 3\\log_2(x)$.' }
   ],
   matching: [
