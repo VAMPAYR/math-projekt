@@ -103,7 +103,8 @@ topics: [
     { difficulty: 'hard', question: '$\\int x^2 \\sin x\\,dx$ requires integration by parts how many times?', accept: [2, '2'], placeholder: 'Number', explanation: 'Differentiate $x^2$ twice to reach a constant: $x^2 \\to 2x \\to 2$. Two applications.' },
     { difficulty: 'easy', question: '$\\int 5\\,dx =$?', accept: ['5x+C', '5x + C'], placeholder: 'Expression', explanation: '$5x + C$.' },
     { difficulty: 'hard', question: 'Integral of $\\ln(x)$ using IBP: final answer?', accept: ['xln(x)-x+C', 'x ln(x) - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x, dv = dx$. $\\int \\ln x\\,dx = x\\ln x - x + C$.' },
-    { difficulty: 'medium', question: 'When using IBP, what is the LIATE rule order?', accept: ['logs, inverse trig, algebraic, trig, exponential'], placeholder: 'Order', explanation: 'LIATE: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential. Choose $u$ from left.' }
+    { difficulty: 'medium', question: 'When using IBP, what is the LIATE rule order?', accept: ['logs, inverse trig, algebraic, trig, exponential'], placeholder: 'Order', explanation: 'LIATE: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential. Choose $u$ from left.' },
+    { difficulty: 'hard', question: 'Reduction formula relates $\\int \\sin^n x\\,dx$ to $\\int \\sin^{n-2} x\\,dx$. For $n = 2$: $\\int \\sin^2 x\\,dx =$?', accept: ['x/2-sin(2x)/4+C', '(x-sin(x)cos(x))/2+C'], placeholder: 'Expression', explanation: 'Using $\\sin^2 x = \\frac{1-\\cos(2x)}{2}$: $\\frac{x}{2} - \\frac{\\sin(2x)}{4} + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -213,7 +214,8 @@ topics: [
     { difficulty: 'medium', question: 'Is the sequence $a_n = (-1)^n$ convergent?', accept: ['no', 'divergent'], placeholder: 'yes/no', explanation: 'Alternates between $-1$ and $1$. Never settles. Divergent.' },
     { difficulty: 'easy', question: 'First 4 terms of $a_n = 2^n$:', accept: ['2,4,8,16', '2, 4, 8, 16'], placeholder: 'Terms', explanation: '$2^1=2, 2^2=4, 2^3=8, 2^4=16$.' },
     { difficulty: 'hard', question: 'Sum of first 5 terms of $a_n = 3(0.5)^{n-1}$:', accept: ['5.8125', '93/16'], placeholder: 'Number', explanation: '$S_5 = 3 \\cdot \\frac{1 - 0.5^5}{1 - 0.5} = 3 \\cdot \\frac{0.96875}{0.5} = 5.8125$.' },
-    { difficulty: 'medium', question: 'What is an arithmetic sequence?', accept: ['constant difference', 'common difference'], placeholder: 'Definition', explanation: 'Each term differs from the previous by a constant $d$: $a_n = a_1 + (n-1)d$.' }
+    { difficulty: 'medium', question: 'What is an arithmetic sequence?', accept: ['constant difference', 'common difference'], placeholder: 'Definition', explanation: 'Each term differs from the previous by a constant $d$: $a_n = a_1 + (n-1)d$.' },
+    { difficulty: 'hard', question: 'Telescoping sum: $\\sum_{n=1}^{N} (\\frac{1}{n} - \\frac{1}{n+1})$ simplifies to:', accept: ['1-1/(N+1)'], placeholder: 'Expression', explanation: 'Most terms cancel: $1 - \\frac{1}{N+1}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [

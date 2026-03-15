@@ -174,7 +174,8 @@
     { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', '0+C', 'c'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^{-1}(x)+C'], placeholder: 'Expression', explanation: 'This is $\\arcsin(x) + C$.' },
     { difficulty: 'medium', question: '$\\int \\frac{1}{x+1}\\,dx =$?', accept: ['ln|x+1|+C', 'ln(x+1)+C'], placeholder: 'Expression', explanation: '$\\ln|x+1| + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+1}\\,dx =$?', accept: ['arctan(x)+C', 'tan^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arctan(x) + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+1}\\,dx =$?', accept: ['arctan(x)+C', 'tan^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arctan(x) + C$.' },
+    { difficulty: 'hard', question: '$\\int \\tan(x)\\,dx =$?', accept: ['-ln|cos(x)|+C', 'ln|sec(x)|+C'], placeholder: 'Expression', explanation: '$\\int \\tan x\\,dx = -\\ln|\\cos x| + C = \\ln|\\sec x| + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -360,7 +361,8 @@
     { difficulty: 'medium', question: 'Volume of solid with cross-section area $A = \\pi$ from $x=0$ to $x=3$:', accept: ['3pi', '3\\pi', '9.42'], placeholder: 'Number', explanation: '$V = \\int_0^3 \\pi\\,dx = 3\\pi$.' },
     { difficulty: 'easy', question: 'Net displacement from velocity $v(t) = 4$ over $[0, 3]$:', accept: [12, '12'], placeholder: 'Number', explanation: '$\\int_0^3 4\\,dt = 12$.' },
     { difficulty: 'hard', question: 'Area between $y = x^2$ and $y = x$ from $x = 0$ to $x = 1$:', accept: ['1/6', '0.167'], placeholder: 'Area', explanation: '$\\int_0^1 (x - x^2)\\,dx = [x^2/2 - x^3/3]_0^1 = 1/2 - 1/3 = 1/6$.' },
-    { difficulty: 'medium', question: 'If $f(x) = 3$ on $[0, 5]$, then $\\int_0^5 f(x)\\,dx =$?', accept: [15, '15'], placeholder: 'Number', explanation: 'Rectangle: $3 \\times 5 = 15$.' }
+    { difficulty: 'medium', question: 'If $f(x) = 3$ on $[0, 5]$, then $\\int_0^5 f(x)\\,dx =$?', accept: [15, '15'], placeholder: 'Number', explanation: 'Rectangle: $3 \\times 5 = 15$.' },
+    { difficulty: 'hard', question: 'Average value of $\\sin(x)$ on $[0, \\pi]$:', accept: ['2/pi', '0.637'], placeholder: 'Number', explanation: '$\\frac{1}{\\pi}\\int_0^{\\pi} \\sin x\\,dx = \\frac{1}{\\pi}[-\\cos x]_0^{\\pi} = \\frac{2}{\\pi}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [

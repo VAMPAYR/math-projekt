@@ -153,7 +153,8 @@ topics: [
     { difficulty: 'easy', question: 'P(coin lands heads) =', accept: ['0.5', '1/2'], placeholder: 'Probability', explanation: 'Fair coin: $P(H) = 1/2 = 0.5$.' },
     { difficulty: 'medium', question: 'P(drawing a red card from a standard deck):', accept: ['1/2', '0.5', '26/52'], placeholder: 'Probability', explanation: '26 red cards out of 52. $P = 1/2$.' },
     { difficulty: 'hard', question: 'If events A and B are independent, $P(A \\cap B) = P(A) \\cdot$ ?', accept: ['P(B)'], placeholder: 'Expression', explanation: 'Independence: $P(A \\cap B) = P(A) \\cdot P(B)$.' },
-    { difficulty: 'medium', question: 'The complement rule: $P(A\') =$?', accept: ['1-P(A)', '1 - P(A)'], placeholder: 'Formula', explanation: '$P(A\') = 1 - P(A)$.' }
+    { difficulty: 'medium', question: 'The complement rule: $P(A\') =$?', accept: ['1-P(A)', '1 - P(A)'], placeholder: 'Formula', explanation: '$P(A\') = 1 - P(A)$.' },
+    { difficulty: 'hard', question: 'Bayes\' theorem: $P(A|B) = \\frac{P(B|A)P(A)}{$ ?$}$', accept: ['P(B)'], placeholder: 'Expression', explanation: '$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [

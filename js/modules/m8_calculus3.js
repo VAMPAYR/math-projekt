@@ -110,7 +110,8 @@ topics: [
     { difficulty: 'easy', question: 'Curl of $\\vec{F} = \\langle y, -x, 0 \\rangle$: $z$-component is:', accept: ['-2', -2], placeholder: 'Number', explanation: '$\\text{curl}\ z = \\frac{\\partial(-x)}{\\partial x} - \\frac{\\partial y}{\\partial y} = -1 - 1 = -2$.' },
     { difficulty: 'medium', question: 'A vector field with zero curl everywhere is called:', accept: ['irrotational', 'conservative'], placeholder: 'Term', explanation: 'Zero curl: irrotational (conservative in simply connected domains).' },
     { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x, y \\rangle$: is this conservative?', accept: ['yes'], placeholder: 'yes/no', explanation: '$\\vec{F} = \\nabla(\\frac{x^2+y^2}{2})$. Potential function exists. Conservative.' },
-    { difficulty: 'hard', question: 'Potential function for $\\vec{F} = \\langle 2x, 3y^2 \\rangle$:', accept: ['x^2+y^3', 'x^2 + y^3'], placeholder: 'Function', explanation: '$\\int 2x\\,dx = x^2$. $\\int 3y^2\\,dy = y^3$. $\\phi = x^2 + y^3$.' }
+    { difficulty: 'hard', question: 'Potential function for $\\vec{F} = \\langle 2x, 3y^2 \\rangle$:', accept: ['x^2+y^3', 'x^2 + y^3'], placeholder: 'Function', explanation: '$\\int 2x\\,dx = x^2$. $\\int 3y^2\\,dy = y^3$. $\\phi = x^2 + y^3$.' },
+    { difficulty: 'hard', question: 'Flux of $\\vec{F} = \\langle x,y,z \\rangle$ through unit sphere:', accept: ['4pi', '12.57'], placeholder: 'Number', explanation: 'Divergence theorem: $\\nabla \\cdot \\vec{F} = 3$. $\\iiint 3\\,dV = 3 \\cdot \\frac{4\\pi}{3} = 4\\pi$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [

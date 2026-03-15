@@ -207,7 +207,8 @@
     { difficulty: 'medium', question: '$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide by $x^2$: $\\frac{3 + 1/x^2}{1 - 5/x^2} \\to 3$.' },
     { difficulty: 'hard', question: '$\\lim_{x \\to 0} \\frac{e^x - 1}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: "L'Hopital: $\\frac{e^x}{1} \\to e^0 = 1$." },
     { difficulty: 'easy', question: '$\\lim_{x \\to 5} 7 =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Limit of a constant is the constant: $7$.' },
-    { difficulty: 'hard', question: 'A function continuous on $[a,b]$ attains every value between $f(a)$ and $f(b)$. This is the:', accept: ['IVT', 'intermediate value theorem'], placeholder: 'Theorem', explanation: 'Intermediate Value Theorem: continuity guarantees all intermediate values are achieved.' }
+    { difficulty: 'hard', question: 'A function continuous on $[a,b]$ attains every value between $f(a)$ and $f(b)$. This is the:', accept: ['IVT', 'intermediate value theorem'], placeholder: 'Theorem', explanation: 'Intermediate Value Theorem: continuity guarantees all intermediate values are achieved.' },
+    { difficulty: 'hard', question: 'Squeeze theorem: if $g(x) \\leq f(x) \\leq h(x)$ and $\\lim g = \\lim h = L$, then $\\lim f =$?', accept: ['L'], placeholder: 'Value', explanation: 'Squeeze theorem: $f$ is squeezed to limit $L$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -442,7 +443,8 @@
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(x^{10}) =$?', accept: ['10x^9', '10x9'], placeholder: 'Expression', explanation: '$10x^9$ by the power rule.' },
     { difficulty: 'medium', question: 'Product rule: $\\frac{d}{dx}(x \\cdot e^x) =$?', accept: ['e^x+xe^x', 'e^x + xe^x', '(1+x)e^x'], placeholder: 'Expression', explanation: '$f\'g + fg\' = 1 \\cdot e^x + x \\cdot e^x = (1+x)e^x$.' },
-    { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} =$?', accept: ['(gf\'-fg\')/(g^2)', '(fg\'-gf\')/g^2'], placeholder: 'Formula', explanation: '$\\frac{gf\' - fg\'}{g^2}$.' }
+    { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} =$?', accept: ['(gf\'-fg\')/(g^2)', '(fg\'-gf\')/g^2'], placeholder: 'Formula', explanation: '$\\frac{gf\' - fg\'}{g^2}$.' },
+    { difficulty: 'hard', question: 'Implicit differentiation: if $x^2 + y^2 = 25$, then $dy/dx =$?', accept: ['-x/y'], placeholder: 'Expression', explanation: '$2x + 2y(dy/dx) = 0$. $dy/dx = -x/y$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [

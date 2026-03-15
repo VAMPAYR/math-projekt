@@ -170,7 +170,8 @@
     { difficulty: 'hard', question: 'Volume of parallelepiped with edges $\\vec{a}$, $\\vec{b}$, $\\vec{c}$: $V = |\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. If this equals 0, the vectors are:', accept: ['coplanar'], placeholder: 'Property', explanation: 'Zero volume means all three vectors lie in the same plane.' },
     { difficulty: 'medium', question: 'Projection of $\\langle 3, 4 \\rangle$ onto $\\langle 1, 0 \\rangle$:', accept: ['<3,0>', '(3,0)', '<3, 0>'], placeholder: 'Vector', explanation: '$\\text{proj}_{\\hat{i}} \\langle 3,4 \\rangle = \\langle 3, 0 \\rangle$.' },
     { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' },
-    { difficulty: 'easy', question: 'A vector with magnitude 1 is called a:', accept: ['unit vector'], placeholder: 'Name', explanation: 'Unit vector: $|\\hat{v}| = 1$.' }
+    { difficulty: 'easy', question: 'A vector with magnitude 1 is called a:', accept: ['unit vector'], placeholder: 'Name', explanation: 'Unit vector: $|\\hat{v}| = 1$.' },
+    { difficulty: 'medium', question: 'Equation of plane with normal $\\langle 1,2,3 \\rangle$ through $(0,0,0)$:', accept: ['x+2y+3z=0'], placeholder: 'Equation', explanation: '$1(x-0) + 2(y-0) + 3(z-0) = 0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -310,7 +311,8 @@
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial y}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The derivative of a constant is 0.' },
     { difficulty: 'medium', question: 'Find $f_{xy}$ for $f(x,y) = x^2y + xy^3$:', accept: ['2x+3y^2', '2x + 3y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy + y^3$. $f_{xy} = 2x + 3y^2$.' },
     { difficulty: 'medium', question: 'Gradient of $f(x,y) = x^2 + y^2$ at $(1, 1)$:', accept: ['<2,2>', '(2,2)', '<2, 2>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle 2x, 2y \\rangle$. At $(1,1)$: $\\langle 2, 2 \\rangle$.' },
-    { difficulty: 'hard', question: 'Directional derivative of $f = xy$ at $(1,1)$ in direction $\\langle 1,1 \\rangle$:', accept: ['sqrt(2)', '1.41'], placeholder: 'Number', explanation: '$\\nabla f = \\langle y, x \\rangle = \\langle 1,1 \\rangle$. Unit: $\\langle 1/\\sqrt{2}, 1/\\sqrt{2} \\rangle$. $D_u f = 2/\\sqrt{2} = \\sqrt{2}$.' }
+    { difficulty: 'hard', question: 'Directional derivative of $f = xy$ at $(1,1)$ in direction $\\langle 1,1 \\rangle$:', accept: ['sqrt(2)', '1.41'], placeholder: 'Number', explanation: '$\\nabla f = \\langle y, x \\rangle = \\langle 1,1 \\rangle$. Unit: $\\langle 1/\\sqrt{2}, 1/\\sqrt{2} \\rangle$. $D_u f = 2/\\sqrt{2} = \\sqrt{2}$.' },
+    { difficulty: 'hard', question: 'Critical point of $f(x,y) = x^2 + y^2 - 2x$: $(x,y) =$?', accept: ['(1,0)'], placeholder: 'Point', explanation: '$f_x = 2x-2 = 0 \\Rightarrow x=1$. $f_y = 2y = 0 \\Rightarrow y=0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
