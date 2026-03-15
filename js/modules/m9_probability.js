@@ -158,7 +158,8 @@ topics: [
     { difficulty: 'medium', question: 'Distinguish permutations from combinations: order matters in which?', accept: ['permutations', 'permutation'], placeholder: 'Type', explanation: 'Permutations: order matters. Combinations: order does not matter.' },
     { difficulty: 'hard', question: '$C(10, 3) =$?', accept: [120, '120'], placeholder: 'Number', explanation: '$\\binom{10}{3} = \\frac{10!}{3!7!} = \\frac{720}{6} = 120$.' },
     { difficulty: 'easy', question: 'Sample space for rolling a die: $S =$?', accept: ['{1,2,3,4,5,6}'], placeholder: 'Set', explanation: '$S = \\{1, 2, 3, 4, 5, 6\\}$.' },
-    { difficulty: 'medium', question: 'For a deck of 52 cards, $P(\\text{ace}) =$?', accept: ['4/52', '1/13'], placeholder: 'Probability', explanation: '4 aces in 52 cards. $P = 4/52 = 1/13$.' }
+    { difficulty: 'medium', question: 'For a deck of 52 cards, $P(\\text{ace}) =$?', accept: ['4/52', '1/13'], placeholder: 'Probability', explanation: '4 aces in 52 cards. $P = 4/52 = 1/13$.' },
+    { difficulty: 'easy', question: 'Total probability of the sample space:', accept: [1, '1'], placeholder: 'Number', explanation: '$P(S) = 1$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -344,7 +345,8 @@ topics: [
     { difficulty: 'medium', question: 'Variance of $X$ if $E[X] = 5$ and $E[X^2] = 29$:', accept: [4, '4'], placeholder: 'Number', explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2 = 29 - 25 = 4$.' },
     { difficulty: 'hard', question: 'Law of total probability: if $B_1, B_2$ partition $S$, then $P(A) =$?', accept: ['P(A|B1)P(B1)+P(A|B2)P(B2)'], placeholder: 'Formula', explanation: '$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2)$.' },
     { difficulty: 'hard', question: 'For $X \\sim N(0,1)$, $P(X < 0) =$?', accept: ['0.5', '1/2', '50%'], placeholder: 'Probability', explanation: 'Standard normal is symmetric about 0. $P(X < 0) = 0.5$.' },
-    { difficulty: 'medium', question: 'Geometric distribution: $P(X = k) = (1-p)^{k-1}p$. Mean $E[X] =$?', accept: ['1/p'], placeholder: 'Formula', explanation: 'Geometric mean: $E[X] = 1/p$.' }
+    { difficulty: 'medium', question: 'Geometric distribution: $P(X = k) = (1-p)^{k-1}p$. Mean $E[X] =$?', accept: ['1/p'], placeholder: 'Formula', explanation: 'Geometric mean: $E[X] = 1/p$.' },
+    { difficulty: 'easy', question: 'Expected value is the:', accept: ['mean', 'average'], placeholder: 'Synonym', explanation: '$E[X]$ is the expected value, equivalent to the population mean $\\mu$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

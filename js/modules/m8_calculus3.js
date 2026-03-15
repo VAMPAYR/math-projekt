@@ -115,7 +115,8 @@ topics: [
     { difficulty: 'easy', question: 'The gradient always points in the direction of:', accept: ['steepest ascent', 'greatest increase', 'maximum increase'], placeholder: 'Direction', explanation: 'Gradient points in the direction of steepest ascent of the scalar field.' },
     { difficulty: 'medium', question: 'A field $\\vec{F}$ with $\\nabla \\cdot \\vec{F} = 0$ everywhere is called:', accept: ['solenoidal', 'incompressible', 'divergence-free'], placeholder: 'Term', explanation: 'Zero divergence everywhere: solenoidal (incompressible).' },
     { difficulty: 'hard', question: 'For $\\vec{F} = \\nabla \\phi$, what is $\\nabla \\times \\vec{F}$?', accept: ['0', 'zero', '<0,0,0>'], placeholder: 'Value', explanation: 'Curl of a gradient is always zero: $\\nabla \\times (\\nabla \\phi) = \\vec{0}$.' },
-    { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y \\rangle$ in 2D:', accept: [2, '2'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 = 2$.' }
+    { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y \\rangle$ in 2D:', accept: [2, '2'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 = 2$.' },
+    { difficulty: 'easy', question: 'A vector field assigns a {{}} to each point in space:', accept: ['vector'], placeholder: 'What?', explanation: 'Vector field: each point gets a vector.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -259,7 +260,8 @@ topics: [
     { difficulty: 'easy', question: 'Work done by a constant force $F = 5$ over distance $d = 3$:', accept: [15, '15'], placeholder: 'Number', explanation: '$W = F \\cdot d = 5 \\times 3 = 15$.' },
     { difficulty: 'medium', question: 'For conservative field, work depends only on:', accept: ['endpoints', 'start and end points'], placeholder: 'What?', explanation: 'Path independence: work depends only on endpoints, not the path taken.' },
     { difficulty: 'hard', question: 'If $\\vec{F}$ is conservative, $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0. Path independence.' },
-    { difficulty: 'medium', question: 'The divergence theorem relates a surface integral to a:', accept: ['volume integral', 'triple integral'], placeholder: 'Type', explanation: '$\\oiint_S \\vec{F} \\cdot d\\vec{S} = \\iiint_V \\nabla \\cdot \\vec{F}\\,dV$.' }
+    { difficulty: 'medium', question: 'The divergence theorem relates a surface integral to a:', accept: ['volume integral', 'triple integral'], placeholder: 'Type', explanation: '$\\oiint_S \\vec{F} \\cdot d\\vec{S} = \\iiint_V \\nabla \\cdot \\vec{F}\\,dV$.' },
+    { difficulty: 'hard', question: 'Parameterize the unit circle centered at origin:', accept: ['(cos t, sin t)', '<cos t, sin t>'], placeholder: 'Parameterization', explanation: '$\\vec{r}(t) = \\langle \\cos t, \\sin t \\rangle$, $0 \\leq t \\leq 2\\pi$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -390,7 +392,8 @@ topics: [
     { difficulty: 'hard', question: 'Volume of sphere radius $R$: $\\frac{4}{3}\\pi R^3$. For $R=3$, volume $=$?', accept: ['36pi', '36\\pi', '113.1'], placeholder: 'Volume', explanation: '$\\frac{4}{3}\\pi(27) = 36\\pi \\approx 113.1$.' },
     { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y, z \\rangle$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 + 1 = 3$.' },
     { difficulty: 'medium', question: "Stokes' theorem relates surface integral of curl to:", accept: ['line integral', 'boundary integral'], placeholder: 'Type', explanation: "$\\iint_S (\\nabla \\times \\vec{F}) \\cdot d\\vec{S} = \\oint_{\\partial S} \\vec{F} \\cdot d\\vec{r}$." },
-    { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x^2, y^2, z^2 \\rangle$, $\\nabla \\cdot \\vec{F} =$?', accept: ['2x+2y+2z', '2(x+y+z)'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x}x^2 + \\frac{\\partial}{\\partial y}y^2 + \\frac{\\partial}{\\partial z}z^2 = 2x + 2y + 2z$.' }
+    { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x^2, y^2, z^2 \\rangle$, $\\nabla \\cdot \\vec{F} =$?', accept: ['2x+2y+2z', '2(x+y+z)'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x}x^2 + \\frac{\\partial}{\\partial y}y^2 + \\frac{\\partial}{\\partial z}z^2 = 2x + 2y + 2z$.' },
+    { difficulty: 'easy', question: 'The outward unit normal to a sphere at any point is the:', accept: ['radial direction', 'radius vector', 'position vector'], placeholder: 'Direction', explanation: 'Normal to sphere at $(x,y,z)$: radial direction $\\hat{r}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

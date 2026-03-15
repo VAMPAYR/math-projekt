@@ -210,7 +210,8 @@
     { difficulty: 'hard', question: 'A function continuous on $[a,b]$ attains every value between $f(a)$ and $f(b)$. This is the:', accept: ['IVT', 'intermediate value theorem'], placeholder: 'Theorem', explanation: 'Intermediate Value Theorem: continuity guarantees all intermediate values are achieved.' },
     { difficulty: 'hard', question: 'Squeeze theorem: if $g(x) \\leq f(x) \\leq h(x)$ and $\\lim g = \\lim h = L$, then $\\lim f =$?', accept: ['L'], placeholder: 'Value', explanation: 'Squeeze theorem: $f$ is squeezed to limit $L$.' },
     { difficulty: 'medium', question: 'Left-hand limit: $\\lim_{x \\to 2^-} f(x) = 3$ and $\\lim_{x \\to 2^+} f(x) = 5$. Does $\\lim_{x \\to 2} f(x)$ exist?', accept: ['no'], placeholder: 'yes/no', explanation: 'Left and right limits differ ($3 \\neq 5$). The two-sided limit does not exist.' },
-    { difficulty: 'easy', question: 'A function continuous at $x = a$ means $\\lim_{x \\to a} f(x) = $ ?', accept: ['f(a)'], placeholder: 'Value', explanation: 'Continuity: $\\lim_{x \\to a} f(x) = f(a)$.' }
+    { difficulty: 'easy', question: 'A function continuous at $x = a$ means $\\lim_{x \\to a} f(x) = $ ?', accept: ['f(a)'], placeholder: 'Value', explanation: 'Continuity: $\\lim_{x \\to a} f(x) = f(a)$.' },
+    { difficulty: 'easy', question: '$\\lim_{x \\to 3} x^2 =$?', accept: [9, '9'], placeholder: 'Number', explanation: 'Direct substitution: $3^2 = 9$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -449,7 +450,8 @@
     { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} =$?', accept: ['(gf\'-fg\')/(g^2)', '(fg\'-gf\')/g^2'], placeholder: 'Formula', explanation: '$\\frac{gf\' - fg\'}{g^2}$.' },
     { difficulty: 'hard', question: 'Implicit differentiation: if $x^2 + y^2 = 25$, then $dy/dx =$?', accept: ['-x/y'], placeholder: 'Expression', explanation: '$2x + 2y(dy/dx) = 0$. $dy/dx = -x/y$.' },
     { difficulty: 'hard', question: 'Chain rule: $\\frac{d}{dx}\\sqrt{x^2+1} =$?', accept: ['x/sqrt(x^2+1)', 'x/(x^2+1)^(1/2)'], placeholder: 'Expression', explanation: '$\\frac{1}{2}(x^2+1)^{-1/2} \\cdot 2x = \\frac{x}{\\sqrt{x^2+1}}$.' },
-    { difficulty: 'easy', question: '$\\frac{d}{dx}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Derivative of a constant is 0.' }
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Derivative of a constant is 0.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(\\ln x) =$?', accept: ['1/x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\ln x = 1/x$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -584,7 +586,8 @@
     { difficulty: 'hard', question: '$f(x) = x^4 - 4x^3$. Find inflection points:', accept: ['0, 2', '0,2', 'x=0 and x=2'], placeholder: 'x values', explanation: '$f\'\'(x) = 12x^2 - 24x = 12x(x-2) = 0$. $x = 0, 2$.' },
     { difficulty: 'medium', question: 'If $f\'\'(x) > 0$, the function is:', accept: ['concave up', 'convex'], placeholder: 'Shape', explanation: 'Positive second derivative: concave up (holds water).' },
     { difficulty: 'hard', question: 'L\'Hopital applies to which forms?', accept: ['0/0 and inf/inf', '0/0, infinity/infinity'], placeholder: 'Forms', explanation: 'Indeterminate forms $0/0$ and $\\infty/\\infty$.' },
-    { difficulty: 'medium', question: 'For optimization: candidates for extrema include critical points and:', accept: ['endpoints'], placeholder: 'What else?', explanation: 'Closed interval method: check critical points and endpoints.' }
+    { difficulty: 'medium', question: 'For optimization: candidates for extrema include critical points and:', accept: ['endpoints'], placeholder: 'What else?', explanation: 'Closed interval method: check critical points and endpoints.' },
+    { difficulty: 'medium', question: 'MVT guarantees $f\'(c) = \\frac{f(b) - f(a)}{b - a}$ for some $c$ in:', accept: ['(a,b)', 'a,b'], placeholder: 'Interval', explanation: 'Mean Value Theorem: $c \\in (a, b)$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

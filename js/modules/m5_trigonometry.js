@@ -201,7 +201,8 @@ topics: [
     { difficulty: 'medium', question: 'In which quadrant is $\\sin > 0$ and $\\cos < 0$?', accept: ['2', 'II', 'second', 'quadrant 2'], placeholder: 'Quadrant', explanation: 'Quadrant II: $\\sin > 0$, $\\cos < 0$.' },
     { difficulty: 'hard', question: 'Period of $f(x) = \\sin(3x)$:', accept: ['2pi/3', '2\\pi/3'], placeholder: 'Period', explanation: 'Period = $2\\pi / |B| = 2\\pi / 3$.' },
     { difficulty: 'easy', question: 'Convert $180°$ to radians:', accept: ['pi', '3.14'], placeholder: 'Radians', explanation: '$180° = \\pi$ radians.' },
-    { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' }
+    { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
+    { difficulty: 'easy', question: '$\\cos(0°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0°) = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -371,7 +372,8 @@ topics: [
     { difficulty: 'medium', question: '$\\cos(2 \\cdot 0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' },
     { difficulty: 'hard', question: 'Double angle: $\\sin(2 \\cdot 30°) =$?', accept: ['sqrt(3)/2', '0.866'], placeholder: 'Value', explanation: '$\\sin(60°) = \\sqrt{3}/2$.' },
     { difficulty: 'hard', question: '$\\cos(\\pi/3) =$?', accept: ['1/2', '0.5'], placeholder: 'Value', explanation: '$\\cos(60°) = 1/2$.' },
-    { difficulty: 'medium', question: 'Pythagorean identity: $\\sin^2 x + $ ? $= 1$', accept: ['cos^2(x)', '\\cos^2 x', 'cos^2x'], placeholder: 'Term', explanation: '$\\sin^2 x + \\cos^2 x = 1$.' }
+    { difficulty: 'medium', question: 'Pythagorean identity: $\\sin^2 x + $ ? $= 1$', accept: ['cos^2(x)', '\\cos^2 x', 'cos^2x'], placeholder: 'Term', explanation: '$\\sin^2 x + \\cos^2 x = 1$.' },
+    { difficulty: 'medium', question: 'Half-angle: $\\cos^2(x) = \\frac{1 + \\cos(2x)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Power reduction: $\\cos^2 x = \\frac{1 + \\cos(2x)}{2}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -489,7 +491,8 @@ topics: [
     { difficulty: 'hard', question: 'Triangle with all sides 6 (equilateral). What is each angle?', accept: [60, '60'], placeholder: 'degrees', explanation: 'Equilateral triangle: all angles = $60°$. Verify: $\\cos C = \\frac{36 + 36 - 36}{2(36)} = \\frac{36}{72} = 0.5$. $C = 60°$.' },
     { difficulty: 'hard', question: 'Triangle with $a = 5$, $b = 7$, $c = 10$. Is this triangle obtuse? (yes/no)', accept: ['yes', 'Yes'], placeholder: 'yes or no', explanation: '$c^2 = 100 > a^2 + b^2 = 74$. Since $c^2 > a^2 + b^2$, the triangle is obtuse.' },
     { difficulty: 'easy', question: 'In a right triangle, if opposite = 3 and hypotenuse = 5, then $\\sin \\theta =$?', accept: ['3/5', '0.6'], placeholder: 'Value', explanation: '$\\sin \\theta = \\text{opposite}/\\text{hypotenuse} = 3/5$.' },
-    { difficulty: 'medium', question: 'Period of $\\sin(2x)$:', accept: ['pi', '3.14'], placeholder: 'Period', explanation: 'Period = $2\\pi / 2 = \\pi$.' }
+    { difficulty: 'medium', question: 'Period of $\\sin(2x)$:', accept: ['pi', '3.14'], placeholder: 'Period', explanation: 'Period = $2\\pi / 2 = \\pi$.' },
+    { difficulty: 'hard', question: 'Solve $\\cos(x) = 0$ for $x \\in [0, 2\\pi)$:', accept: ['pi/2, 3pi/2', '90, 270'], placeholder: 'Solutions', explanation: '$x = \\pi/2, 3\\pi/2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

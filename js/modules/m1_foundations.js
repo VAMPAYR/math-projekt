@@ -93,7 +93,8 @@ topics: [
     { difficulty: 'medium', question: 'What is the GCF of 24 and 36?', accept: [12, '12'], placeholder: 'Number', explanation: '$24 = 2^3 \\cdot 3$, $36 = 2^2 \\cdot 3^2$. GCF $= 2^2 \\cdot 3 = 12$.' },
     { difficulty: 'medium', question: 'Is $\\sqrt{2}$ rational or irrational?', accept: ['irrational'], placeholder: 'Type', explanation: '$\\sqrt{2}$ cannot be expressed as a ratio of integers. Its decimal expansion is non-repeating.' },
     { difficulty: 'hard', question: 'Between which two consecutive integers does $\\sqrt{50}$ lie?', accept: ['7 and 8', '7,8'], placeholder: 'Integers', explanation: '$7^2 = 49 < 50 < 64 = 8^2$. So $7 < \\sqrt{50} < 8$.' },
-    { difficulty: 'easy', question: 'The natural numbers start from:', accept: [1, '1'], placeholder: 'Number', explanation: '$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$.' }
+    { difficulty: 'easy', question: 'The natural numbers start from:', accept: [1, '1'], placeholder: 'Number', explanation: '$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$.' },
+    { difficulty: 'easy', question: 'The integers include positive, negative, and:', accept: ['zero', '0'], placeholder: 'Number', explanation: '$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -264,7 +265,8 @@ topics: [
     { difficulty: 'hard', question: 'If $a \\cdot b = 0$, and $a \\neq 0$, what is $b$?', accept: [0, '0'], placeholder: 'Enter a number', explanation: 'By the zero product property, if $ab = 0$ and $a \\neq 0$, then $b = 0$.' },
     { difficulty: 'easy', question: 'Is $\\pi$ rational or irrational?', accept: ['irrational'], placeholder: 'rational/irrational', explanation: '$\\pi$ cannot be expressed as a fraction. It is irrational.' },
     { difficulty: 'medium', question: '$|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Absolute value strips the sign: $|-7| = 7$.' },
-    { difficulty: 'medium', question: 'Absolute value: $|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$|-7| = 7$. Absolute value removes the sign.' }
+    { difficulty: 'medium', question: 'Absolute value: $|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$|-7| = 7$. Absolute value removes the sign.' },
+    { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -501,7 +503,8 @@ topics: [
     { difficulty: 'easy', question: 'If $p$ is true and $q$ is false, then $p \\land q$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'AND requires both to be true. One false makes the conjunction false.' },
     { difficulty: 'medium', question: 'The contrapositive of "if $p$ then $q$" is:', accept: ['if not q then not p', 'if ~q then ~p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to $p \\to q$.' },
     { difficulty: 'hard', question: 'If $p \\to q$ is true and $q$ is false, then $p$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'Modus Tollens: $p \\to q$ and $\\neg q$ implies $\\neg p$.' },
-    { difficulty: 'medium', question: 'Truth table: $T \\land F =$?', accept: ['F', 'false'], placeholder: 'T/F', explanation: 'AND ($\\land$) is true only when both are true. $T \\land F = F$.' }
+    { difficulty: 'medium', question: 'Truth table: $T \\land F =$?', accept: ['F', 'false'], placeholder: 'T/F', explanation: 'AND ($\\land$) is true only when both are true. $T \\land F = F$.' },
+    { difficulty: 'easy', question: '$T \\lor F =$?', accept: ['T', 'true'], placeholder: 'T/F', explanation: 'OR ($\\lor$) is true when at least one operand is true.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [
