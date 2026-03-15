@@ -100,7 +100,9 @@ topics: [
     { difficulty: 'medium', question: 'In tabular integration of $\\int x^2 e^x\\,dx$, how many derivative rows until zero?', accept: [3, '3'], placeholder: 'Number', explanation: '$x^2 \\to 2x \\to 2 \\to 0$. Three derivative rows.' },
     { difficulty: 'hard', question: '$\\int_0^{\\pi} x \\sin x\\, dx =$? (exact)', accept: ['pi', '3.14'], placeholder: 'Value', explanation: '$u=x, dv=\\sin x\\,dx$. $[-x\\cos x + \\sin x]_0^{\\pi} = \\pi$.' },
     { difficulty: 'easy', question: '$\\int x\\,dx =$?', accept: ['x^2/2+C', 'x^2/2 + C'], placeholder: 'Expression', explanation: '$x^{1+1}/(1+1) + C = x^2/2 + C$.' },
-    { difficulty: 'hard', question: '$\\int x^2 \\sin x\\,dx$ requires integration by parts how many times?', accept: [2, '2'], placeholder: 'Number', explanation: 'Differentiate $x^2$ twice to reach a constant: $x^2 \\to 2x \\to 2$. Two applications.' }
+    { difficulty: 'hard', question: '$\\int x^2 \\sin x\\,dx$ requires integration by parts how many times?', accept: [2, '2'], placeholder: 'Number', explanation: 'Differentiate $x^2$ twice to reach a constant: $x^2 \\to 2x \\to 2$. Two applications.' },
+    { difficulty: 'easy', question: '$\\int 5\\,dx =$?', accept: ['5x+C', '5x + C'], placeholder: 'Expression', explanation: '$5x + C$.' },
+    { difficulty: 'hard', question: 'Integral of $\\ln(x)$ using IBP: final answer?', accept: ['xln(x)-x+C', 'x ln(x) - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x, dv = dx$. $\\int \\ln x\\,dx = x\\ln x - x + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -207,7 +209,9 @@ topics: [
     { difficulty: 'easy', question: 'The 5th term of the sequence $a_n = 2n + 1$ is:', accept: [11, '11'], placeholder: 'Number', explanation: '$a_5 = 2(5) + 1 = 11$.' },
     { difficulty: 'hard', question: 'Sum of infinite geometric series: $3 + 1 + 1/3 + 1/9 + \\cdots =$?', accept: ['4.5', '9/2'], placeholder: 'Number', explanation: '$a = 3, r = 1/3$. $S = a/(1-r) = 3/(2/3) = 9/2 = 4.5$.' },
     { difficulty: 'easy', question: 'The 10th term of $a_n = n^2$:', accept: [100, '100'], placeholder: 'Number', explanation: '$a_{10} = 10^2 = 100$.' },
-    { difficulty: 'medium', question: 'Is the sequence $a_n = (-1)^n$ convergent?', accept: ['no', 'divergent'], placeholder: 'yes/no', explanation: 'Alternates between $-1$ and $1$. Never settles. Divergent.' }
+    { difficulty: 'medium', question: 'Is the sequence $a_n = (-1)^n$ convergent?', accept: ['no', 'divergent'], placeholder: 'yes/no', explanation: 'Alternates between $-1$ and $1$. Never settles. Divergent.' },
+    { difficulty: 'easy', question: 'First 4 terms of $a_n = 2^n$:', accept: ['2,4,8,16', '2, 4, 8, 16'], placeholder: 'Terms', explanation: '$2^1=2, 2^2=4, 2^3=8, 2^4=16$.' },
+    { difficulty: 'hard', question: 'Sum of first 5 terms of $a_n = 3(0.5)^{n-1}$:', accept: ['5.8125', '93/16'], placeholder: 'Number', explanation: '$S_5 = 3 \\cdot \\frac{1 - 0.5^5}{1 - 0.5} = 3 \\cdot \\frac{0.96875}{0.5} = 5.8125$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -346,7 +350,9 @@ topics: [
     { difficulty: 'hard', question: 'The Maclaurin series for $e^x$ at $x=1$ gives $e \\approx$?', accept: ['2.7', '2.718', '2.72'], placeholder: 'e.g. 2.7', explanation: '$e \\approx 2.718$.' },
     { difficulty: 'hard', question: 'The first 3 terms of the Taylor series for $\\sin x$ around $x=0$:', accept: ['x-x^3/6+x^5/120', 'x - x^3/6 + x^5/120'], placeholder: 'e.g. x-x^3/6+x^5/120', explanation: '$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$' },
     { difficulty: 'easy', question: '$\\sum_{n=1}^{4} n =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$1 + 2 + 3 + 4 = 10$.' },
-    { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n}$ converge?', accept: ['no', 'diverge', 'diverges'], placeholder: 'yes/no', explanation: 'Harmonic series diverges. $p = 1 \\leq 1$.' }
+    { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n}$ converge?', accept: ['no', 'diverge', 'diverges'], placeholder: 'yes/no', explanation: 'Harmonic series diverges. $p = 1 \\leq 1$.' },
+    { difficulty: 'easy', question: '$\\sum_{n=0}^{3} 2^n =$?', accept: [15, '15'], placeholder: 'Number', explanation: '$1 + 2 + 4 + 8 = 15$.' },
+    { difficulty: 'medium', question: 'For the p-series $\\sum 1/n^2$: does it converge?', accept: ['yes', 'converges'], placeholder: 'yes/no', explanation: '$p = 2 > 1$. p-series converges when $p > 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

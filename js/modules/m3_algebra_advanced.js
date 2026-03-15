@@ -610,7 +610,10 @@
           { difficulty: 'hard', question: '$\\ln(e^5) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\ln(e^x) = x$. So $\\ln(e^5) = 5$.' },
     { difficulty: 'easy', question: '$e^0 =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Any base raised to 0 equals 1. $e^0 = 1$.' },
     { difficulty: 'medium', question: 'Solve: $\\ln(x) = 3$. $x =$?', accept: ['e^3', '20.09'], placeholder: 'Value', explanation: '$x = e^3 \\approx 20.09$.' },
-    { difficulty: 'hard', question: 'Solve: $\\log_2(x) + \\log_2(4) = 5$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$\\log_2(4x) = 5$. $4x = 32$. $x = 8$.' }
+    { difficulty: 'hard', question: 'Solve: $\\log_2(x) + \\log_2(4) = 5$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$\\log_2(4x) = 5$. $4x = 32$. $x = 8$.' },
+    { difficulty: 'easy', question: '$2^3 =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2 \\times 2 \\times 2 = 8$.' },
+    { difficulty: 'medium', question: 'Solve: $e^{2x} = e^6$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Equal bases: $2x = 6$. $x = 3$.' },
+    { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [
