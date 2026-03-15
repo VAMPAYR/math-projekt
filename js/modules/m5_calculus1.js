@@ -203,7 +203,9 @@
           { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{5x}{x+3} =$?', accept: [5, '5'], placeholder: 'Number', explanation: 'Divide by $x$: $\\frac{5}{1+3/x} \\to 5$.' },
           { difficulty: 'hard', question: '$\\lim_{x \\to 0^+} \\frac{1}{x} =$?', accept: ['infinity', 'inf', '\\infty'], placeholder: 'Answer', explanation: 'As $x \\to 0^+$, $1/x \\to +\\infty$.' },
     { difficulty: 'easy', question: '$\\lim_{x \\to 2} (3x + 1) =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Direct substitution: $3(2) + 1 = 7$.' },
-    { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\sin x / x = 1$.' }
+    { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\sin x / x = 1$.' },
+    { difficulty: 'medium', question: '$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide by $x^2$: $\\frac{3 + 1/x^2}{1 - 5/x^2} \\to 3$.' },
+    { difficulty: 'hard', question: '$\\lim_{x \\to 0} \\frac{e^x - 1}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: "L'Hopital: $\\frac{e^x}{1} \\to e^0 = 1$." }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -433,7 +435,9 @@
           { difficulty: 'hard', question: 'Find $f\'(2)$ if $f(x) = x^3 - 4x$:', accept: [8, '8'], placeholder: 'Number', explanation: '$f\'(x) = 3x^2 - 4$. $f\'(2) = 12 - 4 = 8$.' },
           { difficulty: 'hard', question: '$\\frac{d}{dx}[\\ln(x^2)] =$?', accept: ['2/x', '2x^{-1}'], placeholder: 'Expression', explanation: 'Chain rule: $\\frac{2x}{x^2} = \\frac{2}{x}$. Or: $\\ln(x^2) = 2\\ln x$, so derivative is $2/x$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(5x^3) =$?', accept: ['15x^2', '15x2'], placeholder: 'Expression', explanation: 'Power rule: $5 \\cdot 3x^2 = 15x^2$.' },
-    { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{3x}) =$?', accept: ['3e^(3x)', '3e^{3x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{3x} \\cdot 3 = 3e^{3x}$.' }
+    { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{3x}) =$?', accept: ['3e^(3x)', '3e^{3x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{3x} \\cdot 3 = 3e^{3x}$.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(\\sin x) =$?', accept: ['cos(x)', 'cosx', '\\cos x'], placeholder: 'Expression', explanation: 'Derivative of $\\sin x$ is $\\cos x$.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [

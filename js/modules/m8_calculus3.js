@@ -106,7 +106,9 @@ topics: [
     { difficulty: 'hard', question: 'Two vectors have dot product 0. Are they parallel or perpendicular?', accept: ['perpendicular', 'orthogonal'], placeholder: 'parallel or perpendicular', explanation: '$\\mathbf{u} \\cdot \\mathbf{v} = 0 \\iff$ perpendicular.' },
     { difficulty: 'hard', question: 'The angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$ in degrees:', accept: [90, '90'], placeholder: 'degrees', explanation: '$\\cos\\theta = 0 \\Rightarrow \\theta = 90\u00b0$.' },
     { difficulty: 'easy', question: '$\\nabla(x^2 + y^2) =$?', accept: ['<2x,2y>', '(2x,2y)'], placeholder: 'Vector', explanation: 'Gradient: $\\langle \\frac{\\partial}{\\partial x}, \\frac{\\partial}{\\partial y} \\rangle = \\langle 2x, 2y \\rangle$.' },
-    { difficulty: 'medium', question: 'Divergence of $\\vec{F} = \\langle x^2, y^2 \\rangle$:', accept: ['2x+2y', '2x + 2y'], placeholder: 'Expression', explanation: '$\\nabla \\cdot \\vec{F} = 2x + 2y$.' }
+    { difficulty: 'medium', question: 'Divergence of $\\vec{F} = \\langle x^2, y^2 \\rangle$:', accept: ['2x+2y', '2x + 2y'], placeholder: 'Expression', explanation: '$\\nabla \\cdot \\vec{F} = 2x + 2y$.' },
+    { difficulty: 'easy', question: 'Curl of $\\vec{F} = \\langle y, -x, 0 \\rangle$: $z$-component is:', accept: ['-2', -2], placeholder: 'Number', explanation: '$\\text{curl}\ z = \\frac{\\partial(-x)}{\\partial x} - \\frac{\\partial y}{\\partial y} = -1 - 1 = -2$.' },
+    { difficulty: 'medium', question: 'A vector field with zero curl everywhere is called:', accept: ['irrotational', 'conservative'], placeholder: 'Term', explanation: 'Zero curl: irrotational (conservative in simply connected domains).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -237,7 +239,9 @@ topics: [
     { difficulty: 'hard', question: 'Gradient of $f(x,y) = x^2 + y^2$ at $(1,1)$:', accept: ['<2,2>', '(2,2)', '2,2'], placeholder: '<a,b>', explanation: '$\\nabla f = \\langle 2x, 2y \\rangle$. At $(1,1)$: $\\langle 2, 2 \\rangle$.' },
     { difficulty: 'hard', question: 'The discriminant $D$ for $f(x,y) = x^2 - y^2$ at $(0,0)$ is:', accept: [-4, '-4'], placeholder: 'D = ?', explanation: '$f_{xx}=2, f_{yy}=-2, f_{xy}=0$. $D = (2)(-2) - 0 = -4 \\lt 0$: saddle point.' },
     { difficulty: 'easy', question: 'For a path $C$ from $(0,0)$ to $(1,1)$, $\\int_C ds$ gives the path:', accept: ['length', 'arc length'], placeholder: 'What?', explanation: '$\\int_C ds$ computes the arc length of the curve.' },
-    { difficulty: 'medium', question: 'A conservative field has $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0.' }
+    { difficulty: 'medium', question: 'A conservative field has $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0.' },
+    { difficulty: 'easy', question: 'For a path $C$: $\\vec{r}(t) = \\langle t, 2t \\rangle$, $0 \\leq t \\leq 1$, find $|\\vec{r}\'(t)|$:', accept: ['sqrt(5)', '2.24'], placeholder: 'Number', explanation: '$\\vec{r}\'(t) = \\langle 1, 2 \\rangle$. $|\\vec{r}\'| = \\sqrt{1+4} = \\sqrt{5}$.' },
+    { difficulty: 'hard', question: "Green's theorem relates a line integral to a:", accept: ['double integral', 'area integral'], placeholder: 'Type', explanation: "Green's theorem: $\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y})\\,dA$." }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -365,7 +369,9 @@ topics: [
     { difficulty: 'medium', question: 'In polar coordinates, $dA =$? (include $r$)', accept: ['r dr dtheta', 'r*dr*dtheta', 'r dr d\\theta'], placeholder: 'e.g. r dr dtheta', explanation: '$dA = r\\,dr\\,d\\theta$.' },
     { difficulty: 'medium', question: 'Area of a disk of radius 2 using polar: $\\int_0^{2\\pi} \\int_0^2 r\\,dr\\,d\\theta =$?', accept: ['4pi', '4\\pi'], placeholder: 'Answer', explanation: '$\\int_0^2 r\\,dr = 2$. $\\int_0^{2\\pi} 2\\,d\\theta = 4\\pi$.' },
     { difficulty: 'hard', question: 'The Jacobian for spherical coordinates is $\\rho^2 \\sin$?', accept: ['phi', 'φ', '\\phi'], placeholder: 'which angle?', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' },
-    { difficulty: 'hard', question: 'Volume of sphere radius $R$: $\\frac{4}{3}\\pi R^3$. For $R=3$, volume $=$?', accept: ['36pi', '36\\pi', '113.1'], placeholder: 'Volume', explanation: '$\\frac{4}{3}\\pi(27) = 36\\pi \\approx 113.1$.' }
+    { difficulty: 'hard', question: 'Volume of sphere radius $R$: $\\frac{4}{3}\\pi R^3$. For $R=3$, volume $=$?', accept: ['36pi', '36\\pi', '113.1'], placeholder: 'Volume', explanation: '$\\frac{4}{3}\\pi(27) = 36\\pi \\approx 113.1$.' },
+    { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y, z \\rangle$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 + 1 = 3$.' },
+    { difficulty: 'medium', question: "Stokes' theorem relates surface integral of curl to:", accept: ['line integral', 'boundary integral'], placeholder: 'Type', explanation: "$\\iint_S (\\nabla \\times \\vec{F}) \\cdot d\\vec{S} = \\oint_{\\partial S} \\vec{F} \\cdot d\\vec{r}$." }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

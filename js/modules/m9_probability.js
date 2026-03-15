@@ -146,7 +146,10 @@ topics: [
     { difficulty: 'medium', question: '$C(7, 2) =$?', accept: [21, '21'], placeholder: 'Number', explanation: '$\\binom{7}{2} = \\frac{7!}{2!5!} = \\frac{42}{2} = 21$.' },
     { difficulty: 'hard', question: 'How many ways to arrange the letters in MATH?', accept: [24, '24'], placeholder: 'Number', explanation: '4 distinct letters: $4! = 24$.' },
     { difficulty: 'easy', question: '$P(3,2) =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$P(3,2) = 3!/(3-2)! = 6/1 = 6$.' },
-    { difficulty: 'hard', question: 'How many 5-card hands from a 52-card deck?', accept: ['2598960'], placeholder: 'Number', explanation: '$\\binom{52}{5} = 2{,}598{,}960$.' }
+    { difficulty: 'hard', question: 'How many 5-card hands from a 52-card deck?', accept: ['2598960'], placeholder: 'Number', explanation: '$\\binom{52}{5} = 2{,}598{,}960$.' },
+    { difficulty: 'easy', question: 'P(A or B) for mutually exclusive events: $P(A) + $ ?', accept: ['P(B)'], placeholder: 'Expression', explanation: 'Mutually exclusive: $P(A \\cup B) = P(A) + P(B)$.' },
+    { difficulty: 'medium', question: 'If $P(A) = 0.3$ and $P(B) = 0.5$, $P(A \\cap B) = 0.1$, then $P(A \\cup B) =$?', accept: ['0.7'], placeholder: 'Probability', explanation: '$P(A \\cup B) = 0.3 + 0.5 - 0.1 = 0.7$.' },
+    { difficulty: 'hard', question: '$P(A|B) = 0.4$, $P(B) = 0.5$. Find $P(A \\cap B)$:', accept: ['0.2', '0.20'], placeholder: 'Probability', explanation: '$P(A|B) = P(A \\cap B)/P(B)$. $P(A \\cap B) = 0.4 \\times 0.5 = 0.2$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -319,7 +322,9 @@ topics: [
     { difficulty: 'medium', question: 'If $X \\sim N(100, 15^2)$, what percentage lies within 1 SD of the mean?', accept: ['68', '68%'], placeholder: 'Percentage', explanation: 'Empirical rule: ~68% within 1 SD.' },
     { difficulty: 'hard', question: 'Variance of $X \\sim \\text{Bin}(20, 0.5)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sigma^2 = npq = 20(0.5)(0.5) = 5$.' },
     { difficulty: 'easy', question: 'For a fair die, $P(\\text{even}) =$?', accept: ['1/2', '0.5', '3/6'], placeholder: 'Probability', explanation: '3 even outcomes (2,4,6) out of 6. $P = 1/2$.' },
-    { difficulty: 'hard', question: 'If $X \\sim \\text{Poisson}(4)$, find $E[X^2]$ given $\\text{Var}(X) = 4$:', accept: [20, '20'], placeholder: 'Number', explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2$. $4 = E[X^2] - 16$. $E[X^2] = 20$.' }
+    { difficulty: 'hard', question: 'If $X \\sim \\text{Poisson}(4)$, find $E[X^2]$ given $\\text{Var}(X) = 4$:', accept: [20, '20'], placeholder: 'Number', explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2$. $4 = E[X^2] - 16$. $E[X^2] = 20$.' },
+    { difficulty: 'easy', question: 'Standard deviation of $X \\sim \\text{Bin}(100, 0.5)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sigma = \\sqrt{npq} = \\sqrt{100 \\cdot 0.5 \\cdot 0.5} = \\sqrt{25} = 5$.' },
+    { difficulty: 'medium', question: 'For $X \\sim N(50, 100)$, the standard deviation is:', accept: [10, '10'], placeholder: 'Number', explanation: '$\\sigma = \\sqrt{100} = 10$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [
