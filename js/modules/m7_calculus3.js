@@ -167,7 +167,9 @@
     { difficulty: 'medium', question: 'Dot product $\\langle 1,2 \\rangle \\cdot \\langle 3,-1 \\rangle =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$1(3) + 2(-1) = 3 - 2 = 1$.' },
     { difficulty: 'hard', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5,4/5>', '<0.6,0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' },
     { difficulty: 'easy', question: 'The zero vector in $\\mathbb{R}^3$:', accept: ['<0,0,0>', '(0,0,0)'], placeholder: 'Vector', explanation: '$\\vec{0} = \\langle 0, 0, 0 \\rangle$.' },
-    { difficulty: 'hard', question: 'Volume of parallelepiped with edges $\\vec{a}$, $\\vec{b}$, $\\vec{c}$: $V = |\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. If this equals 0, the vectors are:', accept: ['coplanar'], placeholder: 'Property', explanation: 'Zero volume means all three vectors lie in the same plane.' }
+    { difficulty: 'hard', question: 'Volume of parallelepiped with edges $\\vec{a}$, $\\vec{b}$, $\\vec{c}$: $V = |\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. If this equals 0, the vectors are:', accept: ['coplanar'], placeholder: 'Property', explanation: 'Zero volume means all three vectors lie in the same plane.' },
+    { difficulty: 'medium', question: 'Projection of $\\langle 3, 4 \\rangle$ onto $\\langle 1, 0 \\rangle$:', accept: ['<3,0>', '(3,0)', '<3, 0>'], placeholder: 'Vector', explanation: '$\\text{proj}_{\\hat{i}} \\langle 3,4 \\rangle = \\langle 3, 0 \\rangle$.' },
+    { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -305,7 +307,9 @@
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(5x + 3y^2) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\frac{\\partial}{\\partial x}(5x) = 5$. $3y^2$ is constant w.r.t. $x$.' },
     { difficulty: 'hard', question: '$\\frac{\\partial^2}{\\partial x^2}(x^3y + xy^2) =$?', accept: ['6xy', '6xy'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x} = 3x^2y + y^2$. $\\frac{\\partial^2}{\\partial x^2} = 6xy$.' },
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial y}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The derivative of a constant is 0.' },
-    { difficulty: 'medium', question: 'Find $f_{xy}$ for $f(x,y) = x^2y + xy^3$:', accept: ['2x+3y^2', '2x + 3y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy + y^3$. $f_{xy} = 2x + 3y^2$.' }
+    { difficulty: 'medium', question: 'Find $f_{xy}$ for $f(x,y) = x^2y + xy^3$:', accept: ['2x+3y^2', '2x + 3y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy + y^3$. $f_{xy} = 2x + 3y^2$.' },
+    { difficulty: 'medium', question: 'Gradient of $f(x,y) = x^2 + y^2$ at $(1, 1)$:', accept: ['<2,2>', '(2,2)', '<2, 2>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle 2x, 2y \\rangle$. At $(1,1)$: $\\langle 2, 2 \\rangle$.' },
+    { difficulty: 'hard', question: 'Directional derivative of $f = xy$ at $(1,1)$ in direction $\\langle 1,1 \\rangle$:', accept: ['sqrt(2)', '1.41'], placeholder: 'Number', explanation: '$\\nabla f = \\langle y, x \\rangle = \\langle 1,1 \\rangle$. Unit: $\\langle 1/\\sqrt{2}, 1/\\sqrt{2} \\rangle$. $D_u f = 2/\\sqrt{2} = \\sqrt{2}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -412,7 +416,8 @@
     { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 1\\,dx\\,dy =$?', accept: [6, '6'], placeholder: 'Number', explanation: 'Area: $3 \\times 2 = 6$.' },
     { difficulty: 'hard', question: '$\\int_0^1 \\int_0^x 2\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 2x\\,dx = [x^2]_0^1 = 1$.' },
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 (x + y)\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2/2 + xy]_0^1\\,dy = \\int_0^1 (1/2 + y)\\,dy = 1/2 + 1/2 = 1$.' },
-    { difficulty: 'hard', question: 'Convert $\\int\\int_R f\\,dA$ to polar: $dA =$?', accept: ['r dr dtheta', 'r dr d\\theta', 'rdrd\\theta'], placeholder: 'Expression', explanation: 'In polar coordinates, $dA = r\\,dr\\,d\\theta$.' }
+    { difficulty: 'hard', question: 'Convert $\\int\\int_R f\\,dA$ to polar: $dA =$?', accept: ['r dr dtheta', 'r dr d\\theta', 'rdrd\\theta'], placeholder: 'Expression', explanation: 'In polar coordinates, $dA = r\\,dr\\,d\\theta$.' },
+    { difficulty: 'medium', question: '$\\int_0^2 \\int_0^x y\\,dy\\,dx =$?', accept: ['4/3', '1.33'], placeholder: 'Number', explanation: '$\\int_0^2 [y^2/2]_0^x dx = \\int_0^2 x^2/2\\,dx = [x^3/6]_0^2 = 4/3$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

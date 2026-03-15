@@ -172,7 +172,9 @@
     { difficulty: 'easy', question: '$\\int x^4\\,dx =$?', accept: ['x^5/5+C', 'x^5/5 + C'], placeholder: 'Expression', explanation: '$\\frac{x^5}{5} + C$.' },
     { difficulty: 'medium', question: '$\\int \\cos(2x)\\,dx =$?', accept: ['sin(2x)/2+C', '(1/2)sin(2x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\sin(2x) + C$.' },
     { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', '0+C', 'c'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^{-1}(x)+C'], placeholder: 'Expression', explanation: 'This is $\\arcsin(x) + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^{-1}(x)+C'], placeholder: 'Expression', explanation: 'This is $\\arcsin(x) + C$.' },
+    { difficulty: 'medium', question: '$\\int \\frac{1}{x+1}\\,dx =$?', accept: ['ln|x+1|+C', 'ln(x+1)+C'], placeholder: 'Expression', explanation: '$\\ln|x+1| + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+1}\\,dx =$?', accept: ['arctan(x)+C', 'tan^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arctan(x) + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -357,7 +359,8 @@
     { difficulty: 'easy', question: '$\\int_0^4 1\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Length of interval: $4 - 0 = 4$.' },
     { difficulty: 'medium', question: 'Volume of solid with cross-section area $A = \\pi$ from $x=0$ to $x=3$:', accept: ['3pi', '3\\pi', '9.42'], placeholder: 'Number', explanation: '$V = \\int_0^3 \\pi\\,dx = 3\\pi$.' },
     { difficulty: 'easy', question: 'Net displacement from velocity $v(t) = 4$ over $[0, 3]$:', accept: [12, '12'], placeholder: 'Number', explanation: '$\\int_0^3 4\\,dt = 12$.' },
-    { difficulty: 'hard', question: 'Area between $y = x^2$ and $y = x$ from $x = 0$ to $x = 1$:', accept: ['1/6', '0.167'], placeholder: 'Area', explanation: '$\\int_0^1 (x - x^2)\\,dx = [x^2/2 - x^3/3]_0^1 = 1/2 - 1/3 = 1/6$.' }
+    { difficulty: 'hard', question: 'Area between $y = x^2$ and $y = x$ from $x = 0$ to $x = 1$:', accept: ['1/6', '0.167'], placeholder: 'Area', explanation: '$\\int_0^1 (x - x^2)\\,dx = [x^2/2 - x^3/3]_0^1 = 1/2 - 1/3 = 1/6$.' },
+    { difficulty: 'medium', question: 'If $f(x) = 3$ on $[0, 5]$, then $\\int_0^5 f(x)\\,dx =$?', accept: [15, '15'], placeholder: 'Number', explanation: 'Rectangle: $3 \\times 5 = 15$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -476,7 +479,8 @@
     { difficulty: 'hard', question: '$\\int_0^{\\pi/2} \\sin(x)\\cos(x)\\,dx =$?', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: '$\\sin x \\cos x = \\frac{1}{2}\\sin(2x)$. $\\int_0^{\\pi/2} \\frac{1}{2}\\sin(2x)\\,dx = \\frac{1}{2}[-\\frac{1}{2}\\cos(2x)]_0^{\\pi/2} = \\frac{1}{2}$.' },
     { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x$ is its own antiderivative.' },
     { difficulty: 'medium', question: 'For $\\int \\frac{2x}{x^2+4}\\,dx$, let $u =$?', accept: ['x^2+4', 'x^2 + 4'], placeholder: 'u = ?', explanation: '$u = x^2 + 4$, $du = 2x\\,dx$. Integral becomes $\\ln|u| + C$.' },
-    { difficulty: 'hard', question: '$\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$. Converges.' }
+    { difficulty: 'hard', question: '$\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$. Converges.' },
+    { difficulty: 'medium', question: 'Evaluate $\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

@@ -108,7 +108,9 @@ topics: [
     { difficulty: 'easy', question: '$\\nabla(x^2 + y^2) =$?', accept: ['<2x,2y>', '(2x,2y)'], placeholder: 'Vector', explanation: 'Gradient: $\\langle \\frac{\\partial}{\\partial x}, \\frac{\\partial}{\\partial y} \\rangle = \\langle 2x, 2y \\rangle$.' },
     { difficulty: 'medium', question: 'Divergence of $\\vec{F} = \\langle x^2, y^2 \\rangle$:', accept: ['2x+2y', '2x + 2y'], placeholder: 'Expression', explanation: '$\\nabla \\cdot \\vec{F} = 2x + 2y$.' },
     { difficulty: 'easy', question: 'Curl of $\\vec{F} = \\langle y, -x, 0 \\rangle$: $z$-component is:', accept: ['-2', -2], placeholder: 'Number', explanation: '$\\text{curl}\ z = \\frac{\\partial(-x)}{\\partial x} - \\frac{\\partial y}{\\partial y} = -1 - 1 = -2$.' },
-    { difficulty: 'medium', question: 'A vector field with zero curl everywhere is called:', accept: ['irrotational', 'conservative'], placeholder: 'Term', explanation: 'Zero curl: irrotational (conservative in simply connected domains).' }
+    { difficulty: 'medium', question: 'A vector field with zero curl everywhere is called:', accept: ['irrotational', 'conservative'], placeholder: 'Term', explanation: 'Zero curl: irrotational (conservative in simply connected domains).' },
+    { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x, y \\rangle$: is this conservative?', accept: ['yes'], placeholder: 'yes/no', explanation: '$\\vec{F} = \\nabla(\\frac{x^2+y^2}{2})$. Potential function exists. Conservative.' },
+    { difficulty: 'hard', question: 'Potential function for $\\vec{F} = \\langle 2x, 3y^2 \\rangle$:', accept: ['x^2+y^3', 'x^2 + y^3'], placeholder: 'Function', explanation: '$\\int 2x\\,dx = x^2$. $\\int 3y^2\\,dy = y^3$. $\\phi = x^2 + y^3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -241,7 +243,9 @@ topics: [
     { difficulty: 'easy', question: 'For a path $C$ from $(0,0)$ to $(1,1)$, $\\int_C ds$ gives the path:', accept: ['length', 'arc length'], placeholder: 'What?', explanation: '$\\int_C ds$ computes the arc length of the curve.' },
     { difficulty: 'medium', question: 'A conservative field has $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0.' },
     { difficulty: 'easy', question: 'For a path $C$: $\\vec{r}(t) = \\langle t, 2t \\rangle$, $0 \\leq t \\leq 1$, find $|\\vec{r}\'(t)|$:', accept: ['sqrt(5)', '2.24'], placeholder: 'Number', explanation: '$\\vec{r}\'(t) = \\langle 1, 2 \\rangle$. $|\\vec{r}\'| = \\sqrt{1+4} = \\sqrt{5}$.' },
-    { difficulty: 'hard', question: "Green's theorem relates a line integral to a:", accept: ['double integral', 'area integral'], placeholder: 'Type', explanation: "Green's theorem: $\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y})\\,dA$." }
+    { difficulty: 'hard', question: "Green's theorem relates a line integral to a:", accept: ['double integral', 'area integral'], placeholder: 'Type', explanation: "Green's theorem: $\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y})\\,dA$." },
+    { difficulty: 'easy', question: 'Work done by a constant force $F = 5$ over distance $d = 3$:', accept: [15, '15'], placeholder: 'Number', explanation: '$W = F \\cdot d = 5 \\times 3 = 15$.' },
+    { difficulty: 'medium', question: 'For conservative field, work depends only on:', accept: ['endpoints', 'start and end points'], placeholder: 'What?', explanation: 'Path independence: work depends only on endpoints, not the path taken.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
