@@ -162,7 +162,10 @@
           { difficulty: 'hard', question: 'Find the angle between $\\langle 1,1 \\rangle$ and $\\langle 1,0 \\rangle$ in degrees:', accept: [45, '45'], placeholder: 'degrees', explanation: '$\\cos\\theta = \\frac{1}{\\sqrt{2}} \\Rightarrow \\theta = 45°$.' },
     { difficulty: 'easy', question: '$\\langle 1,2 \\rangle + \\langle 3,4 \\rangle =$?', accept: ['<4,6>', '(4,6)', '<4, 6>'], placeholder: 'Vector', explanation: 'Add componentwise: $\\langle 1+3, 2+4 \\rangle = \\langle 4, 6 \\rangle$.' },
     { difficulty: 'medium', question: '$|\\langle 3, 4 \\rangle| =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{9 + 16} = \\sqrt{25} = 5$.' },
-    { difficulty: 'hard', question: '$\\langle 1,0,0 \\rangle \\times \\langle 0,1,0 \\rangle =$?', accept: ['<0,0,1>', '(0,0,1)', '<0, 0, 1>'], placeholder: 'Vector', explanation: '$\\hat{i} \\times \\hat{j} = \\hat{k} = \\langle 0,0,1 \\rangle$.' }
+    { difficulty: 'hard', question: '$\\langle 1,0,0 \\rangle \\times \\langle 0,1,0 \\rangle =$?', accept: ['<0,0,1>', '(0,0,1)', '<0, 0, 1>'], placeholder: 'Vector', explanation: '$\\hat{i} \\times \\hat{j} = \\hat{k} = \\langle 0,0,1 \\rangle$.' },
+    { difficulty: 'easy', question: '$2\\langle 1, 3 \\rangle =$?', accept: ['<2,6>', '(2,6)', '<2, 6>'], placeholder: 'Vector', explanation: 'Scalar multiplication: $2\\langle 1,3 \\rangle = \\langle 2, 6 \\rangle$.' },
+    { difficulty: 'medium', question: 'Dot product $\\langle 1,2 \\rangle \\cdot \\langle 3,-1 \\rangle =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$1(3) + 2(-1) = 3 - 2 = 1$.' },
+    { difficulty: 'hard', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5,4/5>', '<0.6,0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -291,7 +294,9 @@
           { difficulty: 'medium', question: 'If $f(x,y) = e^{xy}$, what is $f_x$?', accept: ['ye^(xy)', 'ye^{xy}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{xy} \\cdot y = ye^{xy}$.' },
           { difficulty: 'hard', question: 'Find $f_{xy}$ for $f(x,y) = x^2y^3$:', accept: ['6xy^2', '6xy2'], placeholder: 'Expression', explanation: '$f_x = 2xy^3$. $f_{xy} = \\partial/\\partial y[2xy^3] = 6xy^2$.' },
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(3x + 2y) =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Treat $y$ as constant. $\\frac{\\partial}{\\partial x}(3x) = 3$.' },
-    { difficulty: 'medium', question: '$\\frac{\\partial}{\\partial y}(x^2y^3) =$?', accept: ['3x^2y^2', '3x2y2'], placeholder: 'Expression', explanation: 'Hold $x$ constant, differentiate $y^3$: $x^2 \\cdot 3y^2 = 3x^2y^2$.' }
+    { difficulty: 'medium', question: '$\\frac{\\partial}{\\partial y}(x^2y^3) =$?', accept: ['3x^2y^2', '3x2y2'], placeholder: 'Expression', explanation: 'Hold $x$ constant, differentiate $y^3$: $x^2 \\cdot 3y^2 = 3x^2y^2$.' },
+    { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(5x + 3y^2) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\frac{\\partial}{\\partial x}(5x) = 5$. $3y^2$ is constant w.r.t. $x$.' },
+    { difficulty: 'hard', question: '$\\frac{\\partial^2}{\\partial x^2}(x^3y + xy^2) =$?', accept: ['6xy', '6xy'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x} = 3x^2y + y^2$. $\\frac{\\partial^2}{\\partial x^2} = 6xy$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -393,7 +398,9 @@
           { difficulty: 'medium', question: 'In polar coordinates, $dA =$?', accept: ['r dr dtheta', 'r*dr*dtheta'], placeholder: 'e.g. r dr dtheta', explanation: '$dA = r\\,dr\\,d\\theta$. The $r$ is the Jacobian.' },
           { difficulty: 'hard', question: 'In polar, the area of the unit disk ($r \\leq 1$) using $\\int\\int r\\,dr\\,d\\theta$:', accept: ['pi', '\\pi', '3.14'], placeholder: 'Area', explanation: '$\\int_0^{2\\pi}\\int_0^1 r\\,dr\\,d\\theta = 2\\pi \\cdot \\frac{1}{2} = \\pi$.' },
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Area of unit square: $1 \\times 1 = 1$.' },
-    { difficulty: 'medium', question: '$\\int_0^1 \\int_0^2 xy\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2y/2]_0^2 dy = \\int_0^1 2y\\,dy = [y^2]_0^1 = 1$.' }
+    { difficulty: 'medium', question: '$\\int_0^1 \\int_0^2 xy\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2y/2]_0^2 dy = \\int_0^1 2y\\,dy = [y^2]_0^1 = 1$.' },
+    { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 1\\,dx\\,dy =$?', accept: [6, '6'], placeholder: 'Number', explanation: 'Area: $3 \\times 2 = 6$.' },
+    { difficulty: 'hard', question: '$\\int_0^1 \\int_0^x 2\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 2x\\,dx = [x^2]_0^1 = 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

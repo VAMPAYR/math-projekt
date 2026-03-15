@@ -130,7 +130,10 @@
           { difficulty: 'easy', question: 'Factor $x^2 - 25$:', accept: ['(x-5)(x+5)', '(x+5)(x-5)'], placeholder: 'e.g. (x-a)(x+b)', explanation: 'Difference of squares: $(x-5)(x+5)$.' },
           { difficulty: 'easy', question: 'Factor out the GCF: $4x^3 + 8x^2$:', accept: ['4x^2(x+2)'], placeholder: 'e.g. ax(bx+c)', explanation: 'GCF = $4x^2$. $4x^2(x + 2)$.' },
           { difficulty: 'medium', question: 'Factor $x^2 + 5x + 6$:', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'e.g. (x+a)(x+b)', explanation: '$2 \\times 3 = 6$, $2 + 3 = 5$. $(x+2)(x+3)$.' },
-          { difficulty: 'hard', question: 'Factor $x^3 + 27$:', accept: ['(x+3)(x^2-3x+9)'], placeholder: 'Sum of cubes', explanation: '$x^3 + 3^3 = (x+3)(x^2 - 3x + 9)$.' }
+          { difficulty: 'hard', question: 'Factor $x^3 + 27$:', accept: ['(x+3)(x^2-3x+9)'], placeholder: 'Sum of cubes', explanation: '$x^3 + 3^3 = (x+3)(x^2 - 3x + 9)$.' },
+    { difficulty: 'easy', question: 'What is the degree of $3x^4 + 2x^2 - x + 7$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Highest power of $x$ is 4.' },
+    { difficulty: 'medium', question: 'Is $(x - 2)$ a factor of $x^3 - 8$? (yes/no)', accept: ['yes'], placeholder: 'yes/no', explanation: '$f(2) = 8 - 8 = 0$. By the factor theorem, $(x-2)$ is a factor.' },
+    { difficulty: 'hard', question: 'Divide $x^3 + 1$ by $x + 1$. Quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Expression', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -380,7 +383,10 @@
           { difficulty: 'easy', question: 'Solve $x^2 = 49$. List both solutions:', accept: ['7, -7', '-7, 7', '7,-7', '-7,7'], placeholder: 'x values', explanation: '$x = \\pm 7$.' },
           { difficulty: 'medium', question: 'Vertex of $y = x^2 - 6x + 5$ is at $x =$?', accept: [3, '3'], placeholder: 'x-coordinate', explanation: '$x = -b/2a = 6/2 = 3$.' },
           { difficulty: 'medium', question: 'How many real solutions does $x^2 + 4 = 0$ have?', accept: [0, '0', 'none', 'zero'], placeholder: 'Number', explanation: '$\\Delta = 0 - 16 = -16 < 0$. No real solutions.' },
-          { difficulty: 'hard', question: 'Sum of the roots of $2x^2 - 10x + 3 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum $= -b/a = 10/2 = 5$.' }
+          { difficulty: 'hard', question: 'Sum of the roots of $2x^2 - 10x + 3 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum $= -b/a = 10/2 = 5$.' },
+    { difficulty: 'easy', question: 'Solve: $x^2 = 16$:', accept: ['4, -4', '-4, 4', '4,-4'], placeholder: 'Solutions', explanation: '$x = \\pm 4$.' },
+    { difficulty: 'medium', question: 'Sum of roots of $x^2 - 7x + 10 = 0$:', accept: [7, '7'], placeholder: 'Number', explanation: 'By Vieta: sum = $-(-7)/1 = 7$. (Roots are 2 and 5.)' },
+    { difficulty: 'hard', question: 'If the discriminant is negative, how many real roots?', accept: [0, '0', 'none'], placeholder: 'Number', explanation: '$b^2 - 4ac < 0$: no real roots. Two complex conjugate roots.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -597,7 +603,10 @@
           { difficulty: 'medium', question: 'Simplify $\\log_2(32)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$2^5 = 32$.' },
           { difficulty: 'medium', question: 'Simplify $\\log_b(b^7)$:', accept: [7, '7'], placeholder: 'Number', explanation: '$\\log_b(b^x) = x$. So $\\log_b(b^7) = 7$.' },
           { difficulty: 'hard', question: 'If $\\log_b(x) = 3$ and $b = 4$, then $x =$?', accept: [64, '64'], placeholder: 'Number', explanation: '$4^3 = 64$.' },
-          { difficulty: 'hard', question: '$\\ln(e^5) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\ln(e^x) = x$. So $\\ln(e^5) = 5$.' }
+          { difficulty: 'hard', question: '$\\ln(e^5) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\ln(e^x) = x$. So $\\ln(e^5) = 5$.' },
+    { difficulty: 'easy', question: '$e^0 =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Any base raised to 0 equals 1. $e^0 = 1$.' },
+    { difficulty: 'medium', question: 'Solve: $\\ln(x) = 3$. $x =$?', accept: ['e^3', '20.09'], placeholder: 'Value', explanation: '$x = e^3 \\approx 20.09$.' },
+    { difficulty: 'hard', question: 'Solve: $\\log_2(x) + \\log_2(4) = 5$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$\\log_2(4x) = 5$. $4x = 32$. $x = 8$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [
