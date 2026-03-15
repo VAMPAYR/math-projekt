@@ -121,7 +121,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', '0 + C'], placeholder: 'Result', explanation: '$C$ (constant of integration).' },
     { difficulty: 'hard', question: 'Tabular integration for $\\int x^3 e^x\\,dx$: differentiating $x^3$ how many times to reach 0?', accept: [3, '3'], placeholder: 'Times', explanation: '$x^3 \\to 3x^2 \\to 6x \\to 6 \\to 0$. Three non-zero derivatives.' },
     { difficulty: 'medium', question: '$\\int (3x^2 + 2x)\\,dx =$?', accept: ['x^3+x^2+C', 'x^3 + x^2 + C'], placeholder: 'Expression', explanation: '$x^3 + x^2 + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{2x}{x^2+1}\\,dx =$?', accept: ['ln(x^2+1)+C', 'ln|x^2+1|+C'], placeholder: 'Expression', explanation: 'Let $u = x^2+1$: $\\ln|u| + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{2x}{x^2+1}\\,dx =$?', accept: ['ln(x^2+1)+C', 'ln|x^2+1|+C'], placeholder: 'Expression', explanation: 'Let $u = x^2+1$: $\\ln|u| + C$.' },
+    { difficulty: 'medium', question: '$\\int \\cos(x)\\,dx =$?', accept: ['sin(x)+C', 'sinx+C'], placeholder: 'Expression', explanation: '$\\sin x + C$.' },
+    { difficulty: 'hard', question: '$\\int x e^x\\,dx =$?', accept: ['xe^x-e^x+C', '(x-1)e^x+C'], placeholder: 'Expression', explanation: 'IBP: $u = x, dv = e^x dx$. $xe^x - e^x + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -270,7 +272,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int_2^2 x^5\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Same limits: $\\int_a^a = 0$.' },
     { difficulty: 'hard', question: '$\\int_0^4 |x-2|\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Split at $x=2$: $\\int_0^2 (2-x) + \\int_2^4 (x-2) = 2 + 2 = 4$.' },
     { difficulty: 'medium', question: 'Right Riemann sum uses which endpoint?', accept: ['right'], placeholder: 'Which?', explanation: 'Right sum: $f(x_i)$ at right endpoint.' },
-    { difficulty: 'hard', question: 'As $n \\to \\infty$, Riemann sum converges to:', accept: ['definite integral', 'the integral'], placeholder: 'What?', explanation: '$\\lim_{n \\to \\infty} \\sum f(x_i^*)\\Delta x = \\int_a^b f\\,dx$.' }
+    { difficulty: 'hard', question: 'As $n \\to \\infty$, Riemann sum converges to:', accept: ['definite integral', 'the integral'], placeholder: 'What?', explanation: '$\\lim_{n \\to \\infty} \\sum f(x_i^*)\\Delta x = \\int_a^b f\\,dx$.' },
+    { difficulty: 'medium', question: 'Midpoint rule: $\\int_a^b f \\approx \\sum f(\\bar{x}_i) \\Delta x$ where $\\bar{x}_i$ is the:', accept: ['midpoint'], placeholder: 'Which point?', explanation: '$\\bar{x}_i = (x_{i-1} + x_i)/2$.' },
+    { difficulty: 'hard', question: '$\\sum_{i=1}^n i^3 = \\left[\\frac{n(n+1)}{2}\\right]^2$. For $n=3$:', accept: [36, '36'], placeholder: 'Number', explanation: '$[3(4)/2]^2 = 6^2 = 36$. Verify: $1+8+27=36$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -468,7 +472,9 @@ topics: [
     { difficulty: 'easy', question: 'FTC Part 2: $\\int_a^b f(x)\\,dx = F(b) - F($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$F(b) - F(a)$ where $F\' = f$.' },
     { difficulty: 'hard', question: 'Shell method: $V = 2\\pi \\int_a^b x f(x)\\,dx$ for rotation about the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: $2\\pi \\times$ radius $\\times$ height $\\times$ thickness.' },
     { difficulty: 'medium', question: 'Linearity: $\\int (cf)\\,dx = c \\int f\\,dx$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Constant factor rule: $\\int cf = c\\int f$.' },
-    { difficulty: 'hard', question: 'Disk method: rotation of $y = \\sqrt{x}$ about $x$-axis from $0$ to $4$: $V =$?', accept: ['8pi', '25.13'], placeholder: 'Volume', explanation: '$\\pi \\int_0^4 x\\,dx = \\pi [x^2/2]_0^4 = 8\\pi$.' }
+    { difficulty: 'hard', question: 'Disk method: rotation of $y = \\sqrt{x}$ about $x$-axis from $0$ to $4$: $V =$?', accept: ['8pi', '25.13'], placeholder: 'Volume', explanation: '$\\pi \\int_0^4 x\\,dx = \\pi [x^2/2]_0^4 = 8\\pi$.' },
+    { difficulty: 'medium', question: 'Signed area: $\\int_a^b f\\,dx$ can be negative when $f <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Below $x$-axis: negative contribution to integral.' },
+    { difficulty: 'hard', question: 'Cross-sectional method: known cross-section area $A(x)$. $V = \\int_a^b A(x)\\,$ ?', accept: ['dx'], placeholder: 'Variable', explanation: 'Slice method: sum up known cross-sectional areas.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

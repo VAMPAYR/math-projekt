@@ -134,7 +134,9 @@ topics: [
     { difficulty: 'easy', question: 'Conservative vector field: $\\vec{F} = \\nabla \\phi$. $\\phi$ is the:', accept: ['potential function', 'scalar potential'], placeholder: 'Name', explanation: '$\\phi$: scalar potential function.' },
     { difficulty: 'hard', question: '$\\nabla \\times (\\nabla \\phi) = $ ? (always)', accept: ['0', 'zero', '\\vec{0}'], placeholder: 'Value', explanation: 'Curl of gradient is always zero.' },
     { difficulty: 'medium', question: 'Source: $\\nabla \\cdot \\vec{F} > 0$. Sink: $\\nabla \\cdot \\vec{F} <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Source: positive divergence. Sink: negative divergence.' },
-    { difficulty: 'hard', question: 'Harmonic function: $\\nabla^2 f = 0$. Satisfies the _____ equation.', accept: ['Laplace', 'Laplace\'s'], placeholder: 'Name', explanation: 'Laplace equation: $\\Delta f = 0$. Solutions are harmonic.' }
+    { difficulty: 'hard', question: 'Harmonic function: $\\nabla^2 f = 0$. Satisfies the _____ equation.', accept: ['Laplace', 'Laplace\'s'], placeholder: 'Name', explanation: 'Laplace equation: $\\Delta f = 0$. Solutions are harmonic.' },
+    { difficulty: 'medium', question: 'Solenoidal field: $\\nabla \\cdot \\vec{F} = $ ?', accept: [0, '0'], placeholder: 'Value', explanation: 'Solenoidal: divergence-free. $\\nabla \\cdot \\vec{F} = 0$.' },
+    { difficulty: 'hard', question: 'Helmholtz decomposition: any smooth vector field = gradient + _____ field.', accept: ['curl', 'solenoidal', 'divergence-free'], placeholder: 'Type', explanation: '$\\vec{F} = -\\nabla\\phi + \\nabla \\times \\vec{A}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -296,7 +298,9 @@ topics: [
     { difficulty: 'easy', question: 'Work integral: $W = \\int_C \\vec{F} \\cdot d\\vec{r}$. Units:', accept: ['joules', 'energy', 'force times distance'], placeholder: 'Units', explanation: 'Work = force times displacement. SI: Joules.' },
     { difficulty: 'hard', question: 'Exact differential equation: $M\\,dx + N\\,dy = 0$ is exact when $M_y =$ ?', accept: ['N_x', 'dN/dx'], placeholder: 'Condition', explanation: 'Exact: $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$.' },
     { difficulty: 'medium', question: 'Orientation of curve matters for line integrals: reversing direction _____ the sign.', accept: ['changes', 'flips', 'reverses'], placeholder: 'What?', explanation: 'Reverse direction: negate the integral.' },
-    { difficulty: 'hard', question: 'Poincare lemma: on a simply connected domain, every closed form is:', accept: ['exact'], placeholder: 'Property', explanation: 'Closed ($d\\omega = 0$) implies exact ($\\omega = d\\eta$) on simply connected domains.' }
+    { difficulty: 'hard', question: 'Poincare lemma: on a simply connected domain, every closed form is:', accept: ['exact'], placeholder: 'Property', explanation: 'Closed ($d\\omega = 0$) implies exact ($\\omega = d\\eta$) on simply connected domains.' },
+    { difficulty: 'medium', question: 'Positive orientation: counterclockwise traversal of boundary curve.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Standard orientation: counterclockwise (region on left).' },
+    { difficulty: 'hard', question: 'Hodge star operator maps $k$-forms to $(n-k)$-forms.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Hodge star: $\\star: \\Omega^k \\to \\Omega^{n-k}$. Duality on forms.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -446,7 +450,9 @@ topics: [
     { difficulty: 'easy', question: 'Total surface area includes lateral surface plus:', accept: ['bases', 'top and bottom', 'end caps'], placeholder: 'What?', explanation: 'Total SA = lateral + bases.' },
     { difficulty: 'hard', question: 'Navier-Stokes equations describe:', accept: ['fluid flow', 'fluid dynamics', 'viscous flow'], placeholder: 'What?', explanation: 'Navier-Stokes: PDEs governing viscous fluid flow. Millennium problem.' },
     { difficulty: 'medium', question: 'Outward normal convention: for closed surface, normals point:', accept: ['outward'], placeholder: 'Direction', explanation: 'Standard convention: outward-pointing normals on closed surfaces.' },
-    { difficulty: 'hard', question: 'De Rham cohomology measures the failure of _____ on a manifold.', accept: ['exactness', 'closed = exact'], placeholder: 'What?', explanation: 'De Rham cohomology: closed forms modulo exact forms.' }
+    { difficulty: 'hard', question: 'De Rham cohomology measures the failure of _____ on a manifold.', accept: ['exactness', 'closed = exact'], placeholder: 'What?', explanation: 'De Rham cohomology: closed forms modulo exact forms.' },
+    { difficulty: 'medium', question: 'Flux through surface: $\\Phi = \\iint \\vec{F} \\cdot \\hat{n}\\,dS$. $\\hat{n}$ is the unit:', accept: ['normal'], placeholder: 'Vector', explanation: '$\\hat{n}$: outward unit normal.' },
+    { difficulty: 'hard', question: 'Maxwell\'s $\\nabla \\cdot \\vec{B} = 0$ states: no magnetic:', accept: ['monopoles'], placeholder: 'What?', explanation: 'No magnetic monopoles: magnetic field lines are always closed.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

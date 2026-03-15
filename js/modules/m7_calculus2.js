@@ -126,7 +126,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int \\frac{1}{x^2}\\,dx =$?', accept: ['-1/x+C', '-x^(-1)+C'], placeholder: 'Expression', explanation: '$-x^{-1} + C = -1/x + C$.' },
     { difficulty: 'hard', question: '$\\int_0^{\\pi/2} \\cos^3 x\\,dx =$?', accept: ['2/3'], placeholder: 'Number', explanation: 'Use $\\cos^2 x = 1 - \\sin^2 x$: $\\int (1-\\sin^2 x)\\cos x\\,dx = 2/3$.' },
     { difficulty: 'medium', question: '$\\int \\tan(x)\\,dx =$?', accept: ['-ln|cos(x)|+C', 'ln|sec(x)|+C'], placeholder: 'Expression', explanation: '$-\\ln|\\cos x| + C = \\ln|\\sec x| + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{dx}{\\sqrt{x^2-1}} =$?', accept: ['arcsec(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}|x| + C$ (or $\\cosh^{-1} x$).' }
+    { difficulty: 'hard', question: '$\\int \\frac{dx}{\\sqrt{x^2-1}} =$?', accept: ['arcsec(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}|x| + C$ (or $\\cosh^{-1} x$).' },
+    { difficulty: 'medium', question: '$\\int \\sec^2 x\\,dx =$?', accept: ['tan(x)+C', 'tanx+C'], placeholder: 'Expression', explanation: '$\\tan x + C$.' },
+    { difficulty: 'hard', question: 'Wallis integral: $\\int_0^{\\pi/2} \\sin^n x\\,dx$ for even $n$ involves factor of $\\pi/$ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Wallis: even $n$ gives $\\frac{(n-1)!!}{n!!} \\cdot \\frac{\\pi}{2}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -264,7 +266,9 @@ topics: [
     { difficulty: 'easy', question: '$a_n = 1/n$ is: increasing, decreasing, or constant?', accept: ['decreasing'], placeholder: 'Behavior', explanation: '$1/1 > 1/2 > 1/3 > \\ldots$: decreasing.' },
     { difficulty: 'hard', question: 'Basel problem: $\\sum_{n=1}^{\\infty} \\frac{1}{n^2} =$?', accept: ['pi^2/6', '\\pi^2/6', '1.645'], placeholder: 'Sum', explanation: 'Euler proved: $\\sum 1/n^2 = \\pi^2/6$.' },
     { difficulty: 'medium', question: 'Bounded monotone sequence _____.', accept: ['converges'], placeholder: 'Result', explanation: 'Monotone convergence theorem: bounded monotone sequences converge.' },
-    { difficulty: 'hard', question: 'Cauchy criterion: $\\sum a_n$ converges iff partial sums form a _____ sequence.', accept: ['Cauchy'], placeholder: 'Type', explanation: 'Cauchy criterion: $|S_m - S_n| < \\epsilon$ for large $m, n$.' }
+    { difficulty: 'hard', question: 'Cauchy criterion: $\\sum a_n$ converges iff partial sums form a _____ sequence.', accept: ['Cauchy'], placeholder: 'Type', explanation: 'Cauchy criterion: $|S_m - S_n| < \\epsilon$ for large $m, n$.' },
+    { difficulty: 'medium', question: 'Harmonic series $\\sum 1/n$: converges or diverges?', accept: ['diverges'], placeholder: 'Result', explanation: 'Harmonic series diverges ($p = 1$).' },
+    { difficulty: 'hard', question: 'Euler-Mascheroni constant: $\\gamma = \\lim_{n \\to \\infty}(H_n - \\ln n) \\approx$?', accept: ['0.5772', '0.577'], placeholder: 'Value', explanation: '$\\gamma \\approx 0.5772$. Unknown if rational or irrational.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -426,7 +430,9 @@ topics: [
     { difficulty: 'easy', question: '$e^x$ Maclaurin: first 4 terms: $1 + x + x^2/2 + x^3/$ ?', accept: [6, '6', '3!'], placeholder: 'Denominator', explanation: '$x^3/3! = x^3/6$.' },
     { difficulty: 'hard', question: 'Euler\'s product formula: $\\sin(\\pi x) = \\pi x \\prod_{n=1}^{\\infty}(1-x^2/n^2)$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Infinite product representation of $\\sin(\\pi x)$.' },
     { difficulty: 'medium', question: 'MacLaurin for $\\sin x = x - x^3/3! + x^5/5! - \\ldots$', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: '$\\sin x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{2n+1}}{(2n+1)!}$.' },
-    { difficulty: 'hard', question: 'Power series can be differentiated _____ within radius of convergence.', accept: ['term by term', 'termwise'], placeholder: 'How?', explanation: 'Differentiation term-by-term: same radius of convergence.' }
+    { difficulty: 'hard', question: 'Power series can be differentiated _____ within radius of convergence.', accept: ['term by term', 'termwise'], placeholder: 'How?', explanation: 'Differentiation term-by-term: same radius of convergence.' },
+    { difficulty: 'medium', question: 'Generation of $1/(1-x) = 1 + x + x^2 + x^3 + \\ldots$ for $|x| <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: 'Geometric series: $\\sum x^n = 1/(1-x)$ for $|x| < 1$.' },
+    { difficulty: 'hard', question: 'Abel\'s theorem: if $\\sum a_n$ converges, then $\\lim_{x \\to 1^-} \\sum a_n x^n =$?', accept: ['sum a_n', 'the sum'], placeholder: 'Limit', explanation: 'Abel: power series continuity at boundary when series converges.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

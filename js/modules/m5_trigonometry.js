@@ -220,7 +220,9 @@ topics: [
     { difficulty: 'easy', question: 'SOH: $\\sin = $ opposite / ?', accept: ['hypotenuse'], placeholder: 'Side', explanation: '$\\sin \\theta = \\frac{\\text{opposite}}{\\text{hypotenuse}}$.' },
     { difficulty: 'hard', question: '$\\cos(60°) =$?', accept: ['1/2', '0.5'], placeholder: 'Value', explanation: '$\\cos(60°) = 1/2$.' },
     { difficulty: 'medium', question: 'CAH: $\\cos = $ adjacent / ?', accept: ['hypotenuse'], placeholder: 'Side', explanation: '$\\cos \\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}}$.' },
-    { difficulty: 'hard', question: 'Exact: $\\tan(\\pi/3) =$?', accept: ['sqrt(3)', '\\sqrt{3}', '1.732'], placeholder: 'Value', explanation: '$\\tan(60°) = \\sqrt{3}$.' }
+    { difficulty: 'hard', question: 'Exact: $\\tan(\\pi/3) =$?', accept: ['sqrt(3)', '\\sqrt{3}', '1.732'], placeholder: 'Value', explanation: '$\\tan(60°) = \\sqrt{3}$.' },
+    { difficulty: 'medium', question: 'Reference angle for $240°$:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$240 - 180 = 60°$.' },
+    { difficulty: 'hard', question: 'Exact: $\\sin(75°) = \\sin(45° + 30°) =$?', accept: ['(sqrt(6)+sqrt(2))/4'], placeholder: 'Value', explanation: '$\\frac{\\sqrt{6} + \\sqrt{2}}{4}$. Sum formula.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -413,7 +415,9 @@ topics: [
     { difficulty: 'easy', question: '$\\sin(-x) = -\\sin($ ?$)$', accept: ['x'], placeholder: 'Argument', explanation: 'Sine is odd: $\\sin(-x) = -\\sin(x)$.' },
     { difficulty: 'hard', question: 'Half-angle: $\\cos(x/2) = \\pm \\sqrt{\\frac{1 + \\cos x}{$ ?$}}$', accept: [2, '2'], placeholder: 'Number', explanation: '$\\cos(x/2) = \\pm \\sqrt{\\frac{1+\\cos x}{2}}$.' },
     { difficulty: 'medium', question: '$\\cos(-x) = \\cos($ ?$)$', accept: ['x'], placeholder: 'Argument', explanation: 'Cosine is even: $\\cos(-x) = \\cos(x)$.' },
-    { difficulty: 'hard', question: 'Solve: $2\\sin(x) = 1$ on $[0, 2\\pi)$:', accept: ['pi/6, 5pi/6', '30, 150'], placeholder: 'Angles', explanation: '$\\sin x = 1/2$. $x = \\pi/6, 5\\pi/6$.' }
+    { difficulty: 'hard', question: 'Solve: $2\\sin(x) = 1$ on $[0, 2\\pi)$:', accept: ['pi/6, 5pi/6', '30, 150'], placeholder: 'Angles', explanation: '$\\sin x = 1/2$. $x = \\pi/6, 5\\pi/6$.' },
+    { difficulty: 'medium', question: 'Pythagorean identity: $1 + \\tan^2 x =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Expression', explanation: '$1 + \\tan^2 x = \\sec^2 x$.' },
+    { difficulty: 'hard', question: 'If $\\sin^{-1}(x) = \\theta$, then $\\cos(\\theta) = \\sqrt{1 - $ ? $}$', accept: ['x^2', 'x2'], placeholder: 'Term', explanation: '$\\cos(\\theta) = \\sqrt{1 - x^2}$ (for $\\theta$ in $[-\\pi/2, \\pi/2]$).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -551,7 +555,9 @@ topics: [
     { difficulty: 'easy', question: 'Period of $\\tan(x)$:', accept: ['pi', '180', '\\pi'], placeholder: 'Period', explanation: '$\\tan x$ repeats every $\\pi$ radians.' },
     { difficulty: 'hard', question: 'Fourier theorem: periodic functions can be decomposed into:', accept: ['sines and cosines', 'sin and cos', 'harmonic series'], placeholder: 'What?', explanation: 'Fourier series: $\\sum (a_n \\cos nx + b_n \\sin nx)$.' },
     { difficulty: 'medium', question: 'Vertical shift of $y = \\sin(x) + 3$: midline is $y =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Midline: $y = 3$.' },
-    { difficulty: 'hard', question: 'SHM: $x(t) = A\\cos(\\omega t + \\phi)$. $\\omega$ is called:', accept: ['angular frequency', 'angular velocity'], placeholder: 'Name', explanation: '$\\omega = 2\\pi f$: angular frequency.' }
+    { difficulty: 'hard', question: 'SHM: $x(t) = A\\cos(\\omega t + \\phi)$. $\\omega$ is called:', accept: ['angular frequency', 'angular velocity'], placeholder: 'Name', explanation: '$\\omega = 2\\pi f$: angular frequency.' },
+    { difficulty: 'medium', question: 'Phase shift of $y = \\sin(x - \\pi/4)$: shift right by:', accept: ['pi/4', '\\pi/4', '45'], placeholder: 'Amount', explanation: '$y = \\sin(x - c)$: right shift by $c$.' },
+    { difficulty: 'hard', question: 'Bessel function of order $n$ arises in problems with _____ symmetry.', accept: ['cylindrical', 'circular'], placeholder: 'Symmetry', explanation: 'Bessel: solutions to Laplace equation in cylindrical coordinates.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

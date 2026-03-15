@@ -194,7 +194,9 @@
     { difficulty: 'easy', question: 'Cross product: $\\langle 1,0,0 \\rangle \\times \\langle 0,1,0 \\rangle =$?', accept: ['<0,0,1>', '<0, 0, 1>'], placeholder: 'Vector', explanation: '$\\hat{i} \\times \\hat{j} = \\hat{k}$.' },
     { difficulty: 'hard', question: 'Curvature: $\\kappa = |d\\hat{T}/ds|$ where $\\hat{T}$ is the unit _____ vector.', accept: ['tangent'], placeholder: 'Which?', explanation: '$\\hat{T}$: unit tangent. $\\kappa$: rate of change of direction.' },
     { difficulty: 'medium', question: 'Work = $\\vec{F} \\cdot \\vec{d} = |F||d|\\cos$ ?', accept: ['theta', '\\theta'], placeholder: 'Angle', explanation: '$W = |F||d|\\cos\\theta$.' },
-    { difficulty: 'hard', question: 'Torque: $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Cross product gives a:', accept: ['vector'], placeholder: 'Type', explanation: 'Torque is a vector: $\\vec{r} \\times \\vec{F}$.' }
+    { difficulty: 'hard', question: 'Torque: $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Cross product gives a:', accept: ['vector'], placeholder: 'Type', explanation: 'Torque is a vector: $\\vec{r} \\times \\vec{F}$.' },
+    { difficulty: 'medium', question: 'Unit vector: magnitude equals:', accept: [1, '1'], placeholder: 'Value', explanation: '$|\\hat{u}| = 1$.' },
+    { difficulty: 'hard', question: 'Frenet-Serret formulas: $dB/ds = -\\tau$ ? where $\\tau$ is:', accept: ['N', 'torsion * N'], placeholder: 'Vector/quantity', explanation: '$dB/ds = -\\tau N$. $\\tau$: torsion (measures twisting).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -357,7 +359,9 @@
     { difficulty: 'easy', question: 'Tangent plane at $(a,b)$: $z = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-$ ?$)$', accept: ['b'], placeholder: 'Value', explanation: 'Tangent plane: linearization in 2D.' },
     { difficulty: 'hard', question: 'Implicit function theorem: if $F_y \\neq 0$, then $dy/dx = -F_x/$ ?', accept: ['F_y'], placeholder: 'Term', explanation: '$dy/dx = -F_x/F_y$ from $F(x,y) = 0$.' },
     { difficulty: 'medium', question: 'Linearization at $(a,b)$: $L(x,y) = f(a,b) + f_x(x-a) + f_y(y-$ ?$)$', accept: ['b'], placeholder: 'Value', explanation: 'Linear approximation: tangent plane.' },
-    { difficulty: 'hard', question: 'Second derivative test 2D: if $D > 0$ and $f_{xx} < 0$, then:', accept: ['local maximum', 'local max'], placeholder: 'Classification', explanation: '$D > 0, f_{xx} < 0$: local maximum.' }
+    { difficulty: 'hard', question: 'Second derivative test 2D: if $D > 0$ and $f_{xx} < 0$, then:', accept: ['local maximum', 'local max'], placeholder: 'Classification', explanation: '$D > 0, f_{xx} < 0$: local maximum.' },
+    { difficulty: 'medium', question: 'Point of saddle: $D = f_{xx}f_{yy} - f_{xy}^2 <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: '$D < 0$: saddle point.' },
+    { difficulty: 'hard', question: 'Hessian matrix: matrix of _____ partial derivatives.', accept: ['second', 'second-order'], placeholder: 'Order', explanation: 'Hessian: $\\begin{pmatrix} f_{xx} & f_{xy} \\\\ f_{yx} & f_{yy} \\end{pmatrix}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -491,7 +495,9 @@
     { difficulty: 'easy', question: 'Green\'s theorem relates a line integral to a _____ integral.', accept: ['double', 'area'], placeholder: 'Type', explanation: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\partial Q/\\partial x - \\partial P/\\partial y)\\,dA$.' },
     { difficulty: 'hard', question: 'Moment of inertia about $x$-axis: $I_x = \\iint y^2 \\rho\\,dA$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$I_x = \\iint y^2 \\rho\\,dA$. Distance from $x$-axis is $y$.' },
     { difficulty: 'medium', question: 'Iterated integral: integrate inner variable first.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Evaluate from inside out.' },
-    { difficulty: 'hard', question: 'Jacobian for spherical: $|J| = \\rho^2 \\sin$ ?', accept: ['phi', '\\phi'], placeholder: 'Angle', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' }
+    { difficulty: 'hard', question: 'Jacobian for spherical: $|J| = \\rho^2 \\sin$ ?', accept: ['phi', '\\phi'], placeholder: 'Angle', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' },
+    { difficulty: 'medium', question: 'Type I region: $a \\leq x \\leq b$, $g_1(x) \\leq y \\leq g_2(x)$. Integrate $y$ first.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Type I: vertical slices. Integrate $dy$ then $dx$.' },
+    { difficulty: 'hard', question: 'Improper double integral: $\\iint_{\\mathbb{R}^2} e^{-(x^2+y^2)}\\,dA =$?', accept: ['pi', '\\pi'], placeholder: 'Value', explanation: 'Gaussian integral in 2D: $\\pi$. (Related to $\\int e^{-x^2}dx = \\sqrt{\\pi}$.)' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

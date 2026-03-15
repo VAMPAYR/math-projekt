@@ -111,7 +111,9 @@ topics: [
     { difficulty: 'medium', question: 'Function composition: $(f \\circ g)(x) = f($ ? $(x))$', accept: ['g'], placeholder: 'Inside', explanation: '$(f \\circ g)(x) = f(g(x))$.' },
     { difficulty: 'hard', question: 'Axiom of choice: states that from any family of nonempty sets, we can choose one element from:', accept: ['each'], placeholder: 'How many?', explanation: 'AC: a choice function exists selecting one element from each set.' },
     { difficulty: 'medium', question: 'Ordinal numbers describe:', accept: ['position', 'order'], placeholder: 'What?', explanation: 'Ordinals: first, second, third. Cardinals (1, 2, 3) count quantity.' },
-    { difficulty: 'hard', question: 'Continuum hypothesis: is there a set with cardinality strictly between $|\\mathbb{N}|$ and $|\\mathbb{R}|$?', accept: ['undecidable', 'independent'], placeholder: 'Status', explanation: 'CH is independent of ZFC (proven by Godel and Cohen).' }
+    { difficulty: 'hard', question: 'Continuum hypothesis: is there a set with cardinality strictly between $|\\mathbb{N}|$ and $|\\mathbb{R}|$?', accept: ['undecidable', 'independent'], placeholder: 'Status', explanation: 'CH is independent of ZFC (proven by Godel and Cohen).' },
+    { difficulty: 'medium', question: 'Equivalence relation has three properties: reflexive, symmetric, and:', accept: ['transitive'], placeholder: 'Third', explanation: 'Equivalence: reflexive ($a \\sim a$), symmetric ($a \\sim b \\Rightarrow b \\sim a$), transitive ($a \\sim b, b \\sim c \\Rightarrow a \\sim c$).' },
+    { difficulty: 'hard', question: 'Ultrafilter in set theory: a maximal:', accept: ['filter'], placeholder: 'What?', explanation: 'Ultrafilter: a filter that cannot be properly extended.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -306,7 +308,9 @@ topics: [
     { difficulty: 'easy', question: 'Even number $\\div$ 2 = integer. Is 14 even?', accept: ['yes'], placeholder: 'yes/no', explanation: '$14 / 2 = 7$. Yes.' },
     { difficulty: 'hard', question: 'Euler\'s totient: $\\phi(12) =$? (count integers $1 \\leq k \\leq 12$ coprime to 12)', accept: [4, '4'], placeholder: 'Number', explanation: 'Coprime to 12: 1, 5, 7, 11. $\\phi(12) = 4$.' },
     { difficulty: 'medium', question: 'Modular arithmetic: $17 \\mod 5 =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$17 = 3(5) + 2$. Remainder is 2.' },
-    { difficulty: 'hard', question: 'Fermat\'s little theorem: $a^p \\equiv a \\pmod{p}$ when $p$ is:', accept: ['prime'], placeholder: 'Type', explanation: 'Fermat: $a^p \\equiv a \\pmod{p}$ for prime $p$.' }
+    { difficulty: 'hard', question: 'Fermat\'s little theorem: $a^p \\equiv a \\pmod{p}$ when $p$ is:', accept: ['prime'], placeholder: 'Type', explanation: 'Fermat: $a^p \\equiv a \\pmod{p}$ for prime $p$.' },
+    { difficulty: 'medium', question: 'Complex number: $i^2 =$?', accept: [-1, '-1'], placeholder: 'Number', explanation: '$i = \\sqrt{-1}$. $i^2 = -1$.' },
+    { difficulty: 'hard', question: 'Chinese remainder theorem: system of congruences with coprime moduli has a _____ solution mod product.', accept: ['unique'], placeholder: 'Property', explanation: 'CRT: pairwise coprime moduli give unique solution modulo product.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -563,7 +567,9 @@ topics: [
     { difficulty: 'medium', question: 'Exclusive or ($\\oplus$): true when exactly one of $p, q$ is:', accept: ['true'], placeholder: 'Value', explanation: 'XOR: true iff exactly one operand is true.' },
     { difficulty: 'hard', question: 'Godel\'s incompleteness: any consistent system containing arithmetic has _____ statements.', accept: ['undecidable', 'unprovable'], placeholder: 'Type', explanation: 'First incompleteness theorem: there exist true statements that cannot be proved within the system.' },
     { difficulty: 'medium', question: 'Logical equivalence: $p \\iff q$ is the same as $(p \\to q) \\wedge (q \\to$ ?$)$', accept: ['p'], placeholder: 'Variable', explanation: 'Biconditional: both implications hold.' },
-    { difficulty: 'hard', question: 'Axiom schema of specification: for any property $P$, $\\{x \\in A : P(x)\\}$ is a:', accept: ['set'], placeholder: 'What?', explanation: 'Specification (separation): subsets defined by properties are sets.' }
+    { difficulty: 'hard', question: 'Axiom schema of specification: for any property $P$, $\\{x \\in A : P(x)\\}$ is a:', accept: ['set'], placeholder: 'What?', explanation: 'Specification (separation): subsets defined by properties are sets.' },
+    { difficulty: 'medium', question: 'De Morgan\'s law: $\\neg(p \\wedge q) \\equiv \\neg p \\vee \\neg $ ?', accept: ['q'], placeholder: 'Variable', explanation: '$\\neg(p \\wedge q) \\equiv \\neg p \\vee \\neg q$.' },
+    { difficulty: 'hard', question: 'Compactness theorem (logic): a theory has a model iff every _____ subtheory has a model.', accept: ['finite'], placeholder: 'Size', explanation: 'Compactness: consistency of every finite subset implies overall consistency.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

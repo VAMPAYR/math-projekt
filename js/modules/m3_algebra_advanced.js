@@ -160,7 +160,9 @@
     { difficulty: 'easy', question: 'Quartic polynomial: degree:', accept: [4, '4'], placeholder: 'Number', explanation: 'Quartic = degree 4.' },
     { difficulty: 'hard', question: '$(2+3i)(2-3i) =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$4 + 9 = 13$. Product of conjugates: $a^2 + b^2$.' },
     { difficulty: 'medium', question: 'Quintic polynomial: degree:', accept: [5, '5'], placeholder: 'Number', explanation: 'Quintic = degree 5.' },
-    { difficulty: 'hard', question: 'Abel-Ruffini: no general formula for roots of degree _____ or higher using radicals.', accept: [5, '5'], placeholder: 'Degree', explanation: 'No algebraic formula for $n \\geq 5$. Proved by Abel and Galois.' }
+    { difficulty: 'hard', question: 'Abel-Ruffini: no general formula for roots of degree _____ or higher using radicals.', accept: [5, '5'], placeholder: 'Degree', explanation: 'No algebraic formula for $n \\geq 5$. Proved by Abel and Galois.' },
+    { difficulty: 'medium', question: 'Conjugate pairs: if $3 - 2i$ is root, so is:', accept: ['3+2i', '3 + 2i'], placeholder: 'Root', explanation: 'Complex roots come in conjugate pairs (for real coefficients).' },
+    { difficulty: 'hard', question: 'Discriminant of $ax^2 + bx + c$: $\\Delta = b^2 - 4ac$. If $\\Delta < 0$:', accept: ['no real roots', '2 complex roots'], placeholder: 'Result', explanation: 'Negative discriminant: two complex conjugate roots.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -438,7 +440,9 @@
     { difficulty: 'easy', question: 'Zeros of $x^2 - 9$:', accept: ['3, -3', '3 and -3'], placeholder: 'Values', explanation: '$(x-3)(x+3) = 0$. $x = \\pm 3$.' },
     { difficulty: 'hard', question: 'Hyperbola vs ellipse: hyperbola has a _____ sign between terms.', accept: ['minus', 'negative'], placeholder: 'Sign', explanation: 'Ellipse: $+$. Hyperbola: $-$.' },
     { difficulty: 'medium', question: 'Product of roots of $x^2 + 3x - 10 = 0$:', accept: [-10, '-10'], placeholder: 'Number', explanation: 'Vieta: product = $c/a = -10$.' },
-    { difficulty: 'hard', question: 'Ellipse: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$. Foci at $x = \\pm$ ?', accept: ['c', 'sqrt(a^2-b^2)'], placeholder: 'Value', explanation: '$c = \\sqrt{a^2 - b^2}$.' }
+    { difficulty: 'hard', question: 'Ellipse: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$. Foci at $x = \\pm$ ?', accept: ['c', 'sqrt(a^2-b^2)'], placeholder: 'Value', explanation: '$c = \\sqrt{a^2 - b^2}$.' },
+    { difficulty: 'medium', question: 'Vieta\'s: for $x^2 + bx + c = 0$, sum of roots $=$?', accept: ['-b', '-b/a'], placeholder: 'Formula', explanation: 'Sum $= -b/a$. (With $a=1$: sum $= -b$.)' },
+    { difficulty: 'hard', question: 'Conic section: eccentricity $e = 0$:', accept: ['circle'], placeholder: 'Shape', explanation: 'Circle: $e = 0$. Ellipse: $0 < e < 1$. Parabola: $e = 1$. Hyperbola: $e > 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -687,7 +691,9 @@
     { difficulty: 'easy', question: 'Doubling time: time for exponential to double. If $r = 7\\%$, rule of 70 gives:', accept: [10, '10'], placeholder: 'Years', explanation: '$70/7 = 10$ years.' },
     { difficulty: 'hard', question: 'Continuously compounded: $A = Pe^{rt}$. Solve for $t$: $t =$?', accept: ['ln(A/P)/r'], placeholder: 'Formula', explanation: '$A/P = e^{rt}$. $\\ln(A/P) = rt$. $t = \\ln(A/P)/r$.' },
     { difficulty: 'medium', question: 'Compound interest: $A = 1000(1.05)^{10} \\approx$?', accept: ['1628.89', '1629'], placeholder: 'Amount', explanation: '$1000(1.05)^{10} \\approx 1628.89$.' },
-    { difficulty: 'hard', question: 'Newton\'s law of cooling: $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$. As $t \\to \\infty$, $T \\to$?', accept: ['T_env', 'environment temp'], placeholder: 'Temp', explanation: '$e^{-kt} \\to 0$. Temperature approaches the environment.' }
+    { difficulty: 'hard', question: 'Newton\'s law of cooling: $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$. As $t \\to \\infty$, $T \\to$?', accept: ['T_env', 'environment temp'], placeholder: 'Temp', explanation: '$e^{-kt} \\to 0$. Temperature approaches the environment.' },
+    { difficulty: 'medium', question: 'Number $e$ is the base of _____ logarithms.', accept: ['natural', 'ln'], placeholder: 'Type', explanation: '$\\ln = \\log_e$: natural logarithm.' },
+    { difficulty: 'hard', question: 'Logistic differential equation: $\\frac{dP}{dt} = rP(1 - P/K)$. Solution approaches $K$ called:', accept: ['carrying capacity', 'equilibrium'], placeholder: 'Name', explanation: '$K$: carrying capacity. Population levels off at $K$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

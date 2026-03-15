@@ -229,7 +229,9 @@
     { difficulty: 'easy', question: '$\\lim_{x \\to 3} (2x + 1) =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Direct substitution: $2(3)+1 = 7$.' },
     { difficulty: 'hard', question: 'A cusp is where the derivative:', accept: ['is undefined', 'does not exist'], placeholder: 'Behavior', explanation: 'Cusp: left and right derivatives approach different infinities.' },
     { difficulty: 'medium', question: 'Piecewise limit: check left and right limits separately.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'At boundary points of piecewise functions, check both sides.' },
-    { difficulty: 'hard', question: 'Order of a pole: $f(x) = 1/(x-2)^3$ has a pole of order:', accept: [3, '3'], placeholder: 'Order', explanation: 'Denominator $(x-2)^3$: pole of order 3 at $x = 2$.' }
+    { difficulty: 'hard', question: 'Order of a pole: $f(x) = 1/(x-2)^3$ has a pole of order:', accept: [3, '3'], placeholder: 'Order', explanation: 'Denominator $(x-2)^3$: pole of order 3 at $x = 2$.' },
+    { difficulty: 'medium', question: 'Type of discontinuity: limit exists but $\\neq f(a)$:', accept: ['removable'], placeholder: 'Type', explanation: 'Removable: limit exists, function either undefined or different at $a$.' },
+    { difficulty: 'hard', question: 'Limit inferior and limit superior: $\\liminf \\leq \\limsup$. Equality implies limit:', accept: ['exists'], placeholder: 'Conclusion', explanation: '$\\liminf = \\limsup \\Rightarrow$ limit exists and equals their common value.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -487,7 +489,9 @@
     { difficulty: 'easy', question: '$\\frac{d}{dx}(e^x) =$?', accept: ['e^x', 'e^x'], placeholder: 'Expression', explanation: '$e^x$ is its own derivative.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(a^x) = a^x \\ln($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$\\frac{d}{dx}a^x = a^x \\ln a$.' },
     { difficulty: 'medium', question: 'Chain rule: $\\frac{d}{dx} f(g(x)) = f\'(g(x)) \\cdot $ ?', accept: ["g'(x)", 'g prime(x)'], placeholder: 'Factor', explanation: '$f\'(g(x)) \\cdot g\'(x)$.' },
-    { difficulty: 'hard', question: 'Antiderivative of $2x\\cos(x^2)$:', accept: ['sin(x^2)+C'], placeholder: 'Expression', explanation: 'Let $u = x^2$: $\\int \\cos u\\,du = \\sin(x^2) + C$.' }
+    { difficulty: 'hard', question: 'Antiderivative of $2x\\cos(x^2)$:', accept: ['sin(x^2)+C'], placeholder: 'Expression', explanation: 'Let $u = x^2$: $\\int \\cos u\\,du = \\sin(x^2) + C$.' },
+    { difficulty: 'medium', question: 'Logarithmic differentiation: take $\\ln$ of both sides, then differentiate. Useful for:', accept: ['products', 'x^x', 'complicated products'], placeholder: 'When?', explanation: '$\\ln y = \\ldots$, then $y\'/y = \\ldots$ Simplifies products and variable exponents.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(x^x) = x^x(\\ln x + $ ? $)$', accept: [1, '1'], placeholder: 'Number', explanation: 'Log diff: $\\ln y = x\\ln x$. $y\'/y = \\ln x + 1$. $y\' = x^x(\\ln x + 1)$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -641,7 +645,9 @@
     { difficulty: 'easy', question: 'Optimization: set $f\' = 0$ and solve for critical values.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Optimization: find critical points, test for max/min.' },
     { difficulty: 'hard', question: 'Global max on open interval: might not exist because of:', accept: ['no boundary', 'open endpoints', 'no closed interval'], placeholder: 'Why?', explanation: 'EVT requires closed interval. Open intervals may not achieve extremes.' },
     { difficulty: 'medium', question: 'If $f\'(x) > 0$ on interval, $f$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: 'Positive derivative: function increasing.' },
-    { difficulty: 'hard', question: 'Mean value theorem: there exists $c$ with $f\'(c) = \\frac{f(b)-f(a)}{b-$ ?$}$', accept: ['a'], placeholder: 'Value', explanation: 'MVT: $f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' }
+    { difficulty: 'hard', question: 'Mean value theorem: there exists $c$ with $f\'(c) = \\frac{f(b)-f(a)}{b-$ ?$}$', accept: ['a'], placeholder: 'Value', explanation: 'MVT: $f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' },
+    { difficulty: 'medium', question: 'Newton\'s method: $x_{n+1} = x_n - \\frac{f(x_n)}{f\'($ ? $)}$', accept: ['x_n', 'xn'], placeholder: 'Argument', explanation: '$x_{n+1} = x_n - f(x_n)/f\'(x_n)$.' },
+    { difficulty: 'hard', question: 'Rolle\'s theorem: if $f(a) = f(b)$, there exists $c$ with $f\'(c) =$?', accept: [0, '0'], placeholder: 'Value', explanation: 'Rolle: special case of MVT when $f(a) = f(b)$. Tangent line is horizontal.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

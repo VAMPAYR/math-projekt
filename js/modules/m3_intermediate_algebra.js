@@ -124,7 +124,9 @@ topics: [
     { difficulty: 'easy', question: '$(2^3)(2^4) =$?', accept: [128, '128'], placeholder: 'Number', explanation: '$2^{3+4} = 2^7 = 128$.' },
     { difficulty: 'hard', question: '$a^{m/n} = (\\sqrt[n]{a})^m$. So $8^{2/3} =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\sqrt[3]{8} = 2$. $2^2 = 4$.' },
     { difficulty: 'medium', question: '$16^{1/4} =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$2^4 = 16$. $16^{1/4} = 2$.' },
-    { difficulty: 'hard', question: 'Conjugate: the conjugate of $3 + \\sqrt{5}$ is:', accept: ['3-sqrt(5)', '3 - \\sqrt{5}'], placeholder: 'Expression', explanation: 'Conjugate surd: flip the sign of the radical.' }
+    { difficulty: 'hard', question: 'Conjugate: the conjugate of $3 + \\sqrt{5}$ is:', accept: ['3-sqrt(5)', '3 - \\sqrt{5}'], placeholder: 'Expression', explanation: 'Conjugate surd: flip the sign of the radical.' },
+    { difficulty: 'medium', question: '$(x^{1/2})^4 =$?', accept: ['x^2', 'x2'], placeholder: 'Expression', explanation: '$x^{(1/2)(4)} = x^2$.' },
+    { difficulty: 'hard', question: 'Nested radical: $\\sqrt{2 + \\sqrt{3}}$ can be denested when:', accept: ['a^2 - b = perfect square', 'specific conditions'], placeholder: 'When?', explanation: 'Some nested radicals can be written as $\\sqrt{a} + \\sqrt{b}$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -309,7 +311,9 @@ topics: [
     { difficulty: 'easy', question: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + $ ?$)$', accept: ['b^2', 'b2'], placeholder: 'Term', explanation: '$(a+b)(a^2 - ab + b^2)$.' },
     { difficulty: 'hard', question: 'Quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2$ ?$}$', accept: ['a', '2a'], placeholder: 'Denominator', explanation: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.' },
     { difficulty: 'medium', question: 'Leading coefficient of $-5x^3 + 2x^2 + 1$:', accept: [-5, '-5'], placeholder: 'Number', explanation: 'Leading term: $-5x^3$. LC: $-5$.' },
-    { difficulty: 'hard', question: 'Vieta\'s: for $ax^2 + bx + c = 0$, product of roots $=$?', accept: ['c/a'], placeholder: 'Formula', explanation: 'Product of roots $= c/a$.' }
+    { difficulty: 'hard', question: 'Vieta\'s: for $ax^2 + bx + c = 0$, product of roots $=$?', accept: ['c/a'], placeholder: 'Formula', explanation: 'Product of roots $= c/a$.' },
+    { difficulty: 'medium', question: 'GCF of $6x^3$ and $9x^2$:', accept: ['3x^2', '3x2'], placeholder: 'GCF', explanation: '$\\gcd(6,9) = 3$. $\\min(x^3, x^2) = x^2$. GCF = $3x^2$.' },
+    { difficulty: 'hard', question: 'Complete the square on $2x^2 + 8x + 3$:', accept: ['2(x+2)^2-5', '2(x+2)^2 - 5'], placeholder: 'Expression', explanation: '$2(x^2+4x) + 3 = 2(x^2+4x+4) + 3 - 8 = 2(x+2)^2 - 5$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -455,7 +459,9 @@ topics: [
     { difficulty: 'easy', question: '$\\frac{x^2 + 2x}{x} =$?', accept: ['x+2', 'x + 2'], placeholder: 'Expression', explanation: '$\\frac{x(x+2)}{x} = x + 2$.' },
     { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{$ ? $}$', accept: ['x+1'], placeholder: 'Denominator', explanation: '$\\frac{1}{x} - \\frac{1}{x+1}$. Telescoping.' },
     { difficulty: 'medium', question: 'In $\\frac{f(x)}{g(x)}$, the denominator $g(x) \\neq$ ?', accept: [0, '0'], placeholder: 'Value', explanation: 'Division by zero is undefined.' },
-    { difficulty: 'hard', question: 'Complex fractions: simplify $\\frac{1/a + 1/b}{1/a - 1/b} =$?', accept: ['(a+b)/(b-a)', '(b+a)/(b-a)'], placeholder: 'Expression', explanation: 'Multiply num and denom by $ab$: $\\frac{b+a}{b-a}$.' }
+    { difficulty: 'hard', question: 'Complex fractions: simplify $\\frac{1/a + 1/b}{1/a - 1/b} =$?', accept: ['(a+b)/(b-a)', '(b+a)/(b-a)'], placeholder: 'Expression', explanation: 'Multiply num and denom by $ab$: $\\frac{b+a}{b-a}$.' },
+    { difficulty: 'medium', question: 'Domain of $\\frac{1}{x^2-9}$: exclude:', accept: ['3 and -3', 'x=3, x=-3'], placeholder: 'Values', explanation: '$x^2 - 9 = 0 \\Rightarrow x = \\pm 3$.' },
+    { difficulty: 'hard', question: 'End behavior of $\\frac{x^2}{x+1}$ as $x \\to \\infty$:', accept: ['infinity', 'inf', 'grows without bound'], placeholder: 'Behavior', explanation: 'Degree num > degree denom: $\\to \\infty$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

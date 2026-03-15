@@ -117,7 +117,9 @@ topics: [
     { difficulty: 'easy', question: 'Average of 10, 20, 30:', accept: [20, '20'], placeholder: 'Number', explanation: '$(10+20+30)/3 = 20$.' },
     { difficulty: 'hard', question: 'Fibonacci: $F_1=1, F_2=1, F_3=2, \\ldots$ Golden ratio $\\phi \\approx$?', accept: ['1.618', '1.62'], placeholder: 'Number', explanation: '$\\phi = (1+\\sqrt{5})/2 \\approx 1.618$.' },
     { difficulty: 'medium', question: 'Proportion: $\\frac{3}{x} = \\frac{6}{10}$. $x =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$6x = 30$. $x = 5$.' },
-    { difficulty: 'hard', question: 'Harmonic mean of $a$ and $b$: $H = \\frac{2ab}{a+b}$. $H(3,6) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$H = 12/3 = 4$.' }
+    { difficulty: 'hard', question: 'Harmonic mean of $a$ and $b$: $H = \\frac{2ab}{a+b}$. $H(3,6) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$H = 12/3 = 4$.' },
+    { difficulty: 'medium', question: 'Geometric mean of 4 and 9:', accept: [6, '6'], placeholder: 'Number', explanation: '$\\sqrt{4 \\times 9} = \\sqrt{36} = 6$.' },
+    { difficulty: 'hard', question: 'Matrix multiplication: $(AB)_{ij} = \\sum_k A_{ik}B_{$ ? $j}$', accept: ['k', 'kj'], placeholder: 'Index', explanation: 'Row-by-column: $\\sum_k A_{ik} B_{kj}$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -293,7 +295,9 @@ topics: [
     { difficulty: 'easy', question: 'Point-slope form: $y - y_1 = m(x - $ ? $)$', accept: ['x_1', 'x1'], placeholder: 'Variable', explanation: '$y - y_1 = m(x - x_1)$.' },
     { difficulty: 'hard', question: 'Equation of circle: $(x-h)^2 + (y-k)^2 = r^2$. Center:', accept: ['(h,k)', '(h, k)'], placeholder: 'Point', explanation: 'Center $(h,k)$, radius $r$.' },
     { difficulty: 'medium', question: 'Slope-intercept form: $y = mx + b$. $b$ is the:', accept: ['y-intercept'], placeholder: 'What?', explanation: '$b$: the $y$-intercept (where line crosses $y$-axis).' },
-    { difficulty: 'hard', question: 'Collinear points: three points lie on the same:', accept: ['line'], placeholder: 'What?', explanation: 'Collinear: on the same line. Check via equal slopes.' }
+    { difficulty: 'hard', question: 'Collinear points: three points lie on the same:', accept: ['line'], placeholder: 'What?', explanation: 'Collinear: on the same line. Check via equal slopes.' },
+    { difficulty: 'medium', question: 'Two lines intersect at a _____ if they have different slopes.', accept: ['point'], placeholder: 'What?', explanation: 'Non-parallel lines intersect at exactly one point.' },
+    { difficulty: 'hard', question: '3D distance: $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Euclidean distance in 3D: extend Pythagorean theorem.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -422,7 +426,9 @@ topics: [
     { difficulty: 'easy', question: '$(x^2)(x^3) =$?', accept: ['x^5'], placeholder: 'Expression', explanation: '$x^{2+3} = x^5$.' },
     { difficulty: 'hard', question: 'Binomial theorem: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^$ ?', accept: ['k', 'b^k'], placeholder: 'Exponent', explanation: '$(a+b)^n = \\sum \\binom{n}{k}a^{n-k}b^k$.' },
     { difficulty: 'medium', question: '$(-x)^2 =$?', accept: ['x^2', 'x2'], placeholder: 'Expression', explanation: '$(-x)^2 = (-1)^2 x^2 = x^2$.' },
-    { difficulty: 'hard', question: 'Sigma notation: $\\sum_{k=1}^{4} k^2 =$?', accept: [30, '30'], placeholder: 'Number', explanation: '$1 + 4 + 9 + 16 = 30$.' }
+    { difficulty: 'hard', question: 'Sigma notation: $\\sum_{k=1}^{4} k^2 =$?', accept: [30, '30'], placeholder: 'Number', explanation: '$1 + 4 + 9 + 16 = 30$.' },
+    { difficulty: 'medium', question: 'Scientific notation: $0.003 = 3 \\times 10^{-$ ?$}$', accept: [3, '3'], placeholder: 'Exponent', explanation: 'Move decimal 3 places right: $3 \\times 10^{-3}$.' },
+    { difficulty: 'hard', question: 'Determinant of $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} =$?', accept: ['ad-bc', 'ad - bc'], placeholder: 'Expression', explanation: '$\\det = ad - bc$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [
