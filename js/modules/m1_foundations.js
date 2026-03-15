@@ -88,7 +88,9 @@ topics: [
     { difficulty: 'easy', question: 'If $A = \\{1, 2, 3, 4, 5\\}$, what is $|A|$?', accept: [5, '5'], placeholder: 'Enter a number', explanation: 'The cardinality $|A|$ counts the elements. $A$ has 5 elements.' },
     { difficulty: 'easy', question: 'If $A = \\{a, b\\}$, how many subsets does $A$ have?', accept: [4, '4'], placeholder: 'Enter a number', hint: '<p>$2^n$ where $n = |A|$.</p>', explanation: '$2^2 = 4$. The subsets: $\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}$.' },
     { difficulty: 'medium', question: 'If $|A| = 10$ and $|B| = 7$ and $|A \\cap B| = 3$, what is $|A \\cup B|$?', accept: [14], placeholder: 'Enter a number', hint: '<p>Inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p>', explanation: '$10 + 7 - 3 = 14$.', solution: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 10 + 7 - 3 = 14$.' },
-    { difficulty: 'hard', question: 'How many elements are in $\\mathcal{P}(\\{1,2,3,4,5\\})$?', accept: [32], placeholder: 'Enter a number', explanation: '$2^5 = 32$.' }
+    { difficulty: 'hard', question: 'How many elements are in $\\mathcal{P}(\\{1,2,3,4,5\\})$?', accept: [32], placeholder: 'Enter a number', explanation: '$2^5 = 32$.' },
+    { difficulty: 'easy', question: '$12 \\div 4 =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$12 \\div 4 = 3$.' },
+    { difficulty: 'medium', question: 'What is the GCF of 24 and 36?', accept: [12, '12'], placeholder: 'Number', explanation: '$24 = 2^3 \\cdot 3$, $36 = 2^2 \\cdot 3^2$. GCF $= 2^2 \\cdot 3 = 12$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -250,7 +252,9 @@ topics: [
     { difficulty: 'medium', question: 'Simplify using the distributive property: $5(x + 3) - 2x$', accept: ['3x+15', '3x + 15'], placeholder: 'e.g. 3x+15', inputHelp: 'Write as ax+b', hint: '<p>Distribute: $5 \\cdot x + 5 \\cdot 3 = 5x + 15$. Then subtract $2x$.</p>', explanation: '$5x + 15 - 2x = 3x + 15$.', solution: '$5(x+3) - 2x = 5x + 15 - 2x = 3x + 15$' },
     { difficulty: 'medium', question: 'Is $\\sqrt{9}$ rational or irrational? Type "rational" or "irrational".', accept: ['rational'], placeholder: 'rational or irrational', explanation: '$\\sqrt{9} = 3$, which is an integer and therefore rational.' },
     { difficulty: 'hard', question: 'The multiplicative inverse of $\\frac{3}{5}$ is $\\frac{a}{b}$. What is $a + b$?', accept: [8], placeholder: 'Enter a number', hint: '<p>The multiplicative inverse of $\\frac{p}{q}$ is $\\frac{q}{p}$.</p>', explanation: 'Inverse of $\\frac{3}{5}$ is $\\frac{5}{3}$. So $a + b = 5 + 3 = 8$.', solution: '$\\frac{3}{5} \\cdot \\frac{5}{3} = 1$. Answer: $5 + 3 = 8$.' },
-    { difficulty: 'hard', question: 'If $a \\cdot b = 0$, and $a \\neq 0$, what is $b$?', accept: [0, '0'], placeholder: 'Enter a number', explanation: 'By the zero product property, if $ab = 0$ and $a \\neq 0$, then $b = 0$.' }
+    { difficulty: 'hard', question: 'If $a \\cdot b = 0$, and $a \\neq 0$, what is $b$?', accept: [0, '0'], placeholder: 'Enter a number', explanation: 'By the zero product property, if $ab = 0$ and $a \\neq 0$, then $b = 0$.' },
+    { difficulty: 'easy', question: 'Is $\\pi$ rational or irrational?', accept: ['irrational'], placeholder: 'rational/irrational', explanation: '$\\pi$ cannot be expressed as a fraction. It is irrational.' },
+    { difficulty: 'medium', question: '$|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Absolute value strips the sign: $|-7| = 7$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -397,7 +401,9 @@ topics: [
     { difficulty: 'easy', question: 'Simplify: $\\frac{12}{18}$', accept: ['2/3'], placeholder: 'Fraction', explanation: 'GCF of 12 and 18 is 6. $\\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$.' },
     { difficulty: 'medium', question: 'Convert 0.75 to a fraction:', accept: ['3/4'], placeholder: 'Fraction', explanation: '$0.75 = \\frac{75}{100} = \\frac{3}{4}$.' },
     { difficulty: 'medium', question: '$\\frac{2}{7} + \\frac{3}{7} =$?', accept: ['5/7'], placeholder: 'Fraction', explanation: 'Same denominator: $\\frac{2+3}{7} = \\frac{5}{7}$.' },
-    { difficulty: 'hard', question: 'Evaluate: $(2 + 3)^2 - 4 \\times 3 =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$(5)^2 - 12 = 25 - 12 = 13$. Parentheses, exponents, multiplication, subtraction.' }
+    { difficulty: 'hard', question: 'Evaluate: $(2 + 3)^2 - 4 \\times 3 =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$(5)^2 - 12 = 25 - 12 = 13$. Parentheses, exponents, multiplication, subtraction.' },
+    { difficulty: 'easy', question: 'If $A = \\{1,2,3\\}$ and $B = \\{2,3,4\\}$, what is $A \\cap B$?', accept: ['{2,3}', '{2, 3}'], placeholder: 'Set', explanation: '$A \\cap B = \\{2, 3\\}$. Elements in both sets.' },
+    { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [
@@ -478,7 +484,9 @@ topics: [
   freeResponse: [
     { difficulty: 'easy', question: 'If $P$ is TRUE, what is $\\neg P$?', accept: ['false', 'f', 'FALSE'], placeholder: 'true or false', explanation: 'Negation flips the truth value.' },
     { difficulty: 'medium', question: 'Rewrite $P \\to Q$ using only $\\neg$ and $\\vee$:', accept: ['~p v q', '~pvq', 'not p or q', '¬p∨q', '\\neg P \\vee Q', 'negpvq'], placeholder: 'e.g. ~p v q', hint: '<p>$P \\to Q \\equiv \\neg P \\vee Q$.</p>', explanation: '$P \\to Q \\equiv \\neg P \\vee Q$: a conditional is a disjunction in disguise.' },
-    { difficulty: 'hard', question: 'How many rows does a truth table with 4 variables have?', accept: [16], placeholder: 'Enter a number', explanation: '$2^4 = 16$. Each variable has 2 possible values.' }
+    { difficulty: 'hard', question: 'How many rows does a truth table with 4 variables have?', accept: [16], placeholder: 'Enter a number', explanation: '$2^4 = 16$. Each variable has 2 possible values.' },
+    { difficulty: 'easy', question: 'If $p$ is true and $q$ is false, then $p \\land q$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'AND requires both to be true. One false makes the conjunction false.' },
+    { difficulty: 'medium', question: 'The contrapositive of "if $p$ then $q$" is:', accept: ['if not q then not p', 'if ~q then ~p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to $p \\to q$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [
