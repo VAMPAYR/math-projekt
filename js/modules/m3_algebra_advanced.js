@@ -371,8 +371,10 @@
     ],
         freeResponse: [
           { difficulty: 'easy', question: 'Discriminant of $x^2 + 6x + 9 = 0$:', accept: [0, '0'], placeholder: 'Number', explanation: '$36 - 36 = 0$. Perfect square: $(x+3)^2 = 0$.' },
-          { difficulty: 'medium', question: 'Solve $x^2 = 49$. List both solutions:', accept: ['7, -7', '-7, 7', '7,-7', '-7,7'], placeholder: 'x values', explanation: '$x = \\pm 7$.' },
-          { difficulty: 'hard', question: 'Vertex of $y = x^2 - 6x + 5$ is at $x =$?', accept: [3, '3'], placeholder: 'x-coordinate', explanation: '$x = -b/2a = 6/2 = 3$.' }
+          { difficulty: 'easy', question: 'Solve $x^2 = 49$. List both solutions:', accept: ['7, -7', '-7, 7', '7,-7', '-7,7'], placeholder: 'x values', explanation: '$x = \\pm 7$.' },
+          { difficulty: 'medium', question: 'Vertex of $y = x^2 - 6x + 5$ is at $x =$?', accept: [3, '3'], placeholder: 'x-coordinate', explanation: '$x = -b/2a = 6/2 = 3$.' },
+          { difficulty: 'medium', question: 'How many real solutions does $x^2 + 4 = 0$ have?', accept: [0, '0', 'none', 'zero'], placeholder: 'Number', explanation: '$\\Delta = 0 - 16 = -16 < 0$. No real solutions.' },
+          { difficulty: 'hard', question: 'Sum of the roots of $2x^2 - 10x + 3 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum $= -b/a = 10/2 = 5$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -582,7 +584,9 @@
           { difficulty: 'easy', question: '$3^0 =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Any nonzero base to the 0 power = 1.' },
           { difficulty: 'easy', question: '$\\log_{10}(100) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$10^2 = 100$.' },
           { difficulty: 'medium', question: 'Simplify $\\log_2(32)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$2^5 = 32$.' },
-          { difficulty: 'hard', question: 'If $\\log_b(x) = 3$ and $b = 4$, then $x =$?', accept: [64, '64'], placeholder: 'Number', explanation: '$4^3 = 64$.' }
+          { difficulty: 'medium', question: 'Simplify $\\log_b(b^7)$:', accept: [7, '7'], placeholder: 'Number', explanation: '$\\log_b(b^x) = x$. So $\\log_b(b^7) = 7$.' },
+          { difficulty: 'hard', question: 'If $\\log_b(x) = 3$ and $b = 4$, then $x =$?', accept: [64, '64'], placeholder: 'Number', explanation: '$4^3 = 64$.' },
+          { difficulty: 'hard', question: '$\\ln(e^5) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\ln(e^x) = x$. So $\\ln(e^5) = 5$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [
