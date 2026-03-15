@@ -322,7 +322,12 @@
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
             { content: '$f_x = 2xy$. At $(2,1)$: $f_x = 4$.' },
             { content: '$f_y = x^2 - 2y$. At $(2,1)$: $f_y = 4 - 2 = 2$.' },
-            { content: '$\\nabla f(2,1) = \\langle 4, 2 \\rangle$.' }
+            { content: '$\\nabla f(2,1) = \\langle 4, 2 \\rangle$.' },
+    { difficulty: 'hard', question: 'Find the tangent plane to $f(x,y) = x^2 + y^2$ at $(1, 1, 2)$.', steps: [
+      { content: '$f_x = 2x \\Rightarrow f_x(1,1) = 2$.' },
+      { content: '$f_y = 2y \\Rightarrow f_y(1,1) = 2$.' },
+      { content: '$z - 2 = 2(x-1) + 2(y-1)$. $z = 2x + 2y - 2$.' }
+    ], explanation: 'Tangent plane: $z - f(a,b) = f_x(a,b)(x-a) + f_y(a,b)(y-b)$.' }
           ], explanation: 'Gradient: compute each partial, then evaluate at the point.' }
         ],
         matching: [

@@ -371,7 +371,12 @@
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
             { content: 'Let $u = x^2 + 1$. Then $du = 2x\\,dx$.' },
             { content: '$\\int \\frac{du}{u} = \\ln|u| + C$.' },
-            { content: '$= \\ln(x^2+1) + C$. (Absolute value unnecessary since $x^2+1 \\gt 0$.)' }
+            { content: '$= \\ln(x^2+1) + C$. (Absolute value unnecessary since $x^2+1 \\gt 0$.)' },
+    { difficulty: 'hard', question: 'Find the area between $y = x$ and $y = x^2$ on $[0,1]$.', steps: [
+      { content: 'Top function: $y = x$ (above $y = x^2$ on $[0,1]$).' },
+      { content: '$\\int_0^1 (x - x^2)\\,dx = [x^2/2 - x^3/3]_0^1$.' },
+      { content: '$= 1/2 - 1/3 = 1/6$.' }
+    ], explanation: 'Area between curves: $\\int (\\text{top} - \\text{bottom})\\,dx$.' }
           ], explanation: 'When the numerator is the derivative of the denominator, use u-sub.' }
         ],
         matching: [

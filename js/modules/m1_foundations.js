@@ -110,7 +110,13 @@ topics: [
       { content: 'So $x \\in A$ AND ($x \\in B$ OR $x \\in C$).' },
       { content: 'Case 1: $x \\in A$ and $x \\in B$, so $x \\in A \\cap B$.' },
       { content: 'Case 2: $x \\in A$ and $x \\in C$, so $x \\in A \\cap C$.' },
-      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' }
+      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' },
+    { difficulty: 'hard', question: 'Prove by contradiction: $\\sqrt{2}$ is irrational.', steps: [
+      { content: 'Assume $\\sqrt{2} = p/q$ in lowest terms.' },
+      { content: '$2 = p^2/q^2$, so $p^2 = 2q^2$. Then $p$ is even.' },
+      { content: 'Let $p = 2k$. Then $4k^2 = 2q^2$, so $q^2 = 2k^2$. Then $q$ is even.' },
+      { content: 'Contradiction: $p/q$ was supposed to be in lowest terms, but both are even.' }
+    ], explanation: 'Proof by contradiction: assume the opposite and derive a logical impossibility.' }
     ], explanation: 'This proves the distributive law for sets by element-chasing.' }
   ],
   multiPart: [

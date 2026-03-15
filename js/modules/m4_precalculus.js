@@ -276,7 +276,12 @@ topics: [
       { content: 'Inside: $(x-3)$. Shift RIGHT 3 units.' },
       { content: 'Coefficient 2: Vertical STRETCH by factor 2 (steeper V).' },
       { content: 'Outside: $+1$. Shift UP 1 unit.' },
-      { content: 'Vertex: $(3, 1)$. No reflection (a \\gt 0).' }
+      { content: 'Vertex: $(3, 1)$. No reflection (a \\gt 0).' },
+    { difficulty: 'hard', question: 'Find all zeros of $f(x) = x^3 - 3x^2 + 2x$.', steps: [
+      { content: 'Factor out $x$: $x(x^2 - 3x + 2)$.' },
+      { content: 'Factor quadratic: $x(x-1)(x-2)$.' },
+      { content: 'Zeros: $x = 0, 1, 2$.' }
+    ], explanation: 'Factor completely first. Each factor gives a zero.' }
     ], explanation: 'Read transformations inside-to-outside: horizontal first, then vertical.' }
   ],
   fillBlanks: [

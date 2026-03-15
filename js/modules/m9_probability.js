@@ -175,7 +175,12 @@ topics: [
       { content: 'Position 2: 4 choices (one used).' },
       { content: 'Position 3: 3 choices.' },
       { content: 'Position 4: 2 choices.' },
-      { content: 'Total: $5 \\times 4 \\times 3 \\times 2 = P(5,4) = 120$.' }
+      { content: 'Total: $5 \\times 4 \\times 3 \\times 2 = P(5,4) = 120$.' },
+    { difficulty: 'hard', question: 'A committee of 3 is chosen from 5 men and 4 women. P(all women)?', steps: [
+      { content: 'Total ways: $\\binom{9}{3} = 84$.' },
+      { content: 'All women: $\\binom{4}{3} = 4$.' },
+      { content: '$P = 4/84 = 1/21 \\approx 0.048$.' }
+    ], explanation: '$P = \\frac{\\text{favorable}}{\\text{total}} = \\frac{\\binom{4}{3}}{\\binom{9}{3}}$.' }
     ], explanation: 'Permutation without replacement: each position reduces the pool by 1.' },
     { difficulty: 'medium', question: '$P(A) = 0.3$, $P(B|A) = 0.8$. Find $P(A \\cap B)$.', steps: [
       { content: 'Definition: $P(A \\cap B) = P(B|A) \\cdot P(A)$.' },

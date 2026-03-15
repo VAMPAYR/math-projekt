@@ -453,7 +453,12 @@
             { content: 'Outer function: $u^5$. Inner function: $u = 2x+1$.' },
             { content: 'Outer derivative: $5u^4 = 5(2x+1)^4$.' },
             { content: 'Inner derivative: $\\frac{du}{dx} = 2$.' },
-            { content: 'Chain rule: $5(2x+1)^4 \\cdot 2 = 10(2x+1)^4$.' }
+            { content: 'Chain rule: $5(2x+1)^4 \\cdot 2 = 10(2x+1)^4$.' },
+    { difficulty: 'hard', question: 'Find equation of tangent line to $y = x^3$ at $x = 1$.', steps: [
+      { content: 'Point: $f(1) = 1$. Point: $(1, 1)$.' },
+      { content: 'Slope: $f\'(x) = 3x^2$. $f\'(1) = 3$.' },
+      { content: '$y - 1 = 3(x - 1)$. $y = 3x - 2$.' }
+    ], explanation: 'Tangent line = point-slope form using derivative as slope.' }
           ], explanation: 'Chain rule: multiply the outer derivative (evaluated at inner) by the inner derivative.' },
           { difficulty: 'hard', question: 'Use the quotient rule on $f(x) = \\frac{x^2}{x+1}$.', steps: [
             { content: '$f = x^2$ (numerator), $g = x+1$ (denominator).' },

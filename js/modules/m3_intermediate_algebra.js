@@ -117,7 +117,12 @@ topics: [
       { content: '$a^2 = 9x^2$.' },
       { content: '$2ab = 2(3x)(2) = 12x$.' },
       { content: '$b^2 = 4$.' },
-      { content: '$(3x-2)^2 = 9x^2 - 12x + 4$.' }
+      { content: '$(3x-2)^2 = 9x^2 - 12x + 4$.' },
+    { difficulty: 'hard', question: 'Simplify $\\frac{x^3 y^{-2}}{x^{-1} y^4}$.', steps: [
+      { content: 'Subtract exponents: $x^{3-(-1)} = x^4$.' },
+      { content: '$y^{-2-4} = y^{-6} = \\frac{1}{y^6}$.' },
+      { content: 'Result: $\\frac{x^4}{y^6}$.' }
+    ], explanation: 'Division of powers: subtract exponents. Move negative exponents to the denominator.' }
     ], explanation: 'Perfect square trinomial: square first, double product, square last.' }
   ],
   multiPart: [

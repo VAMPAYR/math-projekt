@@ -411,7 +411,12 @@
     { difficulty: 'medium', question: 'Convert $y = x^2 + 8x + 12$ to vertex form.', steps: [
       { content: 'Half the $x$ coefficient: $8/2 = 4$. Square it: $4^2 = 16$.' },
       { content: 'Add and subtract 16: $y = (x^2 + 8x + 16) - 16 + 12$.' },
-      { content: '$y = (x + 4)^2 - 4$. Vertex: $(-4, -4)$.' }
+      { content: '$y = (x + 4)^2 - 4$. Vertex: $(-4, -4)$.' },
+    { difficulty: 'hard', question: 'Solve $x^2 - 4x + 1 = 0$ using the quadratic formula.', steps: [
+      { content: '$a=1, b=-4, c=1$. Discriminant: $16 - 4 = 12$.' },
+      { content: '$x = \\frac{4 \\pm \\sqrt{12}}{2} = \\frac{4 \\pm 2\\sqrt{3}}{2}$.' },
+      { content: '$x = 2 \\pm \\sqrt{3}$.' }
+    ], explanation: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.' }
     ], explanation: 'Completing the square converts standard form to vertex form: $y = (x-h)^2 + k$.' }
           ], explanation: 'Completing the square: add $(b/2)^2$ to both sides.' }
         ],

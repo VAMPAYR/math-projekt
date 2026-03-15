@@ -113,7 +113,12 @@ topics: [
       { content: 'Choose: $u = x$ (algebraic), $dv = \\cos x\\,dx$.' },
       { content: '$du = dx$, $v = \\sin x$.' },
       { content: 'IBP: $uv - \\int v\\,du = x\\sin x - \\int \\sin x\\,dx$.' },
-      { content: '$= x\\sin x - (-\\cos x) + C = x\\sin x + \\cos x + C$.' }
+      { content: '$= x\\sin x - (-\\cos x) + C = x\\sin x + \\cos x + C$.' },
+    { difficulty: 'hard', question: 'Evaluate $\\int x^2 e^x\\,dx$ using tabular integration.', steps: [
+      { content: 'D column: $x^2, 2x, 2, 0$. I column: $e^x, e^x, e^x, e^x$.' },
+      { content: 'Alternating signs: $+x^2 e^x - 2xe^x + 2e^x + C$.' },
+      { content: '$= e^x(x^2 - 2x + 2) + C$.' }
+    ], explanation: 'Tabular (DI) method: differentiate one column, integrate the other, alternate signs.' }
     ], explanation: 'LIATE: choose $u$ as the algebraic part. IBP formula: $\\int u\\,dv = uv - \\int v\\,du$.' },
     { difficulty: 'hard', question: 'Evaluate $\\int e^x \\sin x\\,dx$ (requires 2 rounds of IBP).', steps: [
       { content: 'Round 1: $u = \\sin x, dv = e^x dx$. $du = \\cos x\\,dx, v = e^x$.' },

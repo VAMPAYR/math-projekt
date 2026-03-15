@@ -206,7 +206,12 @@ topics: [
       { content: '$\\frac{5\\pi}{3}$ is in Q4 ($\\frac{3\\pi}{2} < \\frac{5\\pi}{3} \\lt 2\\pi$).' },
       { content: 'Reference angle: $2\\pi - \\frac{5\\pi}{3} = \\frac{\\pi}{3}$.' },
       { content: 'Cosine is POSITIVE in Q4.' },
-      { content: '$\\cos(\\frac{5\\pi}{3}) = +\\cos(\\frac{\\pi}{3}) = \\frac{1}{2}$.' }
+      { content: '$\\cos(\\frac{5\\pi}{3}) = +\\cos(\\frac{\\pi}{3}) = \\frac{1}{2}$.' },
+    { difficulty: 'hard', question: 'Solve $2\\sin(x) = 1$ for $x \\in [0, 2\\pi)$.', steps: [
+      { content: '$\\sin(x) = 1/2$.' },
+      { content: 'Reference angle: $\\pi/6$ (30°).' },
+      { content: 'Sine positive in Q1 and Q2: $x = \\pi/6$ or $x = 5\\pi/6$.' }
+    ], explanation: 'Reference angles and ASTC (All Students Take Calculus) for quadrant analysis.' }
     ], explanation: 'Reference angle method: (1) Quadrant, (2) Reference angle, (3) Sign, (4) Evaluate.' },
     { difficulty: 'hard', question: 'If $\\sin\\theta = -\\frac{3}{5}$ and $\\theta$ is in Q3, find all 6 trig values.', steps: [
       { content: '$\\sin\\theta = -3/5$. In Q3, both sin and cos are negative.' },

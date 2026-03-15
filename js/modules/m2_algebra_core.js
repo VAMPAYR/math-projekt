@@ -255,7 +255,13 @@ topics: [
       { content: 'Distribute: $2x + 6 = 14$.' },
       { content: 'Subtract 6: $2x = 8$.' },
       { content: 'Divide by 2: $x = 4$.' },
-      { content: 'Check: $2(4 + 3) = 2(7) = 14$ ✓' }
+      { content: 'Check: $2(4 + 3) = 2(7) = 14$ ✓' },
+    { difficulty: 'hard', question: 'Graph $y = -2x + 4$: find intercepts and slope.', steps: [
+      { content: 'Slope: $m = -2$ (down 2, right 1).' },
+      { content: 'y-intercept: set $x = 0$: $y = 4$. Point: $(0, 4)$.' },
+      { content: 'x-intercept: set $y = 0$: $0 = -2x + 4$, $x = 2$. Point: $(2, 0)$.' },
+      { content: 'Plot those two points and draw the line through them.' }
+    ], explanation: 'Two intercepts uniquely determine a line.' }
     ], explanation: 'Always check your answer by substituting back.' }
   ],
   matching: [

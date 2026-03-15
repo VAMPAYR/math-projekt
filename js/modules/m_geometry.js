@@ -647,7 +647,12 @@
           { content: 'Total volume: $8 \\times 5 \\times 3 = 120$ m³.' },
           { content: 'Water volume: $8 \\times 5 \\times 2 = 80$ m³.' },
           { content: 'Empty volume: $120 - 80 = 40$ m³.' },
-          { content: 'Need $40$ m³ (= $40{,}000$ liters) more water to fill the tank.' }
+          { content: 'Need $40$ m³ (= $40{,}000$ liters) more water to fill the tank.' },
+    { difficulty: 'hard', question: 'Find the area of an annulus (ring) with outer radius 5 and inner radius 3.', steps: [
+      { content: 'Outer area: $\\pi(5^2) = 25\\pi$.' },
+      { content: 'Inner area: $\\pi(3^2) = 9\\pi$.' },
+      { content: 'Annulus area: $25\\pi - 9\\pi = 16\\pi$.' }
+    ], explanation: 'Annulus: $A = \\pi(R^2 - r^2)$.' }
         ], explanation: 'Volume of a partial fill uses the same base area with reduced height.' }
       ],
       multiPart: [

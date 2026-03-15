@@ -109,7 +109,12 @@ topics: [
       { content: 'Multiply by conjugate: $\\frac{\\sqrt{x}-2}{x-4} \\cdot \\frac{\\sqrt{x}+2}{\\sqrt{x}+2}$.' },
       { content: 'Numerator becomes: $(\\sqrt{x})^2 - 4 = x - 4$.' },
       { content: 'Cancel: $\\frac{x-4}{(x-4)(\\sqrt{x}+2)} = \\frac{1}{\\sqrt{x}+2}$.' },
-      { content: '$\\lim_{x \\to 4} \\frac{1}{\\sqrt{x}+2} = \\frac{1}{4}$.' }
+      { content: '$\\lim_{x \\to 4} \\frac{1}{\\sqrt{x}+2} = \\frac{1}{4}$.' },
+    { difficulty: 'hard', question: 'Find $F(x)$ if $F\'(x) = 6x^2 - 4x + 1$ and $F(0) = 3$.', steps: [
+      { content: '$F(x) = 2x^3 - 2x^2 + x + C$.' },
+      { content: '$F(0) = 0 - 0 + 0 + C = 3$. So $C = 3$.' },
+      { content: '$F(x) = 2x^3 - 2x^2 + x + 3$.' }
+    ], explanation: 'Initial value problem: integrate, then use the given condition to find $C$.' }
     ], explanation: 'Conjugate multiplication resolves $0/0$ forms with square roots.' },
     { difficulty: 'hard', question: 'Evaluate $\\lim_{x \\to 0} \\frac{1-\\cos x}{x^2}$.', steps: [
       { content: 'Direct sub: $\\frac{0}{0}$ (indeterminate).' },

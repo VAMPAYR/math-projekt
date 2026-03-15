@@ -120,7 +120,13 @@ topics: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
       { content: '$\\mathbf{a} \\cdot \\mathbf{b} = 3(1) + 4(0) = 3$.' },
       { content: '$|\\mathbf{a}|^2 = 1^2 + 0^2 = 1$.' },
-      { content: '$\\text{proj}_{\\mathbf{a}} \\mathbf{b} = \\frac{3}{1} \\langle 1, 0 \\rangle = \\langle 3, 0 \\rangle$.' }
+      { content: '$\\text{proj}_{\\mathbf{a}} \\mathbf{b} = \\frac{3}{1} \\langle 1, 0 \\rangle = \\langle 3, 0 \\rangle$.' },
+    { difficulty: 'hard', question: 'Verify that $\\vec{F} = \\langle 2xy, x^2 \\rangle$ is conservative and find $\\phi$.', steps: [
+      { content: 'Check: $\\frac{\\partial}{\\partial y}(2xy) = 2x = \\frac{\\partial}{\\partial x}(x^2) = 2x$. Conservative.' },
+      { content: '$\\phi = \\int 2xy\\,dx = x^2 y + g(y)$.' },
+      { content: '$\\phi_y = x^2 + g\'(y) = x^2$. So $g\'(y) = 0$, $g(y) = C$.' },
+      { content: '$\\phi = x^2 y + C$.' }
+    ], explanation: 'Test: $\\partial P/\\partial y = \\partial Q/\\partial x$. Integrate to find potential function.' }
     ], explanation: 'Projection: $\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{|\\mathbf{a}|^2} \\mathbf{a}$.' }
   ],
   matching: [
