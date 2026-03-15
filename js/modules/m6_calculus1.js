@@ -115,7 +115,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int x^{-2}\\,dx =$?', accept: ['-1/x+C', '-x^(-1)+C'], placeholder: 'Expression', explanation: '$x^{-1}/(-1) + C = -1/x + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x}}\\,dx =$?', accept: ['2sqrt(x)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\int x^{-1/2}\\,dx = 2x^{1/2} + C$.' },
     { difficulty: 'easy', question: '$\\int 4\\,dx =$?', accept: ['4x+C', '4x + C'], placeholder: 'Expression', explanation: '$4x + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x^2-1}}\\,dx =$?', accept: ['arcsec(x)+C', 'sec^(-1)(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}(x) + C$ (or $\\ln|x + \\sqrt{x^2-1}| + C$).' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x^2-1}}\\,dx =$?', accept: ['arcsec(x)+C', 'sec^(-1)(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}(x) + C$ (or $\\ln|x + \\sqrt{x^2-1}| + C$).' },
+    { difficulty: 'easy', question: '$\\int x^3\\,dx =$?', accept: ['x^4/4+C'], placeholder: 'Expression', explanation: '$x^4/4 + C$.' },
+    { difficulty: 'hard', question: 'u-substitution: $\\int 2x \\cos(x^2)\\,dx$. Let $u = x^2$. Result:', accept: ['sin(x^2)+C', 'sin(u)+C'], placeholder: 'Expression', explanation: '$du = 2x\\,dx$. $\\int \\cos u\\,du = \\sin u + C = \\sin(x^2) + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -258,7 +260,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1$.' },
     { difficulty: 'hard', question: '$\\int_0^{\\pi} \\cos x\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi} = 0 - 0 = 0$.' },
     { difficulty: 'easy', question: '$\\sum_{i=1}^n i = \\frac{n(n+1)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Gauss formula: $\\sum_{i=1}^n i = n(n+1)/2$.' },
-    { difficulty: 'hard', question: '$\\sum_{i=1}^{100} i =$?', accept: [5050, '5050'], placeholder: 'Number', explanation: '$100(101)/2 = 5050$.' }
+    { difficulty: 'hard', question: '$\\sum_{i=1}^{100} i =$?', accept: [5050, '5050'], placeholder: 'Number', explanation: '$100(101)/2 = 5050$.' },
+    { difficulty: 'easy', question: 'Number of subintervals with width $\\Delta x = (b-a)/n$. $n$ is the:', accept: ['number of subintervals', 'partition count'], placeholder: 'What?', explanation: '$n$ subintervals, each of width $\\Delta x$.' },
+    { difficulty: 'hard', question: '$\\sum_{i=1}^n i^2 = \\frac{n(n+1)(2n+1)}{$ ? $}$', accept: [6, '6'], placeholder: 'Number', explanation: '$\\sum i^2 = n(n+1)(2n+1)/6$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -450,7 +454,9 @@ topics: [
     { difficulty: 'easy', question: 'Additive property: $\\int_a^b f + \\int_b^c f = \\int_a^c$ ?', accept: ['f', 'f dx'], placeholder: 'What?', explanation: '$\\int_a^c f\\,dx$. Split and combine.' },
     { difficulty: 'hard', question: 'Accumulation function: $F(x) = \\int_a^x f(t)\\,dt$. $F\'(x) =$?', accept: ['f(x)'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = f(x)$.' },
     { difficulty: 'easy', question: 'Area between $f$ and $x$-axis: $\\int_a^b |f(x)|\\,dx$. Why absolute value?', accept: ['to count negative area as positive', 'below x-axis is negative'], placeholder: 'Why?', explanation: 'Absolute value ensures all area is counted as positive.' },
-    { difficulty: 'hard', question: 'Mean Value Theorem for integrals: $\\bar{f} = $ ?', accept: ['(1/(b-a)) * int_a^b f dx'], placeholder: 'Formula', explanation: '$\\bar{f} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx$.' }
+    { difficulty: 'hard', question: 'Mean Value Theorem for integrals: $\\bar{f} = $ ?', accept: ['(1/(b-a)) * int_a^b f dx'], placeholder: 'Formula', explanation: '$\\bar{f} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx$.' },
+    { difficulty: 'easy', question: 'Net change theorem: $\\int_a^b f\'\\,dx = f(b) - f($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: 'Net change: $\\int_a^b f\'(x)\\,dx = f(b) - f(a)$.' },
+    { difficulty: 'hard', question: 'Washer method for volume: $V = \\pi \\int (R^2 - r^2)\\,dx$. This rotates around:', accept: ['x-axis', 'an axis', 'the axis'], placeholder: 'Axis?', explanation: 'Washers: rotation about the $x$-axis (or $y$-axis with adjustments).' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

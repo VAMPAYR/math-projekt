@@ -120,7 +120,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int x^{-1}\\,dx =$?', accept: ['ln|x|+C', 'ln(x)+C'], placeholder: 'Expression', explanation: '$\\ln|x| + C$.' },
     { difficulty: 'hard', question: '$\\int \\sec x \\tan x\\,dx =$?', accept: ['sec(x)+C', 'secx+C'], placeholder: 'Expression', explanation: '$\\sec x + C$.' },
     { difficulty: 'easy', question: '$\\int x^2\\,dx =$?', accept: ['x^3/3+C', 'x^3/3 + C'], placeholder: 'Expression', explanation: '$x^3/3 + C$.' },
-    { difficulty: 'hard', question: 'Improper integral: $\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$.' }
+    { difficulty: 'hard', question: 'Improper integral: $\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$.' },
+    { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x + C$.' },
+    { difficulty: 'hard', question: 'Tabular integration applies when one factor _____ to zero under repeated differentiation.', accept: ['reduces', 'differentiates'], placeholder: 'What?', explanation: 'Tabular method works when $f^{(n)}(x) = 0$ for some $n$ (e.g. polynomials).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -252,7 +254,9 @@ topics: [
     { difficulty: 'easy', question: 'Arithmetic sequence: $a, a+d, a+2d, \\ldots$ Common difference $d$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Arithmetic: constant difference between terms.' },
     { difficulty: 'hard', question: 'Telescoping series: $\\sum_{n=1}^N \\frac{1}{n(n+1)}$ collapses to:', accept: ['1-1/(N+1)', 'N/(N+1)'], placeholder: 'Result', explanation: 'Partial fractions: $1/n - 1/(n+1)$. Most terms cancel.' },
     { difficulty: 'easy', question: 'Geometric sequence: $a, ar, ar^2, \\ldots$ Common ratio $r$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Geometric: constant ratio between consecutive terms.' },
-    { difficulty: 'hard', question: 'p-series $\\sum 1/n^p$ converges when $p >$?', accept: [1, '1'], placeholder: 'Value', explanation: '$p > 1$: converges. $p \\leq 1$: diverges.' }
+    { difficulty: 'hard', question: 'p-series $\\sum 1/n^p$ converges when $p >$?', accept: [1, '1'], placeholder: 'Value', explanation: '$p > 1$: converges. $p \\leq 1$: diverges.' },
+    { difficulty: 'easy', question: 'nth term test: if $a_n \\not\\to 0$, then $\\sum a_n$:', accept: ['diverges'], placeholder: 'Result', explanation: 'If $\\lim a_n \\neq 0$: series diverges.' },
+    { difficulty: 'hard', question: 'Riemann rearrangement theorem: a conditionally convergent series can be rearranged to sum to:', accept: ['any value', 'anything'], placeholder: 'What?', explanation: 'Rearrangement theorem: conditionally convergent can sum to any value or $\\pm \\infty$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -408,7 +412,9 @@ topics: [
     { difficulty: 'easy', question: 'Taylor polynomial of degree $n$ approximates $f$ near $x =$?', accept: ['a', 'center', 'c'], placeholder: 'Point', explanation: '$T_n(x) \\approx f(x)$ near the center $a$.' },
     { difficulty: 'hard', question: 'Lagrange remainder: $R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$. This bounds:', accept: ['the error', 'truncation error'], placeholder: 'What?', explanation: 'Maximum error when approximating $f$ by its degree-$n$ Taylor polynomial.' },
     { difficulty: 'easy', question: 'Taylor polynomial of degree 1 is called:', accept: ['linearization', 'linear approximation'], placeholder: 'Name', explanation: 'Degree 1 Taylor: $f(a) + f\'(a)(x-a)$. Linearization.' },
-    { difficulty: 'hard', question: 'Analytic function: equals its Taylor series on some:', accept: ['interval', 'neighborhood'], placeholder: 'Where?', explanation: 'Analytic: $f(x) = \\sum a_n(x-a)^n$ on an interval around $a$.' }
+    { difficulty: 'hard', question: 'Analytic function: equals its Taylor series on some:', accept: ['interval', 'neighborhood'], placeholder: 'Where?', explanation: 'Analytic: $f(x) = \\sum a_n(x-a)^n$ on an interval around $a$.' },
+    { difficulty: 'easy', question: 'MacLaurin series for $e^x = 1 + x + x^2/2! + x^3/3! + \\ldots$', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: '$e^x = \\sum_{n=0}^{\\infty} x^n/n!$.' },
+    { difficulty: 'hard', question: 'Binomial series: $(1+x)^k = \\sum \\binom{k}{n}x^n$. Converges for $|x| <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: 'Binomial series: $|x| < 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

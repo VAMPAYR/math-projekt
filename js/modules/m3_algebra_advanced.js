@@ -154,7 +154,9 @@
     { difficulty: 'easy', question: 'Constant polynomial has degree:', accept: [0, '0'], placeholder: 'Number', explanation: 'Degree 0: constant (like $y = 5$).' },
     { difficulty: 'hard', question: 'Descartes: $f(x) = x^4 - x^2 + 1$ sign changes:', accept: [2, '2'], placeholder: 'Count', explanation: '$+, -, +$: two sign changes. At most 2 positive real roots.' },
     { difficulty: 'easy', question: 'Zero of polynomial $f(x)$: value where $f(c) =$?', accept: [0, '0'], placeholder: 'Value', explanation: 'Zero = root: $f(c) = 0$.' },
-    { difficulty: 'hard', question: 'Fundamental Theorem of Algebra: degree-$n$ polynomial has exactly $n$ roots in:', accept: ['C', 'complex numbers', 'the complex numbers'], placeholder: 'Field', explanation: 'FTA: $n$ roots in $\\mathbb{C}$ (counting multiplicity).' }
+    { difficulty: 'hard', question: 'Fundamental Theorem of Algebra: degree-$n$ polynomial has exactly $n$ roots in:', accept: ['C', 'complex numbers', 'the complex numbers'], placeholder: 'Field', explanation: 'FTA: $n$ roots in $\\mathbb{C}$ (counting multiplicity).' },
+    { difficulty: 'easy', question: 'Cubic polynomial has degree:', accept: [3, '3'], placeholder: 'Number', explanation: 'Cubic: degree 3.' },
+    { difficulty: 'hard', question: 'Complex conjugate of $3 + 4i$:', accept: ['3-4i', '3 - 4i'], placeholder: 'Number', explanation: 'Conjugate: flip the sign of the imaginary part.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -426,7 +428,9 @@
     { difficulty: 'easy', question: 'The $x$-coordinate of the vertex is $-b/(2a)$. For $y = 2x^2 + 4x + 1$, it is:', accept: [-1, '-1'], placeholder: 'Number', explanation: '$-4/(2 \\cdot 2) = -1$.' },
     { difficulty: 'hard', question: 'Quadratic opens upward when $a$ is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$a > 0$: opens upward. $a < 0$: opens downward.' },
     { difficulty: 'easy', question: 'Parabola opens upward or downward based on sign of:', accept: ['a', 'leading coefficient'], placeholder: 'Term', explanation: '$a > 0$: up. $a < 0$: down.' },
-    { difficulty: 'hard', question: 'Focus-directrix definition: parabola is the locus equidistant from:', accept: ['focus and directrix'], placeholder: 'What?', explanation: 'Parabola: distance to focus = distance to directrix.' }
+    { difficulty: 'hard', question: 'Focus-directrix definition: parabola is the locus equidistant from:', accept: ['focus and directrix'], placeholder: 'What?', explanation: 'Parabola: distance to focus = distance to directrix.' },
+    { difficulty: 'easy', question: 'Standard form of quadratic: $ax^2 + bx + $ ?', accept: ['c'], placeholder: 'Term', explanation: '$ax^2 + bx + c$.' },
+    { difficulty: 'hard', question: 'Sum of roots times product of roots: for $x^2 - 5x + 6$: $(-b/a)(c/a) =$?', accept: [30, '30'], placeholder: 'Number', explanation: 'Sum $= 5$, product $= 6$. $5 \\times 6 = 30$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -669,7 +673,9 @@
     { difficulty: 'easy', question: 'Common log: $\\log$ without a base means base:', accept: [10, '10'], placeholder: 'Base', explanation: '$\\log = \\log_{10}$.' },
     { difficulty: 'hard', question: 'Population growth: $P(t) = P_0 e^{kt}$. What type of growth?', accept: ['exponential'], placeholder: 'Type', explanation: 'Exponential growth: $e^{kt}$ with $k > 0$.' },
     { difficulty: 'easy', question: 'Exponential function $b^x$ with $b > 1$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: '$b > 1$: exponential growth (increasing).' },
-    { difficulty: 'hard', question: 'Natural base $e \\approx$?', accept: ['2.718', '2.72'], placeholder: 'Number', explanation: '$e \\approx 2.71828...$' }
+    { difficulty: 'hard', question: 'Natural base $e \\approx$?', accept: ['2.718', '2.72'], placeholder: 'Number', explanation: '$e \\approx 2.71828...$' },
+    { difficulty: 'easy', question: '$\\log(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$.' },
+    { difficulty: 'hard', question: 'Logarithmic scale: earthquake magnitudes differ by 1 means energy differs by factor:', accept: ['31.6', '10^1.5', '~32'], placeholder: 'Factor', explanation: 'Richter: each unit is $\\approx 31.6\\times$ more energy.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

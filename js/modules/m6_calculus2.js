@@ -191,7 +191,9 @@
     { difficulty: 'easy', question: '$\\int 2e^x\\,dx =$?', accept: ['2e^x+C', '2e^x + C'], placeholder: 'Expression', explanation: '$2e^x + C$.' },
     { difficulty: 'hard', question: 'Weierstrass substitution: $t = \\tan(x/2)$. Used for integrals involving:', accept: ['rational trig functions', 'sin and cos'], placeholder: 'What?', explanation: 'Weierstrass: converts trig integrals to rational functions of $t$.' },
     { difficulty: 'easy', question: '$\\int (x+1)^3\\,dx$ by substitution: let $u =$?', accept: ['x+1'], placeholder: 'Substitution', explanation: '$u = x + 1$, $du = dx$.' },
-    { difficulty: 'hard', question: 'Integration by parts with definite integral: $[uv]_a^b - \\int_a^b v\\,du$. Evaluate bounds on:', accept: ['uv', 'the uv term'], placeholder: 'Which part?', explanation: 'Apply FTC to the $uv$ part: $[uv]_a^b$.' }
+    { difficulty: 'hard', question: 'Integration by parts with definite integral: $[uv]_a^b - \\int_a^b v\\,du$. Evaluate bounds on:', accept: ['uv', 'the uv term'], placeholder: 'Which part?', explanation: 'Apply FTC to the $uv$ part: $[uv]_a^b$.' },
+    { difficulty: 'easy', question: '$\\int \\sin(x)\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' },
+    { difficulty: 'hard', question: 'Trig sub for $\\sqrt{a^2 - x^2}$: let $x = a\\sin$ ?', accept: ['theta', '\\theta'], placeholder: 'Variable', explanation: '$x = a\\sin\\theta$. Then $\\sqrt{a^2 - x^2} = a\\cos\\theta$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -397,7 +399,9 @@
     { difficulty: 'easy', question: 'Area under $f(x) = 4$ from $x = 1$ to $x = 3$:', accept: [8, '8'], placeholder: 'Number', explanation: '$4 \\times 2 = 8$.' },
     { difficulty: 'hard', question: 'Moment of inertia: $I = \\int \\rho r^2\\,dr$. $r$ is the distance from:', accept: ['axis of rotation', 'the axis'], placeholder: 'What?', explanation: '$r$ = distance from the rotation axis.' },
     { difficulty: 'easy', question: 'Probability as area: $P(a \\leq X \\leq b) = \\int_a^b f(x)\\,dx$ where $f$ is the:', accept: ['pdf', 'probability density function', 'density'], placeholder: 'Function?', explanation: 'PDF: probability = area under the density curve.' },
-    { difficulty: 'hard', question: 'Separable ODE: $dy/dx = f(x)g(y)$. Solve by moving $g(y)$ to the:', accept: ['left', 'y side'], placeholder: 'Side', explanation: '$\\frac{dy}{g(y)} = f(x)\\,dx$. Integrate both sides.' }
+    { difficulty: 'hard', question: 'Separable ODE: $dy/dx = f(x)g(y)$. Solve by moving $g(y)$ to the:', accept: ['left', 'y side'], placeholder: 'Side', explanation: '$\\frac{dy}{g(y)} = f(x)\\,dx$. Integrate both sides.' },
+    { difficulty: 'easy', question: 'Shell method: $V = 2\\pi \\int x f(x)\\,dx$ rotates around the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: rotation about the $y$-axis.' },
+    { difficulty: 'hard', question: 'Pappus theorem: volume = $2\\pi \\bar{y} A$ where $\\bar{y}$ is:', accept: ['centroid distance', 'distance from centroid to axis'], placeholder: 'What?', explanation: '$\\bar{y}$: distance from centroid to axis of rotation.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -537,7 +541,9 @@
     { difficulty: 'easy', question: '$\\int_0^{\\pi} \\sin x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[-\\cos x]_0^{\\pi} = 1 + 1 = 2$.' },
     { difficulty: 'hard', question: 'Limit comparison: $\\sum a_n \\sim \\sum b_n$ if $\\lim a_n/b_n = L$ where $0 < L <$?', accept: ['infinity', 'inf'], placeholder: 'Value', explanation: '$0 < L < \\infty$: both converge or both diverge.' },
     { difficulty: 'easy', question: '$\\int_0^1 e^x\\,dx =$?', accept: ['e-1', '1.718'], placeholder: 'Number', explanation: '$[e^x]_0^1 = e - 1$.' },
-    { difficulty: 'hard', question: 'Gabriel\'s horn: $y = 1/x$ for $x \\geq 1$ revolved around $x$-axis has finite volume but infinite:', accept: ['surface area'], placeholder: 'What?', explanation: 'Volume $= \\pi$, surface area $= \\infty$. Painter\'s paradox.' }
+    { difficulty: 'hard', question: 'Gabriel\'s horn: $y = 1/x$ for $x \\geq 1$ revolved around $x$-axis has finite volume but infinite:', accept: ['surface area'], placeholder: 'What?', explanation: 'Volume $= \\pi$, surface area $= \\infty$. Painter\'s paradox.' },
+    { difficulty: 'easy', question: 'Proper rational function: degree of numerator < degree of:', accept: ['denominator'], placeholder: 'What?', explanation: 'Proper: num degree $<$ denom degree. Otherwise: do long division first.' },
+    { difficulty: 'hard', question: 'Comparison test for improper integrals: if $0 \\leq f \\leq g$ and $\\int g$ diverges, can we conclude about $\\int f$?', accept: ['no', 'nothing'], placeholder: 'Conclusion?', explanation: 'If the larger diverges, we cannot conclude about the smaller (it might still converge).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

@@ -206,7 +206,9 @@
     { difficulty: 'easy', question: 'Co-interior (same-side interior) angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Co-interior angles: supplementary (sum to $180°$) when lines are parallel.' },
     { difficulty: 'hard', question: 'Cyclic quadrilateral: opposite angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Cyclic quadrilateral: opposite angles are supplementary.' },
     { difficulty: 'easy', question: 'A line segment has _____ endpoints.', accept: [2, '2', 'two'], placeholder: 'Number', explanation: 'Line segment: two endpoints.' },
-    { difficulty: 'hard', question: 'Interior angle sum: $(n-2) \\times 180$. For pentagon ($n=5$):', accept: [540, '540'], placeholder: 'Degrees', explanation: '$(5-2)(180) = 540°$.' }
+    { difficulty: 'hard', question: 'Interior angle sum: $(n-2) \\times 180$. For pentagon ($n=5$):', accept: [540, '540'], placeholder: 'Degrees', explanation: '$(5-2)(180) = 540°$.' },
+    { difficulty: 'easy', question: 'Vertical angles are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Vertical angles: congruent (formed by intersecting lines).' },
+    { difficulty: 'hard', question: 'Menelaus theorem applies to a triangle cut by a:', accept: ['transversal', 'line'], placeholder: 'What?', explanation: 'Menelaus: product of ratios along a transversal equals $-1$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -394,7 +396,9 @@
     { difficulty: 'easy', question: 'Median of a triangle connects a vertex to the _____ of the opposite side.', accept: ['midpoint'], placeholder: 'Point', explanation: 'Median: vertex to midpoint of opposite side.' },
     { difficulty: 'hard', question: 'Orthocenter: intersection of:', accept: ['altitudes'], placeholder: 'What?', explanation: 'Orthocenter: intersection of the three altitudes.' },
     { difficulty: 'easy', question: '45-45-90 triangle: legs are equal and hypotenuse is leg $\\times$?', accept: ['sqrt(2)', '\\sqrt{2}', '1.414'], placeholder: 'Factor', explanation: 'Hypotenuse = leg $\\times \\sqrt{2}$.' },
-    { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' }
+    { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' },
+    { difficulty: 'easy', question: '30-60-90 triangle: side ratios are $1 : \\sqrt{3} : $ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Short : medium : hypotenuse = $1 : \\sqrt{3} : 2$.' },
+    { difficulty: 'hard', question: 'Ceva\'s theorem: concurrent cevians satisfy $\\frac{AF}{FB} \\cdot \\frac{BD}{DC} \\cdot \\frac{CE}{EA} =$?', accept: [1, '1'], placeholder: 'Value', explanation: 'Ceva: product of ratios along concurrent cevians = 1.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -551,7 +555,9 @@
     { difficulty: 'easy', question: 'A chord of a circle is a line segment with both endpoints on the:', accept: ['circle', 'circumference'], placeholder: 'Where?', explanation: 'Chord: endpoints on the circle.' },
     { difficulty: 'hard', question: 'Inscribed angle is half the _____ angle for the same arc.', accept: ['central'], placeholder: 'Type', explanation: 'Inscribed angle theorem: inscribed = (1/2) central angle.' },
     { difficulty: 'easy', question: 'Perimeter of circle is called:', accept: ['circumference'], placeholder: 'Name', explanation: 'Circumference = $2\\pi r$.' },
-    { difficulty: 'hard', question: 'Cavalieri\'s principle: solids with equal cross-sectional area at every height have equal:', accept: ['volume'], placeholder: 'What?', explanation: 'Cavalieri: same cross-sections at every level implies same volume.' }
+    { difficulty: 'hard', question: 'Cavalieri\'s principle: solids with equal cross-sectional area at every height have equal:', accept: ['volume'], placeholder: 'What?', explanation: 'Cavalieri: same cross-sections at every level implies same volume.' },
+    { difficulty: 'easy', question: 'Tangent to a circle is perpendicular to the _____ at the point of tangency.', accept: ['radius'], placeholder: 'What?', explanation: 'Tangent line is perpendicular to the radius.' },
+    { difficulty: 'hard', question: 'Power of a point: for point $P$ outside circle, $PA \\cdot PB = PC \\cdot PD$ where $AB, CD$ are:', accept: ['secants', 'chords'], placeholder: 'What?', explanation: 'Power of a point: constant product along any secant through $P$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

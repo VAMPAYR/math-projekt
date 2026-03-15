@@ -223,7 +223,9 @@
     { difficulty: 'easy', question: '$\\lim_{x \\to \\infty} 1/x =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$1/x \\to 0$ as $x \\to \\infty$.' },
     { difficulty: 'hard', question: 'Limit does not exist when left and right limits:', accept: ['differ', 'are not equal', 'disagree'], placeholder: 'Condition', explanation: 'DNE: $\\lim_{x \\to a^-} \\neq \\lim_{x \\to a^+}$.' },
     { difficulty: 'easy', question: '$\\lim_{x \\to 5} 7 =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Limit of a constant is the constant.' },
-    { difficulty: 'hard', question: 'IVT requires the function to be _____ on $[a,b]$.', accept: ['continuous'], placeholder: 'Property', explanation: 'Intermediate Value Theorem requires continuity.' }
+    { difficulty: 'hard', question: 'IVT requires the function to be _____ on $[a,b]$.', accept: ['continuous'], placeholder: 'Property', explanation: 'Intermediate Value Theorem requires continuity.' },
+    { difficulty: 'easy', question: 'Continuous function: no breaks, jumps, or:', accept: ['holes', 'gaps'], placeholder: 'What?', explanation: 'Continuous: $\\lim_{x \\to a} f(x) = f(a)$.' },
+    { difficulty: 'hard', question: 'L\'Hopital\'s rule applies to _____ forms.', accept: ['indeterminate', '0/0 or inf/inf'], placeholder: 'Type', explanation: 'L\'Hopital: $0/0$ or $\\infty/\\infty$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -475,7 +477,9 @@
     { difficulty: 'easy', question: '$\\frac{d}{dx}(x^{10}) =$?', accept: ['10x^9', '10x9'], placeholder: 'Expression', explanation: 'Power rule: $10x^9$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$d/dx(x) = 1$.' },
-    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\csc x) =$?', accept: ['-csc(x)cot(x)', '-\\csc x \\cot x'], placeholder: 'Expression', explanation: '$-\\csc x \\cot x$.' }
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\csc x) =$?', accept: ['-csc(x)cot(x)', '-\\csc x \\cot x'], placeholder: 'Expression', explanation: '$-\\csc x \\cot x$.' },
+    { difficulty: 'easy', question: 'Product rule: $\\frac{d}{dx}(fg) = f\'g +$ ?', accept: ['fg\'', "fg'"], placeholder: 'Term', explanation: '$fg\' + f\'g$.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arcsin x) =$?', accept: ['1/sqrt(1-x^2)'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{1-x^2}}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -623,7 +627,9 @@
     { difficulty: 'easy', question: 'Critical number: where $f\'(x) =$?', accept: ['0 or undefined', '0'], placeholder: 'Value', explanation: 'Critical: $f\'(c) = 0$ or $f\'(c)$ DNE.' },
     { difficulty: 'hard', question: 'EVT: continuous function on $[a,b]$ attains its _____ and minimum.', accept: ['maximum'], placeholder: 'What?', explanation: 'Extreme Value Theorem: continuous on closed interval achieves max and min.' },
     { difficulty: 'easy', question: 'Local minimum: $f\' $ changes from negative to:', accept: ['positive'], placeholder: 'Sign', explanation: 'Decreasing then increasing: local min.' },
-    { difficulty: 'hard', question: 'Absolute max on $[a,b]$: compare critical point values and _____ values.', accept: ['endpoint'], placeholder: 'What?', explanation: 'Closed interval method: check critical points and endpoints.' }
+    { difficulty: 'hard', question: 'Absolute max on $[a,b]$: compare critical point values and _____ values.', accept: ['endpoint'], placeholder: 'What?', explanation: 'Closed interval method: check critical points and endpoints.' },
+    { difficulty: 'easy', question: 'MVT: there exists $c$ in $(a,b)$ where $f\'(c) = $ average rate.', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' },
+    { difficulty: 'hard', question: 'Related rates: if $V = \\frac{4}{3}\\pi r^3$, then $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Chain rule: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

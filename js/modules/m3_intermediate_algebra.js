@@ -118,7 +118,9 @@ topics: [
     { difficulty: 'easy', question: '$(3^2)^3 =$?', accept: [729, '729'], placeholder: 'Number', explanation: '$3^{2 \\cdot 3} = 3^6 = 729$.' },
     { difficulty: 'hard', question: '$\\left(\\frac{x^2}{y}\\right)^3 =$?', accept: ['x^6/y^3'], placeholder: 'Expression', explanation: '$x^{6}/y^{3}$.' },
     { difficulty: 'easy', question: '$3^{-1} =$?', accept: ['1/3', '0.333'], placeholder: 'Number', explanation: '$3^{-1} = 1/3$.' },
-    { difficulty: 'hard', question: 'Rationalize: $\\frac{1}{\\sqrt{5}} =$?', accept: ['sqrt(5)/5', '\\sqrt{5}/5'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}$.' }
+    { difficulty: 'hard', question: 'Rationalize: $\\frac{1}{\\sqrt{5}} =$?', accept: ['sqrt(5)/5', '\\sqrt{5}/5'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}$.' },
+    { difficulty: 'easy', question: '$\\sqrt{144} =$?', accept: [12, '12'], placeholder: 'Number', explanation: '$12^2 = 144$.' },
+    { difficulty: 'hard', question: '$\\sqrt[3]{-64} =$?', accept: [-4, '-4'], placeholder: 'Number', explanation: '$(-4)^3 = -64$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -297,7 +299,9 @@ topics: [
     { difficulty: 'easy', question: 'Perfect square trinomial: $x^2 + 10x + 25 =$?', accept: ['(x+5)^2'], placeholder: 'Factored', explanation: '$(x + 5)^2$.' },
     { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x =$?', accept: ['3x(x-2)(x+2)', '3x(x+2)(x-2)'], placeholder: 'Factored', explanation: '$3x(x^2 - 4) = 3x(x-2)(x+2)$.' },
     { difficulty: 'easy', question: 'Perfect square: $49 = $ ?$^2$', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
-    { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + $ ? $= (x+4)^2$', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' }
+    { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + $ ? $= (x+4)^2$', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' },
+    { difficulty: 'easy', question: 'Zero product property: if $ab = 0$, then $a = 0$ or:', accept: ['b = 0', 'b=0'], placeholder: 'Conclusion', explanation: '$ab = 0 \\Rightarrow a = 0$ or $b = 0$.' },
+    { difficulty: 'hard', question: 'Quadratic formula: two real roots when discriminant is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$b^2 - 4ac > 0$: two distinct real roots.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -437,7 +441,9 @@ topics: [
     { difficulty: 'easy', question: 'Cross multiply: $\\frac{a}{b} = \\frac{c}{d}$ gives:', accept: ['ad=bc', 'ad = bc'], placeholder: 'Equation', explanation: 'Cross multiplication: $ad = bc$.' },
     { difficulty: 'hard', question: 'Oblique (slant) asymptote exists when numerator degree exceeds denominator by:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree difference = 1: oblique asymptote (found by polynomial division).' },
     { difficulty: 'easy', question: 'Extraneous solution: a solution that does not satisfy the _____ equation.', accept: ['original'], placeholder: 'Which?', explanation: 'Extraneous: appears during solving but fails in the original equation.' },
-    { difficulty: 'hard', question: 'If $g(x) = \\frac{x+1}{x-2}$, then $g(5) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$g(5) = 6/3 = 2$.' }
+    { difficulty: 'hard', question: 'If $g(x) = \\frac{x+1}{x-2}$, then $g(5) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$g(5) = 6/3 = 2$.' },
+    { difficulty: 'easy', question: 'Domain of $f(x) = \\sqrt{x}$:', accept: ['x >= 0', '[0, inf)', 'x \\geq 0'], placeholder: 'Domain', explanation: 'Radicand must be non-negative.' },
+    { difficulty: 'hard', question: 'Slant asymptote of $\\frac{x^2+1}{x}$:', accept: ['y=x', 'y = x'], placeholder: 'Equation', explanation: 'Divide: $x + 1/x$. As $x \\to \\infty$: $y \\approx x$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

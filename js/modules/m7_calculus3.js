@@ -188,7 +188,9 @@
     { difficulty: 'easy', question: '$\\vec{a} + \\vec{b}$: add component-wise. $\\langle 1,2 \\rangle + \\langle 3,4 \\rangle =$?', accept: ['<4,6>', '<4, 6>'], placeholder: 'Vector', explanation: '$\\langle 1+3, 2+4 \\rangle = \\langle 4, 6 \\rangle$.' },
     { difficulty: 'hard', question: 'Projection of $\\vec{a}$ onto $\\vec{b}$: $\\text{proj}_{\\vec{b}}\\vec{a} = \\frac{\\vec{a} \\cdot \\vec{b}}{\\vec{b} \\cdot \\vec{b}}$ ?', accept: ['b', 'vec b', '\\vec{b}'], placeholder: 'Vector', explanation: '$\\text{proj}_{\\vec{b}}\\vec{a} = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{b}|^2}\\vec{b}$.' },
     { difficulty: 'easy', question: 'Scalar multiplication: $3\\langle 2, -1 \\rangle =$?', accept: ['<6,-3>', '<6, -3>'], placeholder: 'Vector', explanation: '$\\langle 6, -3 \\rangle$.' },
-    { difficulty: 'hard', question: 'Equation of plane: $ax + by + cz = d$. Normal vector:', accept: ['<a,b,c>', '<a, b, c>'], placeholder: 'Vector', explanation: '$\\vec{n} = \\langle a, b, c \\rangle$.' }
+    { difficulty: 'hard', question: 'Equation of plane: $ax + by + cz = d$. Normal vector:', accept: ['<a,b,c>', '<a, b, c>'], placeholder: 'Vector', explanation: '$\\vec{n} = \\langle a, b, c \\rangle$.' },
+    { difficulty: 'easy', question: 'Dot product zero means vectors are:', accept: ['perpendicular', 'orthogonal'], placeholder: 'Relation', explanation: '$\\vec{a} \\cdot \\vec{b} = 0$: orthogonal.' },
+    { difficulty: 'hard', question: 'TNB frame: $T$ is tangent, $N$ is normal, $B =$?', accept: ['binormal'], placeholder: 'Vector', explanation: '$B = T \\times N$: binormal vector.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -345,7 +347,9 @@
     { difficulty: 'easy', question: 'Critical points of $f(x,y)$: where $f_x =$ ? and $f_y = 0$.', accept: [0, '0'], placeholder: 'Value', explanation: 'Both partial derivatives are zero at critical points.' },
     { difficulty: 'hard', question: 'For constrained optimization, use _____ multipliers.', accept: ['Lagrange'], placeholder: 'Method', explanation: 'Lagrange multipliers: optimize $f$ subject to constraint $g = 0$.' },
     { difficulty: 'easy', question: 'Total differential: $df = f_x\\,dx + f_y\\,$ ?', accept: ['dy'], placeholder: 'Term', explanation: '$df = f_x\\,dx + f_y\\,dy$.' },
-    { difficulty: 'hard', question: 'Second derivative test in 2D: $D = f_{xx}f_{yy} - f_{xy}^2 > 0$ and $f_{xx} > 0$ means:', accept: ['local minimum', 'local min'], placeholder: 'Classification', explanation: '$D > 0, f_{xx} > 0$: local minimum.' }
+    { difficulty: 'hard', question: 'Second derivative test in 2D: $D = f_{xx}f_{yy} - f_{xy}^2 > 0$ and $f_{xx} > 0$ means:', accept: ['local minimum', 'local min'], placeholder: 'Classification', explanation: '$D > 0, f_{xx} > 0$: local minimum.' },
+    { difficulty: 'easy', question: 'Chain rule for multivariable: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Multivariable chain rule: sum of partial chains.' },
+    { difficulty: 'hard', question: 'Maximum rate of change of $f$ equals $|\\nabla f|$. Direction: along:', accept: ['gradient', '\\nabla f'], placeholder: 'Direction', explanation: '$\\max D_{\\vec{u}}f = |\\nabla f|$ in the gradient direction.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -473,7 +477,9 @@
     { difficulty: 'easy', question: 'Area in polar: $A = \\frac{1}{2}\\int r^2\\,d$ ?', accept: ['theta', '\\theta', 'dtheta'], placeholder: 'Variable', explanation: '$A = \\frac{1}{2}\\int_\\alpha^\\beta r^2\\,d\\theta$.' },
     { difficulty: 'hard', question: 'Triple integral in spherical: $dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d$ ?', accept: ['theta', '\\theta'], placeholder: 'Variable', explanation: '$dV = \\rho^2 \\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.' },
     { difficulty: 'easy', question: 'In cylindrical: $x = r\\cos\\theta$, $y = r\\sin\\theta$. Volume element $dV =$?', accept: ['r dr dtheta dz', 'r dz dr dtheta'], placeholder: 'Element', explanation: '$dV = r\\,dr\\,d\\theta\\,dz$.' },
-    { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\iint x\\rho\\,dA}{\\iint \\rho\\,dA}$. For uniform density, simplifies to:', accept: ['centroid x', 'iint x dA / iint dA'], placeholder: 'What?', explanation: 'Uniform: $\\bar{x} = \\iint x\\,dA / \\iint dA$. Geometric centroid.' }
+    { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\iint x\\rho\\,dA}{\\iint \\rho\\,dA}$. For uniform density, simplifies to:', accept: ['centroid x', 'iint x dA / iint dA'], placeholder: 'What?', explanation: 'Uniform: $\\bar{x} = \\iint x\\,dA / \\iint dA$. Geometric centroid.' },
+    { difficulty: 'easy', question: 'Fubini\'s theorem allows switching order of:', accept: ['integration', 'integrals'], placeholder: 'What?', explanation: 'Fubini: $\\int\\int f\\,dx\\,dy = \\int\\int f\\,dy\\,dx$ (when $f$ is continuous).' },
+    { difficulty: 'hard', question: 'Jacobian for polar: $|J| = $ ?', accept: ['r'], placeholder: 'Factor', explanation: '$x = r\\cos\\theta, y = r\\sin\\theta$. $|J| = r$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [
