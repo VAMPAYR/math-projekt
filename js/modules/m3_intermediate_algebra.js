@@ -107,7 +107,8 @@ topics: [
     { difficulty: 'medium', question: 'Simplify: $(2x^3)^2 =$?', accept: ['4x^6', '4x6'], placeholder: 'Expression', explanation: '$2^2 \\cdot (x^3)^2 = 4x^6$.' },
     { difficulty: 'hard', question: 'Simplify: $\\frac{x^5 \\cdot x^{-2}}{x^2} =$?', accept: ['x', 'x^1'], placeholder: 'Expression', explanation: '$x^{5-2-2} = x^1 = x$.' },
     { difficulty: 'easy', question: '$x^0 =$? (for $x \\neq 0$)', accept: [1, '1'], placeholder: 'Number', explanation: 'Any nonzero number to the power 0 equals 1.' },
-    { difficulty: 'hard', question: 'Negative exponent: $5^{-2} =$?', accept: ['1/25', '0.04'], placeholder: 'Number', explanation: '$5^{-2} = 1/5^2 = 1/25$.' }
+    { difficulty: 'hard', question: 'Negative exponent: $5^{-2} =$?', accept: ['1/25', '0.04'], placeholder: 'Number', explanation: '$5^{-2} = 1/5^2 = 1/25$.' },
+    { difficulty: 'easy', question: '$(xy)^3 =$?', accept: ['x^3y^3', 'x3y3'], placeholder: 'Expression', explanation: 'Power of a product: $(xy)^3 = x^3 y^3$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -275,7 +276,8 @@ topics: [
     { difficulty: 'medium', question: 'GCF of $6x^3 + 12x^2 - 18x$:', accept: ['6x'], placeholder: 'Expression', explanation: '$6x(x^2 + 2x - 3)$. GCF is $6x$.' },
     { difficulty: 'easy', question: 'Factor: $x^2 - 9 =$?', accept: ['(x-3)(x+3)', '(x+3)(x-3)'], placeholder: 'Factored', explanation: 'Difference of squares: $a^2 - b^2 = (a-b)(a+b)$.' },
     { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6 =$?', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'Factored', explanation: 'Find two numbers that multiply to 6 and add to 5: 2 and 3.' },
-    { difficulty: 'easy', question: 'Factor out GCF: $10x + 15 =$?', accept: ['5(2x+3)', '5(2x + 3)'], placeholder: 'Factored', explanation: 'GCF = 5. $5(2x + 3)$.' }
+    { difficulty: 'easy', question: 'Factor out GCF: $10x + 15 =$?', accept: ['5(2x+3)', '5(2x + 3)'], placeholder: 'Factored', explanation: 'GCF = 5. $5(2x + 3)$.' },
+    { difficulty: 'medium', question: 'Factor: $x^2 - x - 12 =$?', accept: ['(x-4)(x+3)', '(x+3)(x-4)'], placeholder: 'Factored', explanation: 'Numbers: $-4 \\times 3 = -12$, $-4 + 3 = -1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -404,7 +406,8 @@ topics: [
     { difficulty: 'hard', question: 'Solve: $\\frac{2}{x} + \\frac{3}{x+1} = 1$. $x =$?', accept: ['2, -1', '2,-1'], placeholder: 'Solutions', explanation: 'Multiply by $x(x+1)$: $2(x+1) + 3x = x(x+1)$. $5x + 2 = x^2 + x$. $x^2 - 4x - 2 = 0$... Actually: $2x+2+3x = x^2+x$, $5x+2=x^2+x$, $x^2-4x-2=0$...' },
     { difficulty: 'medium', question: 'Simplify: $\\frac{x^2 - 1}{x + 1} =$?', accept: ['x-1', 'x - 1'], placeholder: 'Simplified', explanation: '$\\frac{(x-1)(x+1)}{x+1} = x - 1$ (for $x \\neq -1$).' },
     { difficulty: 'easy', question: 'A rational expression is undefined when the denominator equals:', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Division by zero is undefined.' },
-    { difficulty: 'hard', question: 'Find vertical asymptote: $f(x) = \\frac{1}{x+2}$:', accept: ['x = -2', 'x=-2', '-2'], placeholder: 'x = ?', explanation: 'Set denominator = 0: $x + 2 = 0$, $x = -2$.' }
+    { difficulty: 'hard', question: 'Find vertical asymptote: $f(x) = \\frac{1}{x+2}$:', accept: ['x = -2', 'x=-2', '-2'], placeholder: 'x = ?', explanation: 'Set denominator = 0: $x + 2 = 0$, $x = -2$.' },
+    { difficulty: 'easy', question: 'Simplify: $\\frac{6x}{3} =$?', accept: ['2x'], placeholder: 'Expression', explanation: '$6x / 3 = 2x$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

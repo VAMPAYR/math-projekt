@@ -143,7 +143,8 @@
     { difficulty: 'medium', question: 'Leading coefficient of $-5x^3 + 2x^2 + 1$:', accept: [-5, '-5'], placeholder: 'Number', explanation: 'Leading coefficient is the coefficient of the highest-degree term: $-5$.' },
     { difficulty: 'hard', question: 'If $f(x) = x^3 - 6x^2 + 11x - 6$, then $f(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$1 - 6 + 11 - 6 = 0$. So $x = 1$ is a root.' },
     { difficulty: 'easy', question: 'A polynomial of degree 2 is called:', accept: ['quadratic'], placeholder: 'Name', explanation: 'Degree 2: quadratic.' },
-    { difficulty: 'hard', question: 'Rational root theorem: candidate roots for $x^3 - 2x + 1$:', accept: ['1, -1', '-1, 1', 'pm 1'], placeholder: 'Roots', explanation: 'Constant = 1, leading = 1. Candidates: $\\pm 1$.' }
+    { difficulty: 'hard', question: 'Rational root theorem: candidate roots for $x^3 - 2x + 1$:', accept: ['1, -1', '-1, 1', 'pm 1'], placeholder: 'Roots', explanation: 'Constant = 1, leading = 1. Candidates: $\\pm 1$.' },
+    { difficulty: 'medium', question: 'Degree of $7x^5 - x^3 + 2$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Highest exponent: 5.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -404,7 +405,8 @@
     { difficulty: 'hard', question: 'For $ax^2 + bx + c = 0$, product of roots is:', accept: ['c/a'], placeholder: 'Expression', explanation: 'By Vieta: product = $c/a$.' },
     { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ?$ = (x+3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(6/2)^2 = 9$. $x^2 + 6x + 9 = (x+3)^2$.' },
     { difficulty: 'hard', question: 'Nature of roots when discriminant = 0:', accept: ['one repeated root', 'double root', 'repeated'], placeholder: 'Description', explanation: '$b^2 - 4ac = 0$: one repeated (double) real root.' },
-    { difficulty: 'medium', question: 'If the vertex of $y = a(x-h)^2 + k$ opens downward, then $a$ is:', accept: ['negative', 'a < 0'], placeholder: 'Sign', explanation: '$a < 0$: parabola opens downward.' }
+    { difficulty: 'medium', question: 'If the vertex of $y = a(x-h)^2 + k$ opens downward, then $a$ is:', accept: ['negative', 'a < 0'], placeholder: 'Sign', explanation: '$a < 0$: parabola opens downward.' },
+    { difficulty: 'easy', question: 'Sum of roots of $x^2 - 5x + 6 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum of roots = $-b/a = 5$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -636,7 +638,8 @@
     { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' },
     { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' },
     { difficulty: 'hard', question: 'Change of base: $\\log_2(8) = \\frac{\\ln(8)}{\\ln($ ? $)}$', accept: [2, '2'], placeholder: 'Base', explanation: 'Change of base: $\\log_b a = \\frac{\\ln a}{\\ln b}$.' },
-    { difficulty: 'medium', question: '$e^{\\ln(5)} =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$e$ and $\\ln$ are inverses. $e^{\\ln 5} = 5$.' }
+    { difficulty: 'medium', question: '$e^{\\ln(5)} =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$e$ and $\\ln$ are inverses. $e^{\\ln 5} = 5$.' },
+    { difficulty: 'easy', question: '$\\log_2(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$2^0 = 1$. $\\log_2(1) = 0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

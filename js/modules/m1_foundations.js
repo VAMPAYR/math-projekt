@@ -94,7 +94,8 @@ topics: [
     { difficulty: 'medium', question: 'Is $\\sqrt{2}$ rational or irrational?', accept: ['irrational'], placeholder: 'Type', explanation: '$\\sqrt{2}$ cannot be expressed as a ratio of integers. Its decimal expansion is non-repeating.' },
     { difficulty: 'hard', question: 'Between which two consecutive integers does $\\sqrt{50}$ lie?', accept: ['7 and 8', '7,8'], placeholder: 'Integers', explanation: '$7^2 = 49 < 50 < 64 = 8^2$. So $7 < \\sqrt{50} < 8$.' },
     { difficulty: 'easy', question: 'The natural numbers start from:', accept: [1, '1'], placeholder: 'Number', explanation: '$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$.' },
-    { difficulty: 'easy', question: 'The integers include positive, negative, and:', accept: ['zero', '0'], placeholder: 'Number', explanation: '$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$.' }
+    { difficulty: 'easy', question: 'The integers include positive, negative, and:', accept: ['zero', '0'], placeholder: 'Number', explanation: '$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$.' },
+    { difficulty: 'hard', question: 'Cantor proved that $|\\mathbb{R}| > |\\mathbb{N}|$ using what technique?', accept: ['diagonalization', 'diagonal argument', 'Cantors diagonal'], placeholder: 'Method', explanation: 'Cantors diagonal argument: construct a real not in any proposed listing.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -272,7 +273,8 @@ topics: [
     { difficulty: 'medium', question: '$|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Absolute value strips the sign: $|-7| = 7$.' },
     { difficulty: 'medium', question: 'Absolute value: $|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$|-7| = 7$. Absolute value removes the sign.' },
     { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' },
-    { difficulty: 'medium', question: 'The multiplicative identity is:', accept: [1, '1'], placeholder: 'Number', explanation: '$a \\times 1 = a$ for all $a$.' }
+    { difficulty: 'medium', question: 'The multiplicative identity is:', accept: [1, '1'], placeholder: 'Number', explanation: '$a \\times 1 = a$ for all $a$.' },
+    { difficulty: 'easy', question: 'The commutative property: $a + b = $?', accept: ['b+a', 'b + a'], placeholder: 'Expression', explanation: '$a + b = b + a$. Addition is commutative.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -425,7 +427,8 @@ topics: [
     { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' },
     { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' },
     { difficulty: 'medium', question: 'If $|A| = 5$ and $|B| = 3$ and $|A \\cap B| = 2$, then $|A \\cup B| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 5 + 3 - 2 = 6$.' },
-    { difficulty: 'hard', question: 'Power set of $\\{a\\}$ has elements:', accept: ['2', 2], placeholder: 'Number', explanation: '$\\mathcal{P}(\\{a\\}) = \\{\\emptyset, \\{a\\}\\}$. Two elements.' }
+    { difficulty: 'hard', question: 'Power set of $\\{a\\}$ has elements:', accept: ['2', 2], placeholder: 'Number', explanation: '$\\mathcal{P}(\\{a\\}) = \\{\\emptyset, \\{a\\}\\}$. Two elements.' },
+    { difficulty: 'medium', question: '$A \\setminus B$ is read as:', accept: ['A minus B', 'A set minus B', 'A without B'], placeholder: 'Name', explanation: 'Set difference: elements in $A$ not in $B$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [

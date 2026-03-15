@@ -160,7 +160,8 @@ topics: [
     { difficulty: 'easy', question: 'Sample space for rolling a die: $S =$?', accept: ['{1,2,3,4,5,6}'], placeholder: 'Set', explanation: '$S = \\{1, 2, 3, 4, 5, 6\\}$.' },
     { difficulty: 'medium', question: 'For a deck of 52 cards, $P(\\text{ace}) =$?', accept: ['4/52', '1/13'], placeholder: 'Probability', explanation: '4 aces in 52 cards. $P = 4/52 = 1/13$.' },
     { difficulty: 'easy', question: 'Total probability of the sample space:', accept: [1, '1'], placeholder: 'Number', explanation: '$P(S) = 1$.' },
-    { difficulty: 'hard', question: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. If $P(A) = 0.6, P(B) = 0.5, P(A \\cup B) = 0.8$, then $P(A \\cap B) =$?', accept: ['0.3'], placeholder: 'Probability', explanation: '$0.6 + 0.5 - P(A \\cap B) = 0.8$. $P(A \\cap B) = 0.3$.' }
+    { difficulty: 'hard', question: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. If $P(A) = 0.6, P(B) = 0.5, P(A \\cup B) = 0.8$, then $P(A \\cap B) =$?', accept: ['0.3'], placeholder: 'Probability', explanation: '$0.6 + 0.5 - P(A \\cap B) = 0.8$. $P(A \\cap B) = 0.3$.' },
+    { difficulty: 'medium', question: 'Mutually exclusive events: $P(A \\cap B) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Mutually exclusive: cannot both occur. $P(A \\cap B) = 0$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -349,7 +350,9 @@ topics: [
     { difficulty: 'medium', question: 'Geometric distribution: $P(X = k) = (1-p)^{k-1}p$. Mean $E[X] =$?', accept: ['1/p'], placeholder: 'Formula', explanation: 'Geometric mean: $E[X] = 1/p$.' },
     { difficulty: 'easy', question: 'Expected value is the:', accept: ['mean', 'average'], placeholder: 'Synonym', explanation: '$E[X]$ is the expected value, equivalent to the population mean $\\mu$.' },
     { difficulty: 'medium', question: 'Poisson distribution models the number of events in a fixed:', accept: ['interval', 'time interval', 'period'], placeholder: 'What?', explanation: 'Poisson: counts events in a fixed interval (time, area, volume).' },
-    { difficulty: 'hard', question: 'CLT: as $n \\to \\infty$, the sampling distribution of $\\bar{X}$ approaches:', accept: ['normal', 'normal distribution'], placeholder: 'Distribution', explanation: 'Central Limit Theorem: $\\bar{X}$ is approximately normal for large $n$.' }
+    { difficulty: 'hard', question: 'CLT: as $n \\to \\infty$, the sampling distribution of $\\bar{X}$ approaches:', accept: ['normal', 'normal distribution'], placeholder: 'Distribution', explanation: 'Central Limit Theorem: $\\bar{X}$ is approximately normal for large $n$.' },
+    { difficulty: 'easy', question: 'Standard normal distribution has mean = ? and $\\sigma =$?', accept: ['0 and 1', '0, 1', 'mean 0 sd 1'], placeholder: 'Parameters', explanation: '$N(0, 1)$: mean $\\mu = 0$, standard deviation $\\sigma = 1$.' },
+    { difficulty: 'hard', question: 'Chebyshev\'s inequality: $P(|X - \\mu| \\geq k\\sigma) \\leq$?', accept: ['1/k^2'], placeholder: 'Bound', explanation: '$P(|X - \\mu| \\geq k\\sigma) \\leq 1/k^2$. Works for any distribution.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

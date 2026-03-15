@@ -195,7 +195,8 @@
     { difficulty: 'hard', question: 'Sum of interior angles of a hexagon:', accept: [720, '720'], placeholder: 'Degrees', explanation: '$(n-2) \\times 180 = 4 \\times 180 = 720°$.' },
     { difficulty: 'easy', question: 'An angle measuring exactly $90°$ is called:', accept: ['right', 'right angle'], placeholder: 'Name', explanation: '$90°$ is a right angle.' },
     { difficulty: 'easy', question: 'An angle greater than $90°$ but less than $180°$ is:', accept: ['obtuse'], placeholder: 'Type', explanation: 'Obtuse: $90° < \\theta < 180°$.' },
-    { difficulty: 'medium', question: 'Alternate interior angles formed by a transversal are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'When a transversal cuts parallel lines, alternate interior angles are congruent.' }
+    { difficulty: 'medium', question: 'Alternate interior angles formed by a transversal are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'When a transversal cuts parallel lines, alternate interior angles are congruent.' },
+    { difficulty: 'hard', question: 'Sum of exterior angles of any convex polygon:', accept: [360, '360'], placeholder: 'Degrees', explanation: 'The sum of exterior angles of any convex polygon is always $360°$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -372,7 +373,8 @@
     { difficulty: 'hard', question: 'Area of triangle with base 10 and height 6:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}bh = \\frac{1}{2}(10)(6) = 30$.' },
     { difficulty: 'medium', question: 'In a 30-60-90 triangle with hypotenuse 10, the short side is:', accept: [5, '5'], placeholder: 'Length', explanation: 'Short side = hypotenuse / 2 = 5.' },
     { difficulty: 'easy', question: 'All three sides of an equilateral triangle are:', accept: ['equal', 'congruent', 'the same'], placeholder: 'Property', explanation: 'Equilateral: all sides equal. All angles = $60°$.' },
-    { difficulty: 'hard', question: 'In a right triangle with legs $a$ and $b$: $a^2 + b^2 =$?', accept: ['c^2', 'hypotenuse^2'], placeholder: 'Expression', explanation: 'Pythagorean theorem: $a^2 + b^2 = c^2$.' }
+    { difficulty: 'hard', question: 'In a right triangle with legs $a$ and $b$: $a^2 + b^2 =$?', accept: ['c^2', 'hypotenuse^2'], placeholder: 'Expression', explanation: 'Pythagorean theorem: $a^2 + b^2 = c^2$.' },
+    { difficulty: 'medium', question: 'Similar triangles have proportional sides and:', accept: ['equal angles', 'congruent angles'], placeholder: 'Property', explanation: 'Similar: same shape, different size. Angles equal, sides proportional.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -518,7 +520,8 @@
     { difficulty: 'hard', question: 'Area of regular hexagon with side 4:', accept: ['24sqrt(3)', '41.57'], placeholder: 'Area', explanation: '$A = \\frac{3\\sqrt{3}}{2}s^2 = \\frac{3\\sqrt{3}}{2}(16) = 24\\sqrt{3}$.' },
     { difficulty: 'easy', question: 'Area of rectangle with length 8 and width 3:', accept: [24, '24'], placeholder: 'Area', explanation: '$A = l \\times w = 8 \\times 3 = 24$.' },
     { difficulty: 'medium', question: 'Volume of rectangular prism with $l=3, w=4, h=5$:', accept: [60, '60'], placeholder: 'Volume', explanation: '$V = lwh = 3 \\times 4 \\times 5 = 60$.' },
-    { difficulty: 'medium', question: 'Circumference of circle with diameter 10:', accept: ['10pi', '31.42'], placeholder: 'Length', explanation: '$C = \\pi d = 10\\pi$.' }
+    { difficulty: 'medium', question: 'Circumference of circle with diameter 10:', accept: ['10pi', '31.42'], placeholder: 'Length', explanation: '$C = \\pi d = 10\\pi$.' },
+    { difficulty: 'hard', question: 'Volume of sphere with radius 3:', accept: ['36pi', '113.1'], placeholder: 'Volume', explanation: '$V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi(27) = 36\\pi$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

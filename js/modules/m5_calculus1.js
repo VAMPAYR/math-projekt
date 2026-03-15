@@ -212,7 +212,8 @@
     { difficulty: 'medium', question: 'Left-hand limit: $\\lim_{x \\to 2^-} f(x) = 3$ and $\\lim_{x \\to 2^+} f(x) = 5$. Does $\\lim_{x \\to 2} f(x)$ exist?', accept: ['no'], placeholder: 'yes/no', explanation: 'Left and right limits differ ($3 \\neq 5$). The two-sided limit does not exist.' },
     { difficulty: 'easy', question: 'A function continuous at $x = a$ means $\\lim_{x \\to a} f(x) = $ ?', accept: ['f(a)'], placeholder: 'Value', explanation: 'Continuity: $\\lim_{x \\to a} f(x) = f(a)$.' },
     { difficulty: 'easy', question: '$\\lim_{x \\to 3} x^2 =$?', accept: [9, '9'], placeholder: 'Number', explanation: 'Direct substitution: $3^2 = 9$.' },
-    { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$.' }
+    { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$.' },
+    { difficulty: 'hard', question: 'Type of discontinuity at a hole:', accept: ['removable'], placeholder: 'Type', explanation: 'Hole: removable discontinuity ($\\lim$ exists but $f(a)$ is undefined or differs).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -453,7 +454,8 @@
     { difficulty: 'hard', question: 'Chain rule: $\\frac{d}{dx}\\sqrt{x^2+1} =$?', accept: ['x/sqrt(x^2+1)', 'x/(x^2+1)^(1/2)'], placeholder: 'Expression', explanation: '$\\frac{1}{2}(x^2+1)^{-1/2} \\cdot 2x = \\frac{x}{\\sqrt{x^2+1}}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Derivative of a constant is 0.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(\\ln x) =$?', accept: ['1/x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\ln x = 1/x$.' },
-    { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{2x}) =$?', accept: ['2e^(2x)', '2e^{2x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{2x} \\cdot 2 = 2e^{2x}$.' }
+    { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{2x}) =$?', accept: ['2e^(2x)', '2e^{2x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{2x} \\cdot 2 = 2e^{2x}$.' },
+    { difficulty: 'medium', question: '$\\frac{d}{dx}\\cos(x) =$?', accept: ['-sin(x)', '-sinx', '-\\sin x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\cos x = -\\sin x$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -590,7 +592,8 @@
     { difficulty: 'hard', question: 'L\'Hopital applies to which forms?', accept: ['0/0 and inf/inf', '0/0, infinity/infinity'], placeholder: 'Forms', explanation: 'Indeterminate forms $0/0$ and $\\infty/\\infty$.' },
     { difficulty: 'medium', question: 'For optimization: candidates for extrema include critical points and:', accept: ['endpoints'], placeholder: 'What else?', explanation: 'Closed interval method: check critical points and endpoints.' },
     { difficulty: 'medium', question: 'MVT guarantees $f\'(c) = \\frac{f(b) - f(a)}{b - a}$ for some $c$ in:', accept: ['(a,b)', 'a,b'], placeholder: 'Interval', explanation: 'Mean Value Theorem: $c \\in (a, b)$.' },
-    { difficulty: 'hard', question: 'Rolle\'s theorem requires continuity on $[a,b]$, differentiability on $(a,b)$, and $f(a) =$ ?', accept: ['f(b)'], placeholder: 'Condition', explanation: '$f(a) = f(b)$. Then there exists $c \\in (a,b)$ with $f\'(c) = 0$.' }
+    { difficulty: 'hard', question: 'Rolle\'s theorem requires continuity on $[a,b]$, differentiability on $(a,b)$, and $f(a) =$ ?', accept: ['f(b)'], placeholder: 'Condition', explanation: '$f(a) = f(b)$. Then there exists $c \\in (a,b)$ with $f\'(c) = 0$.' },
+    { difficulty: 'hard', question: 'Newton\'s method: $x_{n+1} = x_n - \\frac{f(x_n)}{$ ? $}$', accept: ["f'(x_n)", 'f prime(x_n)'], placeholder: 'Denominator', explanation: '$x_{n+1} = x_n - \\frac{f(x_n)}{f\'(x_n)}$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

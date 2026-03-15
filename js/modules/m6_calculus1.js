@@ -104,7 +104,8 @@ topics: [
     { difficulty: 'hard', question: '$\\int x\\sqrt{x}\\,dx = \\int x^{3/2}\\,dx =$?', accept: ['(2/5)x^(5/2)+C', '2x^(5/2)/5+C'], placeholder: 'Expression', explanation: '$\\frac{x^{5/2}}{5/2} + C = \\frac{2}{5}x^{5/2} + C$.' },
     { difficulty: 'easy', question: '$\\int x\\,dx =$?', accept: ['x^2/2+C', 'x^2/2 + C'], placeholder: 'Expression', explanation: '$x^{1+1}/(1+1) + C = x^2/2 + C$.' },
     { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', 'c', '0+C'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' },
-    { difficulty: 'medium', question: '$\\int (2x + 3)\\,dx =$?', accept: ['x^2+3x+C', 'x^2 + 3x + C'], placeholder: 'Expression', explanation: '$x^2 + 3x + C$.' }
+    { difficulty: 'medium', question: '$\\int (2x + 3)\\,dx =$?', accept: ['x^2+3x+C', 'x^2 + 3x + C'], placeholder: 'Expression', explanation: '$x^2 + 3x + C$.' },
+    { difficulty: 'hard', question: '$\\int \\sec^2(x)\\,dx =$?', accept: ['tan(x)+C', 'tanx+C'], placeholder: 'Expression', explanation: '$\\int \\sec^2 x\\,dx = \\tan x + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -236,7 +237,8 @@ topics: [
     { difficulty: 'easy', question: '$\\int_0^2 3\\,dx =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$3 \\cdot 2 = 6$. Area of a $3 \\times 2$ rectangle.' },
     { difficulty: 'medium', question: '$\\int_1^4 \\sqrt{x}\\,dx =$?', accept: ['14/3', '4.67'], placeholder: 'Number', explanation: '$[\\frac{2}{3}x^{3/2}]_1^4 = \\frac{2}{3}(8 - 1) = 14/3$.' },
     { difficulty: 'medium', question: '$\\int_1^4 \\sqrt{x}\\,dx =$?', accept: ['14/3', '4.67'], placeholder: 'Number', explanation: '$[\\frac{2}{3}x^{3/2}]_1^4 = \\frac{2}{3}(8 - 1) = \\frac{14}{3}$.' },
-    { difficulty: 'hard', question: '$\\int_0^2 (3x^2 - 2x)\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$[x^3 - x^2]_0^2 = 8 - 4 = 4$.' }
+    { difficulty: 'hard', question: '$\\int_0^2 (3x^2 - 2x)\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$[x^3 - x^2]_0^2 = 8 - 4 = 4$.' },
+    { difficulty: 'medium', question: 'Left Riemann sum uses which endpoint of each subinterval?', accept: ['left'], placeholder: 'Which?', explanation: 'Left Riemann sum: $f(x_{i-1})$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -417,7 +419,8 @@ topics: [
     { difficulty: 'medium', question: 'If $F(x) = \\int_0^x t^3\\,dt$, then $F\'(x) =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = x^3$.' },
     { difficulty: 'easy', question: 'FTC connects which two operations?', accept: ['differentiation and integration', 'derivatives and integrals'], placeholder: 'Operations', explanation: 'FTC: differentiation and integration are inverse operations.' },
     { difficulty: 'hard', question: 'Net signed area: if $f(x) < 0$ on $[a,b]$, then $\\int_a^b f\\,dx$ is:', accept: ['negative'], placeholder: 'Sign', explanation: 'Area below $x$-axis contributes negatively to the integral.' },
-    { difficulty: 'medium', question: '$\\int_0^1 (2x)\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' }
+    { difficulty: 'medium', question: '$\\int_0^1 (2x)\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' },
+    { difficulty: 'easy', question: '$\\int_a^a f(x)\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Integral over zero-width interval: $0$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [
