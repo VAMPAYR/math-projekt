@@ -48,17 +48,17 @@
   <line x1="50" y1="20" x2="50" y2="230" stroke="#94a3b8" stroke-width="1"/>
   <line x1="80" y1="200" x2="220" y2="100" stroke="#3b82f6" stroke-width="2.5"/>
   <polygon points="220,100 208,108 212,116" fill="#3b82f6"/>
-  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">v⃗ = ⟨a, b⟩</text>
+  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">v�: = ⟨a, b⟩</text>
   <line x1="80" y1="200" x2="220" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="220" y1="200" x2="220" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="150" y="215" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">a (x-component)</text>
   <text x="235" y="155" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">b (y-component)</text>
   <line x1="80" y1="200" x2="280" y2="160" stroke="#8b5cf6" stroke-width="2"/>
   <polygon points="280,160 268,162 270,172" fill="#8b5cf6"/>
-  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">w⃗</text>
+  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">w�:</text>
   <line x1="220" y1="100" x2="280" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
   <polygon points="280,60 268,65 272,72" fill="#f59e0b"/>
-  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">v⃗ + w⃗</text>
+  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">v�: + w�:</text>
   <line x1="220" y1="100" x2="280" y2="160" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
   <circle cx="80" cy="200" r="3" fill="#e2e8f0"/>
   <text x="150" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Vector addition: tip-to-tail</text>

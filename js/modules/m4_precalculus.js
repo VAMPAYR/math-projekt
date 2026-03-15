@@ -204,7 +204,7 @@ topics: [
   <text x="325" y="98" fill="#10b981" font-size="10" font-family="Inter,sans-serif">f(x-1) →</text>
   <path d="M 160 120 Q 180 160 200 140 Q 220 120 240 160" fill="none" stroke="#ef4444" stroke-width="2"/>
   <text x="245" y="158" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">f(2x) compress</text>
-  <text x="200" y="20" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">+c shifts up, -h shifts right, ×a stretches</text>
+  <text x="200" y="20" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">+c shifts up, -h shifts right, �:a stretches</text>
 </svg>
 </div>
 <p class="math-diagram-label">Graph transformations: vertical shift f(x)+c, horizontal shift f(x-h), horizontal compress f(2x)</p>

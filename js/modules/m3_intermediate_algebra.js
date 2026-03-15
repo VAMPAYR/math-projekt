@@ -25,7 +25,7 @@ topics: [
     { term: 'Exponent', definition: 'In $x^n$, $n$ is the exponent. It means multiply $x$ by itself $n$ times: $x^3 = x \\cdot x \\cdot x$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why polynomials?</strong> Polynomials are the simplest class of functions beyond constants and lines. They model real phenomena: $h(t) = -16t^2 + v_0 t + h_0$ (projectile height), revenue = price × quantity, and area = length × width.</p>
+    <p><strong>Why polynomials?</strong> Polynomials are the simplest class of functions beyond constants and lines. They model real phenomena: $h(t) = -16t^2 + v_0 t + h_0$ (projectile height), revenue = price �: quantity, and area = length �: width.</p>
     ${WHY('Why exponent rules?', '<p>Exponent rules are shortcuts derived from the definition. $x^3 \\cdot x^2 = (x \\cdot x \\cdot x)(x \\cdot x) = x^5 = x^{3+2}$. Once proven, these rules let us simplify without writing out all the factors.</p>')}
   ` },
   hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: Area of a Garden</h4>
@@ -425,7 +425,7 @@ topics: [
       <li>Cancel common factors (not common TERMS).</li>
       <li>State restrictions: values that make any original denominator zero.</li>
     </ol>
-    ${WHY('Why can we cancel factors but not terms?', '<p>$\\frac{2 \\cdot 3}{2 \\cdot 5} = \\frac{3}{5}$ ✓ (cancel factor 2). But $\\frac{2 + 3}{2 + 5} = \\frac{5}{7} \\neq \\frac{3}{5}$ ✗. Cancellation requires MULTIPLICATION, not addition. Formally: $\\frac{ac}{bc} = \\frac{a}{b}$ but $\\frac{a+c}{b+c} \\neq \\frac{a}{b}$ in general.</p>')}</div>
+    ${WHY('Why can we cancel factors but not terms?', '<p>$\\frac{2 \\cdot 3}{2 \\cdot 5} = \\frac{3}{5}$ ✓ (cancel factor 2). But $\\frac{2 + 3}{2 + 5} = \\frac{5}{7} \\neq \\frac{3}{5}$ �:. Cancellation requires MULTIPLICATION, not addition. Formally: $\\frac{ac}{bc} = \\frac{a}{b}$ but $\\frac{a+c}{b+c} \\neq \\frac{a}{b}$ in general.</p>')}</div>
     <div class="callout callout-key"><h4>Operations with Rational Expressions</h4>
     <ul>
       <li><strong>Multiplication:</strong> $\\frac{A}{B} \\cdot \\frac{C}{D} = \\frac{AC}{BD}$ (multiply across, then simplify).</li>

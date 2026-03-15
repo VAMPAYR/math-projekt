@@ -36,7 +36,7 @@
             <div class="callout callout-puzzle">
               <h4>🧩 Puzzle: Area of a Garden</h4>
               <p>A rectangular garden has area $x^2 + 5x + 6$ square meters. What are the possible dimensions?</p>
-              <p>If the area is length × width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
+              <p>If the area is length �: width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
               <p>So $x^2 + 5x + 6 = (x + 2)(x + 3)$. The garden is $(x+2)$ meters by $(x+3)$ meters.</p>
             </div>
           `

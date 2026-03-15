@@ -416,7 +416,7 @@
           <li><strong>Arc Length:</strong> $s = r\\theta$ (where $\\theta$ is in radians)</li>
           <li><strong>Sector Area:</strong> $A = \\frac{1}{2}r^2\\theta$ (where $\\theta$ is in radians)</li>
         </ul>
-        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction × circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
+        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction �: circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
 
         <div class="callout callout-key"><h4>Circle Equation (Coordinate Geometry)</h4>
         <p><strong>Standard form:</strong> $(x - h)^2 + (y - k)^2 = r^2$ with center $(h, k)$ and radius $r$.</p>
@@ -518,14 +518,14 @@
       ` },
       hook: { html: `
         <div class="callout callout-puzzle"><h4>🧩 Puzzle: Paint for a Room</h4>
-        <p>A room is $5$ m × $4$ m × $3$ m tall. You need to paint all four walls (not floor or ceiling). Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
+        <p>A room is $5$ m �: $4$ m �: $3$ m tall. You need to paint all four walls (not floor or ceiling). Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
       concept: { html: `
         <div class="callout callout-key"><h4>2D Area Formulas</h4>
         <ul>
           <li><strong>Rectangle:</strong> $A = lw$</li>
           <li><strong>Triangle:</strong> $A = \\frac{1}{2}bh$ (WHY: half a rectangle)</li>
           <li><strong>Parallelogram:</strong> $A = bh$ (WHY: shear a rectangle; area preserved)</li>
-          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (WHY: average of parallel sides × height)</li>
+          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (WHY: average of parallel sides �: height)</li>
           <li><strong>Circle:</strong> $A = \\pi r^2$</li>
         </ul></div>
 
@@ -614,7 +614,7 @@
         { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' }
       ],
       stepBuilder: [
-        { difficulty: 'hard', question: 'A rectangular tank is $8$ m × $5$ m × $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
+        { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
           { content: 'Total volume: $8 \\times 5 \\times 3 = 120$ m³.' },
           { content: 'Water volume: $8 \\times 5 \\times 2 = 80$ m³.' },
           { content: 'Empty volume: $120 - 80 = 40$ m³.' },
