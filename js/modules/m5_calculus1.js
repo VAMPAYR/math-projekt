@@ -199,7 +199,9 @@
           { difficulty: 'easy', question: '$\\lim_{x \\to 2} (x^2 - 1) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$2^2 - 1 = 3$.' },
           { difficulty: 'easy', question: '$\\lim_{x \\to 0} \\cos x =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' },
           { difficulty: 'medium', question: '$\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} =$?', accept: [2, '2'], placeholder: 'Number', explanation: 'Factor: $\\frac{(x-1)(x+1)}{x-1} = x+1 \\to 2$.' },
-          { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{5x}{x+3} =$?', accept: [5, '5'], placeholder: 'Number', explanation: 'Divide by $x$: $\\frac{5}{1+3/x} \\to 5$.' }
+          { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin(2x)}{x} =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\frac{\\sin(2x)}{x} = 2 \\cdot \\frac{\\sin(2x)}{2x} \\to 2 \\cdot 1 = 2$.' },
+          { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{5x}{x+3} =$?', accept: [5, '5'], placeholder: 'Number', explanation: 'Divide by $x$: $\\frac{5}{1+3/x} \\to 5$.' },
+          { difficulty: 'hard', question: '$\\lim_{x \\to 0^+} \\frac{1}{x} =$?', accept: ['infinity', 'inf', '\\infty'], placeholder: 'Answer', explanation: 'As $x \\to 0^+$, $1/x \\to +\\infty$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -414,7 +416,9 @@
           { difficulty: 'easy', question: '$\\frac{d}{dx}[x^3] =$?', accept: ['3x^2', '3x2'], placeholder: 'Expression', explanation: 'Power rule: $3x^2$.' },
           { difficulty: 'easy', question: '$\\frac{d}{dx}[7x] =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Constant multiple: $7$.' },
           { difficulty: 'medium', question: '$\\frac{d}{dx}[\\sin(3x)] =$?', accept: ['3cos(3x)', '3\\cos(3x)'], placeholder: 'Expression', explanation: 'Chain rule: $\\cos(3x) \\cdot 3 = 3\\cos(3x)$.' },
-          { difficulty: 'hard', question: 'Find $f\'(2)$ if $f(x) = x^3 - 4x$:', accept: [8, '8'], placeholder: 'Number', explanation: '$f\'(x) = 3x^2 - 4$. $f\'(2) = 12 - 4 = 8$.' }
+          { difficulty: 'medium', question: '$\\frac{d}{dx}[x^2 \\cdot e^x]$ at $x = 0$ equals:', accept: [0, '0'], placeholder: 'Number', explanation: 'Product rule: $2xe^x + x^2e^x$. At $x=0$: $0 + 0 = 0$.' },
+          { difficulty: 'hard', question: 'Find $f\'(2)$ if $f(x) = x^3 - 4x$:', accept: [8, '8'], placeholder: 'Number', explanation: '$f\'(x) = 3x^2 - 4$. $f\'(2) = 12 - 4 = 8$.' },
+          { difficulty: 'hard', question: '$\\frac{d}{dx}[\\ln(x^2)] =$?', accept: ['2/x', '2x^{-1}'], placeholder: 'Expression', explanation: 'Chain rule: $\\frac{2x}{x^2} = \\frac{2}{x}$. Or: $\\ln(x^2) = 2\\ln x$, so derivative is $2/x$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -534,7 +538,9 @@
         }],
         freeResponse: [
           { difficulty: 'easy', question: '$f(x) = x^2 - 6x + 5$. Find the x-coordinate of the vertex (minimum):', accept: [3, '3'], placeholder: 'Number', explanation: '$f\'(x) = 2x - 6 = 0 \\Rightarrow x = 3$.' },
+          { difficulty: 'easy', question: 'If $f\'(x) > 0$ on $(a, b)$, is $f$ increasing or decreasing?', accept: ['increasing'], placeholder: 'increasing/decreasing', explanation: 'Positive derivative = function is increasing.' },
           { difficulty: 'medium', question: '$f(x) = x^3 - 12x$. How many critical points?', accept: [2, '2'], placeholder: 'Number', explanation: '$f\'(x) = 3x^2 - 12 = 0$. $x^2 = 4$. $x = \\pm 2$. Two critical points.' },
+          { difficulty: 'medium', question: 'Find the inflection point of $f(x) = x^3$:', accept: [0, '0', 'x=0'], placeholder: 'x value', explanation: '$f\'\'(x) = 6x = 0 \\Rightarrow x = 0$. Sign changes: inflection point.' },
           { difficulty: 'hard', question: 'Find the absolute max of $f(x) = -x^2 + 4x$ on $[0, 5]$:', accept: [4, '4'], placeholder: 'Max value', explanation: '$f\'(x) = -2x + 4 = 0 \\Rightarrow x = 2$. $f(0) = 0, f(2) = 4, f(5) = -5$. Max = 4.' }
         ],
         stepBuilder: [
