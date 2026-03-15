@@ -208,7 +208,9 @@ topics: [
     { difficulty: 'hard', question: 'Amplitude of $y = 3\\sin(2x + \\pi)$:', accept: [3, '3'], placeholder: 'Number', explanation: 'Amplitude = $|A| = 3$.' },
     { difficulty: 'medium', question: 'Phase shift of $y = \\sin(x - \\pi/4)$:', accept: ['pi/4 right', 'pi/4', '\\pi/4'], placeholder: 'Shift', explanation: 'Phase shift: $h = \\pi/4$ units right.' },
     { difficulty: 'easy', question: '$\\sin(0°) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(0°) = 0$.' },
-    { difficulty: 'hard', question: 'Unit circle: coordinates at $\\theta = 2\\pi/3$:', accept: ['(-1/2, sqrt(3)/2)', '(-0.5, 0.866)'], placeholder: 'Point', explanation: '$\\cos(120°) = -1/2$, $\\sin(120°) = \\sqrt{3}/2$.' }
+    { difficulty: 'hard', question: 'Unit circle: coordinates at $\\theta = 2\\pi/3$:', accept: ['(-1/2, sqrt(3)/2)', '(-0.5, 0.866)'], placeholder: 'Point', explanation: '$\\cos(120°) = -1/2$, $\\sin(120°) = \\sqrt{3}/2$.' },
+    { difficulty: 'medium', question: 'Convert $\\pi/3$ rad to degrees:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$\\pi/3 \\times 180/\\pi = 60°$.' },
+    { difficulty: 'hard', question: 'Exact value: $\\sin(\\pi/4) =$?', accept: ['sqrt(2)/2', '\\sqrt{2}/2', '0.707'], placeholder: 'Value', explanation: '$\\sin(45°) = \\sqrt{2}/2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -389,7 +391,9 @@ topics: [
     { difficulty: 'hard', question: '$\\tan^2 x + 1 =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\cos^2 x$: $\\tan^2 x + 1 = \\sec^2 x$.' },
     { difficulty: 'medium', question: '$1 + \\cot^2 x =$?', accept: ['csc^2(x)', '\\csc^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\sin^2 x$: $1 + \\cot^2 x = \\csc^2 x$.' },
     { difficulty: 'easy', question: '$\\cos(90°) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\cos(90°) = 0$.' },
-    { difficulty: 'hard', question: 'Sum-to-product: $\\sin A + \\sin B = 2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{$ ? $})$', accept: [2, '2'], placeholder: 'Number', explanation: '$2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$.' }
+    { difficulty: 'hard', question: 'Sum-to-product: $\\sin A + \\sin B = 2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{$ ? $})$', accept: [2, '2'], placeholder: 'Number', explanation: '$2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$.' },
+    { difficulty: 'medium', question: 'Double angle: $\\sin(2x) = 2\\sin(x)$ ?', accept: ['cos(x)', '\\cos x'], placeholder: 'Factor', explanation: '$\\sin(2x) = 2\\sin x \\cos x$.' },
+    { difficulty: 'hard', question: '$\\cos(A + B) = \\cos A \\cos B - \\sin A$ ?', accept: ['sin B', '\\sin B'], placeholder: 'Term', explanation: 'Cosine sum: $\\cos A \\cos B - \\sin A \\sin B$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -515,7 +519,9 @@ topics: [
     { difficulty: 'easy', question: 'Inverse of $\\sin$:', accept: ['arcsin', 'sin^(-1)', 'asin'], placeholder: 'Function', explanation: '$\\arcsin$ or $\\sin^{-1}$.' },
     { difficulty: 'medium', question: 'In navigation, a bearing is measured from:', accept: ['north', 'due north'], placeholder: 'Direction', explanation: 'Bearings: measured clockwise from due north.' },
     { difficulty: 'easy', question: 'Period of $\\cos(x)$:', accept: ['2pi', '360', '2\\pi'], placeholder: 'Period', explanation: '$\\cos x$ repeats every $2\\pi$ radians.' },
-    { difficulty: 'hard', question: 'Damped oscillation: $y = e^{-t}\\cos(t)$ approaches what as $t \\to \\infty$?', accept: [0, '0'], placeholder: 'Value', explanation: '$e^{-t} \\to 0$, so the oscillation decays to 0.' }
+    { difficulty: 'hard', question: 'Damped oscillation: $y = e^{-t}\\cos(t)$ approaches what as $t \\to \\infty$?', accept: [0, '0'], placeholder: 'Value', explanation: '$e^{-t} \\to 0$, so the oscillation decays to 0.' },
+    { difficulty: 'easy', question: 'Tangent function is undefined when $\\cos(\\theta) =$?', accept: [0, '0'], placeholder: 'Value', explanation: '$\\tan = \\sin/\\cos$. Undefined when $\\cos = 0$.' },
+    { difficulty: 'hard', question: 'Heron\'s formula: $A = \\sqrt{s(s-a)(s-b)(s-c)}$ where $s =$?', accept: ['(a+b+c)/2', 'semiperimeter'], placeholder: 'Formula', explanation: '$s = (a + b + c)/2$: the semi-perimeter.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

@@ -185,7 +185,9 @@
     { difficulty: 'hard', question: '$\\int \\csc^2(x)\\,dx =$?', accept: ['-cot(x)+C', '-cotx+C'], placeholder: 'Expression', explanation: '$-\\cot x + C$.' },
     { difficulty: 'medium', question: '$\\int x \\cos(x)\\,dx$ by IBP: $u = x$, $dv = \\cos x\\,dx$. Result:', accept: ['xsin(x)+cos(x)+C', 'x sin x + cos x + C'], placeholder: 'Expression', explanation: '$x\\sin x - \\int \\sin x\\,dx = x\\sin x + \\cos x + C$.' },
     { difficulty: 'easy', question: '$\\int 3\\sin(x)\\,dx =$?', accept: ['-3cos(x)+C', '-3cosx+C'], placeholder: 'Expression', explanation: '$-3\\cos x + C$.' },
-    { difficulty: 'hard', question: 'Integration by parts: $\\int \\ln(x)\\,dx =$?', accept: ['xln(x)-x+C', 'x ln x - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$, $dv = dx$: $x\\ln x - x + C$.' }
+    { difficulty: 'hard', question: 'Integration by parts: $\\int \\ln(x)\\,dx =$?', accept: ['xln(x)-x+C', 'x ln x - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$, $dv = dx$: $x\\ln x - x + C$.' },
+    { difficulty: 'medium', question: '$\\int \\frac{e^x}{1+e^x}\\,dx =$?', accept: ['ln(1+e^x)+C', 'ln|1+e^x|+C'], placeholder: 'Expression', explanation: 'Let $u = 1 + e^x$: $\\ln|u| + C$.' },
+    { difficulty: 'hard', question: 'Reduction formula: $\\int \\sin^n x\\,dx$ reduces to $\\int \\sin^{n-2} x\\,dx$. This is called:', accept: ['reduction formula', 'recursive formula'], placeholder: 'Name', explanation: 'Reduction formulas: express $I_n$ in terms of $I_{n-2}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -385,7 +387,9 @@
     { difficulty: 'hard', question: 'Arc length formula: $L = \\int_a^b \\sqrt{1 + [f\'(x)]^2}\\,$ ?', accept: ['dx'], placeholder: 'Variable', explanation: '$L = \\int_a^b \\sqrt{1 + (f\'(x))^2}\\,dx$.' },
     { difficulty: 'hard', question: 'Surface area of revolution: $SA = 2\\pi \\int f(x) \\sqrt{1 + [f\'(x)]^2}\\,dx$. The extra factor is $2\\pi f(x)$ which represents:', accept: ['circumference'], placeholder: 'What?', explanation: 'Revolution creates a circle of circumference $2\\pi f(x)$ at each $x$.' },
     { difficulty: 'easy', question: '$\\int_0^2 x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[x^2/2]_0^2 = 2$.' },
-    { difficulty: 'hard', question: 'Work done: $W = \\int_a^b F(x)\\,dx$. If $F(x) = kx$ and spring constant $k = 5$, work from $x=0$ to $x=2$:', accept: [10, '10'], placeholder: 'Joules', explanation: '$\\int_0^2 5x\\,dx = [5x^2/2]_0^2 = 10$.' }
+    { difficulty: 'hard', question: 'Work done: $W = \\int_a^b F(x)\\,dx$. If $F(x) = kx$ and spring constant $k = 5$, work from $x=0$ to $x=2$:', accept: [10, '10'], placeholder: 'Joules', explanation: '$\\int_0^2 5x\\,dx = [5x^2/2]_0^2 = 10$.' },
+    { difficulty: 'medium', question: 'Hydrostatic pressure: $F = \\int_0^h \\rho g(h-y) w(y)\\,dy$. $\\rho$ is:', accept: ['density', 'fluid density'], placeholder: 'What?', explanation: '$\\rho$ = fluid density (kg/m\u00B3).' },
+    { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\int x \\rho(x)\\,dx}{\\int \\rho(x)\\,dx}$. For uniform density, this simplifies to:', accept: ['centroid', 'geometric center'], placeholder: 'What?', explanation: 'Uniform density: center of mass = centroid of region.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -519,7 +523,9 @@
     { difficulty: 'hard', question: 'Simpson\'s rule order of error: $O(h^$ ? $)$', accept: [4, '4'], placeholder: 'Power', explanation: 'Simpson\'s rule: $O(h^4)$ error. More accurate than trapezoidal ($O(h^2)$).' },
     { difficulty: 'medium', question: 'Improper integral $\\int_1^{\\infty} \\frac{1}{x^2}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-1/x]_1^{\\infty} = 0 - (-1) = 1$. Converges.' },
     { difficulty: 'medium', question: '$\\int \\frac{5}{x}\\,dx =$?', accept: ['5ln|x|+C', '5 ln|x| + C'], placeholder: 'Expression', explanation: '$5\\ln|x| + C$.' },
-    { difficulty: 'hard', question: 'Convergent or divergent: $\\int_1^{\\infty} \\frac{1}{x}\\,dx$?', accept: ['divergent', 'diverges'], placeholder: 'Result', explanation: '$[\\ln x]_1^{\\infty} = \\infty$. Diverges.' }
+    { difficulty: 'hard', question: 'Convergent or divergent: $\\int_1^{\\infty} \\frac{1}{x}\\,dx$?', accept: ['divergent', 'diverges'], placeholder: 'Result', explanation: '$[\\ln x]_1^{\\infty} = \\infty$. Diverges.' },
+    { difficulty: 'medium', question: '$\\int_0^1 \\frac{1}{x^{1/2}}\\,dx$ is improper because $f$ is undefined at $x =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^{-1/2}$ is undefined at $x = 0$. Improper integral (Type II).' },
+    { difficulty: 'hard', question: 'Comparison test: if $0 \\leq f \\leq g$ and $\\int g$ converges, then $\\int f$:', accept: ['converges'], placeholder: 'Result', explanation: 'Direct comparison: bounded by convergent integral implies convergence.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

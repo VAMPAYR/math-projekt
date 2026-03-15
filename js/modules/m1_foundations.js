@@ -99,7 +99,9 @@ topics: [
     { difficulty: 'hard', question: 'Cartesian product: $|\\{1,2\\} \\times \\{a,b,c\\}| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\times B| = |A| \\cdot |B| = 2 \\times 3 = 6$.' },
     { difficulty: 'medium', question: 'Symmetric difference $A \\triangle B$ contains elements in $A$ or $B$ but not:', accept: ['both'], placeholder: 'What?', explanation: '$A \\triangle B = (A \\setminus B) \\cup (B \\setminus A)$. Elements in exactly one set.' },
     { difficulty: 'medium', question: 'Is $\\emptyset$ a subset of itself?', accept: ['yes'], placeholder: 'yes/no', explanation: '$\\emptyset \\subseteq \\emptyset$ is vacuously true.' },
-    { difficulty: 'hard', question: '$|\\mathbb{N}| = |\\mathbb{Z}|$? (same cardinality?)', accept: ['yes'], placeholder: 'yes/no', explanation: 'Both are countably infinite. Bijection exists: $f(n) = 0, 1, -1, 2, -2, \\ldots$' }
+    { difficulty: 'hard', question: '$|\\mathbb{N}| = |\\mathbb{Z}|$? (same cardinality?)', accept: ['yes'], placeholder: 'yes/no', explanation: 'Both are countably infinite. Bijection exists: $f(n) = 0, 1, -1, 2, -2, \\ldots$' },
+    { difficulty: 'hard', question: 'Russell\'s paradox: the set of all sets that do not contain themselves leads to a:', accept: ['contradiction', 'paradox'], placeholder: 'Result', explanation: 'Let $R = \\{S : S \\notin S\\}$. If $R \\in R$, then $R \\notin R$ (contradiction). If $R \\notin R$, then $R \\in R$ (contradiction).' },
+    { difficulty: 'medium', question: 'Injection (one-to-one): $f(a) = f(b)$ implies:', accept: ['a = b', 'a=b'], placeholder: 'Conclusion', explanation: 'Injective: distinct inputs map to distinct outputs.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -282,7 +284,9 @@ topics: [
     { difficulty: 'hard', question: 'The associative property of multiplication: $(ab)c =$?', accept: ['a(bc)', 'abc'], placeholder: 'Expression', explanation: '$(ab)c = a(bc)$.' },
     { difficulty: 'medium', question: 'LCM of 12 and 18:', accept: [36, '36'], placeholder: 'Number', explanation: '$12 = 2^2 \\cdot 3$, $18 = 2 \\cdot 3^2$. LCM $= 2^2 \\cdot 3^2 = 36$.' },
     { difficulty: 'easy', question: '$(-3)(-4) =$?', accept: [12, '12'], placeholder: 'Number', explanation: 'Negative times negative is positive: $12$.' },
-    { difficulty: 'medium', question: 'The distributive property: $a(b + c) =$?', accept: ['ab+ac', 'ab + ac'], placeholder: 'Expression', explanation: '$a(b+c) = ab + ac$.' }
+    { difficulty: 'medium', question: 'The distributive property: $a(b + c) =$?', accept: ['ab+ac', 'ab + ac'], placeholder: 'Expression', explanation: '$a(b+c) = ab + ac$.' },
+    { difficulty: 'hard', question: 'Triangle inequality: $|a + b| \\leq |a| +$ ?', accept: ['|b|', 'abs(b)'], placeholder: 'Expression', explanation: '$|a + b| \\leq |a| + |b|$.' },
+    { difficulty: 'easy', question: 'Order of operations mnemonic: PEMDAS. P stands for:', accept: ['parentheses'], placeholder: 'Word', explanation: 'Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -527,7 +531,9 @@ topics: [
     { difficulty: 'medium', question: 'Contrapositive of $p \\to q$ is:', accept: ['not q -> not p', '~q -> ~p', 'neg q to neg p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to the original.' },
     { difficulty: 'hard', question: 'Biconditional $p \\iff q$ is true when both have the _____ truth value.', accept: ['same', 'equal'], placeholder: 'Property', explanation: '$p \\iff q$ is true when both are true or both are false.' },
     { difficulty: 'medium', question: 'Negation of $\\forall x: P(x)$ is:', accept: ['exists x: not P(x)', '\\exists x: \\neg P(x)'], placeholder: 'Statement', explanation: 'Negate universal: $\\exists x: \\neg P(x)$.' },
-    { difficulty: 'hard', question: 'Direct proof template: Assume hypothesis, show _____.', accept: ['conclusion'], placeholder: 'What?', explanation: 'Direct proof: assume $P$, derive $Q$. Done.' }
+    { difficulty: 'hard', question: 'Direct proof template: Assume hypothesis, show _____.', accept: ['conclusion'], placeholder: 'What?', explanation: 'Direct proof: assume $P$, derive $Q$. Done.' },
+    { difficulty: 'medium', question: 'Modus ponens: from $p \\to q$ and $p$, conclude:', accept: ['q'], placeholder: 'Conclusion', explanation: 'Modus ponens: if $p \\to q$ is true and $p$ is true, then $q$ is true.' },
+    { difficulty: 'hard', question: 'Proof by induction has two steps: base case and _____ step.', accept: ['inductive', 'induction'], placeholder: 'Step', explanation: 'Base case + inductive step (assume for $n$, prove for $n+1$).' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

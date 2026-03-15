@@ -182,7 +182,9 @@
     { difficulty: 'easy', question: 'Magnitude of $\\langle 0, 0, 5 \\rangle$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{0 + 0 + 25} = 5$.' },
     { difficulty: 'medium', question: 'Two non-parallel planes intersect in a:', accept: ['line'], placeholder: 'Shape', explanation: 'Two non-parallel planes intersect along a line.' },
     { difficulty: 'easy', question: 'Position vector of point $(3, -1, 2)$:', accept: ['<3,-1,2>', '<3, -1, 2>'], placeholder: 'Vector', explanation: '$\\langle 3, -1, 2 \\rangle$.' },
-    { difficulty: 'hard', question: 'Angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$:', accept: ['90', 'pi/2'], placeholder: 'Degrees', explanation: 'Dot product = 0. $\\cos\\theta = 0$. $\\theta = 90°$.' }
+    { difficulty: 'hard', question: 'Angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$:', accept: ['90', 'pi/2'], placeholder: 'Degrees', explanation: 'Dot product = 0. $\\cos\\theta = 0$. $\\theta = 90°$.' },
+    { difficulty: 'medium', question: 'Parametric curve: $x = \\cos t, y = \\sin t$ traces a:', accept: ['circle'], placeholder: 'Shape', explanation: '$x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$. Unit circle.' },
+    { difficulty: 'hard', question: 'The gradient $\\nabla f$ points in the direction of:', accept: ['steepest ascent', 'maximum increase', 'greatest increase'], placeholder: 'Direction', explanation: 'Gradient: direction of steepest increase.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -333,7 +335,9 @@
     { difficulty: 'hard', question: 'Hessian matrix is the matrix of:', accept: ['second partial derivatives', 'second derivatives'], placeholder: 'What?', explanation: '$H_{ij} = f_{x_i x_j}$. Second-order partial derivatives.' },
     { difficulty: 'hard', question: 'Saddle point: $D = f_{xx}f_{yy} - (f_{xy})^2$. If $D < 0$, the critical point is a:', accept: ['saddle point', 'saddle'], placeholder: 'Type', explanation: '$D < 0$: saddle point (neither max nor min).' },
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(5x^2 y) =$?', accept: ['10xy'], placeholder: 'Expression', explanation: 'Hold $y$ constant: $10xy$.' },
-    { difficulty: 'hard', question: 'Clairaut\'s theorem: $f_{xy} =$ ? for smooth functions.', accept: ['f_yx', 'f_{yx}'], placeholder: 'Expression', explanation: '$f_{xy} = f_{yx}$: mixed partials are equal (when continuous).' }
+    { difficulty: 'hard', question: 'Clairaut\'s theorem: $f_{xy} =$ ? for smooth functions.', accept: ['f_yx', 'f_{yx}'], placeholder: 'Expression', explanation: '$f_{xy} = f_{yx}$: mixed partials are equal (when continuous).' },
+    { difficulty: 'medium', question: 'The directional derivative $D_{\\vec{u}}f = \\nabla f \\cdot$ ?', accept: ['u', '\\vec{u}', 'unit vector u'], placeholder: 'Vector', explanation: '$D_{\\vec{u}}f = \\nabla f \\cdot \\hat{u}$.' },
+    { difficulty: 'hard', question: 'Level curves of $f(x,y) = c$ are perpendicular to:', accept: ['gradient', '\\nabla f'], placeholder: 'What?', explanation: 'Gradient is perpendicular to level curves.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -455,7 +459,9 @@
     { difficulty: 'medium', question: 'Type of integral: $\\int\\int\\int dV$ computes:', accept: ['volume'], placeholder: 'What?', explanation: 'Triple integral of 1 gives volume of the region.' },
     { difficulty: 'hard', question: 'In cylindrical coords: $x = r\\cos\\theta$, $y = r\\sin\\theta$, $z = $ ?', accept: ['z'], placeholder: 'Variable', explanation: '$z$ stays the same in cylindrical coordinates.' },
     { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 1\\,dy\\,dx =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$3 \\times 2 = 6$. Area of rectangle.' },
-    { difficulty: 'hard', question: 'Lagrange multiplier condition: $\\nabla f = \\lambda \\nabla$ ?', accept: ['g', '\\nabla g'], placeholder: 'Function', explanation: '$\\nabla f = \\lambda \\nabla g$ where $g$ is the constraint.' }
+    { difficulty: 'hard', question: 'Lagrange multiplier condition: $\\nabla f = \\lambda \\nabla$ ?', accept: ['g', '\\nabla g'], placeholder: 'Function', explanation: '$\\nabla f = \\lambda \\nabla g$ where $g$ is the constraint.' },
+    { difficulty: 'medium', question: 'In polar: $r = 2\\cos\\theta$ traces a:', accept: ['circle'], placeholder: 'Shape', explanation: '$r = 2\\cos\\theta$: circle of radius 1 centered at $(1,0)$.' },
+    { difficulty: 'hard', question: 'Change of variables: $\\iint f(x,y)\\,dA = \\iint f(u,v)|J|\\,du\\,dv$. $|J|$ is the:', accept: ['Jacobian determinant', 'abs Jacobian'], placeholder: 'Factor', explanation: '$|J| = |\\frac{\\partial(x,y)}{\\partial(u,v)}|$: absolute value of the Jacobian.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

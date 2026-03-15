@@ -114,7 +114,9 @@ topics: [
     { difficulty: 'hard', question: '$\\int_0^1 \\ln(x)\\,dx =$?', accept: [-1, '-1'], placeholder: 'Number', explanation: 'IBP: $[x\\ln x - x]_0^1 = (0 - 1) - \\lim_{x \\to 0^+}(x\\ln x - x) = -1$.' },
     { difficulty: 'medium', question: 'Trig integrals: $\\int \\sin^2 x\\,dx$ uses the identity $\\sin^2 x =$?', accept: ['(1-cos(2x))/2', '(1 - cos 2x)/2'], placeholder: 'Identity', explanation: 'Power reduction: $\\sin^2 x = \\frac{1 - \\cos 2x}{2}$.' },
     { difficulty: 'easy', question: '$\\int \\cos(x)\\,dx =$?', accept: ['sin(x)+C', 'sinx+C'], placeholder: 'Expression', explanation: '$\\sin x + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{\\ln x}{x}\\,dx =$?', accept: ['(ln x)^2/2+C', '(lnx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$: $\\int u\\,du = u^2/2 + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{\\ln x}{x}\\,dx =$?', accept: ['(ln x)^2/2+C', '(lnx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$: $\\int u\\,du = u^2/2 + C$.' },
+    { difficulty: 'medium', question: '$\\int \\sin(x)\\cos(x)\\,dx =$?', accept: ['sin^2(x)/2+C', '-cos^2(x)/2+C', '(sinx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\sin x$: $u^2/2 + C$. Or use $\\sin(2x)/2$.' },
+    { difficulty: 'hard', question: 'Partial fractions for integration: $\\frac{1}{x^2 - 1} = \\frac{1}{2}\\left(\\frac{1}{x-1} - \\frac{1}{x+1}\\right)$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Verified: $\\frac{1}{2} \\cdot \\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{1}{x^2-1}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -240,7 +242,9 @@ topics: [
     { difficulty: 'hard', question: 'Absolute convergence implies:', accept: ['convergence', 'conditional convergence'], placeholder: 'Property', explanation: 'If $\\sum |a_n|$ converges, then $\\sum a_n$ converges.' },
     { difficulty: 'hard', question: 'Limit comparison test: compare $\\sum 1/(n^2+1)$ with $\\sum 1/n^2$. Ratio $\\to$?', accept: [1, '1'], placeholder: 'Limit', explanation: '$\\lim n^2/(n^2+1) = 1 > 0$. Since $\\sum 1/n^2$ converges, so does the original.' },
     { difficulty: 'easy', question: 'Recursive sequence: $a_1 = 1, a_{n+1} = a_n + 3$. $a_4 =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$a_2 = 4, a_3 = 7, a_4 = 10$.' },
-    { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^3}$ converge?', accept: ['yes', 'converges'], placeholder: 'Result', explanation: 'p-series with $p = 3 > 1$: converges.' }
+    { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^3}$ converge?', accept: ['yes', 'converges'], placeholder: 'Result', explanation: 'p-series with $p = 3 > 1$: converges.' },
+    { difficulty: 'medium', question: 'Alternating series test: $a_n > 0$, $a_n$ decreasing, $a_n \\to 0$. The series:', accept: ['converges'], placeholder: 'Result', explanation: 'Alternating series test (Leibniz): all three conditions met implies convergence.' },
+    { difficulty: 'hard', question: 'Root test: $\\lim \\sqrt[n]{|a_n|} = L$. If $L < 1$:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Root test: $L < 1$ convergence, $L > 1$ divergence.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -390,7 +394,9 @@ topics: [
     { difficulty: 'hard', question: 'Radius of convergence of $\\sum x^n/n!$:', accept: ['infinity', 'inf'], placeholder: 'Radius', explanation: 'Ratio: $\\lim |x/(n+1)| = 0 < 1$ for all $x$. $R = \\infty$.' },
     { difficulty: 'medium', question: 'Power series: $\\sum a_n(x-c)^n$. The value $c$ is the:', accept: ['center'], placeholder: 'Name', explanation: 'Power series centered at $c$.' },
     { difficulty: 'easy', question: 'Geometric series with $a = 1, r = 1/2$: $S = \\frac{a}{1-r} =$?', accept: [2, '2'], placeholder: 'Sum', explanation: '$1/(1 - 1/2) = 1/(1/2) = 2$.' },
-    { difficulty: 'hard', question: 'Integral test: $\\sum a_n$ and $\\int f(x)\\,dx$ have the same:', accept: ['convergence behavior', 'convergence'], placeholder: 'Property', explanation: 'Integral test: series and integral simultaneously converge or diverge.' }
+    { difficulty: 'hard', question: 'Integral test: $\\sum a_n$ and $\\int f(x)\\,dx$ have the same:', accept: ['convergence behavior', 'convergence'], placeholder: 'Property', explanation: 'Integral test: series and integral simultaneously converge or diverge.' },
+    { difficulty: 'medium', question: 'MacLaurin series for $\\cos x$ starts: $1 - x^2/2! + x^4/4! -$ ...', accept: ['yes', 'correct', 'true'], placeholder: 'Correct?', explanation: '$\\cos x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{2n}}{(2n)!}$.' },
+    { difficulty: 'hard', question: 'Interval of convergence may differ from radius by:', accept: ['endpoints', 'boundary behavior'], placeholder: 'What?', explanation: 'Radius gives open interval. Endpoints must be tested separately.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

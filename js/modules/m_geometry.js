@@ -200,7 +200,9 @@
     { difficulty: 'hard', question: 'Number of diagonals in a convex $n$-gon: $\\frac{n(n-3)}{2}$. For $n = 6$:', accept: [9, '9'], placeholder: 'Number', explanation: '$6(6-3)/2 = 6 \\times 3/2 = 9$.' },
     { difficulty: 'medium', question: 'A regular polygon has all sides equal and all angles:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Regular polygon: equilateral and equiangular.' },
     { difficulty: 'easy', question: 'Straight angle measures:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Straight angle: $180°$.' },
-    { difficulty: 'hard', question: 'Interior angle of a regular $n$-gon: $\\frac{(n-2) \\times 180}{n}$. For $n = 8$:', accept: [135, '135'], placeholder: 'Degrees', explanation: '$(8-2)(180)/8 = 6(180)/8 = 135°$.' }
+    { difficulty: 'hard', question: 'Interior angle of a regular $n$-gon: $\\frac{(n-2) \\times 180}{n}$. For $n = 8$:', accept: [135, '135'], placeholder: 'Degrees', explanation: '$(8-2)(180)/8 = 6(180)/8 = 135°$.' },
+    { difficulty: 'medium', question: 'Corresponding angles formed by transversal cutting parallel lines are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Corresponding angles: congruent when lines are parallel.' },
+    { difficulty: 'hard', question: 'The angle inscribed in a semicircle is always:', accept: [90, '90', 'right'], placeholder: 'Degrees', explanation: 'Thales theorem: angle in a semicircle is $90°$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -382,7 +384,9 @@
     { difficulty: 'hard', question: 'If two triangles are congruent by SSS, what theorem is used?', accept: ['SSS', 'side-side-side'], placeholder: 'Theorem', explanation: 'SSS: if all three sides are equal, the triangles are congruent.' },
     { difficulty: 'hard', question: 'Medians of a triangle intersect at the:', accept: ['centroid'], placeholder: 'Point', explanation: 'Centroid: intersection of medians. Divides each median 2:1.' },
     { difficulty: 'easy', question: 'Isosceles triangle has how many equal sides?', accept: [2, '2'], placeholder: 'Number', explanation: 'Isosceles: exactly two equal sides.' },
-    { difficulty: 'hard', question: 'Triangle inequality: for sides $a, b, c$: $a + b$ must be _____ than $c$.', accept: ['greater'], placeholder: 'Relation', explanation: 'Triangle inequality: the sum of any two sides exceeds the third.' }
+    { difficulty: 'hard', question: 'Triangle inequality: for sides $a, b, c$: $a + b$ must be _____ than $c$.', accept: ['greater'], placeholder: 'Relation', explanation: 'Triangle inequality: the sum of any two sides exceeds the third.' },
+    { difficulty: 'medium', question: 'Scalene triangle has _____ equal sides.', accept: [0, '0', 'no', 'zero'], placeholder: 'Number', explanation: 'Scalene: all three sides are different lengths.' },
+    { difficulty: 'hard', question: 'SAS congruence: if two sides and the _____ angle are equal, triangles are congruent.', accept: ['included'], placeholder: 'Which angle?', explanation: 'SAS: the included angle (between the two sides).' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -533,7 +537,9 @@
     { difficulty: 'hard', question: 'Surface area of sphere with radius 4:', accept: ['64pi', '201.06'], placeholder: 'Area', explanation: '$SA = 4\\pi r^2 = 4\\pi(16) = 64\\pi$.' },
     { difficulty: 'hard', question: 'Volume of cone: $V = \\frac{1}{3}\\pi r^2 h$. If $r = 3, h = 4$:', accept: ['12pi', '37.7'], placeholder: 'Volume', explanation: '$\\frac{1}{3}\\pi(9)(4) = 12\\pi$.' },
     { difficulty: 'easy', question: 'Area of circle with radius 7:', accept: ['49pi', '153.94'], placeholder: 'Area', explanation: '$A = \\pi r^2 = 49\\pi$.' },
-    { difficulty: 'hard', question: 'Surface area of a cylinder: $2\\pi r^2 + 2\\pi rh$. If $r=3, h=5$:', accept: ['48pi', '150.80'], placeholder: 'Area', explanation: '$2\\pi(9) + 2\\pi(15) = 18\\pi + 30\\pi = 48\\pi$.' }
+    { difficulty: 'hard', question: 'Surface area of a cylinder: $2\\pi r^2 + 2\\pi rh$. If $r=3, h=5$:', accept: ['48pi', '150.80'], placeholder: 'Area', explanation: '$2\\pi(9) + 2\\pi(15) = 18\\pi + 30\\pi = 48\\pi$.' },
+    { difficulty: 'medium', question: 'Sector area: $A = \\frac{1}{2}r^2\\theta$ (radians). If $r = 4, \\theta = \\pi/3$:', accept: ['8pi/3', '8.38'], placeholder: 'Area', explanation: '$\\frac{1}{2}(16)(\\pi/3) = 8\\pi/3$.' },
+    { difficulty: 'hard', question: 'Euler formula for polyhedra: $V - E + F =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$V - E + F = 2$. Vertices minus edges plus faces.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [
