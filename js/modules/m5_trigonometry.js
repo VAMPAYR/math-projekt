@@ -206,7 +206,9 @@ topics: [
     { difficulty: 'easy', question: '$\\sin(90°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin(90°) = 1$.' },
     { difficulty: 'medium', question: 'Reference angle for $240°$:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$240° - 180° = 60°$.' },
     { difficulty: 'hard', question: 'Amplitude of $y = 3\\sin(2x + \\pi)$:', accept: [3, '3'], placeholder: 'Number', explanation: 'Amplitude = $|A| = 3$.' },
-    { difficulty: 'medium', question: 'Phase shift of $y = \\sin(x - \\pi/4)$:', accept: ['pi/4 right', 'pi/4', '\\pi/4'], placeholder: 'Shift', explanation: 'Phase shift: $h = \\pi/4$ units right.' }
+    { difficulty: 'medium', question: 'Phase shift of $y = \\sin(x - \\pi/4)$:', accept: ['pi/4 right', 'pi/4', '\\pi/4'], placeholder: 'Shift', explanation: 'Phase shift: $h = \\pi/4$ units right.' },
+    { difficulty: 'easy', question: '$\\sin(0°) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(0°) = 0$.' },
+    { difficulty: 'hard', question: 'Unit circle: coordinates at $\\theta = 2\\pi/3$:', accept: ['(-1/2, sqrt(3)/2)', '(-0.5, 0.866)'], placeholder: 'Point', explanation: '$\\cos(120°) = -1/2$, $\\sin(120°) = \\sqrt{3}/2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -385,7 +387,9 @@ topics: [
     { difficulty: 'medium', question: 'Half-angle: $\\cos^2(x) = \\frac{1 + \\cos(2x)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Power reduction: $\\cos^2 x = \\frac{1 + \\cos(2x)}{2}$.' },
     { difficulty: 'easy', question: '$\\sin^2(x) + \\cos^2(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' },
     { difficulty: 'hard', question: '$\\tan^2 x + 1 =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\cos^2 x$: $\\tan^2 x + 1 = \\sec^2 x$.' },
-    { difficulty: 'medium', question: '$1 + \\cot^2 x =$?', accept: ['csc^2(x)', '\\csc^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\sin^2 x$: $1 + \\cot^2 x = \\csc^2 x$.' }
+    { difficulty: 'medium', question: '$1 + \\cot^2 x =$?', accept: ['csc^2(x)', '\\csc^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\sin^2 x$: $1 + \\cot^2 x = \\csc^2 x$.' },
+    { difficulty: 'easy', question: '$\\cos(90°) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\cos(90°) = 0$.' },
+    { difficulty: 'hard', question: 'Sum-to-product: $\\sin A + \\sin B = 2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{$ ? $})$', accept: [2, '2'], placeholder: 'Number', explanation: '$2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -509,7 +513,9 @@ topics: [
     { difficulty: 'hard', question: 'Area of triangle using trig: $A = \\frac{1}{2}ab\\sin(C)$. If $a=5, b=8, C=30°$, area $=$?', accept: [10, '10'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(5)(8)\\sin(30°) = 20 \\times 0.5 = 10$.' },
     { difficulty: 'hard', question: 'In triangle: $a/\\sin A = b/\\sin B$. This is the law of:', accept: ['sines', 'law of sines'], placeholder: 'Name', explanation: 'Law of Sines: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$.' },
     { difficulty: 'easy', question: 'Inverse of $\\sin$:', accept: ['arcsin', 'sin^(-1)', 'asin'], placeholder: 'Function', explanation: '$\\arcsin$ or $\\sin^{-1}$.' },
-    { difficulty: 'medium', question: 'In navigation, a bearing is measured from:', accept: ['north', 'due north'], placeholder: 'Direction', explanation: 'Bearings: measured clockwise from due north.' }
+    { difficulty: 'medium', question: 'In navigation, a bearing is measured from:', accept: ['north', 'due north'], placeholder: 'Direction', explanation: 'Bearings: measured clockwise from due north.' },
+    { difficulty: 'easy', question: 'Period of $\\cos(x)$:', accept: ['2pi', '360', '2\\pi'], placeholder: 'Period', explanation: '$\\cos x$ repeats every $2\\pi$ radians.' },
+    { difficulty: 'hard', question: 'Damped oscillation: $y = e^{-t}\\cos(t)$ approaches what as $t \\to \\infty$?', accept: [0, '0'], placeholder: 'Value', explanation: '$e^{-t} \\to 0$, so the oscillation decays to 0.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

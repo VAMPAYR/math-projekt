@@ -180,7 +180,9 @@
     { difficulty: 'medium', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5, 4/5>', '<0.6, 0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' },
     { difficulty: 'hard', question: 'Volume of parallelepiped formed by $\\vec{a}, \\vec{b}, \\vec{c}$: $|\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. This is the scalar:', accept: ['triple product'], placeholder: 'Name', explanation: 'Scalar triple product gives the volume.' },
     { difficulty: 'easy', question: 'Magnitude of $\\langle 0, 0, 5 \\rangle$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{0 + 0 + 25} = 5$.' },
-    { difficulty: 'medium', question: 'Two non-parallel planes intersect in a:', accept: ['line'], placeholder: 'Shape', explanation: 'Two non-parallel planes intersect along a line.' }
+    { difficulty: 'medium', question: 'Two non-parallel planes intersect in a:', accept: ['line'], placeholder: 'Shape', explanation: 'Two non-parallel planes intersect along a line.' },
+    { difficulty: 'easy', question: 'Position vector of point $(3, -1, 2)$:', accept: ['<3,-1,2>', '<3, -1, 2>'], placeholder: 'Vector', explanation: '$\\langle 3, -1, 2 \\rangle$.' },
+    { difficulty: 'hard', question: 'Angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$:', accept: ['90', 'pi/2'], placeholder: 'Degrees', explanation: 'Dot product = 0. $\\cos\\theta = 0$. $\\theta = 90°$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -329,7 +331,9 @@
     { difficulty: 'medium', question: 'Second partial: $f_{xy}$ of $f = x^2 y^3$:', accept: ['6xy^2', '6x*y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy^3$. $(f_x)_y = 6xy^2$.' },
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial y}(3x + 5y^2) =$?', accept: ['10y'], placeholder: 'Expression', explanation: 'Hold $x$ constant: $10y$.' },
     { difficulty: 'hard', question: 'Hessian matrix is the matrix of:', accept: ['second partial derivatives', 'second derivatives'], placeholder: 'What?', explanation: '$H_{ij} = f_{x_i x_j}$. Second-order partial derivatives.' },
-    { difficulty: 'hard', question: 'Saddle point: $D = f_{xx}f_{yy} - (f_{xy})^2$. If $D < 0$, the critical point is a:', accept: ['saddle point', 'saddle'], placeholder: 'Type', explanation: '$D < 0$: saddle point (neither max nor min).' }
+    { difficulty: 'hard', question: 'Saddle point: $D = f_{xx}f_{yy} - (f_{xy})^2$. If $D < 0$, the critical point is a:', accept: ['saddle point', 'saddle'], placeholder: 'Type', explanation: '$D < 0$: saddle point (neither max nor min).' },
+    { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(5x^2 y) =$?', accept: ['10xy'], placeholder: 'Expression', explanation: 'Hold $y$ constant: $10xy$.' },
+    { difficulty: 'hard', question: 'Clairaut\'s theorem: $f_{xy} =$ ? for smooth functions.', accept: ['f_yx', 'f_{yx}'], placeholder: 'Expression', explanation: '$f_{xy} = f_{yx}$: mixed partials are equal (when continuous).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -449,7 +453,9 @@
     { difficulty: 'hard', question: 'Volume of solid under $z = 4 - x^2 - y^2$ above $xy$-plane:', accept: ['8pi', '25.13'], placeholder: 'Volume', explanation: 'Use polar: $\\int_0^{2\\pi}\\int_0^2 (4-r^2)r\\,dr\\,d\\theta = 2\\pi[2r^2 - r^4/4]_0^2 = 8\\pi$.' },
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 1\\,dx = 1$.' },
     { difficulty: 'medium', question: 'Type of integral: $\\int\\int\\int dV$ computes:', accept: ['volume'], placeholder: 'What?', explanation: 'Triple integral of 1 gives volume of the region.' },
-    { difficulty: 'hard', question: 'In cylindrical coords: $x = r\\cos\\theta$, $y = r\\sin\\theta$, $z = $ ?', accept: ['z'], placeholder: 'Variable', explanation: '$z$ stays the same in cylindrical coordinates.' }
+    { difficulty: 'hard', question: 'In cylindrical coords: $x = r\\cos\\theta$, $y = r\\sin\\theta$, $z = $ ?', accept: ['z'], placeholder: 'Variable', explanation: '$z$ stays the same in cylindrical coordinates.' },
+    { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 1\\,dy\\,dx =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$3 \\times 2 = 6$. Area of rectangle.' },
+    { difficulty: 'hard', question: 'Lagrange multiplier condition: $\\nabla f = \\lambda \\nabla$ ?', accept: ['g', '\\nabla g'], placeholder: 'Function', explanation: '$\\nabla f = \\lambda \\nabla g$ where $g$ is the constraint.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

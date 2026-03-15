@@ -198,7 +198,9 @@
     { difficulty: 'medium', question: 'Alternate interior angles formed by a transversal are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'When a transversal cuts parallel lines, alternate interior angles are congruent.' },
     { difficulty: 'hard', question: 'Sum of exterior angles of any convex polygon:', accept: [360, '360'], placeholder: 'Degrees', explanation: 'The sum of exterior angles of any convex polygon is always $360°$.' },
     { difficulty: 'hard', question: 'Number of diagonals in a convex $n$-gon: $\\frac{n(n-3)}{2}$. For $n = 6$:', accept: [9, '9'], placeholder: 'Number', explanation: '$6(6-3)/2 = 6 \\times 3/2 = 9$.' },
-    { difficulty: 'medium', question: 'A regular polygon has all sides equal and all angles:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Regular polygon: equilateral and equiangular.' }
+    { difficulty: 'medium', question: 'A regular polygon has all sides equal and all angles:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Regular polygon: equilateral and equiangular.' },
+    { difficulty: 'easy', question: 'Straight angle measures:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Straight angle: $180°$.' },
+    { difficulty: 'hard', question: 'Interior angle of a regular $n$-gon: $\\frac{(n-2) \\times 180}{n}$. For $n = 8$:', accept: [135, '135'], placeholder: 'Degrees', explanation: '$(8-2)(180)/8 = 6(180)/8 = 135°$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -378,7 +380,9 @@
     { difficulty: 'hard', question: 'In a right triangle with legs $a$ and $b$: $a^2 + b^2 =$?', accept: ['c^2', 'hypotenuse^2'], placeholder: 'Expression', explanation: 'Pythagorean theorem: $a^2 + b^2 = c^2$.' },
     { difficulty: 'medium', question: 'Similar triangles have proportional sides and:', accept: ['equal angles', 'congruent angles'], placeholder: 'Property', explanation: 'Similar: same shape, different size. Angles equal, sides proportional.' },
     { difficulty: 'hard', question: 'If two triangles are congruent by SSS, what theorem is used?', accept: ['SSS', 'side-side-side'], placeholder: 'Theorem', explanation: 'SSS: if all three sides are equal, the triangles are congruent.' },
-    { difficulty: 'hard', question: 'Medians of a triangle intersect at the:', accept: ['centroid'], placeholder: 'Point', explanation: 'Centroid: intersection of medians. Divides each median 2:1.' }
+    { difficulty: 'hard', question: 'Medians of a triangle intersect at the:', accept: ['centroid'], placeholder: 'Point', explanation: 'Centroid: intersection of medians. Divides each median 2:1.' },
+    { difficulty: 'easy', question: 'Isosceles triangle has how many equal sides?', accept: [2, '2'], placeholder: 'Number', explanation: 'Isosceles: exactly two equal sides.' },
+    { difficulty: 'hard', question: 'Triangle inequality: for sides $a, b, c$: $a + b$ must be _____ than $c$.', accept: ['greater'], placeholder: 'Relation', explanation: 'Triangle inequality: the sum of any two sides exceeds the third.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -527,7 +531,9 @@
     { difficulty: 'medium', question: 'Circumference of circle with diameter 10:', accept: ['10pi', '31.42'], placeholder: 'Length', explanation: '$C = \\pi d = 10\\pi$.' },
     { difficulty: 'hard', question: 'Volume of sphere with radius 3:', accept: ['36pi', '113.1'], placeholder: 'Volume', explanation: '$V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi(27) = 36\\pi$.' },
     { difficulty: 'hard', question: 'Surface area of sphere with radius 4:', accept: ['64pi', '201.06'], placeholder: 'Area', explanation: '$SA = 4\\pi r^2 = 4\\pi(16) = 64\\pi$.' },
-    { difficulty: 'hard', question: 'Volume of cone: $V = \\frac{1}{3}\\pi r^2 h$. If $r = 3, h = 4$:', accept: ['12pi', '37.7'], placeholder: 'Volume', explanation: '$\\frac{1}{3}\\pi(9)(4) = 12\\pi$.' }
+    { difficulty: 'hard', question: 'Volume of cone: $V = \\frac{1}{3}\\pi r^2 h$. If $r = 3, h = 4$:', accept: ['12pi', '37.7'], placeholder: 'Volume', explanation: '$\\frac{1}{3}\\pi(9)(4) = 12\\pi$.' },
+    { difficulty: 'easy', question: 'Area of circle with radius 7:', accept: ['49pi', '153.94'], placeholder: 'Area', explanation: '$A = \\pi r^2 = 49\\pi$.' },
+    { difficulty: 'hard', question: 'Surface area of a cylinder: $2\\pi r^2 + 2\\pi rh$. If $r=3, h=5$:', accept: ['48pi', '150.80'], placeholder: 'Area', explanation: '$2\\pi(9) + 2\\pi(15) = 18\\pi + 30\\pi = 48\\pi$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

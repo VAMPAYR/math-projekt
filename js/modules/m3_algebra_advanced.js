@@ -146,7 +146,9 @@
     { difficulty: 'hard', question: 'Rational root theorem: candidate roots for $x^3 - 2x + 1$:', accept: ['1, -1', '-1, 1', 'pm 1'], placeholder: 'Roots', explanation: 'Constant = 1, leading = 1. Candidates: $\\pm 1$.' },
     { difficulty: 'medium', question: 'Degree of $7x^5 - x^3 + 2$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Highest exponent: 5.' },
     { difficulty: 'hard', question: 'How many turning points can a degree-4 polynomial have at most?', accept: [3, '3'], placeholder: 'Number', explanation: 'At most $n - 1 = 3$ turning points.' },
-    { difficulty: 'medium', question: 'Long division: $(x^3 + 1) \\div (x + 1)$ quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Quotient', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' }
+    { difficulty: 'medium', question: 'Long division: $(x^3 + 1) \\div (x + 1)$ quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Quotient', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' },
+    { difficulty: 'easy', question: 'A linear polynomial has degree:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree 1: linear.' },
+    { difficulty: 'medium', question: 'Multiplicity of root $x = 2$ in $(x-2)^3(x+1)$:', accept: [3, '3'], placeholder: 'Number', explanation: 'Exponent on $(x-2)$: multiplicity 3.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -410,7 +412,9 @@
     { difficulty: 'medium', question: 'If the vertex of $y = a(x-h)^2 + k$ opens downward, then $a$ is:', accept: ['negative', 'a < 0'], placeholder: 'Sign', explanation: '$a < 0$: parabola opens downward.' },
     { difficulty: 'easy', question: 'Sum of roots of $x^2 - 5x + 6 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum of roots = $-b/a = 5$.' },
     { difficulty: 'hard', question: 'Discriminant of $3x^2 + 2x + 1$:', accept: [-8, '-8'], placeholder: 'Number', explanation: '$b^2 - 4ac = 4 - 12 = -8 < 0$. No real roots.' },
-    { difficulty: 'medium', question: 'For $ax^2 + bx + c$: axis of symmetry $x =$?', accept: ['-b/(2a)', '-b/2a'], placeholder: 'Formula', explanation: '$x = -b/(2a)$.' }
+    { difficulty: 'medium', question: 'For $ax^2 + bx + c$: axis of symmetry $x =$?', accept: ['-b/(2a)', '-b/2a'], placeholder: 'Formula', explanation: '$x = -b/(2a)$.' },
+    { difficulty: 'easy', question: 'Roots of $x^2 - 1 = 0$:', accept: ['1, -1', '-1, 1'], placeholder: 'Roots', explanation: '$(x-1)(x+1) = 0$. $x = \\pm 1$.' },
+    { difficulty: 'medium', question: 'Vertex form $y = 2(x-3)^2 + 1$: vertex is:', accept: ['(3,1)', '(3, 1)'], placeholder: 'Point', explanation: 'Vertex: $(h, k) = (3, 1)$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -645,7 +649,9 @@
     { difficulty: 'medium', question: '$e^{\\ln(5)} =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$e$ and $\\ln$ are inverses. $e^{\\ln 5} = 5$.' },
     { difficulty: 'easy', question: '$\\log_2(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$2^0 = 1$. $\\log_2(1) = 0$.' },
     { difficulty: 'hard', question: '$\\ln(e^3) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$\\ln$ and $e$ are inverses: $\\ln(e^3) = 3$.' },
-    { difficulty: 'hard', question: '$\\log_2(8) + \\log_2(4) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\log_2(8) = 3$, $\\log_2(4) = 2$. $3 + 2 = 5$. Or: $\\log_2(32) = 5$.' }
+    { difficulty: 'hard', question: '$\\log_2(8) + \\log_2(4) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\log_2(8) = 3$, $\\log_2(4) = 2$. $3 + 2 = 5$. Or: $\\log_2(32) = 5$.' },
+    { difficulty: 'easy', question: '$\\log_b(b) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$b^1 = b$. $\\log_b(b) = 1$.' },
+    { difficulty: 'medium', question: 'Growth rate $5\\%$: multiplier is:', accept: ['1.05'], placeholder: 'Number', explanation: '$1 + 0.05 = 1.05$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

@@ -163,7 +163,10 @@ topics: [
     { difficulty: 'hard', question: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. If $P(A) = 0.6, P(B) = 0.5, P(A \\cup B) = 0.8$, then $P(A \\cap B) =$?', accept: ['0.3'], placeholder: 'Probability', explanation: '$0.6 + 0.5 - P(A \\cap B) = 0.8$. $P(A \\cap B) = 0.3$.' },
     { difficulty: 'medium', question: 'Mutually exclusive events: $P(A \\cap B) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Mutually exclusive: cannot both occur. $P(A \\cap B) = 0$.' },
     { difficulty: 'hard', question: 'Stirling\'s approximation: $n! \\approx \\sqrt{2\\pi n}(n/e)^n$. $10! \\approx$?', accept: ['3628800', '3.63e6'], placeholder: 'Number', explanation: '$10! = 3628800$. Stirling gives $\\approx 3598700$. Close.' },
-    { difficulty: 'medium', question: 'If events A, B are independent, knowing A occurred changes $P(B)$?', accept: ['no'], placeholder: 'yes/no', explanation: 'Independence: $P(B|A) = P(B)$. No change.' }
+    { difficulty: 'medium', question: 'If events A, B are independent, knowing A occurred changes $P(B)$?', accept: ['no'], placeholder: 'yes/no', explanation: 'Independence: $P(B|A) = P(B)$. No change.' },
+    { difficulty: 'easy', question: 'P(rolling even on a fair die):', accept: ['1/2', '0.5', '3/6'], placeholder: 'Probability', explanation: 'Even: 2, 4, 6. Three outcomes out of six.' },
+    { difficulty: 'medium', question: 'If $P(A) = 0.4$ and $P(B|A) = 0.5$, then $P(A \\cap B) =$?', accept: ['0.2', '0.20'], placeholder: 'Probability', explanation: '$P(A \\cap B) = P(B|A) \\cdot P(A) = 0.5 \\times 0.4 = 0.2$.' },
+    { difficulty: 'hard', question: 'Hypergeometric distribution models sampling _____ replacement.', accept: ['without'], placeholder: 'With/without?', explanation: 'Hypergeometric: sampling without replacement from a finite population.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -356,7 +359,10 @@ topics: [
     { difficulty: 'easy', question: 'Standard normal distribution has mean = ? and $\\sigma =$?', accept: ['0 and 1', '0, 1', 'mean 0 sd 1'], placeholder: 'Parameters', explanation: '$N(0, 1)$: mean $\\mu = 0$, standard deviation $\\sigma = 1$.' },
     { difficulty: 'hard', question: 'Chebyshev\'s inequality: $P(|X - \\mu| \\geq k\\sigma) \\leq$?', accept: ['1/k^2'], placeholder: 'Bound', explanation: '$P(|X - \\mu| \\geq k\\sigma) \\leq 1/k^2$. Works for any distribution.' },
     { difficulty: 'hard', question: 'Moment generating function: $M_X(t) = E[e^{tX}]$. $M_X(0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$M_X(0) = E[e^0] = E[1] = 1$.' },
-    { difficulty: 'medium', question: 'For $X \\sim \\text{Bin}(10, 0.3)$: $E[X] =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$E[X] = np = 10(0.3) = 3$.' }
+    { difficulty: 'medium', question: 'For $X \\sim \\text{Bin}(10, 0.3)$: $E[X] =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$E[X] = np = 10(0.3) = 3$.' },
+    { difficulty: 'easy', question: 'Mode is the value that appears:', accept: ['most often', 'most frequently'], placeholder: 'How?', explanation: 'Mode: most frequent value in a dataset.' },
+    { difficulty: 'medium', question: 'For Poisson with $\\lambda = 4$: $E[X] =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Poisson: $E[X] = \\lambda = 4$.' },
+    { difficulty: 'hard', question: 'Weak law of large numbers: $\\bar{X}_n \\to$ ? in probability as $n \\to \\infty$.', accept: ['mu', '\\mu', 'the mean'], placeholder: 'Value', explanation: 'WLLN: sample mean converges in probability to population mean $\\mu$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

@@ -215,7 +215,9 @@
     { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$.' },
     { difficulty: 'hard', question: 'Type of discontinuity at a hole:', accept: ['removable'], placeholder: 'Type', explanation: 'Hole: removable discontinuity ($\\lim$ exists but $f(a)$ is undefined or differs).' },
     { difficulty: 'hard', question: '$\\lim_{x \\to 0^+} \\ln x =$?', accept: ['-inf', '-infinity'], placeholder: 'Value', explanation: '$\\ln x \\to -\\infty$ as $x \\to 0^+$.' },
-    { difficulty: 'medium', question: 'A function with a vertical asymptote at $x = 2$: $\\lim_{x \\to 2}$ is:', accept: ['infinity', '+/- infinity', 'undefined'], placeholder: 'Value', explanation: 'Vertical asymptote: function approaches $\\pm \\infty$.' }
+    { difficulty: 'medium', question: 'A function with a vertical asymptote at $x = 2$: $\\lim_{x \\to 2}$ is:', accept: ['infinity', '+/- infinity', 'undefined'], placeholder: 'Value', explanation: 'Vertical asymptote: function approaches $\\pm \\infty$.' },
+    { difficulty: 'medium', question: 'One-sided limit: $\\lim_{x \\to 0^+} 1/x =$?', accept: ['+inf', 'infinity', '+infinity'], placeholder: 'Value', explanation: 'As $x \\to 0^+$: $1/x \\to +\\infty$.' },
+    { difficulty: 'hard', question: 'Epsilon-delta: $|f(x) - L| < \\epsilon$ whenever $0 < |x - a| < $ ?', accept: ['delta', '\\delta'], placeholder: 'Symbol', explanation: 'Definition: $\\forall \\epsilon > 0, \\exists \\delta > 0: 0 < |x-a| < \\delta \\Rightarrow |f(x)-L| < \\epsilon$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -459,7 +461,9 @@
     { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{2x}) =$?', accept: ['2e^(2x)', '2e^{2x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{2x} \\cdot 2 = 2e^{2x}$.' },
     { difficulty: 'medium', question: '$\\frac{d}{dx}\\cos(x) =$?', accept: ['-sin(x)', '-sinx', '-\\sin x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\cos x = -\\sin x$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx} \\tan(x) =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\tan x = \\sec^2 x$.' },
-    { difficulty: 'hard', question: 'Logarithmic differentiation: $\\frac{d}{dx}x^x =$?', accept: ['x^x(ln(x)+1)', 'x^x(lnx+1)'], placeholder: 'Expression', explanation: '$y = x^x$. $\\ln y = x\\ln x$. $y\'/y = \\ln x + 1$. $y\' = x^x(\\ln x + 1)$.' }
+    { difficulty: 'hard', question: 'Logarithmic differentiation: $\\frac{d}{dx}x^x =$?', accept: ['x^x(ln(x)+1)', 'x^x(lnx+1)'], placeholder: 'Expression', explanation: '$y = x^x$. $\\ln y = x\\ln x$. $y\'/y = \\ln x + 1$. $y\' = x^x(\\ln x + 1)$.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(5x^3) =$?', accept: ['15x^2', '15x2'], placeholder: 'Expression', explanation: '$5 \\cdot 3x^2 = 15x^2$.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\sec x) =$?', accept: ['sec(x)tan(x)', '\\sec x \\tan x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\sec x = \\sec x \\tan x$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -599,7 +603,9 @@
     { difficulty: 'hard', question: 'Rolle\'s theorem requires continuity on $[a,b]$, differentiability on $(a,b)$, and $f(a) =$ ?', accept: ['f(b)'], placeholder: 'Condition', explanation: '$f(a) = f(b)$. Then there exists $c \\in (a,b)$ with $f\'(c) = 0$.' },
     { difficulty: 'hard', question: 'Newton\'s method: $x_{n+1} = x_n - \\frac{f(x_n)}{$ ? $}$', accept: ["f'(x_n)", 'f prime(x_n)'], placeholder: 'Denominator', explanation: '$x_{n+1} = x_n - \\frac{f(x_n)}{f\'(x_n)}$.' },
     { difficulty: 'easy', question: 'At a local max, $f\'$ changes from _____ to negative.', accept: ['positive'], placeholder: 'Sign', explanation: '$f\' > 0$ then $f\' < 0$: increasing then decreasing. Local max.' },
-    { difficulty: 'medium', question: 'Second derivative test: $f\'\'(c) > 0$ at critical point means:', accept: ['local min', 'local minimum'], placeholder: 'Classification', explanation: 'Concave up at critical point: local minimum.' }
+    { difficulty: 'medium', question: 'Second derivative test: $f\'\'(c) > 0$ at critical point means:', accept: ['local min', 'local minimum'], placeholder: 'Classification', explanation: 'Concave up at critical point: local minimum.' },
+    { difficulty: 'medium', question: 'Concave down means $f\'\'(x)$ is:', accept: ['negative', '< 0'], placeholder: 'Sign', explanation: '$f\'\'(x) < 0$: concave down.' },
+    { difficulty: 'hard', question: 'Linearization of $f$ at $a$: $L(x) = f(a) + f\'(a)(x -$ ?$)$', accept: ['a'], placeholder: 'Value', explanation: '$L(x) = f(a) + f\'(a)(x - a)$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

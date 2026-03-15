@@ -183,7 +183,9 @@
     { difficulty: 'medium', question: '$\\int \\cos(3x)\\,dx =$?', accept: ['sin(3x)/3+C', '(1/3)sin(3x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{3}\\sin(3x) + C$.' },
     { difficulty: 'hard', question: '$\\int \\sec(x)\\,dx =$?', accept: ['ln|sec(x)+tan(x)|+C'], placeholder: 'Expression', explanation: '$\\ln|\\sec x + \\tan x| + C$.' },
     { difficulty: 'hard', question: '$\\int \\csc^2(x)\\,dx =$?', accept: ['-cot(x)+C', '-cotx+C'], placeholder: 'Expression', explanation: '$-\\cot x + C$.' },
-    { difficulty: 'medium', question: '$\\int x \\cos(x)\\,dx$ by IBP: $u = x$, $dv = \\cos x\\,dx$. Result:', accept: ['xsin(x)+cos(x)+C', 'x sin x + cos x + C'], placeholder: 'Expression', explanation: '$x\\sin x - \\int \\sin x\\,dx = x\\sin x + \\cos x + C$.' }
+    { difficulty: 'medium', question: '$\\int x \\cos(x)\\,dx$ by IBP: $u = x$, $dv = \\cos x\\,dx$. Result:', accept: ['xsin(x)+cos(x)+C', 'x sin x + cos x + C'], placeholder: 'Expression', explanation: '$x\\sin x - \\int \\sin x\\,dx = x\\sin x + \\cos x + C$.' },
+    { difficulty: 'easy', question: '$\\int 3\\sin(x)\\,dx =$?', accept: ['-3cos(x)+C', '-3cosx+C'], placeholder: 'Expression', explanation: '$-3\\cos x + C$.' },
+    { difficulty: 'hard', question: 'Integration by parts: $\\int \\ln(x)\\,dx =$?', accept: ['xln(x)-x+C', 'x ln x - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$, $dv = dx$: $x\\ln x - x + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -381,7 +383,9 @@
     { difficulty: 'easy', question: '$\\int_0^1 x^2\\,dx =$?', accept: ['1/3', '0.333'], placeholder: 'Number', explanation: '$[x^3/3]_0^1 = 1/3$.' },
     { difficulty: 'medium', question: 'Washer method: volume = $\\pi \\int (R^2 - r^2)\\,dx$. $R$ is the:', accept: ['outer radius'], placeholder: 'Which radius?', explanation: '$R$ = outer radius, $r$ = inner radius.' },
     { difficulty: 'hard', question: 'Arc length formula: $L = \\int_a^b \\sqrt{1 + [f\'(x)]^2}\\,$ ?', accept: ['dx'], placeholder: 'Variable', explanation: '$L = \\int_a^b \\sqrt{1 + (f\'(x))^2}\\,dx$.' },
-    { difficulty: 'hard', question: 'Surface area of revolution: $SA = 2\\pi \\int f(x) \\sqrt{1 + [f\'(x)]^2}\\,dx$. The extra factor is $2\\pi f(x)$ which represents:', accept: ['circumference'], placeholder: 'What?', explanation: 'Revolution creates a circle of circumference $2\\pi f(x)$ at each $x$.' }
+    { difficulty: 'hard', question: 'Surface area of revolution: $SA = 2\\pi \\int f(x) \\sqrt{1 + [f\'(x)]^2}\\,dx$. The extra factor is $2\\pi f(x)$ which represents:', accept: ['circumference'], placeholder: 'What?', explanation: 'Revolution creates a circle of circumference $2\\pi f(x)$ at each $x$.' },
+    { difficulty: 'easy', question: '$\\int_0^2 x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[x^2/2]_0^2 = 2$.' },
+    { difficulty: 'hard', question: 'Work done: $W = \\int_a^b F(x)\\,dx$. If $F(x) = kx$ and spring constant $k = 5$, work from $x=0$ to $x=2$:', accept: [10, '10'], placeholder: 'Joules', explanation: '$\\int_0^2 5x\\,dx = [5x^2/2]_0^2 = 10$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -513,7 +517,9 @@
     { difficulty: 'medium', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = 16/3$.' },
     { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1 - 0 = 1$.' },
     { difficulty: 'hard', question: 'Simpson\'s rule order of error: $O(h^$ ? $)$', accept: [4, '4'], placeholder: 'Power', explanation: 'Simpson\'s rule: $O(h^4)$ error. More accurate than trapezoidal ($O(h^2)$).' },
-    { difficulty: 'medium', question: 'Improper integral $\\int_1^{\\infty} \\frac{1}{x^2}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-1/x]_1^{\\infty} = 0 - (-1) = 1$. Converges.' }
+    { difficulty: 'medium', question: 'Improper integral $\\int_1^{\\infty} \\frac{1}{x^2}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-1/x]_1^{\\infty} = 0 - (-1) = 1$. Converges.' },
+    { difficulty: 'medium', question: '$\\int \\frac{5}{x}\\,dx =$?', accept: ['5ln|x|+C', '5 ln|x| + C'], placeholder: 'Expression', explanation: '$5\\ln|x| + C$.' },
+    { difficulty: 'hard', question: 'Convergent or divergent: $\\int_1^{\\infty} \\frac{1}{x}\\,dx$?', accept: ['divergent', 'diverges'], placeholder: 'Result', explanation: '$[\\ln x]_1^{\\infty} = \\infty$. Diverges.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

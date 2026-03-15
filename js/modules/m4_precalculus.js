@@ -137,7 +137,9 @@ topics: [
     { difficulty: 'medium', question: '$f(x) = x^2$: is this even, odd, or neither?', accept: ['even'], placeholder: 'Type', explanation: '$f(-x) = (-x)^2 = x^2 = f(x)$. Even function.' },
     { difficulty: 'hard', question: 'Horizontal asymptote of $\\frac{3x^2 + 1}{x^2 - 5}$:', accept: ['y=3', 'y = 3', '3'], placeholder: 'Equation', explanation: 'Same degree: ratio of leading coefficients: $3/1 = 3$.' },
     { difficulty: 'hard', question: 'The inverse of $f(x) = e^x$ is:', accept: ['ln(x)', 'log(x)', '\\ln x'], placeholder: 'Function', explanation: '$f^{-1}(x) = \\ln x$.' },
-    { difficulty: 'medium', question: 'Piecewise function: if $f(x) = x^2$ for $x < 0$ and $f(x) = x$ for $x \\geq 0$, then $f(-2) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$x = -2 < 0$: use $x^2$ piece. $(-2)^2 = 4$.' }
+    { difficulty: 'medium', question: 'Piecewise function: if $f(x) = x^2$ for $x < 0$ and $f(x) = x$ for $x \\geq 0$, then $f(-2) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$x = -2 < 0$: use $x^2$ piece. $(-2)^2 = 4$.' },
+    { difficulty: 'easy', question: '$f(x) = |x|$: $f(-3) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$|-3| = 3$.' },
+    { difficulty: 'medium', question: '$f(x) = x^2 - 4$. Zeros:', accept: ['2, -2', '-2, 2'], placeholder: 'Values', explanation: '$x^2 = 4$. $x = \\pm 2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -285,7 +287,9 @@ topics: [
     { difficulty: 'hard', question: 'By the rational root theorem, candidates for $3x^3 + x - 2$:', accept: ['1, -1, 2, -2, 1/3, -1/3, 2/3, -2/3'], placeholder: 'Roots', explanation: 'Factors of 2 over factors of 3: $\\pm 1, \\pm 2, \\pm 1/3, \\pm 2/3$.' },
     { difficulty: 'medium', question: 'Degree 5 polynomial has at most how many turning points?', accept: [4, '4'], placeholder: 'Number', explanation: 'At most $n - 1 = 5 - 1 = 4$ turning points.' },
     { difficulty: 'hard', question: 'A degree-3 polynomial has exactly how many complex roots (counting multiplicity)?', accept: [3, '3'], placeholder: 'Number', explanation: 'Fundamental Theorem of Algebra: degree $n$ has exactly $n$ complex roots.' },
-    { difficulty: 'medium', question: 'Complex zeros come in _____ pairs.', accept: ['conjugate'], placeholder: 'Type', explanation: 'Complex Conjugate Root Theorem: if $a + bi$ is a root, so is $a - bi$.' }
+    { difficulty: 'medium', question: 'Complex zeros come in _____ pairs.', accept: ['conjugate'], placeholder: 'Type', explanation: 'Complex Conjugate Root Theorem: if $a + bi$ is a root, so is $a - bi$.' },
+    { difficulty: 'easy', question: 'Multiplying both sides of inequality by a negative number requires:', accept: ['flipping the sign', 'reversing the inequality'], placeholder: 'Action', explanation: 'Multiply by negative: flip $<$ to $>$ (or vice versa).' },
+    { difficulty: 'hard', question: 'Descartes\' Rule of Signs for $f(x) = x^3 + x + 1$: positive real roots?', accept: [0, '0'], placeholder: 'Count', explanation: 'No sign changes ($+, +, +$): 0 positive real roots.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -387,7 +391,9 @@ topics: [
     { difficulty: 'easy', question: '$\\log_{10}(100) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$10^2 = 100$. $\\log_{10}(100) = 2$.' },
     { difficulty: 'medium', question: 'Continuous compounding: $A = Pe^{rt}$. If $P = 1000, r = 0.05, t = 10$:', accept: ['1648.72', '1648.7', '1649'], placeholder: 'Amount', explanation: '$1000 e^{0.5} \\approx 1648.72$.' },
     { difficulty: 'hard', question: '$e^{i\\pi} + 1 =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Euler\'s identity: $e^{i\\pi} + 1 = 0$.' },
-    { difficulty: 'medium', question: 'Compound interest: $A = P(1 + r/n)^{nt}$. $n$ represents:', accept: ['compounding frequency', 'times per year', 'number of compoundings'], placeholder: 'What?', explanation: '$n$ = number of times interest is compounded per year.' }
+    { difficulty: 'medium', question: 'Compound interest: $A = P(1 + r/n)^{nt}$. $n$ represents:', accept: ['compounding frequency', 'times per year', 'number of compoundings'], placeholder: 'What?', explanation: '$n$ = number of times interest is compounded per year.' },
+    { difficulty: 'easy', question: '$\\log_5(25) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$5^2 = 25$.' },
+    { difficulty: 'hard', question: 'Natural log: $\\ln(e^{-2}) =$?', accept: [-2, '-2'], placeholder: 'Number', explanation: '$\\ln(e^{-2}) = -2$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

@@ -103,7 +103,9 @@ topics: [
     { difficulty: 'hard', question: 'Solve: $0.5x + 1.5 = 3.5$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$0.5x = 2$. $x = 4$.' },
     { difficulty: 'easy', question: 'Distributive property: $3(x + 4) =$?', accept: ['3x+12', '3x + 12'], placeholder: 'Expression', explanation: '$3 \\cdot x + 3 \\cdot 4 = 3x + 12$.' },
     { difficulty: 'hard', question: 'Solve: $|3x - 1| \\leq 5$. Solution:', accept: ['-4/3 <= x <= 2', '[-4/3, 2]'], placeholder: 'Interval', explanation: '$-5 \\leq 3x - 1 \\leq 5$. $-4 \\leq 3x \\leq 6$. $-4/3 \\leq x \\leq 2$.' },
-    { difficulty: 'medium', question: 'Profit formula: Revenue $-$ Cost. If $R = 5x$ and $C = 2x + 100$, break-even at $x =$?', accept: ['33', '100/3'], placeholder: 'Units', explanation: '$5x = 2x + 100$. $3x = 100$. $x = 100/3 \\approx 33.3$.' }
+    { difficulty: 'medium', question: 'Profit formula: Revenue $-$ Cost. If $R = 5x$ and $C = 2x + 100$, break-even at $x =$?', accept: ['33', '100/3'], placeholder: 'Units', explanation: '$5x = 2x + 100$. $3x = 100$. $x = 100/3 \\approx 33.3$.' },
+    { difficulty: 'easy', question: 'Evaluate: $-5 + 8 =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$-5 + 8 = 3$.' },
+    { difficulty: 'hard', question: 'Solve: $2(3x - 1) + 4 = 3(x + 2) + x$. $x =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$6x - 2 + 4 = 3x + 6 + x$. $6x + 2 = 4x + 6$. $2x = 4$. $x = 2$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -265,7 +267,9 @@ topics: [
     { difficulty: 'medium', question: 'Slope of horizontal line:', accept: [0, '0'], placeholder: 'Number', explanation: 'Horizontal line: $\\Delta y = 0$. Slope $= 0$.' },
     { difficulty: 'medium', question: 'Slope of line through $(1,2)$ and $(4,8)$:', accept: [2, '2'], placeholder: 'Number', explanation: '$m = \\frac{8-2}{4-1} = \\frac{6}{3} = 2$.' },
     { difficulty: 'hard', question: 'Distance from point $(3,4)$ to line $y = 0$:', accept: [4, '4'], placeholder: 'Number', explanation: 'Distance to $x$-axis is the absolute $y$-coordinate: $|4| = 4$.' },
-    { difficulty: 'medium', question: 'y-intercept of $3x + 2y = 12$:', accept: [6, '6', '(0,6)'], placeholder: 'Number', explanation: 'Set $x = 0$: $2y = 12$. $y = 6$.' }
+    { difficulty: 'medium', question: 'y-intercept of $3x + 2y = 12$:', accept: [6, '6', '(0,6)'], placeholder: 'Number', explanation: 'Set $x = 0$: $2y = 12$. $y = 6$.' },
+    { difficulty: 'hard', question: 'Parallel lines have _____ slopes.', accept: ['equal', 'the same', 'identical'], placeholder: 'Property', explanation: 'Parallel: same slope. Perpendicular: negative reciprocal slopes.' },
+    { difficulty: 'medium', question: 'x-intercept of $y = 2x - 6$:', accept: [3, '3', '(3,0)'], placeholder: 'Number', explanation: 'Set $y = 0$: $2x = 6$. $x = 3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -380,7 +384,9 @@ topics: [
     { difficulty: 'medium', question: '$(a+b)(a-b) =$?', accept: ['a^2-b^2', 'a^2 - b^2'], placeholder: 'Expression', explanation: 'Difference of squares: $(a+b)(a-b) = a^2 - b^2$.' },
     { difficulty: 'easy', question: '$x^2 \\cdot x^3 =$?', accept: ['x^5', 'x5'], placeholder: 'Expression', explanation: 'Product of powers: $x^{2+3} = x^5$.' },
     { difficulty: 'hard', question: '$(x - 3)^3$ expanded: $x^3 - 9x^2 + 27x -$ ?', accept: [27, '27'], placeholder: 'Number', explanation: '$(a-b)^3 = a^3 - 3a^2 b + 3ab^2 - b^3$. Last term: $3^3 = 27$.' },
-    { difficulty: 'medium', question: '$(x+y)^2 =$?', accept: ['x^2+2xy+y^2', 'x^2 + 2xy + y^2'], placeholder: 'Expression', explanation: '$(x+y)^2 = x^2 + 2xy + y^2$.' }
+    { difficulty: 'medium', question: '$(x+y)^2 =$?', accept: ['x^2+2xy+y^2', 'x^2 + 2xy + y^2'], placeholder: 'Expression', explanation: '$(x+y)^2 = x^2 + 2xy + y^2$.' },
+    { difficulty: 'medium', question: '$(2x)^3 =$?', accept: ['8x^3', '8x3'], placeholder: 'Expression', explanation: '$2^3 \\cdot x^3 = 8x^3$.' },
+    { difficulty: 'hard', question: 'Pascal\'s triangle row 4: $1,$ ?, $6,$ ?, $1$', accept: ['4, 4', '1,4,6,4,1'], placeholder: 'Numbers', explanation: 'Row 4: $1, 4, 6, 4, 1$. These are $\\binom{4}{k}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

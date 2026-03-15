@@ -120,7 +120,9 @@ topics: [
     { difficulty: 'medium', question: 'Gradient of $f = xyz$:', accept: ['<yz, xz, xy>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle yz, xz, xy \\rangle$.' },
     { difficulty: 'easy', question: 'A scalar field assigns a _____ to each point:', accept: ['number', 'scalar'], placeholder: 'What?', explanation: 'Scalar field: $f: \\mathbb{R}^n \\to \\mathbb{R}$. Each point gets a number.' },
     { difficulty: 'hard', question: 'Maxwell\'s equations use which vector calculus operators?', accept: ['curl and divergence', 'div and curl'], placeholder: 'Operators', explanation: 'Maxwell: $\\nabla \\cdot \\vec{E}, \\nabla \\times \\vec{E}, \\nabla \\cdot \\vec{B}, \\nabla \\times \\vec{B}$.' },
-    { difficulty: 'medium', question: 'Flow rate through surface = $\\iint \\vec{F} \\cdot \\hat{n}\\,dS$. This is called:', accept: ['flux', 'flux integral'], placeholder: 'Name', explanation: 'Flux: total flow through a surface.' }
+    { difficulty: 'medium', question: 'Flow rate through surface = $\\iint \\vec{F} \\cdot \\hat{n}\\,dS$. This is called:', accept: ['flux', 'flux integral'], placeholder: 'Name', explanation: 'Flux: total flow through a surface.' },
+    { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x^2, y^2, z^2 \\rangle$:', accept: ['2x+2y+2z', '2(x+y+z)'], placeholder: 'Expression', explanation: '$2x + 2y + 2z$.' },
+    { difficulty: 'hard', question: 'For $\\vec{F} = \\langle -y, x, 0 \\rangle$: $|\\nabla \\times \\vec{F}| =$?', accept: [2, '2'], placeholder: 'Number', explanation: 'Curl = $\\langle 0, 0, 2 \\rangle$. $|\\text{curl}| = 2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -268,7 +270,9 @@ topics: [
     { difficulty: 'hard', question: 'Parameterize the unit circle centered at origin:', accept: ['(cos t, sin t)', '<cos t, sin t>'], placeholder: 'Parameterization', explanation: '$\\vec{r}(t) = \\langle \\cos t, \\sin t \\rangle$, $0 \\leq t \\leq 2\\pi$.' },
     { difficulty: 'medium', question: 'For a smooth closed surface $S$, $\\oint_S d\\vec{S} = $ ? (when enclosing volume)', accept: ['0', 'zero'], placeholder: 'Value', explanation: 'The integral of the normal over a closed surface equals zero.' },
     { difficulty: 'hard', question: 'A surface is orientable if it has:', accept: ['two sides', 'a consistent normal'], placeholder: 'Property', explanation: 'Orientable: consistent choice of normal. Mobius strip is non-orientable.' },
-    { difficulty: 'hard', question: 'Fundamental theorem of line integrals: $\\int_C \\nabla f \\cdot d\\vec{r} = f(B) -$ ?', accept: ['f(A)'], placeholder: 'Expression', explanation: '$f(\\text{end}) - f(\\text{start})$. Path-independent for gradient fields.' }
+    { difficulty: 'hard', question: 'Fundamental theorem of line integrals: $\\int_C \\nabla f \\cdot d\\vec{r} = f(B) -$ ?', accept: ['f(A)'], placeholder: 'Expression', explanation: '$f(\\text{end}) - f(\\text{start})$. Path-independent for gradient fields.' },
+    { difficulty: 'easy', question: 'Work along curve: $W = \\int_C \\vec{F} \\cdot d$ ?', accept: ['r', 'dr', '\\vec{r}'], placeholder: 'Variable', explanation: '$W = \\int_C \\vec{F} \\cdot d\\vec{r}$.' },
+    { difficulty: 'hard', question: 'Which theorem generalizes FTC to line integrals for conservative fields?', accept: ['fundamental theorem of line integrals', 'FTLI'], placeholder: 'Theorem', explanation: '$\\int_C \\nabla f \\cdot d\\vec{r} = f(B) - f(A)$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -404,7 +408,9 @@ topics: [
     { difficulty: 'hard', question: 'Area element in spherical coordinates: $dS = r^2 \\sin\\phi\\,d\\phi\\,d$ ?', accept: ['theta', '\\theta', 'dtheta'], placeholder: 'Variable', explanation: '$dS = r^2 \\sin\\phi\\,d\\phi\\,d\\theta$.' },
     { difficulty: 'hard', question: 'Helmholtz decomposition: any vector field = irrotational + ?', accept: ['solenoidal', 'divergence-free'], placeholder: 'Type', explanation: '$\\vec{F} = -\\nabla\\phi + \\nabla \\times \\vec{A}$. Irrotational + solenoidal.' },
     { difficulty: 'medium', question: 'Gauss\'s law relates total flux to:', accept: ['enclosed charge', 'charge inside'], placeholder: 'What?', explanation: '$\\oint \\vec{E} \\cdot d\\vec{A} = Q_{\\text{enc}}/\\varepsilon_0$.' },
-    { difficulty: 'medium', question: 'In spherical: $x = \\rho\\sin\\phi\\cos\\theta$, $y = \\rho\\sin\\phi\\sin\\theta$, $z = \\rho$ ?', accept: ['cos(phi)', '\\cos\\phi', 'cosphi'], placeholder: 'Term', explanation: '$z = \\rho \\cos \\phi$.' }
+    { difficulty: 'medium', question: 'In spherical: $x = \\rho\\sin\\phi\\cos\\theta$, $y = \\rho\\sin\\phi\\sin\\theta$, $z = \\rho$ ?', accept: ['cos(phi)', '\\cos\\phi', 'cosphi'], placeholder: 'Term', explanation: '$z = \\rho \\cos \\phi$.' },
+    { difficulty: 'medium', question: 'A surface integral of $f$ over $S$: $\\iint_S f\\,dS$ generalizes what for surfaces?', accept: ['line integral', 'integration'], placeholder: 'Concept', explanation: 'Surface integral generalizes single/line integrals to two-dimensional surfaces.' },
+    { difficulty: 'hard', question: 'Total flux through a closed surface = total _____ inside (by divergence theorem).', accept: ['divergence', 'source'], placeholder: 'What?', explanation: '$\\oiint \\vec{F} \\cdot d\\vec{S} = \\iiint (\\nabla \\cdot \\vec{F})\\,dV$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [
