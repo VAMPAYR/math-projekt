@@ -108,7 +108,8 @@ topics: [
     { difficulty: 'medium', question: 'For $\\int x\\cos x\\,dx$: what should $u$ be?', accept: ['x'], placeholder: 'u = ?', explanation: 'LIATE: $x$ is algebraic (higher priority than $\\cos x$). Choose $u = x$, $dv = \\cos x\\,dx$.' },
     { difficulty: 'hard', question: '$\\int x e^x\\,dx =$?', accept: ['xe^x-e^x+C', '(x-1)e^x+C'], placeholder: 'Expression', explanation: 'IBP: $u = x, dv = e^x dx$. $xe^x - e^x + C = (x-1)e^x + C$.' },
     { difficulty: 'medium', question: 'Tabular method works best for $\\int P(x) \\cdot$ ? $\\,dx$', accept: ['e^x', 'sin(x)', 'cos(x)'], placeholder: 'Function', explanation: 'Tabular IBP: polynomial times $e^x$, $\\sin x$, or $\\cos x$.' },
-    { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x$ is its own antiderivative.' }
+    { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x$ is its own antiderivative.' },
+    { difficulty: 'hard', question: '$\\int e^x \\sin x\\,dx$ requires IBP:', accept: ['twice', '2 times', 'two times'], placeholder: 'How many?', explanation: 'Apply IBP twice, then solve for the integral algebraically.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -228,7 +229,8 @@ topics: [
     { difficulty: 'hard', question: 'Telescoping sum: $\\sum_{n=1}^{N} (\\frac{1}{n} - \\frac{1}{n+1})$ simplifies to:', accept: ['1-1/(N+1)'], placeholder: 'Expression', explanation: 'Most terms cancel: $1 - \\frac{1}{N+1}$.' },
     { difficulty: 'hard', question: 'Monotone convergence theorem: a bounded, monotone sequence must:', accept: ['converge'], placeholder: 'Behavior', explanation: 'Bounded + monotone implies convergent.' },
     { difficulty: 'medium', question: 'Geometric series $\\sum ar^n$ converges when $|r|$ is:', accept: ['< 1', 'less than 1'], placeholder: 'Condition', explanation: 'Convergence: $|r| < 1$. Sum: $\\frac{a}{1-r}$.' },
-    { difficulty: 'easy', question: 'First 3 terms of $a_n = 1/n$:', accept: ['1, 1/2, 1/3'], placeholder: 'Terms', explanation: '$a_1 = 1, a_2 = 1/2, a_3 = 1/3$.' }
+    { difficulty: 'easy', question: 'First 3 terms of $a_n = 1/n$:', accept: ['1, 1/2, 1/3'], placeholder: 'Terms', explanation: '$a_1 = 1, a_2 = 1/2, a_3 = 1/3$.' },
+    { difficulty: 'medium', question: 'Harmonic series $\\sum 1/n$ converges or diverges?', accept: ['diverges'], placeholder: 'Result', explanation: 'Harmonic series diverges (p-series with $p = 1$).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -372,7 +374,8 @@ topics: [
     { difficulty: 'medium', question: 'For the p-series $\\sum 1/n^2$: does it converge?', accept: ['yes', 'converges'], placeholder: 'yes/no', explanation: '$p = 2 > 1$. p-series converges when $p > 1$.' },
     { difficulty: 'hard', question: 'Alternating series $\\sum (-1)^n/n$ converges. What is the name of this series?', accept: ['alternating harmonic', 'alternating harmonic series'], placeholder: 'Name', explanation: 'Alternating harmonic series converges to $\\ln 2$.' },
     { difficulty: 'medium', question: 'Ratio test: if $\\lim |a_{n+1}/a_n| = L < 1$, the series:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Ratio test: $L < 1$ implies absolute convergence.' },
-    { difficulty: 'hard', question: 'Maclaurin series for $e^x$: first 3 terms:', accept: ['1+x+x^2/2', '1 + x + x^2/2'], placeholder: 'Terms', explanation: '$e^x = 1 + x + x^2/2! + x^3/3! + \\cdots$' }
+    { difficulty: 'hard', question: 'Maclaurin series for $e^x$: first 3 terms:', accept: ['1+x+x^2/2', '1 + x + x^2/2'], placeholder: 'Terms', explanation: '$e^x = 1 + x + x^2/2! + x^3/3! + \\cdots$' },
+    { difficulty: 'easy', question: '$\\sum_{n=0}^{\\infty} x^n = \\frac{1}{1-x}$ when $|x| <$ ?', accept: [1, '1'], placeholder: 'Number', explanation: 'Geometric series converges for $|x| < 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

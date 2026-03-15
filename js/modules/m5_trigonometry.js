@@ -202,7 +202,8 @@ topics: [
     { difficulty: 'hard', question: 'Period of $f(x) = \\sin(3x)$:', accept: ['2pi/3', '2\\pi/3'], placeholder: 'Period', explanation: 'Period = $2\\pi / |B| = 2\\pi / 3$.' },
     { difficulty: 'easy', question: 'Convert $180°$ to radians:', accept: ['pi', '3.14'], placeholder: 'Radians', explanation: '$180° = \\pi$ radians.' },
     { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
-    { difficulty: 'easy', question: '$\\cos(0°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0°) = 1$.' }
+    { difficulty: 'easy', question: '$\\cos(0°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0°) = 1$.' },
+    { difficulty: 'easy', question: '$\\sin(90°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin(90°) = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -497,7 +498,9 @@ topics: [
     { difficulty: 'hard', question: 'Triangle with $a = 5$, $b = 7$, $c = 10$. Is this triangle obtuse? (yes/no)', accept: ['yes', 'Yes'], placeholder: 'yes or no', explanation: '$c^2 = 100 > a^2 + b^2 = 74$. Since $c^2 > a^2 + b^2$, the triangle is obtuse.' },
     { difficulty: 'easy', question: 'In a right triangle, if opposite = 3 and hypotenuse = 5, then $\\sin \\theta =$?', accept: ['3/5', '0.6'], placeholder: 'Value', explanation: '$\\sin \\theta = \\text{opposite}/\\text{hypotenuse} = 3/5$.' },
     { difficulty: 'medium', question: 'Period of $\\sin(2x)$:', accept: ['pi', '3.14'], placeholder: 'Period', explanation: 'Period = $2\\pi / 2 = \\pi$.' },
-    { difficulty: 'hard', question: 'Solve $\\cos(x) = 0$ for $x \\in [0, 2\\pi)$:', accept: ['pi/2, 3pi/2', '90, 270'], placeholder: 'Solutions', explanation: '$x = \\pi/2, 3\\pi/2$.' }
+    { difficulty: 'hard', question: 'Solve $\\cos(x) = 0$ for $x \\in [0, 2\\pi)$:', accept: ['pi/2, 3pi/2', '90, 270'], placeholder: 'Solutions', explanation: '$x = \\pi/2, 3\\pi/2$.' },
+    { difficulty: 'medium', question: 'Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos($ ? $)$', accept: ['C', 'gamma', 'angle C'], placeholder: 'Angle', explanation: '$c^2 = a^2 + b^2 - 2ab\\cos C$.' },
+    { difficulty: 'hard', question: 'Area of triangle using trig: $A = \\frac{1}{2}ab\\sin(C)$. If $a=5, b=8, C=30°$, area $=$?', accept: [10, '10'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(5)(8)\\sin(30°) = 20 \\times 0.5 = 10$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

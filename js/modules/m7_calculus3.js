@@ -176,7 +176,8 @@
     { difficulty: 'medium', question: 'Two vectors are orthogonal when their dot product equals:', accept: [0, '0'], placeholder: 'Number', explanation: 'Orthogonal: $\\vec{a} \\cdot \\vec{b} = 0$.' },
     { difficulty: 'hard', question: 'Area of parallelogram formed by $\\vec{a} = \\langle 1,0,0 \\rangle$ and $\\vec{b} = \\langle 0,2,0 \\rangle$:', accept: [2, '2'], placeholder: 'Area', explanation: '$|\\vec{a} \\times \\vec{b}| = |\\langle 0,0,2 \\rangle| = 2$.' },
     { difficulty: 'easy', question: 'The dot product gives a:', accept: ['scalar', 'number'], placeholder: 'Type', explanation: 'Dot product: $\\vec{a} \\cdot \\vec{b} = $ scalar. Cross product gives a vector.' },
-    { difficulty: 'easy', question: '$\\langle 1,2,3 \\rangle \\cdot \\langle 4,5,6 \\rangle =$?', accept: [32, '32'], placeholder: 'Number', explanation: '$1(4) + 2(5) + 3(6) = 4 + 10 + 18 = 32$.' }
+    { difficulty: 'easy', question: '$\\langle 1,2,3 \\rangle \\cdot \\langle 4,5,6 \\rangle =$?', accept: [32, '32'], placeholder: 'Number', explanation: '$1(4) + 2(5) + 3(6) = 4 + 10 + 18 = 32$.' },
+    { difficulty: 'medium', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5, 4/5>', '<0.6, 0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -321,7 +322,8 @@
     { difficulty: 'hard', question: 'Critical point of $f(x,y) = x^2 + y^2 - 2x$: $(x,y) =$?', accept: ['(1,0)'], placeholder: 'Point', explanation: '$f_x = 2x-2 = 0 \\Rightarrow x=1$. $f_y = 2y = 0 \\Rightarrow y=0$.' },
     { difficulty: 'hard', question: 'Laplacian of $f = x^2 + y^2$: $\\nabla^2 f =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$f_{xx} = 2$, $f_{yy} = 2$. $\\nabla^2 f = 2 + 2 = 4$.' },
     { difficulty: 'medium', question: 'The chain rule in multivariable: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} +$ ?', accept: ['dz/dy*dy/dt', '(dz/dy)(dy/dt)'], placeholder: 'Term', explanation: 'Multivariable chain rule: $\\frac{\\partial z}{\\partial y}\\frac{dy}{dt}$.' },
-    { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(xy^2 + z) =$?', accept: ['y^2', 'y2'], placeholder: 'Expression', explanation: 'Hold $y, z$ constant: $y^2$.' }
+    { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(xy^2 + z) =$?', accept: ['y^2', 'y2'], placeholder: 'Expression', explanation: 'Hold $y, z$ constant: $y^2$.' },
+    { difficulty: 'medium', question: 'Second partial: $f_{xy}$ of $f = x^2 y^3$:', accept: ['6xy^2', '6x*y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy^3$. $(f_x)_y = 6xy^2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -437,7 +439,8 @@
     { difficulty: 'medium', question: '$\\int_0^2 \\int_0^x y\\,dy\\,dx =$?', accept: ['4/3', '1.33'], placeholder: 'Number', explanation: '$\\int_0^2 [y^2/2]_0^x dx = \\int_0^2 x^2/2\\,dx = [x^3/6]_0^2 = 4/3$.' },
     { difficulty: 'medium', question: 'To switch $\\int_0^1 \\int_0^x f\\,dy\\,dx$ to $dx\\,dy$, the outer integral becomes:', accept: ['0 to 1', '[0,1]'], placeholder: 'Bounds', explanation: '$y$ ranges from 0 to 1. For fixed $y$, $x$ ranges from $y$ to 1.' },
     { difficulty: 'medium', question: 'Fubini\'s theorem allows switching the order of:', accept: ['integration', 'iterated integrals'], placeholder: 'What?', explanation: 'Fubini: $\\int\\int f\\,dA$ can be computed in either order when $f$ is continuous.' },
-    { difficulty: 'hard', question: 'Jacobian of transformation $(u,v) \\to (x,y)$ is the determinant of:', accept: ['partial derivative matrix', 'the Jacobian matrix'], placeholder: 'Matrix', explanation: '$J = \\frac{\\partial(x,y)}{\\partial(u,v)} = \\begin{vmatrix} x_u & x_v \\\\ y_u & y_v \\end{vmatrix}$.' }
+    { difficulty: 'hard', question: 'Jacobian of transformation $(u,v) \\to (x,y)$ is the determinant of:', accept: ['partial derivative matrix', 'the Jacobian matrix'], placeholder: 'Matrix', explanation: '$J = \\frac{\\partial(x,y)}{\\partial(u,v)} = \\begin{vmatrix} x_u & x_v \\\\ y_u & y_v \\end{vmatrix}$.' },
+    { difficulty: 'hard', question: 'Volume of solid under $z = 4 - x^2 - y^2$ above $xy$-plane:', accept: ['8pi', '25.13'], placeholder: 'Volume', explanation: 'Use polar: $\\int_0^{2\\pi}\\int_0^2 (4-r^2)r\\,dr\\,d\\theta = 2\\pi[2r^2 - r^4/4]_0^2 = 8\\pi$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

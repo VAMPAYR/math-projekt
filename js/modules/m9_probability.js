@@ -159,7 +159,8 @@ topics: [
     { difficulty: 'hard', question: '$C(10, 3) =$?', accept: [120, '120'], placeholder: 'Number', explanation: '$\\binom{10}{3} = \\frac{10!}{3!7!} = \\frac{720}{6} = 120$.' },
     { difficulty: 'easy', question: 'Sample space for rolling a die: $S =$?', accept: ['{1,2,3,4,5,6}'], placeholder: 'Set', explanation: '$S = \\{1, 2, 3, 4, 5, 6\\}$.' },
     { difficulty: 'medium', question: 'For a deck of 52 cards, $P(\\text{ace}) =$?', accept: ['4/52', '1/13'], placeholder: 'Probability', explanation: '4 aces in 52 cards. $P = 4/52 = 1/13$.' },
-    { difficulty: 'easy', question: 'Total probability of the sample space:', accept: [1, '1'], placeholder: 'Number', explanation: '$P(S) = 1$.' }
+    { difficulty: 'easy', question: 'Total probability of the sample space:', accept: [1, '1'], placeholder: 'Number', explanation: '$P(S) = 1$.' },
+    { difficulty: 'hard', question: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. If $P(A) = 0.6, P(B) = 0.5, P(A \\cup B) = 0.8$, then $P(A \\cap B) =$?', accept: ['0.3'], placeholder: 'Probability', explanation: '$0.6 + 0.5 - P(A \\cap B) = 0.8$. $P(A \\cap B) = 0.3$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -346,7 +347,9 @@ topics: [
     { difficulty: 'hard', question: 'Law of total probability: if $B_1, B_2$ partition $S$, then $P(A) =$?', accept: ['P(A|B1)P(B1)+P(A|B2)P(B2)'], placeholder: 'Formula', explanation: '$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2)$.' },
     { difficulty: 'hard', question: 'For $X \\sim N(0,1)$, $P(X < 0) =$?', accept: ['0.5', '1/2', '50%'], placeholder: 'Probability', explanation: 'Standard normal is symmetric about 0. $P(X < 0) = 0.5$.' },
     { difficulty: 'medium', question: 'Geometric distribution: $P(X = k) = (1-p)^{k-1}p$. Mean $E[X] =$?', accept: ['1/p'], placeholder: 'Formula', explanation: 'Geometric mean: $E[X] = 1/p$.' },
-    { difficulty: 'easy', question: 'Expected value is the:', accept: ['mean', 'average'], placeholder: 'Synonym', explanation: '$E[X]$ is the expected value, equivalent to the population mean $\\mu$.' }
+    { difficulty: 'easy', question: 'Expected value is the:', accept: ['mean', 'average'], placeholder: 'Synonym', explanation: '$E[X]$ is the expected value, equivalent to the population mean $\\mu$.' },
+    { difficulty: 'medium', question: 'Poisson distribution models the number of events in a fixed:', accept: ['interval', 'time interval', 'period'], placeholder: 'What?', explanation: 'Poisson: counts events in a fixed interval (time, area, volume).' },
+    { difficulty: 'hard', question: 'CLT: as $n \\to \\infty$, the sampling distribution of $\\bar{X}$ approaches:', accept: ['normal', 'normal distribution'], placeholder: 'Distribution', explanation: 'Central Limit Theorem: $\\bar{X}$ is approximately normal for large $n$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

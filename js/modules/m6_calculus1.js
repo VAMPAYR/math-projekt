@@ -103,7 +103,8 @@ topics: [
     { difficulty: 'medium', question: '$\\int \\cos x\\,dx =$?', accept: ['sin(x)+C', 'sinx+C', '\\sin x + C'], placeholder: 'Expression', explanation: '$\\int \\cos x\\,dx = \\sin x + C$.' },
     { difficulty: 'hard', question: '$\\int x\\sqrt{x}\\,dx = \\int x^{3/2}\\,dx =$?', accept: ['(2/5)x^(5/2)+C', '2x^(5/2)/5+C'], placeholder: 'Expression', explanation: '$\\frac{x^{5/2}}{5/2} + C = \\frac{2}{5}x^{5/2} + C$.' },
     { difficulty: 'easy', question: '$\\int x\\,dx =$?', accept: ['x^2/2+C', 'x^2/2 + C'], placeholder: 'Expression', explanation: '$x^{1+1}/(1+1) + C = x^2/2 + C$.' },
-    { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', 'c', '0+C'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' }
+    { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', 'c', '0+C'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' },
+    { difficulty: 'medium', question: '$\\int (2x + 3)\\,dx =$?', accept: ['x^2+3x+C', 'x^2 + 3x + C'], placeholder: 'Expression', explanation: '$x^2 + 3x + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -414,7 +415,9 @@ topics: [
     { difficulty: 'hard', question: 'FTC Part 2: $\\int_a^b f(x)\\,dx = F(b) -$ ?', accept: ['F(a)'], placeholder: 'Expression', explanation: '$\\int_a^b f(x)\\,dx = F(b) - F(a)$.' },
     { difficulty: 'hard', question: '$\\int_0^{\\pi} \\sin x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[-\\cos x]_0^{\\pi} = -\\cos \\pi - (-\\cos 0) = 1 + 1 = 2$.' },
     { difficulty: 'medium', question: 'If $F(x) = \\int_0^x t^3\\,dt$, then $F\'(x) =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = x^3$.' },
-    { difficulty: 'easy', question: 'FTC connects which two operations?', accept: ['differentiation and integration', 'derivatives and integrals'], placeholder: 'Operations', explanation: 'FTC: differentiation and integration are inverse operations.' }
+    { difficulty: 'easy', question: 'FTC connects which two operations?', accept: ['differentiation and integration', 'derivatives and integrals'], placeholder: 'Operations', explanation: 'FTC: differentiation and integration are inverse operations.' },
+    { difficulty: 'hard', question: 'Net signed area: if $f(x) < 0$ on $[a,b]$, then $\\int_a^b f\\,dx$ is:', accept: ['negative'], placeholder: 'Sign', explanation: 'Area below $x$-axis contributes negatively to the integral.' },
+    { difficulty: 'medium', question: '$\\int_0^1 (2x)\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

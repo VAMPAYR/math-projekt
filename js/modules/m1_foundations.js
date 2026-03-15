@@ -271,7 +271,8 @@ topics: [
     { difficulty: 'easy', question: 'Is $\\pi$ rational or irrational?', accept: ['irrational'], placeholder: 'rational/irrational', explanation: '$\\pi$ cannot be expressed as a fraction. It is irrational.' },
     { difficulty: 'medium', question: '$|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Absolute value strips the sign: $|-7| = 7$.' },
     { difficulty: 'medium', question: 'Absolute value: $|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$|-7| = 7$. Absolute value removes the sign.' },
-    { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' }
+    { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' },
+    { difficulty: 'medium', question: 'The multiplicative identity is:', accept: [1, '1'], placeholder: 'Number', explanation: '$a \\times 1 = a$ for all $a$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -423,7 +424,8 @@ topics: [
     { difficulty: 'easy', question: 'If $A = \\{1,2,3\\}$ and $B = \\{2,3,4\\}$, what is $A \\cap B$?', accept: ['{2,3}', '{2, 3}'], placeholder: 'Set', explanation: '$A \\cap B = \\{2, 3\\}$. Elements in both sets.' },
     { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' },
     { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' },
-    { difficulty: 'medium', question: 'If $|A| = 5$ and $|B| = 3$ and $|A \\cap B| = 2$, then $|A \\cup B| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 5 + 3 - 2 = 6$.' }
+    { difficulty: 'medium', question: 'If $|A| = 5$ and $|B| = 3$ and $|A \\cap B| = 2$, then $|A \\cup B| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 5 + 3 - 2 = 6$.' },
+    { difficulty: 'hard', question: 'Power set of $\\{a\\}$ has elements:', accept: ['2', 2], placeholder: 'Number', explanation: '$\\mathcal{P}(\\{a\\}) = \\{\\emptyset, \\{a\\}\\}$. Two elements.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [
@@ -509,7 +511,8 @@ topics: [
     { difficulty: 'medium', question: 'The contrapositive of "if $p$ then $q$" is:', accept: ['if not q then not p', 'if ~q then ~p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to $p \\to q$.' },
     { difficulty: 'hard', question: 'If $p \\to q$ is true and $q$ is false, then $p$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'Modus Tollens: $p \\to q$ and $\\neg q$ implies $\\neg p$.' },
     { difficulty: 'medium', question: 'Truth table: $T \\land F =$?', accept: ['F', 'false'], placeholder: 'T/F', explanation: 'AND ($\\land$) is true only when both are true. $T \\land F = F$.' },
-    { difficulty: 'easy', question: '$T \\lor F =$?', accept: ['T', 'true'], placeholder: 'T/F', explanation: 'OR ($\\lor$) is true when at least one operand is true.' }
+    { difficulty: 'easy', question: '$T \\lor F =$?', accept: ['T', 'true'], placeholder: 'T/F', explanation: 'OR ($\\lor$) is true when at least one operand is true.' },
+    { difficulty: 'medium', question: 'Contrapositive of $p \\to q$ is:', accept: ['not q -> not p', '~q -> ~p', 'neg q to neg p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to the original.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

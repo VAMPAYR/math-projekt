@@ -99,7 +99,8 @@ topics: [
     { difficulty: 'hard', question: 'Solve: $\\frac{x+1}{3} = \\frac{x-2}{2}$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2(x+1) = 3(x-2)$. $2x+2 = 3x-6$. $x = 8$.' },
     { difficulty: 'easy', question: 'Solve: $x + 5 = 12$. $x =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$x = 12 - 5 = 7$.' },
     { difficulty: 'hard', question: 'Solve the system: $x + y = 10$, $x - y = 4$:', accept: ['x=7, y=3', '(7,3)', '7,3'], placeholder: 'Solution', explanation: 'Add: $2x = 14, x = 7$. Then $y = 3$.' },
-    { difficulty: 'medium', question: 'Solve: $2x + 3 = x + 7$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$2x - x = 7 - 3$. $x = 4$.' }
+    { difficulty: 'medium', question: 'Solve: $2x + 3 = x + 7$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$2x - x = 7 - 3$. $x = 4$.' },
+    { difficulty: 'hard', question: 'Solve: $0.5x + 1.5 = 3.5$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$0.5x = 2$. $x = 4$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -257,7 +258,8 @@ topics: [
     { difficulty: 'medium', question: 'Find slope of line through $(1, 2)$ and $(3, 8)$:', accept: [3, '3'], placeholder: 'm = ?', explanation: '$m = (8-2)/(3-1) = 6/2 = 3$.' },
     { difficulty: 'hard', question: 'Write equation of line perpendicular to $y = 2x + 1$ through $(0, 3)$:', accept: ['y=-x/2+3', 'y=-0.5x+3'], placeholder: 'y = ?', explanation: 'Perpendicular slope: $-1/2$. $y = -x/2 + 3$.' },
     { difficulty: 'hard', question: 'Equation of line with slope $-2$ through $(3, 1)$:', accept: ['y=-2x+7', 'y = -2x + 7'], placeholder: 'y = ?', explanation: '$y - 1 = -2(x - 3)$. $y = -2x + 7$.' },
-    { difficulty: 'easy', question: 'The origin has coordinates:', accept: ['(0,0)'], placeholder: 'Point', explanation: 'Origin: $(0, 0)$.' }
+    { difficulty: 'easy', question: 'The origin has coordinates:', accept: ['(0,0)'], placeholder: 'Point', explanation: 'Origin: $(0, 0)$.' },
+    { difficulty: 'medium', question: 'Slope of horizontal line:', accept: [0, '0'], placeholder: 'Number', explanation: 'Horizontal line: $\\Delta y = 0$. Slope $= 0$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -368,7 +370,8 @@ topics: [
     { difficulty: 'easy', question: '$(2x + 3) + (4x - 1) =$?', accept: ['6x+2', '6x + 2'], placeholder: 'Expression', explanation: '$2x + 4x = 6x$, $3 + (-1) = 2$.' },
     { difficulty: 'medium', question: '$(x + 2)(x - 3) =$?', accept: ['x^2-x-6', 'x^2 - x - 6'], placeholder: 'Expression', explanation: 'FOIL: $x^2 - 3x + 2x - 6 = x^2 - x - 6$.' },
     { difficulty: 'medium', question: 'Degree of $5x^2y^3$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Sum of exponents: $2 + 3 = 5$.' },
-    { difficulty: 'hard', question: '$(3x + 2)^2 =$?', accept: ['9x^2+12x+4', '9x^2 + 12x + 4'], placeholder: 'Expression', explanation: '$(a+b)^2 = a^2 + 2ab + b^2 = 9x^2 + 12x + 4$.' }
+    { difficulty: 'hard', question: '$(3x + 2)^2 =$?', accept: ['9x^2+12x+4', '9x^2 + 12x + 4'], placeholder: 'Expression', explanation: '$(a+b)^2 = a^2 + 2ab + b^2 = 9x^2 + 12x + 4$.' },
+    { difficulty: 'medium', question: '$(a+b)(a-b) =$?', accept: ['a^2-b^2', 'a^2 - b^2'], placeholder: 'Expression', explanation: 'Difference of squares: $(a+b)(a-b) = a^2 - b^2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

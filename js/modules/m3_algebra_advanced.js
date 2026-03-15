@@ -142,7 +142,8 @@
     { difficulty: 'hard', question: 'Number of complex roots of $x^5 + 1 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Degree 5: exactly 5 roots (counting multiplicity). One real root $x = -1$, four complex.' },
     { difficulty: 'medium', question: 'Leading coefficient of $-5x^3 + 2x^2 + 1$:', accept: [-5, '-5'], placeholder: 'Number', explanation: 'Leading coefficient is the coefficient of the highest-degree term: $-5$.' },
     { difficulty: 'hard', question: 'If $f(x) = x^3 - 6x^2 + 11x - 6$, then $f(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$1 - 6 + 11 - 6 = 0$. So $x = 1$ is a root.' },
-    { difficulty: 'easy', question: 'A polynomial of degree 2 is called:', accept: ['quadratic'], placeholder: 'Name', explanation: 'Degree 2: quadratic.' }
+    { difficulty: 'easy', question: 'A polynomial of degree 2 is called:', accept: ['quadratic'], placeholder: 'Name', explanation: 'Degree 2: quadratic.' },
+    { difficulty: 'hard', question: 'Rational root theorem: candidate roots for $x^3 - 2x + 1$:', accept: ['1, -1', '-1, 1', 'pm 1'], placeholder: 'Roots', explanation: 'Constant = 1, leading = 1. Candidates: $\\pm 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -634,7 +635,8 @@
     { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' },
     { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' },
     { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' },
-    { difficulty: 'hard', question: 'Change of base: $\\log_2(8) = \\frac{\\ln(8)}{\\ln($ ? $)}$', accept: [2, '2'], placeholder: 'Base', explanation: 'Change of base: $\\log_b a = \\frac{\\ln a}{\\ln b}$.' }
+    { difficulty: 'hard', question: 'Change of base: $\\log_2(8) = \\frac{\\ln(8)}{\\ln($ ? $)}$', accept: [2, '2'], placeholder: 'Base', explanation: 'Change of base: $\\log_b a = \\frac{\\ln a}{\\ln b}$.' },
+    { difficulty: 'medium', question: '$e^{\\ln(5)} =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$e$ and $\\ln$ are inverses. $e^{\\ln 5} = 5$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

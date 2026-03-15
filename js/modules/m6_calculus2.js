@@ -179,7 +179,8 @@
     { difficulty: 'medium', question: '$\\int x^{-1/2}\\,dx =$?', accept: ['2sqrt(x)+C', '2x^(1/2)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\frac{x^{1/2}}{1/2} + C = 2\\sqrt{x} + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{x}{(x^2+1)^2}\\,dx =$?', accept: ['-1/(2(x^2+1))+C'], placeholder: 'Expression', explanation: 'Let $u = x^2+1$: $\\frac{1}{2}\\int u^{-2}\\,du = -\\frac{1}{2u} + C$.' },
     { difficulty: 'easy', question: '$\\int 4x^3\\,dx =$?', accept: ['x^4+C', 'x^4 + C'], placeholder: 'Expression', explanation: '$4 \\cdot x^4/4 + C = x^4 + C$.' },
-    { difficulty: 'easy', question: '$\\int \\sin x\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' }
+    { difficulty: 'easy', question: '$\\int \\sin x\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' },
+    { difficulty: 'medium', question: '$\\int \\cos(3x)\\,dx =$?', accept: ['sin(3x)/3+C', '(1/3)sin(3x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{3}\\sin(3x) + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -501,7 +502,9 @@
     { difficulty: 'hard', question: '$\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$. Converges.' },
     { difficulty: 'medium', question: 'Evaluate $\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' },
     { difficulty: 'medium', question: '$\\int \\frac{2}{3x+1}\\,dx =$?', accept: ['(2/3)ln|3x+1|+C', '2ln|3x+1|/3+C'], placeholder: 'Expression', explanation: 'Let $u = 3x+1$: $\\frac{2}{3}\\ln|3x+1| + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+4}\\,dx =$?', accept: ['(1/2)arctan(x/2)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\arctan(x/2) + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+4}\\,dx =$?', accept: ['(1/2)arctan(x/2)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\arctan(x/2) + C$.' },
+    { difficulty: 'hard', question: 'Partial fractions: $\\frac{1}{(x-1)(x+1)} = \\frac{A}{x-1} + \\frac{B}{x+1}$. $A =$?', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: 'Set $x = 1$: $1/(2) = A$. $A = 1/2$.' },
+    { difficulty: 'medium', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = 16/3$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

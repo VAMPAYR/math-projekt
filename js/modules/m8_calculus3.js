@@ -116,7 +116,8 @@ topics: [
     { difficulty: 'medium', question: 'A field $\\vec{F}$ with $\\nabla \\cdot \\vec{F} = 0$ everywhere is called:', accept: ['solenoidal', 'incompressible', 'divergence-free'], placeholder: 'Term', explanation: 'Zero divergence everywhere: solenoidal (incompressible).' },
     { difficulty: 'hard', question: 'For $\\vec{F} = \\nabla \\phi$, what is $\\nabla \\times \\vec{F}$?', accept: ['0', 'zero', '<0,0,0>'], placeholder: 'Value', explanation: 'Curl of a gradient is always zero: $\\nabla \\times (\\nabla \\phi) = \\vec{0}$.' },
     { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y \\rangle$ in 2D:', accept: [2, '2'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 = 2$.' },
-    { difficulty: 'easy', question: 'A vector field assigns a {{}} to each point in space:', accept: ['vector'], placeholder: 'What?', explanation: 'Vector field: each point gets a vector.' }
+    { difficulty: 'easy', question: 'A vector field assigns a {{}} to each point in space:', accept: ['vector'], placeholder: 'What?', explanation: 'Vector field: each point gets a vector.' },
+    { difficulty: 'medium', question: 'Gradient of $f = xyz$:', accept: ['<yz, xz, xy>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle yz, xz, xy \\rangle$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -393,7 +394,8 @@ topics: [
     { difficulty: 'easy', question: 'Divergence of $\\vec{F} = \\langle x, y, z \\rangle$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\nabla \\cdot \\vec{F} = 1 + 1 + 1 = 3$.' },
     { difficulty: 'medium', question: "Stokes' theorem relates surface integral of curl to:", accept: ['line integral', 'boundary integral'], placeholder: 'Type', explanation: "$\\iint_S (\\nabla \\times \\vec{F}) \\cdot d\\vec{S} = \\oint_{\\partial S} \\vec{F} \\cdot d\\vec{r}$." },
     { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x^2, y^2, z^2 \\rangle$, $\\nabla \\cdot \\vec{F} =$?', accept: ['2x+2y+2z', '2(x+y+z)'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x}x^2 + \\frac{\\partial}{\\partial y}y^2 + \\frac{\\partial}{\\partial z}z^2 = 2x + 2y + 2z$.' },
-    { difficulty: 'easy', question: 'The outward unit normal to a sphere at any point is the:', accept: ['radial direction', 'radius vector', 'position vector'], placeholder: 'Direction', explanation: 'Normal to sphere at $(x,y,z)$: radial direction $\\hat{r}$.' }
+    { difficulty: 'easy', question: 'The outward unit normal to a sphere at any point is the:', accept: ['radial direction', 'radius vector', 'position vector'], placeholder: 'Direction', explanation: 'Normal to sphere at $(x,y,z)$: radial direction $\\hat{r}$.' },
+    { difficulty: 'hard', question: 'Area element in spherical coordinates: $dS = r^2 \\sin\\phi\\,d\\phi\\,d$ ?', accept: ['theta', '\\theta', 'dtheta'], placeholder: 'Variable', explanation: '$dS = r^2 \\sin\\phi\\,d\\phi\\,d\\theta$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [
