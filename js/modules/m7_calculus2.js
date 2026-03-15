@@ -346,7 +346,12 @@ topics: [
       { question: 'Write the geometric series: $\\frac{1}{1-x} = \\sum_{n=0}^{\\infty}$ ?', accept: ['x^n'], placeholder: 'General term', explanation: '$\\frac{1}{1-x} = \\sum x^n = 1 + x + x^2 + x^3 + \\cdots$' },
       { question: 'What is the radius of convergence?', accept: [1, '1'], placeholder: 'R = ?', explanation: '$|x| \\lt 1$ for convergence. $R = 1$.' },
       { question: 'Differentiate term by term: $\\frac{1}{(1-x)^2} = \\sum$ ?', accept: ['nx^{n-1}', 'n*x^(n-1)'], placeholder: 'General term', explanation: 'Derivative: $\\sum_{n=1}^{\\infty} nx^{n-1}$.' }
-    ], completionMessage: 'Known series can generate new series through differentiation, integration, and substitution.' }
+    ], completionMessage: 'Known series can generate new series through differentiation, integration, and substitution.' },
+    { difficulty: 'hard', question: 'Test $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ for convergence.', parts: [
+      { question: 'Compute $\\frac{a_{n+1}}{a_n}$:', accept: ['(n+1)/(2n)', '(n+1)/2n'], placeholder: 'Ratio', explanation: '$\\frac{(n+1)/2^{n+1}}{n/2^n} = \\frac{n+1}{2n}$.' },
+      { question: '$\\lim_{n \\to \\infty} \\frac{n+1}{2n} =$?', accept: ['1/2', '0.5'], placeholder: 'Limit', explanation: '$\\frac{n+1}{2n} \\to 1/2$.' },
+      { question: 'Does the series converge or diverge?', accept: ['converge', 'converges'], placeholder: 'converge/diverge', explanation: '$L = 1/2 < 1$: converges by the ratio test.' }
+    ], completionMessage: 'Ratio test: $L < 1$ means absolute convergence.' }
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Geometric series formula:', expression: '$\\sum_{n=0}^{\\infty} ar^n = \\frac{a}{1-$ {{0}} $}$ when $|r| <$ {{1}}', blanks: [ { accept: ['r'], size: 3 }, { accept: ['1'], size: 3 } ], explanation: 'Geometric series converges to $a/(1-r)$ when $|r| \\lt 1$.' },
