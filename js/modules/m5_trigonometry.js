@@ -365,7 +365,11 @@ topics: [
       { content: 'Reference angle: $\\theta_r = \\frac{\\pi}{3}$ (since $\\cos\\frac{\\pi}{3} = \\frac{1}{2}$).' },
       { content: 'Cosine positive in Q1 and Q4.' },
       { content: 'Q1: $\\theta = \\frac{\\pi}{3}$. Q4: $\\theta = 2\\pi - \\frac{\\pi}{3} = \\frac{5\\pi}{3}$.' },
-      { content: 'Solutions: $\\theta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}$.' }
+      { content: 'Solutions: $\\theta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}$.' },
+    { difficulty: 'hard', question: 'Prove: $\\frac{\\sin x}{1 + \\cos x} = \\frac{1 - \\cos x}{\\sin x}$.', steps: [
+      { content: 'Cross-multiply: $\\sin^2 x = (1 + \\cos x)(1 - \\cos x)$.' },
+      { content: 'RHS: $1 - \\cos^2 x = \\sin^2 x$. Both sides equal. QED.' }
+    ], explanation: 'Cross-multiplication combined with the Pythagorean identity: $\\sin^2 x + \\cos^2 x = 1$.' }
     ], explanation: 'Trig equations: isolate the trig function, find reference angle, apply ASTC.' },
     { difficulty: 'hard', question: 'Verify: $\\frac{\\sin(2\\theta)}{1 + \\cos(2\\theta)} = \\tan\\theta$.', steps: [
       { content: 'Substitute double angle formulas: $\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta$.' },

@@ -133,7 +133,12 @@ topics: [
       { content: 'Square root constraint: $x + 3 \\geq 0 \\Rightarrow x \\geq -3$.' },
       { content: 'Denominator constraint: $x - 1 \\neq 0 \\Rightarrow x \\neq 1$.' },
       { content: 'Combine both: $x \\geq -3$ AND $x \\neq 1$.' },
-      { content: 'Domain: $[-3, 1) \\cup (1, \\infty)$.' }
+      { content: 'Domain: $[-3, 1) \\cup (1, \\infty)$.' },
+    { difficulty: 'medium', question: 'Find the inverse of $f(x) = 2x + 5$.', steps: [
+      { content: 'Write $y = 2x + 5$.' },
+      { content: 'Swap $x$ and $y$: $x = 2y + 5$.' },
+      { content: 'Solve for $y$: $y = \\frac{x - 5}{2}$. So $f^{-1}(x) = \\frac{x-5}{2}$.' }
+    ], explanation: 'Inverse: swap $x$ and $y$, then solve for $y$.' }
     ], explanation: 'Always check ALL restrictions, then intersect them.' },
     { difficulty: 'hard', question: 'Find the inverse of $f(x) = \\frac{x+3}{x-1}$.', steps: [
       { content: 'Write $y = \\frac{x+3}{x-1}$.' },

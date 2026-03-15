@@ -373,7 +373,13 @@ topics: [
       { question: '$(-3)^2 =$?', accept: [9, '9'], placeholder: 'Number', explanation: '$(-3)^2 = 9$ (even power = positive).' },
       { question: '$(-2)^3 =$?', accept: [-8, '-8'], placeholder: 'Number', explanation: '$(-2)^3 = -8$ (odd power = negative).' },
       { question: '$9 - (-8) =$?', accept: [17, '17'], placeholder: 'Number', explanation: '$9 + 8 = 17$.' },
-      { question: '$|17| - |5-8| = |17| - |-3| =$?', accept: [14, '14'], placeholder: 'Final answer', explanation: '$17 - 3 = 14$.' }
+      { question: '$|17| - |5-8| = |17| - |-3| =$?', accept: [14, '14'], placeholder: 'Final answer', explanation: '$17 - 3 = 14$.' },
+    { difficulty: 'hard', question: 'Expand and simplify $(2x + 3)(x - 4)$.', parts: [
+      { question: 'First terms: $2x \\cdot x =$?', accept: ['2x^2', '2x2'], placeholder: 'Term', explanation: '$2x \\cdot x = 2x^2$.' },
+      { question: 'Outer + Inner: $2x(-4) + 3(x) =$?', accept: ['-5x'], placeholder: 'Term', explanation: '$-8x + 3x = -5x$.' },
+      { question: 'Last terms: $3 \\cdot (-4) =$?', accept: [-12, '-12'], placeholder: 'Number', explanation: '$3(-4) = -12$.' },
+      { question: 'Combined: $2x^2 - 5x - 12$. Correct?', accept: ['yes', 'correct'], placeholder: 'yes/no', explanation: '$(2x+3)(x-4) = 2x^2 - 5x - 12$.' }
+    ], completionMessage: 'FOIL: First, Outer, Inner, Last. Then combine like terms.' }
     ], completionMessage: 'Integer operations with absolute value: evaluate inside first, then apply $|\\cdot|$.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Integer Operations Strategy</h4>

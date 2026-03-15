@@ -585,7 +585,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Quantifier negation rules:', expression: '$\\neg(\\forall x, P(x)) \\equiv$ {{0}} $x, \\neg P(x)$', blanks: [ { accept: ['\\exists', 'exists', '∃'], size: 6 } ], explanation: '"Not all" = "there exists one that does not."' },
-    { difficulty: 'medium', context: 'Quantifier order:', expression: '$\\forall x, \\exists y$ means $y$ can {{0}} on $x$.', blanks: [ { accept: ['depend'], size: 8 } ], explanation: 'The quantifier order determines whether $y$ can change with $x$.' }
+    { difficulty: 'medium', context: 'Quantifier order:', expression: '$\\forall x, \\exists y$ means $y$ can {{0}} on $x$.', blanks: [ { accept: ['depend'], size: 8 } ], explanation: 'The quantifier order determines whether $y$ can change with $x$.' },
+    { difficulty: 'medium', context: 'Modus Ponens:', expression: 'If $p \\to q$ and $p$, then {{0}}.', blanks: [ { accept: ['q'], size: 3 } ], explanation: 'Modus Ponens: given $p \\to q$ and $p$, conclude $q$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'Negate: $\\forall \\epsilon \\gt 0, \\exists \\delta \\gt 0, |x-a| < \\delta \\Rightarrow |f(x)-L| < \\epsilon$.', parts: [

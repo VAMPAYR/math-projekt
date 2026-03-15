@@ -266,7 +266,12 @@ topics: [
       { content: 'Rewrite: $6x^2 + 2x + 9x + 3$.' },
       { content: 'Group: $(6x^2 + 2x) + (9x + 3)$.' },
       { content: 'Factor each group: $2x(3x + 1) + 3(3x + 1)$.' },
-      { content: 'Factor out $(3x+1)$: $(3x+1)(2x+3)$.' }
+      { content: 'Factor out $(3x+1)$: $(3x+1)(2x+3)$.' },
+    { difficulty: 'hard', question: 'Factor $2x^2 + 7x + 3$ by the AC method.', steps: [
+      { content: '$a \\cdot c = 2 \\cdot 3 = 6$. Find two numbers that multiply to 6 and add to 7.' },
+      { content: 'Numbers: 6 and 1. Rewrite: $2x^2 + 6x + x + 3$.' },
+      { content: 'Group: $2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)$.' }
+    ], explanation: 'AC method: split the middle term using factors of $ac$ that sum to $b$.' }
     ], explanation: 'The AC method converts $ax^2 + bx + c$ factoring into grouping.' }
   ],
   matching: [
