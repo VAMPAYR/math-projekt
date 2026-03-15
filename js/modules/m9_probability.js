@@ -182,7 +182,8 @@ topics: [
     { difficulty: 'medium', question: '$\\binom{6}{3} =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$\\frac{6!}{3!3!} = 20$.' },
     { difficulty: 'hard', question: 'Stirling approximation: $n! \\approx \\sqrt{2\\pi n}(n/e)^n$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Stirling: asymptotic approximation for large $n!$.' },
     { difficulty: 'medium', question: 'Permutations: $P(n,r) = n!/(n-r)!$. $P(5,3) =$?', accept: [60, '60'], placeholder: 'Number', explanation: '$5!/2! = 120/2 = 60$.' },
-    { difficulty: 'hard', question: 'Negative binomial: trials until $r$-th success. $E[X] = r/$?', accept: ['p'], placeholder: 'Parameter', explanation: '$E[X] = r/p$. Generalizes geometric.' }
+    { difficulty: 'hard', question: 'Negative binomial: trials until $r$-th success. $E[X] = r/$?', accept: ['p'], placeholder: 'Parameter', explanation: '$E[X] = r/p$. Generalizes geometric.' },
+    { difficulty: 'medium', question: 'Central tendency: mean, median, and:', accept: ['mode'], placeholder: 'Third measure', explanation: 'Three measures of central tendency: mean, median, mode.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
