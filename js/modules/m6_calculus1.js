@@ -399,7 +399,12 @@ topics: [
       { content: 'Area $A = 2x \\cdot \\sqrt{4-x^2}$ (base = $2x$, height = $\\sqrt{4-x^2}$).' },
       { content: '$A\' = 2\\sqrt{4-x^2} + 2x \\cdot \\frac{-x}{\\sqrt{4-x^2}} = \\frac{2(4-x^2) - 2x^2}{\\sqrt{4-x^2}} = \\frac{8-4x^2}{\\sqrt{4-x^2}}$.' },
       { content: 'Set numerator = 0: $8 - 4x^2 = 0 \\Rightarrow x = \\sqrt{2}$.' },
-      { content: 'Max area: $A = 2\\sqrt{2} \\cdot \\sqrt{2} = 4$.' }
+      { content: 'Max area: $A = 2\\sqrt{2} \\cdot \\sqrt{2} = 4$.' },
+    { difficulty: 'medium', question: 'Evaluate $\\frac{d}{dx}\\int_0^x t^2\\,dt$.', steps: [
+      { content: 'FTC Part 1: $\\frac{d}{dx}\\int_a^x f(t)\\,dt = f(x)$.' },
+      { content: 'Here $f(t) = t^2$.' },
+      { content: 'So $\\frac{d}{dx}\\int_0^x t^2\\,dt = x^2$.' }
+    ], explanation: 'FTC1: the derivative of the integral of $f$ from $a$ to $x$ is $f(x)$.' }
     ], explanation: 'Optimization requires: (1) express quantity in one variable, (2) differentiate, (3) set = 0, (4) verify.' }
   ],
   multiPart: [

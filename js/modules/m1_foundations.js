@@ -503,7 +503,12 @@ topics: [
       { content: 'By commutativity: $\\neg P \\vee Q \\equiv Q \\vee \\neg P$.' },
       { content: 'Rewrite as conditional: $Q \\vee \\neg P \\equiv \\neg(\\neg Q) \\vee \\neg P$.' },
       { content: '$\\neg(\\neg Q) \\vee \\neg P \\equiv \\neg Q \\to \\neg P$.' },
-      { content: 'Therefore $P \\to Q \\equiv \\neg Q \\to \\neg P$. $\\blacksquare$' }
+      { content: 'Therefore $P \\to Q \\equiv \\neg Q \\to \\neg P$. $\\blacksquare$' },
+    { difficulty: 'medium', question: 'Given $A = \\{1,2,3,4\\}$ and $B = \\{3,4,5,6\\}$, find $A \\cup B$.', steps: [
+      { content: 'List all elements in $A$: $\\{1, 2, 3, 4\\}$.' },
+      { content: 'Add elements from $B$ that are not already listed: $5, 6$.' },
+      { content: '$A \\cup B = \\{1, 2, 3, 4, 5, 6\\}$.' }
+    ], explanation: 'Union ($\\cup$): combine all elements from both sets, listing each element only once.' }
     ], explanation: 'The contrapositive equivalence is fundamental to proof technique.' }
   ],
   fillBlanks: [

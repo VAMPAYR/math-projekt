@@ -568,7 +568,8 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Critical points:', expression: 'Critical points occur where $f\'(x) =$ {{0}} or $f\'$ is undefined.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'Set derivative to zero.' },
-          { difficulty: 'medium', context: 'Second derivative test:', expression: 'If $f\'(c) = 0$ and $f\'\' (c) \\gt 0$, then $c$ is a local {{0}}.', blanks: [ { accept: ['minimum', 'min'], size: 8 } ], explanation: 'Positive second derivative = concave up = minimum.' }
+          { difficulty: 'medium', context: 'Second derivative test:', expression: 'If $f\'(c) = 0$ and $f\'\' (c) \\gt 0$, then $c$ is a local {{0}}.', blanks: [ { accept: ['minimum', 'min'], size: 8 } ], explanation: 'Positive second derivative = concave up = minimum.' },
+    { difficulty: 'medium', context: 'Critical points:', expression: 'A critical point occurs where $f\'(x) =$ {{0}} or $f\'(x)$ is undefined.', blanks: [ { accept: ['0', 'zero'], size: 4 } ], explanation: 'Critical points: $f\'(x) = 0$ or $f\'(x)$ DNE.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Analyze $f(x) = x^3 - 3x$ completely.', parts: [

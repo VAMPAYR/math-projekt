@@ -223,7 +223,11 @@ topics: [
       { question: 'Amplitude:', accept: [20, '20'], placeholder: 'meters', explanation: 'Amplitude = radius = 20m.' },
       { question: 'Period:', accept: [60, '60'], placeholder: 'seconds', explanation: 'One revolution = 60s.' },
       { question: 'Max height:', accept: [45, '45'], placeholder: 'meters', explanation: '25 + 20 = 45m.' },
-      { question: 'Min height:', accept: [5, '5'], placeholder: 'meters', explanation: '25 - 20 = 5m.' }
+      { question: 'Min height:', accept: [5, '5'], placeholder: 'meters', explanation: '25 - 20 = 5m.' },
+    { difficulty: 'hard', question: 'In triangle ABC, angle A = 30°, side a = 5.', parts: [
+      { question: 'Which law do you use to find side b if angle B = 60°?', accept: ['law of sines', 'sine rule'], placeholder: 'Law name', explanation: 'Law of sines: $a/\\sin A = b/\\sin B$.' },
+      { question: 'Find $b$ (round to 1 decimal):', accept: ['8.7'], placeholder: 'Number', explanation: '$b = 5 \\sin(60°)/\\sin(30°) = 5(0.866)/0.5 = 8.66 \\approx 8.7$.' }
+    ], completionMessage: 'Law of sines: $a/\\sin A = b/\\sin B = c/\\sin C$.' }
     ], completionMessage: 'Sinusoidal model: $h(t) = A\\sin(\\frac{2\\pi}{T}t + \\phi) + D$.' },
     { difficulty: 'hard', question: 'Geometry: A regular hexagon has side length 6. Find its area using trig.', parts: [
       { question: 'A regular hexagon has how many equilateral triangles?', accept: [6, '6'], placeholder: 'Number', explanation: 'A regular hexagon divides into 6 equilateral triangles from center.' },
