@@ -168,7 +168,9 @@
           { difficulty: 'medium', question: '$\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln|x|]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' },
           { difficulty: 'medium', question: '$\\int_0^{\\pi/2} \\cos x\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi/2} = 1 - 0 = 1$.' },
           { difficulty: 'hard', question: '$\\int_{-1}^{1} x^3\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^3$ is odd. Integral of odd function over symmetric interval = 0.' },
-          { difficulty: 'hard', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$\\int x^{1/2}\\,dx = \\frac{2}{3}x^{3/2}$. $[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = \\frac{16}{3}$.' }
+          { difficulty: 'hard', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$\\int x^{1/2}\\,dx = \\frac{2}{3}x^{3/2}$. $[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = \\frac{16}{3}$.' },
+    { difficulty: 'easy', question: '$\\int x^4\\,dx =$?', accept: ['x^5/5+C', 'x^5/5 + C'], placeholder: 'Expression', explanation: '$\\frac{x^5}{5} + C$.' },
+    { difficulty: 'medium', question: '$\\int \\cos(2x)\\,dx =$?', accept: ['sin(2x)/2+C', '(1/2)sin(2x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\sin(2x) + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -349,7 +351,9 @@
           { difficulty: 'medium', question: '$\\int \\frac{2x}{x^2 + 1}\\,dx =$? (include + C)', accept: ['ln(x^2+1) + C', 'ln(x^2 + 1) + C'], placeholder: 'Expression', explanation: '$u = x^2+1$, $du = 2x\\,dx$. $\\ln(x^2+1) + C$.' },
           { difficulty: 'hard', question: '$\\int \\ln x\\,dx = x\\ln x -$ ? $+ C$', accept: ['x'], placeholder: 'Missing term', explanation: 'IBP: $u = \\ln x, dv = dx$. $x\\ln x - \\int 1\\,dx = x\\ln x - x + C$.' },
     { difficulty: 'easy', question: '$\\int_0^1 2x\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x^2]_0^1 = 1$.' },
-    { difficulty: 'medium', question: 'Average value of $f(x) = x^2$ on $[0, 3]$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\frac{1}{3}\\int_0^3 x^2\\,dx = \\frac{1}{3}[x^3/3]_0^3 = \\frac{1}{3}(9) = 3$.' }
+    { difficulty: 'medium', question: 'Average value of $f(x) = x^2$ on $[0, 3]$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\frac{1}{3}\\int_0^3 x^2\\,dx = \\frac{1}{3}[x^3/3]_0^3 = \\frac{1}{3}(9) = 3$.' },
+    { difficulty: 'easy', question: '$\\int_0^4 1\\,dx =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Length of interval: $4 - 0 = 4$.' },
+    { difficulty: 'medium', question: 'Volume of solid with cross-section area $A = \\pi$ from $x=0$ to $x=3$:', accept: ['3pi', '3\\pi', '9.42'], placeholder: 'Number', explanation: '$V = \\int_0^3 \\pi\\,dx = 3\\pi$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -460,7 +464,9 @@
           { difficulty: 'easy', question: 'The Maclaurin series for $\\cos x$ starts with: $1 - $ ? $ + \\cdots$', accept: ['x^2/2', 'x^2/2!'], placeholder: 'Second term', explanation: '$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\cdots$' },
           { difficulty: 'medium', question: 'Approximate $e^1$ using first 4 terms: $1 + 1 + 1/2 + 1/6 =$?', accept: ['2.667', '8/3', '2.67'], placeholder: 'Number', explanation: '$1 + 1 + 0.5 + 0.167 \\approx 2.667$ (true value: $e \\approx 2.718$).' },
           { difficulty: 'medium', question: 'Radius of convergence of $\\sum x^n/n!$:', accept: ['infinity', 'inf'], placeholder: 'R = ?', explanation: 'Ratio test: $\\frac{|x|}{n+1} \\to 0 < 1$ for all $x$. $R = \\infty$.' },
-          { difficulty: 'hard', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^2}$ converge or diverge?', accept: ['converge', 'converges'], placeholder: 'converge/diverge', explanation: 'p-series with $p = 2 \\gt 1$: converges (to $\\pi^2/6$).' }
+          { difficulty: 'hard', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^2}$ converge or diverge?', accept: ['converge', 'converges'], placeholder: 'converge/diverge', explanation: 'p-series with $p = 2 \\gt 1$: converges (to $\\pi^2/6$).' },
+    { difficulty: 'easy', question: '$\\int \\frac{1}{x}\\,dx =$?', accept: ['ln|x|+C', 'ln(x)+C'], placeholder: 'Expression', explanation: '$\\ln|x| + C$.' },
+    { difficulty: 'medium', question: '$\\int e^{-x}\\,dx =$?', accept: ['-e^(-x)+C', '-e^{-x}+C'], placeholder: 'Expression', explanation: '$-e^{-x} + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [
