@@ -139,7 +139,9 @@ topics: [
     { difficulty: 'easy', question: '$5! =$?', accept: [120, '120'], placeholder: 'Enter a number', explanation: '$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$.' },
     { difficulty: 'easy', question: '$\\binom{6}{2} =$?', accept: [15, '15'], placeholder: 'Enter a number', explanation: '$\\frac{6!}{2!4!} = \\frac{720}{2 \\cdot 24} = 15$.' },
     { difficulty: 'medium', question: 'Two dice are rolled. $P(\\text{sum} = 7) =$? (as fraction)', accept: ['1/6', '6/36'], placeholder: 'e.g. 1/6', hint: '<p>Count favorable: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).</p>', explanation: '6 favorable out of 36 total = $1/6$.' },
-    { difficulty: 'hard', question: 'A bag has 3 red and 5 blue balls. Picking 2 without replacement. $P(\\text{both red}) =$?', accept: ['3/28'], placeholder: 'Fraction', explanation: '$\\frac{\\binom{3}{2}}{\\binom{8}{2}} = \\frac{3}{28}$.' }
+    { difficulty: 'medium', question: '$P(A) = 0.3$, $P(B) = 0.5$, $A$ and $B$ independent. $P(A \\cap B) =$?', accept: ['0.15', '.15'], placeholder: 'Number', explanation: 'Independent: $P(A \\cap B) = P(A) \\cdot P(B) = 0.3 \\cdot 0.5 = 0.15$.' },
+    { difficulty: 'hard', question: 'A bag has 3 red and 5 blue balls. Picking 2 without replacement. $P(\\text{both red}) =$?', accept: ['3/28'], placeholder: 'Fraction', explanation: '$\\frac{\\binom{3}{2}}{\\binom{8}{2}} = \\frac{3}{28}$.' },
+    { difficulty: 'hard', question: '$P(A|B) = 0.6$, $P(B) = 0.4$. Find $P(A \\cap B)$:', accept: ['0.24', '.24'], placeholder: 'Number', explanation: '$P(A \\cap B) = P(A|B) \\cdot P(B) = 0.6 \\cdot 0.4 = 0.24$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -295,8 +297,10 @@ topics: [
     { difficulty: 'easy', question: '$X \\sim \\text{Bin}(10, 0.5)$. $E[X] =$?', accept: [5, '5'], placeholder: 'Enter a number', explanation: '$np = 10(0.5) = 5$.' },
     { difficulty: 'medium', question: 'If $P(X=1) = 0.4, P(X=2) = 0.6$, then $E[X] =$?', accept: ['1.6'], placeholder: 'Enter a number', explanation: '$1(0.4) + 2(0.6) = 1.6$.' },
     { difficulty: 'medium', question: 'For normal distribution, what % of data falls within 2 standard deviations?', accept: [95, '95', '95%'], placeholder: 'Percentage', explanation: '68-95-99.7 rule: 95% within $\\mu \\pm 2\\sigma$.' },
+    { difficulty: 'medium', question: 'Score of 80, $\\mu = 70$, $\\sigma = 5$. What is the z-score?', accept: [2, '2'], placeholder: 'Number', explanation: '$z = (80-70)/5 = 2$.' },
     { difficulty: 'hard', question: 'If $E[X] = 4$ and $E[X^2] = 20$, what is $\\text{Var}(X)$?', accept: [4, '4'], placeholder: 'Enter a number', explanation: '$20 - 16 = 4$.' },
-    { difficulty: 'hard', question: '$X \\sim \\text{Bin}(100, 0.3)$. $\\sigma =$? (to 1 decimal)', accept: ['4.6', '4.58'], placeholder: 'Standard deviation', explanation: '$\\sigma = \\sqrt{npq} = \\sqrt{100(0.3)(0.7)} = \\sqrt{21} \\approx 4.58$.' }
+    { difficulty: 'hard', question: '$X \\sim \\text{Bin}(100, 0.3)$. $\\sigma =$? (to 1 decimal)', accept: ['4.6', '4.58'], placeholder: 'Standard deviation', explanation: '$\\sigma = \\sqrt{npq} = \\sqrt{100(0.3)(0.7)} = \\sqrt{21} \\approx 4.58$.' },
+    { difficulty: 'hard', question: '$X \\sim \\text{Poisson}(\\lambda = 6)$. $E[X] =$?', accept: [6, '6'], placeholder: 'Number', explanation: 'For Poisson: $E[X] = \\lambda = 6$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [
