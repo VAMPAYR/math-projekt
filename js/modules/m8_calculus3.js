@@ -136,7 +136,9 @@ topics: [
     { difficulty: 'medium', question: 'Source: $\\nabla \\cdot \\vec{F} > 0$. Sink: $\\nabla \\cdot \\vec{F} <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Source: positive divergence. Sink: negative divergence.' },
     { difficulty: 'hard', question: 'Harmonic function: $\\nabla^2 f = 0$. Satisfies the _____ equation.', accept: ['Laplace', 'Laplace\'s'], placeholder: 'Name', explanation: 'Laplace equation: $\\Delta f = 0$. Solutions are harmonic.' },
     { difficulty: 'medium', question: 'Solenoidal field: $\\nabla \\cdot \\vec{F} = $ ?', accept: [0, '0'], placeholder: 'Value', explanation: 'Solenoidal: divergence-free. $\\nabla \\cdot \\vec{F} = 0$.' },
-    { difficulty: 'hard', question: 'Helmholtz decomposition: any smooth vector field = gradient + _____ field.', accept: ['curl', 'solenoidal', 'divergence-free'], placeholder: 'Type', explanation: '$\\vec{F} = -\\nabla\\phi + \\nabla \\times \\vec{A}$.' }
+    { difficulty: 'hard', question: 'Helmholtz decomposition: any smooth vector field = gradient + _____ field.', accept: ['curl', 'solenoidal', 'divergence-free'], placeholder: 'Type', explanation: '$\\vec{F} = -\\nabla\\phi + \\nabla \\times \\vec{A}$.' },
+    { difficulty: 'medium', question: 'Gradient descent moves in direction $-\\nabla f$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Negative gradient: steepest decrease.' },
+    { difficulty: 'hard', question: 'Gauss law: $\\nabla \\cdot \\vec{E} = \\rho/\\epsilon_0$. $\\rho$ is charge:', accept: ['density'], placeholder: 'What?', explanation: 'Electric field divergence = charge density.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [

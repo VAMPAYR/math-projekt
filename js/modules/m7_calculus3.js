@@ -196,7 +196,9 @@
     { difficulty: 'medium', question: 'Work = $\\vec{F} \\cdot \\vec{d} = |F||d|\\cos$ ?', accept: ['theta', '\\theta'], placeholder: 'Angle', explanation: '$W = |F||d|\\cos\\theta$.' },
     { difficulty: 'hard', question: 'Torque: $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Cross product gives a:', accept: ['vector'], placeholder: 'Type', explanation: 'Torque is a vector: $\\vec{r} \\times \\vec{F}$.' },
     { difficulty: 'medium', question: 'Unit vector: magnitude equals:', accept: [1, '1'], placeholder: 'Value', explanation: '$|\\hat{u}| = 1$.' },
-    { difficulty: 'hard', question: 'Frenet-Serret formulas: $dB/ds = -\\tau$ ? where $\\tau$ is:', accept: ['N', 'torsion * N'], placeholder: 'Vector/quantity', explanation: '$dB/ds = -\\tau N$. $\\tau$: torsion (measures twisting).' }
+    { difficulty: 'hard', question: 'Frenet-Serret formulas: $dB/ds = -\\tau$ ? where $\\tau$ is:', accept: ['N', 'torsion * N'], placeholder: 'Vector/quantity', explanation: '$dB/ds = -\\tau N$. $\\tau$: torsion (measures twisting).' },
+    { difficulty: 'medium', question: 'Cross product magnitude = area of parallelogram. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$|\\vec{a} \\times \\vec{b}|$ = parallelogram area.' },
+    { difficulty: 'hard', question: 'Arc length: $L = \\int_a^b |\\vec{r}\'(t)|\\,dt$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Arc length integral for space curves.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [

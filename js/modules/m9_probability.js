@@ -180,7 +180,9 @@ topics: [
     { difficulty: 'medium', question: 'Permutation with repetition: arranging $n$ items with $n_1$ alike, $n_2$ alike: $\\frac{n!}{n_1! n_2! \\ldots}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Multinomial coefficient.' },
     { difficulty: 'hard', question: 'Stars and bars: ways to place 10 identical balls in 3 bins: $\\binom{10+3-1}{3-1} =$?', accept: [66, '66'], placeholder: 'Number', explanation: '$\\binom{12}{2} = 66$.' },
     { difficulty: 'medium', question: '$\\binom{6}{3} =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$\\frac{6!}{3!3!} = 20$.' },
-    { difficulty: 'hard', question: 'Stirling approximation: $n! \\approx \\sqrt{2\\pi n}(n/e)^n$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Stirling: asymptotic approximation for large $n!$.' }
+    { difficulty: 'hard', question: 'Stirling approximation: $n! \\approx \\sqrt{2\\pi n}(n/e)^n$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Stirling: asymptotic approximation for large $n!$.' },
+    { difficulty: 'medium', question: 'Permutations: $P(n,r) = n!/(n-r)!$. $P(5,3) =$?', accept: [60, '60'], placeholder: 'Number', explanation: '$5!/2! = 120/2 = 60$.' },
+    { difficulty: 'hard', question: 'Negative binomial: trials until $r$-th success. $E[X] = r/$?', accept: ['p'], placeholder: 'Parameter', explanation: '$E[X] = r/p$. Generalizes geometric.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -390,7 +392,9 @@ topics: [
     { difficulty: 'medium', question: '$P(A|B)$: probability of $A$ given $B$. Formula: $P(A \\cap B) / P($ ?$)$', accept: ['B'], placeholder: 'Event', explanation: '$P(A|B) = P(A \\cap B)/P(B)$.' },
     { difficulty: 'hard', question: 'Markov inequality: $P(X \\geq a) \\leq E[X]/$ ?', accept: ['a'], placeholder: 'Value', explanation: '$P(X \\geq a) \\leq E[X]/a$ for $X \\geq 0$.' },
     { difficulty: 'medium', question: 'Expected value of binomial$(n, p)$: $E[X] =$?', accept: ['np'], placeholder: 'Formula', explanation: '$E[X] = np$.' },
-    { difficulty: 'hard', question: 'Central limit theorem: sample means of $n$ observations approach _____ distribution as $n \\to \\infty$.', accept: ['normal', 'Gaussian'], placeholder: 'Distribution', explanation: 'CLT: $\\bar{X}_n \\sim N(\\mu, \\sigma^2/n)$ for large $n$.' }
+    { difficulty: 'hard', question: 'Central limit theorem: sample means of $n$ observations approach _____ distribution as $n \\to \\infty$.', accept: ['normal', 'Gaussian'], placeholder: 'Distribution', explanation: 'CLT: $\\bar{X}_n \\sim N(\\mu, \\sigma^2/n)$ for large $n$.' },
+    { difficulty: 'medium', question: 'Chebyshev: $P(|X-\\mu| \\geq k\\sigma) \\leq 1/k^2$. For $k=2$:', accept: ['1/4', '0.25'], placeholder: 'Bound', explanation: 'At most 25% beyond 2 standard deviations.' },
+    { difficulty: 'hard', question: 'MGF: $M_X(t) = E[e^{tX}]$. $M_X(0) =$?', accept: [1, '1'], placeholder: 'Value', explanation: '$E[e^{0}] = E[1] = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

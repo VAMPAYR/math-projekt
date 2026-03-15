@@ -162,7 +162,9 @@
     { difficulty: 'medium', question: 'Quintic polynomial: degree:', accept: [5, '5'], placeholder: 'Number', explanation: 'Quintic = degree 5.' },
     { difficulty: 'hard', question: 'Abel-Ruffini: no general formula for roots of degree _____ or higher using radicals.', accept: [5, '5'], placeholder: 'Degree', explanation: 'No algebraic formula for $n \\geq 5$. Proved by Abel and Galois.' },
     { difficulty: 'medium', question: 'Conjugate pairs: if $3 - 2i$ is root, so is:', accept: ['3+2i', '3 + 2i'], placeholder: 'Root', explanation: 'Complex roots come in conjugate pairs (for real coefficients).' },
-    { difficulty: 'hard', question: 'Discriminant of $ax^2 + bx + c$: $\\Delta = b^2 - 4ac$. If $\\Delta < 0$:', accept: ['no real roots', '2 complex roots'], placeholder: 'Result', explanation: 'Negative discriminant: two complex conjugate roots.' }
+    { difficulty: 'hard', question: 'Discriminant of $ax^2 + bx + c$: $\\Delta = b^2 - 4ac$. If $\\Delta < 0$:', accept: ['no real roots', '2 complex roots'], placeholder: 'Result', explanation: 'Negative discriminant: two complex conjugate roots.' },
+    { difficulty: 'medium', question: 'Polynomial long division: divide leading terms first.', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Long division: leading term division, multiply, subtract, repeat.' },
+    { difficulty: 'hard', question: 'Rational Root Theorem: possible roots of $2x^3 + x - 6$: factors of 6 over factors of:', accept: [2, '2'], placeholder: 'Number', explanation: 'Possible: $\\pm p/q$ where $p | 6, q | 2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -442,7 +444,9 @@
     { difficulty: 'medium', question: 'Product of roots of $x^2 + 3x - 10 = 0$:', accept: [-10, '-10'], placeholder: 'Number', explanation: 'Vieta: product = $c/a = -10$.' },
     { difficulty: 'hard', question: 'Ellipse: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$. Foci at $x = \\pm$ ?', accept: ['c', 'sqrt(a^2-b^2)'], placeholder: 'Value', explanation: '$c = \\sqrt{a^2 - b^2}$.' },
     { difficulty: 'medium', question: 'Vieta\'s: for $x^2 + bx + c = 0$, sum of roots $=$?', accept: ['-b', '-b/a'], placeholder: 'Formula', explanation: 'Sum $= -b/a$. (With $a=1$: sum $= -b$.)' },
-    { difficulty: 'hard', question: 'Conic section: eccentricity $e = 0$:', accept: ['circle'], placeholder: 'Shape', explanation: 'Circle: $e = 0$. Ellipse: $0 < e < 1$. Parabola: $e = 1$. Hyperbola: $e > 1$.' }
+    { difficulty: 'hard', question: 'Conic section: eccentricity $e = 0$:', accept: ['circle'], placeholder: 'Shape', explanation: 'Circle: $e = 0$. Ellipse: $0 < e < 1$. Parabola: $e = 1$. Hyperbola: $e > 1$.' },
+    { difficulty: 'medium', question: 'Arithmetic series: $S_n = n(a_1 + a_n)/2$. For $a_1=1, a_{50}=99, n=50$:', accept: [2500, '2500'], placeholder: 'Sum', explanation: '$50(100)/2 = 2500$.' },
+    { difficulty: 'hard', question: 'Matrix inverse exists iff $\\det(A) \\neq$?', accept: [0, '0'], placeholder: 'Value', explanation: 'Non-singular: determinant nonzero.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -693,7 +697,9 @@
     { difficulty: 'medium', question: 'Compound interest: $A = 1000(1.05)^{10} \\approx$?', accept: ['1628.89', '1629'], placeholder: 'Amount', explanation: '$1000(1.05)^{10} \\approx 1628.89$.' },
     { difficulty: 'hard', question: 'Newton\'s law of cooling: $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$. As $t \\to \\infty$, $T \\to$?', accept: ['T_env', 'environment temp'], placeholder: 'Temp', explanation: '$e^{-kt} \\to 0$. Temperature approaches the environment.' },
     { difficulty: 'medium', question: 'Number $e$ is the base of _____ logarithms.', accept: ['natural', 'ln'], placeholder: 'Type', explanation: '$\\ln = \\log_e$: natural logarithm.' },
-    { difficulty: 'hard', question: 'Logistic differential equation: $\\frac{dP}{dt} = rP(1 - P/K)$. Solution approaches $K$ called:', accept: ['carrying capacity', 'equilibrium'], placeholder: 'Name', explanation: '$K$: carrying capacity. Population levels off at $K$.' }
+    { difficulty: 'hard', question: 'Logistic differential equation: $\\frac{dP}{dt} = rP(1 - P/K)$. Solution approaches $K$ called:', accept: ['carrying capacity', 'equilibrium'], placeholder: 'Name', explanation: '$K$: carrying capacity. Population levels off at $K$.' },
+    { difficulty: 'medium', question: 'Solve: $5^x = 125$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$5^3 = 125$.' },
+    { difficulty: 'hard', question: '$\\log_2(x) + \\log_2(x-2) = 3$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\log_2(x(x-2)) = 3$. $x^2-2x=8$. $x=4$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

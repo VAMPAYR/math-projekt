@@ -128,7 +128,9 @@ topics: [
     { difficulty: 'medium', question: '$\\int \\tan(x)\\,dx =$?', accept: ['-ln|cos(x)|+C', 'ln|sec(x)|+C'], placeholder: 'Expression', explanation: '$-\\ln|\\cos x| + C = \\ln|\\sec x| + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{dx}{\\sqrt{x^2-1}} =$?', accept: ['arcsec(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}|x| + C$ (or $\\cosh^{-1} x$).' },
     { difficulty: 'medium', question: '$\\int \\sec^2 x\\,dx =$?', accept: ['tan(x)+C', 'tanx+C'], placeholder: 'Expression', explanation: '$\\tan x + C$.' },
-    { difficulty: 'hard', question: 'Wallis integral: $\\int_0^{\\pi/2} \\sin^n x\\,dx$ for even $n$ involves factor of $\\pi/$ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Wallis: even $n$ gives $\\frac{(n-1)!!}{n!!} \\cdot \\frac{\\pi}{2}$.' }
+    { difficulty: 'hard', question: 'Wallis integral: $\\int_0^{\\pi/2} \\sin^n x\\,dx$ for even $n$ involves factor of $\\pi/$ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Wallis: even $n$ gives $\\frac{(n-1)!!}{n!!} \\cdot \\frac{\\pi}{2}$.' },
+    { difficulty: 'medium', question: '$\\int \\csc^2 x\\,dx =$?', accept: ['-cot(x)+C', '-cotx+C'], placeholder: 'Expression', explanation: '$-\\cot x + C$.' },
+    { difficulty: 'hard', question: '$\\int_0^1 (-\\ln x)\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'IBP or direct: $[-x\\ln x + x]_0^1 = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
