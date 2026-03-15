@@ -155,13 +155,17 @@ topics: [
     ], completionMessage: 'Card probabilities: combinations count hands, since order of cards does not matter.' }
   ],
   stepBuilder: [
-    { difficulty: 'medium', question: 'How many 4-letter \"words\" can be formed from A,B,C,D,E with no repeats?', steps: [
+    { difficulty: 'medium', question: 'How many 4-letter "words" can be formed from A,B,C,D,E with no repeats?', steps: [
       { content: 'Position 1: 5 choices (any letter).' },
       { content: 'Position 2: 4 choices (one used).' },
       { content: 'Position 3: 3 choices.' },
       { content: 'Position 4: 2 choices.' },
       { content: 'Total: $5 \\times 4 \\times 3 \\times 2 = P(5,4) = 120$.' }
     ], explanation: 'Permutation without replacement: each position reduces the pool by 1.' },
+    { difficulty: 'medium', question: '$P(A) = 0.3$, $P(B|A) = 0.8$. Find $P(A \\cap B)$.', steps: [
+      { content: 'Definition: $P(A \\cap B) = P(B|A) \\cdot P(A)$.' },
+      { content: '$P(A \\cap B) = 0.8 \\times 0.3 = 0.24$.' }
+    ], explanation: 'Conditional probability multiplication rule: $P(A \\cap B) = P(B|A) \\cdot P(A)$.' },
     { difficulty: 'hard', question: 'A jar has 4 red and 6 blue balls. Draw 3 without replacement. Find $P(\\text{exactly 2 red})$.', steps: [
       { content: 'Ways to choose 2 red from 4: $\\binom{4}{2} = 6$.' },
       { content: 'Ways to choose 1 blue from 6: $\\binom{6}{1} = 6$.' },
@@ -309,7 +313,12 @@ topics: [
       { content: '$(0.4)^3 = 0.064$.' },
       { content: '$(0.6)^2 = 0.36$.' },
       { content: '$P(X=3) = 10 \\cdot 0.064 \\cdot 0.36 = 0.2304$.' }
-    ], explanation: 'Binomial formula: $\\binom{n}{k}p^k q^{n-k}$. Each term has a combinatorial and probabilistic component.' }
+    ], explanation: 'Binomial formula: $\\binom{n}{k}p^k q^{n-k}$. Each term has a combinatorial and probabilistic component.' },
+    { difficulty: 'medium', question: 'Test score 92, class mean $\\mu = 78$, standard deviation $\\sigma = 7$. Find the z-score.', steps: [
+      { content: '$z = \\frac{x - \\mu}{\\sigma}$.' },
+      { content: '$z = \\frac{92 - 78}{7} = \\frac{14}{7} = 2$.' },
+      { content: 'A z-score of 2 means the score is 2 standard deviations above the mean.' }
+    ], explanation: 'Z-score: number of standard deviations from the mean. Positive = above, negative = below.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A factory produces items with 2% defect rate. Sample 50 items.', parts: [
