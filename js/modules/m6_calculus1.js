@@ -96,7 +96,9 @@ topics: [
     { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Enter a number', explanation: 'Famous limit = 1 (squeeze theorem).' },
     { difficulty: 'medium', question: '$\\lim_{x \\to 2} \\frac{x^2-4}{x-2} =$?', accept: [4, '4'], placeholder: 'Enter a number', explanation: 'Factor: $\\frac{(x-2)(x+2)}{x-2} = x+2 \\to 4$.' },
     { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{5x^3 + 1}{2x^3 - x} =$?', accept: ['5/2', '2.5'], placeholder: 'Enter a number', explanation: 'Same degree: ratio of leading coefficients = $5/2$.' },
-    { difficulty: 'hard', question: 'Is $f(x) = |x|/x$ continuous at $x = 0$? (yes/no)', accept: ['no', 'No'], placeholder: 'yes or no', explanation: 'Left limit = $-1$, right limit = $1$. Limits differ: discontinuous.' }
+    { difficulty: 'hard', question: 'Is $f(x) = |x|/x$ continuous at $x = 0$? (yes/no)', accept: ['no', 'No'], placeholder: 'yes or no', explanation: 'Left limit = $-1$, right limit = $1$. Limits differ: discontinuous.' },
+    { difficulty: 'easy', question: '$\\int 1\\,dx =$?', accept: ['x+C', 'x + C'], placeholder: 'Expression', explanation: '$\\int 1\\,dx = x + C$.' },
+    { difficulty: 'medium', question: '$\\int (3x^2 + 2x)\\,dx =$?', accept: ['x^3+x^2+C', 'x^3 + x^2 + C'], placeholder: 'Expression', explanation: '$x^3 + x^2 + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [

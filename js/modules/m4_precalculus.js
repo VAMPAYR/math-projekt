@@ -126,7 +126,9 @@ topics: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{1}{x^2 - 9}$. What two values must be excluded?', accept: ['3, -3', '-3, 3', '3,-3', '-3,3'], placeholder: 'a, b', explanation: '$x^2 - 9 = 0 \\Rightarrow x = \\pm 3$. Domain: $\\mathbb{R} \\setminus \\{-3, 3\\}$.' },
     { difficulty: 'hard', question: 'If $f(x) = x^2$ and $g(x) = 2x+1$, find $(f \\circ g)(3)$:', accept: [49], placeholder: 'Enter a number', explanation: '$g(3) = 7$. $f(7) = 49$.' },
     { difficulty: 'hard', question: 'Find $f^{-1}(x)$ if $f(x) = 2x + 6$. Write as f^{-1}(x)=...:', accept: ['(x-6)/2', '(x - 6)/2', 'x/2-3', 'x/2 - 3'], placeholder: 'e.g. (x-6)/2', explanation: '$y = 2x+6$. Swap: $x = 2y+6$. Solve: $y = \\frac{x-6}{2}$.' },
-    { difficulty: 'hard', question: 'If $f(x) = \\frac{x+1}{x-2}$, find $f(f(3))$.', accept: ['5/2', '2.5', 2.5], placeholder: 'Enter a number', hint: '<p>Compute $f(3)$ first, then apply $f$ again.</p>', explanation: '$f(3) = \\frac{3+1}{3-2} = \\frac{4}{1} = 4$. Then $f(4) = \\frac{4+1}{4-2} = \\frac{5}{2}$.' }
+    { difficulty: 'hard', question: 'If $f(x) = \\frac{x+1}{x-2}$, find $f(f(3))$.', accept: ['5/2', '2.5', 2.5], placeholder: 'Enter a number', hint: '<p>Compute $f(3)$ first, then apply $f$ again.</p>', explanation: '$f(3) = \\frac{3+1}{3-2} = \\frac{4}{1} = 4$. Then $f(4) = \\frac{4+1}{4-2} = \\frac{5}{2}$.' },
+    { difficulty: 'medium', question: 'If $f(x) = x^2$ and $g(x) = x + 1$, then $(f \\circ g)(2) =$?', accept: [9, '9'], placeholder: 'Number', explanation: '$g(2) = 3$. $f(3) = 9$.' },
+    { difficulty: 'hard', question: 'Range of $f(x) = \\sqrt{x - 1}$:', accept: ['[0,inf)', '[0, infinity)', 'y >= 0'], placeholder: 'Interval', explanation: 'Square root outputs $\\geq 0$. Range: $[0, \\infty)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -261,7 +263,8 @@ topics: [
     { difficulty: 'easy', question: 'Is $f(x) = x^4$ even, odd, or neither?', accept: ['even'], placeholder: 'even, odd, or neither', explanation: '$f(-x) = (-x)^4 = x^4 = f(x)$. Even function.' },
     { difficulty: 'medium', question: 'If $f(x)$ passes through $(3,8)$, what point is on $y = f(x) + 4$?', accept: ['(3,12)', '(3, 12)'], placeholder: '(x,y)', explanation: 'Vertical shift up 4: $(3, 8+4) = (3, 12)$.' },
     { difficulty: 'medium', question: 'What is the vertex of $y = |x + 4| - 2$? Write as (x,y):', accept: ['(-4,-2)', '(-4, -2)'], placeholder: '(x,y)', explanation: '$|x+4| = |x-(-4)|$: shift left 4, down 2. Vertex: $(-4, -2)$.' },
-    { difficulty: 'hard', question: 'Describe: $y = -3(x-1)^2 + 7$. What is the maximum value of this function?', accept: [7, '7'], placeholder: 'Maximum value', explanation: 'Opens down ($a=-3$), vertex at $(1,7)$. Maximum value = 7.' }
+    { difficulty: 'hard', question: 'Describe: $y = -3(x-1)^2 + 7$. What is the maximum value of this function?', accept: [7, '7'], placeholder: 'Maximum value', explanation: 'Opens down ($a=-3$), vertex at $(1,7)$. Maximum value = 7.' },
+    { difficulty: 'easy', question: 'End behavior of $f(x) = -x^4$: as $x \\to \\infty$, $f(x) \\to$?', accept: ['-inf', '-infinity', 'negative infinity'], placeholder: 'Behavior', explanation: 'Negative leading coefficient, even degree: both ends go to $-\\infty$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [

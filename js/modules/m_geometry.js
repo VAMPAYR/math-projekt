@@ -360,7 +360,9 @@
         { difficulty: 'easy', question: 'An equilateral triangle has all angles equal. Each angle measures:', accept: [60, '60', '60°'], placeholder: 'Degrees', explanation: '$180° / 3 = 60°$.' },
         { difficulty: 'medium', question: 'A right triangle has hypotenuse $13$ and one leg $5$. The other leg is:', accept: [12, '12'], placeholder: 'Length', hint: '<p>$a^2 + 5^2 = 13^2$.</p>', explanation: '$a^2 = 169 - 25 = 144$, $a = 12$. Triple: $(5, 12, 13)$.' },
         { difficulty: 'medium', question: 'Similar triangles have scale factor $3:5$. If the smaller perimeter is $24$ cm, the larger perimeter is:', accept: [40, '40'], placeholder: 'cm', explanation: 'Perimeter scales linearly: $24 \\times \\frac{5}{3} = 40$ cm.' },
-        { difficulty: 'hard', question: 'A 45-45-90 triangle has hypotenuse $10$. Each leg measures (to 2 decimal places):', accept: ['7.07', '5√2'], placeholder: 'Length', explanation: 'In a 45-45-90 triangle, leg $= \\frac{\\text{hypotenuse}}{\\sqrt{2}} = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2} \\approx 7.07$.' }
+        { difficulty: 'hard', question: 'A 45-45-90 triangle has hypotenuse $10$. Each leg measures (to 2 decimal places):', accept: ['7.07', '5√2'], placeholder: 'Length', explanation: 'In a 45-45-90 triangle, leg $= \\frac{\\text{hypotenuse}}{\\sqrt{2}} = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2} \\approx 7.07$.' },
+    { difficulty: 'easy', question: 'If two angles of a triangle are $50°$ and $60°$, the third is:', accept: [70, '70'], placeholder: 'Degrees', explanation: '$180 - 50 - 60 = 70°$.' },
+    { difficulty: 'medium', question: 'Hypotenuse of right triangle with legs 5 and 12:', accept: [13, '13'], placeholder: 'Number', explanation: '$\\sqrt{25 + 144} = \\sqrt{169} = 13$.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -500,7 +502,9 @@
         { difficulty: 'easy', question: 'The circumference of a circle with radius $5$ is:', accept: ['10π', '10pi', '31.42', '31.4'], placeholder: '(use π)', explanation: '$C = 2\\pi(5) = 10\\pi \\approx 31.42$.' },
         { difficulty: 'easy', question: 'The area of a circle with diameter $12$:', accept: ['36π', '36pi', '113.1', '113.10'], placeholder: 'use π', explanation: '$r = 6$. $A = \\pi(6)^2 = 36\\pi \\approx 113.10$.' },
         { difficulty: 'medium', question: 'An arc subtends $60°$ in a circle of radius $9$. Arc length (exact):', accept: ['3π', '3pi'], placeholder: 'use π', hint: '<p>$s = r\\theta$ with $\\theta$ in radians.</p>', explanation: '$60° = \\pi/3$ rad. $s = 9(\\pi/3) = 3\\pi$.' },
-        { difficulty: 'hard', question: 'A sector has area $50\\pi$ cm² and radius $10$ cm. Central angle in degrees:', accept: [180, '180', '180°'], placeholder: 'Degrees', explanation: '$A = \\frac{1}{2}r^2\\theta$. $50\\pi = \\frac{1}{2}(100)\\theta$. $\\theta = \\pi$ rad $= 180°$.' }
+        { difficulty: 'hard', question: 'A sector has area $50\\pi$ cm² and radius $10$ cm. Central angle in degrees:', accept: [180, '180', '180°'], placeholder: 'Degrees', explanation: '$A = \\frac{1}{2}r^2\\theta$. $50\\pi = \\frac{1}{2}(100)\\theta$. $\\theta = \\pi$ rad $= 180°$.' },
+    { difficulty: 'easy', question: 'Perimeter of a square with side 7:', accept: [28, '28'], placeholder: 'Units', explanation: '$4 \\times 7 = 28$.' },
+    { difficulty: 'medium', question: 'Area of equilateral triangle with side 6:', accept: ['9sqrt(3)', '15.59', '9\\sqrt{3}'], placeholder: 'Area', explanation: '$A = \\frac{\\sqrt{3}}{4} \\cdot 6^2 = 9\\sqrt{3}$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [
@@ -629,7 +633,9 @@
         { difficulty: 'easy', question: 'Volume of a cube with side length $4$:', accept: [64, '64'], placeholder: 'Cubic units', explanation: '$V = 4^3 = 64$ cubic units.' },
         { difficulty: 'medium', question: 'A cone has radius $3$ and height $12$. Volume (use $\\pi$):', accept: ['36π', '36pi', '113.1'], placeholder: 'use π', explanation: '$V = \\frac{1}{3}\\pi(9)(12) = 36\\pi \\approx 113.1$.' },
         { difficulty: 'medium', question: 'A sphere has radius $6$. Surface area (use $\\pi$):', accept: ['144π', '144pi', '452.4'], placeholder: 'use π', explanation: '$SA = 4\\pi(36) = 144\\pi \\approx 452.39$.' },
-        { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' }
+        { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' },
+    { difficulty: 'easy', question: 'Diameter of circle with radius 5:', accept: [10, '10'], placeholder: 'Number', explanation: '$d = 2r = 10$.' },
+    { difficulty: 'medium', question: 'Arc length of 90° sector with radius 4:', accept: ['2pi', '6.28'], placeholder: 'Length', explanation: '$\\frac{90}{360} \\cdot 2\\pi(4) = \\frac{1}{4} \\cdot 8\\pi = 2\\pi$.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
@@ -747,7 +753,9 @@
         { difficulty: 'easy', question: 'Distance between $(0, 0)$ and $(5, 12)$:', accept: [13, '13'], placeholder: 'Distance', explanation: '$d = \\sqrt{25 + 144} = \\sqrt{169} = 13$.' },
         { difficulty: 'medium', question: 'Midpoint of $(-4, 6)$ and $(2, -2)$:', accept: ['(-1,2)', '(-1, 2)'], placeholder: '(x,y)', explanation: '$((-4+2)/2, (6-2)/2) = (-1, 2)$.' },
         { difficulty: 'medium', question: 'Line through $(0, 3)$ with slope $-2$. Equation in slope-intercept form:', accept: ['y=-2x+3', 'y = -2x + 3'], placeholder: 'y = ...', explanation: '$y = mx + b = -2x + 3$. The y-intercept $b = 3$ (the point is on the y-axis).' },
-        { difficulty: 'hard', question: 'Distance between $(3, -1)$ and $(-5, 5)$:', accept: [10, '10'], placeholder: 'Distance', explanation: '$d = \\sqrt{(-8)^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$.' }
+        { difficulty: 'hard', question: 'Distance between $(3, -1)$ and $(-5, 5)$:', accept: [10, '10'], placeholder: 'Distance', explanation: '$d = \\sqrt{(-8)^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$.' },
+    { difficulty: 'easy', question: 'Distance from $(0,0)$ to $(3,4)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{9 + 16} = 5$.' },
+    { difficulty: 'medium', question: 'Midpoint of $(2, 6)$ and $(8, 10)$:', accept: ['(5,8)', '(5, 8)'], placeholder: 'Point', explanation: '$(\\frac{2+8}{2}, \\frac{6+10}{2}) = (5, 8)$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the equation of the line through $(2, 1)$ and perpendicular to $y = 3x + 5$.', steps: [
