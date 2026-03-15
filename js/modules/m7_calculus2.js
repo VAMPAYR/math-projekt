@@ -96,7 +96,9 @@ topics: [
     { difficulty: 'easy', question: 'In $\\int x e^x\\,dx$, what should $u$ be? (LIATE rule)', accept: ['x'], placeholder: 'u = ?', explanation: 'LIATE: Algebraic ($x$) before Exponential ($e^x$). $u = x$.' },
     { difficulty: 'easy', question: 'The IBP formula is $\\int u\\,dv = uv -$ ?', accept: ['int v du', '\\int v du', 'integral of v du'], placeholder: 'What is subtracted?', explanation: '$\\int u\\,dv = uv - \\int v\\,du$.' },
     { difficulty: 'medium', question: '$\\int \\ln x\\,dx = x\\ln x - $ ?$+ C$', accept: ['x'], placeholder: 'What term?', explanation: '$\\int \\ln x\\,dx = x\\ln x - x + C$.' },
-    { difficulty: 'hard', question: '$\\int x^2 e^x\\,dx$ requires how many rounds of IBP?', accept: [2, '2'], placeholder: 'Number', explanation: 'Each round reduces $x^n$ by 1. $x^2 \\to x \\to$ constant: 2 rounds.' }
+    { difficulty: 'hard', question: '$\\int x^2 e^x\\,dx$ requires how many rounds of IBP?', accept: [2, '2'], placeholder: 'Number', explanation: 'Each round reduces $x^n$ by 1. $x^2 \\to x \\to$ constant: 2 rounds.' },
+    { difficulty: 'medium', question: 'In tabular integration of $\\int x^2 e^x\\,dx$, how many derivative rows until zero?', accept: [3, '3'], placeholder: 'Number', explanation: '$x^2 \\to 2x \\to 2 \\to 0$. Three derivative rows.' },
+    { difficulty: 'hard', question: '$\\int_0^{\\pi} x \\sin x\\, dx =$? (exact)', accept: ['pi', '3.14'], placeholder: 'Value', explanation: '$u=x, dv=\\sin x\\,dx$. $[-x\\cos x + \\sin x]_0^{\\pi} = \\pi$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -199,7 +201,9 @@ topics: [
   freeResponse: [
     { difficulty: 'easy', question: 'Find $a_1$ of the geometric sequence: $?,\\ 6,\\ 18,\\ 54$', accept: [2, '2'], placeholder: 'a_1 = ?', explanation: '$r = 18/6 = 3$. $a_1 = 6/3 = 2$.' },
     { difficulty: 'medium', question: 'Sum of first 50 terms of $1, 2, 3, \\ldots, 50$:', accept: [1275, '1275'], placeholder: 'S = ?', explanation: '$S = \\frac{50}{2}(1 + 50) = 1275$.' },
-    { difficulty: 'hard', question: '$\\lim_{n \\to \\infty} \\frac{3n + 1}{n + 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide top and bottom by $n$: $\\frac{3 + 1/n}{1 + 5/n} \\to 3$.' }
+    { difficulty: 'hard', question: '$\\lim_{n \\to \\infty} \\frac{3n + 1}{n + 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide top and bottom by $n$: $\\frac{3 + 1/n}{1 + 5/n} \\to 3$.' },
+    { difficulty: 'easy', question: 'The 5th term of the sequence $a_n = 2n + 1$ is:', accept: [11, '11'], placeholder: 'Number', explanation: '$a_5 = 2(5) + 1 = 11$.' },
+    { difficulty: 'hard', question: 'Sum of infinite geometric series: $3 + 1 + 1/3 + 1/9 + \\cdots =$?', accept: ['4.5', '9/2'], placeholder: 'Number', explanation: '$a = 3, r = 1/3$. $S = a/(1-r) = 3/(2/3) = 9/2 = 4.5$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
