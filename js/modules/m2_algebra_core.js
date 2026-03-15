@@ -119,7 +119,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Distributive property:', expression: '$a(b + c) = ab +$ {{0}}', blanks: [ { accept: ['ac'], size: 4 } ], explanation: '$a(b+c) = ab + ac$.' },
-    { difficulty: 'medium', context: 'Combining like terms:', expression: '$7x^2 + 3x - 2x^2 + x =$ {{0}} $+$ {{1}}', blanks: [ { accept: ['5x^2'], size: 5 }, { accept: ['4x'], size: 4 } ], explanation: '$7x^2 - 2x^2 = 5x^2$ and $3x + x = 4x$.' }
+    { difficulty: 'medium', context: 'Combining like terms:', expression: '$7x^2 + 3x - 2x^2 + x =$ {{0}} $+$ {{1}}', blanks: [ { accept: ['5x^2'], size: 5 }, { accept: ['4x'], size: 4 } ], explanation: '$7x^2 - 2x^2 = 5x^2$ and $3x + x = 4x$.' },
+    { difficulty: 'medium', context: 'Slope-intercept form:', expression: 'The equation $y = mx + b$ has slope {{0}} and y-intercept {{1}}.', blanks: [ { accept: ['m'], size: 3 }, { accept: ['b'], size: 3 } ], explanation: '$m$ is the slope, $b$ is the y-intercept.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A rectangle has length $2x + 3$ and width $x - 1$.', parts: [

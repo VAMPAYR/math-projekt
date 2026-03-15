@@ -199,7 +199,8 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Perpendicularity test:', expression: 'Two vectors are perpendicular when $\\vec{u} \\cdot \\vec{v} =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: '$\\cos 90° = 0$.' },
-          { difficulty: 'medium', context: 'Cross product magnitude:', expression: '$\\|\\vec{u} \\times \\vec{v}\\| =$ area of the {{0}} spanned by $\\vec{u}$ and $\\vec{v}$.', blanks: [ { accept: ['parallelogram'], size: 14 } ], explanation: 'Cross product magnitude = parallelogram area.' }
+          { difficulty: 'medium', context: 'Cross product magnitude:', expression: '$\\|\\vec{u} \\times \\vec{v}\\| =$ area of the {{0}} spanned by $\\vec{u}$ and $\\vec{v}$.', blanks: [ { accept: ['parallelogram'], size: 14 } ], explanation: 'Cross product magnitude = parallelogram area.' },
+    { difficulty: 'easy', context: 'Cross product:', expression: 'The cross product $\\vec{a} \\times \\vec{b}$ is always {{0}} to both $\\vec{a}$ and $\\vec{b}$.', blanks: [ { accept: ['perpendicular', 'orthogonal'], size: 12 } ], explanation: 'Cross product is perpendicular to both input vectors.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Geometry: Find the area of the triangle with vertices $A(1,0,0)$, $B(0,1,0)$, $C(0,0,1)$.', parts: [

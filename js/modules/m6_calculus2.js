@@ -202,7 +202,8 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'FTC Part 2:', expression: '$\\int_a^b f(x)\\,dx = F(b) -$ {{0}}', blanks: [ { accept: ['F(a)'], size: 6 } ], explanation: 'Evaluate antiderivative at bounds and subtract.' },
-          { difficulty: 'medium', context: 'Indefinite integrals:', expression: 'Every indefinite integral must include the constant {{0}}.', blanks: [ { accept: ['C', '+ C', '+C'], size: 4 } ], explanation: 'The $+C$ accounts for the family of antiderivatives.' }
+          { difficulty: 'medium', context: 'Indefinite integrals:', expression: 'Every indefinite integral must include the constant {{0}}.', blanks: [ { accept: ['C', '+ C', '+C'], size: 4 } ], explanation: 'The $+C$ accounts for the family of antiderivatives.' },
+    { difficulty: 'medium', context: 'U-substitution:', expression: 'For $\\int f(g(x))g\'(x)\\,dx$, let $u =$ {{0}}.', blanks: [ { accept: ['g(x)'], size: 5 } ], explanation: 'U-sub: let $u = g(x)$, $du = g\'(x)\\,dx$.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Use a Riemann sum to approximate $\\int_0^2 x^2\\,dx$ with $n = 2$ right endpoints.', parts: [

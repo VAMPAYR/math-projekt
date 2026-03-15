@@ -240,7 +240,8 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Continuity at $x = a$:', expression: '$f$ is continuous at $a$ if $\\lim_{x \\to a} f(x) =$ {{0}}.', blanks: [ { accept: ['f(a)'], size: 6 } ], explanation: 'The limit must equal the function value.' },
-          { difficulty: 'medium', context: 'Fundamental limit:', expression: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$ {{0}}.', blanks: [ { accept: ['1'], size: 3 } ], explanation: 'This limit equals 1.' }
+          { difficulty: 'medium', context: 'Fundamental limit:', expression: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$ {{0}}.', blanks: [ { accept: ['1'], size: 3 } ], explanation: 'This limit equals 1.' },
+    { difficulty: 'medium', context: 'Limit laws:', expression: '$\\lim [f(x) + g(x)] = \\lim f(x)$ {{0}} $\\lim g(x)$.', blanks: [ { accept: ['+', 'plus'], size: 3 } ], explanation: 'Sum law: limit of a sum equals the sum of the limits.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Analyze $f(x) = \\frac{x^2 - 4}{x - 2}$ at $x = 2$.', parts: [

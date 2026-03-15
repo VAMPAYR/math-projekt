@@ -140,7 +140,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Dot product formula:', expression: '$\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}||\\mathbf{v}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta', 'θ'], size: 6 } ], explanation: 'The dot product equals the product of magnitudes times the cosine of the angle.' },
-    { difficulty: 'medium', context: 'Dot product:', expression: '$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Dot product equals the product of magnitudes times cosine of the angle between them.' }
+    { difficulty: 'medium', context: 'Dot product:', expression: '$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Dot product equals the product of magnitudes times cosine of the angle between them.' },
+    { difficulty: 'medium', context: 'Vector identities:', expression: '$\\nabla \\times (\\nabla f) =$ {{0}} for any smooth scalar field $f$.', blanks: [ { accept: ['0', 'zero', '\\vec{0}'], size: 5 } ], explanation: 'Curl of a gradient is always zero.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Vector Strategy</h4>
     <ol><li><strong>Dot product</strong> for angles and projections (scalar result).</li>

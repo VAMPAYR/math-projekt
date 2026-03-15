@@ -143,7 +143,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Continuity definition:', expression: '$f$ is continuous at $a$ if $\\lim_{x \\to a} f(x) =$ {{0}}.', blanks: [ { accept: ['f(a)'], size: 6 } ], explanation: 'Continuity: limit must equal function value.' },
-    { difficulty: 'medium', context: 'Limits at infinity:', expression: 'If $\\deg(\\text{num}) < \\deg(\\text{den})$, then $\\lim_{x \\to \\infty} \\frac{P(x)}{Q(x)} =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'Denominator grows faster: ratio approaches 0.' }
+    { difficulty: 'medium', context: 'Limits at infinity:', expression: 'If $\\deg(\\text{num}) < \\deg(\\text{den})$, then $\\lim_{x \\to \\infty} \\frac{P(x)}{Q(x)} =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'Denominator grows faster: ratio approaches 0.' },
+    { difficulty: 'easy', context: 'Power rule for integration:', expression: '$\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$, provided $n \\neq$ {{0}}.', blanks: [ { accept: ['-1'], size: 3 } ], explanation: 'Power rule fails at $n = -1$. That case gives $\\ln|x| + C$.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Limits Strategy</h4>
     <ol><li><strong>Try direct substitution first.</strong></li>

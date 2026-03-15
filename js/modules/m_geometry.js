@@ -180,7 +180,8 @@
       { sentence: 'Two angles that add up to 90 degrees are called ____ angles.', answer: 'complementary', hint: 'Think: they COMPLETE a right angle.' },
       { sentence: 'Two angles that add up to 180 degrees are called ____ angles.', answer: 'supplementary', hint: 'Think: they SUPPLEMENT each other to form a straight line.' },
       { sentence: 'When two lines intersect, the opposite angles are called ____ angles and they are always equal.', answer: 'vertical', hint: 'They share a vertex but no sides.' },
-      { sentence: 'The sum of all angles in a triangle is always ____ degrees.', answer: '180', hint: 'Tear the three corners: they form a straight line.' }
+      { sentence: 'The sum of all angles in a triangle is always ____ degrees.', answer: '180', hint: 'Tear the three corners: they form a straight line.' },
+    { difficulty: 'easy', context: 'Angle relationships:', expression: 'Two angles that add to $90°$ are called {{0}}.', blanks: [ { accept: ['complementary'], size: 14 } ], explanation: 'Complementary angles sum to $90°$.' }
     ],
       freeResponse: [
         { difficulty: 'easy', question: 'The supplement of a $115°$ angle is:', accept: [65, '65', '65°'], placeholder: 'Degrees', explanation: '$180° - 115° = 65°$.' },

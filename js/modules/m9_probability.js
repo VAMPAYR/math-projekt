@@ -211,7 +211,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Counting principle:', expression: 'If task 1 has $m$ ways and task 2 has $n$ ways, the total is $m$ {{0}} $n$.', blanks: [ { accept: ['*', 'times', '\\times'], size: 6 } ], explanation: 'Multiplication principle for independent sequential tasks.' },
-    { difficulty: 'medium', context: 'Permutation vs. Combination:', expression: 'When order {{0}}, use permutations. When order {{1}}, use combinations.', blanks: [ { accept: ['matters'], size: 8 }, { accept: ['does not matter', 'doesnt matter'], size: 16 } ], explanation: 'Order matters = more arrangements = permutations.' }
+    { difficulty: 'medium', context: 'Permutation vs. Combination:', expression: 'When order {{0}}, use permutations. When order {{1}}, use combinations.', blanks: [ { accept: ['matters'], size: 8 }, { accept: ['does not matter', 'doesnt matter'], size: 16 } ], explanation: 'Order matters = more arrangements = permutations.' },
+    { difficulty: 'easy', context: 'Basic probability:', expression: 'The probability of any event satisfies $0 \\leq P(E) \\leq$ {{0}}.', blanks: [ { accept: ['1'], size: 3 } ], explanation: 'Probability ranges from 0 to 1.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Probability Strategy</h4>
     <ol><li><strong>Does order matter?</strong> Yes → permutation. No → combination.</li>

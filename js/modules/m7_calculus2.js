@@ -130,7 +130,8 @@ topics: [
     ], explanation: 'When IBP reproduces the original integral, solve algebraically for $I$.' }
   ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'LIATE priority order:', expression: '$L$ = {{0}}, $I$ = {{1}}, $A$ = Algebraic, $T$ = Trig, $E$ = Exponential', blanks: [ { accept: ['Logarithmic', 'Log'], size: 12 }, { accept: ['Inverse trig', 'Inverse Trig'], size: 12 } ], explanation: 'LIATE: Logarithmic > Inverse trig > Algebraic > Trig > Exponential for choosing $u$.' }
+    { difficulty: 'easy', context: 'LIATE priority order:', expression: '$L$ = {{0}}, $I$ = {{1}}, $A$ = Algebraic, $T$ = Trig, $E$ = Exponential', blanks: [ { accept: ['Logarithmic', 'Log'], size: 12 }, { accept: ['Inverse trig', 'Inverse Trig'], size: 12 } ], explanation: 'LIATE: Logarithmic > Inverse trig > Algebraic > Trig > Exponential for choosing $u$.' },
+    { difficulty: 'medium', context: 'Integration by parts:', expression: '$\\int u\\,dv = uv -$ {{0}}.', blanks: [ { accept: ['int v du', '\\int v\\,du'], size: 10 } ], explanation: 'IBP formula: $\\int u\\,dv = uv - \\int v\\,du$.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 IBP Strategy</h4>
     <ol><li><strong>LIATE</strong>: choose $u$ from the first matching type.</li>

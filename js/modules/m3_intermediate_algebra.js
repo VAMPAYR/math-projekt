@@ -297,7 +297,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Factoring strategy:', expression: 'Always factor out the {{0}} first.', blanks: [ { accept: ['GCF', 'gcf', 'greatest common factor'], size: 5 } ], explanation: 'GCF extraction is step 1 of every factoring problem.' },
-    { difficulty: 'medium', context: 'Trinomial factoring:', expression: 'For $x^2 + bx + c$, find $p, q$ with $p + q =$ {{0}} and $pq =$ {{1}}.', blanks: [ { accept: ['b'], size: 3 }, { accept: ['c'], size: 3 } ], explanation: '$(x+p)(x+q) = x^2 + (p+q)x + pq$.' }
+    { difficulty: 'medium', context: 'Trinomial factoring:', expression: 'For $x^2 + bx + c$, find $p, q$ with $p + q =$ {{0}} and $pq =$ {{1}}.', blanks: [ { accept: ['b'], size: 3 }, { accept: ['c'], size: 3 } ], explanation: '$(x+p)(x+q) = x^2 + (p+q)x + pq$.' },
+    { difficulty: 'easy', context: 'Factoring patterns:', expression: '$a^2 - b^2 = (a - b)(a +$ {{0}} $)$', blanks: [ { accept: ['b'], size: 3 } ], explanation: 'Difference of squares: $a^2 - b^2 = (a-b)(a+b)$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x$.', parts: [

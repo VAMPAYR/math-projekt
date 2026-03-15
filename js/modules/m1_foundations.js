@@ -284,7 +284,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Complete the field axioms:', expression: 'Additive identity: $a +$ {{0}} $= a$. Multiplicative identity: $a \\cdot$ {{1}} $= a$.', blanks: [ { accept: [0, '0'], size: 3 }, { accept: [1, '1'], size: 3 } ], explanation: '0 is the additive identity, 1 is the multiplicative identity.' },
-    { difficulty: 'medium', context: 'Fill in the number system hierarchy:', expression: '$\\mathbb{N} \\subset$ {{0}} $\\subset \\mathbb{Q} \\subset$ {{1}} $\\subset \\mathbb{C}$', blanks: [ { accept: ['Z', 'ℤ', '\\mathbb{Z}'], size: 3 }, { accept: ['R', 'ℝ', '\\mathbb{R}'], size: 3 } ], hint: '<p>Integers come after naturals. Reals come after rationals.</p>', explanation: '$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.' }
+    { difficulty: 'medium', context: 'Fill in the number system hierarchy:', expression: '$\\mathbb{N} \\subset$ {{0}} $\\subset \\mathbb{Q} \\subset$ {{1}} $\\subset \\mathbb{C}$', blanks: [ { accept: ['Z', 'ℤ', '\\mathbb{Z}'], size: 3 }, { accept: ['R', 'ℝ', '\\mathbb{R}'], size: 3 } ], hint: '<p>Integers come after naturals. Reals come after rationals.</p>', explanation: '$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$.' },
+    { difficulty: 'medium', context: 'Number classification:', expression: 'A number that can be written as $p/q$ where $p, q \\in \\mathbb{Z}$, $q \\neq 0$ is {{0}}.', blanks: [ { accept: ['rational', 'a rational number'], size: 10 } ], explanation: 'Rational: expressible as a ratio of integers.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'Prove that the sum of two rational numbers is rational.', parts: [

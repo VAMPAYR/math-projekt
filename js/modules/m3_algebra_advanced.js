@@ -167,7 +167,8 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Factoring strategy:', expression: 'Always extract the {{0}} first before other methods.', blanks: [ { accept: ['GCF', 'greatest common factor'], size: 6 } ], explanation: 'GCF is always step 1.' },
-          { difficulty: 'medium', context: 'Factor Theorem:', expression: '$(x-r)$ is a factor of $P(x)$ if and only if $P(r) =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'The Factor Theorem: $P(r) = 0$ iff $(x-r)$ divides $P(x)$.' }
+          { difficulty: 'medium', context: 'Factor Theorem:', expression: '$(x-r)$ is a factor of $P(x)$ if and only if $P(r) =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'The Factor Theorem: $P(r) = 0$ iff $(x-r)$ divides $P(x)$.' },
+    { difficulty: 'medium', context: 'Polynomial end behavior:', expression: 'A polynomial with positive leading coefficient and odd degree goes to $+\\infty$ as $x \\to$ {{0}}.', blanks: [ { accept: ['+infinity', 'infinity', 'inf'], size: 8 } ], explanation: 'Odd degree, positive leading coefficient: rises to right, falls to left.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Factor $x^4 - 16$ completely.', parts: [

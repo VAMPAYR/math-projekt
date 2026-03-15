@@ -166,7 +166,8 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Complete the function evaluation steps:', expression: '$f(x) = 2x^2 - 3$. $f(4) = 2($ {{0}} $) - 3 =$ {{1}}', blanks: [ { accept: ['16'], size: 4 }, { accept: ['29'], size: 4 } ], explanation: '$f(4) = 2(16) - 3 = 32 - 3 = 29$.' },
-    { difficulty: 'medium', context: 'Complete the domain analysis:', expression: 'For $f(x) = \\ln(x-5)$, we need $x - 5$ {{0}} $0$, so $x$ {{1}} $5$.', blanks: [ { accept: ['>', '\\gt'], size: 3 }, { accept: ['>', '\\gt'], size: 3 } ], explanation: 'Logarithm requires strictly positive argument: $x - 5 \\gt 0 \\Rightarrow x \\gt 5$.' }
+    { difficulty: 'medium', context: 'Complete the domain analysis:', expression: 'For $f(x) = \\ln(x-5)$, we need $x - 5$ {{0}} $0$, so $x$ {{1}} $5$.', blanks: [ { accept: ['>', '\\gt'], size: 3 }, { accept: ['>', '\\gt'], size: 3 } ], explanation: 'Logarithm requires strictly positive argument: $x - 5 \\gt 0 \\Rightarrow x \\gt 5$.' },
+    { difficulty: 'medium', context: 'Function transformations:', expression: '$f(x - h)$ shifts the graph {{0}} by $h$ units.', blanks: [ { accept: ['right'], size: 6 } ], explanation: '$f(x - h)$: horizontal shift right by $h$. $f(x + h)$: shift left.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each domain restriction to its cause:', pairs: [

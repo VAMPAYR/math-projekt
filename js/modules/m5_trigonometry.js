@@ -249,7 +249,8 @@ topics: [
     { difficulty: 'easy', context: 'Pythagorean identity:', expression: '$\\sin^2\\theta +$ {{0}} $= 1$', blanks: [ { accept: ['cos^2\\theta', 'cos^2(theta)'], size: 12 } ], explanation: '$\\sin^2\\theta + \\cos^2\\theta = 1$.' },
     { difficulty: 'medium', context: 'ASTC rule:', expression: 'In Q2, {{0}} is positive. In Q3, {{1}} is positive.', blanks: [ { accept: ['sin', 'sine'], size: 6 }, { accept: ['tan', 'tangent'], size: 6 } ], explanation: 'All (Q1), Sin (Q2), Tan (Q3), Cos (Q4).' },
     { difficulty: 'medium', context: 'Arc length:', expression: '$s = r \\cdot$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Arc length = radius times angle (in radians).' },
-    { difficulty: 'easy', context: 'SOH-CAH-TOA:', expression: '$\\sin\\theta = \\frac{\\text{opposite}}{$ {{0}} $}$', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 12 } ], explanation: 'Sine = Opposite / Hypotenuse.' }
+    { difficulty: 'easy', context: 'SOH-CAH-TOA:', expression: '$\\sin\\theta = \\frac{\\text{opposite}}{$ {{0}} $}$', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 12 } ], explanation: 'Sine = Opposite / Hypotenuse.' },
+    { difficulty: 'easy', context: 'Trig ratios:', expression: 'In a right triangle, $\\sin(\\theta) =$ opposite $/$ {{0}}.', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 10 } ], explanation: 'SOH: Sine = Opposite / Hypotenuse.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each angle to its sine value:', pairs: [
