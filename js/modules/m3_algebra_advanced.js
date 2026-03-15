@@ -133,7 +133,9 @@
           { difficulty: 'hard', question: 'Factor $x^3 + 27$:', accept: ['(x+3)(x^2-3x+9)'], placeholder: 'Sum of cubes', explanation: '$x^3 + 3^3 = (x+3)(x^2 - 3x + 9)$.' },
     { difficulty: 'easy', question: 'What is the degree of $3x^4 + 2x^2 - x + 7$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Highest power of $x$ is 4.' },
     { difficulty: 'medium', question: 'Is $(x - 2)$ a factor of $x^3 - 8$? (yes/no)', accept: ['yes'], placeholder: 'yes/no', explanation: '$f(2) = 8 - 8 = 0$. By the factor theorem, $(x-2)$ is a factor.' },
-    { difficulty: 'hard', question: 'Divide $x^3 + 1$ by $x + 1$. Quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Expression', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' }
+    { difficulty: 'hard', question: 'Divide $x^3 + 1$ by $x + 1$. Quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Expression', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' },
+    { difficulty: 'easy', question: 'How many roots (counting multiplicity) does a degree-5 polynomial have?', accept: [5, '5'], placeholder: 'Number', explanation: 'Fundamental theorem of algebra: a degree-$n$ polynomial has exactly $n$ roots (counting multiplicity, including complex).' },
+    { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, find all real roots:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'Roots', explanation: '$x^4 - 1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)$. Real roots: $\\pm 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -386,7 +388,9 @@
           { difficulty: 'hard', question: 'Sum of the roots of $2x^2 - 10x + 3 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum $= -b/a = 10/2 = 5$.' },
     { difficulty: 'easy', question: 'Solve: $x^2 = 16$:', accept: ['4, -4', '-4, 4', '4,-4'], placeholder: 'Solutions', explanation: '$x = \\pm 4$.' },
     { difficulty: 'medium', question: 'Sum of roots of $x^2 - 7x + 10 = 0$:', accept: [7, '7'], placeholder: 'Number', explanation: 'By Vieta: sum = $-(-7)/1 = 7$. (Roots are 2 and 5.)' },
-    { difficulty: 'hard', question: 'If the discriminant is negative, how many real roots?', accept: [0, '0', 'none'], placeholder: 'Number', explanation: '$b^2 - 4ac < 0$: no real roots. Two complex conjugate roots.' }
+    { difficulty: 'hard', question: 'If the discriminant is negative, how many real roots?', accept: [0, '0', 'none'], placeholder: 'Number', explanation: '$b^2 - 4ac < 0$: no real roots. Two complex conjugate roots.' },
+    { difficulty: 'easy', question: 'The vertex of $y = (x-3)^2 + 5$ is:', accept: ['(3,5)', '3, 5', '(3, 5)'], placeholder: 'Point', explanation: 'Vertex form $y = (x-h)^2 + k$: vertex $(3, 5)$.' },
+    { difficulty: 'medium', question: 'Axis of symmetry for $y = x^2 - 6x + 5$: $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$x = -b/(2a) = 6/2 = 3$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [

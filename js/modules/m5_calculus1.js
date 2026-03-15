@@ -558,7 +558,9 @@
           { difficulty: 'medium', question: 'Find the inflection point of $f(x) = x^3$:', accept: [0, '0', 'x=0'], placeholder: 'x value', explanation: '$f\'\'(x) = 6x = 0 \\Rightarrow x = 0$. Sign changes: inflection point.' },
           { difficulty: 'hard', question: 'Find the absolute max of $f(x) = -x^2 + 4x$ on $[0, 5]$:', accept: [4, '4'], placeholder: 'Max value', explanation: '$f\'(x) = -2x + 4 = 0 \\Rightarrow x = 2$. $f(0) = 0, f(2) = 4, f(5) = -5$. Max = 4.' },
     { difficulty: 'easy', question: 'If $f(x) = x^2$, the tangent slope at $x = 3$ is:', accept: [6, '6'], placeholder: 'Number', explanation: '$f\'(x) = 2x$. $f\'(3) = 6$.' },
-    { difficulty: 'medium', question: '$f(x) = x^3 - 3x$. Find the critical points:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'x values', explanation: '$f\'(x) = 3x^2 - 3 = 0$. $x^2 = 1$. $x = \\pm 1$.' }
+    { difficulty: 'medium', question: '$f(x) = x^3 - 3x$. Find the critical points:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'x values', explanation: '$f\'(x) = 3x^2 - 3 = 0$. $x^2 = 1$. $x = \\pm 1$.' },
+    { difficulty: 'easy', question: 'If $f\'(x) > 0$ on $(a,b)$, then $f$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: 'Positive derivative means the function is increasing.' },
+    { difficulty: 'hard', question: '$f(x) = x^4 - 4x^3$. Find inflection points:', accept: ['0, 2', '0,2', 'x=0 and x=2'], placeholder: 'x values', explanation: '$f\'\'(x) = 12x^2 - 24x = 12x(x-2) = 0$. $x = 0, 2$.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

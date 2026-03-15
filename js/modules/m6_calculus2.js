@@ -170,7 +170,9 @@
           { difficulty: 'hard', question: '$\\int_{-1}^{1} x^3\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^3$ is odd. Integral of odd function over symmetric interval = 0.' },
           { difficulty: 'hard', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$\\int x^{1/2}\\,dx = \\frac{2}{3}x^{3/2}$. $[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = \\frac{16}{3}$.' },
     { difficulty: 'easy', question: '$\\int x^4\\,dx =$?', accept: ['x^5/5+C', 'x^5/5 + C'], placeholder: 'Expression', explanation: '$\\frac{x^5}{5} + C$.' },
-    { difficulty: 'medium', question: '$\\int \\cos(2x)\\,dx =$?', accept: ['sin(2x)/2+C', '(1/2)sin(2x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\sin(2x) + C$.' }
+    { difficulty: 'medium', question: '$\\int \\cos(2x)\\,dx =$?', accept: ['sin(2x)/2+C', '(1/2)sin(2x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\sin(2x) + C$.' },
+    { difficulty: 'easy', question: '$\\int 0\\,dx =$?', accept: ['C', '0+C', 'c'], placeholder: 'Expression', explanation: 'Integral of 0 is a constant: $C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^{-1}(x)+C'], placeholder: 'Expression', explanation: 'This is $\\arcsin(x) + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [

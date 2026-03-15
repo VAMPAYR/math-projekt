@@ -165,7 +165,9 @@
     { difficulty: 'hard', question: '$\\langle 1,0,0 \\rangle \\times \\langle 0,1,0 \\rangle =$?', accept: ['<0,0,1>', '(0,0,1)', '<0, 0, 1>'], placeholder: 'Vector', explanation: '$\\hat{i} \\times \\hat{j} = \\hat{k} = \\langle 0,0,1 \\rangle$.' },
     { difficulty: 'easy', question: '$2\\langle 1, 3 \\rangle =$?', accept: ['<2,6>', '(2,6)', '<2, 6>'], placeholder: 'Vector', explanation: 'Scalar multiplication: $2\\langle 1,3 \\rangle = \\langle 2, 6 \\rangle$.' },
     { difficulty: 'medium', question: 'Dot product $\\langle 1,2 \\rangle \\cdot \\langle 3,-1 \\rangle =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$1(3) + 2(-1) = 3 - 2 = 1$.' },
-    { difficulty: 'hard', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5,4/5>', '<0.6,0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' }
+    { difficulty: 'hard', question: 'Unit vector in direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5,4/5>', '<0.6,0.8>'], placeholder: 'Vector', explanation: '$|\\vec{v}| = 5$. $\\hat{v} = \\langle 3/5, 4/5 \\rangle$.' },
+    { difficulty: 'easy', question: 'The zero vector in $\\mathbb{R}^3$:', accept: ['<0,0,0>', '(0,0,0)'], placeholder: 'Vector', explanation: '$\\vec{0} = \\langle 0, 0, 0 \\rangle$.' },
+    { difficulty: 'hard', question: 'Volume of parallelepiped with edges $\\vec{a}$, $\\vec{b}$, $\\vec{c}$: $V = |\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. If this equals 0, the vectors are:', accept: ['coplanar'], placeholder: 'Property', explanation: 'Zero volume means all three vectors lie in the same plane.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -301,7 +303,9 @@
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(3x + 2y) =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Treat $y$ as constant. $\\frac{\\partial}{\\partial x}(3x) = 3$.' },
     { difficulty: 'medium', question: '$\\frac{\\partial}{\\partial y}(x^2y^3) =$?', accept: ['3x^2y^2', '3x2y2'], placeholder: 'Expression', explanation: 'Hold $x$ constant, differentiate $y^3$: $x^2 \\cdot 3y^2 = 3x^2y^2$.' },
     { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial x}(5x + 3y^2) =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$\\frac{\\partial}{\\partial x}(5x) = 5$. $3y^2$ is constant w.r.t. $x$.' },
-    { difficulty: 'hard', question: '$\\frac{\\partial^2}{\\partial x^2}(x^3y + xy^2) =$?', accept: ['6xy', '6xy'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x} = 3x^2y + y^2$. $\\frac{\\partial^2}{\\partial x^2} = 6xy$.' }
+    { difficulty: 'hard', question: '$\\frac{\\partial^2}{\\partial x^2}(x^3y + xy^2) =$?', accept: ['6xy', '6xy'], placeholder: 'Expression', explanation: '$\\frac{\\partial}{\\partial x} = 3x^2y + y^2$. $\\frac{\\partial^2}{\\partial x^2} = 6xy$.' },
+    { difficulty: 'easy', question: '$\\frac{\\partial}{\\partial y}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The derivative of a constant is 0.' },
+    { difficulty: 'medium', question: 'Find $f_{xy}$ for $f(x,y) = x^2y + xy^3$:', accept: ['2x+3y^2', '2x + 3y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy + y^3$. $f_{xy} = 2x + 3y^2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -406,7 +410,9 @@
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Area of unit square: $1 \\times 1 = 1$.' },
     { difficulty: 'medium', question: '$\\int_0^1 \\int_0^2 xy\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2y/2]_0^2 dy = \\int_0^1 2y\\,dy = [y^2]_0^1 = 1$.' },
     { difficulty: 'easy', question: '$\\int_0^2 \\int_0^3 1\\,dx\\,dy =$?', accept: [6, '6'], placeholder: 'Number', explanation: 'Area: $3 \\times 2 = 6$.' },
-    { difficulty: 'hard', question: '$\\int_0^1 \\int_0^x 2\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 2x\\,dx = [x^2]_0^1 = 1$.' }
+    { difficulty: 'hard', question: '$\\int_0^1 \\int_0^x 2\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 2x\\,dx = [x^2]_0^1 = 1$.' },
+    { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 (x + y)\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2/2 + xy]_0^1\\,dy = \\int_0^1 (1/2 + y)\\,dy = 1/2 + 1/2 = 1$.' },
+    { difficulty: 'hard', question: 'Convert $\\int\\int_R f\\,dA$ to polar: $dA =$?', accept: ['r dr dtheta', 'r dr d\\theta', 'rdrd\\theta'], placeholder: 'Expression', explanation: 'In polar coordinates, $dA = r\\,dr\\,d\\theta$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [
