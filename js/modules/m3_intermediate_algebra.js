@@ -270,7 +270,8 @@ topics: [
     { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6 =$?', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'Factored form', explanation: 'Find two numbers that multiply to 6 and add to 5: 2 and 3.' },
     { difficulty: 'hard', question: 'Factor completely: $x^3 - x^2 - 6x =$?', accept: ['x(x-3)(x+2)', 'x(x+2)(x-3)'], placeholder: 'Factored', explanation: '$x(x^2 - x - 6) = x(x-3)(x+2)$.' },
     { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.' },
-    { difficulty: 'medium', question: 'GCF of $6x^3 + 12x^2 - 18x$:', accept: ['6x'], placeholder: 'Expression', explanation: '$6x(x^2 + 2x - 3)$. GCF is $6x$.' }
+    { difficulty: 'medium', question: 'GCF of $6x^3 + 12x^2 - 18x$:', accept: ['6x'], placeholder: 'Expression', explanation: '$6x(x^2 + 2x - 3)$. GCF is $6x$.' },
+    { difficulty: 'easy', question: 'Factor: $x^2 - 9 =$?', accept: ['(x-3)(x+3)', '(x+3)(x-3)'], placeholder: 'Factored', explanation: 'Difference of squares: $a^2 - b^2 = (a-b)(a+b)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -390,7 +391,8 @@ topics: [
     { difficulty: 'hard', question: 'Solve $x^2 - 4x - 5 = 0$ by factoring. Solutions? Write as "a, b":', accept: ['5, -1', '-1, 5', '5,-1', '-1,5'], placeholder: 'e.g. 5, -1', explanation: '$(x-5)(x+1) = 0$. $x = 5$ or $x = -1$.' },
     { difficulty: 'easy', question: 'Simplify: $\\frac{x^2}{x} =$?', accept: ['x'], placeholder: 'Expression', explanation: '$x^{2-1} = x$.' },
     { difficulty: 'medium', question: 'What value of $x$ makes $\\frac{5}{x-3}$ undefined?', accept: [3, '3'], placeholder: 'Number', explanation: 'Denominator = 0 when $x = 3$. Division by zero is undefined.' },
-    { difficulty: 'hard', question: 'Solve: $\\frac{2}{x} + \\frac{3}{x+1} = 1$. $x =$?', accept: ['2, -1', '2,-1'], placeholder: 'Solutions', explanation: 'Multiply by $x(x+1)$: $2(x+1) + 3x = x(x+1)$. $5x + 2 = x^2 + x$. $x^2 - 4x - 2 = 0$... Actually: $2x+2+3x = x^2+x$, $5x+2=x^2+x$, $x^2-4x-2=0$...' }
+    { difficulty: 'hard', question: 'Solve: $\\frac{2}{x} + \\frac{3}{x+1} = 1$. $x =$?', accept: ['2, -1', '2,-1'], placeholder: 'Solutions', explanation: 'Multiply by $x(x+1)$: $2(x+1) + 3x = x(x+1)$. $5x + 2 = x^2 + x$. $x^2 - 4x - 2 = 0$... Actually: $2x+2+3x = x^2+x$, $5x+2=x^2+x$, $x^2-4x-2=0$...' },
+    { difficulty: 'medium', question: 'Simplify: $\\frac{x^2 - 1}{x + 1} =$?', accept: ['x-1', 'x - 1'], placeholder: 'Simplified', explanation: '$\\frac{(x-1)(x+1)}{x+1} = x - 1$ (for $x \\neq -1$).' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [
@@ -487,7 +489,8 @@ topics: [
     { difficulty: 'hard', question: 'Simplify: $\\frac{x^2 - 9}{x + 3} =$?', accept: ['x-3', 'x - 3'], placeholder: 'Simplified', explanation: '$\\frac{(x+3)(x-3)}{x+3} = x - 3$.' },
     { difficulty: 'easy', question: '$\\sqrt{49} =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
     { difficulty: 'medium', question: 'Simplify: $\\sqrt{50} =$?', accept: ['5sqrt(2)', '5\\sqrt{2}'], placeholder: 'Expression', explanation: '$\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}$.' },
-    { difficulty: 'medium', question: 'Rationalize: $\\frac{1}{\\sqrt{3}} =$?', accept: ['sqrt(3)/3', '\\sqrt{3}/3'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{3}} \\cdot \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}$.' }
+    { difficulty: 'medium', question: 'Rationalize: $\\frac{1}{\\sqrt{3}} =$?', accept: ['sqrt(3)/3', '\\sqrt{3}/3'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{3}} \\cdot \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}$.' },
+    { difficulty: 'medium', question: '$\\sqrt{48} =$?', accept: ['4sqrt(3)', '4\\sqrt{3}'], placeholder: 'Simplified', explanation: '$\\sqrt{48} = \\sqrt{16 \\cdot 3} = 4\\sqrt{3}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add $\\frac{1}{x+1} + \\frac{2}{x-1}$ step by step.', steps: [

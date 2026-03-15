@@ -191,7 +191,8 @@
     { difficulty: 'easy', question: 'If an angle is $40°$, its supplement is:', accept: [140, '140'], placeholder: 'Degrees', explanation: '$180 - 40 = 140$.' },
     { difficulty: 'medium', question: 'Two complementary angles differ by $20°$. Find the larger:', accept: [55, '55'], placeholder: 'Degrees', explanation: '$x + (x - 20) = 90$. $2x = 110$. $x = 55$.' },
     { difficulty: 'medium', question: 'Vertical angles are always:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Vertical angles (opposite angles formed by intersecting lines) are always equal.' },
-    { difficulty: 'hard', question: 'Sum of interior angles of a hexagon:', accept: [720, '720'], placeholder: 'Degrees', explanation: '$(n-2) \\times 180 = 4 \\times 180 = 720°$.' }
+    { difficulty: 'hard', question: 'Sum of interior angles of a hexagon:', accept: [720, '720'], placeholder: 'Degrees', explanation: '$(n-2) \\times 180 = 4 \\times 180 = 720°$.' },
+    { difficulty: 'easy', question: 'An angle measuring exactly $90°$ is called:', accept: ['right', 'right angle'], placeholder: 'Name', explanation: '$90°$ is a right angle.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -365,7 +366,8 @@
         { difficulty: 'hard', question: 'A 45-45-90 triangle has hypotenuse $10$. Each leg measures (to 2 decimal places):', accept: ['7.07', '5√2'], placeholder: 'Length', explanation: 'In a 45-45-90 triangle, leg $= \\frac{\\text{hypotenuse}}{\\sqrt{2}} = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2} \\approx 7.07$.' },
     { difficulty: 'easy', question: 'If two angles of a triangle are $50°$ and $60°$, the third is:', accept: [70, '70'], placeholder: 'Degrees', explanation: '$180 - 50 - 60 = 70°$.' },
     { difficulty: 'medium', question: 'Hypotenuse of right triangle with legs 5 and 12:', accept: [13, '13'], placeholder: 'Number', explanation: '$\\sqrt{25 + 144} = \\sqrt{169} = 13$.' },
-    { difficulty: 'hard', question: 'Area of triangle with base 10 and height 6:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}bh = \\frac{1}{2}(10)(6) = 30$.' }
+    { difficulty: 'hard', question: 'Area of triangle with base 10 and height 6:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}bh = \\frac{1}{2}(10)(6) = 30$.' },
+    { difficulty: 'medium', question: 'In a 30-60-90 triangle with hypotenuse 10, the short side is:', accept: [5, '5'], placeholder: 'Length', explanation: 'Short side = hypotenuse / 2 = 5.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -508,7 +510,8 @@
         { difficulty: 'hard', question: 'A sector has area $50\\pi$ cm² and radius $10$ cm. Central angle in degrees:', accept: [180, '180', '180°'], placeholder: 'Degrees', explanation: '$A = \\frac{1}{2}r^2\\theta$. $50\\pi = \\frac{1}{2}(100)\\theta$. $\\theta = \\pi$ rad $= 180°$.' },
     { difficulty: 'easy', question: 'Perimeter of a square with side 7:', accept: [28, '28'], placeholder: 'Units', explanation: '$4 \\times 7 = 28$.' },
     { difficulty: 'medium', question: 'Area of equilateral triangle with side 6:', accept: ['9sqrt(3)', '15.59', '9\\sqrt{3}'], placeholder: 'Area', explanation: '$A = \\frac{\\sqrt{3}}{4} \\cdot 6^2 = 9\\sqrt{3}$.' },
-    { difficulty: 'hard', question: 'Area of regular hexagon with side 4:', accept: ['24sqrt(3)', '41.57'], placeholder: 'Area', explanation: '$A = \\frac{3\\sqrt{3}}{2}s^2 = \\frac{3\\sqrt{3}}{2}(16) = 24\\sqrt{3}$.' }
+    { difficulty: 'hard', question: 'Area of regular hexagon with side 4:', accept: ['24sqrt(3)', '41.57'], placeholder: 'Area', explanation: '$A = \\frac{3\\sqrt{3}}{2}s^2 = \\frac{3\\sqrt{3}}{2}(16) = 24\\sqrt{3}$.' },
+    { difficulty: 'easy', question: 'Area of rectangle with length 8 and width 3:', accept: [24, '24'], placeholder: 'Area', explanation: '$A = l \\times w = 8 \\times 3 = 24$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

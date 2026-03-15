@@ -400,7 +400,8 @@
     { difficulty: 'easy', question: 'Solve: $x^2 - 4 = 0$:', accept: ['2, -2', '-2, 2', '2,-2'], placeholder: 'Solutions', explanation: '$(x-2)(x+2) = 0$. $x = \\pm 2$.' },
     { difficulty: 'hard', question: 'For $ax^2 + bx + c = 0$, product of roots is:', accept: ['c/a'], placeholder: 'Expression', explanation: 'By Vieta: product = $c/a$.' },
     { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ?$ = (x+3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(6/2)^2 = 9$. $x^2 + 6x + 9 = (x+3)^2$.' },
-    { difficulty: 'hard', question: 'Nature of roots when discriminant = 0:', accept: ['one repeated root', 'double root', 'repeated'], placeholder: 'Description', explanation: '$b^2 - 4ac = 0$: one repeated (double) real root.' }
+    { difficulty: 'hard', question: 'Nature of roots when discriminant = 0:', accept: ['one repeated root', 'double root', 'repeated'], placeholder: 'Description', explanation: '$b^2 - 4ac = 0$: one repeated (double) real root.' },
+    { difficulty: 'medium', question: 'If the vertex of $y = a(x-h)^2 + k$ opens downward, then $a$ is:', accept: ['negative', 'a < 0'], placeholder: 'Sign', explanation: '$a < 0$: parabola opens downward.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -629,7 +630,8 @@
     { difficulty: 'easy', question: '$2^3 =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2 \\times 2 \\times 2 = 8$.' },
     { difficulty: 'medium', question: 'Solve: $e^{2x} = e^6$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Equal bases: $2x = 6$. $x = 3$.' },
     { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' },
-    { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' }
+    { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' },
+    { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

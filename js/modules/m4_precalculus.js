@@ -131,7 +131,8 @@ topics: [
     { difficulty: 'hard', question: 'Range of $f(x) = \\sqrt{x - 1}$:', accept: ['[0,inf)', '[0, infinity)', 'y >= 0'], placeholder: 'Interval', explanation: 'Square root outputs $\\geq 0$. Range: $[0, \\infty)$.' },
     { difficulty: 'hard', question: 'If $f(f^{-1}(x)) = x$, then $f^{-1}(f(x)) =$?', accept: ['x'], placeholder: 'Expression', explanation: 'Inverse functions: $f^{-1}(f(x)) = x$.' },
     { difficulty: 'medium', question: 'Domain of $f(x) = \\frac{1}{x - 3}$:', accept: ['x != 3', 'all reals except 3', 'R\\{3}'], placeholder: 'Domain', explanation: 'Undefined at $x = 3$ (division by zero). Domain: $x \\neq 3$.' },
-    { difficulty: 'hard', question: 'Is $f(x) = x^3$ even, odd, or neither?', accept: ['odd'], placeholder: 'Type', explanation: '$f(-x) = (-x)^3 = -x^3 = -f(x)$. Odd function.' }
+    { difficulty: 'hard', question: 'Is $f(x) = x^3$ even, odd, or neither?', accept: ['odd'], placeholder: 'Type', explanation: '$f(-x) = (-x)^3 = -x^3 = -f(x)$. Odd function.' },
+    { difficulty: 'easy', question: 'If $f(x) = 2x + 1$, then $f(3) =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$f(3) = 2(3) + 1 = 7$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -268,7 +269,8 @@ topics: [
     { difficulty: 'medium', question: 'What is the vertex of $y = |x + 4| - 2$? Write as (x,y):', accept: ['(-4,-2)', '(-4, -2)'], placeholder: '(x,y)', explanation: '$|x+4| = |x-(-4)|$: shift left 4, down 2. Vertex: $(-4, -2)$.' },
     { difficulty: 'hard', question: 'Describe: $y = -3(x-1)^2 + 7$. What is the maximum value of this function?', accept: [7, '7'], placeholder: 'Maximum value', explanation: 'Opens down ($a=-3$), vertex at $(1,7)$. Maximum value = 7.' },
     { difficulty: 'easy', question: 'End behavior of $f(x) = -x^4$: as $x \\to \\infty$, $f(x) \\to$?', accept: ['-inf', '-infinity', 'negative infinity'], placeholder: 'Behavior', explanation: 'Negative leading coefficient, even degree: both ends go to $-\\infty$.' },
-    { difficulty: 'hard', question: 'Rational root theorem: possible rational roots of $2x^3 + 3x - 1$:', accept: ['1, -1, 1/2, -1/2', 'pm 1, pm 1/2'], placeholder: 'Roots', explanation: 'Factors of constant ($\\pm 1$) over factors of leading coefficient ($\\pm 1, \\pm 2$): $\\pm 1, \\pm 1/2$.' }
+    { difficulty: 'hard', question: 'Rational root theorem: possible rational roots of $2x^3 + 3x - 1$:', accept: ['1, -1, 1/2, -1/2', 'pm 1, pm 1/2'], placeholder: 'Roots', explanation: 'Factors of constant ($\\pm 1$) over factors of leading coefficient ($\\pm 1, \\pm 2$): $\\pm 1, \\pm 1/2$.' },
+    { difficulty: 'medium', question: 'A polynomial of degree 3 is called a:', accept: ['cubic'], placeholder: 'Name', explanation: 'Degree 3: cubic. (1: linear, 2: quadratic, 3: cubic, 4: quartic.)' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -364,7 +366,8 @@ topics: [
     { difficulty: 'medium', question: 'Solve: $2^x = 32$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$32 = 2^5$, so $x = 5$.' },
     { difficulty: 'medium', question: 'Express $\\log_8(2)$ as a fraction:', accept: ['1/3'], placeholder: 'Fraction', explanation: '$8^{1/3} = 2$, so $\\log_8(2) = 1/3$.' },
     { difficulty: 'hard', question: 'Expand: $\\log_2(8x^3)$ using log properties. What is the result?', accept: ['3+3log2(x)', '3 + 3log2(x)', '3+3log_2(x)'], placeholder: 'e.g. 3+3log2(x)', explanation: '$\\log_2(8) + \\log_2(x^3) = 3 + 3\\log_2(x)$.' },
-    { difficulty: 'hard', question: 'Half-life formula: $N(t) = N_0 \\cdot (1/2)^{t/h}$. If $h = 5$ years, fraction remaining after 15 years:', accept: ['1/8', '0.125'], placeholder: 'Fraction', explanation: '$(1/2)^{15/5} = (1/2)^3 = 1/8$.' }
+    { difficulty: 'hard', question: 'Half-life formula: $N(t) = N_0 \\cdot (1/2)^{t/h}$. If $h = 5$ years, fraction remaining after 15 years:', accept: ['1/8', '0.125'], placeholder: 'Fraction', explanation: '$(1/2)^{15/5} = (1/2)^3 = 1/8$.' },
+    { difficulty: 'medium', question: '$\\log_a(xy) =$?', accept: ['log_a(x)+log_a(y)', 'loga(x)+loga(y)'], placeholder: 'Expression', explanation: 'Product rule: $\\log_a(xy) = \\log_a x + \\log_a y$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

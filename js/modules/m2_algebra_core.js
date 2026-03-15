@@ -96,7 +96,9 @@ topics: [
     { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} = 5$. $x =$?', accept: [20, '20'], placeholder: 'Number', explanation: '$x = 5 \\times 4 = 20$.' },
     { difficulty: 'hard', question: 'Solve: $|2x - 3| = 7$. Solutions:', accept: ['5, -2', '-2, 5', '5,-2'], placeholder: 'x values', explanation: '$2x - 3 = 7 \\Rightarrow x = 5$. $2x - 3 = -7 \\Rightarrow x = -2$.' },
     { difficulty: 'medium', question: 'Solve: $3(x + 2) = 21$. $x =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$3x + 6 = 21$. $3x = 15$. $x = 5$.' },
-    { difficulty: 'hard', question: 'Solve: $\\frac{x+1}{3} = \\frac{x-2}{2}$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2(x+1) = 3(x-2)$. $2x+2 = 3x-6$. $x = 8$.' }
+    { difficulty: 'hard', question: 'Solve: $\\frac{x+1}{3} = \\frac{x-2}{2}$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2(x+1) = 3(x-2)$. $2x+2 = 3x-6$. $x = 8$.' },
+    { difficulty: 'easy', question: 'Solve: $x + 5 = 12$. $x =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$x = 12 - 5 = 7$.' },
+    { difficulty: 'hard', question: 'Solve the system: $x + y = 10$, $x - y = 4$:', accept: ['x=7, y=3', '(7,3)', '7,3'], placeholder: 'Solution', explanation: 'Add: $2x = 14, x = 7$. Then $y = 3$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -357,7 +359,8 @@ topics: [
     { difficulty: 'medium', question: '$(-2)^5 =$?', accept: [-32, '-32'], placeholder: 'Enter a number', explanation: 'Odd exponent: $-32$.' },
     { difficulty: 'hard', question: '$\\frac{(-3)^3}{(-3)^2} =$?', accept: [-3, '-3'], placeholder: 'Enter a number', explanation: '$(-3)^{3-2} = -3$.' },
     { difficulty: 'easy', question: '$(2x + 3) + (4x - 1) =$?', accept: ['6x+2', '6x + 2'], placeholder: 'Expression', explanation: '$2x + 4x = 6x$, $3 + (-1) = 2$.' },
-    { difficulty: 'medium', question: '$(x + 2)(x - 3) =$?', accept: ['x^2-x-6', 'x^2 - x - 6'], placeholder: 'Expression', explanation: 'FOIL: $x^2 - 3x + 2x - 6 = x^2 - x - 6$.' }
+    { difficulty: 'medium', question: '$(x + 2)(x - 3) =$?', accept: ['x^2-x-6', 'x^2 - x - 6'], placeholder: 'Expression', explanation: 'FOIL: $x^2 - 3x + 2x - 6 = x^2 - x - 6$.' },
+    { difficulty: 'medium', question: 'Degree of $5x^2y^3$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Sum of exponents: $2 + 3 = 5$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [
