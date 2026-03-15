@@ -98,7 +98,9 @@ topics: [
     { difficulty: 'medium', question: '$\\int \\ln x\\,dx = x\\ln x - $ ?$+ C$', accept: ['x'], placeholder: 'What term?', explanation: '$\\int \\ln x\\,dx = x\\ln x - x + C$.' },
     { difficulty: 'hard', question: '$\\int x^2 e^x\\,dx$ requires how many rounds of IBP?', accept: [2, '2'], placeholder: 'Number', explanation: 'Each round reduces $x^n$ by 1. $x^2 \\to x \\to$ constant: 2 rounds.' },
     { difficulty: 'medium', question: 'In tabular integration of $\\int x^2 e^x\\,dx$, how many derivative rows until zero?', accept: [3, '3'], placeholder: 'Number', explanation: '$x^2 \\to 2x \\to 2 \\to 0$. Three derivative rows.' },
-    { difficulty: 'hard', question: '$\\int_0^{\\pi} x \\sin x\\, dx =$? (exact)', accept: ['pi', '3.14'], placeholder: 'Value', explanation: '$u=x, dv=\\sin x\\,dx$. $[-x\\cos x + \\sin x]_0^{\\pi} = \\pi$.' }
+    { difficulty: 'hard', question: '$\\int_0^{\\pi} x \\sin x\\, dx =$? (exact)', accept: ['pi', '3.14'], placeholder: 'Value', explanation: '$u=x, dv=\\sin x\\,dx$. $[-x\\cos x + \\sin x]_0^{\\pi} = \\pi$.' },
+    { difficulty: 'easy', question: '$\\int x\\,dx =$?', accept: ['x^2/2+C', 'x^2/2 + C'], placeholder: 'Expression', explanation: '$x^{1+1}/(1+1) + C = x^2/2 + C$.' },
+    { difficulty: 'hard', question: '$\\int x^2 \\sin x\\,dx$ requires integration by parts how many times?', accept: [2, '2'], placeholder: 'Number', explanation: 'Differentiate $x^2$ twice to reach a constant: $x^2 \\to 2x \\to 2$. Two applications.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -203,7 +205,9 @@ topics: [
     { difficulty: 'medium', question: 'Sum of first 50 terms of $1, 2, 3, \\ldots, 50$:', accept: [1275, '1275'], placeholder: 'S = ?', explanation: '$S = \\frac{50}{2}(1 + 50) = 1275$.' },
     { difficulty: 'hard', question: '$\\lim_{n \\to \\infty} \\frac{3n + 1}{n + 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide top and bottom by $n$: $\\frac{3 + 1/n}{1 + 5/n} \\to 3$.' },
     { difficulty: 'easy', question: 'The 5th term of the sequence $a_n = 2n + 1$ is:', accept: [11, '11'], placeholder: 'Number', explanation: '$a_5 = 2(5) + 1 = 11$.' },
-    { difficulty: 'hard', question: 'Sum of infinite geometric series: $3 + 1 + 1/3 + 1/9 + \\cdots =$?', accept: ['4.5', '9/2'], placeholder: 'Number', explanation: '$a = 3, r = 1/3$. $S = a/(1-r) = 3/(2/3) = 9/2 = 4.5$.' }
+    { difficulty: 'hard', question: 'Sum of infinite geometric series: $3 + 1 + 1/3 + 1/9 + \\cdots =$?', accept: ['4.5', '9/2'], placeholder: 'Number', explanation: '$a = 3, r = 1/3$. $S = a/(1-r) = 3/(2/3) = 9/2 = 4.5$.' },
+    { difficulty: 'easy', question: 'The 10th term of $a_n = n^2$:', accept: [100, '100'], placeholder: 'Number', explanation: '$a_{10} = 10^2 = 100$.' },
+    { difficulty: 'medium', question: 'Is the sequence $a_n = (-1)^n$ convergent?', accept: ['no', 'divergent'], placeholder: 'yes/no', explanation: 'Alternates between $-1$ and $1$. Never settles. Divergent.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -340,7 +344,9 @@ topics: [
     { difficulty: 'medium', question: 'For what values of $p$ does $\\sum 1/n^p$ converge?', accept: ['p \\gt 1', 'p \\gt 1'], placeholder: 'e.g. p \\gt 1', explanation: 'p-series: converges when $p \\gt 1$.' },
     { difficulty: 'medium', question: 'What is the radius of convergence of $\\sum x^n/n!$?', accept: ['infinity', 'inf', '\\infty'], placeholder: 'R = ?', explanation: 'This is $e^x$. Ratio test: $|x|/(n+1) \\to 0 \\lt 1$ for all $x$. $R = \\infty$.' },
     { difficulty: 'hard', question: 'The Maclaurin series for $e^x$ at $x=1$ gives $e \\approx$?', accept: ['2.7', '2.718', '2.72'], placeholder: 'e.g. 2.7', explanation: '$e \\approx 2.718$.' },
-    { difficulty: 'hard', question: 'The first 3 terms of the Taylor series for $\\sin x$ around $x=0$:', accept: ['x-x^3/6+x^5/120', 'x - x^3/6 + x^5/120'], placeholder: 'e.g. x-x^3/6+x^5/120', explanation: '$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$' }
+    { difficulty: 'hard', question: 'The first 3 terms of the Taylor series for $\\sin x$ around $x=0$:', accept: ['x-x^3/6+x^5/120', 'x - x^3/6 + x^5/120'], placeholder: 'e.g. x-x^3/6+x^5/120', explanation: '$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$' },
+    { difficulty: 'easy', question: '$\\sum_{n=1}^{4} n =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$1 + 2 + 3 + 4 = 10$.' },
+    { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n}$ converge?', accept: ['no', 'diverge', 'diverges'], placeholder: 'yes/no', explanation: 'Harmonic series diverges. $p = 1 \\leq 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

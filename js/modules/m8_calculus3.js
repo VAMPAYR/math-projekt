@@ -104,7 +104,9 @@ topics: [
     { difficulty: 'medium', question: '$\\langle 1,2,3 \\rangle \\cdot \\langle 4,5,6 \\rangle =$?', accept: [32, '32'], placeholder: 'Enter a number', explanation: '$4+10+18 = 32$.' },
     { difficulty: 'medium', question: 'Find the unit vector in the direction of $\\langle 3, 4 \\rangle$:', accept: ['<3/5,4/5>', '(3/5,4/5)', '<0.6,0.8>'], placeholder: '<a,b>', explanation: '$|\\langle 3,4 \\rangle| = 5$. Unit: $\\langle 3/5, 4/5 \\rangle$.' },
     { difficulty: 'hard', question: 'Two vectors have dot product 0. Are they parallel or perpendicular?', accept: ['perpendicular', 'orthogonal'], placeholder: 'parallel or perpendicular', explanation: '$\\mathbf{u} \\cdot \\mathbf{v} = 0 \\iff$ perpendicular.' },
-    { difficulty: 'hard', question: 'The angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$ in degrees:', accept: [90, '90'], placeholder: 'degrees', explanation: '$\\cos\\theta = 0 \\Rightarrow \\theta = 90\u00b0$.' }
+    { difficulty: 'hard', question: 'The angle between $\\langle 1,0 \\rangle$ and $\\langle 0,1 \\rangle$ in degrees:', accept: [90, '90'], placeholder: 'degrees', explanation: '$\\cos\\theta = 0 \\Rightarrow \\theta = 90\u00b0$.' },
+    { difficulty: 'easy', question: '$\\nabla(x^2 + y^2) =$?', accept: ['<2x,2y>', '(2x,2y)'], placeholder: 'Vector', explanation: 'Gradient: $\\langle \\frac{\\partial}{\\partial x}, \\frac{\\partial}{\\partial y} \\rangle = \\langle 2x, 2y \\rangle$.' },
+    { difficulty: 'medium', question: 'Divergence of $\\vec{F} = \\langle x^2, y^2 \\rangle$:', accept: ['2x+2y', '2x + 2y'], placeholder: 'Expression', explanation: '$\\nabla \\cdot \\vec{F} = 2x + 2y$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -233,7 +235,9 @@ topics: [
     { difficulty: 'medium', question: 'If $f(x,y) = xy^2$, find $f_y$:', accept: ['2xy'], placeholder: 'e.g. 2xy', explanation: '$f_y = 2xy$.' },
     { difficulty: 'medium', question: 'If $f(x,y) = e^{xy}$, find $f_x$:', accept: ['ye^{xy}', 'ye^(xy)', 'y*e^(xy)'], placeholder: 'e.g. ye^(xy)', explanation: 'Chain rule: $e^{xy} \\cdot y$.' },
     { difficulty: 'hard', question: 'Gradient of $f(x,y) = x^2 + y^2$ at $(1,1)$:', accept: ['<2,2>', '(2,2)', '2,2'], placeholder: '<a,b>', explanation: '$\\nabla f = \\langle 2x, 2y \\rangle$. At $(1,1)$: $\\langle 2, 2 \\rangle$.' },
-    { difficulty: 'hard', question: 'The discriminant $D$ for $f(x,y) = x^2 - y^2$ at $(0,0)$ is:', accept: [-4, '-4'], placeholder: 'D = ?', explanation: '$f_{xx}=2, f_{yy}=-2, f_{xy}=0$. $D = (2)(-2) - 0 = -4 \\lt 0$: saddle point.' }
+    { difficulty: 'hard', question: 'The discriminant $D$ for $f(x,y) = x^2 - y^2$ at $(0,0)$ is:', accept: [-4, '-4'], placeholder: 'D = ?', explanation: '$f_{xx}=2, f_{yy}=-2, f_{xy}=0$. $D = (2)(-2) - 0 = -4 \\lt 0$: saddle point.' },
+    { difficulty: 'easy', question: 'For a path $C$ from $(0,0)$ to $(1,1)$, $\\int_C ds$ gives the path:', accept: ['length', 'arc length'], placeholder: 'What?', explanation: '$\\int_C ds$ computes the arc length of the curve.' },
+    { difficulty: 'medium', question: 'A conservative field has $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
