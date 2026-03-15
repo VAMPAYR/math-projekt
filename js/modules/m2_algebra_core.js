@@ -101,7 +101,8 @@ topics: [
     { difficulty: 'hard', question: 'Solve the system: $x + y = 10$, $x - y = 4$:', accept: ['x=7, y=3', '(7,3)', '7,3'], placeholder: 'Solution', explanation: 'Add: $2x = 14, x = 7$. Then $y = 3$.' },
     { difficulty: 'medium', question: 'Solve: $2x + 3 = x + 7$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$2x - x = 7 - 3$. $x = 4$.' },
     { difficulty: 'hard', question: 'Solve: $0.5x + 1.5 = 3.5$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$0.5x = 2$. $x = 4$.' },
-    { difficulty: 'easy', question: 'Distributive property: $3(x + 4) =$?', accept: ['3x+12', '3x + 12'], placeholder: 'Expression', explanation: '$3 \\cdot x + 3 \\cdot 4 = 3x + 12$.' }
+    { difficulty: 'easy', question: 'Distributive property: $3(x + 4) =$?', accept: ['3x+12', '3x + 12'], placeholder: 'Expression', explanation: '$3 \\cdot x + 3 \\cdot 4 = 3x + 12$.' },
+    { difficulty: 'hard', question: 'Solve: $|3x - 1| \\leq 5$. Solution:', accept: ['-4/3 <= x <= 2', '[-4/3, 2]'], placeholder: 'Interval', explanation: '$-5 \\leq 3x - 1 \\leq 5$. $-4 \\leq 3x \\leq 6$. $-4/3 \\leq x \\leq 2$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -261,7 +262,8 @@ topics: [
     { difficulty: 'hard', question: 'Equation of line with slope $-2$ through $(3, 1)$:', accept: ['y=-2x+7', 'y = -2x + 7'], placeholder: 'y = ?', explanation: '$y - 1 = -2(x - 3)$. $y = -2x + 7$.' },
     { difficulty: 'easy', question: 'The origin has coordinates:', accept: ['(0,0)'], placeholder: 'Point', explanation: 'Origin: $(0, 0)$.' },
     { difficulty: 'medium', question: 'Slope of horizontal line:', accept: [0, '0'], placeholder: 'Number', explanation: 'Horizontal line: $\\Delta y = 0$. Slope $= 0$.' },
-    { difficulty: 'medium', question: 'Slope of line through $(1,2)$ and $(4,8)$:', accept: [2, '2'], placeholder: 'Number', explanation: '$m = \\frac{8-2}{4-1} = \\frac{6}{3} = 2$.' }
+    { difficulty: 'medium', question: 'Slope of line through $(1,2)$ and $(4,8)$:', accept: [2, '2'], placeholder: 'Number', explanation: '$m = \\frac{8-2}{4-1} = \\frac{6}{3} = 2$.' },
+    { difficulty: 'hard', question: 'Distance from point $(3,4)$ to line $y = 0$:', accept: [4, '4'], placeholder: 'Number', explanation: 'Distance to $x$-axis is the absolute $y$-coordinate: $|4| = 4$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -374,7 +376,8 @@ topics: [
     { difficulty: 'medium', question: 'Degree of $5x^2y^3$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Sum of exponents: $2 + 3 = 5$.' },
     { difficulty: 'hard', question: '$(3x + 2)^2 =$?', accept: ['9x^2+12x+4', '9x^2 + 12x + 4'], placeholder: 'Expression', explanation: '$(a+b)^2 = a^2 + 2ab + b^2 = 9x^2 + 12x + 4$.' },
     { difficulty: 'medium', question: '$(a+b)(a-b) =$?', accept: ['a^2-b^2', 'a^2 - b^2'], placeholder: 'Expression', explanation: 'Difference of squares: $(a+b)(a-b) = a^2 - b^2$.' },
-    { difficulty: 'easy', question: '$x^2 \\cdot x^3 =$?', accept: ['x^5', 'x5'], placeholder: 'Expression', explanation: 'Product of powers: $x^{2+3} = x^5$.' }
+    { difficulty: 'easy', question: '$x^2 \\cdot x^3 =$?', accept: ['x^5', 'x5'], placeholder: 'Expression', explanation: 'Product of powers: $x^{2+3} = x^5$.' },
+    { difficulty: 'hard', question: '$(x - 3)^3$ expanded: $x^3 - 9x^2 + 27x -$ ?', accept: [27, '27'], placeholder: 'Number', explanation: '$(a-b)^3 = a^3 - 3a^2 b + 3ab^2 - b^3$. Last term: $3^3 = 27$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

@@ -181,7 +181,8 @@
     { difficulty: 'easy', question: '$\\int 4x^3\\,dx =$?', accept: ['x^4+C', 'x^4 + C'], placeholder: 'Expression', explanation: '$4 \\cdot x^4/4 + C = x^4 + C$.' },
     { difficulty: 'easy', question: '$\\int \\sin x\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' },
     { difficulty: 'medium', question: '$\\int \\cos(3x)\\,dx =$?', accept: ['sin(3x)/3+C', '(1/3)sin(3x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{3}\\sin(3x) + C$.' },
-    { difficulty: 'hard', question: '$\\int \\sec(x)\\,dx =$?', accept: ['ln|sec(x)+tan(x)|+C'], placeholder: 'Expression', explanation: '$\\ln|\\sec x + \\tan x| + C$.' }
+    { difficulty: 'hard', question: '$\\int \\sec(x)\\,dx =$?', accept: ['ln|sec(x)+tan(x)|+C'], placeholder: 'Expression', explanation: '$\\ln|\\sec x + \\tan x| + C$.' },
+    { difficulty: 'hard', question: '$\\int \\csc^2(x)\\,dx =$?', accept: ['-cot(x)+C', '-cotx+C'], placeholder: 'Expression', explanation: '$-\\cot x + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -377,7 +378,8 @@
     { difficulty: 'hard', question: 'Disc method volume: $y = x^2$ revolved about $x$-axis from $x=0$ to $x=2$:', accept: ['32pi/5'], placeholder: 'Volume', explanation: '$V = \\pi\\int_0^2 x^4\\,dx = \\pi[x^5/5]_0^2 = 32\\pi/5$.' },
     { difficulty: 'medium', question: 'Shell method formula: $V = 2\\pi \\int_a^b$ ?', accept: ['x*f(x)dx', 'xf(x)dx'], placeholder: 'Integrand', explanation: '$V = 2\\pi \\int_a^b x f(x)\\,dx$.' },
     { difficulty: 'easy', question: '$\\int_0^1 x^2\\,dx =$?', accept: ['1/3', '0.333'], placeholder: 'Number', explanation: '$[x^3/3]_0^1 = 1/3$.' },
-    { difficulty: 'medium', question: 'Washer method: volume = $\\pi \\int (R^2 - r^2)\\,dx$. $R$ is the:', accept: ['outer radius'], placeholder: 'Which radius?', explanation: '$R$ = outer radius, $r$ = inner radius.' }
+    { difficulty: 'medium', question: 'Washer method: volume = $\\pi \\int (R^2 - r^2)\\,dx$. $R$ is the:', accept: ['outer radius'], placeholder: 'Which radius?', explanation: '$R$ = outer radius, $r$ = inner radius.' },
+    { difficulty: 'hard', question: 'Arc length formula: $L = \\int_a^b \\sqrt{1 + [f\'(x)]^2}\\,$ ?', accept: ['dx'], placeholder: 'Variable', explanation: '$L = \\int_a^b \\sqrt{1 + (f\'(x))^2}\\,dx$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -507,7 +509,8 @@
     { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+4}\\,dx =$?', accept: ['(1/2)arctan(x/2)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{2}\\arctan(x/2) + C$.' },
     { difficulty: 'hard', question: 'Partial fractions: $\\frac{1}{(x-1)(x+1)} = \\frac{A}{x-1} + \\frac{B}{x+1}$. $A =$?', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: 'Set $x = 1$: $1/(2) = A$. $A = 1/2$.' },
     { difficulty: 'medium', question: '$\\int_0^4 \\sqrt{x}\\,dx =$?', accept: ['16/3', '5.33'], placeholder: 'Number', explanation: '$[\\frac{2}{3}x^{3/2}]_0^4 = \\frac{2}{3}(8) = 16/3$.' },
-    { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1 - 0 = 1$.' }
+    { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1 - 0 = 1$.' },
+    { difficulty: 'hard', question: 'Simpson\'s rule order of error: $O(h^$ ? $)$', accept: [4, '4'], placeholder: 'Power', explanation: 'Simpson\'s rule: $O(h^4)$ error. More accurate than trapezoidal ($O(h^2)$).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

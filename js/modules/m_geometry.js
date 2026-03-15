@@ -196,7 +196,8 @@
     { difficulty: 'easy', question: 'An angle measuring exactly $90°$ is called:', accept: ['right', 'right angle'], placeholder: 'Name', explanation: '$90°$ is a right angle.' },
     { difficulty: 'easy', question: 'An angle greater than $90°$ but less than $180°$ is:', accept: ['obtuse'], placeholder: 'Type', explanation: 'Obtuse: $90° < \\theta < 180°$.' },
     { difficulty: 'medium', question: 'Alternate interior angles formed by a transversal are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'When a transversal cuts parallel lines, alternate interior angles are congruent.' },
-    { difficulty: 'hard', question: 'Sum of exterior angles of any convex polygon:', accept: [360, '360'], placeholder: 'Degrees', explanation: 'The sum of exterior angles of any convex polygon is always $360°$.' }
+    { difficulty: 'hard', question: 'Sum of exterior angles of any convex polygon:', accept: [360, '360'], placeholder: 'Degrees', explanation: 'The sum of exterior angles of any convex polygon is always $360°$.' },
+    { difficulty: 'hard', question: 'Number of diagonals in a convex $n$-gon: $\\frac{n(n-3)}{2}$. For $n = 6$:', accept: [9, '9'], placeholder: 'Number', explanation: '$6(6-3)/2 = 6 \\times 3/2 = 9$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -374,7 +375,8 @@
     { difficulty: 'medium', question: 'In a 30-60-90 triangle with hypotenuse 10, the short side is:', accept: [5, '5'], placeholder: 'Length', explanation: 'Short side = hypotenuse / 2 = 5.' },
     { difficulty: 'easy', question: 'All three sides of an equilateral triangle are:', accept: ['equal', 'congruent', 'the same'], placeholder: 'Property', explanation: 'Equilateral: all sides equal. All angles = $60°$.' },
     { difficulty: 'hard', question: 'In a right triangle with legs $a$ and $b$: $a^2 + b^2 =$?', accept: ['c^2', 'hypotenuse^2'], placeholder: 'Expression', explanation: 'Pythagorean theorem: $a^2 + b^2 = c^2$.' },
-    { difficulty: 'medium', question: 'Similar triangles have proportional sides and:', accept: ['equal angles', 'congruent angles'], placeholder: 'Property', explanation: 'Similar: same shape, different size. Angles equal, sides proportional.' }
+    { difficulty: 'medium', question: 'Similar triangles have proportional sides and:', accept: ['equal angles', 'congruent angles'], placeholder: 'Property', explanation: 'Similar: same shape, different size. Angles equal, sides proportional.' },
+    { difficulty: 'hard', question: 'If two triangles are congruent by SSS, what theorem is used?', accept: ['SSS', 'side-side-side'], placeholder: 'Theorem', explanation: 'SSS: if all three sides are equal, the triangles are congruent.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -521,7 +523,8 @@
     { difficulty: 'easy', question: 'Area of rectangle with length 8 and width 3:', accept: [24, '24'], placeholder: 'Area', explanation: '$A = l \\times w = 8 \\times 3 = 24$.' },
     { difficulty: 'medium', question: 'Volume of rectangular prism with $l=3, w=4, h=5$:', accept: [60, '60'], placeholder: 'Volume', explanation: '$V = lwh = 3 \\times 4 \\times 5 = 60$.' },
     { difficulty: 'medium', question: 'Circumference of circle with diameter 10:', accept: ['10pi', '31.42'], placeholder: 'Length', explanation: '$C = \\pi d = 10\\pi$.' },
-    { difficulty: 'hard', question: 'Volume of sphere with radius 3:', accept: ['36pi', '113.1'], placeholder: 'Volume', explanation: '$V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi(27) = 36\\pi$.' }
+    { difficulty: 'hard', question: 'Volume of sphere with radius 3:', accept: ['36pi', '113.1'], placeholder: 'Volume', explanation: '$V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi(27) = 36\\pi$.' },
+    { difficulty: 'hard', question: 'Surface area of sphere with radius 4:', accept: ['64pi', '201.06'], placeholder: 'Area', explanation: '$SA = 4\\pi r^2 = 4\\pi(16) = 64\\pi$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

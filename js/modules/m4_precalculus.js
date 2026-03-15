@@ -135,7 +135,8 @@ topics: [
     { difficulty: 'easy', question: 'If $f(x) = 2x + 1$, then $f(3) =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$f(3) = 2(3) + 1 = 7$.' },
     { difficulty: 'easy', question: 'Domain of $f(x) = \\sqrt{x}$:', accept: ['x >= 0', '[0, inf)', 'x \\geq 0'], placeholder: 'Domain', explanation: 'Cannot take square root of negative. Domain: $x \\geq 0$.' },
     { difficulty: 'medium', question: '$f(x) = x^2$: is this even, odd, or neither?', accept: ['even'], placeholder: 'Type', explanation: '$f(-x) = (-x)^2 = x^2 = f(x)$. Even function.' },
-    { difficulty: 'hard', question: 'Horizontal asymptote of $\\frac{3x^2 + 1}{x^2 - 5}$:', accept: ['y=3', 'y = 3', '3'], placeholder: 'Equation', explanation: 'Same degree: ratio of leading coefficients: $3/1 = 3$.' }
+    { difficulty: 'hard', question: 'Horizontal asymptote of $\\frac{3x^2 + 1}{x^2 - 5}$:', accept: ['y=3', 'y = 3', '3'], placeholder: 'Equation', explanation: 'Same degree: ratio of leading coefficients: $3/1 = 3$.' },
+    { difficulty: 'hard', question: 'The inverse of $f(x) = e^x$ is:', accept: ['ln(x)', 'log(x)', '\\ln x'], placeholder: 'Function', explanation: '$f^{-1}(x) = \\ln x$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -281,7 +282,8 @@ topics: [
     { difficulty: 'medium', question: 'A polynomial of degree 3 is called a:', accept: ['cubic'], placeholder: 'Name', explanation: 'Degree 3: cubic. (1: linear, 2: quadratic, 3: cubic, 4: quartic.)' },
     { difficulty: 'easy', question: 'A polynomial of degree 4 is called:', accept: ['quartic'], placeholder: 'Name', explanation: 'Degree 4: quartic.' },
     { difficulty: 'hard', question: 'By the rational root theorem, candidates for $3x^3 + x - 2$:', accept: ['1, -1, 2, -2, 1/3, -1/3, 2/3, -2/3'], placeholder: 'Roots', explanation: 'Factors of 2 over factors of 3: $\\pm 1, \\pm 2, \\pm 1/3, \\pm 2/3$.' },
-    { difficulty: 'medium', question: 'Degree 5 polynomial has at most how many turning points?', accept: [4, '4'], placeholder: 'Number', explanation: 'At most $n - 1 = 5 - 1 = 4$ turning points.' }
+    { difficulty: 'medium', question: 'Degree 5 polynomial has at most how many turning points?', accept: [4, '4'], placeholder: 'Number', explanation: 'At most $n - 1 = 5 - 1 = 4$ turning points.' },
+    { difficulty: 'hard', question: 'A degree-3 polynomial has exactly how many complex roots (counting multiplicity)?', accept: [3, '3'], placeholder: 'Number', explanation: 'Fundamental Theorem of Algebra: degree $n$ has exactly $n$ complex roots.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -381,7 +383,8 @@ topics: [
     { difficulty: 'medium', question: '$\\log_a(xy) =$?', accept: ['log_a(x)+log_a(y)', 'loga(x)+loga(y)'], placeholder: 'Expression', explanation: 'Product rule: $\\log_a(xy) = \\log_a x + \\log_a y$.' },
     { difficulty: 'hard', question: '$\\log_a(a^x) =$?', accept: ['x'], placeholder: 'Expression', explanation: 'Inverse property: $\\log_a(a^x) = x$.' },
     { difficulty: 'easy', question: '$\\log_{10}(100) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$10^2 = 100$. $\\log_{10}(100) = 2$.' },
-    { difficulty: 'medium', question: 'Continuous compounding: $A = Pe^{rt}$. If $P = 1000, r = 0.05, t = 10$:', accept: ['1648.72', '1648.7', '1649'], placeholder: 'Amount', explanation: '$1000 e^{0.5} \\approx 1648.72$.' }
+    { difficulty: 'medium', question: 'Continuous compounding: $A = Pe^{rt}$. If $P = 1000, r = 0.05, t = 10$:', accept: ['1648.72', '1648.7', '1649'], placeholder: 'Amount', explanation: '$1000 e^{0.5} \\approx 1648.72$.' },
+    { difficulty: 'hard', question: '$e^{i\\pi} + 1 =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Euler\'s identity: $e^{i\\pi} + 1 = 0$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

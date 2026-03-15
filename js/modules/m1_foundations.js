@@ -95,7 +95,8 @@ topics: [
     { difficulty: 'hard', question: 'Between which two consecutive integers does $\\sqrt{50}$ lie?', accept: ['7 and 8', '7,8'], placeholder: 'Integers', explanation: '$7^2 = 49 < 50 < 64 = 8^2$. So $7 < \\sqrt{50} < 8$.' },
     { difficulty: 'easy', question: 'The natural numbers start from:', accept: [1, '1'], placeholder: 'Number', explanation: '$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$.' },
     { difficulty: 'easy', question: 'The integers include positive, negative, and:', accept: ['zero', '0'], placeholder: 'Number', explanation: '$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$.' },
-    { difficulty: 'hard', question: 'Cantor proved that $|\\mathbb{R}| > |\\mathbb{N}|$ using what technique?', accept: ['diagonalization', 'diagonal argument', 'Cantors diagonal'], placeholder: 'Method', explanation: 'Cantors diagonal argument: construct a real not in any proposed listing.' }
+    { difficulty: 'hard', question: 'Cantor proved that $|\\mathbb{R}| > |\\mathbb{N}|$ using what technique?', accept: ['diagonalization', 'diagonal argument', 'Cantors diagonal'], placeholder: 'Method', explanation: 'Cantors diagonal argument: construct a real not in any proposed listing.' },
+    { difficulty: 'hard', question: 'Cartesian product: $|\\{1,2\\} \\times \\{a,b,c\\}| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\times B| = |A| \\cdot |B| = 2 \\times 3 = 6$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -274,7 +275,8 @@ topics: [
     { difficulty: 'medium', question: 'Absolute value: $|-7| =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$|-7| = 7$. Absolute value removes the sign.' },
     { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' },
     { difficulty: 'medium', question: 'The multiplicative identity is:', accept: [1, '1'], placeholder: 'Number', explanation: '$a \\times 1 = a$ for all $a$.' },
-    { difficulty: 'easy', question: 'The commutative property: $a + b = $?', accept: ['b+a', 'b + a'], placeholder: 'Expression', explanation: '$a + b = b + a$. Addition is commutative.' }
+    { difficulty: 'easy', question: 'The commutative property: $a + b = $?', accept: ['b+a', 'b + a'], placeholder: 'Expression', explanation: '$a + b = b + a$. Addition is commutative.' },
+    { difficulty: 'hard', question: 'The associative property of multiplication: $(ab)c =$?', accept: ['a(bc)', 'abc'], placeholder: 'Expression', explanation: '$(ab)c = a(bc)$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -515,7 +517,8 @@ topics: [
     { difficulty: 'hard', question: 'If $p \\to q$ is true and $q$ is false, then $p$ is:', accept: ['false', 'F'], placeholder: 'true/false', explanation: 'Modus Tollens: $p \\to q$ and $\\neg q$ implies $\\neg p$.' },
     { difficulty: 'medium', question: 'Truth table: $T \\land F =$?', accept: ['F', 'false'], placeholder: 'T/F', explanation: 'AND ($\\land$) is true only when both are true. $T \\land F = F$.' },
     { difficulty: 'easy', question: '$T \\lor F =$?', accept: ['T', 'true'], placeholder: 'T/F', explanation: 'OR ($\\lor$) is true when at least one operand is true.' },
-    { difficulty: 'medium', question: 'Contrapositive of $p \\to q$ is:', accept: ['not q -> not p', '~q -> ~p', 'neg q to neg p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to the original.' }
+    { difficulty: 'medium', question: 'Contrapositive of $p \\to q$ is:', accept: ['not q -> not p', '~q -> ~p', 'neg q to neg p'], placeholder: 'Statement', explanation: 'Contrapositive: $\\neg q \\to \\neg p$. Logically equivalent to the original.' },
+    { difficulty: 'hard', question: 'Biconditional $p \\iff q$ is true when both have the _____ truth value.', accept: ['same', 'equal'], placeholder: 'Property', explanation: '$p \\iff q$ is true when both are true or both are false.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

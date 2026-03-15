@@ -110,7 +110,8 @@ topics: [
     { difficulty: 'medium', question: 'Tabular method works best for $\\int P(x) \\cdot$ ? $\\,dx$', accept: ['e^x', 'sin(x)', 'cos(x)'], placeholder: 'Function', explanation: 'Tabular IBP: polynomial times $e^x$, $\\sin x$, or $\\cos x$.' },
     { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x$ is its own antiderivative.' },
     { difficulty: 'hard', question: '$\\int e^x \\sin x\\,dx$ requires IBP:', accept: ['twice', '2 times', 'two times'], placeholder: 'How many?', explanation: 'Apply IBP twice, then solve for the integral algebraically.' },
-    { difficulty: 'medium', question: 'Wallis\'s formula gives $\\int_0^{\\pi/2} \\sin^n x\\,dx$ for even/odd $n$. For $n=2$:', accept: ['pi/4', '0.785'], placeholder: 'Value', explanation: '$\\int_0^{\\pi/2} \\sin^2 x\\,dx = \\pi/4$.' }
+    { difficulty: 'medium', question: 'Wallis\'s formula gives $\\int_0^{\\pi/2} \\sin^n x\\,dx$ for even/odd $n$. For $n=2$:', accept: ['pi/4', '0.785'], placeholder: 'Value', explanation: '$\\int_0^{\\pi/2} \\sin^2 x\\,dx = \\pi/4$.' },
+    { difficulty: 'hard', question: '$\\int_0^1 \\ln(x)\\,dx =$?', accept: [-1, '-1'], placeholder: 'Number', explanation: 'IBP: $[x\\ln x - x]_0^1 = (0 - 1) - \\lim_{x \\to 0^+}(x\\ln x - x) = -1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -232,7 +233,8 @@ topics: [
     { difficulty: 'medium', question: 'Geometric series $\\sum ar^n$ converges when $|r|$ is:', accept: ['< 1', 'less than 1'], placeholder: 'Condition', explanation: 'Convergence: $|r| < 1$. Sum: $\\frac{a}{1-r}$.' },
     { difficulty: 'easy', question: 'First 3 terms of $a_n = 1/n$:', accept: ['1, 1/2, 1/3'], placeholder: 'Terms', explanation: '$a_1 = 1, a_2 = 1/2, a_3 = 1/3$.' },
     { difficulty: 'medium', question: 'Harmonic series $\\sum 1/n$ converges or diverges?', accept: ['diverges'], placeholder: 'Result', explanation: 'Harmonic series diverges (p-series with $p = 1$).' },
-    { difficulty: 'easy', question: 'Fibonacci sequence: 1, 1, 2, 3, 5, next term:', accept: [8, '8'], placeholder: 'Number', explanation: '$5 + 3 = 8$. Each term is sum of two previous.' }
+    { difficulty: 'easy', question: 'Fibonacci sequence: 1, 1, 2, 3, 5, next term:', accept: [8, '8'], placeholder: 'Number', explanation: '$5 + 3 = 8$. Each term is sum of two previous.' },
+    { difficulty: 'hard', question: 'Absolute convergence implies:', accept: ['convergence', 'conditional convergence'], placeholder: 'Property', explanation: 'If $\\sum |a_n|$ converges, then $\\sum a_n$ converges.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -378,7 +380,8 @@ topics: [
     { difficulty: 'medium', question: 'Ratio test: if $\\lim |a_{n+1}/a_n| = L < 1$, the series:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Ratio test: $L < 1$ implies absolute convergence.' },
     { difficulty: 'hard', question: 'Maclaurin series for $e^x$: first 3 terms:', accept: ['1+x+x^2/2', '1 + x + x^2/2'], placeholder: 'Terms', explanation: '$e^x = 1 + x + x^2/2! + x^3/3! + \\cdots$' },
     { difficulty: 'easy', question: '$\\sum_{n=0}^{\\infty} x^n = \\frac{1}{1-x}$ when $|x| <$ ?', accept: [1, '1'], placeholder: 'Number', explanation: 'Geometric series converges for $|x| < 1$.' },
-    { difficulty: 'medium', question: 'Taylor series centered at $a$ vs Maclaurin centered at:', accept: [0, '0', 'a=0'], placeholder: 'Center', explanation: 'Maclaurin = Taylor with $a = 0$.' }
+    { difficulty: 'medium', question: 'Taylor series centered at $a$ vs Maclaurin centered at:', accept: [0, '0', 'a=0'], placeholder: 'Center', explanation: 'Maclaurin = Taylor with $a = 0$.' },
+    { difficulty: 'hard', question: 'Radius of convergence of $\\sum x^n/n!$:', accept: ['infinity', 'inf'], placeholder: 'Radius', explanation: 'Ratio: $\\lim |x/(n+1)| = 0 < 1$ for all $x$. $R = \\infty$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

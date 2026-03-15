@@ -204,7 +204,8 @@ topics: [
     { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
     { difficulty: 'easy', question: '$\\cos(0°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0°) = 1$.' },
     { difficulty: 'easy', question: '$\\sin(90°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin(90°) = 1$.' },
-    { difficulty: 'medium', question: 'Reference angle for $240°$:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$240° - 180° = 60°$.' }
+    { difficulty: 'medium', question: 'Reference angle for $240°$:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$240° - 180° = 60°$.' },
+    { difficulty: 'hard', question: 'Amplitude of $y = 3\\sin(2x + \\pi)$:', accept: [3, '3'], placeholder: 'Number', explanation: 'Amplitude = $|A| = 3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -381,7 +382,8 @@ topics: [
     { difficulty: 'hard', question: '$\\cos(\\pi/3) =$?', accept: ['1/2', '0.5'], placeholder: 'Value', explanation: '$\\cos(60°) = 1/2$.' },
     { difficulty: 'medium', question: 'Pythagorean identity: $\\sin^2 x + $ ? $= 1$', accept: ['cos^2(x)', '\\cos^2 x', 'cos^2x'], placeholder: 'Term', explanation: '$\\sin^2 x + \\cos^2 x = 1$.' },
     { difficulty: 'medium', question: 'Half-angle: $\\cos^2(x) = \\frac{1 + \\cos(2x)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Power reduction: $\\cos^2 x = \\frac{1 + \\cos(2x)}{2}$.' },
-    { difficulty: 'easy', question: '$\\sin^2(x) + \\cos^2(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' }
+    { difficulty: 'easy', question: '$\\sin^2(x) + \\cos^2(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' },
+    { difficulty: 'hard', question: '$\\tan^2 x + 1 =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\cos^2 x$: $\\tan^2 x + 1 = \\sec^2 x$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -503,7 +505,8 @@ topics: [
     { difficulty: 'hard', question: 'Solve $\\cos(x) = 0$ for $x \\in [0, 2\\pi)$:', accept: ['pi/2, 3pi/2', '90, 270'], placeholder: 'Solutions', explanation: '$x = \\pi/2, 3\\pi/2$.' },
     { difficulty: 'medium', question: 'Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos($ ? $)$', accept: ['C', 'gamma', 'angle C'], placeholder: 'Angle', explanation: '$c^2 = a^2 + b^2 - 2ab\\cos C$.' },
     { difficulty: 'hard', question: 'Area of triangle using trig: $A = \\frac{1}{2}ab\\sin(C)$. If $a=5, b=8, C=30°$, area $=$?', accept: [10, '10'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(5)(8)\\sin(30°) = 20 \\times 0.5 = 10$.' },
-    { difficulty: 'hard', question: 'In triangle: $a/\\sin A = b/\\sin B$. This is the law of:', accept: ['sines', 'law of sines'], placeholder: 'Name', explanation: 'Law of Sines: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$.' }
+    { difficulty: 'hard', question: 'In triangle: $a/\\sin A = b/\\sin B$. This is the law of:', accept: ['sines', 'law of sines'], placeholder: 'Name', explanation: 'Law of Sines: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$.' },
+    { difficulty: 'easy', question: 'Inverse of $\\sin$:', accept: ['arcsin', 'sin^(-1)', 'asin'], placeholder: 'Function', explanation: '$\\arcsin$ or $\\sin^{-1}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [
