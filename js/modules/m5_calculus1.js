@@ -205,7 +205,8 @@
     { difficulty: 'easy', question: '$\\lim_{x \\to 2} (3x + 1) =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Direct substitution: $3(2) + 1 = 7$.' },
     { difficulty: 'medium', question: '$\\lim_{x \\to 0} \\frac{\\sin x}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Famous limit: $\\lim_{x \\to 0} \\sin x / x = 1$.' },
     { difficulty: 'medium', question: '$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Divide by $x^2$: $\\frac{3 + 1/x^2}{1 - 5/x^2} \\to 3$.' },
-    { difficulty: 'hard', question: '$\\lim_{x \\to 0} \\frac{e^x - 1}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: "L'Hopital: $\\frac{e^x}{1} \\to e^0 = 1$." }
+    { difficulty: 'hard', question: '$\\lim_{x \\to 0} \\frac{e^x - 1}{x} =$?', accept: [1, '1'], placeholder: 'Number', explanation: "L'Hopital: $\\frac{e^x}{1} \\to e^0 = 1$." },
+    { difficulty: 'easy', question: '$\\lim_{x \\to 5} 7 =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Limit of a constant is the constant: $7$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -437,7 +438,9 @@
     { difficulty: 'easy', question: '$\\frac{d}{dx}(5x^3) =$?', accept: ['15x^2', '15x2'], placeholder: 'Expression', explanation: 'Power rule: $5 \\cdot 3x^2 = 15x^2$.' },
     { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{3x}) =$?', accept: ['3e^(3x)', '3e^{3x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{3x} \\cdot 3 = 3e^{3x}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(\\sin x) =$?', accept: ['cos(x)', 'cosx', '\\cos x'], placeholder: 'Expression', explanation: 'Derivative of $\\sin x$ is $\\cos x$.' },
-    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' }
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(x^{10}) =$?', accept: ['10x^9', '10x9'], placeholder: 'Expression', explanation: '$10x^9$ by the power rule.' },
+    { difficulty: 'medium', question: 'Product rule: $\\frac{d}{dx}(x \\cdot e^x) =$?', accept: ['e^x+xe^x', 'e^x + xe^x', '(1+x)e^x'], placeholder: 'Expression', explanation: '$f\'g + fg\' = 1 \\cdot e^x + x \\cdot e^x = (1+x)e^x$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -564,7 +567,8 @@
     { difficulty: 'easy', question: 'If $f(x) = x^2$, the tangent slope at $x = 3$ is:', accept: [6, '6'], placeholder: 'Number', explanation: '$f\'(x) = 2x$. $f\'(3) = 6$.' },
     { difficulty: 'medium', question: '$f(x) = x^3 - 3x$. Find the critical points:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'x values', explanation: '$f\'(x) = 3x^2 - 3 = 0$. $x^2 = 1$. $x = \\pm 1$.' },
     { difficulty: 'easy', question: 'If $f\'(x) > 0$ on $(a,b)$, then $f$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: 'Positive derivative means the function is increasing.' },
-    { difficulty: 'hard', question: '$f(x) = x^4 - 4x^3$. Find inflection points:', accept: ['0, 2', '0,2', 'x=0 and x=2'], placeholder: 'x values', explanation: '$f\'\'(x) = 12x^2 - 24x = 12x(x-2) = 0$. $x = 0, 2$.' }
+    { difficulty: 'hard', question: '$f(x) = x^4 - 4x^3$. Find inflection points:', accept: ['0, 2', '0,2', 'x=0 and x=2'], placeholder: 'x values', explanation: '$f\'\'(x) = 12x^2 - 24x = 12x(x-2) = 0$. $x = 0, 2$.' },
+    { difficulty: 'medium', question: 'If $f\'\'(x) > 0$, the function is:', accept: ['concave up', 'convex'], placeholder: 'Shape', explanation: 'Positive second derivative: concave up (holds water).' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

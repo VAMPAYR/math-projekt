@@ -135,7 +135,9 @@
     { difficulty: 'medium', question: 'Is $(x - 2)$ a factor of $x^3 - 8$? (yes/no)', accept: ['yes'], placeholder: 'yes/no', explanation: '$f(2) = 8 - 8 = 0$. By the factor theorem, $(x-2)$ is a factor.' },
     { difficulty: 'hard', question: 'Divide $x^3 + 1$ by $x + 1$. Quotient:', accept: ['x^2-x+1', 'x^2 - x + 1'], placeholder: 'Expression', explanation: '$x^3 + 1 = (x+1)(x^2 - x + 1)$. Sum of cubes.' },
     { difficulty: 'easy', question: 'How many roots (counting multiplicity) does a degree-5 polynomial have?', accept: [5, '5'], placeholder: 'Number', explanation: 'Fundamental theorem of algebra: a degree-$n$ polynomial has exactly $n$ roots (counting multiplicity, including complex).' },
-    { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, find all real roots:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'Roots', explanation: '$x^4 - 1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)$. Real roots: $\\pm 1$.' }
+    { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, find all real roots:', accept: ['1, -1', '-1, 1', '1,-1'], placeholder: 'Roots', explanation: '$x^4 - 1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)$. Real roots: $\\pm 1$.' },
+    { difficulty: 'medium', question: 'The remainder when $x^3 + 2x - 1$ is divided by $(x - 1)$:', accept: [2, '2'], placeholder: 'Number', explanation: 'Remainder theorem: $f(1) = 1 + 2 - 1 = 2$.' },
+    { difficulty: 'hard', question: 'Descartes\' rule: $f(x) = x^3 - 3x + 2$. Number of sign changes:', accept: [2, '2'], placeholder: 'Number', explanation: 'Coefficients: $+, -, +$. Two sign changes: at most 2 positive real roots.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -390,7 +392,9 @@
     { difficulty: 'medium', question: 'Sum of roots of $x^2 - 7x + 10 = 0$:', accept: [7, '7'], placeholder: 'Number', explanation: 'By Vieta: sum = $-(-7)/1 = 7$. (Roots are 2 and 5.)' },
     { difficulty: 'hard', question: 'If the discriminant is negative, how many real roots?', accept: [0, '0', 'none'], placeholder: 'Number', explanation: '$b^2 - 4ac < 0$: no real roots. Two complex conjugate roots.' },
     { difficulty: 'easy', question: 'The vertex of $y = (x-3)^2 + 5$ is:', accept: ['(3,5)', '3, 5', '(3, 5)'], placeholder: 'Point', explanation: 'Vertex form $y = (x-h)^2 + k$: vertex $(3, 5)$.' },
-    { difficulty: 'medium', question: 'Axis of symmetry for $y = x^2 - 6x + 5$: $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$x = -b/(2a) = 6/2 = 3$.' }
+    { difficulty: 'medium', question: 'Axis of symmetry for $y = x^2 - 6x + 5$: $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$x = -b/(2a) = 6/2 = 3$.' },
+    { difficulty: 'easy', question: 'Solve: $x^2 - 4 = 0$:', accept: ['2, -2', '-2, 2', '2,-2'], placeholder: 'Solutions', explanation: '$(x-2)(x+2) = 0$. $x = \\pm 2$.' },
+    { difficulty: 'hard', question: 'For $ax^2 + bx + c = 0$, product of roots is:', accept: ['c/a'], placeholder: 'Expression', explanation: 'By Vieta: product = $c/a$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
