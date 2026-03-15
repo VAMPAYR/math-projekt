@@ -423,7 +423,11 @@ topics: [
     { difficulty: 'hard', question: 'Compute the volume of $z = 4 - x^2 - y^2$ above $z = 0$ using polar.', parts: [
       { question: 'What is the radius of the base? ($z = 0$ gives $r^2 = $?)', accept: [4, '4', '2'], placeholder: 'r or r\u00b2', explanation: '$0 = 4 - r^2 \\Rightarrow r^2 = 4$, so $r = 2$.' },
       { question: 'Set up the integral: $\\int_0^{2\\pi} \\int_0^2 (4-r^2) \\cdot r\\,dr\\,d\\theta$. Inner integral value:', accept: [4, '4'], placeholder: 'Number', explanation: '$\\int_0^2 (4r - r^3)\\,dr = [2r^2 - r^4/4]_0^2 = 8 - 4 = 4$.' },
-      { question: 'Total volume:', accept: ['8pi', '8\\pi', '25.13'], placeholder: 'Volume', explanation: '$\\int_0^{2\\pi} 4\\,d\\theta = 8\\pi$.' }
+      { question: 'Total volume:', accept: ['8pi', '8\\pi', '25.13'], placeholder: 'Volume', explanation: '$\\int_0^{2\\pi} 4\\,d\\theta = 8\\pi$.' },
+    { difficulty: 'hard', question: 'Evaluate $\\oint_C x\\,dy - y\\,dx$ around the unit circle using Green\'s theorem.', parts: [
+      { question: '$Q_x - P_y = 1 - (-1) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\frac{\\partial x}{\\partial x} = 1$, $\\frac{\\partial(-y)}{\\partial y} = -1$. Difference: $2$.' },
+      { question: '$\\iint_D 2\\,dA = 2\\pi r^2 = 2\\pi(1)^2 =$?', accept: ['2pi', '6.28'], placeholder: 'Number', explanation: 'Area of unit circle: $\\pi$. Result: $2\\pi$.' }
+    ], completionMessage: 'Green\'s theorem: $\\oint_C (P\\,dx + Q\\,dy) = \\iint_D (Q_x - P_y)\\,dA$.' }
     ], completionMessage: 'Polar integration for circular symmetry: convert $x^2+y^2 = r^2$ and include the $r$ Jacobian.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Multiple Integrals Strategy</h4>

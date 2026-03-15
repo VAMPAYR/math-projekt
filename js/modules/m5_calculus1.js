@@ -616,7 +616,10 @@
             { question: 'Find $f\'(x)$:', accept: ['3x^2-3', '3x^2 - 3'], placeholder: 'Expression', explanation: '$f\'(x) = 3x^2 - 3$.' },
             { question: 'Critical points (list x values):', accept: ['1,-1', '-1,1', '-1, 1', '1, -1'], placeholder: 'x values', explanation: '$3(x^2-1) = 0 \\Rightarrow x = \\pm 1$.' },
             { question: 'Is $x = -1$ a local max or min?', accept: ['max', 'maximum', 'local max'], placeholder: 'max or min', explanation: '$f\'\'(x) = 6x$. $f\'\' (-1) = -6 \\lt 0$: local maximum.' },
-            { question: 'Is $x = 1$ a local max or min?', accept: ['min', 'minimum', 'local min'], placeholder: 'max or min', explanation: '$f\'\'(1) = 6 \\gt 0$: local minimum.' }
+            { question: 'Is $x = 1$ a local max or min?', accept: ['min', 'minimum', 'local min'], placeholder: 'max or min', explanation: '$f\'\'(1) = 6 \\gt 0$: local minimum.' },
+    { difficulty: 'hard', question: 'Related rates: a circle\'s radius grows at $dr/dt = 2$ cm/s.', parts: [
+      { question: '$A = \\pi r^2$. $dA/dt = 2\\pi r \\cdot dr/dt$. At $r = 5$, $dA/dt =$?', accept: ['20pi', '62.83'], placeholder: 'Rate', explanation: '$2\\pi(5)(2) = 20\\pi$ cm²/s.' }
+    ], completionMessage: 'Related rates: differentiate implicit equation with respect to time.' }
           ], completionMessage: 'Full curve analysis: first derivative for critical points, second derivative for classification.' }
         ],
         stuckGuide: { html: `<div class="callout callout-tip"><h4>\ud83e\udde0 Optimization Workflow</h4>

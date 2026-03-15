@@ -237,7 +237,12 @@ topics: [
       { question: 'Min height:', accept: [5, '5'], placeholder: 'meters', explanation: '25 - 20 = 5m.' },
     { difficulty: 'hard', question: 'In triangle ABC, angle A = 30°, side a = 5.', parts: [
       { question: 'Which law do you use to find side b if angle B = 60°?', accept: ['law of sines', 'sine rule'], placeholder: 'Law name', explanation: 'Law of sines: $a/\\sin A = b/\\sin B$.' },
-      { question: 'Find $b$ (round to 1 decimal):', accept: ['8.7'], placeholder: 'Number', explanation: '$b = 5 \\sin(60°)/\\sin(30°) = 5(0.866)/0.5 = 8.66 \\approx 8.7$.' }
+      { question: 'Find $b$ (round to 1 decimal):', accept: ['8.7'], placeholder: 'Number', explanation: '$b = 5 \\sin(60°)/\\sin(30°) = 5(0.866)/0.5 = 8.66 \\approx 8.7$.' },
+    { difficulty: 'medium', question: 'Right triangle: adjacent = 4, opposite = 3.', parts: [
+      { question: 'Hypotenuse:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{16 + 9} = 5$.' },
+      { question: '$\\sin(\\theta) =$?', accept: ['3/5', '0.6'], placeholder: 'Ratio', explanation: '$\\sin = \\text{opp}/\\text{hyp} = 3/5$.' },
+      { question: '$\\cos(\\theta) =$?', accept: ['4/5', '0.8'], placeholder: 'Ratio', explanation: '$\\cos = \\text{adj}/\\text{hyp} = 4/5$.' }
+    ], completionMessage: 'SOH-CAH-TOA: Sine=O/H, Cosine=A/H, Tangent=O/A.' }
     ], completionMessage: 'Law of sines: $a/\\sin A = b/\\sin B = c/\\sin C$.' }
     ], completionMessage: 'Sinusoidal model: $h(t) = A\\sin(\\frac{2\\pi}{T}t + \\phi) + D$.' },
     { difficulty: 'hard', question: 'Geometry: A regular hexagon has side length 6. Find its area using trig.', parts: [

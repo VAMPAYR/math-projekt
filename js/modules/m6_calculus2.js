@@ -210,7 +210,11 @@
           { difficulty: 'hard', question: 'Use a Riemann sum to approximate $\\int_0^2 x^2\\,dx$ with $n = 2$ right endpoints.', parts: [
             { question: '$\\Delta x = (b-a)/n =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$(2-0)/2 = 1$.' },
             { question: 'Right endpoints: $x_1 = 1, x_2 = 2$. Sum = $f(1)\\Delta x + f(2)\\Delta x =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$1(1) + 4(1) = 5$.' },
-            { question: 'Exact value of $\\int_0^2 x^2\\,dx =$?', accept: ['8/3', '2.67'], placeholder: 'Number', explanation: '$[x^3/3]_0^2 = 8/3 \\approx 2.67$. Riemann sum ($5$) overestimates.' }
+            { question: 'Exact value of $\\int_0^2 x^2\\,dx =$?', accept: ['8/3', '2.67'], placeholder: 'Number', explanation: '$[x^3/3]_0^2 = 8/3 \\approx 2.67$. Riemann sum ($5$) overestimates.' },
+    { difficulty: 'hard', question: 'Use trig substitution for $\\int \\frac{dx}{\\sqrt{4-x^2}}$.', parts: [
+      { question: 'Let $x = 2\\sin\\theta$. Then $\\sqrt{4-x^2} =$?', accept: ['2cos(theta)', '2costheta', '2\\cos\\theta'], placeholder: 'Expression', explanation: '$\\sqrt{4 - 4\\sin^2\\theta} = 2\\cos\\theta$.' },
+      { question: 'Final answer:', accept: ['arcsin(x/2)+C', 'sin^(-1)(x/2)+C'], placeholder: 'Integral', explanation: '$\\int \\frac{2\\cos\\theta\\,d\\theta}{2\\cos\\theta} = \\theta + C = \\arcsin(x/2) + C$.' }
+    ], completionMessage: 'Trig sub for $\\sqrt{a^2 - x^2}$: let $x = a\\sin\\theta$.' }
           ], completionMessage: 'Riemann sums approximate; the integral gives the exact area.' }
         ],
         visualizations: [{

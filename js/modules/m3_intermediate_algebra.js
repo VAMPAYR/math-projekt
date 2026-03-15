@@ -307,7 +307,12 @@ topics: [
       { question: 'GCF:', accept: ['3x'], placeholder: 'Common factor', explanation: '$\\gcd(3,12) = 3$, min exponent of $x$ is 1: $3x$.' },
       { question: 'After GCF: $3x($?$)$:', accept: ['x^2-4', 'x^2 - 4'], placeholder: 'Remaining', explanation: '$3x^3/3x = x^2$, $12x/3x = 4$.' },
       { question: 'Factor $x^2-4$:', accept: ['(x+2)(x-2)'], placeholder: 'Factored form', explanation: 'Difference of squares.' },
-      { question: 'Final answer:', accept: ['3x(x+2)(x-2)'], placeholder: 'Complete factorization', explanation: '$3x(x+2)(x-2)$.' }
+      { question: 'Final answer:', accept: ['3x(x+2)(x-2)'], placeholder: 'Complete factorization', explanation: '$3x(x+2)(x-2)$.' },
+    { difficulty: 'hard', question: 'Factor $6x^2 + x - 2$ by grouping.', parts: [
+      { question: '$ac = 6(-2) =$?', accept: [-12, '-12'], placeholder: 'Number', explanation: '$ac = -12$.' },
+      { question: 'Two numbers multiply to $-12$ and add to $1$: ?', accept: ['4, -3', '-3, 4', '4,-3'], placeholder: 'Numbers', explanation: '$4 \\times (-3) = -12$, $4 + (-3) = 1$.' },
+      { question: 'Result: $(2x - 1)(3x + 2)$.', accept: ['(2x-1)(3x+2)', 'yes'], placeholder: 'Confirm', explanation: '$6x^2 + 4x - 3x - 2 = 2x(3x+2) - 1(3x+2)$.' }
+    ], completionMessage: 'AC method: multiply $a \\cdot c$, find pair summing to $b$, group.' }
     ], completionMessage: 'Factor step by step: GCF first, then recognize special patterns.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Factoring Strategy</h4>

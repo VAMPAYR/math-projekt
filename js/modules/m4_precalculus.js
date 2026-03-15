@@ -162,7 +162,11 @@ topics: [
       { question: 'Find the domain of $g$:', accept: ['[0, inf)', '[0,inf)'], placeholder: 'Interval notation', explanation: '$\\sqrt{x}$ requires $x \\geq 0$.' },
       { question: 'Find $(f \\circ g)(x)$:', accept: ['x-4', 'x - 4'], placeholder: 'Simplified expression', explanation: '$f(g(x)) = f(\\sqrt{x}) = (\\sqrt{x})^2 - 4 = x - 4$.' },
       { question: 'What is the domain of $f \\circ g$?', accept: ['[0, inf)', '[0,inf)'], placeholder: 'Interval notation', explanation: 'Domain of $g$ is $[0,\\infty)$. On this domain, $f(g(x)) = x-4$ is defined for all $x \\geq 0$.' },
-      { question: 'Find $(g \\circ f)(x)$:', accept: ['sqrt(x^2-4)', 'sqrt(x^2 - 4)'], placeholder: 'Expression', explanation: '$g(f(x)) = \\sqrt{x^2 - 4}$. Domain: $x^2 \\geq 4$, so $|x| \\geq 2$.' }
+      { question: 'Find $(g \\circ f)(x)$:', accept: ['sqrt(x^2-4)', 'sqrt(x^2 - 4)'], placeholder: 'Expression', explanation: '$g(f(x)) = \\sqrt{x^2 - 4}$. Domain: $x^2 \\geq 4$, so $|x| \\geq 2$.' },
+    { difficulty: 'medium', question: 'Analyze $f(x) = |x - 2| + 1$.', parts: [
+      { question: 'Vertex of the absolute value:', accept: ['(2,1)', '(2, 1)'], placeholder: 'Point', explanation: 'Vertex at $(h, k) = (2, 1)$.' },
+      { question: 'Minimum value of $f$:', accept: [1, '1'], placeholder: 'Number', explanation: '$|x-2| \\geq 0$, so $f \\geq 1$.' }
+    ], completionMessage: '$|x - h| + k$ has vertex $(h, k)$ and minimum value $k$.' }
     ], completionMessage: 'Composition requires checking domains at each stage. $f \\circ g \\neq g \\circ f$ in general!' }
   ],
   fillBlanks: [

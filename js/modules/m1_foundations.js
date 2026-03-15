@@ -126,7 +126,12 @@ topics: [
       { question: 'How many take math or physics (or both)?', accept: [85], placeholder: 'Number', explanation: '$60 + 45 - 20 = 85$ by inclusion-exclusion.' },
       { question: 'How many take neither?', accept: [15], placeholder: 'Number', explanation: '$100 - 85 = 15$.' },
       { question: 'How many take math but NOT physics?', accept: [40], placeholder: 'Number', explanation: '$60 - 20 = 40$ (math only).' },
-      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' }
+      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' },
+    { difficulty: 'medium', question: 'Classify these numbers.', parts: [
+      { question: 'Is $-3$ an integer?', accept: ['yes'], placeholder: 'yes/no', explanation: '$-3 \\in \\mathbb{Z}$.' },
+      { question: 'Is $0.333...$ rational?', accept: ['yes'], placeholder: 'yes/no', explanation: '$0.\\overline{3} = 1/3 \\in \\mathbb{Q}$.' },
+      { question: 'Is $\\pi$ rational?', accept: ['no'], placeholder: 'yes/no', explanation: '$\\pi$ is irrational.' }
+    ], completionMessage: 'Integers $\\subset$ Rationals $\\subset$ Reals.' }
     ], completionMessage: 'Inclusion-exclusion mastered! This technique extends to 3+ sets.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>Set Theory Strategy</h4>

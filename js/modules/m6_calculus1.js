@@ -255,7 +255,11 @@ topics: [
       { question: 'Find $y(2)$:', accept: [8, '8'], placeholder: 'y(2) = ?', explanation: '$2^3 = 8$.' },
       { question: 'Find $y\'(x)$:', accept: ['3x^2', '3x2'], placeholder: 'y\' = ?', explanation: 'Power rule: $3x^2$.' },
       { question: 'Find the slope at $x = 2$:', accept: [12, '12'], placeholder: 'slope = ?', explanation: '$3(2)^2 = 12$.' },
-      { question: 'Write the tangent line: $y - 8 = 12(x - 2)$. Simplify:', accept: ['y=12x-16', 'y = 12x - 16'], placeholder: 'y = ?', explanation: '$y = 12x - 24 + 8 = 12x - 16$.' }
+      { question: 'Write the tangent line: $y - 8 = 12(x - 2)$. Simplify:', accept: ['y=12x-16', 'y = 12x - 16'], placeholder: 'y = ?', explanation: '$y = 12x - 24 + 8 = 12x - 16$.' },
+    { difficulty: 'medium', question: 'Use Riemann sums on $f(x) = x^2$, $[0,2]$, $n=2$ (right endpoints).', parts: [
+      { question: '$\\Delta x =$?', accept: [1, '1'], placeholder: 'Width', explanation: '$\\Delta x = (2-0)/2 = 1$.' },
+      { question: 'Sum: $f(1)\\cdot 1 + f(2)\\cdot 1 =$?', accept: [5, '5'], placeholder: 'Sum', explanation: '$1 + 4 = 5$.' }
+    ], completionMessage: 'Riemann sum approximates $\\int_a^b f$. Exact value is $8/3 \\approx 2.67$.' }
     ], completionMessage: 'Tangent line at $(a, f(a))$: $y - f(a) = f\'(a)(x - a)$.' }
   ],
   matching: [

@@ -366,7 +366,11 @@ topics: [
     { difficulty: 'hard', question: 'A factory produces items with 2% defect rate. Sample 50 items.', parts: [
       { question: 'What distribution models the number of defects?', accept: ['binomial', 'Binomial', 'Bin'], placeholder: 'Distribution name', explanation: 'Fixed $n$, constant $p$, independent trials: Binomial.' },
       { question: '$E[\\text{defects}] =$?', accept: [1, '1'], placeholder: 'Expected value', explanation: '$np = 50(0.02) = 1$.' },
-      { question: '$\\text{Var} =$?', accept: ['0.98'], placeholder: 'Variance', explanation: '$npq = 50(0.02)(0.98) = 0.98$.' }
+      { question: '$\\text{Var} =$?', accept: ['0.98'], placeholder: 'Variance', explanation: '$npq = 50(0.02)(0.98) = 0.98$.' },
+    { difficulty: 'hard', question: 'A biased coin: $P(H) = 0.6$. Flip 3 times.', parts: [
+      { question: '$P(\\text{exactly 2 heads}) = \\binom{3}{2}(0.6)^2(0.4)^1 =$?', accept: ['0.432'], placeholder: 'Probability', explanation: '$3(0.36)(0.4) = 0.432$.' },
+      { question: '$P(\\text{at least 1 head}) = 1 - P(\\text{no heads}) = 1 - 0.4^3 =$?', accept: ['0.936'], placeholder: 'Probability', explanation: '$1 - 0.064 = 0.936$.' }
+    ], completionMessage: 'Binomial: $P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$.' }
     ], completionMessage: 'Binomial: $E[X] = np$, $\\text{Var}(X) = npq$, where $q = 1-p$.' }
   ],
   matching: [

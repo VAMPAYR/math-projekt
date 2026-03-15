@@ -126,7 +126,11 @@ topics: [
   multiPart: [
     { difficulty: 'hard', question: 'A rectangle has length $2x + 3$ and width $x - 1$.', parts: [
       { question: 'Perimeter $P = 2l + 2w =$?', accept: ['6x+4', '6x + 4'], placeholder: 'Simplified expression', explanation: '$2(2x+3) + 2(x-1) = 4x+6+2x-2 = 6x+4$.' },
-      { question: 'Area $A = l \\cdot w =$?', accept: ['2x^2+x-3', '2x^2 + x - 3'], placeholder: 'Expanded product', explanation: '$(2x+3)(x-1) = 2x^2-2x+3x-3 = 2x^2+x-3$.' }
+      { question: 'Area $A = l \\cdot w =$?', accept: ['2x^2+x-3', '2x^2 + x - 3'], placeholder: 'Expanded product', explanation: '$(2x+3)(x-1) = 2x^2-2x+3x-3 = 2x^2+x-3$.' },
+    { difficulty: 'medium', question: 'Solve the inequality $2x - 3 > 5$.', parts: [
+      { question: 'Add 3 to both sides: $2x >$ ?', accept: [8, '8'], placeholder: 'Number', explanation: '$2x > 8$.' },
+      { question: 'Divide by 2: $x >$ ?', accept: [4, '4'], placeholder: 'Number', explanation: '$x > 4$.' }
+    ], completionMessage: 'Solve linear inequalities like equations, but flip the sign when multiplying/dividing by a negative.' }
     ], completionMessage: 'Expressions model geometric quantities.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Expression Strategy</h4>
