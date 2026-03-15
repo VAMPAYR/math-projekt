@@ -217,6 +217,11 @@ topics: [
       { left: 'Arithmetic', right: '$a_n = a_1 + (n-1)d$' },
       { left: 'Geometric', right: '$a_n = a_1 \\cdot r^{n-1}$' },
       { left: 'Harmonic', right: '$a_n = 1/n$' }
+    ] },
+    { difficulty: 'medium', instruction: 'Match each integral to its technique:', pairs: [
+      { left: '$\\int x e^x dx$', right: 'Integration by parts' },
+      { left: '$\\int \\sin^2 x\\,dx$', right: 'Trig identity' },
+      { left: '$\\int \\frac{1}{x^2+1}\\,dx$', right: 'Known antiderivative' }
     ] }
   ],
   fillBlanks: [
@@ -367,7 +372,7 @@ topics: [
       { left: 'Geometric', right: '$|r| \\lt 1$' },
       { left: 'p-series', right: '$p \\gt 1$' },
       { left: 'Ratio test', right: '$L \\lt 1$' }
-    ] }
+    ] },
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Series Strategy</h4>
     <ol><li><strong>Divergence test first:</strong> If $\\lim a_n \\neq 0$, it diverges. Done.</li>

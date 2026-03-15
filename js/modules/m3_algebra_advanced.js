@@ -36,7 +36,7 @@
             <div class="callout callout-puzzle">
               <h4>ðŸ§© Puzzle: Area of a Garden</h4>
               <p>A rectangular garden has area $x^2 + 5x + 6$ square meters. What are the possible dimensions?</p>
-              <p>If the area is length Ã: width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
+              <p>If the area is length ï¿½: width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
               <p>So $x^2 + 5x + 6 = (x + 2)(x + 3)$. The garden is $(x+2)$ meters by $(x+3)$ meters.</p>
             </div>
           `
@@ -137,7 +137,13 @@
             { content: '$ac = 6 \\times (-10) = -60$.' },
             { content: 'Find pair: $15 \\times (-4) = -60$ and $15 + (-4) = 11$.' },
             { content: 'Rewrite: $6x^2 + 15x - 4x - 10$.' },
-            { content: 'Group: $3x(2x+5) - 2(2x+5) = (3x-2)(2x+5)$.' }
+            { content: 'Group: $3x(2x+5) - 2(2x+5) = (3x-2)(2x+5)$.' },
+    { difficulty: 'hard', question: 'Factor $x^3 - 6x^2 + 11x - 6$ completely.', steps: [
+      { content: 'Try $x = 1$: $1 - 6 + 11 - 6 = 0$. So $(x-1)$ is a factor.' },
+      { content: 'Divide: $x^3 - 6x^2 + 11x - 6 = (x-1)(x^2 - 5x + 6)$.' },
+      { content: 'Factor the quadratic: $x^2 - 5x + 6 = (x-2)(x-3)$.' },
+      { content: 'Result: $(x-1)(x-2)(x-3)$.' }
+    ], explanation: 'Rational root theorem: test integer divisors of the constant term. Then factor the remaining quadratic.' }
           ], explanation: 'AC method: multiply $a \\times c$, find factor pair summing to $b$, then group.' }
         ],
         matching: [
@@ -381,7 +387,12 @@
             { content: 'Move constant: $x^2 + 6x = -2$.' },
             { content: 'Half of $6$ is $3$. $3^2 = 9$. Add: $x^2 + 6x + 9 = 7$.' },
             { content: '$(x+3)^2 = 7$.' },
-            { content: '$x = -3 \\pm \\sqrt{7}$.' }
+            { content: '$x = -3 \\pm \\sqrt{7}$.' },
+    { difficulty: 'medium', question: 'Convert $y = x^2 + 8x + 12$ to vertex form.', steps: [
+      { content: 'Half the $x$ coefficient: $8/2 = 4$. Square it: $4^2 = 16$.' },
+      { content: 'Add and subtract 16: $y = (x^2 + 8x + 16) - 16 + 12$.' },
+      { content: '$y = (x + 4)^2 - 4$. Vertex: $(-4, -4)$.' }
+    ], explanation: 'Completing the square converts standard form to vertex form: $y = (x-h)^2 + k$.' }
           ], explanation: 'Completing the square: add $(b/2)^2$ to both sides.' }
         ],
         matching: [
@@ -593,7 +604,7 @@
             { content: 'Product rule: $\\log_2(x(x-2)) = 3$.' },
             { content: 'Exponential form: $x^2 - 2x = 2^3 = 8$.' },
             { content: '$x^2 - 2x - 8 = 0 \\Rightarrow (x-4)(x+2) = 0$.' },
-            { content: '$x = 4$ or $x = -2$. Check domain: $x \\gt 2$. Solution: $x = 4$.' }
+            { content: '$x = 4$ or $x = -2$. Check domain: $x \\gt 2$. Solution: $x = 4$.' },
           ], explanation: 'Combine logs, convert to exponential, solve quadratic, check domain.' }
         ],
         matching: [
