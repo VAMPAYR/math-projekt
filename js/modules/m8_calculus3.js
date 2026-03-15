@@ -126,7 +126,9 @@ topics: [
     { difficulty: 'medium', question: 'Gradient of $f = x^2 + y^2 + z^2$:', accept: ['<2x, 2y, 2z>', '<2x,2y,2z>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle 2x, 2y, 2z \\rangle$.' },
     { difficulty: 'hard', question: '$\\nabla \\times \\langle 0, 0, xy \\rangle = \\langle x, -y, 0 \\rangle$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Compute: $\\langle \\partial(xy)/\\partial y - 0, 0 - \\partial(xy)/\\partial x, 0 \\rangle = \\langle x, -y, 0 \\rangle$.' },
     { difficulty: 'easy', question: '$\\nabla f$ for $f = 3x + 2y + z$:', accept: ['<3,2,1>', '<3, 2, 1>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle 3, 2, 1 \\rangle$.' },
-    { difficulty: 'hard', question: 'Laplacian: $\\nabla^2 f = f_{xx} + f_{yy} + f_{zz}$. For $f = x^2 + y^2 + z^2$:', accept: [6, '6'], placeholder: 'Number', explanation: '$2 + 2 + 2 = 6$.' }
+    { difficulty: 'hard', question: 'Laplacian: $\\nabla^2 f = f_{xx} + f_{yy} + f_{zz}$. For $f = x^2 + y^2 + z^2$:', accept: [6, '6'], placeholder: 'Number', explanation: '$2 + 2 + 2 = 6$.' },
+    { difficulty: 'easy', question: 'Curl measures:', accept: ['rotation', 'spinning', 'circulation density'], placeholder: 'What?', explanation: 'Curl: infinitesimal rotation at each point.' },
+    { difficulty: 'hard', question: '$\\nabla \\cdot (\\nabla \\times \\vec{F}) =$? (always)', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Divergence of curl is always zero: $\\nabla \\cdot (\\nabla \\times \\vec{F}) = 0$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -280,7 +282,9 @@ topics: [
     { difficulty: 'medium', question: 'Circulation integral $\\oint_C \\vec{F} \\cdot d\\vec{r}$ measures:', accept: ['rotation', 'circulation', 'tendency to rotate'], placeholder: 'What?', explanation: 'Circulation: total rotational tendency around a closed curve.' },
     { difficulty: 'hard', question: 'Stokes theorem converts surface curl integral to:', accept: ['line integral', 'circulation'], placeholder: 'Type', explanation: '$\\iint_S (\\nabla \\times \\vec{F}) \\cdot d\\vec{S} = \\oint_C \\vec{F} \\cdot d\\vec{r}$.' },
     { difficulty: 'easy', question: '$\\int_C f\\,ds$ is called a _____ line integral.', accept: ['scalar'], placeholder: 'Type', explanation: 'Scalar line integral: integrates a scalar function along a curve.' },
-    { difficulty: 'hard', question: 'Independence of path for $\\int_C \\vec{F} \\cdot d\\vec{r}$ requires $\\vec{F}$ to be:', accept: ['conservative', 'a gradient field'], placeholder: 'Property', explanation: 'Path-independent iff $\\vec{F} = \\nabla \\phi$ (conservative).' }
+    { difficulty: 'hard', question: 'Independence of path for $\\int_C \\vec{F} \\cdot d\\vec{r}$ requires $\\vec{F}$ to be:', accept: ['conservative', 'a gradient field'], placeholder: 'Property', explanation: 'Path-independent iff $\\vec{F} = \\nabla \\phi$ (conservative).' },
+    { difficulty: 'easy', question: 'Parameterize line from $A$ to $B$: $\\vec{r}(t) = (1-t)A + tB$ for $t \\in [0,$ ?$]$.', accept: [1, '1'], placeholder: 'End', explanation: '$t \\in [0, 1]$. $t=0$: at $A$. $t=1$: at $B$.' },
+    { difficulty: 'hard', question: 'Simply connected region: every closed curve can be:', accept: ['contracted to a point', 'shrunk to a point'], placeholder: 'Property', explanation: 'Simply connected: no holes. Every loop contracts to a point.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -422,7 +426,9 @@ topics: [
     { difficulty: 'medium', question: 'Physical interpretation of divergence:', accept: ['source strength', 'expansion rate', 'outward flux per volume'], placeholder: 'Meaning', explanation: '$\\nabla \\cdot \\vec{F}$: rate of expansion (positive = source, negative = sink).' },
     { difficulty: 'hard', question: 'Normal vector to surface $z = f(x,y)$:', accept: ['<-f_x, -f_y, 1>', '<-fx,-fy,1>'], placeholder: 'Vector', explanation: '$\\vec{n} = \\langle -f_x, -f_y, 1 \\rangle$ (unnormalized).' },
     { difficulty: 'easy', question: 'Stokes theorem relates a surface integral to a _____ integral.', accept: ['line', 'boundary'], placeholder: 'Type', explanation: '$\\iint_S \\text{curl} \\times d\\vec{S} = \\oint_{\\partial S} \\vec{F} \\cdot d\\vec{r}$.' },
-    { difficulty: 'hard', question: 'Gauss theorem (divergence theorem) in 2D is equivalent to:', accept: ["Green's theorem", 'Greens theorem'], placeholder: 'Theorem', explanation: 'Green\'s theorem is the 2D version of the divergence theorem.' }
+    { difficulty: 'hard', question: 'Gauss theorem (divergence theorem) in 2D is equivalent to:', accept: ["Green's theorem", 'Greens theorem'], placeholder: 'Theorem', explanation: 'Green\'s theorem is the 2D version of the divergence theorem.' },
+    { difficulty: 'easy', question: 'Electric field is a ____ field.', accept: ['vector'], placeholder: 'Type', explanation: 'Electric field $\\vec{E}$: a vector field.' },
+    { difficulty: 'hard', question: 'Kelvin-Stokes theorem generalizes to higher dimensions via:', accept: ['differential forms', 'exterior calculus'], placeholder: 'Framework', explanation: 'Generalized Stokes theorem: $\\int_{\\partial M} \\omega = \\int_M d\\omega$. Differential forms.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

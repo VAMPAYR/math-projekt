@@ -204,7 +204,9 @@
     { difficulty: 'medium', question: 'Corresponding angles formed by transversal cutting parallel lines are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Corresponding angles: congruent when lines are parallel.' },
     { difficulty: 'hard', question: 'The angle inscribed in a semicircle is always:', accept: [90, '90', 'right'], placeholder: 'Degrees', explanation: 'Thales theorem: angle in a semicircle is $90°$.' },
     { difficulty: 'easy', question: 'Co-interior (same-side interior) angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Co-interior angles: supplementary (sum to $180°$) when lines are parallel.' },
-    { difficulty: 'hard', question: 'Cyclic quadrilateral: opposite angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Cyclic quadrilateral: opposite angles are supplementary.' }
+    { difficulty: 'hard', question: 'Cyclic quadrilateral: opposite angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Cyclic quadrilateral: opposite angles are supplementary.' },
+    { difficulty: 'easy', question: 'A line segment has _____ endpoints.', accept: [2, '2', 'two'], placeholder: 'Number', explanation: 'Line segment: two endpoints.' },
+    { difficulty: 'hard', question: 'Interior angle sum: $(n-2) \\times 180$. For pentagon ($n=5$):', accept: [540, '540'], placeholder: 'Degrees', explanation: '$(5-2)(180) = 540°$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -390,7 +392,9 @@
     { difficulty: 'medium', question: 'Scalene triangle has _____ equal sides.', accept: [0, '0', 'no', 'zero'], placeholder: 'Number', explanation: 'Scalene: all three sides are different lengths.' },
     { difficulty: 'hard', question: 'SAS congruence: if two sides and the _____ angle are equal, triangles are congruent.', accept: ['included'], placeholder: 'Which angle?', explanation: 'SAS: the included angle (between the two sides).' },
     { difficulty: 'easy', question: 'Median of a triangle connects a vertex to the _____ of the opposite side.', accept: ['midpoint'], placeholder: 'Point', explanation: 'Median: vertex to midpoint of opposite side.' },
-    { difficulty: 'hard', question: 'Orthocenter: intersection of:', accept: ['altitudes'], placeholder: 'What?', explanation: 'Orthocenter: intersection of the three altitudes.' }
+    { difficulty: 'hard', question: 'Orthocenter: intersection of:', accept: ['altitudes'], placeholder: 'What?', explanation: 'Orthocenter: intersection of the three altitudes.' },
+    { difficulty: 'easy', question: '45-45-90 triangle: legs are equal and hypotenuse is leg $\\times$?', accept: ['sqrt(2)', '\\sqrt{2}', '1.414'], placeholder: 'Factor', explanation: 'Hypotenuse = leg $\\times \\sqrt{2}$.' },
+    { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -545,7 +549,9 @@
     { difficulty: 'medium', question: 'Sector area: $A = \\frac{1}{2}r^2\\theta$ (radians). If $r = 4, \\theta = \\pi/3$:', accept: ['8pi/3', '8.38'], placeholder: 'Area', explanation: '$\\frac{1}{2}(16)(\\pi/3) = 8\\pi/3$.' },
     { difficulty: 'hard', question: 'Euler formula for polyhedra: $V - E + F =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$V - E + F = 2$. Vertices minus edges plus faces.' },
     { difficulty: 'easy', question: 'A chord of a circle is a line segment with both endpoints on the:', accept: ['circle', 'circumference'], placeholder: 'Where?', explanation: 'Chord: endpoints on the circle.' },
-    { difficulty: 'hard', question: 'Inscribed angle is half the _____ angle for the same arc.', accept: ['central'], placeholder: 'Type', explanation: 'Inscribed angle theorem: inscribed = (1/2) central angle.' }
+    { difficulty: 'hard', question: 'Inscribed angle is half the _____ angle for the same arc.', accept: ['central'], placeholder: 'Type', explanation: 'Inscribed angle theorem: inscribed = (1/2) central angle.' },
+    { difficulty: 'easy', question: 'Perimeter of circle is called:', accept: ['circumference'], placeholder: 'Name', explanation: 'Circumference = $2\\pi r$.' },
+    { difficulty: 'hard', question: 'Cavalieri\'s principle: solids with equal cross-sectional area at every height have equal:', accept: ['volume'], placeholder: 'What?', explanation: 'Cavalieri: same cross-sections at every level implies same volume.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

@@ -116,7 +116,9 @@ topics: [
     { difficulty: 'medium', question: '$(-2)^3 =$?', accept: [-8, '-8'], placeholder: 'Number', explanation: '$(-2)(-2)(-2) = -8$. Odd power of negative is negative.' },
     { difficulty: 'hard', question: '$\\left(\\frac{3}{2}\\right)^{-2} =$?', accept: ['4/9'], placeholder: 'Number', explanation: '$\\left(\\frac{2}{3}\\right)^2 = 4/9$.' },
     { difficulty: 'easy', question: '$(3^2)^3 =$?', accept: [729, '729'], placeholder: 'Number', explanation: '$3^{2 \\cdot 3} = 3^6 = 729$.' },
-    { difficulty: 'hard', question: '$\\left(\\frac{x^2}{y}\\right)^3 =$?', accept: ['x^6/y^3'], placeholder: 'Expression', explanation: '$x^{6}/y^{3}$.' }
+    { difficulty: 'hard', question: '$\\left(\\frac{x^2}{y}\\right)^3 =$?', accept: ['x^6/y^3'], placeholder: 'Expression', explanation: '$x^{6}/y^{3}$.' },
+    { difficulty: 'easy', question: '$3^{-1} =$?', accept: ['1/3', '0.333'], placeholder: 'Number', explanation: '$3^{-1} = 1/3$.' },
+    { difficulty: 'hard', question: 'Rationalize: $\\frac{1}{\\sqrt{5}} =$?', accept: ['sqrt(5)/5', '\\sqrt{5}/5'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -293,7 +295,9 @@ topics: [
     { difficulty: 'medium', question: 'Factor: $2x^2 + 7x + 3 =$?', accept: ['(2x+1)(x+3)', '(x+3)(2x+1)'], placeholder: 'Factored', explanation: 'AC method: $2 \\times 3 = 6$. Pair: $1, 6$. $(2x+1)(x+3)$.' },
     { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2-ab+b^2)$. $b = 2$.' },
     { difficulty: 'easy', question: 'Perfect square trinomial: $x^2 + 10x + 25 =$?', accept: ['(x+5)^2'], placeholder: 'Factored', explanation: '$(x + 5)^2$.' },
-    { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x =$?', accept: ['3x(x-2)(x+2)', '3x(x+2)(x-2)'], placeholder: 'Factored', explanation: '$3x(x^2 - 4) = 3x(x-2)(x+2)$.' }
+    { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x =$?', accept: ['3x(x-2)(x+2)', '3x(x+2)(x-2)'], placeholder: 'Factored', explanation: '$3x(x^2 - 4) = 3x(x-2)(x+2)$.' },
+    { difficulty: 'easy', question: 'Perfect square: $49 = $ ?$^2$', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
+    { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + $ ? $= (x+4)^2$', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -431,7 +435,9 @@ topics: [
     { difficulty: 'medium', question: 'Hole in $\\frac{x^2-1}{x-1}$ at $x =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\frac{(x-1)(x+1)}{x-1}$. Hole at $x = 1$.' },
     { difficulty: 'hard', question: 'LCD of $\\frac{1}{x}$ and $\\frac{1}{x+1}$:', accept: ['x(x+1)'], placeholder: 'LCD', explanation: 'Least common denominator: $x(x+1)$.' },
     { difficulty: 'easy', question: 'Cross multiply: $\\frac{a}{b} = \\frac{c}{d}$ gives:', accept: ['ad=bc', 'ad = bc'], placeholder: 'Equation', explanation: 'Cross multiplication: $ad = bc$.' },
-    { difficulty: 'hard', question: 'Oblique (slant) asymptote exists when numerator degree exceeds denominator by:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree difference = 1: oblique asymptote (found by polynomial division).' }
+    { difficulty: 'hard', question: 'Oblique (slant) asymptote exists when numerator degree exceeds denominator by:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree difference = 1: oblique asymptote (found by polynomial division).' },
+    { difficulty: 'easy', question: 'Extraneous solution: a solution that does not satisfy the _____ equation.', accept: ['original'], placeholder: 'Which?', explanation: 'Extraneous: appears during solving but fails in the original equation.' },
+    { difficulty: 'hard', question: 'If $g(x) = \\frac{x+1}{x-2}$, then $g(5) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$g(5) = 6/3 = 2$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

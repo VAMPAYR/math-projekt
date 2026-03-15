@@ -170,7 +170,9 @@ topics: [
     { difficulty: 'easy', question: 'Two fair coins flipped: $P(\\text{both heads}) =$?', accept: ['1/4', '0.25'], placeholder: 'Probability', explanation: '$P(HH) = (1/2)(1/2) = 1/4$.' },
     { difficulty: 'hard', question: 'Bayes theorem: $P(A|B) = \\frac{P(B|A)P(A)}{P($ ? $)}$', accept: ['B'], placeholder: 'Event', explanation: '$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$.' },
     { difficulty: 'easy', question: '$P(\\text{not A}) = 1 - P($ ? $)$', accept: ['A'], placeholder: 'Event', explanation: 'Complement rule: $P(A^c) = 1 - P(A)$.' },
-    { difficulty: 'hard', question: 'Law of total probability: $P(B) = \\sum_i P(B|A_i)P($ ? $)$', accept: ['A_i'], placeholder: 'Events', explanation: '$P(B) = \\sum_i P(B|A_i)P(A_i)$.' }
+    { difficulty: 'hard', question: 'Law of total probability: $P(B) = \\sum_i P(B|A_i)P($ ? $)$', accept: ['A_i'], placeholder: 'Events', explanation: '$P(B) = \\sum_i P(B|A_i)P(A_i)$.' },
+    { difficulty: 'easy', question: '5! = ?', accept: [120, '120'], placeholder: 'Number', explanation: '$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$.' },
+    { difficulty: 'hard', question: 'Multinomial coefficient: $\\binom{10}{3,4,3} = \\frac{10!}{3!4!3!} =$?', accept: [4200, '4200'], placeholder: 'Number', explanation: '$\\frac{3628800}{6 \\times 24 \\times 6} = 4200$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -370,7 +372,9 @@ topics: [
     { difficulty: 'easy', question: 'Median of 1, 3, 5, 7, 9:', accept: [5, '5'], placeholder: 'Number', explanation: 'Middle value: 5.' },
     { difficulty: 'hard', question: 'For $X$ and $Y$ independent: $\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}($ ? $)$', accept: ['Y'], placeholder: 'Variable', explanation: 'Independent: variances add. $\\text{Var}(X+Y) = \\text{Var}(X) + \\text{Var}(Y)$.' },
     { difficulty: 'easy', question: 'Range = max $-$ min. For data 2, 5, 8, 11: range $=$?', accept: [9, '9'], placeholder: 'Number', explanation: '$11 - 2 = 9$.' },
-    { difficulty: 'hard', question: 'Covariance: $\\text{Cov}(X,Y) = E[XY] - E[X]E[$ ? $]$', accept: ['Y'], placeholder: 'Variable', explanation: '$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$.' }
+    { difficulty: 'hard', question: 'Covariance: $\\text{Cov}(X,Y) = E[XY] - E[X]E[$ ? $]$', accept: ['Y'], placeholder: 'Variable', explanation: '$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$.' },
+    { difficulty: 'easy', question: 'Variance $\\sigma^2$ measures spread. $\\sigma$ is the:', accept: ['standard deviation'], placeholder: 'Name', explanation: '$\\sigma = \\sqrt{\\sigma^2}$: standard deviation.' },
+    { difficulty: 'hard', question: 'Correlation coefficient $r$ ranges from $-1$ to:', accept: [1, '1'], placeholder: 'Max', explanation: '$-1 \\leq r \\leq 1$. $|r| = 1$: perfect linear.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

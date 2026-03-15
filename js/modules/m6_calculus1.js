@@ -113,7 +113,9 @@ topics: [
     { difficulty: 'medium', question: '$\\int e^{3x}\\,dx =$?', accept: ['e^(3x)/3+C', '(1/3)e^(3x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{3}e^{3x} + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arcsin(x) + C$.' },
     { difficulty: 'easy', question: '$\\int x^{-2}\\,dx =$?', accept: ['-1/x+C', '-x^(-1)+C'], placeholder: 'Expression', explanation: '$x^{-1}/(-1) + C = -1/x + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x}}\\,dx =$?', accept: ['2sqrt(x)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\int x^{-1/2}\\,dx = 2x^{1/2} + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x}}\\,dx =$?', accept: ['2sqrt(x)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\int x^{-1/2}\\,dx = 2x^{1/2} + C$.' },
+    { difficulty: 'easy', question: '$\\int 4\\,dx =$?', accept: ['4x+C', '4x + C'], placeholder: 'Expression', explanation: '$4x + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x^2-1}}\\,dx =$?', accept: ['arcsec(x)+C', 'sec^(-1)(x)+C', 'ln|x+sqrt(x^2-1)|+C'], placeholder: 'Expression', explanation: '$\\text{arcsec}(x) + C$ (or $\\ln|x + \\sqrt{x^2-1}| + C$).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -254,7 +256,9 @@ topics: [
     { difficulty: 'medium', question: 'Simpson\'s rule requires $n$ to be:', accept: ['even'], placeholder: 'Property', explanation: 'Simpson\'s rule: $n$ must be even (pairs of subintervals).' },
     { difficulty: 'hard', question: 'Error bound for trapezoidal rule involves max of $|f\'\'(x)|$ on $[a,b]$:', accept: ['yes', 'true'], placeholder: 'True/false', explanation: '$E_T \\leq \\frac{(b-a)^3}{12n^2} \\max |f\'\'|$.' },
     { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1$.' },
-    { difficulty: 'hard', question: '$\\int_0^{\\pi} \\cos x\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi} = 0 - 0 = 0$.' }
+    { difficulty: 'hard', question: '$\\int_0^{\\pi} \\cos x\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi} = 0 - 0 = 0$.' },
+    { difficulty: 'easy', question: '$\\sum_{i=1}^n i = \\frac{n(n+1)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Gauss formula: $\\sum_{i=1}^n i = n(n+1)/2$.' },
+    { difficulty: 'hard', question: '$\\sum_{i=1}^{100} i =$?', accept: [5050, '5050'], placeholder: 'Number', explanation: '$100(101)/2 = 5050$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -444,7 +448,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int_a^b f\\,dx = -\\int_b^a f\\,dx$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Reversing limits negates the integral.' },
     { difficulty: 'hard', question: 'If $f(x) \\geq g(x)$ on $[a,b]$, then $\\int_a^b f\\,dx$ ? $\\int_a^b g\\,dx$:', accept: ['>=', 'greater than or equal'], placeholder: 'Relation', explanation: 'Comparison property of integrals.' },
     { difficulty: 'easy', question: 'Additive property: $\\int_a^b f + \\int_b^c f = \\int_a^c$ ?', accept: ['f', 'f dx'], placeholder: 'What?', explanation: '$\\int_a^c f\\,dx$. Split and combine.' },
-    { difficulty: 'hard', question: 'Accumulation function: $F(x) = \\int_a^x f(t)\\,dt$. $F\'(x) =$?', accept: ['f(x)'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = f(x)$.' }
+    { difficulty: 'hard', question: 'Accumulation function: $F(x) = \\int_a^x f(t)\\,dt$. $F\'(x) =$?', accept: ['f(x)'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = f(x)$.' },
+    { difficulty: 'easy', question: 'Area between $f$ and $x$-axis: $\\int_a^b |f(x)|\\,dx$. Why absolute value?', accept: ['to count negative area as positive', 'below x-axis is negative'], placeholder: 'Why?', explanation: 'Absolute value ensures all area is counted as positive.' },
+    { difficulty: 'hard', question: 'Mean Value Theorem for integrals: $\\bar{f} = $ ?', accept: ['(1/(b-a)) * int_a^b f dx'], placeholder: 'Formula', explanation: '$\\bar{f} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

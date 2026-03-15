@@ -109,7 +109,9 @@ topics: [
     { difficulty: 'medium', question: 'Simple interest: $I = Prt$. $P = 1000, r = 0.05, t = 3$. $I =$?', accept: [150, '150'], placeholder: 'Interest', explanation: '$1000(0.05)(3) = 150$.' },
     { difficulty: 'hard', question: 'Solve: $\\frac{2}{x+1} = \\frac{3}{x+2}$. $x =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Cross multiply: $2(x+2) = 3(x+1)$. $2x+4 = 3x+3$. $x = 1$.' },
     { difficulty: 'easy', question: '$15 - (-3) =$?', accept: [18, '18'], placeholder: 'Number', explanation: 'Subtracting negative = adding: $15 + 3 = 18$.' },
-    { difficulty: 'hard', question: 'Mixture problem: 5L of 20% solution + 3L of 50% solution. Final concentration:', accept: ['31.25%', '31.25'], placeholder: 'Percent', explanation: '$(5 \\times 0.2 + 3 \\times 0.5)/8 = 2.5/8 = 0.3125 = 31.25\\%$.' }
+    { difficulty: 'hard', question: 'Mixture problem: 5L of 20% solution + 3L of 50% solution. Final concentration:', accept: ['31.25%', '31.25'], placeholder: 'Percent', explanation: '$(5 \\times 0.2 + 3 \\times 0.5)/8 = 2.5/8 = 0.3125 = 31.25\\%$.' },
+    { difficulty: 'easy', question: 'Solve: $3x = 18$. $x =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$x = 18/3 = 6$.' },
+    { difficulty: 'hard', question: 'Arithmetic sequence: $a_1 = 3, d = 5$. $a_{10} =$?', accept: [48, '48'], placeholder: 'Number', explanation: '$a_n = a_1 + (n-1)d = 3 + 45 = 48$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -277,7 +279,9 @@ topics: [
     { difficulty: 'medium', question: 'Line $y = 3x - 2$ and $y = 3x + 5$ are:', accept: ['parallel'], placeholder: 'Relation', explanation: 'Same slope ($m = 3$): parallel lines.' },
     { difficulty: 'hard', question: 'Perpendicular to $y = 2x + 1$: slope is:', accept: ['-1/2', '-0.5'], placeholder: 'Number', explanation: 'Perpendicular: negative reciprocal. $-1/2$.' },
     { difficulty: 'easy', question: 'Slope of vertical line:', accept: ['undefined', 'infinity'], placeholder: 'Value', explanation: 'Vertical: $\\Delta x = 0$. Division by zero: undefined.' },
-    { difficulty: 'hard', question: 'Distance between $(1,2)$ and $(4,6)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.' }
+    { difficulty: 'hard', question: 'Distance between $(1,2)$ and $(4,6)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.' },
+    { difficulty: 'easy', question: 'Midpoint of $(2, 4)$ and $(6, 8)$:', accept: ['(4,6)', '(4, 6)'], placeholder: 'Point', explanation: '$(\\frac{2+6}{2}, \\frac{4+8}{2}) = (4, 6)$.' },
+    { difficulty: 'hard', question: 'Line through $(0,0)$ and $(3,4)$: equation:', accept: ['y=4x/3', 'y = (4/3)x'], placeholder: 'Equation', explanation: '$m = 4/3$. $y = (4/3)x$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -398,7 +402,9 @@ topics: [
     { difficulty: 'easy', question: '$(x^3)^2 =$?', accept: ['x^6', 'x6'], placeholder: 'Expression', explanation: 'Power of a power: $x^{3 \\times 2} = x^6$.' },
     { difficulty: 'hard', question: 'Remainder theorem: $f(x) \\div (x - c)$ has remainder:', accept: ['f(c)'], placeholder: 'Value', explanation: 'Remainder = $f(c)$.' },
     { difficulty: 'easy', question: '$(ab)^2 =$?', accept: ['a^2b^2', 'a2b2'], placeholder: 'Expression', explanation: '$(ab)^2 = a^2 b^2$.' },
-    { difficulty: 'hard', question: 'Rational expressions: $\\frac{1}{x-1} - \\frac{1}{x+1} =$?', accept: ['2/((x-1)(x+1))', '2/(x^2-1)'], placeholder: 'Expression', explanation: '$\\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{2}{x^2-1}$.' }
+    { difficulty: 'hard', question: 'Rational expressions: $\\frac{1}{x-1} - \\frac{1}{x+1} =$?', accept: ['2/((x-1)(x+1))', '2/(x^2-1)'], placeholder: 'Expression', explanation: '$\\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{2}{x^2-1}$.' },
+    { difficulty: 'easy', question: '$x^0 =$? (for $x \\neq 0$)', accept: [1, '1'], placeholder: 'Number', explanation: '$x^0 = 1$ for all $x \\neq 0$.' },
+    { difficulty: 'hard', question: '$(a + b + c)^2$ has how many terms when fully expanded?', accept: [6, '6'], placeholder: 'Number', explanation: '$a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$. Six terms.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

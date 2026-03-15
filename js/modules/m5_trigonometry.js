@@ -212,7 +212,9 @@ topics: [
     { difficulty: 'medium', question: 'Convert $\\pi/3$ rad to degrees:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$\\pi/3 \\times 180/\\pi = 60°$.' },
     { difficulty: 'hard', question: 'Exact value: $\\sin(\\pi/4) =$?', accept: ['sqrt(2)/2', '\\sqrt{2}/2', '0.707'], placeholder: 'Value', explanation: '$\\sin(45°) = \\sqrt{2}/2$.' },
     { difficulty: 'easy', question: 'Reciprocal of sine:', accept: ['csc', 'cosecant', 'csc(x)'], placeholder: 'Function', explanation: '$\\csc x = 1/\\sin x$.' },
-    { difficulty: 'hard', question: 'DeMoivre\'s theorem: $(\\cos\\theta + i\\sin\\theta)^n =$?', accept: ['cos(ntheta)+isin(ntheta)'], placeholder: 'Expression', explanation: '$\\cos(n\\theta) + i\\sin(n\\theta)$.' }
+    { difficulty: 'hard', question: 'DeMoivre\'s theorem: $(\\cos\\theta + i\\sin\\theta)^n =$?', accept: ['cos(ntheta)+isin(ntheta)'], placeholder: 'Expression', explanation: '$\\cos(n\\theta) + i\\sin(n\\theta)$.' },
+    { difficulty: 'easy', question: 'Cotangent = cos / ?', accept: ['sin', 'sine'], placeholder: 'Function', explanation: '$\\cot x = \\cos x / \\sin x$.' },
+    { difficulty: 'hard', question: 'Arc length in radians: $s = r$ ?', accept: ['theta', 'r\\theta'], placeholder: 'Formula', explanation: '$s = r\\theta$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -397,7 +399,9 @@ topics: [
     { difficulty: 'medium', question: 'Double angle: $\\sin(2x) = 2\\sin(x)$ ?', accept: ['cos(x)', '\\cos x'], placeholder: 'Factor', explanation: '$\\sin(2x) = 2\\sin x \\cos x$.' },
     { difficulty: 'hard', question: '$\\cos(A + B) = \\cos A \\cos B - \\sin A$ ?', accept: ['sin B', '\\sin B'], placeholder: 'Term', explanation: 'Cosine sum: $\\cos A \\cos B - \\sin A \\sin B$.' },
     { difficulty: 'easy', question: '$\\cos(2\\pi) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Full rotation: $\\cos(360°) = 1$.' },
-    { difficulty: 'hard', question: 'Verify: $\\frac{\\sin 2x}{1 + \\cos 2x} = \\tan x$:', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\frac{2\\sin x \\cos x}{2\\cos^2 x} = \\frac{\\sin x}{\\cos x} = \\tan x$.' }
+    { difficulty: 'hard', question: 'Verify: $\\frac{\\sin 2x}{1 + \\cos 2x} = \\tan x$:', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\frac{2\\sin x \\cos x}{2\\cos^2 x} = \\frac{\\sin x}{\\cos x} = \\tan x$.' },
+    { difficulty: 'easy', question: '$\\sin(\\pi) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(180°) = 0$.' },
+    { difficulty: 'hard', question: 'Triple angle: $\\sin(3x) = 3\\sin x - 4\\sin^3 x$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\sin(3x) = 3\\sin x - 4\\sin^3 x$. Verified via sum formulas.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -527,7 +531,9 @@ topics: [
     { difficulty: 'easy', question: 'Tangent function is undefined when $\\cos(\\theta) =$?', accept: [0, '0'], placeholder: 'Value', explanation: '$\\tan = \\sin/\\cos$. Undefined when $\\cos = 0$.' },
     { difficulty: 'hard', question: 'Heron\'s formula: $A = \\sqrt{s(s-a)(s-b)(s-c)}$ where $s =$?', accept: ['(a+b+c)/2', 'semiperimeter'], placeholder: 'Formula', explanation: '$s = (a + b + c)/2$: the semi-perimeter.' },
     { difficulty: 'easy', question: 'Amplitude of $y = \\cos(x)$:', accept: [1, '1'], placeholder: 'Number', explanation: 'Amplitude = 1 (coefficient of $\\cos$).' },
-    { difficulty: 'hard', question: 'Polar form of $1 + i$: $r =$?', accept: ['sqrt(2)', '1.414'], placeholder: 'Modulus', explanation: '$r = \\sqrt{1^2 + 1^2} = \\sqrt{2}$.' }
+    { difficulty: 'hard', question: 'Polar form of $1 + i$: $r =$?', accept: ['sqrt(2)', '1.414'], placeholder: 'Modulus', explanation: '$r = \\sqrt{1^2 + 1^2} = \\sqrt{2}$.' },
+    { difficulty: 'easy', question: 'Secant = 1 / ?', accept: ['cos', 'cos(x)', 'cosine'], placeholder: 'Function', explanation: '$\\sec x = 1/\\cos x$.' },
+    { difficulty: 'hard', question: 'Complex number $re^{i\\theta}$: modulus is $r$, argument is:', accept: ['theta', '\\theta'], placeholder: 'What?', explanation: 'Euler form: $re^{i\\theta}$. $r$ = modulus, $\\theta$ = argument.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

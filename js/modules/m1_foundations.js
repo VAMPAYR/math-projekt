@@ -103,7 +103,9 @@ topics: [
     { difficulty: 'hard', question: 'Russell\'s paradox: the set of all sets that do not contain themselves leads to a:', accept: ['contradiction', 'paradox'], placeholder: 'Result', explanation: 'Let $R = \\{S : S \\notin S\\}$. If $R \\in R$, then $R \\notin R$ (contradiction). If $R \\notin R$, then $R \\in R$ (contradiction).' },
     { difficulty: 'medium', question: 'Injection (one-to-one): $f(a) = f(b)$ implies:', accept: ['a = b', 'a=b'], placeholder: 'Conclusion', explanation: 'Injective: distinct inputs map to distinct outputs.' },
     { difficulty: 'medium', question: 'Surjection (onto): every element in the codomain has at least one:', accept: ['preimage', 'input'], placeholder: 'What?', explanation: 'Surjective: range = codomain.' },
-    { difficulty: 'hard', question: 'Bijection = injection + surjection. Bijection implies _____ exists.', accept: ['inverse', 'inverse function'], placeholder: 'What?', explanation: 'Bijective: one-to-one and onto. Inverse function exists.' }
+    { difficulty: 'hard', question: 'Bijection = injection + surjection. Bijection implies _____ exists.', accept: ['inverse', 'inverse function'], placeholder: 'What?', explanation: 'Bijective: one-to-one and onto. Inverse function exists.' },
+    { difficulty: 'medium', question: 'Partition of set $A$: a collection of non-empty subsets that are pairwise:', accept: ['disjoint'], placeholder: 'Property', explanation: 'Partition: pairwise disjoint subsets whose union is $A$.' },
+    { difficulty: 'hard', question: 'Zorn\'s lemma: every totally ordered subset has an upper bound implies the set has a:', accept: ['maximal element'], placeholder: 'What?', explanation: 'Zorn\'s lemma: used to prove existence of maximal elements.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -290,7 +292,9 @@ topics: [
     { difficulty: 'hard', question: 'Triangle inequality: $|a + b| \\leq |a| +$ ?', accept: ['|b|', 'abs(b)'], placeholder: 'Expression', explanation: '$|a + b| \\leq |a| + |b|$.' },
     { difficulty: 'easy', question: 'Order of operations mnemonic: PEMDAS. P stands for:', accept: ['parentheses'], placeholder: 'Word', explanation: 'Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.' },
     { difficulty: 'medium', question: '$(a + b)(a + b) =$?', accept: ['a^2+2ab+b^2'], placeholder: 'Expression', explanation: '$a^2 + 2ab + b^2$. Perfect square trinomial.' },
-    { difficulty: 'hard', question: 'Floor function: $\\lfloor 3.7 \\rfloor =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Floor: greatest integer $\\leq 3.7$. $\\lfloor 3.7 \\rfloor = 3$.' }
+    { difficulty: 'hard', question: 'Floor function: $\\lfloor 3.7 \\rfloor =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Floor: greatest integer $\\leq 3.7$. $\\lfloor 3.7 \\rfloor = 3$.' },
+    { difficulty: 'easy', question: '$|-12| =$?', accept: [12, '12'], placeholder: 'Number', explanation: '$|-12| = 12$.' },
+    { difficulty: 'hard', question: 'Well-ordering principle: every nonempty set of _____ has a least element.', accept: ['positive integers', 'natural numbers'], placeholder: 'Set', explanation: 'Well-ordering: foundation for proofs by strong induction.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -539,7 +543,9 @@ topics: [
     { difficulty: 'medium', question: 'Modus ponens: from $p \\to q$ and $p$, conclude:', accept: ['q'], placeholder: 'Conclusion', explanation: 'Modus ponens: if $p \\to q$ is true and $p$ is true, then $q$ is true.' },
     { difficulty: 'hard', question: 'Proof by induction has two steps: base case and _____ step.', accept: ['inductive', 'induction'], placeholder: 'Step', explanation: 'Base case + inductive step (assume for $n$, prove for $n+1$).' },
     { difficulty: 'easy', question: 'Propositional variable $p$ can be either:', accept: ['true or false', 'T or F'], placeholder: 'Values', explanation: '$p$ is either true (T) or false (F).' },
-    { difficulty: 'hard', question: 'A tautology is a proposition that is always:', accept: ['true'], placeholder: 'Value', explanation: 'Tautology: true in every possible interpretation.' }
+    { difficulty: 'hard', question: 'A tautology is a proposition that is always:', accept: ['true'], placeholder: 'Value', explanation: 'Tautology: true in every possible interpretation.' },
+    { difficulty: 'medium', question: 'Universal quantifier: $\\forall x: P(x)$ means for _____ $x$, $P(x)$ holds.', accept: ['all', 'every'], placeholder: 'Quantifier', explanation: '$\\forall$: universal quantifier ("for all").' },
+    { difficulty: 'hard', question: 'Proof by strong induction: assume $P(k)$ for all $k \\leq n$, prove $P($ ? $)$.', accept: ['n+1'], placeholder: 'Value', explanation: 'Strong induction: assume all cases up to $n$, prove $n+1$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

@@ -152,7 +152,9 @@
     { difficulty: 'medium', question: 'End behavior: even degree, negative leading coefficient. As $x \\to \\pm\\infty$, $f \\to$:', accept: ['-infinity', '-inf'], placeholder: 'Direction', explanation: 'Even degree + negative LC: both ends go to $-\\infty$.' },
     { difficulty: 'hard', question: 'Synthetic division of $x^3 - 2x^2 + x - 3$ by $(x - 1)$: remainder:', accept: [-3, '-3'], placeholder: 'Number', explanation: '$f(1) = 1 - 2 + 1 - 3 = -3$.' },
     { difficulty: 'easy', question: 'Constant polynomial has degree:', accept: [0, '0'], placeholder: 'Number', explanation: 'Degree 0: constant (like $y = 5$).' },
-    { difficulty: 'hard', question: 'Descartes: $f(x) = x^4 - x^2 + 1$ sign changes:', accept: [2, '2'], placeholder: 'Count', explanation: '$+, -, +$: two sign changes. At most 2 positive real roots.' }
+    { difficulty: 'hard', question: 'Descartes: $f(x) = x^4 - x^2 + 1$ sign changes:', accept: [2, '2'], placeholder: 'Count', explanation: '$+, -, +$: two sign changes. At most 2 positive real roots.' },
+    { difficulty: 'easy', question: 'Zero of polynomial $f(x)$: value where $f(c) =$?', accept: [0, '0'], placeholder: 'Value', explanation: 'Zero = root: $f(c) = 0$.' },
+    { difficulty: 'hard', question: 'Fundamental Theorem of Algebra: degree-$n$ polynomial has exactly $n$ roots in:', accept: ['C', 'complex numbers', 'the complex numbers'], placeholder: 'Field', explanation: 'FTA: $n$ roots in $\\mathbb{C}$ (counting multiplicity).' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -422,7 +424,9 @@
     { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ? $= (x + 3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(b/2)^2 = (6/2)^2 = 9$.' },
     { difficulty: 'hard', question: 'Vertex of $y = x^2 - 8x + 12$:', accept: ['(4,-4)', '(4, -4)'], placeholder: 'Point', explanation: '$x = -(-8)/(2) = 4$. $y = 16 - 32 + 12 = -4$.' },
     { difficulty: 'easy', question: 'The $x$-coordinate of the vertex is $-b/(2a)$. For $y = 2x^2 + 4x + 1$, it is:', accept: [-1, '-1'], placeholder: 'Number', explanation: '$-4/(2 \\cdot 2) = -1$.' },
-    { difficulty: 'hard', question: 'Quadratic opens upward when $a$ is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$a > 0$: opens upward. $a < 0$: opens downward.' }
+    { difficulty: 'hard', question: 'Quadratic opens upward when $a$ is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$a > 0$: opens upward. $a < 0$: opens downward.' },
+    { difficulty: 'easy', question: 'Parabola opens upward or downward based on sign of:', accept: ['a', 'leading coefficient'], placeholder: 'Term', explanation: '$a > 0$: up. $a < 0$: down.' },
+    { difficulty: 'hard', question: 'Focus-directrix definition: parabola is the locus equidistant from:', accept: ['focus and directrix'], placeholder: 'What?', explanation: 'Parabola: distance to focus = distance to directrix.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -663,7 +667,9 @@
     { difficulty: 'medium', question: 'Half-life formula uses base:', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: '$A(t) = A_0 (1/2)^{t/h}$. Base is $1/2$.' },
     { difficulty: 'hard', question: 'Solve: $\\log_3(x) = 4$. $x =$?', accept: [81, '81'], placeholder: 'Number', explanation: '$3^4 = 81$.' },
     { difficulty: 'easy', question: 'Common log: $\\log$ without a base means base:', accept: [10, '10'], placeholder: 'Base', explanation: '$\\log = \\log_{10}$.' },
-    { difficulty: 'hard', question: 'Population growth: $P(t) = P_0 e^{kt}$. What type of growth?', accept: ['exponential'], placeholder: 'Type', explanation: 'Exponential growth: $e^{kt}$ with $k > 0$.' }
+    { difficulty: 'hard', question: 'Population growth: $P(t) = P_0 e^{kt}$. What type of growth?', accept: ['exponential'], placeholder: 'Type', explanation: 'Exponential growth: $e^{kt}$ with $k > 0$.' },
+    { difficulty: 'easy', question: 'Exponential function $b^x$ with $b > 1$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: '$b > 1$: exponential growth (increasing).' },
+    { difficulty: 'hard', question: 'Natural base $e \\approx$?', accept: ['2.718', '2.72'], placeholder: 'Number', explanation: '$e \\approx 2.71828...$' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

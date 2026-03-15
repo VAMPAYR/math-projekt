@@ -118,7 +118,9 @@ topics: [
     { difficulty: 'medium', question: '$\\int \\sin(x)\\cos(x)\\,dx =$?', accept: ['sin^2(x)/2+C', '-cos^2(x)/2+C', '(sinx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\sin x$: $u^2/2 + C$. Or use $\\sin(2x)/2$.' },
     { difficulty: 'hard', question: 'Partial fractions for integration: $\\frac{1}{x^2 - 1} = \\frac{1}{2}\\left(\\frac{1}{x-1} - \\frac{1}{x+1}\\right)$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Verified: $\\frac{1}{2} \\cdot \\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{1}{x^2-1}$.' },
     { difficulty: 'easy', question: '$\\int x^{-1}\\,dx =$?', accept: ['ln|x|+C', 'ln(x)+C'], placeholder: 'Expression', explanation: '$\\ln|x| + C$.' },
-    { difficulty: 'hard', question: '$\\int \\sec x \\tan x\\,dx =$?', accept: ['sec(x)+C', 'secx+C'], placeholder: 'Expression', explanation: '$\\sec x + C$.' }
+    { difficulty: 'hard', question: '$\\int \\sec x \\tan x\\,dx =$?', accept: ['sec(x)+C', 'secx+C'], placeholder: 'Expression', explanation: '$\\sec x + C$.' },
+    { difficulty: 'easy', question: '$\\int x^2\\,dx =$?', accept: ['x^3/3+C', 'x^3/3 + C'], placeholder: 'Expression', explanation: '$x^3/3 + C$.' },
+    { difficulty: 'hard', question: 'Improper integral: $\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -248,7 +250,9 @@ topics: [
     { difficulty: 'medium', question: 'Alternating series test: $a_n > 0$, $a_n$ decreasing, $a_n \\to 0$. The series:', accept: ['converges'], placeholder: 'Result', explanation: 'Alternating series test (Leibniz): all three conditions met implies convergence.' },
     { difficulty: 'hard', question: 'Root test: $\\lim \\sqrt[n]{|a_n|} = L$. If $L < 1$:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Root test: $L < 1$ convergence, $L > 1$ divergence.' },
     { difficulty: 'easy', question: 'Arithmetic sequence: $a, a+d, a+2d, \\ldots$ Common difference $d$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Arithmetic: constant difference between terms.' },
-    { difficulty: 'hard', question: 'Telescoping series: $\\sum_{n=1}^N \\frac{1}{n(n+1)}$ collapses to:', accept: ['1-1/(N+1)', 'N/(N+1)'], placeholder: 'Result', explanation: 'Partial fractions: $1/n - 1/(n+1)$. Most terms cancel.' }
+    { difficulty: 'hard', question: 'Telescoping series: $\\sum_{n=1}^N \\frac{1}{n(n+1)}$ collapses to:', accept: ['1-1/(N+1)', 'N/(N+1)'], placeholder: 'Result', explanation: 'Partial fractions: $1/n - 1/(n+1)$. Most terms cancel.' },
+    { difficulty: 'easy', question: 'Geometric sequence: $a, ar, ar^2, \\ldots$ Common ratio $r$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Geometric: constant ratio between consecutive terms.' },
+    { difficulty: 'hard', question: 'p-series $\\sum 1/n^p$ converges when $p >$?', accept: [1, '1'], placeholder: 'Value', explanation: '$p > 1$: converges. $p \\leq 1$: diverges.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -402,7 +406,9 @@ topics: [
     { difficulty: 'medium', question: 'MacLaurin series for $\\cos x$ starts: $1 - x^2/2! + x^4/4! -$ ...', accept: ['yes', 'correct', 'true'], placeholder: 'Correct?', explanation: '$\\cos x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{2n}}{(2n)!}$.' },
     { difficulty: 'hard', question: 'Interval of convergence may differ from radius by:', accept: ['endpoints', 'boundary behavior'], placeholder: 'What?', explanation: 'Radius gives open interval. Endpoints must be tested separately.' },
     { difficulty: 'easy', question: 'Taylor polynomial of degree $n$ approximates $f$ near $x =$?', accept: ['a', 'center', 'c'], placeholder: 'Point', explanation: '$T_n(x) \\approx f(x)$ near the center $a$.' },
-    { difficulty: 'hard', question: 'Lagrange remainder: $R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$. This bounds:', accept: ['the error', 'truncation error'], placeholder: 'What?', explanation: 'Maximum error when approximating $f$ by its degree-$n$ Taylor polynomial.' }
+    { difficulty: 'hard', question: 'Lagrange remainder: $R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$. This bounds:', accept: ['the error', 'truncation error'], placeholder: 'What?', explanation: 'Maximum error when approximating $f$ by its degree-$n$ Taylor polynomial.' },
+    { difficulty: 'easy', question: 'Taylor polynomial of degree 1 is called:', accept: ['linearization', 'linear approximation'], placeholder: 'Name', explanation: 'Degree 1 Taylor: $f(a) + f\'(a)(x-a)$. Linearization.' },
+    { difficulty: 'hard', question: 'Analytic function: equals its Taylor series on some:', accept: ['interval', 'neighborhood'], placeholder: 'Where?', explanation: 'Analytic: $f(x) = \\sum a_n(x-a)^n$ on an interval around $a$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [
