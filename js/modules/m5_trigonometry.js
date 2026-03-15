@@ -194,7 +194,9 @@ topics: [
     { difficulty: 'medium', question: 'A circle has $r = 8$ cm and central angle $\\frac{\\pi}{4}$. Arc length?', accept: ['2pi', '2\\pi', '6.28'], placeholder: 'cm', explanation: '$s = r\\theta = 8 \\cdot \\frac{\\pi}{4} = 2\\pi \\approx 6.28$ cm.' },
     { difficulty: 'hard', question: 'Convert $\\frac{5\\pi}{4}$ to degrees:', accept: [225, '225'], placeholder: 'degrees', explanation: '$\\frac{5\\pi}{4} \\cdot \\frac{180}{\\pi} = 225°$.' },
     { difficulty: 'hard', question: '$\\sin(\\frac{7\\pi}{6}) =$?', accept: ['-1/2', '-0.5'], placeholder: 'e.g. -1/2', explanation: 'Q3, ref angle $\\frac{\\pi}{6}$. Sin negative: $-1/2$.' },
-    { difficulty: 'hard', question: 'A right triangle has hyp = 10, one angle = 30°. Find the opposite side:', accept: [5, '5'], placeholder: 'Length', explanation: '$\\sin(30°) = \\frac{\\text{opp}}{10}$. $\\text{opp} = 10 \\cdot \\frac{1}{2} = 5$.' }
+    { difficulty: 'hard', question: 'A right triangle has hyp = 10, one angle = 30°. Find the opposite side:', accept: [5, '5'], placeholder: 'Length', explanation: '$\\sin(30°) = \\frac{\\text{opp}}{10}$. $\\text{opp} = 10 \\cdot \\frac{1}{2} = 5$.' },
+    { difficulty: 'easy', question: '$\\sin(0) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(0) = 0$.' },
+    { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -349,7 +351,9 @@ topics: [
     { difficulty: 'medium', question: '$\\sin(2 \\cdot \\frac{\\pi}{6}) = \\sin(\\frac{\\pi}{3}) =$?', accept: ['sqrt(3)/2', 'root3/2'], placeholder: 'e.g. sqrt(3)/2', explanation: '$\\sin(\\frac{\\pi}{3}) = \\frac{\\sqrt{3}}{2}$.' },
     { difficulty: 'medium', question: 'How many solutions does $\\sin\\theta = \\frac{1}{2}$ have on $[0, 2\\pi)$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\theta = \\frac{\\pi}{6}$ and $\\theta = \\frac{5\\pi}{6}$ (Q1 and Q2).' },
     { difficulty: 'hard', question: '$\\cos(2 \\cdot 60\u00b0) = \\cos(120\u00b0) =$?', accept: ['-1/2', '-0.5'], placeholder: 'e.g. -1/2', explanation: '$2\\cos^2(60\u00b0) - 1 = 2(1/4) - 1 = -1/2$.' },
-    { difficulty: 'hard', question: 'Solve $2\\sin^2\\theta - 1 = 0$ on $[0, 2\\pi)$. How many solutions?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\sin^2\\theta = 1/2 \\Rightarrow \\sin\\theta = \\pm \\frac{\\sqrt{2}}{2}$. Four angles: $\\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}$.' }
+    { difficulty: 'hard', question: 'Solve $2\\sin^2\\theta - 1 = 0$ on $[0, 2\\pi)$. How many solutions?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\sin^2\\theta = 1/2 \\Rightarrow \\sin\\theta = \\pm \\frac{\\sqrt{2}}{2}$. Four angles: $\\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}$.' },
+    { difficulty: 'easy', question: '$\\sin^2 x + \\cos^2 x =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' },
+    { difficulty: 'medium', question: '$\\cos(2 \\cdot 0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -461,7 +465,9 @@ topics: [
     { difficulty: 'medium', question: 'Law of Cosines: $c^2 = 9 + 16 - 2(3)(4)\\cos 90° = $?', accept: [25, '25'], placeholder: 'Number', explanation: '$\\cos 90° = 0$. $c^2 = 25$. Reduces to Pythagorean theorem: $3^2 + 4^2 = 5^2$.' },
     { difficulty: 'medium', question: 'Using Law of Sines: $\\frac{a}{\\sin 30°} = \\frac{10}{\\sin 90°}$. Find $a$:', accept: [5, '5'], placeholder: 'Number', explanation: '$a = \\frac{10 \\sin 30°}{\\sin 90°} = \\frac{10(0.5)}{1} = 5$.' },
     { difficulty: 'hard', question: 'Triangle with all sides 6 (equilateral). What is each angle?', accept: [60, '60'], placeholder: 'degrees', explanation: 'Equilateral triangle: all angles = $60°$. Verify: $\\cos C = \\frac{36 + 36 - 36}{2(36)} = \\frac{36}{72} = 0.5$. $C = 60°$.' },
-    { difficulty: 'hard', question: 'Triangle with $a = 5$, $b = 7$, $c = 10$. Is this triangle obtuse? (yes/no)', accept: ['yes', 'Yes'], placeholder: 'yes or no', explanation: '$c^2 = 100 > a^2 + b^2 = 74$. Since $c^2 > a^2 + b^2$, the triangle is obtuse.' }
+    { difficulty: 'hard', question: 'Triangle with $a = 5$, $b = 7$, $c = 10$. Is this triangle obtuse? (yes/no)', accept: ['yes', 'Yes'], placeholder: 'yes or no', explanation: '$c^2 = 100 > a^2 + b^2 = 74$. Since $c^2 > a^2 + b^2$, the triangle is obtuse.' },
+    { difficulty: 'easy', question: 'In a right triangle, if opposite = 3 and hypotenuse = 5, then $\\sin \\theta =$?', accept: ['3/5', '0.6'], placeholder: 'Value', explanation: '$\\sin \\theta = \\text{opposite}/\\text{hypotenuse} = 3/5$.' },
+    { difficulty: 'medium', question: 'Period of $\\sin(2x)$:', accept: ['pi', '3.14'], placeholder: 'Period', explanation: 'Period = $2\\pi / 2 = \\pi$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

@@ -204,7 +204,7 @@ topics: [
   <text x="325" y="98" fill="#10b981" font-size="10" font-family="Inter,sans-serif">f(x-1) â†’</text>
   <path d="M 160 120 Q 180 160 200 140 Q 220 120 240 160" fill="none" stroke="#ef4444" stroke-width="2"/>
   <text x="245" y="158" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">f(2x) compress</text>
-  <text x="200" y="20" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">+c shifts up, -h shifts right, Ã:a stretches</text>
+  <text x="200" y="20" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">+c shifts up, -h shifts right, ï¿½:a stretches</text>
 </svg>
 </div>
 <p class="math-diagram-label">Graph transformations: vertical shift f(x)+c, horizontal shift f(x-h), horizontal compress f(2x)</p>
@@ -449,7 +449,9 @@ topics: [
     { difficulty: 'medium', question: 'What is the horizontal asymptote of $f(x) = \\frac{5x}{x+1}$?', accept: ['y=5', 'y = 5', '5'], placeholder: 'y = ?', explanation: 'Same degree: $y = 5/1 = 5$.' },
     { difficulty: 'medium', question: 'Find all real zeros of $f(x) = x^3 - 4x$:', accept: ['0, 2, -2', '-2, 0, 2', '0,2,-2', '0, -2, 2'], placeholder: 'List zeros', explanation: '$x(x^2-4) = x(x-2)(x+2) = 0$. Zeros: $x = -2, 0, 2$.' },
     { difficulty: 'hard', question: 'How many turning points can a degree-5 polynomial have at most?', accept: [4, '4'], placeholder: 'Enter a number', explanation: 'At most $n-1 = 4$ turning points for degree $n$.' },
-    { difficulty: 'hard', question: 'Does $f(x) = \\frac{x^2 + 1}{x^2 - 4}$ have a horizontal asymptote? If yes, $y =$?', accept: ['y=1', 'y = 1', '1'], placeholder: 'y = ? or no', explanation: 'Same degree (2). Ratio of leading coefficients: $1/1 = 1$. HA: $y = 1$.' }
+    { difficulty: 'hard', question: 'Does $f(x) = \\frac{x^2 + 1}{x^2 - 4}$ have a horizontal asymptote? If yes, $y =$?', accept: ['y=1', 'y = 1', '1'], placeholder: 'y = ? or no', explanation: 'Same degree (2). Ratio of leading coefficients: $1/1 = 1$. HA: $y = 1$.' },
+    { difficulty: 'easy', question: 'If $f(x) = 2x + 1$, then $f(3) =$?', accept: [7, '7'], placeholder: 'Number', explanation: '$f(3) = 2(3) + 1 = 7$.' },
+    { difficulty: 'medium', question: 'Domain of $f(x) = \\sqrt{x - 4}$: $x \\geq$ ?', accept: [4, '4'], placeholder: 'Number', explanation: 'Radicand must be $\\geq 0$. $x - 4 \\geq 0 \\Rightarrow x \\geq 4$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find all asymptotes of $f(x) = \\frac{2x+1}{x-3}$.', steps: [
