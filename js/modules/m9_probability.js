@@ -152,7 +152,8 @@ topics: [
     { difficulty: 'hard', question: '$P(A|B) = 0.4$, $P(B) = 0.5$. Find $P(A \\cap B)$:', accept: ['0.2', '0.20'], placeholder: 'Probability', explanation: '$P(A|B) = P(A \\cap B)/P(B)$. $P(A \\cap B) = 0.4 \\times 0.5 = 0.2$.' },
     { difficulty: 'easy', question: 'P(coin lands heads) =', accept: ['0.5', '1/2'], placeholder: 'Probability', explanation: 'Fair coin: $P(H) = 1/2 = 0.5$.' },
     { difficulty: 'medium', question: 'P(drawing a red card from a standard deck):', accept: ['1/2', '0.5', '26/52'], placeholder: 'Probability', explanation: '26 red cards out of 52. $P = 1/2$.' },
-    { difficulty: 'hard', question: 'If events A and B are independent, $P(A \\cap B) = P(A) \\cdot$ ?', accept: ['P(B)'], placeholder: 'Expression', explanation: 'Independence: $P(A \\cap B) = P(A) \\cdot P(B)$.' }
+    { difficulty: 'hard', question: 'If events A and B are independent, $P(A \\cap B) = P(A) \\cdot$ ?', accept: ['P(B)'], placeholder: 'Expression', explanation: 'Independence: $P(A \\cap B) = P(A) \\cdot P(B)$.' },
+    { difficulty: 'medium', question: 'The complement rule: $P(A\') =$?', accept: ['1-P(A)', '1 - P(A)'], placeholder: 'Formula', explanation: '$P(A\') = 1 - P(A)$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -329,7 +330,8 @@ topics: [
     { difficulty: 'easy', question: 'Standard deviation of $X \\sim \\text{Bin}(100, 0.5)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sigma = \\sqrt{npq} = \\sqrt{100 \\cdot 0.5 \\cdot 0.5} = \\sqrt{25} = 5$.' },
     { difficulty: 'medium', question: 'For $X \\sim N(50, 100)$, the standard deviation is:', accept: [10, '10'], placeholder: 'Number', explanation: '$\\sigma = \\sqrt{100} = 10$.' },
     { difficulty: 'easy', question: 'Expected value of a fair 6-sided die:', accept: ['3.5', '7/2'], placeholder: 'Number', explanation: '$E[X] = (1+2+3+4+5+6)/6 = 3.5$.' },
-    { difficulty: 'medium', question: 'Variance of $X$ if $E[X] = 5$ and $E[X^2] = 29$:', accept: [4, '4'], placeholder: 'Number', explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2 = 29 - 25 = 4$.' }
+    { difficulty: 'medium', question: 'Variance of $X$ if $E[X] = 5$ and $E[X^2] = 29$:', accept: [4, '4'], placeholder: 'Number', explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2 = 29 - 25 = 4$.' },
+    { difficulty: 'hard', question: 'Law of total probability: if $B_1, B_2$ partition $S$, then $P(A) =$?', accept: ['P(A|B1)P(B1)+P(A|B2)P(B2)'], placeholder: 'Formula', explanation: '$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

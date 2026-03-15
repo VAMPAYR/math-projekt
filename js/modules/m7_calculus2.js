@@ -102,7 +102,8 @@ topics: [
     { difficulty: 'easy', question: '$\\int x\\,dx =$?', accept: ['x^2/2+C', 'x^2/2 + C'], placeholder: 'Expression', explanation: '$x^{1+1}/(1+1) + C = x^2/2 + C$.' },
     { difficulty: 'hard', question: '$\\int x^2 \\sin x\\,dx$ requires integration by parts how many times?', accept: [2, '2'], placeholder: 'Number', explanation: 'Differentiate $x^2$ twice to reach a constant: $x^2 \\to 2x \\to 2$. Two applications.' },
     { difficulty: 'easy', question: '$\\int 5\\,dx =$?', accept: ['5x+C', '5x + C'], placeholder: 'Expression', explanation: '$5x + C$.' },
-    { difficulty: 'hard', question: 'Integral of $\\ln(x)$ using IBP: final answer?', accept: ['xln(x)-x+C', 'x ln(x) - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x, dv = dx$. $\\int \\ln x\\,dx = x\\ln x - x + C$.' }
+    { difficulty: 'hard', question: 'Integral of $\\ln(x)$ using IBP: final answer?', accept: ['xln(x)-x+C', 'x ln(x) - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x, dv = dx$. $\\int \\ln x\\,dx = x\\ln x - x + C$.' },
+    { difficulty: 'medium', question: 'When using IBP, what is the LIATE rule order?', accept: ['logs, inverse trig, algebraic, trig, exponential'], placeholder: 'Order', explanation: 'LIATE: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential. Choose $u$ from left.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -211,7 +212,8 @@ topics: [
     { difficulty: 'easy', question: 'The 10th term of $a_n = n^2$:', accept: [100, '100'], placeholder: 'Number', explanation: '$a_{10} = 10^2 = 100$.' },
     { difficulty: 'medium', question: 'Is the sequence $a_n = (-1)^n$ convergent?', accept: ['no', 'divergent'], placeholder: 'yes/no', explanation: 'Alternates between $-1$ and $1$. Never settles. Divergent.' },
     { difficulty: 'easy', question: 'First 4 terms of $a_n = 2^n$:', accept: ['2,4,8,16', '2, 4, 8, 16'], placeholder: 'Terms', explanation: '$2^1=2, 2^2=4, 2^3=8, 2^4=16$.' },
-    { difficulty: 'hard', question: 'Sum of first 5 terms of $a_n = 3(0.5)^{n-1}$:', accept: ['5.8125', '93/16'], placeholder: 'Number', explanation: '$S_5 = 3 \\cdot \\frac{1 - 0.5^5}{1 - 0.5} = 3 \\cdot \\frac{0.96875}{0.5} = 5.8125$.' }
+    { difficulty: 'hard', question: 'Sum of first 5 terms of $a_n = 3(0.5)^{n-1}$:', accept: ['5.8125', '93/16'], placeholder: 'Number', explanation: '$S_5 = 3 \\cdot \\frac{1 - 0.5^5}{1 - 0.5} = 3 \\cdot \\frac{0.96875}{0.5} = 5.8125$.' },
+    { difficulty: 'medium', question: 'What is an arithmetic sequence?', accept: ['constant difference', 'common difference'], placeholder: 'Definition', explanation: 'Each term differs from the previous by a constant $d$: $a_n = a_1 + (n-1)d$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -352,7 +354,8 @@ topics: [
     { difficulty: 'easy', question: '$\\sum_{n=1}^{4} n =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$1 + 2 + 3 + 4 = 10$.' },
     { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n}$ converge?', accept: ['no', 'diverge', 'diverges'], placeholder: 'yes/no', explanation: 'Harmonic series diverges. $p = 1 \\leq 1$.' },
     { difficulty: 'easy', question: '$\\sum_{n=0}^{3} 2^n =$?', accept: [15, '15'], placeholder: 'Number', explanation: '$1 + 2 + 4 + 8 = 15$.' },
-    { difficulty: 'medium', question: 'For the p-series $\\sum 1/n^2$: does it converge?', accept: ['yes', 'converges'], placeholder: 'yes/no', explanation: '$p = 2 > 1$. p-series converges when $p > 1$.' }
+    { difficulty: 'medium', question: 'For the p-series $\\sum 1/n^2$: does it converge?', accept: ['yes', 'converges'], placeholder: 'yes/no', explanation: '$p = 2 > 1$. p-series converges when $p > 1$.' },
+    { difficulty: 'hard', question: 'Alternating series $\\sum (-1)^n/n$ converges. What is the name of this series?', accept: ['alternating harmonic', 'alternating harmonic series'], placeholder: 'Name', explanation: 'Alternating harmonic series converges to $\\ln 2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

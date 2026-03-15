@@ -169,7 +169,8 @@
     { difficulty: 'easy', question: 'The zero vector in $\\mathbb{R}^3$:', accept: ['<0,0,0>', '(0,0,0)'], placeholder: 'Vector', explanation: '$\\vec{0} = \\langle 0, 0, 0 \\rangle$.' },
     { difficulty: 'hard', question: 'Volume of parallelepiped with edges $\\vec{a}$, $\\vec{b}$, $\\vec{c}$: $V = |\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})|$. If this equals 0, the vectors are:', accept: ['coplanar'], placeholder: 'Property', explanation: 'Zero volume means all three vectors lie in the same plane.' },
     { difficulty: 'medium', question: 'Projection of $\\langle 3, 4 \\rangle$ onto $\\langle 1, 0 \\rangle$:', accept: ['<3,0>', '(3,0)', '<3, 0>'], placeholder: 'Vector', explanation: '$\\text{proj}_{\\hat{i}} \\langle 3,4 \\rangle = \\langle 3, 0 \\rangle$.' },
-    { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' }
+    { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' },
+    { difficulty: 'easy', question: 'A vector with magnitude 1 is called a:', accept: ['unit vector'], placeholder: 'Name', explanation: 'Unit vector: $|\\hat{v}| = 1$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -417,7 +418,8 @@
     { difficulty: 'hard', question: '$\\int_0^1 \\int_0^x 2\\,dy\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 2x\\,dx = [x^2]_0^1 = 1$.' },
     { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 (x + y)\\,dx\\,dy =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 [x^2/2 + xy]_0^1\\,dy = \\int_0^1 (1/2 + y)\\,dy = 1/2 + 1/2 = 1$.' },
     { difficulty: 'hard', question: 'Convert $\\int\\int_R f\\,dA$ to polar: $dA =$?', accept: ['r dr dtheta', 'r dr d\\theta', 'rdrd\\theta'], placeholder: 'Expression', explanation: 'In polar coordinates, $dA = r\\,dr\\,d\\theta$.' },
-    { difficulty: 'medium', question: '$\\int_0^2 \\int_0^x y\\,dy\\,dx =$?', accept: ['4/3', '1.33'], placeholder: 'Number', explanation: '$\\int_0^2 [y^2/2]_0^x dx = \\int_0^2 x^2/2\\,dx = [x^3/6]_0^2 = 4/3$.' }
+    { difficulty: 'medium', question: '$\\int_0^2 \\int_0^x y\\,dy\\,dx =$?', accept: ['4/3', '1.33'], placeholder: 'Number', explanation: '$\\int_0^2 [y^2/2]_0^x dx = \\int_0^2 x^2/2\\,dx = [x^3/6]_0^2 = 4/3$.' },
+    { difficulty: 'medium', question: 'To switch $\\int_0^1 \\int_0^x f\\,dy\\,dx$ to $dx\\,dy$, the outer integral becomes:', accept: ['0 to 1', '[0,1]'], placeholder: 'Bounds', explanation: '$y$ ranges from 0 to 1. For fixed $y$, $x$ ranges from $y$ to 1.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [
