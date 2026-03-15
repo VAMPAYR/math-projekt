@@ -208,7 +208,13 @@
             { content: 'Direct substitution gives $\\frac{0}{0}$ (indeterminate).' },
             { content: 'Multiply by conjugate: $\\frac{\\sqrt{x}-2}{x-4} \\cdot \\frac{\\sqrt{x}+2}{\\sqrt{x}+2} = \\frac{x-4}{(x-4)(\\sqrt{x}+2)}$.' },
             { content: 'Cancel: $\\frac{1}{\\sqrt{x}+2}$.' },
-            { content: 'Substitute: $\\frac{1}{\\sqrt{4}+2} = \\frac{1}{4}$.' }
+            { content: 'Substitute: $\\frac{1}{\\sqrt{4}+2} = \\frac{1}{4}$.' },
+    { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$.', steps: [
+      { content: 'Direct substitution gives $0/0$: indeterminate.' },
+      { content: 'Factor: $\\frac{(x-3)(x+3)}{x-3}$.' },
+      { content: 'Cancel: $x + 3$.' },
+      { content: '$\\lim_{x \\to 3}(x+3) = 6$.' }
+    ], explanation: 'Factor to cancel the common term causing the indeterminate form.' }
           ], explanation: 'Rationalize the numerator to eliminate the indeterminate form.' }
         ],
         matching: [
@@ -479,7 +485,7 @@
         ` },
         hook: { html: `
           <div class="callout callout-puzzle"><h4>ðŸ§© Puzzle: The Optimal Box</h4>
-          <p>You have a 20cm Ã: 20cm sheet of cardboard. Cut squares from each corner, fold up the sides to make a box. What size squares maximize the volume?</p>
+          <p>You have a 20cm ï¿½: 20cm sheet of cardboard. Cut squares from each corner, fold up the sides to make a box. What size squares maximize the volume?</p>
           <p>If the cut square has side $x$: volume $V(x) = x(20-2x)^2$. Find $V'(x) = 0$, verify it is a maximum. Calculus gives the exact optimal cut: $x = \\frac{10}{3}$ cm.</p></div>` },
         concept: { html: `
           <div class="callout callout-key"><h4>Finding Max/Min Values</h4>
@@ -506,7 +512,7 @@
           problem: 'A farmer has 200m of fencing to enclose a rectangular field along a river (no fence needed on the river side). What dimensions maximize the area?',
           steps: [
             { title: 'Set up variables', content: 'Let $x$ = width (perpendicular to river), $y$ = length (along river). Constraint: $2x + y = 200$, so $y = 200 - 2x$.', why: 'Three sides of fencing: two widths and one length.' },
-            { title: 'Write the objective function', content: '$A(x) = x \\cdot y = x(200 - 2x) = 200x - 2x^2$', why: 'Area = length Ã: width. Substitute the constraint to get a function of one variable.' },
+            { title: 'Write the objective function', content: '$A(x) = x \\cdot y = x(200 - 2x) = 200x - 2x^2$', why: 'Area = length ï¿½: width. Substitute the constraint to get a function of one variable.' },
             { title: 'Differentiate and find critical points', content: '$A\'(x) = 200 - 4x = 0 \\Rightarrow x = 50$', why: 'Setting the derivative to zero finds where the rate of change of area is zero: a potential maximum or minimum.' },
             { title: 'Verify maximum', content: '$A\'\'(x) = -4 \\lt 0$, so $x = 50$ gives a maximum. $y = 200 - 2(50) = 100$. Area = $50 \\times 100 = 5000$ mÂ².', why: 'Negative second derivative confirms upward-facing tangent, indicating a local (and absolute) maximum.' }
           ]

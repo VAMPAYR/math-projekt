@@ -174,7 +174,12 @@
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
             { content: 'Rewrite: $2x^{1/2} + 3$.' },
             { content: 'Antiderivative: $2 \\cdot \\frac{x^{3/2}}{3/2} + 3x = \\frac{4}{3}x^{3/2} + 3x$.' },
-            { content: 'Evaluate: $\\left[\\frac{4}{3}(8) + 12\\right] - \\left[\\frac{4}{3}(1) + 3\\right] = \\frac{32}{3} + 12 - \\frac{4}{3} - 3 = \\frac{28}{3} + 9 = \\frac{55}{3}$.' }
+            { content: 'Evaluate: $\\left[\\frac{4}{3}(8) + 12\\right] - \\left[\\frac{4}{3}(1) + 3\\right] = \\frac{32}{3} + 12 - \\frac{4}{3} - 3 = \\frac{28}{3} + 9 = \\frac{55}{3}$.' },
+    { difficulty: 'medium', question: 'Evaluate $\\int \\frac{3x}{x^2+1}\\,dx$.', steps: [
+      { content: 'Substitution: $u = x^2 + 1$, $du = 2x\\,dx$.' },
+      { content: '$\\frac{3}{2}\\int \\frac{du}{u}$.' },
+      { content: '$\\frac{3}{2}\\ln|u| + C = \\frac{3}{2}\\ln(x^2+1) + C$.' }
+    ], explanation: 'U-substitution: match the numerator to the derivative of the denominator.' }
           ], explanation: 'Rewrite roots as fractional powers before integrating.' }
         ],
         matching: [

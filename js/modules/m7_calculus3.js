@@ -48,17 +48,17 @@
   <line x1="50" y1="20" x2="50" y2="230" stroke="#94a3b8" stroke-width="1"/>
   <line x1="80" y1="200" x2="220" y2="100" stroke="#3b82f6" stroke-width="2.5"/>
   <polygon points="220,100 208,108 212,116" fill="#3b82f6"/>
-  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">vâƒ: = âŸ¨a, bâŸ©</text>
+  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">vï¿½: = âŸ¨a, bâŸ©</text>
   <line x1="80" y1="200" x2="220" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="220" y1="200" x2="220" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="150" y="215" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">a (x-component)</text>
   <text x="235" y="155" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">b (y-component)</text>
   <line x1="80" y1="200" x2="280" y2="160" stroke="#8b5cf6" stroke-width="2"/>
   <polygon points="280,160 268,162 270,172" fill="#8b5cf6"/>
-  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">wâƒ:</text>
+  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">wï¿½:</text>
   <line x1="220" y1="100" x2="280" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
   <polygon points="280,60 268,65 272,72" fill="#f59e0b"/>
-  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">vâƒ: + wâƒ:</text>
+  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">vï¿½: + wï¿½:</text>
   <line x1="220" y1="100" x2="280" y2="160" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
   <circle cx="80" cy="200" r="3" fill="#e2e8f0"/>
   <text x="150" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Vector addition: tip-to-tail</text>
@@ -184,7 +184,11 @@
           { difficulty: 'hard', question: 'Geometry: Find the area of the triangle with vertices $A(1,0,0)$, $B(0,1,0)$, $C(0,0,1)$.', parts: [
             { question: '$\\vec{AB} = B - A =$?', accept: ['<-1,1,0>', '-1,1,0'], placeholder: '<a,b,c>', explanation: '$(0-1, 1-0, 0-0) = \\langle -1,1,0 \\rangle$.' },
             { question: '$\\vec{AC} = C - A =$?', accept: ['<-1,0,1>', '-1,0,1'], placeholder: '<a,b,c>', explanation: '$(0-1, 0-0, 1-0) = \\langle -1,0,1 \\rangle$.' },
-            { question: 'Triangle area = $\\frac{1}{2}\\|\\vec{AB} \\times \\vec{AC}\\|$. Cross product = $\\langle 1,1,1 \\rangle$. Area:', accept: ['sqrt(3)/2'], placeholder: 'Area', explanation: '$\\|\\langle 1,1,1 \\rangle\\| = \\sqrt{3}$. Triangle area = $\\frac{\\sqrt{3}}{2}$.' }
+            { question: 'Triangle area = $\\frac{1}{2}\\|\\vec{AB} \\times \\vec{AC}\\|$. Cross product = $\\langle 1,1,1 \\rangle$. Area:', accept: ['sqrt(3)/2'], placeholder: 'Area', explanation: '$\\|\\langle 1,1,1 \\rangle\\| = \\sqrt{3}$. Triangle area = $\\frac{\\sqrt{3}}{2}$.' },
+    { difficulty: 'hard', question: 'A particle moves along $\\vec{r}(t) = \\langle t^2, 3t \\rangle$.', parts: [
+      { question: 'Find velocity $\\vec{v}(t)$:', accept: ['<2t, 3>', '(2t, 3)'], placeholder: 'Vector', explanation: '$\\vec{v}(t) = \\vec{r}\'(t) = \\langle 2t, 3 \\rangle$.' },
+      { question: 'Find speed $|\\vec{v}(1)|$:', accept: ['sqrt(13)', '3.61'], placeholder: 'Number', explanation: '$|\\vec{v}(1)| = \\sqrt{4 + 9} = \\sqrt{13}$.' }
+    ], completionMessage: 'Speed is the magnitude of velocity: $|\\vec{v}| = \\sqrt{v_x^2 + v_y^2}$.' }
           ], completionMessage: 'Triangle area in 3D: half the cross product magnitude of two edge vectors.' }
         ],
         stuckGuide: { html: `<div class="callout callout-tip"><h4>ðŸ§  Vector Operation Selection</h4>
