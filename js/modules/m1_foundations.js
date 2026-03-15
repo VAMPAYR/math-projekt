@@ -96,7 +96,8 @@ topics: [
     { difficulty: 'easy', question: 'The natural numbers start from:', accept: [1, '1'], placeholder: 'Number', explanation: '$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$.' },
     { difficulty: 'easy', question: 'The integers include positive, negative, and:', accept: ['zero', '0'], placeholder: 'Number', explanation: '$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$.' },
     { difficulty: 'hard', question: 'Cantor proved that $|\\mathbb{R}| > |\\mathbb{N}|$ using what technique?', accept: ['diagonalization', 'diagonal argument', 'Cantors diagonal'], placeholder: 'Method', explanation: 'Cantors diagonal argument: construct a real not in any proposed listing.' },
-    { difficulty: 'hard', question: 'Cartesian product: $|\\{1,2\\} \\times \\{a,b,c\\}| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\times B| = |A| \\cdot |B| = 2 \\times 3 = 6$.' }
+    { difficulty: 'hard', question: 'Cartesian product: $|\\{1,2\\} \\times \\{a,b,c\\}| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\times B| = |A| \\cdot |B| = 2 \\times 3 = 6$.' },
+    { difficulty: 'medium', question: 'Symmetric difference $A \\triangle B$ contains elements in $A$ or $B$ but not:', accept: ['both'], placeholder: 'What?', explanation: '$A \\triangle B = (A \\setminus B) \\cup (B \\setminus A)$. Elements in exactly one set.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -276,7 +277,8 @@ topics: [
     { difficulty: 'hard', question: 'The additive identity is:', accept: [0, '0'], placeholder: 'Number', explanation: '$a + 0 = a$ for all $a$. Zero is the additive identity.' },
     { difficulty: 'medium', question: 'The multiplicative identity is:', accept: [1, '1'], placeholder: 'Number', explanation: '$a \\times 1 = a$ for all $a$.' },
     { difficulty: 'easy', question: 'The commutative property: $a + b = $?', accept: ['b+a', 'b + a'], placeholder: 'Expression', explanation: '$a + b = b + a$. Addition is commutative.' },
-    { difficulty: 'hard', question: 'The associative property of multiplication: $(ab)c =$?', accept: ['a(bc)', 'abc'], placeholder: 'Expression', explanation: '$(ab)c = a(bc)$.' }
+    { difficulty: 'hard', question: 'The associative property of multiplication: $(ab)c =$?', accept: ['a(bc)', 'abc'], placeholder: 'Expression', explanation: '$(ab)c = a(bc)$.' },
+    { difficulty: 'medium', question: 'LCM of 12 and 18:', accept: [36, '36'], placeholder: 'Number', explanation: '$12 = 2^2 \\cdot 3$, $18 = 2 \\cdot 3^2$. LCM $= 2^2 \\cdot 3^2 = 36$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -430,7 +432,8 @@ topics: [
     { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' },
     { difficulty: 'medium', question: 'If $|A| = 5$ and $|B| = 3$ and $|A \\cap B| = 2$, then $|A \\cup B| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 5 + 3 - 2 = 6$.' },
     { difficulty: 'hard', question: 'Power set of $\\{a\\}$ has elements:', accept: ['2', 2], placeholder: 'Number', explanation: '$\\mathcal{P}(\\{a\\}) = \\{\\emptyset, \\{a\\}\\}$. Two elements.' },
-    { difficulty: 'medium', question: '$A \\setminus B$ is read as:', accept: ['A minus B', 'A set minus B', 'A without B'], placeholder: 'Name', explanation: 'Set difference: elements in $A$ not in $B$.' }
+    { difficulty: 'medium', question: '$A \\setminus B$ is read as:', accept: ['A minus B', 'A set minus B', 'A without B'], placeholder: 'Name', explanation: 'Set difference: elements in $A$ not in $B$.' },
+    { difficulty: 'hard', question: 'A relation that is reflexive, symmetric, and transitive is an:', accept: ['equivalence relation'], placeholder: 'Name', explanation: 'Equivalence relation: partitions a set into equivalence classes.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [

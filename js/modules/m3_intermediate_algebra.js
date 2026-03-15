@@ -109,7 +109,8 @@ topics: [
     { difficulty: 'easy', question: '$x^0 =$? (for $x \\neq 0$)', accept: [1, '1'], placeholder: 'Number', explanation: 'Any nonzero number to the power 0 equals 1.' },
     { difficulty: 'hard', question: 'Negative exponent: $5^{-2} =$?', accept: ['1/25', '0.04'], placeholder: 'Number', explanation: '$5^{-2} = 1/5^2 = 1/25$.' },
     { difficulty: 'easy', question: '$(xy)^3 =$?', accept: ['x^3y^3', 'x3y3'], placeholder: 'Expression', explanation: 'Power of a product: $(xy)^3 = x^3 y^3$.' },
-    { difficulty: 'medium', question: 'Scientific notation: $4500 =$?', accept: ['4.5 x 10^3', '4.5e3', '4.5*10^3'], placeholder: 'Notation', explanation: '$4500 = 4.5 \\times 10^3$.' }
+    { difficulty: 'medium', question: 'Scientific notation: $4500 =$?', accept: ['4.5 x 10^3', '4.5e3', '4.5*10^3'], placeholder: 'Notation', explanation: '$4500 = 4.5 \\times 10^3$.' },
+    { difficulty: 'hard', question: 'Fractional exponent: $27^{2/3} =$?', accept: [9, '9'], placeholder: 'Number', explanation: '$27^{1/3} = 3$. $3^2 = 9$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -279,7 +280,8 @@ topics: [
     { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6 =$?', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'Factored', explanation: 'Find two numbers that multiply to 6 and add to 5: 2 and 3.' },
     { difficulty: 'easy', question: 'Factor out GCF: $10x + 15 =$?', accept: ['5(2x+3)', '5(2x + 3)'], placeholder: 'Factored', explanation: 'GCF = 5. $5(2x + 3)$.' },
     { difficulty: 'medium', question: 'Factor: $x^2 - x - 12 =$?', accept: ['(x-4)(x+3)', '(x+3)(x-4)'], placeholder: 'Factored', explanation: 'Numbers: $-4 \\times 3 = -12$, $-4 + 3 = -1$.' },
-    { difficulty: 'hard', question: 'Factor: $x^4 - 16 =$?', accept: ['(x^2-4)(x^2+4)', '(x-2)(x+2)(x^2+4)'], placeholder: 'Factored', explanation: 'Difference of squares twice: $(x^2-4)(x^2+4) = (x-2)(x+2)(x^2+4)$.' }
+    { difficulty: 'hard', question: 'Factor: $x^4 - 16 =$?', accept: ['(x^2-4)(x^2+4)', '(x-2)(x+2)(x^2+4)'], placeholder: 'Factored', explanation: 'Difference of squares twice: $(x^2-4)(x^2+4) = (x-2)(x+2)(x^2+4)$.' },
+    { difficulty: 'medium', question: 'Factor using grouping: $x^3 + 2x^2 + 3x + 6 =$?', accept: ['(x^2+3)(x+2)', '(x+2)(x^2+3)'], placeholder: 'Factored', explanation: '$x^2(x+2) + 3(x+2) = (x^2+3)(x+2)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -410,7 +412,8 @@ topics: [
     { difficulty: 'easy', question: 'A rational expression is undefined when the denominator equals:', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Division by zero is undefined.' },
     { difficulty: 'hard', question: 'Find vertical asymptote: $f(x) = \\frac{1}{x+2}$:', accept: ['x = -2', 'x=-2', '-2'], placeholder: 'x = ?', explanation: 'Set denominator = 0: $x + 2 = 0$, $x = -2$.' },
     { difficulty: 'easy', question: 'Simplify: $\\frac{6x}{3} =$?', accept: ['2x'], placeholder: 'Expression', explanation: '$6x / 3 = 2x$.' },
-    { difficulty: 'hard', question: 'Solve: $\\frac{x}{x-1} = \\frac{2}{x-1}$. $x =$?', accept: [2, '2'], placeholder: 'Number', explanation: 'Multiply both sides by $(x-1)$: $x = 2$. Check: $x \\neq 1$. Valid.' }
+    { difficulty: 'hard', question: 'Solve: $\\frac{x}{x-1} = \\frac{2}{x-1}$. $x =$?', accept: [2, '2'], placeholder: 'Number', explanation: 'Multiply both sides by $(x-1)$: $x = 2$. Check: $x \\neq 1$. Valid.' },
+    { difficulty: 'medium', question: 'Horizontal asymptote of $\\frac{3x}{x + 1}$:', accept: ['y=3', 'y = 3', '3'], placeholder: 'Equation', explanation: 'Same degree: ratio = $3/1 = 3$. HA: $y = 3$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [
