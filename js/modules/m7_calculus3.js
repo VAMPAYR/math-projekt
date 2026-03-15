@@ -171,7 +171,8 @@
     { difficulty: 'medium', question: 'Projection of $\\langle 3, 4 \\rangle$ onto $\\langle 1, 0 \\rangle$:', accept: ['<3,0>', '(3,0)', '<3, 0>'], placeholder: 'Vector', explanation: '$\\text{proj}_{\\hat{i}} \\langle 3,4 \\rangle = \\langle 3, 0 \\rangle$.' },
     { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' },
     { difficulty: 'easy', question: 'A vector with magnitude 1 is called a:', accept: ['unit vector'], placeholder: 'Name', explanation: 'Unit vector: $|\\hat{v}| = 1$.' },
-    { difficulty: 'medium', question: 'Equation of plane with normal $\\langle 1,2,3 \\rangle$ through $(0,0,0)$:', accept: ['x+2y+3z=0'], placeholder: 'Equation', explanation: '$1(x-0) + 2(y-0) + 3(z-0) = 0$.' }
+    { difficulty: 'medium', question: 'Equation of plane with normal $\\langle 1,2,3 \\rangle$ through $(0,0,0)$:', accept: ['x+2y+3z=0'], placeholder: 'Equation', explanation: '$1(x-0) + 2(y-0) + 3(z-0) = 0$.' },
+    { difficulty: 'hard', question: 'For $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$, the curve is called a:', accept: ['helix'], placeholder: 'Name', explanation: 'A helix spirals around the $z$-axis.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
