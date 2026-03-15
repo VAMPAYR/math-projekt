@@ -189,7 +189,9 @@
         { difficulty: 'medium', question: 'A triangle has angles $x$, $2x$, and $3x$. Find $x$:', accept: [30, '30', '30°'], placeholder: 'Degrees', hint: '<p>$x + 2x + 3x = 180$.</p>', explanation: '$6x = 180$, $x = 30°$. Angles: $30°, 60°, 90°$ (a 30-60-90 triangle).' },
         { difficulty: 'hard', question: 'In a parallelogram, one angle is $65°$. Find the adjacent angle:', accept: [115, '115', '115°'], placeholder: 'Degrees', explanation: 'Adjacent angles in a parallelogram are supplementary: $180° - 65° = 115°$.' },
     { difficulty: 'easy', question: 'If an angle is $40°$, its supplement is:', accept: [140, '140'], placeholder: 'Degrees', explanation: '$180 - 40 = 140$.' },
-    { difficulty: 'medium', question: 'Two complementary angles differ by $20°$. Find the larger:', accept: [55, '55'], placeholder: 'Degrees', explanation: '$x + (x - 20) = 90$. $2x = 110$. $x = 55$.' }
+    { difficulty: 'medium', question: 'Two complementary angles differ by $20°$. Find the larger:', accept: [55, '55'], placeholder: 'Degrees', explanation: '$x + (x - 20) = 90$. $2x = 110$. $x = 55$.' },
+    { difficulty: 'medium', question: 'Vertical angles are always:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Vertical angles (opposite angles formed by intersecting lines) are always equal.' },
+    { difficulty: 'hard', question: 'Sum of interior angles of a hexagon:', accept: [720, '720'], placeholder: 'Degrees', explanation: '$(n-2) \\times 180 = 4 \\times 180 = 720°$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -505,7 +507,8 @@
         { difficulty: 'medium', question: 'An arc subtends $60°$ in a circle of radius $9$. Arc length (exact):', accept: ['3π', '3pi'], placeholder: 'use π', hint: '<p>$s = r\\theta$ with $\\theta$ in radians.</p>', explanation: '$60° = \\pi/3$ rad. $s = 9(\\pi/3) = 3\\pi$.' },
         { difficulty: 'hard', question: 'A sector has area $50\\pi$ cm² and radius $10$ cm. Central angle in degrees:', accept: [180, '180', '180°'], placeholder: 'Degrees', explanation: '$A = \\frac{1}{2}r^2\\theta$. $50\\pi = \\frac{1}{2}(100)\\theta$. $\\theta = \\pi$ rad $= 180°$.' },
     { difficulty: 'easy', question: 'Perimeter of a square with side 7:', accept: [28, '28'], placeholder: 'Units', explanation: '$4 \\times 7 = 28$.' },
-    { difficulty: 'medium', question: 'Area of equilateral triangle with side 6:', accept: ['9sqrt(3)', '15.59', '9\\sqrt{3}'], placeholder: 'Area', explanation: '$A = \\frac{\\sqrt{3}}{4} \\cdot 6^2 = 9\\sqrt{3}$.' }
+    { difficulty: 'medium', question: 'Area of equilateral triangle with side 6:', accept: ['9sqrt(3)', '15.59', '9\\sqrt{3}'], placeholder: 'Area', explanation: '$A = \\frac{\\sqrt{3}}{4} \\cdot 6^2 = 9\\sqrt{3}$.' },
+    { difficulty: 'hard', question: 'Area of regular hexagon with side 4:', accept: ['24sqrt(3)', '41.57'], placeholder: 'Area', explanation: '$A = \\frac{3\\sqrt{3}}{2}s^2 = \\frac{3\\sqrt{3}}{2}(16) = 24\\sqrt{3}$.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

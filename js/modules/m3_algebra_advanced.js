@@ -139,7 +139,9 @@
     { difficulty: 'medium', question: 'The remainder when $x^3 + 2x - 1$ is divided by $(x - 1)$:', accept: [2, '2'], placeholder: 'Number', explanation: 'Remainder theorem: $f(1) = 1 + 2 - 1 = 2$.' },
     { difficulty: 'hard', question: 'Descartes\' rule: $f(x) = x^3 - 3x + 2$. Number of sign changes:', accept: [2, '2'], placeholder: 'Number', explanation: 'Coefficients: $+, -, +$. Two sign changes: at most 2 positive real roots.' },
     { difficulty: 'medium', question: 'Synthetic division of $x^3 + 2x^2 - x - 2$ by $(x - 1)$ gives remainder:', accept: [0, '0'], placeholder: 'Number', explanation: '$f(1) = 1 + 2 - 1 - 2 = 0$. No remainder.' },
-    { difficulty: 'hard', question: 'Number of complex roots of $x^5 + 1 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Degree 5: exactly 5 roots (counting multiplicity). One real root $x = -1$, four complex.' }
+    { difficulty: 'hard', question: 'Number of complex roots of $x^5 + 1 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Degree 5: exactly 5 roots (counting multiplicity). One real root $x = -1$, four complex.' },
+    { difficulty: 'medium', question: 'Leading coefficient of $-5x^3 + 2x^2 + 1$:', accept: [-5, '-5'], placeholder: 'Number', explanation: 'Leading coefficient is the coefficient of the highest-degree term: $-5$.' },
+    { difficulty: 'hard', question: 'If $f(x) = x^3 - 6x^2 + 11x - 6$, then $f(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$1 - 6 + 11 - 6 = 0$. So $x = 1$ is a root.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -621,7 +623,8 @@
     { difficulty: 'hard', question: 'Solve: $\\log_2(x) + \\log_2(4) = 5$. $x =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$\\log_2(4x) = 5$. $4x = 32$. $x = 8$.' },
     { difficulty: 'easy', question: '$2^3 =$?', accept: [8, '8'], placeholder: 'Number', explanation: '$2 \\times 2 \\times 2 = 8$.' },
     { difficulty: 'medium', question: 'Solve: $e^{2x} = e^6$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Equal bases: $2x = 6$. $x = 3$.' },
-    { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' }
+    { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' },
+    { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

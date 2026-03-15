@@ -103,7 +103,9 @@ topics: [
     { difficulty: 'easy', question: 'Simplify: $(x^3)^2 =$?', accept: ['x^6', 'x6'], placeholder: 'Expression', explanation: '$(x^3)^2 = x^{3 \\cdot 2} = x^6$.' },
     { difficulty: 'medium', question: '$\\frac{x^5}{x^2} =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$x^{5-2} = x^3$.' },
     { difficulty: 'medium', question: 'Simplify: $\\frac{x^{-2}}{x^3} =$?', accept: ['x^{-5}', '1/x^5', 'x^-5'], placeholder: 'Expression', explanation: '$x^{-2-3} = x^{-5} = 1/x^5$.' },
-    { difficulty: 'hard', question: 'Simplify: $(x^{1/2})^6 =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$(x^{1/2})^6 = x^{6/2} = x^3$.' }
+    { difficulty: 'hard', question: 'Simplify: $(x^{1/2})^6 =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$(x^{1/2})^6 = x^{6/2} = x^3$.' },
+    { difficulty: 'medium', question: 'Simplify: $(2x^3)^2 =$?', accept: ['4x^6', '4x6'], placeholder: 'Expression', explanation: '$2^2 \\cdot (x^3)^2 = 4x^6$.' },
+    { difficulty: 'hard', question: 'Simplify: $\\frac{x^5 \\cdot x^{-2}}{x^2} =$?', accept: ['x', 'x^1'], placeholder: 'Expression', explanation: '$x^{5-2-2} = x^1 = x$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -262,7 +264,8 @@ topics: [
     { difficulty: 'easy', question: 'Factor: $x^2 - 9 =$?', accept: ['(x-3)(x+3)', '(x+3)(x-3)'], placeholder: 'Factored form', explanation: 'Difference of squares: $a^2 - b^2 = (a-b)(a+b)$.' },
     { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6 =$?', accept: ['(x+2)(x+3)', '(x+3)(x+2)'], placeholder: 'Factored form', explanation: 'Find two numbers that multiply to 6 and add to 5: 2 and 3.' },
     { difficulty: 'hard', question: 'Factor completely: $x^3 - x^2 - 6x =$?', accept: ['x(x-3)(x+2)', 'x(x+2)(x-3)'], placeholder: 'Factored', explanation: '$x(x^2 - x - 6) = x(x-3)(x+2)$.' },
-    { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.' }
+    { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.' },
+    { difficulty: 'medium', question: 'GCF of $6x^3 + 12x^2 - 18x$:', accept: ['6x'], placeholder: 'Expression', explanation: '$6x(x^2 + 2x - 3)$. GCF is $6x$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [

@@ -175,7 +175,9 @@
     { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^{-1}(x)+C'], placeholder: 'Expression', explanation: 'This is $\\arcsin(x) + C$.' },
     { difficulty: 'medium', question: '$\\int \\frac{1}{x+1}\\,dx =$?', accept: ['ln|x+1|+C', 'ln(x+1)+C'], placeholder: 'Expression', explanation: '$\\ln|x+1| + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{1}{x^2+1}\\,dx =$?', accept: ['arctan(x)+C', 'tan^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arctan(x) + C$.' },
-    { difficulty: 'hard', question: '$\\int \\tan(x)\\,dx =$?', accept: ['-ln|cos(x)|+C', 'ln|sec(x)|+C'], placeholder: 'Expression', explanation: '$\\int \\tan x\\,dx = -\\ln|\\cos x| + C = \\ln|\\sec x| + C$.' }
+    { difficulty: 'hard', question: '$\\int \\tan(x)\\,dx =$?', accept: ['-ln|cos(x)|+C', 'ln|sec(x)|+C'], placeholder: 'Expression', explanation: '$\\int \\tan x\\,dx = -\\ln|\\cos x| + C = \\ln|\\sec x| + C$.' },
+    { difficulty: 'medium', question: '$\\int x^{-1/2}\\,dx =$?', accept: ['2sqrt(x)+C', '2x^(1/2)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\frac{x^{1/2}}{1/2} + C = 2\\sqrt{x} + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{x}{(x^2+1)^2}\\,dx =$?', accept: ['-1/(2(x^2+1))+C'], placeholder: 'Expression', explanation: 'Let $u = x^2+1$: $\\frac{1}{2}\\int u^{-2}\\,du = -\\frac{1}{2u} + C$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -362,7 +364,8 @@
     { difficulty: 'easy', question: 'Net displacement from velocity $v(t) = 4$ over $[0, 3]$:', accept: [12, '12'], placeholder: 'Number', explanation: '$\\int_0^3 4\\,dt = 12$.' },
     { difficulty: 'hard', question: 'Area between $y = x^2$ and $y = x$ from $x = 0$ to $x = 1$:', accept: ['1/6', '0.167'], placeholder: 'Area', explanation: '$\\int_0^1 (x - x^2)\\,dx = [x^2/2 - x^3/3]_0^1 = 1/2 - 1/3 = 1/6$.' },
     { difficulty: 'medium', question: 'If $f(x) = 3$ on $[0, 5]$, then $\\int_0^5 f(x)\\,dx =$?', accept: [15, '15'], placeholder: 'Number', explanation: 'Rectangle: $3 \\times 5 = 15$.' },
-    { difficulty: 'hard', question: 'Average value of $\\sin(x)$ on $[0, \\pi]$:', accept: ['2/pi', '0.637'], placeholder: 'Number', explanation: '$\\frac{1}{\\pi}\\int_0^{\\pi} \\sin x\\,dx = \\frac{1}{\\pi}[-\\cos x]_0^{\\pi} = \\frac{2}{\\pi}$.' }
+    { difficulty: 'hard', question: 'Average value of $\\sin(x)$ on $[0, \\pi]$:', accept: ['2/pi', '0.637'], placeholder: 'Number', explanation: '$\\frac{1}{\\pi}\\int_0^{\\pi} \\sin x\\,dx = \\frac{1}{\\pi}[-\\cos x]_0^{\\pi} = \\frac{2}{\\pi}$.' },
+    { difficulty: 'hard', question: 'Disc method volume: $y = x^2$ revolved about $x$-axis from $x=0$ to $x=2$:', accept: ['32pi/5'], placeholder: 'Volume', explanation: '$V = \\pi\\int_0^2 x^4\\,dx = \\pi[x^5/5]_0^2 = 32\\pi/5$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [

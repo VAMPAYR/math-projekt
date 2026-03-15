@@ -172,7 +172,9 @@
     { difficulty: 'hard', question: 'Parametric line through $(1,2,3)$ in direction $\\langle 1,0,-1 \\rangle$: $z(t) =$?', accept: ['3-t', '3 - t'], placeholder: 'Expression', explanation: '$z = 3 + (-1)t = 3 - t$.' },
     { difficulty: 'easy', question: 'A vector with magnitude 1 is called a:', accept: ['unit vector'], placeholder: 'Name', explanation: 'Unit vector: $|\\hat{v}| = 1$.' },
     { difficulty: 'medium', question: 'Equation of plane with normal $\\langle 1,2,3 \\rangle$ through $(0,0,0)$:', accept: ['x+2y+3z=0'], placeholder: 'Equation', explanation: '$1(x-0) + 2(y-0) + 3(z-0) = 0$.' },
-    { difficulty: 'hard', question: 'For $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$, the curve is called a:', accept: ['helix'], placeholder: 'Name', explanation: 'A helix spirals around the $z$-axis.' }
+    { difficulty: 'hard', question: 'For $\\vec{r}(t) = \\langle \\cos t, \\sin t, t \\rangle$, the curve is called a:', accept: ['helix'], placeholder: 'Name', explanation: 'A helix spirals around the $z$-axis.' },
+    { difficulty: 'medium', question: 'Two vectors are orthogonal when their dot product equals:', accept: [0, '0'], placeholder: 'Number', explanation: 'Orthogonal: $\\vec{a} \\cdot \\vec{b} = 0$.' },
+    { difficulty: 'hard', question: 'Area of parallelogram formed by $\\vec{a} = \\langle 1,0,0 \\rangle$ and $\\vec{b} = \\langle 0,2,0 \\rangle$:', accept: [2, '2'], placeholder: 'Area', explanation: '$|\\vec{a} \\times \\vec{b}| = |\\langle 0,0,2 \\rangle| = 2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -313,7 +315,8 @@
     { difficulty: 'medium', question: 'Find $f_{xy}$ for $f(x,y) = x^2y + xy^3$:', accept: ['2x+3y^2', '2x + 3y^2'], placeholder: 'Expression', explanation: '$f_x = 2xy + y^3$. $f_{xy} = 2x + 3y^2$.' },
     { difficulty: 'medium', question: 'Gradient of $f(x,y) = x^2 + y^2$ at $(1, 1)$:', accept: ['<2,2>', '(2,2)', '<2, 2>'], placeholder: 'Vector', explanation: '$\\nabla f = \\langle 2x, 2y \\rangle$. At $(1,1)$: $\\langle 2, 2 \\rangle$.' },
     { difficulty: 'hard', question: 'Directional derivative of $f = xy$ at $(1,1)$ in direction $\\langle 1,1 \\rangle$:', accept: ['sqrt(2)', '1.41'], placeholder: 'Number', explanation: '$\\nabla f = \\langle y, x \\rangle = \\langle 1,1 \\rangle$. Unit: $\\langle 1/\\sqrt{2}, 1/\\sqrt{2} \\rangle$. $D_u f = 2/\\sqrt{2} = \\sqrt{2}$.' },
-    { difficulty: 'hard', question: 'Critical point of $f(x,y) = x^2 + y^2 - 2x$: $(x,y) =$?', accept: ['(1,0)'], placeholder: 'Point', explanation: '$f_x = 2x-2 = 0 \\Rightarrow x=1$. $f_y = 2y = 0 \\Rightarrow y=0$.' }
+    { difficulty: 'hard', question: 'Critical point of $f(x,y) = x^2 + y^2 - 2x$: $(x,y) =$?', accept: ['(1,0)'], placeholder: 'Point', explanation: '$f_x = 2x-2 = 0 \\Rightarrow x=1$. $f_y = 2y = 0 \\Rightarrow y=0$.' },
+    { difficulty: 'hard', question: 'Laplacian of $f = x^2 + y^2$: $\\nabla^2 f =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$f_{xx} = 2$, $f_{yy} = 2$. $\\nabla^2 f = 2 + 2 = 4$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [

@@ -112,7 +112,9 @@ topics: [
     { difficulty: 'medium', question: 'For $\\vec{F} = \\langle x, y \\rangle$: is this conservative?', accept: ['yes'], placeholder: 'yes/no', explanation: '$\\vec{F} = \\nabla(\\frac{x^2+y^2}{2})$. Potential function exists. Conservative.' },
     { difficulty: 'hard', question: 'Potential function for $\\vec{F} = \\langle 2x, 3y^2 \\rangle$:', accept: ['x^2+y^3', 'x^2 + y^3'], placeholder: 'Function', explanation: '$\\int 2x\\,dx = x^2$. $\\int 3y^2\\,dy = y^3$. $\\phi = x^2 + y^3$.' },
     { difficulty: 'hard', question: 'Flux of $\\vec{F} = \\langle x,y,z \\rangle$ through unit sphere:', accept: ['4pi', '12.57'], placeholder: 'Number', explanation: 'Divergence theorem: $\\nabla \\cdot \\vec{F} = 3$. $\\iiint 3\\,dV = 3 \\cdot \\frac{4\\pi}{3} = 4\\pi$.' },
-    { difficulty: 'easy', question: 'The gradient always points in the direction of:', accept: ['steepest ascent', 'greatest increase', 'maximum increase'], placeholder: 'Direction', explanation: 'Gradient points in the direction of steepest ascent of the scalar field.' }
+    { difficulty: 'easy', question: 'The gradient always points in the direction of:', accept: ['steepest ascent', 'greatest increase', 'maximum increase'], placeholder: 'Direction', explanation: 'Gradient points in the direction of steepest ascent of the scalar field.' },
+    { difficulty: 'medium', question: 'A field $\\vec{F}$ with $\\nabla \\cdot \\vec{F} = 0$ everywhere is called:', accept: ['solenoidal', 'incompressible', 'divergence-free'], placeholder: 'Term', explanation: 'Zero divergence everywhere: solenoidal (incompressible).' },
+    { difficulty: 'hard', question: 'For $\\vec{F} = \\nabla \\phi$, what is $\\nabla \\times \\vec{F}$?', accept: ['0', 'zero', '<0,0,0>'], placeholder: 'Value', explanation: 'Curl of a gradient is always zero: $\\nabla \\times (\\nabla \\phi) = \\vec{0}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -247,7 +249,8 @@ topics: [
     { difficulty: 'easy', question: 'For a path $C$: $\\vec{r}(t) = \\langle t, 2t \\rangle$, $0 \\leq t \\leq 1$, find $|\\vec{r}\'(t)|$:', accept: ['sqrt(5)', '2.24'], placeholder: 'Number', explanation: '$\\vec{r}\'(t) = \\langle 1, 2 \\rangle$. $|\\vec{r}\'| = \\sqrt{1+4} = \\sqrt{5}$.' },
     { difficulty: 'hard', question: "Green's theorem relates a line integral to a:", accept: ['double integral', 'area integral'], placeholder: 'Type', explanation: "Green's theorem: $\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y})\\,dA$." },
     { difficulty: 'easy', question: 'Work done by a constant force $F = 5$ over distance $d = 3$:', accept: [15, '15'], placeholder: 'Number', explanation: '$W = F \\cdot d = 5 \\times 3 = 15$.' },
-    { difficulty: 'medium', question: 'For conservative field, work depends only on:', accept: ['endpoints', 'start and end points'], placeholder: 'What?', explanation: 'Path independence: work depends only on endpoints, not the path taken.' }
+    { difficulty: 'medium', question: 'For conservative field, work depends only on:', accept: ['endpoints', 'start and end points'], placeholder: 'What?', explanation: 'Path independence: work depends only on endpoints, not the path taken.' },
+    { difficulty: 'hard', question: 'If $\\vec{F}$ is conservative, $\\oint_C \\vec{F} \\cdot d\\vec{r} =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Conservative: closed loop integral = 0. Path independence.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [

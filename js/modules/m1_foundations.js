@@ -90,7 +90,9 @@ topics: [
     { difficulty: 'medium', question: 'If $|A| = 10$ and $|B| = 7$ and $|A \\cap B| = 3$, what is $|A \\cup B|$?', accept: [14], placeholder: 'Enter a number', hint: '<p>Inclusion-exclusion: $|A \\cup B| = |A| + |B| - |A \\cap B|$.</p>', explanation: '$10 + 7 - 3 = 14$.', solution: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 10 + 7 - 3 = 14$.' },
     { difficulty: 'hard', question: 'How many elements are in $\\mathcal{P}(\\{1,2,3,4,5\\})$?', accept: [32], placeholder: 'Enter a number', explanation: '$2^5 = 32$.' },
     { difficulty: 'easy', question: '$12 \\div 4 =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$12 \\div 4 = 3$.' },
-    { difficulty: 'medium', question: 'What is the GCF of 24 and 36?', accept: [12, '12'], placeholder: 'Number', explanation: '$24 = 2^3 \\cdot 3$, $36 = 2^2 \\cdot 3^2$. GCF $= 2^2 \\cdot 3 = 12$.' }
+    { difficulty: 'medium', question: 'What is the GCF of 24 and 36?', accept: [12, '12'], placeholder: 'Number', explanation: '$24 = 2^3 \\cdot 3$, $36 = 2^2 \\cdot 3^2$. GCF $= 2^2 \\cdot 3 = 12$.' },
+    { difficulty: 'medium', question: 'Is $\\sqrt{2}$ rational or irrational?', accept: ['irrational'], placeholder: 'Type', explanation: '$\\sqrt{2}$ cannot be expressed as a ratio of integers. Its decimal expansion is non-repeating.' },
+    { difficulty: 'hard', question: 'Between which two consecutive integers does $\\sqrt{50}$ lie?', accept: ['7 and 8', '7,8'], placeholder: 'Integers', explanation: '$7^2 = 49 < 50 < 64 = 8^2$. So $7 < \\sqrt{50} < 8$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -404,7 +406,8 @@ topics: [
     { difficulty: 'hard', question: 'Evaluate: $(2 + 3)^2 - 4 \\times 3 =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$(5)^2 - 12 = 25 - 12 = 13$. Parentheses, exponents, multiplication, subtraction.' },
     { difficulty: 'easy', question: 'If $A = \\{1,2,3\\}$ and $B = \\{2,3,4\\}$, what is $A \\cap B$?', accept: ['{2,3}', '{2, 3}'], placeholder: 'Set', explanation: '$A \\cap B = \\{2, 3\\}$. Elements in both sets.' },
     { difficulty: 'medium', question: 'How many elements in the empty set $\\emptyset$?', accept: [0, '0'], placeholder: 'Number', explanation: 'The empty set contains zero elements.' },
-    { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' }
+    { difficulty: 'hard', question: 'Power set of $\\{a, b\\}$ has how many elements?', accept: [4, '4'], placeholder: 'Number', explanation: '$|P(S)| = 2^n$. $2^2 = 4$. $P = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$.' },
+    { difficulty: 'medium', question: 'If $|A| = 5$ and $|B| = 3$ and $|A \\cap B| = 2$, then $|A \\cup B| =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$|A \\cup B| = |A| + |B| - |A \\cap B| = 5 + 3 - 2 = 6$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Add: $\\frac{3}{8} + \\frac{1}{6}$', steps: [
