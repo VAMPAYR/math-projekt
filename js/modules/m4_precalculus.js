@@ -141,7 +141,9 @@ topics: [
     { difficulty: 'easy', question: '$f(x) = |x|$: $f(-3) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$|-3| = 3$.' },
     { difficulty: 'medium', question: '$f(x) = x^2 - 4$. Zeros:', accept: ['2, -2', '-2, 2'], placeholder: 'Values', explanation: '$x^2 = 4$. $x = \\pm 2$.' },
     { difficulty: 'medium', question: 'Composition: $(f \\circ g)(x) = f(g(x))$. If $f(x) = x^2, g(x) = x+1$: $(f \\circ g)(2) =$?', accept: [9, '9'], placeholder: 'Number', explanation: '$g(2) = 3$. $f(3) = 9$.' },
-    { difficulty: 'hard', question: 'One-to-one function: passes the _____ line test.', accept: ['horizontal'], placeholder: 'Test', explanation: 'Horizontal line test: if any horizontal line intersects at most once, function is one-to-one.' }
+    { difficulty: 'hard', question: 'One-to-one function: passes the _____ line test.', accept: ['horizontal'], placeholder: 'Test', explanation: 'Horizontal line test: if any horizontal line intersects at most once, function is one-to-one.' },
+    { difficulty: 'easy', question: '$f(x) = 3x - 1$. $f^{-1}(x) =$?', accept: ['(x+1)/3'], placeholder: 'Expression', explanation: 'Swap $x,y$: $x = 3y - 1$. $y = (x+1)/3$.' },
+    { difficulty: 'hard', question: 'Transformations: $f(x-3) + 2$ shifts right 3 and up:', accept: [2, '2'], placeholder: 'Units', explanation: '$f(x-h)+k$: right $h$, up $k$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -293,7 +295,9 @@ topics: [
     { difficulty: 'easy', question: 'Multiplying both sides of inequality by a negative number requires:', accept: ['flipping the sign', 'reversing the inequality'], placeholder: 'Action', explanation: 'Multiply by negative: flip $<$ to $>$ (or vice versa).' },
     { difficulty: 'hard', question: 'Descartes\' Rule of Signs for $f(x) = x^3 + x + 1$: positive real roots?', accept: [0, '0'], placeholder: 'Count', explanation: 'No sign changes ($+, +, +$): 0 positive real roots.' },
     { difficulty: 'medium', question: 'Remainder when $x^{100} + 1$ is divided by $(x + 1)$:', accept: [2, '2'], placeholder: 'Number', explanation: '$f(-1) = (-1)^{100} + 1 = 1 + 1 = 2$.' },
-    { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{(x-1)(x-2)} = \\frac{A}{x-1} + \\frac{B}{x-2}$. $A =$?', accept: [-1, '-1'], placeholder: 'Number', explanation: 'Set $x = 1$: $\\frac{1}{(1-2)} = A$. $A = -1$.' }
+    { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{(x-1)(x-2)} = \\frac{A}{x-1} + \\frac{B}{x-2}$. $A =$?', accept: [-1, '-1'], placeholder: 'Number', explanation: 'Set $x = 1$: $\\frac{1}{(1-2)} = A$. $A = -1$.' },
+    { difficulty: 'easy', question: 'Linear factors of $x^2 + x - 6$:', accept: ['(x+3)(x-2)', '(x-2)(x+3)'], placeholder: 'Factors', explanation: 'Roots: $-3, 2$. $(x+3)(x-2)$.' },
+    { difficulty: 'hard', question: 'Long division: $(2x^3 + 3x - 5) \\div (x - 1)$ quotient:', accept: ['2x^2+2x+5'], placeholder: 'Quotient', explanation: 'Synthetic division with $c=1$: $2, 2, 5$. Remainder: 0.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -399,7 +403,9 @@ topics: [
     { difficulty: 'easy', question: '$\\log_5(25) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$5^2 = 25$.' },
     { difficulty: 'hard', question: 'Natural log: $\\ln(e^{-2}) =$?', accept: [-2, '-2'], placeholder: 'Number', explanation: '$\\ln(e^{-2}) = -2$.' },
     { difficulty: 'medium', question: '$\\log(xy) = \\log x + \\log $ ?', accept: ['y', 'log y'], placeholder: 'Term', explanation: 'Product rule: $\\log(xy) = \\log x + \\log y$.' },
-    { difficulty: 'hard', question: 'Solve: $2^{x+1} = 16$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$2^{x+1} = 2^4$. $x + 1 = 4$. $x = 3$.' }
+    { difficulty: 'hard', question: 'Solve: $2^{x+1} = 16$. $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$2^{x+1} = 2^4$. $x + 1 = 4$. $x = 3$.' },
+    { difficulty: 'easy', question: '$\\ln(e) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\ln(e) = 1$ by definition.' },
+    { difficulty: 'hard', question: 'Solve: $\\log_x(64) = 3$. $x =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$x^3 = 64$. $x = 4$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [

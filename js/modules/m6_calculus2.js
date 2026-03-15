@@ -187,7 +187,9 @@
     { difficulty: 'easy', question: '$\\int 3\\sin(x)\\,dx =$?', accept: ['-3cos(x)+C', '-3cosx+C'], placeholder: 'Expression', explanation: '$-3\\cos x + C$.' },
     { difficulty: 'hard', question: 'Integration by parts: $\\int \\ln(x)\\,dx =$?', accept: ['xln(x)-x+C', 'x ln x - x + C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$, $dv = dx$: $x\\ln x - x + C$.' },
     { difficulty: 'medium', question: '$\\int \\frac{e^x}{1+e^x}\\,dx =$?', accept: ['ln(1+e^x)+C', 'ln|1+e^x|+C'], placeholder: 'Expression', explanation: 'Let $u = 1 + e^x$: $\\ln|u| + C$.' },
-    { difficulty: 'hard', question: 'Reduction formula: $\\int \\sin^n x\\,dx$ reduces to $\\int \\sin^{n-2} x\\,dx$. This is called:', accept: ['reduction formula', 'recursive formula'], placeholder: 'Name', explanation: 'Reduction formulas: express $I_n$ in terms of $I_{n-2}$.' }
+    { difficulty: 'hard', question: 'Reduction formula: $\\int \\sin^n x\\,dx$ reduces to $\\int \\sin^{n-2} x\\,dx$. This is called:', accept: ['reduction formula', 'recursive formula'], placeholder: 'Name', explanation: 'Reduction formulas: express $I_n$ in terms of $I_{n-2}$.' },
+    { difficulty: 'easy', question: '$\\int 2e^x\\,dx =$?', accept: ['2e^x+C', '2e^x + C'], placeholder: 'Expression', explanation: '$2e^x + C$.' },
+    { difficulty: 'hard', question: 'Weierstrass substitution: $t = \\tan(x/2)$. Used for integrals involving:', accept: ['rational trig functions', 'sin and cos'], placeholder: 'What?', explanation: 'Weierstrass: converts trig integrals to rational functions of $t$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -389,7 +391,9 @@
     { difficulty: 'easy', question: '$\\int_0^2 x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[x^2/2]_0^2 = 2$.' },
     { difficulty: 'hard', question: 'Work done: $W = \\int_a^b F(x)\\,dx$. If $F(x) = kx$ and spring constant $k = 5$, work from $x=0$ to $x=2$:', accept: [10, '10'], placeholder: 'Joules', explanation: '$\\int_0^2 5x\\,dx = [5x^2/2]_0^2 = 10$.' },
     { difficulty: 'medium', question: 'Hydrostatic pressure: $F = \\int_0^h \\rho g(h-y) w(y)\\,dy$. $\\rho$ is:', accept: ['density', 'fluid density'], placeholder: 'What?', explanation: '$\\rho$ = fluid density (kg/m\u00B3).' },
-    { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\int x \\rho(x)\\,dx}{\\int \\rho(x)\\,dx}$. For uniform density, this simplifies to:', accept: ['centroid', 'geometric center'], placeholder: 'What?', explanation: 'Uniform density: center of mass = centroid of region.' }
+    { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\int x \\rho(x)\\,dx}{\\int \\rho(x)\\,dx}$. For uniform density, this simplifies to:', accept: ['centroid', 'geometric center'], placeholder: 'What?', explanation: 'Uniform density: center of mass = centroid of region.' },
+    { difficulty: 'easy', question: 'Area under $f(x) = 4$ from $x = 1$ to $x = 3$:', accept: [8, '8'], placeholder: 'Number', explanation: '$4 \\times 2 = 8$.' },
+    { difficulty: 'hard', question: 'Moment of inertia: $I = \\int \\rho r^2\\,dr$. $r$ is the distance from:', accept: ['axis of rotation', 'the axis'], placeholder: 'What?', explanation: '$r$ = distance from the rotation axis.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -525,7 +529,9 @@
     { difficulty: 'medium', question: '$\\int \\frac{5}{x}\\,dx =$?', accept: ['5ln|x|+C', '5 ln|x| + C'], placeholder: 'Expression', explanation: '$5\\ln|x| + C$.' },
     { difficulty: 'hard', question: 'Convergent or divergent: $\\int_1^{\\infty} \\frac{1}{x}\\,dx$?', accept: ['divergent', 'diverges'], placeholder: 'Result', explanation: '$[\\ln x]_1^{\\infty} = \\infty$. Diverges.' },
     { difficulty: 'medium', question: '$\\int_0^1 \\frac{1}{x^{1/2}}\\,dx$ is improper because $f$ is undefined at $x =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$x^{-1/2}$ is undefined at $x = 0$. Improper integral (Type II).' },
-    { difficulty: 'hard', question: 'Comparison test: if $0 \\leq f \\leq g$ and $\\int g$ converges, then $\\int f$:', accept: ['converges'], placeholder: 'Result', explanation: 'Direct comparison: bounded by convergent integral implies convergence.' }
+    { difficulty: 'hard', question: 'Comparison test: if $0 \\leq f \\leq g$ and $\\int g$ converges, then $\\int f$:', accept: ['converges'], placeholder: 'Result', explanation: 'Direct comparison: bounded by convergent integral implies convergence.' },
+    { difficulty: 'easy', question: '$\\int_0^{\\pi} \\sin x\\,dx =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$[-\\cos x]_0^{\\pi} = 1 + 1 = 2$.' },
+    { difficulty: 'hard', question: 'Limit comparison: $\\sum a_n \\sim \\sum b_n$ if $\\lim a_n/b_n = L$ where $0 < L <$?', accept: ['infinity', 'inf'], placeholder: 'Value', explanation: '$0 < L < \\infty$: both converge or both diverge.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

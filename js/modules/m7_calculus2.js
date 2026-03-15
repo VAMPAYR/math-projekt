@@ -116,7 +116,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int \\cos(x)\\,dx =$?', accept: ['sin(x)+C', 'sinx+C'], placeholder: 'Expression', explanation: '$\\sin x + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{\\ln x}{x}\\,dx =$?', accept: ['(ln x)^2/2+C', '(lnx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\ln x$: $\\int u\\,du = u^2/2 + C$.' },
     { difficulty: 'medium', question: '$\\int \\sin(x)\\cos(x)\\,dx =$?', accept: ['sin^2(x)/2+C', '-cos^2(x)/2+C', '(sinx)^2/2+C'], placeholder: 'Expression', explanation: 'Let $u = \\sin x$: $u^2/2 + C$. Or use $\\sin(2x)/2$.' },
-    { difficulty: 'hard', question: 'Partial fractions for integration: $\\frac{1}{x^2 - 1} = \\frac{1}{2}\\left(\\frac{1}{x-1} - \\frac{1}{x+1}\\right)$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Verified: $\\frac{1}{2} \\cdot \\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{1}{x^2-1}$.' }
+    { difficulty: 'hard', question: 'Partial fractions for integration: $\\frac{1}{x^2 - 1} = \\frac{1}{2}\\left(\\frac{1}{x-1} - \\frac{1}{x+1}\\right)$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Verified: $\\frac{1}{2} \\cdot \\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{1}{x^2-1}$.' },
+    { difficulty: 'easy', question: '$\\int x^{-1}\\,dx =$?', accept: ['ln|x|+C', 'ln(x)+C'], placeholder: 'Expression', explanation: '$\\ln|x| + C$.' },
+    { difficulty: 'hard', question: '$\\int \\sec x \\tan x\\,dx =$?', accept: ['sec(x)+C', 'secx+C'], placeholder: 'Expression', explanation: '$\\sec x + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -244,7 +246,9 @@ topics: [
     { difficulty: 'easy', question: 'Recursive sequence: $a_1 = 1, a_{n+1} = a_n + 3$. $a_4 =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$a_2 = 4, a_3 = 7, a_4 = 10$.' },
     { difficulty: 'medium', question: 'Does $\\sum_{n=1}^{\\infty} \\frac{1}{n^3}$ converge?', accept: ['yes', 'converges'], placeholder: 'Result', explanation: 'p-series with $p = 3 > 1$: converges.' },
     { difficulty: 'medium', question: 'Alternating series test: $a_n > 0$, $a_n$ decreasing, $a_n \\to 0$. The series:', accept: ['converges'], placeholder: 'Result', explanation: 'Alternating series test (Leibniz): all three conditions met implies convergence.' },
-    { difficulty: 'hard', question: 'Root test: $\\lim \\sqrt[n]{|a_n|} = L$. If $L < 1$:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Root test: $L < 1$ convergence, $L > 1$ divergence.' }
+    { difficulty: 'hard', question: 'Root test: $\\lim \\sqrt[n]{|a_n|} = L$. If $L < 1$:', accept: ['converges', 'converges absolutely'], placeholder: 'Result', explanation: 'Root test: $L < 1$ convergence, $L > 1$ divergence.' },
+    { difficulty: 'easy', question: 'Arithmetic sequence: $a, a+d, a+2d, \\ldots$ Common difference $d$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Arithmetic: constant difference between terms.' },
+    { difficulty: 'hard', question: 'Telescoping series: $\\sum_{n=1}^N \\frac{1}{n(n+1)}$ collapses to:', accept: ['1-1/(N+1)', 'N/(N+1)'], placeholder: 'Result', explanation: 'Partial fractions: $1/n - 1/(n+1)$. Most terms cancel.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -396,7 +400,9 @@ topics: [
     { difficulty: 'easy', question: 'Geometric series with $a = 1, r = 1/2$: $S = \\frac{a}{1-r} =$?', accept: [2, '2'], placeholder: 'Sum', explanation: '$1/(1 - 1/2) = 1/(1/2) = 2$.' },
     { difficulty: 'hard', question: 'Integral test: $\\sum a_n$ and $\\int f(x)\\,dx$ have the same:', accept: ['convergence behavior', 'convergence'], placeholder: 'Property', explanation: 'Integral test: series and integral simultaneously converge or diverge.' },
     { difficulty: 'medium', question: 'MacLaurin series for $\\cos x$ starts: $1 - x^2/2! + x^4/4! -$ ...', accept: ['yes', 'correct', 'true'], placeholder: 'Correct?', explanation: '$\\cos x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{2n}}{(2n)!}$.' },
-    { difficulty: 'hard', question: 'Interval of convergence may differ from radius by:', accept: ['endpoints', 'boundary behavior'], placeholder: 'What?', explanation: 'Radius gives open interval. Endpoints must be tested separately.' }
+    { difficulty: 'hard', question: 'Interval of convergence may differ from radius by:', accept: ['endpoints', 'boundary behavior'], placeholder: 'What?', explanation: 'Radius gives open interval. Endpoints must be tested separately.' },
+    { difficulty: 'easy', question: 'Taylor polynomial of degree $n$ approximates $f$ near $x =$?', accept: ['a', 'center', 'c'], placeholder: 'Point', explanation: '$T_n(x) \\approx f(x)$ near the center $a$.' },
+    { difficulty: 'hard', question: 'Lagrange remainder: $R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$. This bounds:', accept: ['the error', 'truncation error'], placeholder: 'What?', explanation: 'Maximum error when approximating $f$ by its degree-$n$ Taylor polynomial.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

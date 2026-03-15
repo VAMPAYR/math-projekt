@@ -107,7 +107,9 @@ topics: [
     { difficulty: 'easy', question: 'Evaluate: $-5 + 8 =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$-5 + 8 = 3$.' },
     { difficulty: 'hard', question: 'Solve: $2(3x - 1) + 4 = 3(x + 2) + x$. $x =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$6x - 2 + 4 = 3x + 6 + x$. $6x + 2 = 4x + 6$. $2x = 4$. $x = 2$.' },
     { difficulty: 'medium', question: 'Simple interest: $I = Prt$. $P = 1000, r = 0.05, t = 3$. $I =$?', accept: [150, '150'], placeholder: 'Interest', explanation: '$1000(0.05)(3) = 150$.' },
-    { difficulty: 'hard', question: 'Solve: $\\frac{2}{x+1} = \\frac{3}{x+2}$. $x =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Cross multiply: $2(x+2) = 3(x+1)$. $2x+4 = 3x+3$. $x = 1$.' }
+    { difficulty: 'hard', question: 'Solve: $\\frac{2}{x+1} = \\frac{3}{x+2}$. $x =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Cross multiply: $2(x+2) = 3(x+1)$. $2x+4 = 3x+3$. $x = 1$.' },
+    { difficulty: 'easy', question: '$15 - (-3) =$?', accept: [18, '18'], placeholder: 'Number', explanation: 'Subtracting negative = adding: $15 + 3 = 18$.' },
+    { difficulty: 'hard', question: 'Mixture problem: 5L of 20% solution + 3L of 50% solution. Final concentration:', accept: ['31.25%', '31.25'], placeholder: 'Percent', explanation: '$(5 \\times 0.2 + 3 \\times 0.5)/8 = 2.5/8 = 0.3125 = 31.25\\%$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -273,7 +275,9 @@ topics: [
     { difficulty: 'hard', question: 'Parallel lines have _____ slopes.', accept: ['equal', 'the same', 'identical'], placeholder: 'Property', explanation: 'Parallel: same slope. Perpendicular: negative reciprocal slopes.' },
     { difficulty: 'medium', question: 'x-intercept of $y = 2x - 6$:', accept: [3, '3', '(3,0)'], placeholder: 'Number', explanation: 'Set $y = 0$: $2x = 6$. $x = 3$.' },
     { difficulty: 'medium', question: 'Line $y = 3x - 2$ and $y = 3x + 5$ are:', accept: ['parallel'], placeholder: 'Relation', explanation: 'Same slope ($m = 3$): parallel lines.' },
-    { difficulty: 'hard', question: 'Perpendicular to $y = 2x + 1$: slope is:', accept: ['-1/2', '-0.5'], placeholder: 'Number', explanation: 'Perpendicular: negative reciprocal. $-1/2$.' }
+    { difficulty: 'hard', question: 'Perpendicular to $y = 2x + 1$: slope is:', accept: ['-1/2', '-0.5'], placeholder: 'Number', explanation: 'Perpendicular: negative reciprocal. $-1/2$.' },
+    { difficulty: 'easy', question: 'Slope of vertical line:', accept: ['undefined', 'infinity'], placeholder: 'Value', explanation: 'Vertical: $\\Delta x = 0$. Division by zero: undefined.' },
+    { difficulty: 'hard', question: 'Distance between $(1,2)$ and $(4,6)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve $2(x + 3) = 14$ step by step.', steps: [
@@ -392,7 +396,9 @@ topics: [
     { difficulty: 'medium', question: '$(2x)^3 =$?', accept: ['8x^3', '8x3'], placeholder: 'Expression', explanation: '$2^3 \\cdot x^3 = 8x^3$.' },
     { difficulty: 'hard', question: 'Pascal\'s triangle row 4: $1,$ ?, $6,$ ?, $1$', accept: ['4, 4', '1,4,6,4,1'], placeholder: 'Numbers', explanation: 'Row 4: $1, 4, 6, 4, 1$. These are $\\binom{4}{k}$.' },
     { difficulty: 'easy', question: '$(x^3)^2 =$?', accept: ['x^6', 'x6'], placeholder: 'Expression', explanation: 'Power of a power: $x^{3 \\times 2} = x^6$.' },
-    { difficulty: 'hard', question: 'Remainder theorem: $f(x) \\div (x - c)$ has remainder:', accept: ['f(c)'], placeholder: 'Value', explanation: 'Remainder = $f(c)$.' }
+    { difficulty: 'hard', question: 'Remainder theorem: $f(x) \\div (x - c)$ has remainder:', accept: ['f(c)'], placeholder: 'Value', explanation: 'Remainder = $f(c)$.' },
+    { difficulty: 'easy', question: '$(ab)^2 =$?', accept: ['a^2b^2', 'a2b2'], placeholder: 'Expression', explanation: '$(ab)^2 = a^2 b^2$.' },
+    { difficulty: 'hard', question: 'Rational expressions: $\\frac{1}{x-1} - \\frac{1}{x+1} =$?', accept: ['2/((x-1)(x+1))', '2/(x^2-1)'], placeholder: 'Expression', explanation: '$\\frac{(x+1)-(x-1)}{(x-1)(x+1)} = \\frac{2}{x^2-1}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Compute $(-3)(4) + (-2)(-5) - 7$.', steps: [

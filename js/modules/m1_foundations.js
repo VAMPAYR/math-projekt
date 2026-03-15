@@ -101,7 +101,9 @@ topics: [
     { difficulty: 'medium', question: 'Is $\\emptyset$ a subset of itself?', accept: ['yes'], placeholder: 'yes/no', explanation: '$\\emptyset \\subseteq \\emptyset$ is vacuously true.' },
     { difficulty: 'hard', question: '$|\\mathbb{N}| = |\\mathbb{Z}|$? (same cardinality?)', accept: ['yes'], placeholder: 'yes/no', explanation: 'Both are countably infinite. Bijection exists: $f(n) = 0, 1, -1, 2, -2, \\ldots$' },
     { difficulty: 'hard', question: 'Russell\'s paradox: the set of all sets that do not contain themselves leads to a:', accept: ['contradiction', 'paradox'], placeholder: 'Result', explanation: 'Let $R = \\{S : S \\notin S\\}$. If $R \\in R$, then $R \\notin R$ (contradiction). If $R \\notin R$, then $R \\in R$ (contradiction).' },
-    { difficulty: 'medium', question: 'Injection (one-to-one): $f(a) = f(b)$ implies:', accept: ['a = b', 'a=b'], placeholder: 'Conclusion', explanation: 'Injective: distinct inputs map to distinct outputs.' }
+    { difficulty: 'medium', question: 'Injection (one-to-one): $f(a) = f(b)$ implies:', accept: ['a = b', 'a=b'], placeholder: 'Conclusion', explanation: 'Injective: distinct inputs map to distinct outputs.' },
+    { difficulty: 'medium', question: 'Surjection (onto): every element in the codomain has at least one:', accept: ['preimage', 'input'], placeholder: 'What?', explanation: 'Surjective: range = codomain.' },
+    { difficulty: 'hard', question: 'Bijection = injection + surjection. Bijection implies _____ exists.', accept: ['inverse', 'inverse function'], placeholder: 'What?', explanation: 'Bijective: one-to-one and onto. Inverse function exists.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -286,7 +288,9 @@ topics: [
     { difficulty: 'easy', question: '$(-3)(-4) =$?', accept: [12, '12'], placeholder: 'Number', explanation: 'Negative times negative is positive: $12$.' },
     { difficulty: 'medium', question: 'The distributive property: $a(b + c) =$?', accept: ['ab+ac', 'ab + ac'], placeholder: 'Expression', explanation: '$a(b+c) = ab + ac$.' },
     { difficulty: 'hard', question: 'Triangle inequality: $|a + b| \\leq |a| +$ ?', accept: ['|b|', 'abs(b)'], placeholder: 'Expression', explanation: '$|a + b| \\leq |a| + |b|$.' },
-    { difficulty: 'easy', question: 'Order of operations mnemonic: PEMDAS. P stands for:', accept: ['parentheses'], placeholder: 'Word', explanation: 'Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.' }
+    { difficulty: 'easy', question: 'Order of operations mnemonic: PEMDAS. P stands for:', accept: ['parentheses'], placeholder: 'Word', explanation: 'Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.' },
+    { difficulty: 'medium', question: '$(a + b)(a + b) =$?', accept: ['a^2+2ab+b^2'], placeholder: 'Expression', explanation: '$a^2 + 2ab + b^2$. Perfect square trinomial.' },
+    { difficulty: 'hard', question: 'Floor function: $\\lfloor 3.7 \\rfloor =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Floor: greatest integer $\\leq 3.7$. $\\lfloor 3.7 \\rfloor = 3$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -533,7 +537,9 @@ topics: [
     { difficulty: 'medium', question: 'Negation of $\\forall x: P(x)$ is:', accept: ['exists x: not P(x)', '\\exists x: \\neg P(x)'], placeholder: 'Statement', explanation: 'Negate universal: $\\exists x: \\neg P(x)$.' },
     { difficulty: 'hard', question: 'Direct proof template: Assume hypothesis, show _____.', accept: ['conclusion'], placeholder: 'What?', explanation: 'Direct proof: assume $P$, derive $Q$. Done.' },
     { difficulty: 'medium', question: 'Modus ponens: from $p \\to q$ and $p$, conclude:', accept: ['q'], placeholder: 'Conclusion', explanation: 'Modus ponens: if $p \\to q$ is true and $p$ is true, then $q$ is true.' },
-    { difficulty: 'hard', question: 'Proof by induction has two steps: base case and _____ step.', accept: ['inductive', 'induction'], placeholder: 'Step', explanation: 'Base case + inductive step (assume for $n$, prove for $n+1$).' }
+    { difficulty: 'hard', question: 'Proof by induction has two steps: base case and _____ step.', accept: ['inductive', 'induction'], placeholder: 'Step', explanation: 'Base case + inductive step (assume for $n$, prove for $n+1$).' },
+    { difficulty: 'easy', question: 'Propositional variable $p$ can be either:', accept: ['true or false', 'T or F'], placeholder: 'Values', explanation: '$p$ is either true (T) or false (F).' },
+    { difficulty: 'hard', question: 'A tautology is a proposition that is always:', accept: ['true'], placeholder: 'Value', explanation: 'Tautology: true in every possible interpretation.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

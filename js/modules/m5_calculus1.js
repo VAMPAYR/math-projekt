@@ -219,7 +219,9 @@
     { difficulty: 'medium', question: 'One-sided limit: $\\lim_{x \\to 0^+} 1/x =$?', accept: ['+inf', 'infinity', '+infinity'], placeholder: 'Value', explanation: 'As $x \\to 0^+$: $1/x \\to +\\infty$.' },
     { difficulty: 'hard', question: 'Epsilon-delta: $|f(x) - L| < \\epsilon$ whenever $0 < |x - a| < $ ?', accept: ['delta', '\\delta'], placeholder: 'Symbol', explanation: 'Definition: $\\forall \\epsilon > 0, \\exists \\delta > 0: 0 < |x-a| < \\delta \\Rightarrow |f(x)-L| < \\epsilon$.' },
     { difficulty: 'medium', question: 'Squeeze theorem: if $g \\leq f \\leq h$ and $\\lim g = \\lim h = L$, then $\\lim f =$?', accept: ['L'], placeholder: 'Value', explanation: 'Squeeze (Sandwich) theorem: limits agree, so middle function converges to $L$.' },
-    { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Same degree: ratio of leading coefficients: $3/1 = 3$.' }
+    { difficulty: 'hard', question: '$\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 - 5} =$?', accept: [3, '3'], placeholder: 'Number', explanation: 'Same degree: ratio of leading coefficients: $3/1 = 3$.' },
+    { difficulty: 'easy', question: '$\\lim_{x \\to \\infty} 1/x =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$1/x \\to 0$ as $x \\to \\infty$.' },
+    { difficulty: 'hard', question: 'Limit does not exist when left and right limits:', accept: ['differ', 'are not equal', 'disagree'], placeholder: 'Condition', explanation: 'DNE: $\\lim_{x \\to a^-} \\neq \\lim_{x \\to a^+}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -467,7 +469,9 @@
     { difficulty: 'easy', question: '$\\frac{d}{dx}(5x^3) =$?', accept: ['15x^2', '15x2'], placeholder: 'Expression', explanation: '$5 \\cdot 3x^2 = 15x^2$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\sec x) =$?', accept: ['sec(x)tan(x)', '\\sec x \\tan x'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\sec x = \\sec x \\tan x$.' },
     { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} = \\frac{gf\' - fg\'}{$ ? $}$', accept: ['g^2', 'g2'], placeholder: 'Denominator', explanation: 'Quotient rule: $\\frac{gf\' - fg\'}{g^2}$.' },
-    { difficulty: 'hard', question: 'Implicit differentiation: $x^2 + y^2 = 25$. $dy/dx =$?', accept: ['-x/y'], placeholder: 'Expression', explanation: '$2x + 2y(dy/dx) = 0$. $dy/dx = -x/y$.' }
+    { difficulty: 'hard', question: 'Implicit differentiation: $x^2 + y^2 = 25$. $dy/dx =$?', accept: ['-x/y'], placeholder: 'Expression', explanation: '$2x + 2y(dy/dx) = 0$. $dy/dx = -x/y$.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(x^{10}) =$?', accept: ['10x^9', '10x9'], placeholder: 'Expression', explanation: 'Power rule: $10x^9$.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -611,7 +615,9 @@
     { difficulty: 'medium', question: 'Concave down means $f\'\'(x)$ is:', accept: ['negative', '< 0'], placeholder: 'Sign', explanation: '$f\'\'(x) < 0$: concave down.' },
     { difficulty: 'hard', question: 'Linearization of $f$ at $a$: $L(x) = f(a) + f\'(a)(x -$ ?$)$', accept: ['a'], placeholder: 'Value', explanation: '$L(x) = f(a) + f\'(a)(x - a)$.' },
     { difficulty: 'medium', question: 'Inflection point: where $f\'\'$ changes:', accept: ['sign'], placeholder: 'What?', explanation: 'Inflection: concavity changes. $f\'\'$ crosses zero/changes sign.' },
-    { difficulty: 'hard', question: 'IVT: if $f$ is continuous on $[a,b]$ and $f(a) < 0 < f(b)$, then $f(c) = 0$ for some $c$ in:', accept: ['(a,b)', '[a,b]'], placeholder: 'Interval', explanation: 'Intermediate Value Theorem: continuous function achieves every intermediate value.' }
+    { difficulty: 'hard', question: 'IVT: if $f$ is continuous on $[a,b]$ and $f(a) < 0 < f(b)$, then $f(c) = 0$ for some $c$ in:', accept: ['(a,b)', '[a,b]'], placeholder: 'Interval', explanation: 'Intermediate Value Theorem: continuous function achieves every intermediate value.' },
+    { difficulty: 'easy', question: 'Critical number: where $f\'(x) =$?', accept: ['0 or undefined', '0'], placeholder: 'Value', explanation: 'Critical: $f\'(c) = 0$ or $f\'(c)$ DNE.' },
+    { difficulty: 'hard', question: 'EVT: continuous function on $[a,b]$ attains its _____ and minimum.', accept: ['maximum'], placeholder: 'What?', explanation: 'Extreme Value Theorem: continuous on closed interval achieves max and min.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

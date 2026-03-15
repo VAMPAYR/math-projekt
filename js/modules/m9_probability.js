@@ -168,7 +168,9 @@ topics: [
     { difficulty: 'medium', question: 'If $P(A) = 0.4$ and $P(B|A) = 0.5$, then $P(A \\cap B) =$?', accept: ['0.2', '0.20'], placeholder: 'Probability', explanation: '$P(A \\cap B) = P(B|A) \\cdot P(A) = 0.5 \\times 0.4 = 0.2$.' },
     { difficulty: 'hard', question: 'Hypergeometric distribution models sampling _____ replacement.', accept: ['without'], placeholder: 'With/without?', explanation: 'Hypergeometric: sampling without replacement from a finite population.' },
     { difficulty: 'easy', question: 'Two fair coins flipped: $P(\\text{both heads}) =$?', accept: ['1/4', '0.25'], placeholder: 'Probability', explanation: '$P(HH) = (1/2)(1/2) = 1/4$.' },
-    { difficulty: 'hard', question: 'Bayes theorem: $P(A|B) = \\frac{P(B|A)P(A)}{P($ ? $)}$', accept: ['B'], placeholder: 'Event', explanation: '$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$.' }
+    { difficulty: 'hard', question: 'Bayes theorem: $P(A|B) = \\frac{P(B|A)P(A)}{P($ ? $)}$', accept: ['B'], placeholder: 'Event', explanation: '$P(A|B) = \\frac{P(B|A)P(A)}{P(B)}$.' },
+    { difficulty: 'easy', question: '$P(\\text{not A}) = 1 - P($ ? $)$', accept: ['A'], placeholder: 'Event', explanation: 'Complement rule: $P(A^c) = 1 - P(A)$.' },
+    { difficulty: 'hard', question: 'Law of total probability: $P(B) = \\sum_i P(B|A_i)P($ ? $)$', accept: ['A_i'], placeholder: 'Events', explanation: '$P(B) = \\sum_i P(B|A_i)P(A_i)$.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A club has 12 members. We select a president, VP, and secretary.', parts: [
@@ -366,7 +368,9 @@ topics: [
     { difficulty: 'medium', question: 'For Poisson with $\\lambda = 4$: $E[X] =$?', accept: [4, '4'], placeholder: 'Number', explanation: 'Poisson: $E[X] = \\lambda = 4$.' },
     { difficulty: 'hard', question: 'Weak law of large numbers: $\\bar{X}_n \\to$ ? in probability as $n \\to \\infty$.', accept: ['mu', '\\mu', 'the mean'], placeholder: 'Value', explanation: 'WLLN: sample mean converges in probability to population mean $\\mu$.' },
     { difficulty: 'easy', question: 'Median of 1, 3, 5, 7, 9:', accept: [5, '5'], placeholder: 'Number', explanation: 'Middle value: 5.' },
-    { difficulty: 'hard', question: 'For $X$ and $Y$ independent: $\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}($ ? $)$', accept: ['Y'], placeholder: 'Variable', explanation: 'Independent: variances add. $\\text{Var}(X+Y) = \\text{Var}(X) + \\text{Var}(Y)$.' }
+    { difficulty: 'hard', question: 'For $X$ and $Y$ independent: $\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}($ ? $)$', accept: ['Y'], placeholder: 'Variable', explanation: 'Independent: variances add. $\\text{Var}(X+Y) = \\text{Var}(X) + \\text{Var}(Y)$.' },
+    { difficulty: 'easy', question: 'Range = max $-$ min. For data 2, 5, 8, 11: range $=$?', accept: [9, '9'], placeholder: 'Number', explanation: '$11 - 2 = 9$.' },
+    { difficulty: 'hard', question: 'Covariance: $\\text{Cov}(X,Y) = E[XY] - E[X]E[$ ? $]$', accept: ['Y'], placeholder: 'Variable', explanation: '$\\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $P(X = 3)$ for $X \\sim \\text{Bin}(5, 0.4)$.', steps: [

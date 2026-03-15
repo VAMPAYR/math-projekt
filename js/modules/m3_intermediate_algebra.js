@@ -114,7 +114,9 @@ topics: [
     { difficulty: 'easy', question: '$2^4 =$?', accept: [16, '16'], placeholder: 'Number', explanation: '$2 \\times 2 \\times 2 \\times 2 = 16$.' },
     { difficulty: 'medium', question: '$(x/y)^2 =$?', accept: ['x^2/y^2'], placeholder: 'Expression', explanation: '$(x/y)^2 = x^2/y^2$.' },
     { difficulty: 'medium', question: '$(-2)^3 =$?', accept: [-8, '-8'], placeholder: 'Number', explanation: '$(-2)(-2)(-2) = -8$. Odd power of negative is negative.' },
-    { difficulty: 'hard', question: '$\\left(\\frac{3}{2}\\right)^{-2} =$?', accept: ['4/9'], placeholder: 'Number', explanation: '$\\left(\\frac{2}{3}\\right)^2 = 4/9$.' }
+    { difficulty: 'hard', question: '$\\left(\\frac{3}{2}\\right)^{-2} =$?', accept: ['4/9'], placeholder: 'Number', explanation: '$\\left(\\frac{2}{3}\\right)^2 = 4/9$.' },
+    { difficulty: 'easy', question: '$(3^2)^3 =$?', accept: [729, '729'], placeholder: 'Number', explanation: '$3^{2 \\cdot 3} = 3^6 = 729$.' },
+    { difficulty: 'hard', question: '$\\left(\\frac{x^2}{y}\\right)^3 =$?', accept: ['x^6/y^3'], placeholder: 'Expression', explanation: '$x^{6}/y^{3}$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -289,7 +291,9 @@ topics: [
     { difficulty: 'easy', question: 'Factor: $x^2 - 25 =$?', accept: ['(x-5)(x+5)', '(x+5)(x-5)'], placeholder: 'Factored', explanation: 'Difference of squares: $25 = 5^2$.' },
     { difficulty: 'hard', question: 'Factor: $x^3 - 27 =$?', accept: ['(x-3)(x^2+3x+9)'], placeholder: 'Factored', explanation: 'Difference of cubes: $a^3 - b^3 = (a-b)(a^2+ab+b^2)$.' },
     { difficulty: 'medium', question: 'Factor: $2x^2 + 7x + 3 =$?', accept: ['(2x+1)(x+3)', '(x+3)(2x+1)'], placeholder: 'Factored', explanation: 'AC method: $2 \\times 3 = 6$. Pair: $1, 6$. $(2x+1)(x+3)$.' },
-    { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2-ab+b^2)$. $b = 2$.' }
+    { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2-ab+b^2)$. $b = 2$.' },
+    { difficulty: 'easy', question: 'Perfect square trinomial: $x^2 + 10x + 25 =$?', accept: ['(x+5)^2'], placeholder: 'Factored', explanation: '$(x + 5)^2$.' },
+    { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x =$?', accept: ['3x(x-2)(x+2)', '3x(x+2)(x-2)'], placeholder: 'Factored', explanation: '$3x(x^2 - 4) = 3x(x-2)(x+2)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -425,7 +429,9 @@ topics: [
     { difficulty: 'easy', question: 'Simplify: $\\frac{x^2}{x} =$?', accept: ['x'], placeholder: 'Expression', explanation: '$x^{2-1} = x$.' },
     { difficulty: 'hard', question: 'Solve: $\\frac{1}{x} + \\frac{1}{x+1} = \\frac{3}{2}$. Multiply all by $2x(x+1)$:', accept: ['2(x+1)+2x=3x(x+1)'], placeholder: 'Equation', explanation: 'Clear denominators: $2x + 2 + 2x = 3x^2 + 3x$. $3x^2 - x - 2 = 0$.' },
     { difficulty: 'medium', question: 'Hole in $\\frac{x^2-1}{x-1}$ at $x =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\frac{(x-1)(x+1)}{x-1}$. Hole at $x = 1$.' },
-    { difficulty: 'hard', question: 'LCD of $\\frac{1}{x}$ and $\\frac{1}{x+1}$:', accept: ['x(x+1)'], placeholder: 'LCD', explanation: 'Least common denominator: $x(x+1)$.' }
+    { difficulty: 'hard', question: 'LCD of $\\frac{1}{x}$ and $\\frac{1}{x+1}$:', accept: ['x(x+1)'], placeholder: 'LCD', explanation: 'Least common denominator: $x(x+1)$.' },
+    { difficulty: 'easy', question: 'Cross multiply: $\\frac{a}{b} = \\frac{c}{d}$ gives:', accept: ['ad=bc', 'ad = bc'], placeholder: 'Equation', explanation: 'Cross multiplication: $ad = bc$.' },
+    { difficulty: 'hard', question: 'Oblique (slant) asymptote exists when numerator degree exceeds denominator by:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree difference = 1: oblique asymptote (found by polynomial division).' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

@@ -150,7 +150,9 @@
     { difficulty: 'easy', question: 'A linear polynomial has degree:', accept: [1, '1'], placeholder: 'Number', explanation: 'Degree 1: linear.' },
     { difficulty: 'medium', question: 'Multiplicity of root $x = 2$ in $(x-2)^3(x+1)$:', accept: [3, '3'], placeholder: 'Number', explanation: 'Exponent on $(x-2)$: multiplicity 3.' },
     { difficulty: 'medium', question: 'End behavior: even degree, negative leading coefficient. As $x \\to \\pm\\infty$, $f \\to$:', accept: ['-infinity', '-inf'], placeholder: 'Direction', explanation: 'Even degree + negative LC: both ends go to $-\\infty$.' },
-    { difficulty: 'hard', question: 'Synthetic division of $x^3 - 2x^2 + x - 3$ by $(x - 1)$: remainder:', accept: [-3, '-3'], placeholder: 'Number', explanation: '$f(1) = 1 - 2 + 1 - 3 = -3$.' }
+    { difficulty: 'hard', question: 'Synthetic division of $x^3 - 2x^2 + x - 3$ by $(x - 1)$: remainder:', accept: [-3, '-3'], placeholder: 'Number', explanation: '$f(1) = 1 - 2 + 1 - 3 = -3$.' },
+    { difficulty: 'easy', question: 'Constant polynomial has degree:', accept: [0, '0'], placeholder: 'Number', explanation: 'Degree 0: constant (like $y = 5$).' },
+    { difficulty: 'hard', question: 'Descartes: $f(x) = x^4 - x^2 + 1$ sign changes:', accept: [2, '2'], placeholder: 'Count', explanation: '$+, -, +$: two sign changes. At most 2 positive real roots.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -418,7 +420,9 @@
     { difficulty: 'easy', question: 'Roots of $x^2 - 1 = 0$:', accept: ['1, -1', '-1, 1'], placeholder: 'Roots', explanation: '$(x-1)(x+1) = 0$. $x = \\pm 1$.' },
     { difficulty: 'medium', question: 'Vertex form $y = 2(x-3)^2 + 1$: vertex is:', accept: ['(3,1)', '(3, 1)'], placeholder: 'Point', explanation: 'Vertex: $(h, k) = (3, 1)$.' },
     { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ? $= (x + 3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(b/2)^2 = (6/2)^2 = 9$.' },
-    { difficulty: 'hard', question: 'Vertex of $y = x^2 - 8x + 12$:', accept: ['(4,-4)', '(4, -4)'], placeholder: 'Point', explanation: '$x = -(-8)/(2) = 4$. $y = 16 - 32 + 12 = -4$.' }
+    { difficulty: 'hard', question: 'Vertex of $y = x^2 - 8x + 12$:', accept: ['(4,-4)', '(4, -4)'], placeholder: 'Point', explanation: '$x = -(-8)/(2) = 4$. $y = 16 - 32 + 12 = -4$.' },
+    { difficulty: 'easy', question: 'The $x$-coordinate of the vertex is $-b/(2a)$. For $y = 2x^2 + 4x + 1$, it is:', accept: [-1, '-1'], placeholder: 'Number', explanation: '$-4/(2 \\cdot 2) = -1$.' },
+    { difficulty: 'hard', question: 'Quadratic opens upward when $a$ is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$a > 0$: opens upward. $a < 0$: opens downward.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -657,7 +661,9 @@
     { difficulty: 'easy', question: '$\\log_b(b) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$b^1 = b$. $\\log_b(b) = 1$.' },
     { difficulty: 'medium', question: 'Growth rate $5\\%$: multiplier is:', accept: ['1.05'], placeholder: 'Number', explanation: '$1 + 0.05 = 1.05$.' },
     { difficulty: 'medium', question: 'Half-life formula uses base:', accept: ['1/2', '0.5'], placeholder: 'Number', explanation: '$A(t) = A_0 (1/2)^{t/h}$. Base is $1/2$.' },
-    { difficulty: 'hard', question: 'Solve: $\\log_3(x) = 4$. $x =$?', accept: [81, '81'], placeholder: 'Number', explanation: '$3^4 = 81$.' }
+    { difficulty: 'hard', question: 'Solve: $\\log_3(x) = 4$. $x =$?', accept: [81, '81'], placeholder: 'Number', explanation: '$3^4 = 81$.' },
+    { difficulty: 'easy', question: 'Common log: $\\log$ without a base means base:', accept: [10, '10'], placeholder: 'Base', explanation: '$\\log = \\log_{10}$.' },
+    { difficulty: 'hard', question: 'Population growth: $P(t) = P_0 e^{kt}$. What type of growth?', accept: ['exponential'], placeholder: 'Type', explanation: 'Exponential growth: $e^{kt}$ with $k > 0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

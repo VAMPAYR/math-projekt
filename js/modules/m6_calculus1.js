@@ -111,7 +111,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int 5x^4\\,dx =$?', accept: ['x^5+C', 'x^5 + C'], placeholder: 'Expression', explanation: '$5 \\cdot x^5/5 + C = x^5 + C$.' },
     { difficulty: 'hard', question: '$\\int \\frac{1}{1+x^2}\\,dx =$?', accept: ['arctan(x)+C', 'tan^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arctan(x) + C$.' },
     { difficulty: 'medium', question: '$\\int e^{3x}\\,dx =$?', accept: ['e^(3x)/3+C', '(1/3)e^(3x)+C'], placeholder: 'Expression', explanation: '$\\frac{1}{3}e^{3x} + C$.' },
-    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arcsin(x) + C$.' }
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx =$?', accept: ['arcsin(x)+C', 'sin^(-1)(x)+C'], placeholder: 'Expression', explanation: '$\\arcsin(x) + C$.' },
+    { difficulty: 'easy', question: '$\\int x^{-2}\\,dx =$?', accept: ['-1/x+C', '-x^(-1)+C'], placeholder: 'Expression', explanation: '$x^{-1}/(-1) + C = -1/x + C$.' },
+    { difficulty: 'hard', question: '$\\int \\frac{1}{\\sqrt{x}}\\,dx =$?', accept: ['2sqrt(x)+C', '2\\sqrt{x}+C'], placeholder: 'Expression', explanation: '$\\int x^{-1/2}\\,dx = 2x^{1/2} + C$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -250,7 +252,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int_0^3 2\\,dx =$?', accept: [6, '6'], placeholder: 'Number', explanation: '$2 \\times 3 = 6$.' },
     { difficulty: 'medium', question: '$\\int_0^1 x^3\\,dx =$?', accept: ['1/4', '0.25'], placeholder: 'Number', explanation: '$[x^4/4]_0^1 = 1/4$.' },
     { difficulty: 'medium', question: 'Simpson\'s rule requires $n$ to be:', accept: ['even'], placeholder: 'Property', explanation: 'Simpson\'s rule: $n$ must be even (pairs of subintervals).' },
-    { difficulty: 'hard', question: 'Error bound for trapezoidal rule involves max of $|f\'\'(x)|$ on $[a,b]$:', accept: ['yes', 'true'], placeholder: 'True/false', explanation: '$E_T \\leq \\frac{(b-a)^3}{12n^2} \\max |f\'\'|$.' }
+    { difficulty: 'hard', question: 'Error bound for trapezoidal rule involves max of $|f\'\'(x)|$ on $[a,b]$:', accept: ['yes', 'true'], placeholder: 'True/false', explanation: '$E_T \\leq \\frac{(b-a)^3}{12n^2} \\max |f\'\'|$.' },
+    { difficulty: 'easy', question: '$\\int_0^1 1\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[x]_0^1 = 1$.' },
+    { difficulty: 'hard', question: '$\\int_0^{\\pi} \\cos x\\,dx =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$[\\sin x]_0^{\\pi} = 0 - 0 = 0$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Differentiate $f(x) = x^3 \\cdot e^x$ using the product rule.', steps: [
@@ -438,7 +442,9 @@ topics: [
     { difficulty: 'medium', question: 'Even function property: $\\int_{-a}^{a} f(x)\\,dx = 2\\int_0^a f(x)\\,dx$ when $f$ is:', accept: ['even'], placeholder: 'Type', explanation: 'Even: $f(-x) = f(x)$. Symmetric: double the half-integral.' },
     { difficulty: 'hard', question: 'Average value: $\\bar{f} = \\frac{1}{b-a}\\int_a^b f\\,dx$. Average of $x^2$ on $[0,3]$:', accept: [3, '3'], placeholder: 'Number', explanation: '$\\frac{1}{3}\\int_0^3 x^2\\,dx = \\frac{1}{3}[x^3/3]_0^3 = \\frac{1}{3}(9) = 3$.' },
     { difficulty: 'easy', question: '$\\int_a^b f\\,dx = -\\int_b^a f\\,dx$. True?', accept: ['yes', 'true'], placeholder: 'True/false', explanation: 'Reversing limits negates the integral.' },
-    { difficulty: 'hard', question: 'If $f(x) \\geq g(x)$ on $[a,b]$, then $\\int_a^b f\\,dx$ ? $\\int_a^b g\\,dx$:', accept: ['>=', 'greater than or equal'], placeholder: 'Relation', explanation: 'Comparison property of integrals.' }
+    { difficulty: 'hard', question: 'If $f(x) \\geq g(x)$ on $[a,b]$, then $\\int_a^b f\\,dx$ ? $\\int_a^b g\\,dx$:', accept: ['>=', 'greater than or equal'], placeholder: 'Relation', explanation: 'Comparison property of integrals.' },
+    { difficulty: 'easy', question: 'Additive property: $\\int_a^b f + \\int_b^c f = \\int_a^c$ ?', accept: ['f', 'f dx'], placeholder: 'What?', explanation: '$\\int_a^c f\\,dx$. Split and combine.' },
+    { difficulty: 'hard', question: 'Accumulation function: $F(x) = \\int_a^x f(t)\\,dt$. $F\'(x) =$?', accept: ['f(x)'], placeholder: 'Expression', explanation: 'FTC Part 1: $F\'(x) = f(x)$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Optimization: Maximize the area of a rectangle inscribed in the semicircle $y = \\sqrt{4-x^2}$.', steps: [

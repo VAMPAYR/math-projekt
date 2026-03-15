@@ -202,7 +202,9 @@
     { difficulty: 'easy', question: 'Straight angle measures:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Straight angle: $180°$.' },
     { difficulty: 'hard', question: 'Interior angle of a regular $n$-gon: $\\frac{(n-2) \\times 180}{n}$. For $n = 8$:', accept: [135, '135'], placeholder: 'Degrees', explanation: '$(8-2)(180)/8 = 6(180)/8 = 135°$.' },
     { difficulty: 'medium', question: 'Corresponding angles formed by transversal cutting parallel lines are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Corresponding angles: congruent when lines are parallel.' },
-    { difficulty: 'hard', question: 'The angle inscribed in a semicircle is always:', accept: [90, '90', 'right'], placeholder: 'Degrees', explanation: 'Thales theorem: angle in a semicircle is $90°$.' }
+    { difficulty: 'hard', question: 'The angle inscribed in a semicircle is always:', accept: [90, '90', 'right'], placeholder: 'Degrees', explanation: 'Thales theorem: angle in a semicircle is $90°$.' },
+    { difficulty: 'easy', question: 'Co-interior (same-side interior) angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Co-interior angles: supplementary (sum to $180°$) when lines are parallel.' },
+    { difficulty: 'hard', question: 'Cyclic quadrilateral: opposite angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: 'Cyclic quadrilateral: opposite angles are supplementary.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -386,7 +388,9 @@
     { difficulty: 'easy', question: 'Isosceles triangle has how many equal sides?', accept: [2, '2'], placeholder: 'Number', explanation: 'Isosceles: exactly two equal sides.' },
     { difficulty: 'hard', question: 'Triangle inequality: for sides $a, b, c$: $a + b$ must be _____ than $c$.', accept: ['greater'], placeholder: 'Relation', explanation: 'Triangle inequality: the sum of any two sides exceeds the third.' },
     { difficulty: 'medium', question: 'Scalene triangle has _____ equal sides.', accept: [0, '0', 'no', 'zero'], placeholder: 'Number', explanation: 'Scalene: all three sides are different lengths.' },
-    { difficulty: 'hard', question: 'SAS congruence: if two sides and the _____ angle are equal, triangles are congruent.', accept: ['included'], placeholder: 'Which angle?', explanation: 'SAS: the included angle (between the two sides).' }
+    { difficulty: 'hard', question: 'SAS congruence: if two sides and the _____ angle are equal, triangles are congruent.', accept: ['included'], placeholder: 'Which angle?', explanation: 'SAS: the included angle (between the two sides).' },
+    { difficulty: 'easy', question: 'Median of a triangle connects a vertex to the _____ of the opposite side.', accept: ['midpoint'], placeholder: 'Point', explanation: 'Median: vertex to midpoint of opposite side.' },
+    { difficulty: 'hard', question: 'Orthocenter: intersection of:', accept: ['altitudes'], placeholder: 'What?', explanation: 'Orthocenter: intersection of the three altitudes.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -539,7 +543,9 @@
     { difficulty: 'easy', question: 'Area of circle with radius 7:', accept: ['49pi', '153.94'], placeholder: 'Area', explanation: '$A = \\pi r^2 = 49\\pi$.' },
     { difficulty: 'hard', question: 'Surface area of a cylinder: $2\\pi r^2 + 2\\pi rh$. If $r=3, h=5$:', accept: ['48pi', '150.80'], placeholder: 'Area', explanation: '$2\\pi(9) + 2\\pi(15) = 18\\pi + 30\\pi = 48\\pi$.' },
     { difficulty: 'medium', question: 'Sector area: $A = \\frac{1}{2}r^2\\theta$ (radians). If $r = 4, \\theta = \\pi/3$:', accept: ['8pi/3', '8.38'], placeholder: 'Area', explanation: '$\\frac{1}{2}(16)(\\pi/3) = 8\\pi/3$.' },
-    { difficulty: 'hard', question: 'Euler formula for polyhedra: $V - E + F =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$V - E + F = 2$. Vertices minus edges plus faces.' }
+    { difficulty: 'hard', question: 'Euler formula for polyhedra: $V - E + F =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$V - E + F = 2$. Vertices minus edges plus faces.' },
+    { difficulty: 'easy', question: 'A chord of a circle is a line segment with both endpoints on the:', accept: ['circle', 'circumference'], placeholder: 'Where?', explanation: 'Chord: endpoints on the circle.' },
+    { difficulty: 'hard', question: 'Inscribed angle is half the _____ angle for the same arc.', accept: ['central'], placeholder: 'Type', explanation: 'Inscribed angle theorem: inscribed = (1/2) central angle.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [
