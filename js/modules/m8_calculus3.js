@@ -130,7 +130,9 @@ topics: [
     { difficulty: 'easy', question: 'Curl measures:', accept: ['rotation', 'spinning', 'circulation density'], placeholder: 'What?', explanation: 'Curl: infinitesimal rotation at each point.' },
     { difficulty: 'hard', question: '$\\nabla \\cdot (\\nabla \\times \\vec{F}) =$? (always)', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Divergence of curl is always zero: $\\nabla \\cdot (\\nabla \\times \\vec{F}) = 0$.' },
     { difficulty: 'easy', question: 'Divergence of constant vector field:', accept: [0, '0', 'zero'], placeholder: 'Value', explanation: 'Constant field: all partial derivatives are zero. Divergence = 0.' },
-    { difficulty: 'hard', question: 'Irrotational: $\\nabla \\times \\vec{F} = \\vec{0}$. Implies $\\vec{F}$ is:', accept: ['conservative', 'gradient field'], placeholder: 'Property', explanation: 'Curl-free (irrotational) in simply connected domain implies conservative.' }
+    { difficulty: 'hard', question: 'Irrotational: $\\nabla \\times \\vec{F} = \\vec{0}$. Implies $\\vec{F}$ is:', accept: ['conservative', 'gradient field'], placeholder: 'Property', explanation: 'Curl-free (irrotational) in simply connected domain implies conservative.' },
+    { difficulty: 'easy', question: 'Conservative vector field: $\\vec{F} = \\nabla \\phi$. $\\phi$ is the:', accept: ['potential function', 'scalar potential'], placeholder: 'Name', explanation: '$\\phi$: scalar potential function.' },
+    { difficulty: 'hard', question: '$\\nabla \\times (\\nabla \\phi) = $ ? (always)', accept: ['0', 'zero', '\\vec{0}'], placeholder: 'Value', explanation: 'Curl of gradient is always zero.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the projection of $\\mathbf{b} = \\langle 3, 4 \\rangle$ onto $\\mathbf{a} = \\langle 1, 0 \\rangle$.', steps: [
@@ -288,7 +290,9 @@ topics: [
     { difficulty: 'easy', question: 'Parameterize line from $A$ to $B$: $\\vec{r}(t) = (1-t)A + tB$ for $t \\in [0,$ ?$]$.', accept: [1, '1'], placeholder: 'End', explanation: '$t \\in [0, 1]$. $t=0$: at $A$. $t=1$: at $B$.' },
     { difficulty: 'hard', question: 'Simply connected region: every closed curve can be:', accept: ['contracted to a point', 'shrunk to a point'], placeholder: 'Property', explanation: 'Simply connected: no holes. Every loop contracts to a point.' },
     { difficulty: 'easy', question: 'Green\'s theorem relates a _____ integral to a double integral.', accept: ['line', 'closed line'], placeholder: 'Type', explanation: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (Q_x - P_y)\\,dA$.' },
-    { difficulty: 'hard', question: 'Area via Green\'s: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Shoelace formula generalized: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$.' }
+    { difficulty: 'hard', question: 'Area via Green\'s: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Shoelace formula generalized: $A = \\frac{1}{2}\\oint (x\\,dy - y\\,dx)$.' },
+    { difficulty: 'easy', question: 'Work integral: $W = \\int_C \\vec{F} \\cdot d\\vec{r}$. Units:', accept: ['joules', 'energy', 'force times distance'], placeholder: 'Units', explanation: 'Work = force times displacement. SI: Joules.' },
+    { difficulty: 'hard', question: 'Exact differential equation: $M\\,dx + N\\,dy = 0$ is exact when $M_y =$ ?', accept: ['N_x', 'dN/dx'], placeholder: 'Condition', explanation: 'Exact: $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$.' }
   ],
   stepBuilder: [
     { difficulty: 'hard', question: 'Classify the critical point of $f(x,y) = x^2 + y^2 - 2x - 4y + 5$.', steps: [
@@ -434,7 +438,9 @@ topics: [
     { difficulty: 'easy', question: 'Electric field is a ____ field.', accept: ['vector'], placeholder: 'Type', explanation: 'Electric field $\\vec{E}$: a vector field.' },
     { difficulty: 'hard', question: 'Kelvin-Stokes theorem generalizes to higher dimensions via:', accept: ['differential forms', 'exterior calculus'], placeholder: 'Framework', explanation: 'Generalized Stokes theorem: $\\int_{\\partial M} \\omega = \\int_M d\\omega$. Differential forms.' },
     { difficulty: 'easy', question: 'Temperature at a point is a _____ field.', accept: ['scalar'], placeholder: 'Type', explanation: 'Temperature: assigns a scalar (number) to each point.' },
-    { difficulty: 'hard', question: 'Potential function $\\phi$: $\\vec{F} = -\\nabla\\phi$. The negative sign convention comes from:', accept: ['physics', 'potential energy'], placeholder: 'Where?', explanation: 'Physics convention: force = negative gradient of potential energy.' }
+    { difficulty: 'hard', question: 'Potential function $\\phi$: $\\vec{F} = -\\nabla\\phi$. The negative sign convention comes from:', accept: ['physics', 'potential energy'], placeholder: 'Where?', explanation: 'Physics convention: force = negative gradient of potential energy.' },
+    { difficulty: 'easy', question: 'Total surface area includes lateral surface plus:', accept: ['bases', 'top and bottom', 'end caps'], placeholder: 'What?', explanation: 'Total SA = lateral + bases.' },
+    { difficulty: 'hard', question: 'Navier-Stokes equations describe:', accept: ['fluid flow', 'fluid dynamics', 'viscous flow'], placeholder: 'What?', explanation: 'Navier-Stokes: PDEs governing viscous fluid flow. Millennium problem.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int_0^1 \\int_0^x xy\\,dy\\,dx$.', steps: [

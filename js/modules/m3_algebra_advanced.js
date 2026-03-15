@@ -156,7 +156,9 @@
     { difficulty: 'easy', question: 'Zero of polynomial $f(x)$: value where $f(c) =$?', accept: [0, '0'], placeholder: 'Value', explanation: 'Zero = root: $f(c) = 0$.' },
     { difficulty: 'hard', question: 'Fundamental Theorem of Algebra: degree-$n$ polynomial has exactly $n$ roots in:', accept: ['C', 'complex numbers', 'the complex numbers'], placeholder: 'Field', explanation: 'FTA: $n$ roots in $\\mathbb{C}$ (counting multiplicity).' },
     { difficulty: 'easy', question: 'Cubic polynomial has degree:', accept: [3, '3'], placeholder: 'Number', explanation: 'Cubic: degree 3.' },
-    { difficulty: 'hard', question: 'Complex conjugate of $3 + 4i$:', accept: ['3-4i', '3 - 4i'], placeholder: 'Number', explanation: 'Conjugate: flip the sign of the imaginary part.' }
+    { difficulty: 'hard', question: 'Complex conjugate of $3 + 4i$:', accept: ['3-4i', '3 - 4i'], placeholder: 'Number', explanation: 'Conjugate: flip the sign of the imaginary part.' },
+    { difficulty: 'easy', question: 'Quartic polynomial: degree:', accept: [4, '4'], placeholder: 'Number', explanation: 'Quartic = degree 4.' },
+    { difficulty: 'hard', question: '$(2+3i)(2-3i) =$?', accept: [13, '13'], placeholder: 'Number', explanation: '$4 + 9 = 13$. Product of conjugates: $a^2 + b^2$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Factor $6x^2 + 11x - 10$ by the AC method.', steps: [
@@ -430,7 +432,9 @@
     { difficulty: 'easy', question: 'Parabola opens upward or downward based on sign of:', accept: ['a', 'leading coefficient'], placeholder: 'Term', explanation: '$a > 0$: up. $a < 0$: down.' },
     { difficulty: 'hard', question: 'Focus-directrix definition: parabola is the locus equidistant from:', accept: ['focus and directrix'], placeholder: 'What?', explanation: 'Parabola: distance to focus = distance to directrix.' },
     { difficulty: 'easy', question: 'Standard form of quadratic: $ax^2 + bx + $ ?', accept: ['c'], placeholder: 'Term', explanation: '$ax^2 + bx + c$.' },
-    { difficulty: 'hard', question: 'Sum of roots times product of roots: for $x^2 - 5x + 6$: $(-b/a)(c/a) =$?', accept: [30, '30'], placeholder: 'Number', explanation: 'Sum $= 5$, product $= 6$. $5 \\times 6 = 30$.' }
+    { difficulty: 'hard', question: 'Sum of roots times product of roots: for $x^2 - 5x + 6$: $(-b/a)(c/a) =$?', accept: [30, '30'], placeholder: 'Number', explanation: 'Sum $= 5$, product $= 6$. $5 \\times 6 = 30$.' },
+    { difficulty: 'easy', question: 'Zeros of $x^2 - 9$:', accept: ['3, -3', '3 and -3'], placeholder: 'Values', explanation: '$(x-3)(x+3) = 0$. $x = \\pm 3$.' },
+    { difficulty: 'hard', question: 'Hyperbola vs ellipse: hyperbola has a _____ sign between terms.', accept: ['minus', 'negative'], placeholder: 'Sign', explanation: 'Ellipse: $+$. Hyperbola: $-$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $x^2 + 6x + 2 = 0$ by completing the square.', steps: [
@@ -675,7 +679,9 @@
     { difficulty: 'easy', question: 'Exponential function $b^x$ with $b > 1$ is:', accept: ['increasing'], placeholder: 'Behavior', explanation: '$b > 1$: exponential growth (increasing).' },
     { difficulty: 'hard', question: 'Natural base $e \\approx$?', accept: ['2.718', '2.72'], placeholder: 'Number', explanation: '$e \\approx 2.71828...$' },
     { difficulty: 'easy', question: '$\\log(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$.' },
-    { difficulty: 'hard', question: 'Logarithmic scale: earthquake magnitudes differ by 1 means energy differs by factor:', accept: ['31.6', '10^1.5', '~32'], placeholder: 'Factor', explanation: 'Richter: each unit is $\\approx 31.6\\times$ more energy.' }
+    { difficulty: 'hard', question: 'Logarithmic scale: earthquake magnitudes differ by 1 means energy differs by factor:', accept: ['31.6', '10^1.5', '~32'], placeholder: 'Factor', explanation: 'Richter: each unit is $\\approx 31.6\\times$ more energy.' },
+    { difficulty: 'easy', question: 'Doubling time: time for exponential to double. If $r = 7\\%$, rule of 70 gives:', accept: [10, '10'], placeholder: 'Years', explanation: '$70/7 = 10$ years.' },
+    { difficulty: 'hard', question: 'Continuously compounded: $A = Pe^{rt}$. Solve for $t$: $t =$?', accept: ['ln(A/P)/r'], placeholder: 'Formula', explanation: '$A/P = e^{rt}$. $\\ln(A/P) = rt$. $t = \\ln(A/P)/r$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Solve $\\log_2(x) + \\log_2(x-2) = 3$.', steps: [

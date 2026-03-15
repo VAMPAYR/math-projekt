@@ -190,7 +190,9 @@
     { difficulty: 'easy', question: 'Scalar multiplication: $3\\langle 2, -1 \\rangle =$?', accept: ['<6,-3>', '<6, -3>'], placeholder: 'Vector', explanation: '$\\langle 6, -3 \\rangle$.' },
     { difficulty: 'hard', question: 'Equation of plane: $ax + by + cz = d$. Normal vector:', accept: ['<a,b,c>', '<a, b, c>'], placeholder: 'Vector', explanation: '$\\vec{n} = \\langle a, b, c \\rangle$.' },
     { difficulty: 'easy', question: 'Dot product zero means vectors are:', accept: ['perpendicular', 'orthogonal'], placeholder: 'Relation', explanation: '$\\vec{a} \\cdot \\vec{b} = 0$: orthogonal.' },
-    { difficulty: 'hard', question: 'TNB frame: $T$ is tangent, $N$ is normal, $B =$?', accept: ['binormal'], placeholder: 'Vector', explanation: '$B = T \\times N$: binormal vector.' }
+    { difficulty: 'hard', question: 'TNB frame: $T$ is tangent, $N$ is normal, $B =$?', accept: ['binormal'], placeholder: 'Vector', explanation: '$B = T \\times N$: binormal vector.' },
+    { difficulty: 'easy', question: 'Cross product: $\\langle 1,0,0 \\rangle \\times \\langle 0,1,0 \\rangle =$?', accept: ['<0,0,1>', '<0, 0, 1>'], placeholder: 'Vector', explanation: '$\\hat{i} \\times \\hat{j} = \\hat{k}$.' },
+    { difficulty: 'hard', question: 'Curvature: $\\kappa = |d\\hat{T}/ds|$ where $\\hat{T}$ is the unit _____ vector.', accept: ['tangent'], placeholder: 'Which?', explanation: '$\\hat{T}$: unit tangent. $\\kappa$: rate of change of direction.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the projection of $\\vec{u} = \\langle 4, 2 \\rangle$ onto $\\vec{v} = \\langle 3, 0 \\rangle$.', steps: [
@@ -349,7 +351,9 @@
     { difficulty: 'easy', question: 'Total differential: $df = f_x\\,dx + f_y\\,$ ?', accept: ['dy'], placeholder: 'Term', explanation: '$df = f_x\\,dx + f_y\\,dy$.' },
     { difficulty: 'hard', question: 'Second derivative test in 2D: $D = f_{xx}f_{yy} - f_{xy}^2 > 0$ and $f_{xx} > 0$ means:', accept: ['local minimum', 'local min'], placeholder: 'Classification', explanation: '$D > 0, f_{xx} > 0$: local minimum.' },
     { difficulty: 'easy', question: 'Chain rule for multivariable: $\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Multivariable chain rule: sum of partial chains.' },
-    { difficulty: 'hard', question: 'Maximum rate of change of $f$ equals $|\\nabla f|$. Direction: along:', accept: ['gradient', '\\nabla f'], placeholder: 'Direction', explanation: '$\\max D_{\\vec{u}}f = |\\nabla f|$ in the gradient direction.' }
+    { difficulty: 'hard', question: 'Maximum rate of change of $f$ equals $|\\nabla f|$. Direction: along:', accept: ['gradient', '\\nabla f'], placeholder: 'Direction', explanation: '$\\max D_{\\vec{u}}f = |\\nabla f|$ in the gradient direction.' },
+    { difficulty: 'easy', question: 'Tangent plane at $(a,b)$: $z = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-$ ?$)$', accept: ['b'], placeholder: 'Value', explanation: 'Tangent plane: linearization in 2D.' },
+    { difficulty: 'hard', question: 'Implicit function theorem: if $F_y \\neq 0$, then $dy/dx = -F_x/$ ?', accept: ['F_y'], placeholder: 'Term', explanation: '$dy/dx = -F_x/F_y$ from $F(x,y) = 0$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find gradient of $f(x,y) = x^2y - y^2$ at $(2,1)$.', steps: [
@@ -479,7 +483,9 @@
     { difficulty: 'easy', question: 'In cylindrical: $x = r\\cos\\theta$, $y = r\\sin\\theta$. Volume element $dV =$?', accept: ['r dr dtheta dz', 'r dz dr dtheta'], placeholder: 'Element', explanation: '$dV = r\\,dr\\,d\\theta\\,dz$.' },
     { difficulty: 'hard', question: 'Center of mass: $\\bar{x} = \\frac{\\iint x\\rho\\,dA}{\\iint \\rho\\,dA}$. For uniform density, simplifies to:', accept: ['centroid x', 'iint x dA / iint dA'], placeholder: 'What?', explanation: 'Uniform: $\\bar{x} = \\iint x\\,dA / \\iint dA$. Geometric centroid.' },
     { difficulty: 'easy', question: 'Fubini\'s theorem allows switching order of:', accept: ['integration', 'integrals'], placeholder: 'What?', explanation: 'Fubini: $\\int\\int f\\,dx\\,dy = \\int\\int f\\,dy\\,dx$ (when $f$ is continuous).' },
-    { difficulty: 'hard', question: 'Jacobian for polar: $|J| = $ ?', accept: ['r'], placeholder: 'Factor', explanation: '$x = r\\cos\\theta, y = r\\sin\\theta$. $|J| = r$.' }
+    { difficulty: 'hard', question: 'Jacobian for polar: $|J| = $ ?', accept: ['r'], placeholder: 'Factor', explanation: '$x = r\\cos\\theta, y = r\\sin\\theta$. $|J| = r$.' },
+    { difficulty: 'easy', question: 'Green\'s theorem relates a line integral to a _____ integral.', accept: ['double', 'area'], placeholder: 'Type', explanation: '$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_D (\\partial Q/\\partial x - \\partial P/\\partial y)\\,dA$.' },
+    { difficulty: 'hard', question: 'Moment of inertia about $x$-axis: $I_x = \\iint y^2 \\rho\\,dA$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$I_x = \\iint y^2 \\rho\\,dA$. Distance from $x$-axis is $y$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_0^2 \\int_0^x (x+y)\\,dy\\,dx$.', steps: [

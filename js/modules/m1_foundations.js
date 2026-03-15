@@ -107,7 +107,9 @@ topics: [
     { difficulty: 'medium', question: 'Partition of set $A$: a collection of non-empty subsets that are pairwise:', accept: ['disjoint'], placeholder: 'Property', explanation: 'Partition: pairwise disjoint subsets whose union is $A$.' },
     { difficulty: 'hard', question: 'Zorn\'s lemma: every totally ordered subset has an upper bound implies the set has a:', accept: ['maximal element'], placeholder: 'What?', explanation: 'Zorn\'s lemma: used to prove existence of maximal elements.' },
     { difficulty: 'medium', question: 'A countable set can be put in one-to-one correspondence with:', accept: ['N', 'natural numbers', '\\mathbb{N}'], placeholder: 'Set', explanation: 'Countable: bijection with $\\mathbb{N}$ (or is finite).' },
-    { difficulty: 'hard', question: 'Cantor-Schroder-Bernstein theorem: if injections $A \\to B$ and $B \\to A$ both exist, then:', accept: ['|A|=|B|', 'A and B have same cardinality'], placeholder: 'Conclusion', explanation: 'CSB: mutual injection implies bijection.' }
+    { difficulty: 'hard', question: 'Cantor-Schroder-Bernstein theorem: if injections $A \\to B$ and $B \\to A$ both exist, then:', accept: ['|A|=|B|', 'A and B have same cardinality'], placeholder: 'Conclusion', explanation: 'CSB: mutual injection implies bijection.' },
+    { difficulty: 'medium', question: 'Function composition: $(f \\circ g)(x) = f($ ? $(x))$', accept: ['g'], placeholder: 'Inside', explanation: '$(f \\circ g)(x) = f(g(x))$.' },
+    { difficulty: 'hard', question: 'Axiom of choice: states that from any family of nonempty sets, we can choose one element from:', accept: ['each'], placeholder: 'How many?', explanation: 'AC: a choice function exists selecting one element from each set.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each set operation to its meaning:', pairs: [
@@ -298,7 +300,9 @@ topics: [
     { difficulty: 'easy', question: '$|-12| =$?', accept: [12, '12'], placeholder: 'Number', explanation: '$|-12| = 12$.' },
     { difficulty: 'hard', question: 'Well-ordering principle: every nonempty set of _____ has a least element.', accept: ['positive integers', 'natural numbers'], placeholder: 'Set', explanation: 'Well-ordering: foundation for proofs by strong induction.' },
     { difficulty: 'easy', question: 'Prime number: divisible only by 1 and:', accept: ['itself'], placeholder: 'What?', explanation: 'Prime: exactly two factors, 1 and itself.' },
-    { difficulty: 'hard', question: 'Fundamental Theorem of Arithmetic: every integer $> 1$ has a unique _____ factorization.', accept: ['prime'], placeholder: 'Type', explanation: 'FTA: unique prime factorization (up to order).' }
+    { difficulty: 'hard', question: 'Fundamental Theorem of Arithmetic: every integer $> 1$ has a unique _____ factorization.', accept: ['prime'], placeholder: 'Type', explanation: 'FTA: unique prime factorization (up to order).' },
+    { difficulty: 'easy', question: 'Even number $\\div$ 2 = integer. Is 14 even?', accept: ['yes'], placeholder: 'yes/no', explanation: '$14 / 2 = 7$. Yes.' },
+    { difficulty: 'hard', question: 'Euler\'s totient: $\\phi(12) =$? (count integers $1 \\leq k \\leq 12$ coprime to 12)', accept: [4, '4'], placeholder: 'Number', explanation: 'Coprime to 12: 1, 5, 7, 11. $\\phi(12) = 4$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each number to its classification:', pairs: [
@@ -551,7 +555,9 @@ topics: [
     { difficulty: 'medium', question: 'Universal quantifier: $\\forall x: P(x)$ means for _____ $x$, $P(x)$ holds.', accept: ['all', 'every'], placeholder: 'Quantifier', explanation: '$\\forall$: universal quantifier ("for all").' },
     { difficulty: 'hard', question: 'Proof by strong induction: assume $P(k)$ for all $k \\leq n$, prove $P($ ? $)$.', accept: ['n+1'], placeholder: 'Value', explanation: 'Strong induction: assume all cases up to $n$, prove $n+1$.' },
     { difficulty: 'medium', question: 'In a truth table, $p \\to q$ is false only when $p$ is true and $q$ is:', accept: ['false'], placeholder: 'Value', explanation: '$p \\to q$ is false iff $p$ is true and $q$ is false.' },
-    { difficulty: 'hard', question: 'Pigeonhole principle: if $n+1$ pigeons occupy $n$ holes, at least one hole has:', accept: ['at least 2', 'two or more', '2+'], placeholder: 'Count', explanation: 'Pigeonhole: $n+1$ objects in $n$ boxes guarantees doubling.' }
+    { difficulty: 'hard', question: 'Pigeonhole principle: if $n+1$ pigeons occupy $n$ holes, at least one hole has:', accept: ['at least 2', 'two or more', '2+'], placeholder: 'Count', explanation: 'Pigeonhole: $n+1$ objects in $n$ boxes guarantees doubling.' },
+    { difficulty: 'medium', question: 'Exclusive or ($\\oplus$): true when exactly one of $p, q$ is:', accept: ['true'], placeholder: 'Value', explanation: 'XOR: true iff exactly one operand is true.' },
+    { difficulty: 'hard', question: 'Godel\'s incompleteness: any consistent system containing arithmetic has _____ statements.', accept: ['undecidable', 'unprovable'], placeholder: 'Type', explanation: 'First incompleteness theorem: there exist true statements that cannot be proved within the system.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each logical connective to its symbol:', pairs: [

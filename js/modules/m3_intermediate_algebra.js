@@ -120,7 +120,9 @@ topics: [
     { difficulty: 'easy', question: '$3^{-1} =$?', accept: ['1/3', '0.333'], placeholder: 'Number', explanation: '$3^{-1} = 1/3$.' },
     { difficulty: 'hard', question: 'Rationalize: $\\frac{1}{\\sqrt{5}} =$?', accept: ['sqrt(5)/5', '\\sqrt{5}/5'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}$.' },
     { difficulty: 'easy', question: '$\\sqrt{144} =$?', accept: [12, '12'], placeholder: 'Number', explanation: '$12^2 = 144$.' },
-    { difficulty: 'hard', question: '$\\sqrt[3]{-64} =$?', accept: [-4, '-4'], placeholder: 'Number', explanation: '$(-4)^3 = -64$.' }
+    { difficulty: 'hard', question: '$\\sqrt[3]{-64} =$?', accept: [-4, '-4'], placeholder: 'Number', explanation: '$(-4)^3 = -64$.' },
+    { difficulty: 'easy', question: '$(2^3)(2^4) =$?', accept: [128, '128'], placeholder: 'Number', explanation: '$2^{3+4} = 2^7 = 128$.' },
+    { difficulty: 'hard', question: '$a^{m/n} = (\\sqrt[n]{a})^m$. So $8^{2/3} =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$\\sqrt[3]{8} = 2$. $2^2 = 4$.' }
   ],
   fillBlanks: [
     { difficulty: 'medium', context: 'Complete the special product formulas:', expression: '$(a+b)^2 = a^2 +$ {{0}} $ab + b^2$. $(a+b)(a-b) = a^2 -$ {{1}}', blanks: [ { accept: ['2', '2'], size: 3 }, { accept: ['b^2', 'b2'], size: 4 } ], explanation: '$(a+b)^2 = a^2 + 2ab + b^2$. $(a+b)(a-b) = a^2 - b^2$.' }
@@ -301,7 +303,9 @@ topics: [
     { difficulty: 'easy', question: 'Perfect square: $49 = $ ?$^2$', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
     { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + $ ? $= (x+4)^2$', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' },
     { difficulty: 'easy', question: 'Zero product property: if $ab = 0$, then $a = 0$ or:', accept: ['b = 0', 'b=0'], placeholder: 'Conclusion', explanation: '$ab = 0 \\Rightarrow a = 0$ or $b = 0$.' },
-    { difficulty: 'hard', question: 'Quadratic formula: two real roots when discriminant is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$b^2 - 4ac > 0$: two distinct real roots.' }
+    { difficulty: 'hard', question: 'Quadratic formula: two real roots when discriminant is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$b^2 - 4ac > 0$: two distinct real roots.' },
+    { difficulty: 'easy', question: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + $ ?$)$', accept: ['b^2', 'b2'], placeholder: 'Term', explanation: '$(a+b)(a^2 - ab + b^2)$.' },
+    { difficulty: 'hard', question: 'Quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2$ ?$}$', accept: ['a', '2a'], placeholder: 'Denominator', explanation: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Factor $6x^2 + 11x + 3$ using the AC method.', steps: [
@@ -443,7 +447,9 @@ topics: [
     { difficulty: 'easy', question: 'Extraneous solution: a solution that does not satisfy the _____ equation.', accept: ['original'], placeholder: 'Which?', explanation: 'Extraneous: appears during solving but fails in the original equation.' },
     { difficulty: 'hard', question: 'If $g(x) = \\frac{x+1}{x-2}$, then $g(5) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$g(5) = 6/3 = 2$.' },
     { difficulty: 'easy', question: 'Domain of $f(x) = \\sqrt{x}$:', accept: ['x >= 0', '[0, inf)', 'x \\geq 0'], placeholder: 'Domain', explanation: 'Radicand must be non-negative.' },
-    { difficulty: 'hard', question: 'Slant asymptote of $\\frac{x^2+1}{x}$:', accept: ['y=x', 'y = x'], placeholder: 'Equation', explanation: 'Divide: $x + 1/x$. As $x \\to \\infty$: $y \\approx x$.' }
+    { difficulty: 'hard', question: 'Slant asymptote of $\\frac{x^2+1}{x}$:', accept: ['y=x', 'y = x'], placeholder: 'Equation', explanation: 'Divide: $x + 1/x$. As $x \\to \\infty$: $y \\approx x$.' },
+    { difficulty: 'easy', question: '$\\frac{x^2 + 2x}{x} =$?', accept: ['x+2', 'x + 2'], placeholder: 'Expression', explanation: '$\\frac{x(x+2)}{x} = x + 2$.' },
+    { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{$ ? $}$', accept: ['x+1'], placeholder: 'Denominator', explanation: '$\\frac{1}{x} - \\frac{1}{x+1}$. Telescoping.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'A ball is thrown upward: $h(t) = -16t^2 + 48t + 5$.', parts: [

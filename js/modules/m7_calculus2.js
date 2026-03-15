@@ -122,7 +122,9 @@ topics: [
     { difficulty: 'easy', question: '$\\int x^2\\,dx =$?', accept: ['x^3/3+C', 'x^3/3 + C'], placeholder: 'Expression', explanation: '$x^3/3 + C$.' },
     { difficulty: 'hard', question: 'Improper integral: $\\int_0^{\\infty} e^{-x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[-e^{-x}]_0^{\\infty} = 0 - (-1) = 1$.' },
     { difficulty: 'easy', question: '$\\int e^x\\,dx =$?', accept: ['e^x+C', 'e^x + C'], placeholder: 'Expression', explanation: '$e^x + C$.' },
-    { difficulty: 'hard', question: 'Tabular integration applies when one factor _____ to zero under repeated differentiation.', accept: ['reduces', 'differentiates'], placeholder: 'What?', explanation: 'Tabular method works when $f^{(n)}(x) = 0$ for some $n$ (e.g. polynomials).' }
+    { difficulty: 'hard', question: 'Tabular integration applies when one factor _____ to zero under repeated differentiation.', accept: ['reduces', 'differentiates'], placeholder: 'What?', explanation: 'Tabular method works when $f^{(n)}(x) = 0$ for some $n$ (e.g. polynomials).' },
+    { difficulty: 'easy', question: '$\\int \\frac{1}{x^2}\\,dx =$?', accept: ['-1/x+C', '-x^(-1)+C'], placeholder: 'Expression', explanation: '$-x^{-1} + C = -1/x + C$.' },
+    { difficulty: 'hard', question: '$\\int_0^{\\pi/2} \\cos^3 x\\,dx =$?', accept: ['2/3'], placeholder: 'Number', explanation: 'Use $\\cos^2 x = 1 - \\sin^2 x$: $\\int (1-\\sin^2 x)\\cos x\\,dx = 2/3$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Evaluate $\\int x \\cos x\\,dx$ by integration by parts.', steps: [
@@ -256,7 +258,9 @@ topics: [
     { difficulty: 'easy', question: 'Geometric sequence: $a, ar, ar^2, \\ldots$ Common ratio $r$ is:', accept: ['constant', 'fixed'], placeholder: 'Property', explanation: 'Geometric: constant ratio between consecutive terms.' },
     { difficulty: 'hard', question: 'p-series $\\sum 1/n^p$ converges when $p >$?', accept: [1, '1'], placeholder: 'Value', explanation: '$p > 1$: converges. $p \\leq 1$: diverges.' },
     { difficulty: 'easy', question: 'nth term test: if $a_n \\not\\to 0$, then $\\sum a_n$:', accept: ['diverges'], placeholder: 'Result', explanation: 'If $\\lim a_n \\neq 0$: series diverges.' },
-    { difficulty: 'hard', question: 'Riemann rearrangement theorem: a conditionally convergent series can be rearranged to sum to:', accept: ['any value', 'anything'], placeholder: 'What?', explanation: 'Rearrangement theorem: conditionally convergent can sum to any value or $\\pm \\infty$.' }
+    { difficulty: 'hard', question: 'Riemann rearrangement theorem: a conditionally convergent series can be rearranged to sum to:', accept: ['any value', 'anything'], placeholder: 'What?', explanation: 'Rearrangement theorem: conditionally convergent can sum to any value or $\\pm \\infty$.' },
+    { difficulty: 'easy', question: '$a_n = 1/n$ is: increasing, decreasing, or constant?', accept: ['decreasing'], placeholder: 'Behavior', explanation: '$1/1 > 1/2 > 1/3 > \\ldots$: decreasing.' },
+    { difficulty: 'hard', question: 'Basel problem: $\\sum_{n=1}^{\\infty} \\frac{1}{n^2} =$?', accept: ['pi^2/6', '\\pi^2/6', '1.645'], placeholder: 'Sum', explanation: 'Euler proved: $\\sum 1/n^2 = \\pi^2/6$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the sum $S = 2 + 6 + 18 + 54 + \\cdots + 2(3)^9$.', steps: [
@@ -414,7 +418,9 @@ topics: [
     { difficulty: 'easy', question: 'Taylor polynomial of degree 1 is called:', accept: ['linearization', 'linear approximation'], placeholder: 'Name', explanation: 'Degree 1 Taylor: $f(a) + f\'(a)(x-a)$. Linearization.' },
     { difficulty: 'hard', question: 'Analytic function: equals its Taylor series on some:', accept: ['interval', 'neighborhood'], placeholder: 'Where?', explanation: 'Analytic: $f(x) = \\sum a_n(x-a)^n$ on an interval around $a$.' },
     { difficulty: 'easy', question: 'MacLaurin series for $e^x = 1 + x + x^2/2! + x^3/3! + \\ldots$', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: '$e^x = \\sum_{n=0}^{\\infty} x^n/n!$.' },
-    { difficulty: 'hard', question: 'Binomial series: $(1+x)^k = \\sum \\binom{k}{n}x^n$. Converges for $|x| <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: 'Binomial series: $|x| < 1$.' }
+    { difficulty: 'hard', question: 'Binomial series: $(1+x)^k = \\sum \\binom{k}{n}x^n$. Converges for $|x| <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: 'Binomial series: $|x| < 1$.' },
+    { difficulty: 'easy', question: '$e^x$ Maclaurin: first 4 terms: $1 + x + x^2/2 + x^3/$ ?', accept: [6, '6', '3!'], placeholder: 'Denominator', explanation: '$x^3/3! = x^3/6$.' },
+    { difficulty: 'hard', question: 'Euler\'s product formula: $\\sin(\\pi x) = \\pi x \\prod_{n=1}^{\\infty}(1-x^2/n^2)$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: 'Infinite product representation of $\\sin(\\pi x)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Determine if $\\sum_{n=1}^{\\infty} \\frac{n}{2^n}$ converges using the ratio test.', steps: [

@@ -208,7 +208,9 @@
     { difficulty: 'easy', question: 'A line segment has _____ endpoints.', accept: [2, '2', 'two'], placeholder: 'Number', explanation: 'Line segment: two endpoints.' },
     { difficulty: 'hard', question: 'Interior angle sum: $(n-2) \\times 180$. For pentagon ($n=5$):', accept: [540, '540'], placeholder: 'Degrees', explanation: '$(5-2)(180) = 540°$.' },
     { difficulty: 'easy', question: 'Vertical angles are:', accept: ['equal', 'congruent'], placeholder: 'Property', explanation: 'Vertical angles: congruent (formed by intersecting lines).' },
-    { difficulty: 'hard', question: 'Menelaus theorem applies to a triangle cut by a:', accept: ['transversal', 'line'], placeholder: 'What?', explanation: 'Menelaus: product of ratios along a transversal equals $-1$.' }
+    { difficulty: 'hard', question: 'Menelaus theorem applies to a triangle cut by a:', accept: ['transversal', 'line'], placeholder: 'What?', explanation: 'Menelaus: product of ratios along a transversal equals $-1$.' },
+    { difficulty: 'easy', question: 'Supplementary angles sum to:', accept: [180, '180'], placeholder: 'Degrees', explanation: '$180°$.' },
+    { difficulty: 'hard', question: 'Cross-ratio is invariant under:', accept: ['projective transformation', 'projection'], placeholder: 'What?', explanation: 'Cross-ratio: $(A,B;C,D)$ is preserved by projective transformations.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Two parallel lines are cut by a transversal. One interior angle on the left is $72°$. Find all eight angles formed.', steps: [
@@ -398,7 +400,9 @@
     { difficulty: 'easy', question: '45-45-90 triangle: legs are equal and hypotenuse is leg $\\times$?', accept: ['sqrt(2)', '\\sqrt{2}', '1.414'], placeholder: 'Factor', explanation: 'Hypotenuse = leg $\\times \\sqrt{2}$.' },
     { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' },
     { difficulty: 'easy', question: '30-60-90 triangle: side ratios are $1 : \\sqrt{3} : $ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Short : medium : hypotenuse = $1 : \\sqrt{3} : 2$.' },
-    { difficulty: 'hard', question: 'Ceva\'s theorem: concurrent cevians satisfy $\\frac{AF}{FB} \\cdot \\frac{BD}{DC} \\cdot \\frac{CE}{EA} =$?', accept: [1, '1'], placeholder: 'Value', explanation: 'Ceva: product of ratios along concurrent cevians = 1.' }
+    { difficulty: 'hard', question: 'Ceva\'s theorem: concurrent cevians satisfy $\\frac{AF}{FB} \\cdot \\frac{BD}{DC} \\cdot \\frac{CE}{EA} =$?', accept: [1, '1'], placeholder: 'Value', explanation: 'Ceva: product of ratios along concurrent cevians = 1.' },
+    { difficulty: 'easy', question: 'Equilateral triangle: all sides equal and all angles:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$60°$ each ($180°/3$).' },
+    { difficulty: 'hard', question: 'Apollonius circle: locus of points with ratio of distances to two fixed points constant.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Apollonius: for fixed $k \\neq 1$, $|PA|/|PB| = k$ traces a circle.' }
       ],
       stepBuilder: [
         { difficulty: 'hard', question: 'Prove that two triangles are similar using AA, then find an unknown side.', steps: [
@@ -557,7 +561,9 @@
     { difficulty: 'easy', question: 'Perimeter of circle is called:', accept: ['circumference'], placeholder: 'Name', explanation: 'Circumference = $2\\pi r$.' },
     { difficulty: 'hard', question: 'Cavalieri\'s principle: solids with equal cross-sectional area at every height have equal:', accept: ['volume'], placeholder: 'What?', explanation: 'Cavalieri: same cross-sections at every level implies same volume.' },
     { difficulty: 'easy', question: 'Tangent to a circle is perpendicular to the _____ at the point of tangency.', accept: ['radius'], placeholder: 'What?', explanation: 'Tangent line is perpendicular to the radius.' },
-    { difficulty: 'hard', question: 'Power of a point: for point $P$ outside circle, $PA \\cdot PB = PC \\cdot PD$ where $AB, CD$ are:', accept: ['secants', 'chords'], placeholder: 'What?', explanation: 'Power of a point: constant product along any secant through $P$.' }
+    { difficulty: 'hard', question: 'Power of a point: for point $P$ outside circle, $PA \\cdot PB = PC \\cdot PD$ where $AB, CD$ are:', accept: ['secants', 'chords'], placeholder: 'What?', explanation: 'Power of a point: constant product along any secant through $P$.' },
+    { difficulty: 'easy', question: 'Diameter of a circle with radius 5:', accept: [10, '10'], placeholder: 'Number', explanation: '$d = 2r = 10$.' },
+    { difficulty: 'hard', question: 'Ptolemy\'s theorem: in cyclic quadrilateral $ABCD$, $AC \\cdot BD = AB \\cdot CD + AD \\cdot$ ?', accept: ['BC'], placeholder: 'Side', explanation: 'Ptolemy: product of diagonals = sum of products of opposite sides.' }
       ],
       stepBuilder: [
         { difficulty: 'medium', question: 'Find the area of a ring (annulus) with outer radius $8$ and inner radius $5$.', steps: [

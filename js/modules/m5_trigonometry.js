@@ -216,7 +216,9 @@ topics: [
     { difficulty: 'easy', question: 'Cotangent = cos / ?', accept: ['sin', 'sine'], placeholder: 'Function', explanation: '$\\cot x = \\cos x / \\sin x$.' },
     { difficulty: 'hard', question: 'Arc length in radians: $s = r$ ?', accept: ['theta', 'r\\theta'], placeholder: 'Formula', explanation: '$s = r\\theta$.' },
     { difficulty: 'easy', question: 'SOHCAHTOA: $\\tan = $ opposite / ?', accept: ['adjacent'], placeholder: 'Side', explanation: '$\\tan \\theta = \\frac{\\text{opposite}}{\\text{adjacent}}$.' },
-    { difficulty: 'hard', question: 'Euler\'s formula: $e^{i\\theta} = \\cos\\theta + i$ ?', accept: ['sin(theta)', 'sin theta', '\\sin\\theta'], placeholder: 'Term', explanation: '$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$.' }
+    { difficulty: 'hard', question: 'Euler\'s formula: $e^{i\\theta} = \\cos\\theta + i$ ?', accept: ['sin(theta)', 'sin theta', '\\sin\\theta'], placeholder: 'Term', explanation: '$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$.' },
+    { difficulty: 'easy', question: 'SOH: $\\sin = $ opposite / ?', accept: ['hypotenuse'], placeholder: 'Side', explanation: '$\\sin \\theta = \\frac{\\text{opposite}}{\\text{hypotenuse}}$.' },
+    { difficulty: 'hard', question: '$\\cos(60°) =$?', accept: ['1/2', '0.5'], placeholder: 'Value', explanation: '$\\cos(60°) = 1/2$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
@@ -405,7 +407,9 @@ topics: [
     { difficulty: 'easy', question: '$\\sin(\\pi) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(180°) = 0$.' },
     { difficulty: 'hard', question: 'Triple angle: $\\sin(3x) = 3\\sin x - 4\\sin^3 x$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\sin(3x) = 3\\sin x - 4\\sin^3 x$. Verified via sum formulas.' },
     { difficulty: 'easy', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin(45°)/\\cos(45°) = 1$.' },
-    { difficulty: 'hard', question: 'Product-to-sum: $2\\cos A \\cos B = \\cos(A-B) + \\cos(A+$ ? $)$', accept: ['B'], placeholder: 'Variable', explanation: '$2\\cos A \\cos B = \\cos(A-B) + \\cos(A+B)$.' }
+    { difficulty: 'hard', question: 'Product-to-sum: $2\\cos A \\cos B = \\cos(A-B) + \\cos(A+$ ? $)$', accept: ['B'], placeholder: 'Variable', explanation: '$2\\cos A \\cos B = \\cos(A-B) + \\cos(A+B)$.' },
+    { difficulty: 'easy', question: '$\\sin(-x) = -\\sin($ ?$)$', accept: ['x'], placeholder: 'Argument', explanation: 'Sine is odd: $\\sin(-x) = -\\sin(x)$.' },
+    { difficulty: 'hard', question: 'Half-angle: $\\cos(x/2) = \\pm \\sqrt{\\frac{1 + \\cos x}{$ ?$}}$', accept: [2, '2'], placeholder: 'Number', explanation: '$\\cos(x/2) = \\pm \\sqrt{\\frac{1+\\cos x}{2}}$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -539,7 +543,9 @@ topics: [
     { difficulty: 'easy', question: 'Secant = 1 / ?', accept: ['cos', 'cos(x)', 'cosine'], placeholder: 'Function', explanation: '$\\sec x = 1/\\cos x$.' },
     { difficulty: 'hard', question: 'Complex number $re^{i\\theta}$: modulus is $r$, argument is:', accept: ['theta', '\\theta'], placeholder: 'What?', explanation: 'Euler form: $re^{i\\theta}$. $r$ = modulus, $\\theta$ = argument.' },
     { difficulty: 'easy', question: 'Angular speed: $\\omega = \\theta / $ ?', accept: ['t', 'time'], placeholder: 'Variable', explanation: '$\\omega = \\theta / t$: radians per unit time.' },
-    { difficulty: 'hard', question: 'Laplace transform of $\\sin(\\omega t)$: $\\frac{\\omega}{s^2 + \\omega^2}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\mathcal{L}\\{\\sin(\\omega t)\\} = \\frac{\\omega}{s^2 + \\omega^2}$.' }
+    { difficulty: 'hard', question: 'Laplace transform of $\\sin(\\omega t)$: $\\frac{\\omega}{s^2 + \\omega^2}$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\mathcal{L}\\{\\sin(\\omega t)\\} = \\frac{\\omega}{s^2 + \\omega^2}$.' },
+    { difficulty: 'easy', question: 'Period of $\\tan(x)$:', accept: ['pi', '180', '\\pi'], placeholder: 'Period', explanation: '$\\tan x$ repeats every $\\pi$ radians.' },
+    { difficulty: 'hard', question: 'Fourier theorem: periodic functions can be decomposed into:', accept: ['sines and cosines', 'sin and cos', 'harmonic series'], placeholder: 'What?', explanation: 'Fourier series: $\\sum (a_n \\cos nx + b_n \\sin nx)$.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $A = 42°$, $B = 63°$, $c = 12$. Find sides $a$ and $b$.', steps: [

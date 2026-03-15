@@ -225,7 +225,9 @@
     { difficulty: 'easy', question: '$\\lim_{x \\to 5} 7 =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Limit of a constant is the constant.' },
     { difficulty: 'hard', question: 'IVT requires the function to be _____ on $[a,b]$.', accept: ['continuous'], placeholder: 'Property', explanation: 'Intermediate Value Theorem requires continuity.' },
     { difficulty: 'easy', question: 'Continuous function: no breaks, jumps, or:', accept: ['holes', 'gaps'], placeholder: 'What?', explanation: 'Continuous: $\\lim_{x \\to a} f(x) = f(a)$.' },
-    { difficulty: 'hard', question: 'L\'Hopital\'s rule applies to _____ forms.', accept: ['indeterminate', '0/0 or inf/inf'], placeholder: 'Type', explanation: 'L\'Hopital: $0/0$ or $\\infty/\\infty$.' }
+    { difficulty: 'hard', question: 'L\'Hopital\'s rule applies to _____ forms.', accept: ['indeterminate', '0/0 or inf/inf'], placeholder: 'Type', explanation: 'L\'Hopital: $0/0$ or $\\infty/\\infty$.' },
+    { difficulty: 'easy', question: '$\\lim_{x \\to 3} (2x + 1) =$?', accept: [7, '7'], placeholder: 'Number', explanation: 'Direct substitution: $2(3)+1 = 7$.' },
+    { difficulty: 'hard', question: 'A cusp is where the derivative:', accept: ['is undefined', 'does not exist'], placeholder: 'Behavior', explanation: 'Cusp: left and right derivatives approach different infinities.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$.', steps: [
@@ -479,7 +481,9 @@
     { difficulty: 'easy', question: '$\\frac{d}{dx}(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$d/dx(x) = 1$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\csc x) =$?', accept: ['-csc(x)cot(x)', '-\\csc x \\cot x'], placeholder: 'Expression', explanation: '$-\\csc x \\cot x$.' },
     { difficulty: 'easy', question: 'Product rule: $\\frac{d}{dx}(fg) = f\'g +$ ?', accept: ['fg\'', "fg'"], placeholder: 'Term', explanation: '$fg\' + f\'g$.' },
-    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arcsin x) =$?', accept: ['1/sqrt(1-x^2)'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{1-x^2}}$.' }
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arcsin x) =$?', accept: ['1/sqrt(1-x^2)'], placeholder: 'Expression', explanation: '$\\frac{1}{\\sqrt{1-x^2}}$.' },
+    { difficulty: 'easy', question: '$\\frac{d}{dx}(e^x) =$?', accept: ['e^x', 'e^x'], placeholder: 'Expression', explanation: '$e^x$ is its own derivative.' },
+    { difficulty: 'hard', question: '$\\frac{d}{dx}(a^x) = a^x \\ln($ ? $)$', accept: ['a'], placeholder: 'Value', explanation: '$\\frac{d}{dx}a^x = a^x \\ln a$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Differentiate $f(x) = (2x+1)^5$ using the chain rule.', steps: [
@@ -629,7 +633,9 @@
     { difficulty: 'easy', question: 'Local minimum: $f\' $ changes from negative to:', accept: ['positive'], placeholder: 'Sign', explanation: 'Decreasing then increasing: local min.' },
     { difficulty: 'hard', question: 'Absolute max on $[a,b]$: compare critical point values and _____ values.', accept: ['endpoint'], placeholder: 'What?', explanation: 'Closed interval method: check critical points and endpoints.' },
     { difficulty: 'easy', question: 'MVT: there exists $c$ in $(a,b)$ where $f\'(c) = $ average rate.', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$f\'(c) = \\frac{f(b)-f(a)}{b-a}$.' },
-    { difficulty: 'hard', question: 'Related rates: if $V = \\frac{4}{3}\\pi r^3$, then $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Chain rule: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.' }
+    { difficulty: 'hard', question: 'Related rates: if $V = \\frac{4}{3}\\pi r^3$, then $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{$ ? $}$', accept: ['dt'], placeholder: 'Variable', explanation: 'Chain rule: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.' },
+    { difficulty: 'easy', question: 'Optimization: set $f\' = 0$ and solve for critical values.', accept: ['yes', 'true', 'correct'], placeholder: 'Correct?', explanation: 'Optimization: find critical points, test for max/min.' },
+    { difficulty: 'hard', question: 'Global max on open interval: might not exist because of:', accept: ['no boundary', 'open endpoints', 'no closed interval'], placeholder: 'Why?', explanation: 'EVT requires closed interval. Open intervals may not achieve extremes.' }
         ],
         stepBuilder: [
           { difficulty: 'hard', question: 'A farmer has 200m of fencing for a rectangular field along a river (no fence on river side). Maximize area.', steps: [

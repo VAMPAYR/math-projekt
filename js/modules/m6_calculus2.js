@@ -193,7 +193,9 @@
     { difficulty: 'easy', question: '$\\int (x+1)^3\\,dx$ by substitution: let $u =$?', accept: ['x+1'], placeholder: 'Substitution', explanation: '$u = x + 1$, $du = dx$.' },
     { difficulty: 'hard', question: 'Integration by parts with definite integral: $[uv]_a^b - \\int_a^b v\\,du$. Evaluate bounds on:', accept: ['uv', 'the uv term'], placeholder: 'Which part?', explanation: 'Apply FTC to the $uv$ part: $[uv]_a^b$.' },
     { difficulty: 'easy', question: '$\\int \\sin(x)\\,dx =$?', accept: ['-cos(x)+C', '-cosx+C'], placeholder: 'Expression', explanation: '$-\\cos x + C$.' },
-    { difficulty: 'hard', question: 'Trig sub for $\\sqrt{a^2 - x^2}$: let $x = a\\sin$ ?', accept: ['theta', '\\theta'], placeholder: 'Variable', explanation: '$x = a\\sin\\theta$. Then $\\sqrt{a^2 - x^2} = a\\cos\\theta$.' }
+    { difficulty: 'hard', question: 'Trig sub for $\\sqrt{a^2 - x^2}$: let $x = a\\sin$ ?', accept: ['theta', '\\theta'], placeholder: 'Variable', explanation: '$x = a\\sin\\theta$. Then $\\sqrt{a^2 - x^2} = a\\cos\\theta$.' },
+    { difficulty: 'easy', question: 'Substitution: $\\int f(g(x))g\'(x)\\,dx = F(g(x)) + $ ?', accept: ['C'], placeholder: 'Constant', explanation: '$+C$ (constant of integration).' },
+    { difficulty: 'hard', question: '$\\int \\sqrt{x^2+1}\\,dx$ requires trig sub $x =$?', accept: ['tan(theta)', 'a tan theta'], placeholder: 'Substitution', explanation: 'For $\\sqrt{x^2+a^2}$: let $x = a\\tan\\theta$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int_1^4 (2\\sqrt{x} + 3)\\,dx$.', steps: [
@@ -401,7 +403,9 @@
     { difficulty: 'easy', question: 'Probability as area: $P(a \\leq X \\leq b) = \\int_a^b f(x)\\,dx$ where $f$ is the:', accept: ['pdf', 'probability density function', 'density'], placeholder: 'Function?', explanation: 'PDF: probability = area under the density curve.' },
     { difficulty: 'hard', question: 'Separable ODE: $dy/dx = f(x)g(y)$. Solve by moving $g(y)$ to the:', accept: ['left', 'y side'], placeholder: 'Side', explanation: '$\\frac{dy}{g(y)} = f(x)\\,dx$. Integrate both sides.' },
     { difficulty: 'easy', question: 'Shell method: $V = 2\\pi \\int x f(x)\\,dx$ rotates around the:', accept: ['y-axis', 'y axis'], placeholder: 'Axis', explanation: 'Shells: rotation about the $y$-axis.' },
-    { difficulty: 'hard', question: 'Pappus theorem: volume = $2\\pi \\bar{y} A$ where $\\bar{y}$ is:', accept: ['centroid distance', 'distance from centroid to axis'], placeholder: 'What?', explanation: '$\\bar{y}$: distance from centroid to axis of rotation.' }
+    { difficulty: 'hard', question: 'Pappus theorem: volume = $2\\pi \\bar{y} A$ where $\\bar{y}$ is:', accept: ['centroid distance', 'distance from centroid to axis'], placeholder: 'What?', explanation: '$\\bar{y}$: distance from centroid to axis of rotation.' },
+    { difficulty: 'easy', question: 'Volume by disk method: $V = \\pi \\int [f(x)]^2\\,dx$. Cross-sections are:', accept: ['circles', 'disks'], placeholder: 'Shape', explanation: 'Disk method: circular cross-sections.' },
+    { difficulty: 'hard', question: 'Catenary curve: $y = a \\cosh(x/a)$. Physics application:', accept: ['hanging chain', 'hanging cable', 'suspension cable'], placeholder: 'What?', explanation: 'Catenary: shape of a freely hanging chain/cable.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Evaluate $\\int \\frac{2x}{x^2+1}\\,dx$ by substitution.', steps: [
@@ -543,7 +547,9 @@
     { difficulty: 'easy', question: '$\\int_0^1 e^x\\,dx =$?', accept: ['e-1', '1.718'], placeholder: 'Number', explanation: '$[e^x]_0^1 = e - 1$.' },
     { difficulty: 'hard', question: 'Gabriel\'s horn: $y = 1/x$ for $x \\geq 1$ revolved around $x$-axis has finite volume but infinite:', accept: ['surface area'], placeholder: 'What?', explanation: 'Volume $= \\pi$, surface area $= \\infty$. Painter\'s paradox.' },
     { difficulty: 'easy', question: 'Proper rational function: degree of numerator < degree of:', accept: ['denominator'], placeholder: 'What?', explanation: 'Proper: num degree $<$ denom degree. Otherwise: do long division first.' },
-    { difficulty: 'hard', question: 'Comparison test for improper integrals: if $0 \\leq f \\leq g$ and $\\int g$ diverges, can we conclude about $\\int f$?', accept: ['no', 'nothing'], placeholder: 'Conclusion?', explanation: 'If the larger diverges, we cannot conclude about the smaller (it might still converge).' }
+    { difficulty: 'hard', question: 'Comparison test for improper integrals: if $0 \\leq f \\leq g$ and $\\int g$ diverges, can we conclude about $\\int f$?', accept: ['no', 'nothing'], placeholder: 'Conclusion?', explanation: 'If the larger diverges, we cannot conclude about the smaller (it might still converge).' },
+    { difficulty: 'easy', question: '$\\int_1^e \\frac{1}{x}\\,dx =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$[\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$.' },
+    { difficulty: 'hard', question: 'Gamma function: $\\Gamma(n) = (n-1)!$ for positive integers. $\\Gamma(5) =$?', accept: [24, '24'], placeholder: 'Number', explanation: '$\\Gamma(5) = 4! = 24$.' }
         ],
         stepBuilder: [
           { difficulty: 'medium', question: 'Find the Maclaurin series for $f(x) = \\frac{1}{1+x}$.', steps: [

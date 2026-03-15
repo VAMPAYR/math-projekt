@@ -147,7 +147,9 @@ topics: [
     { difficulty: 'easy', question: 'Range of $f(x) = x^2$:', accept: ['[0, inf)', 'y >= 0', 'y \\geq 0'], placeholder: 'Range', explanation: '$x^2 \\geq 0$ always. Range: $[0, \\infty)$.' },
     { difficulty: 'hard', question: 'Vertical line test: a graph represents a function if every vertical line intersects at most:', accept: ['once', '1 time'], placeholder: 'How many?', explanation: 'VLT: at most one intersection per vertical line.' },
     { difficulty: 'easy', question: 'Increasing function: as $x$ increases, $f(x)$:', accept: ['increases'], placeholder: 'Behavior', explanation: 'Increasing: $x_1 < x_2 \\Rightarrow f(x_1) < f(x_2)$.' },
-    { difficulty: 'hard', question: 'If $f$ and $g$ are inverse functions, then $f(g(x)) =$?', accept: ['x'], placeholder: 'Result', explanation: '$f(g(x)) = x$ and $g(f(x)) = x$.' }
+    { difficulty: 'hard', question: 'If $f$ and $g$ are inverse functions, then $f(g(x)) =$?', accept: ['x'], placeholder: 'Result', explanation: '$f(g(x)) = x$ and $g(f(x)) = x$.' },
+    { difficulty: 'easy', question: 'Domain of $f(x) = \\frac{1}{x}$: all reals except:', accept: [0, '0', 'x=0'], placeholder: 'Value', explanation: 'Division by zero: exclude $x = 0$.' },
+    { difficulty: 'hard', question: 'Symmetry: $f(-x) = -f(x)$ means the function is:', accept: ['odd'], placeholder: 'Type', explanation: 'Odd function: symmetric about the origin.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find the domain of $f(x) = \\frac{\\sqrt{x+3}}{x-1}$ step by step.', steps: [
@@ -305,7 +307,9 @@ topics: [
     { difficulty: 'easy', question: 'Number of zeros of a degree-2 polynomial (at most):', accept: [2, '2'], placeholder: 'Number', explanation: 'Degree $n$: at most $n$ real zeros.' },
     { difficulty: 'hard', question: 'Rational function with degree of numerator > degree of denominator has no:', accept: ['horizontal asymptote'], placeholder: 'What?', explanation: 'No HA when numerator degree > denominator degree.' },
     { difficulty: 'easy', question: 'A polynomial of degree $n$ has at most $n$ real:', accept: ['zeros', 'roots'], placeholder: 'What?', explanation: 'At most $n$ real zeros.' },
-    { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, how many sign changes in $f(-x) = x^4 - 1$?', accept: [0, '0'], placeholder: 'Count', explanation: '$x^4 - 1$: $+, -$. One sign change in $f(x)$, zero in $f(-x) = x^4 - 1$. No negative roots.' }
+    { difficulty: 'hard', question: 'If $f(x) = x^4 - 1$, how many sign changes in $f(-x) = x^4 - 1$?', accept: [0, '0'], placeholder: 'Count', explanation: '$x^4 - 1$: $+, -$. One sign change in $f(x)$, zero in $f(-x) = x^4 - 1$. No negative roots.' },
+    { difficulty: 'easy', question: 'Leading coefficient of $-2x^5 + 3x^2 - 1$:', accept: [-2, '-2'], placeholder: 'Number', explanation: 'Leading term: $-2x^5$. Leading coefficient: $-2$.' },
+    { difficulty: 'hard', question: 'Conjugate Zero Theorem: if $3+2i$ is a zero, so is:', accept: ['3-2i', '3 - 2i'], placeholder: 'Zero', explanation: 'Complex zeros come in conjugate pairs.' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Identify all transformations of $y = 2|x - 3| + 1$ from the parent $y = |x|$.', steps: [
@@ -417,7 +421,9 @@ topics: [
     { difficulty: 'easy', question: '$10^0 =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Any number to power 0 is 1.' },
     { difficulty: 'hard', question: 'Half-life of 100g substance: after 3 half-lives, remaining:', accept: ['12.5', '12.5g'], placeholder: 'Grams', explanation: '$100 \\to 50 \\to 25 \\to 12.5$g.' },
     { difficulty: 'easy', question: 'Exponential decay: base $b$ satisfies $0 < b <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: '$0 < b < 1$: exponential decay.' },
-    { difficulty: 'hard', question: 'Logistic growth: $P(t) = \\frac{L}{1 + Ae^{-kt}}$. $L$ represents:', accept: ['carrying capacity', 'max population'], placeholder: 'What?', explanation: '$L$: carrying capacity (upper bound on growth).' }
+    { difficulty: 'hard', question: 'Logistic growth: $P(t) = \\frac{L}{1 + Ae^{-kt}}$. $L$ represents:', accept: ['carrying capacity', 'max population'], placeholder: 'What?', explanation: '$L$: carrying capacity (upper bound on growth).' },
+    { difficulty: 'easy', question: 'Decay rate 3%: multiplier is:', accept: ['0.97'], placeholder: 'Number', explanation: '$1 - 0.03 = 0.97$.' },
+    { difficulty: 'hard', question: 'Change of base: $\\log_a b = \\frac{\\ln b}{\\ln$ ?$}$', accept: ['a'], placeholder: 'Base', explanation: '$\\log_a b = \\frac{\\ln b}{\\ln a}$.' }
   ],
   matching: [
     { difficulty: 'medium', instruction: 'Match each log property to its formula:', pairs: [
