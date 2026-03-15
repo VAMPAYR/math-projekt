@@ -206,6 +206,10 @@
           { question: 'What is the largest angle?', accept: [80, '80', '80°'], placeholder: 'Degrees', explanation: '$\\frac{4}{9} \\times 180° = 80°$.' }
         ], completionMessage: 'Ratio problems: divide the total (180°) in the given ratio.' }
       ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Supplementary angles:', expression: 'Two angles are supplementary if they add up to {{0}}$°$.', blanks: [ { accept: ['180'], size: 4 } ], explanation: 'Supplementary: sum = $180°$.' },
+    { difficulty: 'easy', context: 'Complementary angles:', expression: 'Two angles are complementary if they add up to {{0}}$°$.', blanks: [ { accept: ['90'], size: 4 } ], explanation: 'Complementary: sum = $90°$.' }
+  ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Angle Problem Strategy</h4><ol><li><strong>Identify the relationship:</strong> complementary ($90°$), supplementary ($180°$), vertical (equal), or parallel-line property.</li><li><strong>Set up an equation</strong> using that relationship.</li><li><strong>Solve</strong> and verify.</li></ol></div>` }
     },
 
@@ -365,6 +369,10 @@
           { content: 'If $EF = 8$, then $BC = 8 \\times (3/2) = 12$.' }
         ], explanation: 'AA similarity: two equal angles guarantee all three match. Corresponding sides scale proportionally.' }
       ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Sum of angles in a triangle:', expression: 'The sum of angles in a triangle is {{0}}$°$.', blanks: [ { accept: ['180'], size: 4 } ], explanation: '$180°$ always.' },
+    { difficulty: 'medium', context: 'Isosceles triangle:', expression: 'An isosceles triangle has {{0}} equal sides.', blanks: [ { accept: ['2', 'two'], size: 4 } ], explanation: 'Isosceles: 2 equal sides and 2 equal base angles.' }
+  ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Triangle Strategy</h4><ol><li><strong>Right triangle?</strong> Use Pythagorean theorem.</li><li><strong>Congruence?</strong> Check SSS, SAS, ASA, or AAS.</li><li><strong>Similarity?</strong> Check AA (two equal angles) or proportional sides.</li><li><strong>Area?</strong> $A = \\frac{1}{2}bh$ or Heron's formula.</li></ol></div>` }
     },
 
@@ -416,7 +424,7 @@
           <li><strong>Arc Length:</strong> $s = r\\theta$ (where $\\theta$ is in radians)</li>
           <li><strong>Sector Area:</strong> $A = \\frac{1}{2}r^2\\theta$ (where $\\theta$ is in radians)</li>
         </ul>
-        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction �: circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
+        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction �: circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
 
         <div class="callout callout-key"><h4>Circle Equation (Coordinate Geometry)</h4>
         <p><strong>Standard form:</strong> $(x - h)^2 + (y - k)^2 = r^2$ with center $(h, k)$ and radius $r$.</p>
@@ -499,6 +507,10 @@
           { content: 'Ring area = outer $-$ inner: $64\\pi - 25\\pi = 39\\pi \\approx 122.52$ sq units.' }
         ], explanation: 'Annulus area = $\\pi(R^2 - r^2)$. Subtract the hole from the full disk.' }
       ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Area of rectangle:', expression: '$A =$ {{0}} $\\times w$', blanks: [ { accept: ['l', 'L', 'length'], size: 6 } ], explanation: 'Area = length times width.' },
+    { difficulty: 'medium', context: 'Pythagorean theorem:', expression: '$a^2 + b^2 =$ {{0}} $^2$', blanks: [ { accept: ['c', 'C'], size: 3 } ], explanation: '$a^2 + b^2 = c^2$.' }
+  ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Circle Strategy</h4><ol><li>Identify what you know: radius, diameter, angle, arc, area?</li><li>Convert angles to radians if using $s = r\\theta$ or $A = \\frac{1}{2}r^2\\theta$.</li><li>Use the appropriate formula and solve for the unknown.</li></ol></div>` }
     },
 
@@ -518,14 +530,14 @@
       ` },
       hook: { html: `
         <div class="callout callout-puzzle"><h4>🧩 Puzzle: Paint for a Room</h4>
-        <p>A room is $5$ m �: $4$ m �: $3$ m tall. You need to paint all four walls (not floor or ceiling). Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
+        <p>A room is $5$ m �: $4$ m �: $3$ m tall. You need to paint all four walls (not floor or ceiling). Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
       concept: { html: `
         <div class="callout callout-key"><h4>2D Area Formulas</h4>
         <ul>
           <li><strong>Rectangle:</strong> $A = lw$</li>
           <li><strong>Triangle:</strong> $A = \\frac{1}{2}bh$ (WHY: half a rectangle)</li>
           <li><strong>Parallelogram:</strong> $A = bh$ (WHY: shear a rectangle; area preserved)</li>
-          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (WHY: average of parallel sides �: height)</li>
+          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (WHY: average of parallel sides �: height)</li>
           <li><strong>Circle:</strong> $A = \\pi r^2$</li>
         </ul></div>
 
@@ -614,7 +626,7 @@
         { difficulty: 'hard', question: 'A cylinder has volume $100\\pi$ cm³ and radius $5$ cm. Height:', accept: [4, '4'], placeholder: 'cm', explanation: '$V = \\pi r^2 h$. $100\\pi = 25\\pi h$. $h = 4$ cm.' }
       ],
       stepBuilder: [
-        { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
+        { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
           { content: 'Total volume: $8 \\times 5 \\times 3 = 120$ m³.' },
           { content: 'Water volume: $8 \\times 5 \\times 2 = 80$ m³.' },
           { content: 'Empty volume: $120 - 80 = 40$ m³.' },
@@ -628,6 +640,10 @@
           { question: 'Total surface area (use π):', accept: ['200π', '200pi'], placeholder: 'cm²', explanation: '$SA = 2\\pi(25) + 2\\pi(5)(15) = 50\\pi + 150\\pi = 200\\pi$.' }
         ], completionMessage: 'Cylinder: $V = \\pi r^2 h$, $SA = 2\\pi r^2 + 2\\pi rh$.' }
       ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Area of a circle:', expression: '$A = \\pi$ {{0}} $^2$', blanks: [ { accept: ['r', 'R'], size: 3 } ], explanation: '$A = \\pi r^2$.' },
+    { difficulty: 'medium', context: 'Circumference:', expression: '$C = 2\\pi$ {{0}}', blanks: [ { accept: ['r', 'R'], size: 3 } ], explanation: '$C = 2\\pi r$.' }
+  ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Area/Volume Strategy</h4><ol><li>Identify the shape (2D or 3D).</li><li>Select the correct formula.</li><li>Identify the measurements: radius? base? height? slant height?</li><li>Substitute and compute. Include units (cm², cm³).</li></ol></div>` }
     },
 
@@ -735,6 +751,10 @@
           { content: 'Simplify: $y = -\\frac{1}{3}x + \\frac{2}{3} + 1 = -\\frac{1}{3}x + \\frac{5}{3}$.' }
         ], explanation: 'Perpendicular lines have slopes that are negative reciprocals. Use point-slope form with the given point.' }
       ],
+  fillBlanks: [
+    { difficulty: 'easy', context: 'Slope formula:', expression: '$m = \\frac{y_2 - y_1}{$ {{0}} $- x_1}$', blanks: [ { accept: ['x_2', 'x2'], size: 4 } ], explanation: 'Slope = rise / run.' },
+    { difficulty: 'medium', context: 'Parallel lines:', expression: 'Parallel lines have {{0}} slopes.', blanks: [ { accept: ['equal', 'the same'], size: 8 } ], explanation: 'Same slope means the lines never intersect.' }
+  ],
       stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Coordinate Geometry Strategy</h4><ol><li><strong>Two points?</strong> Use distance, midpoint, or slope formulas.</li><li><strong>Need equation?</strong> Find slope first, then use point-slope form.</li><li><strong>Parallel?</strong> Same slope. <strong>Perpendicular?</strong> Negative reciprocal slopes.</li></ol></div>` }
     }
 
