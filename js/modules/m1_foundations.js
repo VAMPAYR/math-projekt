@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 1: Mathematical Foundations (5 topics, 30 exercises)
-   Sources: Foundational Math, Velleman, Margaris
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

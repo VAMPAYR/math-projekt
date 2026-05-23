@@ -1,7 +1,6 @@
 /* ============================================================
    MODULE: Geometry
    Basic shapes, triangles, circles, area/volume, coordinate geometry
-   Source: Precalculus (Stewart) geometry chapters
    ============================================================ */
 (function() {
   if (!window.MATH_MODULES) window.MATH_MODULES = [];

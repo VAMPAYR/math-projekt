@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 2: Beginning Algebra (8 topics)
-   Source: OpenStax Beginning & Intermediate Algebra (Chapters 1-6)
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 5: Trigonometry (4 topics)
-   Source: Thomas' Calculus Ch 1.3, Precalculus Trig chapters
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

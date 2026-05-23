@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 6: Calculus 1 : Limits & Derivatives (4 topics)
-   Source: Thomas' Calculus Chapters 2-4
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

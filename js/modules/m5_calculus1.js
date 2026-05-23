@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 5: Calculus 1 (Thomas' Calculus)
+   MODULE 5: Calculus 1
    Limits, Derivatives, Applications
    ============================================================ */
 (function() {

@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 3: Intermediate Algebra (4 topics)
-   Source: OpenStax Intermediate Algebra (Chapters 5-8)
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

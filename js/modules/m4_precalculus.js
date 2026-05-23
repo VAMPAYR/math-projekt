@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 4: Precalculus : Functions & Graphs (4 topics)
-   Source: Precalculus (OpenStax/Stitz-Zeager), Thomas' Calculus Ch 1
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

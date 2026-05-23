@@ -61,6 +61,12 @@ js/
 - A modern browser (Chrome, Firefox, Edge, Safari)
 - Internet connection only for first load (KaTeX and Desmos CDN assets are cached)
 
+## Contributing
+
+Contributions are welcome when they improve mathematical accuracy, learner feedback, accessibility, or browser reliability. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
+
+Good first contributions include typo fixes, clearer explanations, additional accepted answers for free-response problems, and new practice problems for existing topics. Large curriculum changes should begin with an issue.
+
 ## License
 
 This project is provided for educational use.

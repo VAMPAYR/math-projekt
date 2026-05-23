@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 8: Calculus 3 : Multivariable Calculus (3 topics)
-   Source: Thomas' Calculus Chapters 12-16
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

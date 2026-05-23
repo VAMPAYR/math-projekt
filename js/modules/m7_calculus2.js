@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 7: Calculus 2 : Integration Techniques & Series (4 topics)
-   Source: Thomas' Calculus Chapters 8-10
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

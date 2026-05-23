@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 9: Probability & Statistics (3 topics)
-   Source: Probability & Statistics exercises PDF, Thomas' Calculus probability applications
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];

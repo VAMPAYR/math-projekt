@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 6: Calculus 2 (Thomas' Calculus)
+   MODULE 6: Calculus 2
    Integration, Techniques, Sequences & Series
    ============================================================ */
 (function() {
