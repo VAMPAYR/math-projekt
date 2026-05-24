@@ -68,10 +68,6 @@ js/
 
 Runtime dependencies and browser API usage are listed in [`DEPENDENCIES.md`](DEPENDENCIES.md).
 
-## Quality Tracking
-
-The current content and release checklist is tracked in [`QUALITY_UPGRADE_TRACKER.md`](QUALITY_UPGRADE_TRACKER.md).
-
 ## Contributing
 
 Contributions are welcome when they improve mathematical accuracy, learner feedback, accessibility, or browser reliability. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.

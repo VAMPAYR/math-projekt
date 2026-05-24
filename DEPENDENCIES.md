@@ -114,7 +114,7 @@ git ls-files sources
 git status --short --ignored
 grep -R "Source:" js/modules js/self_study_guides.js js/university_walkthroughs.js || true
 grep -R "Sources:" js/modules js/self_study_guides.js js/university_walkthroughs.js || true
-grep -R "TODO\|FIXME\|HACK\|noobie\|newbie\|draft\|temporary\|private\|internal" . --exclude-dir=.git --exclude-dir=sources --exclude=DEPENDENCIES.md --exclude=QUALITY_UPGRADE_TRACKER.md || true
+grep -R "TODO\|FIXME\|HACK\|noobie\|newbie\|draft\|temporary\|private\|internal" . --exclude-dir=.git --exclude-dir=sources --exclude=DEPENDENCIES.md || true
 ```
 
 Run the JavaScript syntax check.
