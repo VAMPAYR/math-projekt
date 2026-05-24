@@ -76,4 +76,4 @@ Good first contributions include typo fixes, clearer explanations, additional ac
 
 ## License
 
-This project is provided for educational use.
+This project is licensed under the MIT License. See [`LICENSE`](LICENSE).
