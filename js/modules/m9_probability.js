@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 9: Probability & Statistics (3 topics)
+   MODULE 9: Probability & Statistics (2 topics)
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -35,7 +35,7 @@ topics: [
     ],
     background: {
       title: 'Why Probability? Quantifying Uncertainty',
-      content: '<p><strong>Probability</strong> was born from gambling. In 1654, <strong>Pascal</strong> and <strong>Fermat</strong> exchanged letters about how to split the stakes in an unfinished game of chance. Their correspondence founded probability theory.</p><p><strong>Why counting matters:</strong> To compute probability, you need to count favorable outcomes and total outcomes. Combinatorics (the mathematics of counting) is therefore inseparable from probability.</p><p><strong>Why $P(A) = \\frac{\\text{favorable}}{\\text{total}}$ works:</strong> This formula assumes all outcomes are equally likely (a fair coin, a fair die). When outcomes are not equally likely, you assign weights. The Kolmogorov axioms generalize this to arbitrarily complex situations.</p>'
+      content: '<p><strong>Probability</strong> developed from practical questions about uncertain outcomes, including games of chance, insurance, measurement error, and scientific inference. The central task is to turn uncertainty into numbers that obey consistent rules.</p><p><strong>Why counting matters:</strong> To compute probability, count favorable outcomes and total outcomes. Combinatorics is therefore inseparable from probability.</p><p><strong>Why $P(A) = \\frac{\\text{favorable}}{\\text{total}}$ works:</strong> This formula assumes all outcomes are equally likely. When outcomes are not equally likely, assign weights. The general rules of probability handle both simple games and complex models.</p>'
     },
     mathGrammar: [
       { question: 'What does $P(A) = 0.3$ mean?', answer: 'If you repeated the experiment infinitely many times, event $A$ would happen about $30\\%$ of the time. $P = 0$ means impossible. $P = 1$ means certain. Everything else falls between.' },
@@ -238,7 +238,7 @@ topics: [
     { difficulty: 'medium', context: 'Permutation vs. Combination:', expression: 'When order {{0}}, use permutations. When order {{1}}, use combinations.', blanks: [ { accept: ['matters'], size: 8 }, { accept: ['does not matter', 'doesnt matter'], size: 16 } ], explanation: 'Order matters = more arrangements = permutations.' },
     { difficulty: 'easy', context: 'Basic probability:', expression: 'The probability of any event satisfies $0 \\leq P(E) \\leq$ {{0}}.', blanks: [ { accept: ['1'], size: 3 } ], explanation: 'Probability ranges from 0 to 1.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Probability Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Probability Strategy</h4>
     <ol><li><strong>Does order matter?</strong> Yes → permutation. No → combination.</li>
     <li><strong>Complement:</strong> $P(A) = 1 - P(\\text{not } A)$. Often easier.</li>
     <li><strong>Independent events:</strong> $P(A \\cap B) = P(A) \\cdot P(B)$.</li>
@@ -438,7 +438,7 @@ topics: [
     { difficulty: 'easy', context: 'Expected value:', expression: '$E[X] = \\sum x_i \\cdot$ {{0}}', blanks: [ { accept: ['P(x_i)', 'p(x_i)', 'P(xi)'], size: 8 } ], explanation: '$E[X]$ = weighted average of outcomes by their probabilities.' },
     { difficulty: 'medium', context: 'Variance formula:', expression: '$\\text{Var}(X) = E[X^2] -$ {{0}}', blanks: [ { accept: ['(E[X])^2', 'E[X]^2', '(EX)^2'], size: 10 } ], explanation: '$\\text{Var}(X) = E[X^2] - (E[X])^2$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Random Variables Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Random Variables Strategy</h4>
     <ol><li><strong>Identify the distribution:</strong> Binomial? Normal? Poisson?</li>
     <li><strong>$E[X]$:</strong> Weighted average of outcomes.</li>
     <li><strong>$\\text{Var}(X)$:</strong> $E[X^2] - (E[X])^2$. Measures spread.</li>

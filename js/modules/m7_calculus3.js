@@ -27,7 +27,7 @@
           ${WHY('Why is the dot product a scalar while the cross product is a vector?', '<p>The <strong>dot product</strong> $\\vec{u} \\cdot \\vec{v} = \\|\\vec{u}\\|\\|\\vec{v}\\|\\cos\\theta$ measures how much two vectors <em>align</em>. Alignment is a single number (fully aligned = max, perpendicular = 0). The <strong>cross product</strong> $\\vec{u} \\times \\vec{v}$ produces a vector <em>perpendicular</em> to both inputs, with magnitude $\\|\\vec{u}\\|\\|\\vec{v}\\|\\sin\\theta$ (the area of the parallelogram they span). A perpendicular direction requires a vector, not a scalar.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The River Crossing</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: The River Crossing</h4>
           <p>You swim at 3 m/s across a river that flows at 4 m/s. In what direction do you actually move, and how fast?</p>
           <p>Your velocity and the river's velocity are <strong>vectors</strong>: they add. The resultant speed is $\\sqrt{3^2 + 4^2} = 5$ m/s at an angle $\\theta = \\arctan(4/3) \\approx 53°$ downstream. Vector addition explains why you drift.</p></div>` },
         formalDefinitions: [
@@ -48,17 +48,17 @@
   <line x1="50" y1="20" x2="50" y2="230" stroke="#94a3b8" stroke-width="1"/>
   <line x1="80" y1="200" x2="220" y2="100" stroke="#3b82f6" stroke-width="2.5"/>
   <polygon points="220,100 208,108 212,116" fill="#3b82f6"/>
-  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">v�: = ⟨a, b⟩</text>
+  <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">v = &lt;a, b&gt;</text>
   <line x1="80" y1="200" x2="220" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="220" y1="200" x2="220" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="150" y="215" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">a (x-component)</text>
   <text x="235" y="155" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">b (y-component)</text>
   <line x1="80" y1="200" x2="280" y2="160" stroke="#8b5cf6" stroke-width="2"/>
   <polygon points="280,160 268,162 270,172" fill="#8b5cf6"/>
-  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">w�:</text>
+  <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">w</text>
   <line x1="220" y1="100" x2="280" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
   <polygon points="280,60 268,65 272,72" fill="#f59e0b"/>
-  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">v�: + w�:</text>
+  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">v + w</text>
   <line x1="220" y1="100" x2="280" y2="160" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
   <circle cx="80" cy="200" r="3" fill="#e2e8f0"/>
   <text x="150" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Vector addition: tip-to-tail</text>
@@ -87,7 +87,7 @@
           steps: [
             { title: 'Apply the formula', content: '$\\vec{u} \\times \\vec{v} = \\langle (2)(6)-(3)(5),\\; (3)(4)-(1)(6),\\; (1)(5)-(2)(4) \\rangle$', why: 'Each component uses the "other two" components in a specific pattern.' },
             { title: 'Compute', content: '$= \\langle 12-15,\\; 12-6,\\; 5-8 \\rangle = \\langle -3, 6, -3 \\rangle$', why: 'Arithmetic.' },
-            { title: 'Verify perpendicularity', content: '$\\vec{u} \\cdot (\\vec{u} \\times \\vec{v}) = (1)(-3)+(2)(6)+(3)(-3) = -3+12-9 = 0$ ✓', why: 'The cross product is always perpendicular to both input vectors.' }
+            { title: 'Verify perpendicularity', content: '$\\vec{u} \\cdot (\\vec{u} \\times \\vec{v}) = (1)(-3)+(2)(6)+(3)(-3) = -3+12-9 = 0$ ', why: 'The cross product is always perpendicular to both input vectors.' }
           ]
         }],
         flashCards: [
@@ -236,7 +236,7 @@
     ], completionMessage: 'Speed is the magnitude of velocity: $|\\vec{v}| = \\sqrt{v_x^2 + v_y^2}$.' }
           ], completionMessage: 'Triangle area in 3D: half the cross product magnitude of two edge vectors.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Vector Operation Selection</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Vector Operation Selection</h4>
           <ul><li>Need a <strong>scalar</strong> (angle, projection, work)? → <strong>Dot product.</strong></li>
           <li>Need a <strong>perpendicular vector</strong> (area, torque, normal)? → <strong>Cross product.</strong></li>
           <li>Checking perpendicularity? → Dot product = 0.</li>
@@ -258,7 +258,7 @@
           ${WHY('Why is $\\nabla f$ perpendicular to level curves?', '<p>A level curve is where $f(x,y) = c$ (constant). Moving along a level curve, $f$ does not change: $df = 0$. But $df = \\nabla f \\cdot d\\vec{r}$ where $d\\vec{r}$ is the direction of movement. For $df = 0$, we need $\\nabla f \\perp d\\vec{r}$. The gradient is perpendicular to the level curve because any direction along the curve produces zero change in $f$.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Mountain Hiker</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: The Mountain Hiker</h4>
           <p>You stand on a mountainside at coordinates $(x, y)$ with elevation $h(x,y) = 1000 - x^2 - 2y^2$. You can walk east (positive $x$) or north (positive $y)$. Which direction is steeper?</p>
           <p>$\\frac{\\partial h}{\\partial x} = -2x$ measures the east-slope. $\\frac{\\partial h}{\\partial y} = -4y$ measures the north-slope. At $(1, 1)$: east-slope $= -2$, north-slope $= -4$. Walking north descends twice as fast.</p></div>` },
         concept: { html: `
@@ -389,7 +389,7 @@
           { difficulty: 'easy', context: 'Partial derivatives:', expression: 'When computing $\\frac{\\partial f}{\\partial x}$, treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'Hold other variables constant.' },
     { difficulty: 'medium', context: 'Gradient:', expression: '$\\nabla f = \\langle \\frac{\\partial f}{\\partial x},$ {{0}} $\\rangle$', blanks: [ { accept: ['df/dy', '\\frac{\\partial f}{\\partial y}'], size: 8 } ], explanation: 'Gradient: partial derivatives as components.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Partial Derivative Strategy</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Partial Derivative Strategy</h4>
           <ol><li><strong>Cover up</strong> all other variables: treat them as constants.</li>
           <li><strong>Differentiate</strong> using standard single-variable rules.</li>
           <li><strong>Gradient</strong> = vector of all partial derivatives.</li>
@@ -411,7 +411,7 @@
           ${WHY('Why does Fubini\'s theorem let us integrate one variable at a time?', '<p>Fubini\'s theorem says $\\iint_R f(x,y)\\,dA = \\int_a^b\\left(\\int_{c(x)}^{d(x)} f(x,y)\\,dy\\right)dx$. The inner integral treats $x$ as constant and accumulates along $y$. The outer integral then accumulates those results along $x$. This works because the rectangle $dA = dx\\,dy$ can be built by stacking thin strips. The theorem holds when $f$ is continuous, ensuring the order does not matter.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: Volume Under a Surface</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: Volume Under a Surface</h4>
           <p>A dome has shape $z = 4 - x^2 - y^2$ (a paraboloid). What volume does it enclose above the $xy$-plane?</p>
           <p>Slice it into thin layers. Each layer has area $\\pi r^2$. Sum all layers. This is a <strong>double integral</strong>: $\\int\\int (4 - x^2 - y^2)\\,dA$.</p></div>` },
         concept: { html: `
@@ -463,6 +463,19 @@
           hint: '<p>Jacobian of polar transformation.</p>',
           correctExplanation: 'Jacobian is $r$, so $dA = r\\,dr\\,d\\theta$.',
           wrongExplanations: { 0: 'Missing the $r$ factor.', 2: '$r^2$ is for spherical.', 3: 'Jacobian multiplies, not divides.' }
+        },
+        {
+          difficulty: 'medium',
+          question: 'What does $\\iiint_E 1\\,dV$ compute?',
+          options: ['The volume of $E$', 'The surface area of $E$', 'The boundary curve of $E$', 'The average value of $E$'],
+          correctIndex: 0,
+          hint: '<p>Integrating 1 over a region measures the size of that region.</p>',
+          correctExplanation: '$\\iiint_E 1\\,dV$ adds one unit of volume over every small volume piece in $E$, so it gives the volume of $E$.',
+          wrongExplanations: {
+            1: 'Surface area uses a surface integral, not a volume integral.',
+            2: 'A boundary curve belongs to a line integral, not a triple integral over a region.',
+            3: 'Average value requires dividing the integral by the volume of the region.'
+          }
         }],
         freeResponse: [
           { difficulty: 'easy', question: '$\\int_0^1 \\int_0^1 1\\,dy\\,dx =$? (area of unit square)', accept: [1, '1'], placeholder: 'Number', explanation: '$\\int_0^1 1\\,dx = 1$. Total: $1$.' },
@@ -517,7 +530,7 @@
         fillBlanks: [
           { difficulty: 'medium', context: 'Polar conversion:', expression: 'In polar coordinates, $dA = $ {{0}} $dr\\,d\\theta$.', blanks: [ { accept: ['r'], size: 3 } ], explanation: 'The Jacobian of the polar transformation is $r$.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Multiple Integral Strategy</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Multiple Integral Strategy</h4>
           <ol><li><strong>Sketch the region.</strong> Understand its boundaries before setting up limits.</li>
           <li><strong>Choose coordinates:</strong> Circular region? Use polar. Spherical region? Use spherical.</li>
           <li><strong>Set up limits:</strong> Inner limits can be functions of the outer variable. Outer limits are constants.</li>

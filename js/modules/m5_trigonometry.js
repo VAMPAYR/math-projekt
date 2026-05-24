@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 5: Trigonometry (4 topics)
+   MODULE 5: Trigonometry (3 topics)
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -23,8 +23,8 @@ topics: [
     { term: 'Coordinate Plane', definition: 'A plane with perpendicular x and y axes. Points are $(x, y)$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why radians?</strong> Degrees are arbitrary (360 was chosen by Babylonians for calendar convenience). Radians connect angle measure directly to arc length: an angle of $\\theta$ radians subtends an arc of length $r\\theta$ on a circle of radius $r$. This makes calculus formulas clean: $\\frac{d}{dx}\\sin(x) = \\cos(x)$ works ONLY in radians.</p>
-    ${WHY('Why the unit circle?', '<p>The unit circle ($r = 1$) lets us define $\\cos\\theta$ and $\\sin\\theta$ as the $x$ and $y$ coordinates of the point at angle $\\theta$. This extends trig beyond right triangles to ALL angles, including negative and angles $ \\gt 360°$.</p>')}
+    <p><strong>Purpose of radians.</strong> Degrees divide a full rotation into $360$ parts. Radians connect angle measure directly to arc length: an angle of $\\theta$ radians subtends an arc of length $r\\theta$ on a circle of radius $r$. Calculus formulas such as $\\frac{d}{dx}\\sin(x) = \\cos(x)$ use radians.</p>
+    ${WHY('Purpose of the unit circle', '<p>The unit circle ($r = 1$) defines $\\cos\\theta$ and $\\sin\\theta$ as the $x$ and $y$ coordinates of the point at angle $\\theta$. This extends trigonometry beyond right triangles to every real angle, including negative angles and angles greater than $360^\\circ$.</p>')}
   ` },
   formalDefinitions: [
       { term: 'Unit Circle', symbol: '$x^2 + y^2 = 1$', definition: 'Circle of radius 1 centered at the origin. For angle $\\theta$ measured from the positive $x$-axis, the point $(\\cos\\theta, \\sin\\theta)$ lies on this circle.' },
@@ -39,45 +39,78 @@ topics: [
       { latex: 'y = \\tan(x)' }
     ],
     background: {
-      title: 'Why "Cosine"? The Etymology of Trigonometry',
-      content: '<p>The word <strong>trigonometry</strong> comes from Greek: <em>trigonon</em> (triangle) + <em>metron</em> (measure). It literally means "triangle measurement."</p><p><strong>Sine</strong> has a bizarre etymology. Indian mathematicians called the half-chord <em>jya-ardha</em>, shortened to <em>jya</em>. Arab translators transliterated this as <em>jiba</em>. Since Arabic is written without vowels, later readers misread <em>jb</em> as <em>jaib</em> (meaning "pocket" or "bay"). Latin translators then translated <em>jaib</em> as <em>sinus</em> (meaning "bay" or "fold"), which became <strong>sine</strong>.</p><p><strong>Cosine</strong> means "complement\'s sine" (Latin: <em>cosinus</em> = co-sinus). It is the sine of the complementary angle: $\\cos\\theta = \\sin(90^\\circ - \\theta)$. This is why it is called <em>co</em>sine.</p><p><strong>Tangent</strong> comes from Latin <em>tangere</em> (to touch). The tangent line touches the circle at exactly one point. The length of this touching line segment, from the point of tangency to the x-axis, gives the tangent ratio.</p><p><strong>Why does trigonometry exist?</strong> Ancient civilizations needed it to navigate by stars, survey land, and build structures. Today, it models anything that oscillates: sound waves, light waves, alternating current, and orbital mechanics.</p>'
+      title: 'Trigonometry Background',
+      tabs: [
+        {
+          label: 'Historical Development',
+          content: '<p>Trigonometry began as a measurement system for triangles and circles. Astronomers needed distances and angles that could not be measured directly, such as the apparent height of a star or the angle between two celestial objects.</p><p>Tables of chords and later tables of sine values turned geometry into computation. A known angle could be matched with a known ratio, and that ratio could determine an unknown side length. This made trigonometry a practical calculation tool before modern calculators existed.</p><p>The unit circle gives the modern version of the same idea. Sine and cosine are coordinates on a circle of radius 1, so every angle corresponds to a point. The old measurement problem becomes a coordinate problem: find the horizontal and vertical components of a rotating radius.</p>'
+        },
+        {
+          label: 'Conceptual Thread',
+          content: '<p>Right-triangle trigonometry gives ratios for acute angles. The unit circle extends those ratios to every real angle. At angle $\\theta$, the terminal point has coordinates $(\\cos\\theta, \\sin\\theta)$.</p><p>This coordinate definition explains signs by quadrant, periodic behavior, and identities such as $\\sin^2\\theta + \\cos^2\\theta = 1$.</p>'
+        },
+        {
+          label: 'Practical Grounding',
+          content: '<p>Consider a Ferris wheel with radius $20$ meters and center height $24$ meters. A rider starts at the rightmost point and the wheel rotates counterclockwise. At angle $\\theta$, the rider position relative to the center is $(20\\cos\\theta, 20\\sin\\theta)$.</p><p>The height above the ground is $H(\\theta) = 24 + 20\\sin\\theta$. At $\\theta = 0$, the rider is level with the center, so $H = 24$. At $\\theta = \\pi/2$, the rider is at the top, so $H = 44$. At $\\theta = 3\\pi/2$, the rider is at the bottom, so $H = 4$.</p><p>This example explains amplitude, midline, and period. The amplitude is $20$ because the rider moves $20$ meters above and below the center. The midline is $24$ because the wheel center sits $24$ meters above ground. The period is $2\\pi$ radians because one full rotation returns the rider to the starting point.</p>'
+        }
+      ]
     },
     mathGrammar: [
-      { question: 'What does $\\sin(\\theta)$ actually compute?', answer: 'Draw a right triangle with angle $\\theta$. $\\sin(\\theta) = \\frac{\\text{opposite side}}{\\text{hypotenuse}}$. On the unit circle (radius 1), it is simply the $y$-coordinate of the point at angle $\\theta$. It tells you how high or low the point sits compared to the center.' },
-      { question: 'Why does $\\cos(\\theta)$ exist separately from $\\sin(\\theta)$?', answer: '$\\cos(\\theta)$ measures the horizontal position (the $x$-coordinate), while $\\sin(\\theta)$ measures the vertical. You need both to fully describe where a point is. Together, $(\\cos\\theta, \\sin\\theta)$ gives the exact position on the unit circle.' },
-      { question: 'Why is the unit circle useful?', answer: 'It extends trigonometry beyond right triangles. Right triangles only have angles up to $90^\\circ$. The unit circle defines sine and cosine for ALL angles: $120^\\circ$, $-45^\\circ$, $720^\\circ$, any number. This is what makes trig useful for modeling waves, rotations, pendulums, and anything circular.' },
-      { question: 'How do I remember the values at standard angles?', answer: 'Use the pattern for $\\sin$: at $0, 30, 45, 60, 90$ degrees, sine takes values $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$. Simplify: $0, \\frac{1}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, 1$. Cosine is the same sequence reversed.' }
+      { question: 'Meaning of $\\sin(\\theta)$', answer: 'Draw a right triangle with angle $\\theta$. $\\sin(\\theta) = \\frac{\\text{opposite side}}{\\text{hypotenuse}}$. On the unit circle with radius 1, sine is the $y$-coordinate of the point at angle $\\theta$. It measures vertical position relative to the center.' },
+      { question: 'Role of $\\cos(\\theta)$', answer: '$\\cos(\\theta)$ measures horizontal position, the $x$-coordinate. $\\sin(\\theta)$ measures vertical position. Together, $(\\cos\\theta, \\sin\\theta)$ gives the exact position on the unit circle.' },
+      { question: 'Use of the unit circle', answer: 'The unit circle extends trigonometry beyond right triangles. Right triangles only use angles up to $90^\\circ$. The unit circle defines sine and cosine for every real angle: $120^\\circ$, $-45^\\circ$, $720^\\circ$, and any other angle. This makes trigonometry useful for waves, rotations, pendulums, and circular motion.' },
+      { question: 'Standard-angle value pattern', answer: 'Use the pattern for $\\sin$: at $0, 30, 45, 60, 90$ degrees, sine takes values $\\frac{\\sqrt{0}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{4}}{2}$. Simplify: $0, \\frac{1}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}, 1$. Cosine is the same sequence reversed.' }
     ],
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-  <line x1="60" y1="20" x2="60" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="60" x2="380" y2="60" stroke="#334155" stroke-width="0.3"/><line x1="100" y1="20" x2="100" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="100" x2="380" y2="100" stroke="#334155" stroke-width="0.3"/><line x1="140" y1="20" x2="140" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="140" x2="380" y2="140" stroke="#334155" stroke-width="0.3"/><line x1="180" y1="20" x2="180" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="180" x2="380" y2="180" stroke="#334155" stroke-width="0.3"/><line x1="220" y1="20" x2="220" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="220" x2="380" y2="220" stroke="#334155" stroke-width="0.3"/><line x1="260" y1="20" x2="260" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="260" x2="380" y2="260" stroke="#334155" stroke-width="0.3"/><line x1="300" y1="20" x2="300" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="300" x2="380" y2="300" stroke="#334155" stroke-width="0.3"/><line x1="340" y1="20" x2="340" y2="380" stroke="#334155" stroke-width="0.3"/><line x1="20" y1="340" x2="380" y2="340" stroke="#334155" stroke-width="0.3"/>
-  <line x1="200" y1="20" x2="200" y2="380" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="20" y1="200" x2="380" y2="200" stroke="#94a3b8" stroke-width="1"/>
-  <circle cx="200" cy="200" r="140" fill="none" stroke="#3b82f6" stroke-width="2"/>
-  <line x1="200" y1="200" x2="321" y2="130" stroke="#10b981" stroke-width="1.5"/>
-  <line x1="321" y1="130" x2="321" y2="200" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="200" y1="200" x2="321" y2="200" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
-  <path d="M 225 200 A 25 25 0 0 1 218 185" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="232" y="192" fill="#e2e8f0" font-size="10" font-family="Inter,sans-serif">θ</text>
-  <text x="260" y="217" fill="#f59e0b" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">cos θ</text>
-  <text x="335" y="170" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">sin θ</text>
-  <circle cx="340" cy="200" r="3" fill="#3b82f6"/><text x="345" y="197" fill="#94a3b8" font-size="9" font-family="Inter,sans-serif">(1, 0)</text>
-  <circle cx="200" cy="60" r="3" fill="#3b82f6"/><text x="208" y="55" fill="#94a3b8" font-size="9" font-family="Inter,sans-serif">(0, 1)</text>
-  <circle cx="60" cy="200" r="3" fill="#3b82f6"/><text x="38" y="215" fill="#94a3b8" font-size="9" font-family="Inter,sans-serif">(-1, 0)</text>
-  <circle cx="200" cy="340" r="3" fill="#3b82f6"/><text x="208" y="355" fill="#94a3b8" font-size="9" font-family="Inter,sans-serif">(0, -1)</text>
-  <circle cx="321" cy="130" r="4" fill="#10b981"/>
-  <text x="325" y="125" fill="#10b981" font-size="9" font-family="Inter,sans-serif">(cos θ, sin θ)</text>
-  <circle cx="299" cy="100" r="3" fill="#8b5cf6"/>
-  <text x="303" y="93" fill="#8b5cf6" font-size="8" font-family="Inter,sans-serif">30°: (√3/2, ½)</text>
-  <circle cx="270" cy="79" r="3" fill="#8b5cf6"/>
-  <text x="230" y="72" fill="#8b5cf6" font-size="8" font-family="Inter,sans-serif">45°: (√2/2, √2/2)</text>
-  <circle cx="270" cy="131" r="3" fill="#8b5cf6"/>
-  <text x="230" y="125" fill="#8b5cf6" font-size="8" font-family="Inter,sans-serif">60°: (½, √3/2)</text>
+<svg viewBox="0 0 620 380" width="620" height="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Unit circle showing cosine as horizontal distance and sine as vertical distance">
+  <rect x="0" y="0" width="620" height="380" fill="transparent"/>
+  <g stroke="#334155" stroke-width="0.35" opacity="0.65">
+    <line x1="90" y1="30" x2="90" y2="350"/><line x1="130" y1="30" x2="130" y2="350"/><line x1="170" y1="30" x2="170" y2="350"/><line x1="210" y1="30" x2="210" y2="350"/><line x1="250" y1="30" x2="250" y2="350"/><line x1="290" y1="30" x2="290" y2="350"/><line x1="330" y1="30" x2="330" y2="350"/><line x1="370" y1="30" x2="370" y2="350"/>
+    <line x1="60" y1="70" x2="380" y2="70"/><line x1="60" y1="110" x2="380" y2="110"/><line x1="60" y1="150" x2="380" y2="150"/><line x1="60" y1="190" x2="380" y2="190"/><line x1="60" y1="230" x2="380" y2="230"/><line x1="60" y1="270" x2="380" y2="270"/><line x1="60" y1="310" x2="380" y2="310"/>
+  </g>
+  <line x1="220" y1="38" x2="220" y2="342" stroke="#94a3b8" stroke-width="1.15"/>
+  <line x1="68" y1="190" x2="372" y2="190" stroke="#94a3b8" stroke-width="1.15"/>
+  <text x="377" y="194" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">x</text>
+  <text x="214" y="34" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">y</text>
+  <circle cx="220" cy="190" r="130" fill="none" stroke="#3b82f6" stroke-width="2.25"/>
+  <line x1="220" y1="190" x2="333" y2="125" stroke="#10b981" stroke-width="2"/>
+  <line x1="333" y1="125" x2="333" y2="190" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <line x1="220" y1="190" x2="333" y2="190" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <path d="M 250 190 A 30 30 0 0 0 246 175" fill="none" stroke="#e2e8f0" stroke-width="1.2"/>
+  <text x="254" y="182" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif">&theta;</text>
+  <text x="276" y="207" fill="#f59e0b" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">cos &theta;</text>
+  <text x="340" y="160" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">sin &theta;</text>
+  <circle cx="350" cy="190" r="3.5" fill="#3b82f6"/><text x="356" y="187" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">(1, 0)</text>
+  <circle cx="220" cy="60" r="3.5" fill="#3b82f6"/><text x="228" y="57" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">(0, 1)</text>
+  <circle cx="90" cy="190" r="3.5" fill="#3b82f6"/><text x="43" y="206" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">(-1, 0)</text>
+  <circle cx="220" cy="320" r="3.5" fill="#3b82f6"/><text x="228" y="336" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">(0, -1)</text>
+  <circle cx="333" cy="125" r="4.5" fill="#10b981"/>
+  <text x="346" y="121" fill="#10b981" font-size="10" font-family="Inter,sans-serif">(cos &theta;, sin &theta;)</text>
+  <circle cx="333" cy="125" r="3.5" fill="#8b5cf6"/>
+  <circle cx="312" cy="98" r="3.5" fill="#8b5cf6"/>
+  <circle cx="285" cy="77" r="3.5" fill="#8b5cf6"/>
+  <g font-family="Inter,sans-serif">
+    <rect x="410" y="52" width="178" height="176" rx="6" fill="rgba(15,23,42,0.45)" stroke="#334155"/>
+    <text x="426" y="78" fill="#e2e8f0" font-size="12" font-weight="600">First-quadrant values</text>
+    <line x1="426" y1="91" x2="572" y2="91" stroke="#334155" stroke-width="1"/>
+    <text x="426" y="116" fill="#c4b5fd" font-size="11">30&deg; = &pi;/6</text>
+    <text x="426" y="132" fill="#cbd5e1" font-size="11">(&radic;3/2, 1/2)</text>
+    <text x="426" y="158" fill="#c4b5fd" font-size="11">45&deg; = &pi;/4</text>
+    <text x="426" y="174" fill="#cbd5e1" font-size="11">(&radic;2/2, &radic;2/2)</text>
+    <text x="426" y="200" fill="#c4b5fd" font-size="11">60&deg; = &pi;/3</text>
+    <text x="426" y="216" fill="#cbd5e1" font-size="11">(1/2, &radic;3/2)</text>
+  </g>
+  <g font-family="Inter,sans-serif" font-size="11">
+    <text x="410" y="268" fill="#e2e8f0" font-weight="600">Reading the diagram</text>
+    <text x="410" y="290" fill="#f59e0b">horizontal distance = cos &theta;</text>
+    <text x="410" y="310" fill="#ef4444">vertical distance = sin &theta;</text>
+    <text x="410" y="330" fill="#10b981">terminal point = (cos &theta;, sin &theta;)</text>
+  </g>
 </svg>
 </div>
-<p class="math-diagram-label">The unit circle: each point is (cos θ, sin θ) at angle θ from the positive x-axis</p>
+<p class="math-diagram-label">The unit circle: each point is (cos &theta;, sin &theta;) at angle &theta; from the positive x-axis</p>
 
     <div class="callout callout-key"><h4>Radian Measure</h4>
     <p>$2\\pi$ radians $= 360°$. So $\\pi$ rad $= 180°$.</p>
@@ -98,7 +131,7 @@ topics: [
     <p>$$\\cos\\frac{\\pi}{2} = 0,\\ \\sin\\frac{\\pi}{2} = 1$$</p></div>
     <div class="callout callout-key"><h4>Pythagorean Identity</h4>
     <p>$$\\sin^2\\theta + \\cos^2\\theta = 1$$</p>
-    ${WHY('Why does this hold?', '<p>$(\\cos\\theta, \\sin\\theta)$ lies on the unit circle $x^2 + y^2 = 1$. Substituting: $\\cos^2\\theta + \\sin^2\\theta = 1$. This is the Pythagorean theorem applied to the right triangle formed by the terminal point, the origin, and the projection onto the x-axis.</p>')}</div>
+    ${WHY('Reason for the identity', '<p>$(\\cos\\theta, \\sin\\theta)$ lies on the unit circle $x^2 + y^2 = 1$. Substituting gives $\\cos^2\\theta + \\sin^2\\theta = 1$. This is the Pythagorean theorem applied to the right triangle formed by the terminal point, the origin, and the projection onto the x-axis.</p>')}</div>
     <div class="callout callout-key"><h4>ASTC: Signs by Quadrant</h4>
     <p><strong>A</strong>ll (Q1), <strong>S</strong>ine (Q2), <strong>T</strong>angent (Q3), <strong>C</strong>osine (Q4) are positive. Mnemonic: "All Students Take Calculus."</p></div>
     <div class="callout callout-key"><h4>Graphs of Trigonometric Functions</h4>
@@ -116,7 +149,7 @@ topics: [
       <li>$\\arccos(x)$: domain $[-1,1]$, range $[0, \\pi]$.</li>
       <li>$\\arctan(x)$: domain $(-\\infty, \\infty)$, range $(-\\frac{\\pi}{2}, \\frac{\\pi}{2})$.</li>
     </ul>
-    ${WHY('Why restrict the domain?', '<p>$\\sin x$ is not one-to-one on all of $\\mathbb{R}$ (it repeats every $2\\pi$). To define an inverse, we restrict to $[-\\pi/2, \\pi/2]$ where sine is one-to-one and covers all of $[-1,1]$. Similarly for cosine and tangent.</p>')}</div>
+    ${WHY('Domain restriction', '<p>$\\sin x$ is not one-to-one on all of $\\mathbb{R}$ because it repeats every $2\\pi$. To define an inverse, restrict sine to $[-\\pi/2, \\pi/2]$, where it is one-to-one and covers all of $[-1,1]$. Cosine and tangent require similar restrictions.</p>')}</div>
   ` },
   definition: { html: `<p><strong>Radian:</strong> The angle subtended by an arc of length equal to the radius. $1$ radian $\\approx 57.3°$.</p><p><strong>Unit Circle:</strong> Circle with center $(0,0)$ and radius 1.</p>` },
   examples: [{
@@ -143,7 +176,7 @@ topics: [
     steps: [
       { title: 'Identify sides', content: 'Hypotenuse = 13, Adjacent = 5. Use $\\cos\\theta = \\frac{\\text{adj}}{\\text{hyp}}$.', why: 'SOH-CAH-TOA: Cosine = Adjacent / Hypotenuse.' },
       { title: 'Compute', content: '$\\cos\\theta = \\frac{5}{13} \\approx 0.3846$. $\\theta = \\arccos(0.3846) \\approx 67.4°$.', why: 'The inverse cosine (arccos) reverses the cosine function to find the angle.' },
-      { title: 'Height up the wall', content: '$\\sin(67.4°) = \\frac{h}{13}$, so $h = 13\\sin(67.4°) \\approx 12$ ft.', why: 'Pythagorean verification: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$ \u2713. This is a 5-12-13 right triangle.' }
+      { title: 'Height up the wall', content: '$\\sin(67.4°) = \\frac{h}{13}$, so $h = 13\\sin(67.4°) \\approx 12$ ft.', why: 'Pythagorean verification: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$. This is a 5-12-13 right triangle.' }
     ]
   }],
   flashCards: [
@@ -197,7 +230,7 @@ topics: [
     { difficulty: 'easy', question: '$\\sin(0) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(0) = 0$.' },
     { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
     { difficulty: 'hard', question: '$\\csc(30°) =$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\csc(30°) = 1/\\sin(30°) = 1/0.5 = 2$.' },
-    { difficulty: 'medium', question: 'In which quadrant is $\\sin > 0$ and $\\cos < 0$?', accept: ['2', 'II', 'second', 'quadrant 2'], placeholder: 'Quadrant', explanation: 'Quadrant II: $\\sin > 0$, $\\cos < 0$.' },
+    { difficulty: 'medium', question: 'In which quadrant is $\\sin\\theta \\gt 0$ and $\\cos\\theta \\lt 0$?', accept: ['2', 'II', 'second', 'quadrant 2'], placeholder: 'Quadrant', explanation: 'Quadrant II: $\\sin\\theta \\gt 0$, $\\cos\\theta \\lt 0$.' },
     { difficulty: 'hard', question: 'Period of $f(x) = \\sin(3x)$:', accept: ['2pi/3', '2\\pi/3'], placeholder: 'Period', explanation: 'Period = $2\\pi / |B| = 2\\pi / 3$.' },
     { difficulty: 'easy', question: 'Convert $180°$ to radians:', accept: ['pi', '3.14'], placeholder: 'Radians', explanation: '$180° = \\pi$ radians.' },
     { difficulty: 'medium', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\tan(45°) = \\sin(45°)/\\cos(45°) = 1$.' },
@@ -225,7 +258,7 @@ topics: [
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Find $\\cos(\\frac{5\\pi}{3})$ using reference angles.', steps: [
-      { content: '$\\frac{5\\pi}{3}$ is in Q4 ($\\frac{3\\pi}{2} < \\frac{5\\pi}{3} \\lt 2\\pi$).' },
+      { content: '$\\frac{5\\pi}{3}$ is in Q4 because $\\frac{3\\pi}{2} \\lt \\frac{5\\pi}{3} \\lt 2\\pi$.' },
       { content: 'Reference angle: $2\\pi - \\frac{5\\pi}{3} = \\frac{\\pi}{3}$.' },
       { content: 'Cosine is POSITIVE in Q4.' },
       { content: '$\\cos(\\frac{5\\pi}{3}) = +\\cos(\\frac{\\pi}{3}) = \\frac{1}{2}$.' },
@@ -274,7 +307,7 @@ topics: [
     { difficulty: 'easy', context: 'Pythagorean identity:', expression: '$\\sin^2\\theta +$ {{0}} $= 1$', blanks: [ { accept: ['cos^2\\theta', 'cos^2(theta)'], size: 12 } ], explanation: '$\\sin^2\\theta + \\cos^2\\theta = 1$.' },
     { difficulty: 'medium', context: 'ASTC rule:', expression: 'In Q2, {{0}} is positive. In Q3, {{1}} is positive.', blanks: [ { accept: ['sin', 'sine'], size: 6 }, { accept: ['tan', 'tangent'], size: 6 } ], explanation: 'All (Q1), Sin (Q2), Tan (Q3), Cos (Q4).' },
     { difficulty: 'medium', context: 'Arc length:', expression: '$s = r \\cdot$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Arc length = radius times angle (in radians).' },
-    { difficulty: 'easy', context: 'SOH-CAH-TOA:', expression: '$\\sin\\theta = \\frac{\\text{opposite}}{$ {{0}} $}$', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 12 } ], explanation: 'Sine = Opposite / Hypotenuse.' },
+    { difficulty: 'easy', context: 'SOH-CAH-TOA:', expression: 'Sine equals opposite divided by {{0}}.', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 12 } ], explanation: 'Sine = Opposite / Hypotenuse.' },
     { difficulty: 'easy', context: 'Trig ratios:', expression: 'In a right triangle, $\\sin(\\theta) =$ opposite $/$ {{0}}.', blanks: [ { accept: ['hypotenuse', 'hyp'], size: 10 } ], explanation: 'SOH: Sine = Opposite / Hypotenuse.' }
   ],
   matching: [
@@ -291,7 +324,7 @@ topics: [
       { left: '$\\tan\\theta$', right: 'Opposite / Adjacent' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Trig Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Trig Strategy</h4>
     <ol><li><strong>ASTC:</strong> All (Q1), Sine (Q2), Tangent (Q3), Cosine (Q4).</li>
     <li><strong>Reference angle:</strong> Acute angle between terminal side and x-axis.</li>
     <li><strong>SOH-CAH-TOA:</strong> sin=opp/hyp, cos=adj/hyp, tan=opp/adj.</li>
@@ -383,7 +416,7 @@ topics: [
     { difficulty: 'medium', question: 'Simplify: $\\frac{\\sin\\theta}{\\cos\\theta} \\cdot \\cos\\theta$', options: ['$\\tan\\theta$', '$\\sin\\theta$', '$1$', '$\\cos^2\\theta$'], correctIndex: 1, hint: '<p>Cancel the $\\cos\\theta$.</p>', correctExplanation: '$\\frac{\\sin\\theta}{\\cos\\theta} \\cdot \\cos\\theta = \\sin\\theta$.', wrongExplanations: { 0: '$\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$, but then multiplying by $\\cos\\theta$ gives $\\sin\\theta$.', 2: '$\\frac{\\sin\\theta}{\\cos\\theta} \\cdot \\cos\\theta = \\sin\\theta$, not 1 (that would require $\\frac{\\cos\\theta}{\\cos\\theta}$).', 3: 'No squaring occurs here.' } },
     { difficulty: 'medium', question: 'Solve: $\\cos\\theta = \\frac{1}{2}$ for $\\theta \\in [0, 2\\pi)$', options: ['$\\theta = \\frac{\\pi}{3}$', '$\\theta = \\frac{\\pi}{3}, \\frac{5\\pi}{3}$', '$\\theta = \\frac{\\pi}{6}, \\frac{11\\pi}{6}$', '$\\theta = \\frac{\\pi}{3}, \\frac{2\\pi}{3}$'], correctIndex: 1, hint: '<p>Cosine is positive in Q1 and Q4. Reference angle where $\\cos = 1/2$?</p>', correctExplanation: 'Reference angle: $\\frac{\\pi}{3}$ (since $\\cos\\frac{\\pi}{3} = \\frac{1}{2}$). Q1: $\\frac{\\pi}{3}$. Q4: $2\\pi - \\frac{\\pi}{3} = \\frac{5\\pi}{3}$.', wrongExplanations: { 0: 'Missing the Q4 solution. Cosine is positive in both Q1 and Q4.', 2: '$\\cos\\frac{\\pi}{6} = \\frac{\\sqrt{3}}{2} \\neq \\frac{1}{2}$.', 3: '$\\frac{2\\pi}{3}$ is in Q2 where cosine is negative.' } },
     { difficulty: 'hard', question: '$\\cos(\\frac{\\pi}{12})$ using sum formula:', options: ['$\\frac{\\sqrt{6}+\\sqrt{2}}{4}$', '$\\frac{\\sqrt{6}-\\sqrt{2}}{4}$', '$\\frac{\\sqrt{3}+1}{4}$', '$\\frac{1}{2}$'], correctIndex: 0, hint: '<p>$\\frac{\\pi}{12} = \\frac{\\pi}{3} - \\frac{\\pi}{4}$. Use $\\cos(A-B)$.</p>', correctExplanation: '$\\cos(\\frac{\\pi}{3} - \\frac{\\pi}{4}) = \\cos\\frac{\\pi}{3}\\cos\\frac{\\pi}{4} + \\sin\\frac{\\pi}{3}\\sin\\frac{\\pi}{4} = \\frac{1}{2}\\cdot\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{3}}{2}\\cdot\\frac{\\sqrt{2}}{2} = \\frac{\\sqrt{2}+\\sqrt{6}}{4}$.', wrongExplanations: { 1: 'The difference formula for cosine uses $+$ between the terms (the sign FLIPS for cosine).', 2: 'Missing the $\\sqrt{2}$ factors from $\\cos\\frac{\\pi}{4}$ and $\\sin\\frac{\\pi}{4}$.', 3: '$\\cos(\\frac{\\pi}{12}) \\neq \\frac{1}{2}$. That is $\\cos(\\frac{\\pi}{3})$.' } },
-    { difficulty: 'hard', question: 'Prove: $\\frac{1 - \\cos(2\\theta)}{2} = \\sin^2\\theta$. Which double angle form is used?', options: ['$\\cos(2\\theta) = 2\\cos^2\\theta - 1$', '$\\cos(2\\theta) = 1 - 2\\sin^2\\theta$', '$\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta$', '$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta$'], correctIndex: 1, hint: '<p>Substitute $\\cos(2\\theta)$ and simplify.</p>', correctExplanation: '$\\cos(2\\theta) = 1 - 2\\sin^2\\theta$. $\\frac{1-(1-2\\sin^2\\theta)}{2} = \\frac{2\\sin^2\\theta}{2} = \\sin^2\\theta$ ✓. This is the power-reduction formula.', wrongExplanations: { 0: 'Using $2\\cos^2\\theta - 1$ gives $\\frac{1 - 2\\cos^2\\theta + 1}{2} = 1 - \\cos^2\\theta = \\sin^2\\theta$. This also works, but the direct substitution is form B.', 2: 'This form works but requires an extra step to isolate $\\sin^2\\theta$.', 3: 'This is the sine double angle, not cosine. Not used here.' } }
+    { difficulty: 'hard', question: 'Prove: $\\frac{1 - \\cos(2\\theta)}{2} = \\sin^2\\theta$. Which double angle form is used?', options: ['$\\cos(2\\theta) = 2\\cos^2\\theta - 1$', '$\\cos(2\\theta) = 1 - 2\\sin^2\\theta$', '$\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta$', '$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta$'], correctIndex: 1, hint: '<p>Substitute $\\cos(2\\theta)$ and simplify.</p>', correctExplanation: '$\\cos(2\\theta) = 1 - 2\\sin^2\\theta$. $\\frac{1-(1-2\\sin^2\\theta)}{2} = \\frac{2\\sin^2\\theta}{2} = \\sin^2\\theta$ . This is the power-reduction formula.', wrongExplanations: { 0: 'Using $2\\cos^2\\theta - 1$ gives $\\frac{1 - 2\\cos^2\\theta + 1}{2} = 1 - \\cos^2\\theta = \\sin^2\\theta$. This also works, but the direct substitution is form B.', 2: 'This form works but requires an extra step to isolate $\\sin^2\\theta$.', 3: 'This is the sine double angle, not cosine. Not used here.' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Simplify: $\\sin^2\\theta + \\cos^2\\theta =$?', accept: [1, '1'], placeholder: 'Enter a number', explanation: 'Fundamental Pythagorean identity.' },
@@ -396,13 +429,13 @@ topics: [
     { difficulty: 'medium', question: '$\\cos(2 \\cdot 0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\cos(0) = 1$.' },
     { difficulty: 'hard', question: 'Double angle: $\\sin(2 \\cdot 30°) =$?', accept: ['sqrt(3)/2', '0.866'], placeholder: 'Value', explanation: '$\\sin(60°) = \\sqrt{3}/2$.' },
     { difficulty: 'hard', question: '$\\cos(\\pi/3) =$?', accept: ['1/2', '0.5'], placeholder: 'Value', explanation: '$\\cos(60°) = 1/2$.' },
-    { difficulty: 'medium', question: 'Pythagorean identity: $\\sin^2 x + $ ? $= 1$', accept: ['cos^2(x)', '\\cos^2 x', 'cos^2x'], placeholder: 'Term', explanation: '$\\sin^2 x + \\cos^2 x = 1$.' },
-    { difficulty: 'medium', question: 'Half-angle: $\\cos^2(x) = \\frac{1 + \\cos(2x)}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: 'Power reduction: $\\cos^2 x = \\frac{1 + \\cos(2x)}{2}$.' },
+    { difficulty: 'medium', question: 'Pythagorean identity: $\\sin^2 x + \\cos^2 x = 1$. What term is missing after $\\sin^2 x$?', accept: ['cos^2(x)', '\\cos^2 x', 'cos^2x'], placeholder: 'Term', explanation: '$\\sin^2 x + \\cos^2 x = 1$.' },
+    { difficulty: 'medium', question: 'Power reduction: $\\cos^2(x) = \\frac{1 + \\cos(2x)}{2}$. What is the denominator?', accept: [2, '2'], placeholder: 'Number', explanation: 'Power reduction: $\\cos^2 x = \\frac{1 + \\cos(2x)}{2}$.' },
     { difficulty: 'easy', question: '$\\sin^2(x) + \\cos^2(x) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Pythagorean identity: always 1.' },
     { difficulty: 'hard', question: '$\\tan^2 x + 1 =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\cos^2 x$: $\\tan^2 x + 1 = \\sec^2 x$.' },
     { difficulty: 'medium', question: '$1 + \\cot^2 x =$?', accept: ['csc^2(x)', '\\csc^2 x'], placeholder: 'Identity', explanation: 'Divide Pythagorean identity by $\\sin^2 x$: $1 + \\cot^2 x = \\csc^2 x$.' },
     { difficulty: 'easy', question: '$\\cos(90°) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\cos(90°) = 0$.' },
-    { difficulty: 'hard', question: 'Sum-to-product: $\\sin A + \\sin B = 2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{$ ? $})$', accept: [2, '2'], placeholder: 'Number', explanation: '$2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$.' },
+    { difficulty: 'hard', question: 'Sum-to-product: $\\sin A + \\sin B = 2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$. What denominator appears in each half-angle?', accept: [2, '2'], placeholder: 'Number', explanation: '$2\\sin(\\frac{A+B}{2})\\cos(\\frac{A-B}{2})$.' },
     { difficulty: 'medium', question: 'Double angle: $\\sin(2x) = 2\\sin(x)$ ?', accept: ['cos(x)', '\\cos x'], placeholder: 'Factor', explanation: '$\\sin(2x) = 2\\sin x \\cos x$.' },
     { difficulty: 'hard', question: '$\\cos(A + B) = \\cos A \\cos B - \\sin A$ ?', accept: ['sin B', '\\sin B'], placeholder: 'Term', explanation: 'Cosine sum: $\\cos A \\cos B - \\sin A \\sin B$.' },
     { difficulty: 'easy', question: '$\\cos(2\\pi) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Full rotation: $\\cos(360°) = 1$.' },
@@ -410,13 +443,13 @@ topics: [
     { difficulty: 'easy', question: '$\\sin(\\pi) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$\\sin(180°) = 0$.' },
     { difficulty: 'hard', question: 'Triple angle: $\\sin(3x) = 3\\sin x - 4\\sin^3 x$. True?', accept: ['yes', 'true'], placeholder: 'True?', explanation: '$\\sin(3x) = 3\\sin x - 4\\sin^3 x$. Verified via sum formulas.' },
     { difficulty: 'easy', question: '$\\tan(45°) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin(45°)/\\cos(45°) = 1$.' },
-    { difficulty: 'hard', question: 'Product-to-sum: $2\\cos A \\cos B = \\cos(A-B) + \\cos(A+$ ? $)$', accept: ['B'], placeholder: 'Variable', explanation: '$2\\cos A \\cos B = \\cos(A-B) + \\cos(A+B)$.' },
-    { difficulty: 'easy', question: '$\\sin(-x) = -\\sin($ ?$)$', accept: ['x'], placeholder: 'Argument', explanation: 'Sine is odd: $\\sin(-x) = -\\sin(x)$.' },
-    { difficulty: 'hard', question: 'Half-angle: $\\cos(x/2) = \\pm \\sqrt{\\frac{1 + \\cos x}{$ ?$}}$', accept: [2, '2'], placeholder: 'Number', explanation: '$\\cos(x/2) = \\pm \\sqrt{\\frac{1+\\cos x}{2}}$.' },
-    { difficulty: 'medium', question: '$\\cos(-x) = \\cos($ ?$)$', accept: ['x'], placeholder: 'Argument', explanation: 'Cosine is even: $\\cos(-x) = \\cos(x)$.' },
+    { difficulty: 'hard', question: 'Product-to-sum: $2\\cos A \\cos B = \\cos(A-B) + \\cos(A+B)$. What is the second angle in the final cosine term?', accept: ['B'], placeholder: 'Variable', explanation: '$2\\cos A \\cos B = \\cos(A-B) + \\cos(A+B)$.' },
+    { difficulty: 'easy', question: 'Odd sine identity: $\\sin(-x) = -\\sin(x)$. What argument belongs in the final sine?', accept: ['x'], placeholder: 'Argument', explanation: 'Sine is odd: $\\sin(-x) = -\\sin(x)$.' },
+    { difficulty: 'hard', question: 'Half-angle: $\\cos(x/2) = \\pm \\sqrt{\\frac{1 + \\cos x}{2}}$. What denominator appears under $1 + \\cos x$?', accept: [2, '2'], placeholder: 'Number', explanation: '$\\cos(x/2) = \\pm \\sqrt{\\frac{1+\\cos x}{2}}$.' },
+    { difficulty: 'medium', question: 'Even cosine identity: $\\cos(-x) = \\cos(x)$. What argument belongs in the final cosine?', accept: ['x'], placeholder: 'Argument', explanation: 'Cosine is even: $\\cos(-x) = \\cos(x)$.' },
     { difficulty: 'hard', question: 'Solve: $2\\sin(x) = 1$ on $[0, 2\\pi)$:', accept: ['pi/6, 5pi/6', '30, 150'], placeholder: 'Angles', explanation: '$\\sin x = 1/2$. $x = \\pi/6, 5\\pi/6$.' },
     { difficulty: 'medium', question: 'Pythagorean identity: $1 + \\tan^2 x =$?', accept: ['sec^2(x)', '\\sec^2 x'], placeholder: 'Expression', explanation: '$1 + \\tan^2 x = \\sec^2 x$.' },
-    { difficulty: 'hard', question: 'If $\\sin^{-1}(x) = \\theta$, then $\\cos(\\theta) = \\sqrt{1 - $ ? $}$', accept: ['x^2', 'x2'], placeholder: 'Term', explanation: '$\\cos(\\theta) = \\sqrt{1 - x^2}$ (for $\\theta$ in $[-\\pi/2, \\pi/2]$).' }
+    { difficulty: 'hard', question: 'If $\\sin^{-1}(x) = \\theta$, then $\\cos(\\theta) = \\sqrt{1 - x^2}$. What term is subtracted from 1?', accept: ['x^2', 'x2'], placeholder: 'Term', explanation: '$\\cos(\\theta) = \\sqrt{1 - x^2}$ (for $\\theta$ in $[-\\pi/2, \\pi/2]$).' }
   ],
   stepBuilder: [
     { difficulty: 'medium', question: 'Solve: $2\\cos\\theta - 1 = 0$ on $[0, 2\\pi)$.', steps: [
@@ -456,7 +489,7 @@ topics: [
     { difficulty: 'medium', context: 'Double angle formulas:', expression: '$\\sin(2\\theta) = 2\\sin\\theta$ {{0}}', blanks: [ { accept: ['cos\\theta', 'costheta', 'cos(theta)'], size: 10 } ], explanation: '$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta$.' },
     { difficulty: 'hard', context: 'Solving trig equations:', expression: 'The number of solutions of $\\sin\\theta = c$ on $[0, 2\\pi)$ is {{0}} when $0 < c \\lt 1$.', blanks: [ { accept: ['2', 'two'], size: 3 } ], explanation: 'Sine equals $c$ at two angles: one in Q1, one in Q2 (by symmetry).' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Trig Identity Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Trig Identity Strategy</h4>
     <ol><li><strong>Convert everything to sin and cos</strong> as a universal strategy.</li>
     <li><strong>Look for Pythagorean substitutions:</strong> $\\sin^2 = 1 - \\cos^2$ or $\\tan^2 = \\sec^2 - 1$.</li>
     <li><strong>For equations:</strong> Factor, use identities to get one trig function, then solve using the unit circle.</li></ol></div>` }
@@ -484,7 +517,7 @@ topics: [
     <div class="callout callout-key"><h4>Law of Cosines</h4>
     <p>$$c^2 = a^2 + b^2 - 2ab\\cos C$$</p>
     <p>Use when you have: <strong>SAS</strong> (two sides + included angle) or <strong>SSS</strong> (all three sides, to find angles).</p>
-    ${WHY('The Ambiguous Case (SSA)', '<p>Given two sides and a non-included angle (SSA), the Law of Sines may yield 0, 1, or 2 triangles. If $a < b\\sin A$: no triangle. If $a = b\\sin A$: one right triangle. If $b\\sin A < a < b$: TWO triangles (ambiguous). If $a \\geq b$: one triangle.</p>')}</div>
+    ${WHY('The Ambiguous Case (SSA)', '<p>Given two sides and a non-included angle (SSA), the Law of Sines may yield 0, 1, or 2 triangles. If $a \\lt b\\sin A$: no triangle. If $a = b\\sin A$: one right triangle. If $b\\sin A \\lt a \\lt b$: two triangles. If $a \\geq b$: one triangle.</p>')}</div>
     <div class="callout callout-key"><h4>When to Use Which Law</h4>
     <ul>
       <li><strong>AAS or ASA:</strong> Law of Sines (find the third angle first, then use ratios).</li>
@@ -525,7 +558,7 @@ topics: [
     { difficulty: 'easy', question: 'In a triangle with $A = 30°$, $B = 70°$, what is angle $C$?', options: ['$80°$', '$100°$', '$60°$', '$90°$'], correctIndex: 0, hint: '<p>Angles sum to $180°$.</p>', correctExplanation: '$C = 180° - 30° - 70° = 80°$.', wrongExplanations: { 1: '$30 + 70 = 100$, not a triangle angle.', 2: '$180 - 100 = 80$, not 60.', 3: 'No reason to assume a right angle.' } },
     { difficulty: 'easy', question: 'Which law to use with SAS (two sides + included angle)?', options: ['Law of Sines', 'Law of Cosines', 'Pythagorean Theorem', 'None'], correctIndex: 1, hint: '<p>SAS requires the generalized Pythagorean theorem.</p>', correctExplanation: 'SAS: Law of Cosines.', wrongExplanations: { 0: 'Law of Sines needs an angle-opposite-side pair.', 2: 'Only for right triangles.', 3: 'SAS is solvable.' } },
     { difficulty: 'medium', question: 'Given $a = 7$, $b = 10$, $C = 60°$. Find $c$ (rounded):', options: ['$8.89$', '$7.55$', '$12.17$', '$6.08$'], correctIndex: 0, hint: '<p>$c^2 = 49 + 100 - 140\\cos 60°$.</p>', correctExplanation: '$c^2 = 149 - 140(0.5) = 149 - 70 = 79$. $c = \\sqrt{79} \\approx 8.89$.', wrongExplanations: { 1: 'Check: $140 \\cos 60° = 70$, so $149 - 70 = 79$.', 2: 'You may have added instead of subtracted.', 3: 'Recheck the computation.' } },
-    { difficulty: 'hard', question: 'SSA: $a = 10$, $b = 12$, $A = 30°$. How many triangles are possible?', options: ['0', '1', '2', 'Infinite'], correctIndex: 2, hint: '<p>Check: is $a < b$? Is $a > b\\sin A$?</p>', correctExplanation: '$b\\sin A = 12 \\sin 30° = 6$. Since $6 \\lt 10 \\lt 12$ ($b\\sin A < a < b$), TWO triangles exist.', wrongExplanations: { 0: '$a = 10 \\gt 6 = b\\sin A$, so at least one triangle exists.', 1: 'Since $a < b$ and $a > b\\sin A$, two triangles are possible.', 3: 'A triangle is determined by its sides and angles; at most 2.' } }
+    { difficulty: 'hard', question: 'SSA: $a = 10$, $b = 12$, $A = 30°$. How many triangles are possible?', options: ['0', '1', '2', 'Infinite'], correctIndex: 2, hint: '<p>Check whether $a \\lt b$ and $a \\gt b\\sin A$.</p>', correctExplanation: '$b\\sin A = 12 \\sin 30° = 6$. Since $6 \\lt 10 \\lt 12$ ($b\\sin A \\lt a \\lt b$), two triangles exist.', wrongExplanations: { 0: '$a = 10 \\gt 6 = b\\sin A$, so at least one triangle exists.', 1: 'Since $a \\lt b$ and $a \\gt b\\sin A$, two triangles are possible.', 3: 'A triangle is determined by its sides and angles; at most 2.' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'In triangle ABC, $A = 50°$, $B = 60°$. What is $C$?', accept: [70, '70'], placeholder: 'degrees', explanation: '$180 - 50 - 60 = 70°$.' },
@@ -536,7 +569,7 @@ topics: [
     { difficulty: 'easy', question: 'In a right triangle, if opposite = 3 and hypotenuse = 5, then $\\sin \\theta =$?', accept: ['3/5', '0.6'], placeholder: 'Value', explanation: '$\\sin \\theta = \\text{opposite}/\\text{hypotenuse} = 3/5$.' },
     { difficulty: 'medium', question: 'Period of $\\sin(2x)$:', accept: ['pi', '3.14'], placeholder: 'Period', explanation: 'Period = $2\\pi / 2 = \\pi$.' },
     { difficulty: 'hard', question: 'Solve $\\cos(x) = 0$ for $x \\in [0, 2\\pi)$:', accept: ['pi/2, 3pi/2', '90, 270'], placeholder: 'Solutions', explanation: '$x = \\pi/2, 3\\pi/2$.' },
-    { difficulty: 'medium', question: 'Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos($ ? $)$', accept: ['C', 'gamma', 'angle C'], placeholder: 'Angle', explanation: '$c^2 = a^2 + b^2 - 2ab\\cos C$.' },
+    { difficulty: 'medium', question: 'Law of cosines: $c^2 = a^2 + b^2 - 2ab\\cos C$. Which angle appears inside cosine?', accept: ['C', 'gamma', 'angle C'], placeholder: 'Angle', explanation: '$c^2 = a^2 + b^2 - 2ab\\cos C$.' },
     { difficulty: 'hard', question: 'Area of triangle using trig: $A = \\frac{1}{2}ab\\sin(C)$. If $a=5, b=8, C=30°$, area $=$?', accept: [10, '10'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(5)(8)\\sin(30°) = 20 \\times 0.5 = 10$.' },
     { difficulty: 'hard', question: 'In triangle: $a/\\sin A = b/\\sin B$. This is the law of:', accept: ['sines', 'law of sines'], placeholder: 'Name', explanation: 'Law of Sines: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$.' },
     { difficulty: 'easy', question: 'Inverse of $\\sin$:', accept: ['arcsin', 'sin^(-1)', 'asin'], placeholder: 'Function', explanation: '$\\arcsin$ or $\\sin^{-1}$.' },
@@ -590,7 +623,7 @@ topics: [
     { difficulty: 'easy', context: 'Law of Cosines:', expression: '$c^2 = a^2 + b^2 -$ {{0}}', blanks: [ { accept: ['2abcosC', '2ab\\cos C', '2abcos(C)'], size: 12 } ], explanation: 'The correction term for non-right triangles.' },
     { difficulty: 'medium', context: 'When $C = 90°$:', expression: 'The Law of Cosines reduces to $c^2 = a^2 +$ {{0}} because $\\cos 90° = 0$.', blanks: [ { accept: ['b^2', 'b2'], size: 5 } ], explanation: 'Pythagorean theorem is a special case of the Law of Cosines.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>\ud83e\udde0 Triangle Solving Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4>Triangle Solving Strategy</h4>
     <ol><li><strong>Identify what you have:</strong> SAS, AAS/ASA, SSS, or SSA.</li>
     <li><strong>SAS or SSS:</strong> Start with Law of Cosines.</li>
     <li><strong>AAS/ASA:</strong> Find third angle, then Law of Sines.</li>

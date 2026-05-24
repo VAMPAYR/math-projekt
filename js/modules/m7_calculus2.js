@@ -155,7 +155,7 @@ topics: [
     { difficulty: 'easy', context: 'LIATE priority order:', expression: '$L$ = {{0}}, $I$ = {{1}}, $A$ = Algebraic, $T$ = Trig, $E$ = Exponential', blanks: [ { accept: ['Logarithmic', 'Log'], size: 12 }, { accept: ['Inverse trig', 'Inverse Trig'], size: 12 } ], explanation: 'LIATE: Logarithmic > Inverse trig > Algebraic > Trig > Exponential for choosing $u$.' },
     { difficulty: 'medium', context: 'Integration by parts:', expression: '$\\int u\\,dv = uv -$ {{0}}.', blanks: [ { accept: ['int v du', '\\int v\\,du'], size: 10 } ], explanation: 'IBP formula: $\\int u\\,dv = uv - \\int v\\,du$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 IBP Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> IBP Strategy</h4>
     <ol><li><strong>LIATE</strong>: choose $u$ from the first matching type.</li>
     <li>If IBP creates a HARDER integral, switch your choices.</li>
     <li>If the original integral reappears after 2 rounds, solve algebraically.</li></ol></div>` }
@@ -186,7 +186,7 @@ topics: [
     <p>$a_n = a_1 + (n-1)d$</p>
     <p>Examples: $2, 5, 8, 11, \\ldots$ ($d = 3$). $10, 7, 4, 1, \\ldots$ ($d = -3$).</p>
     <p><strong>Sum of first $n$ terms:</strong> $S_n = \\frac{n}{2}(a_1 + a_n) = \\frac{n}{2}(2a_1 + (n-1)d)$</p>
-    ${WHY('Why this sum formula?', '<p>Pair the first and last terms: $a_1 + a_n = a_2 + a_{n-1} = \\ldots$ Each pair sums to $a_1 + a_n$, and there are $n/2$ pairs. This is how young Gauss summed $1 + 2 + \\cdots + 100 = \\frac{100 \\cdot 101}{2} = 5050$.</p>')}</div>
+    ${WHY('Why this sum formula?', '<p>Pair the first and last terms: $a_1 + a_n = a_2 + a_{n-1} = \\ldots$ Each pair sums to $a_1 + a_n$, and there are $n/2$ pairs. For $1 + 2 + \\cdots + 100$, the formula gives $\\frac{100 \\cdot 101}{2} = 5050$.</p>')}</div>
     <div class="callout callout-key"><h4>Geometric Sequences</h4>
     <p>Each term is a constant <strong>ratio</strong> $r$ times the previous:</p>
     <p>$a_n = a_1 \\cdot r^{n-1}$</p>
@@ -224,14 +224,14 @@ topics: [
   }],
   flashCards: [
       { type: 'define', front: 'What is a sequence?', back: 'An ordered list of numbers: a_1, a_2, a_3, ... Each number is a term. A sequence converges if its terms approach a limit L.' },
-      { type: 'how', front: 'How to determine if a sequence converges?', back: 'Compute lim a_n as n -> infinity. If the limit exists and is finite, the sequence converges. Common techniques: L’Hopital, squeeze theorem, dominant term.' },
+      { type: 'how', front: 'How to determine if a sequence converges?', back: 'Compute lim a_n as n -> infinity. If the limit exists and is finite, the sequence converges. Common techniques include L Hopital, squeeze theorem, and dominant term comparison.' },
       { type: 'why', front: 'Why study sequences before series?', back: 'A series is a sum of sequence terms. If the terms do not approach 0, the series diverges (nth term test). Understanding sequences is prerequisite to series.' }
     ],
     exercises: [
     { difficulty: 'easy', question: 'What is the 10th term of $2, 5, 8, 11, \\ldots$?', options: ['$29$', '$32$', '$27$', '$30$'], correctIndex: 0, hint: '<p>$a_n = a_1 + (n-1)d$. $a_1 = 2$, $d = 3$.</p>', correctExplanation: '$a_{10} = 2 + 9(3) = 29$.', wrongExplanations: { 1: '$2 + 10(3) = 32$, but it is $n-1 = 9$, not $n = 10$.', 2: '$a_9 = 2 + 8(3) = 26$. Close but one off.', 3: '$a_{10} = 2 + 9 \\times 3 = 29$, not 30.' } },
     { difficulty: 'easy', question: 'What type is $3, 6, 12, 24, \\ldots$?', options: ['Arithmetic', 'Geometric', 'Neither', 'Both'], correctIndex: 1, hint: '<p>Check: is the difference constant, or the ratio constant?</p>', correctExplanation: 'Ratio: $6/3 = 12/6 = 24/12 = 2$. Geometric with $r = 2$.', wrongExplanations: { 0: 'Differences: $3, 6, 12$. Not constant, so not arithmetic.', 2: 'The ratio IS constant ($r = 2$), so this is geometric.', 3: 'A sequence cannot be both arithmetic and geometric (unless constant).' } },
     { difficulty: 'medium', question: '$S = 1 + 1/3 + 1/9 + 1/27 + \\cdots =$?', options: ['$3/2$', '$2$', '$3$', 'Diverges'], correctIndex: 0, hint: '<p>Geometric: $a = 1$, $r = 1/3$.</p>', correctExplanation: '$S = \\frac{1}{1 - 1/3} = \\frac{1}{2/3} = 3/2$.', wrongExplanations: { 1: '$\\frac{1}{1-1/3} = \\frac{1}{2/3} = 3/2$, not 2.', 2: '$\\frac{a}{1-r} = \\frac{1}{2/3} = 3/2$, not 3.', 3: '$|r| = 1/3 \\lt 1$, so it converges.' } },
-    { difficulty: 'medium', question: 'Find the sum: $1 + 2 + 3 + \\cdots + 100$', options: ['$5050$', '$10000$', '$5000$', '$10100$'], correctIndex: 0, hint: '<p>$S_n = \\frac{n}{2}(a_1 + a_n)$.</p>', correctExplanation: '$S_{100} = \\frac{100}{2}(1 + 100) = 50 \\times 101 = 5050$. (Gauss formula)', wrongExplanations: { 1: '$100 \\times 100 = 10000$, but the sum formula gives $\\frac{100 \\times 101}{2} = 5050$.', 2: 'Close: $\\frac{100 \\times 100}{2} = 5000$, but the last term is 100, so $\\frac{100 \\times 101}{2} = 5050$.', 3: '$100 \\times 101 = 10100$, but divide by 2.' } },
+    { difficulty: 'medium', question: 'Find the sum: $1 + 2 + 3 + \\cdots + 100$', options: ['$5050$', '$10000$', '$5000$', '$10100$'], correctIndex: 0, hint: '<p>$S_n = \\frac{n}{2}(a_1 + a_n)$.</p>', correctExplanation: '$S_{100} = \\frac{100}{2}(1 + 100) = 50 \\times 101 = 5050$.', wrongExplanations: { 1: '$100 \\times 100 = 10000$, but the sum formula gives $\\frac{100 \\times 101}{2} = 5050$.', 2: 'Close: $\\frac{100 \\times 100}{2} = 5000$, but the last term is 100, so $\\frac{100 \\times 101}{2} = 5050$.', 3: '$100 \\times 101 = 10100$, but divide by 2.' } },
     { difficulty: 'hard', question: 'Does $a_n = \\frac{(-1)^n}{n}$ converge?', options: ['Yes, to 0', 'Yes, to 1', 'No, oscillates', 'No, diverges to $\\infty$'], correctIndex: 0, hint: '<p>$|a_n| = 1/n \\to 0$.</p>', correctExplanation: '$|a_n| = 1/n \\to 0$. The oscillation shrinks to zero, so $a_n \\to 0$.', wrongExplanations: { 1: '$1/n \\to 0$, not 1.', 2: 'It oscillates, but the amplitude shrinks to 0, so it converges.', 3: '$1/n$ shrinks, it does not grow.' } },
     { difficulty: 'hard', question: 'Arithmetic: $a_5 = 17$, $a_{12} = 38$. Find $d$:', options: ['$3$', '$7$', '$2$', '$5$'], correctIndex: 0, hint: '<p>$a_{12} - a_5 = (12-5)d$.</p>', correctExplanation: '$38 - 17 = 7d \\Rightarrow d = 21/7 = 3$.', wrongExplanations: { 1: '$12 - 5 = 7$, not $d = 7$.', 2: '$21/7 = 3$, not 2.', 3: '$38 - 17 = 21$, and $21/7 = 3$.' } }
   ],
@@ -292,9 +292,9 @@ topics: [
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Geometric series convergence:', expression: 'A geometric series $\\sum ar^n$ converges when $|r|$ {{0}} $1$.', blanks: [ { accept: ['<', 'is less than'], size: 3 } ], explanation: '$|r| \\lt 1$ ensures terms shrink to zero.' },
-    { difficulty: 'medium', context: 'Arithmetic sum (Gauss):', expression: '$1 + 2 + 3 + \\cdots + n = \\frac{n(n+$ {{0}} $)}{2}$', blanks: [ { accept: ['1'], size: 3 } ], explanation: 'Gauss formula: $\\frac{n(n+1)}{2}$.' }
+    { difficulty: 'medium', context: 'Arithmetic sum:', expression: '$1 + 2 + 3 + \\cdots + n = \\frac{n(n+{{0}})}{2}$', blanks: [ { accept: ['1'], size: 3 } ], explanation: '$\\frac{n(n+1)}{2}$ follows by pairing first and last terms.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Sequence Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Sequence Strategy</h4>
     <ol><li><strong>Identify type:</strong> Constant difference = arithmetic. Constant ratio = geometric.</li>
     <li><strong>Use the formula:</strong> Arithmetic: $a_n = a_1 + (n-1)d$. Geometric: $a_n = a_1 r^{n-1}$.</li>
     <li><strong>Convergence:</strong> Does $a_n \\to L$? Check by computing $\\lim_{n \\to \\infty} a_n$.</li>
@@ -403,7 +403,7 @@ topics: [
   freeResponse: [
     { difficulty: 'easy', question: '$\\sum_{n=0}^{\\infty} (\\frac{1}{2})^n =$?', accept: [2, '2'], placeholder: 'Enter a number', explanation: 'Geometric: $\\frac{1}{1-1/2} = 2$.' },
     { difficulty: 'easy', question: 'Does $\\sum \\frac{1}{n}$ converge? (yes/no)', accept: ['no'], placeholder: 'yes or no', explanation: 'Harmonic series diverges ($p = 1$).' },
-    { difficulty: 'medium', question: 'For what values of $p$ does $\\sum 1/n^p$ converge?', accept: ['p \\gt 1', 'p \\gt 1'], placeholder: 'e.g. p \\gt 1', explanation: 'p-series: converges when $p \\gt 1$.' },
+    { difficulty: 'medium', question: 'For what values of $p$ does $\\sum 1/n^p$ converge?', accept: ['p \\gt 1', 'p > 1'], placeholder: 'e.g. p > 1', explanation: 'p-series: converges when $p \\gt 1$.' },
     { difficulty: 'medium', question: 'What is the radius of convergence of $\\sum x^n/n!$?', accept: ['infinity', 'inf', '\\infty'], placeholder: 'R = ?', explanation: 'This is $e^x$. Ratio test: $|x|/(n+1) \\to 0 \\lt 1$ for all $x$. $R = \\infty$.' },
     { difficulty: 'hard', question: 'The Maclaurin series for $e^x$ at $x=1$ gives $e \\approx$?', accept: ['2.7', '2.718', '2.72'], placeholder: 'e.g. 2.7', explanation: '$e \\approx 2.718$.' },
     { difficulty: 'hard', question: 'The first 3 terms of the Taylor series for $\\sin x$ around $x=0$:', accept: ['x-x^3/6+x^5/120', 'x - x^3/6 + x^5/120'], placeholder: 'e.g. x-x^3/6+x^5/120', explanation: '$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$' },
@@ -456,7 +456,7 @@ topics: [
     ], completionMessage: 'Ratio test: $L < 1$ means absolute convergence.' }
   ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'Geometric series formula:', expression: '$\\sum_{n=0}^{\\infty} ar^n = \\frac{a}{1-$ {{0}} $}$ when $|r| <$ {{1}}', blanks: [ { accept: ['r'], size: 3 }, { accept: ['1'], size: 3 } ], explanation: 'Geometric series converges to $a/(1-r)$ when $|r| \\lt 1$.' },
+    { difficulty: 'easy', context: 'Geometric series formula:', expression: '$\\sum_{n=0}^{\\infty} ar^n = \\frac{a}{1-{{0}}}$ when $|r| < {{1}}$', blanks: [ { accept: ['r'], size: 3 }, { accept: ['1'], size: 3 } ], explanation: 'Geometric series converges to $a/(1-r)$ when $|r| \\lt 1$.' },
     { difficulty: 'medium', context: 'Divergence test:', expression: 'If $\\lim_{n \\to \\infty} a_n \\neq$ {{0}}, then $\\sum a_n$ {{1}}.', blanks: [ { accept: ['0'], size: 3 }, { accept: ['diverges'], size: 10 } ], explanation: 'If terms do not approach 0, the series diverges.' }
   ],
   matching: [
@@ -467,7 +467,7 @@ topics: [
       { left: 'Ratio test', right: '$L \\lt 1$' }
     ] },
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Series Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Series Strategy</h4>
     <ol><li><strong>Divergence test first:</strong> If $\\lim a_n \\neq 0$, it diverges. Done.</li>
     <li><strong>Recognize</strong> geometric ($ar^n$) or p-series ($1/n^p$).</li>
     <li><strong>Ratio test</strong> for factorials and exponentials.</li>

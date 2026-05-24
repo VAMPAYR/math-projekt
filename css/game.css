@@ -84,7 +84,6 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-md), var(--shadow-glow-blue);
 }
-.stat-card .stat-icon { font-size: 24px; margin-bottom: 6px; }
 .stat-card .stat-value {
   font-size: 28px;
   font-weight: 800;
@@ -215,7 +214,6 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg), var(--shadow-glow-blue);
 }
-.game-action-btn .action-icon { font-size: 28px; margin-bottom: 8px; }
 .game-action-btn .action-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .game-action-btn .action-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
 
@@ -501,6 +499,34 @@
   justify-content: center;
   gap: 8px;
 }
+.fb-blank-token {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 28px;
+  padding: 2px 10px;
+  border: 1px solid var(--accent-amber);
+  border-radius: var(--radius-sm);
+  color: var(--accent-amber);
+  font-size: 13px;
+  font-weight: 600;
+}
+.fb-input-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 14px;
+}
+.fb-input-group {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
 .fb-input {
   width: 60px;
   padding: 6px 8px;
@@ -646,7 +672,6 @@
   border-color: var(--accent-amber);
   background: rgba(245, 158, 11, 0.1);
 }
-.cat-icon { font-size: 22px; }
 .cat-name { font-size: 12px; font-weight: 700; color: var(--text-primary); }
 .cat-desc { font-size: 10px; color: var(--text-muted); }
 
@@ -711,7 +736,6 @@
   font-weight: 800;
   color: var(--text-primary);
 }
-.timer-icon { color: var(--accent-amber); }
 .drill-score {
   display: flex;
   align-items: center;
@@ -778,13 +802,14 @@
 .drill-input.incorrect { border-color: var(--accent-red); animation: shake 0.3s ease; }
 
 .drill-submit {
-  width: 56px;
+  min-width: 76px;
   height: 56px;
+  padding: 0 16px;
   background: var(--gradient-primary);
   border: none;
   border-radius: var(--radius-md);
   color: white;
-  font-size: 24px;
+  font-size: 13px;
   font-weight: 800;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -918,7 +943,23 @@
   opacity: 1;
   border-color: var(--accent-purple);
 }
-.achievement-card .ach-icon { font-size: 28px; margin-bottom: 6px; }
+.achievement-card .ach-status {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.achievement-card.unlocked .ach-status {
+  color: var(--accent-green);
+  border-color: rgba(16, 185, 129, 0.35);
+}
 .achievement-card .ach-title { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .achievement-card .ach-desc { font-size: 11px; color: var(--text-muted); }
 
@@ -983,4 +1024,234 @@
   .mp-part-input { flex-direction: column; }
   .fr-input-group { flex-direction: column; align-items: stretch; }
   .fr-label { min-width: auto; }
+}
+
+/* ---------- Refined Game UI ---------- */
+.xp-float {
+  color: var(--accent-blue);
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.game-toast,
+.game-toast.level-up,
+.game-toast.achievement {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+}
+
+.stats-dashboard {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  margin: 18px 0 26px;
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.stat-card {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--border-subtle);
+  border-radius: 0;
+  padding: 14px 16px;
+  text-align: left;
+  box-shadow: none;
+  min-width: 0;
+}
+
+.stat-card:first-child {
+  border-left: 0;
+}
+
+.stat-card:hover {
+  border-color: var(--border-subtle);
+  transform: none;
+  box-shadow: none;
+}
+
+.stat-card .stat-value {
+  background: none;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+  color: var(--text-primary);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.stat-card .stat-label {
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  margin-top: 6px;
+}
+
+.xp-bar-section {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 22px;
+  box-shadow: none;
+}
+
+.xp-level-badge {
+  background: var(--accent-blue);
+  border-radius: 6px;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.xp-bar-container-lg {
+  background: var(--bg-tertiary);
+  height: 8px;
+}
+
+.xp-bar-fill-lg {
+  background: var(--accent-blue);
+}
+
+.xp-bar-fill-lg::after {
+  display: none;
+}
+
+.game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 30px;
+}
+
+.game-action-btn {
+  flex: 1 1 180px;
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: none;
+}
+
+.game-action-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  transform: none;
+  box-shadow: none;
+}
+
+.game-action-btn .action-title {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.game-action-btn .action-desc {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.mode-btn.active {
+  background: color-mix(in srgb, var(--accent-blue) 12%, var(--bg-card));
+  border-color: var(--border-accent);
+  color: var(--text-primary);
+}
+
+.free-response-card,
+.step-builder-card,
+.matching-card,
+.fill-blank-card,
+.multi-part-card {
+  border-left-width: 3px;
+}
+
+.daily-challenge-banner {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.daily-challenge-banner:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border-accent);
+}
+
+.dc-icon,
+.streak-fire {
+  display: none;
+}
+
+.dc-action {
+  background: var(--accent-blue);
+  border-radius: 6px;
+}
+
+.drill-card,
+.drill-category-card,
+.drill-active-card,
+.drill-results,
+.achievement-card,
+.result-card {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.drill-progress-fill,
+.drill-progress-fill.urgent,
+.drill-submit,
+.drill-retry-btn,
+.drill-start-btn {
+  background: var(--accent-blue);
+  box-shadow: none;
+}
+
+.achievement-card.unlocked {
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+}
+
+html[data-theme="dark"] .stats-dashboard,
+html[data-theme="dark"] .xp-bar-section,
+html[data-theme="dark"] .game-action-btn,
+html[data-theme="dark"] .drill-card,
+html[data-theme="dark"] .drill-category-card,
+html[data-theme="dark"] .drill-active-card,
+html[data-theme="dark"] .drill-results,
+html[data-theme="dark"] .achievement-card,
+html[data-theme="dark"] .result-card,
+html[data-theme="dark"] .game-toast {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .game-action-btn:hover,
+html[data-theme="dark"] .achievement-card.unlocked {
+  background: var(--bg-card-hover);
+}
+
+html[data-theme="dark"] .stat-card {
+  border-left-color: var(--border-medium);
+}
+
+@media (max-width: 768px) {
+  .stats-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .stat-card:nth-child(n + 3) {
+    border-top: 1px solid var(--border-subtle);
+  }
 }

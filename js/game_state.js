@@ -41,10 +41,10 @@ const GameState = (() => {
   const LEVEL_TITLES = [
     'Novice', 'Learner', 'Student', 'Scholar', 'Adept',
     'Practitioner', 'Specialist', 'Expert', 'Master', 'Grandmaster',
-    'Sage', 'Mathematician', 'Theorist', 'Professor', 'Genius',
-    'Luminary', 'Prodigy', 'Virtuoso', 'Legend', 'Archon',
-    'Transcendent', 'Infinity', 'Omega', 'Aleph', 'Euler',
-    'Gauss', 'Riemann', 'Ramanujan', 'Newton', 'Absolute Zero'
+    'Sage', 'Mathematician', 'Theorist', 'Professor', 'Analyst',
+    'Modeler', 'Proof Reader', 'Problem Solver', 'Researcher', 'Advanced Analyst',
+    'Infinity', 'Omega', 'Aleph', 'Euler', 'Gauss',
+    'Riemann', 'Ramanujan', 'Newton', 'Complete', 'Final Review'
   ];
 
   /* ---- XP Rewards ---- */
@@ -73,29 +73,29 @@ const GameState = (() => {
 
   /* ---- Achievement Definitions ---- */
   const ACHIEVEMENTS = {
-    first_blood: { title: 'First Blood', desc: 'Solve your first problem', icon: '🎯', condition: s => s.totalProblemsCorrect >= 1 },
-    streak_3: { title: 'Hat Trick', desc: '3 correct in a row', icon: '🔥', condition: s => s.bestStreak >= 3 },
-    streak_5: { title: 'On Fire', desc: '5 correct in a row', icon: '🔥🔥', condition: s => s.bestStreak >= 5 },
-    streak_10: { title: 'Unstoppable', desc: '10 correct in a row', icon: '💥', condition: s => s.bestStreak >= 10 },
-    streak_25: { title: 'Legendary Streak', desc: '25 correct in a row', icon: '⚡', condition: s => s.bestStreak >= 25 },
-    problems_10: { title: 'Getting Started', desc: 'Solve 10 problems', icon: '📝', condition: s => s.totalProblemsCorrect >= 10 },
-    problems_50: { title: 'Dedicated', desc: 'Solve 50 problems', icon: '💪', condition: s => s.totalProblemsCorrect >= 50 },
-    problems_100: { title: 'Centurion', desc: 'Solve 100 problems', icon: '🏅', condition: s => s.totalProblemsCorrect >= 100 },
-    problems_500: { title: 'Marathon Runner', desc: 'Solve 500 problems', icon: '🏆', condition: s => s.totalProblemsCorrect >= 500 },
-    problems_1000: { title: 'Thousand Club', desc: 'Solve 1000 problems', icon: '👑', condition: s => s.totalProblemsCorrect >= 1000 },
-    level_5: { title: 'Adept', desc: 'Reach Level 5', icon: '⭐', condition: s => s.level >= 5 },
-    level_10: { title: 'Master', desc: 'Reach Level 10', icon: '🌟', condition: s => s.level >= 10 },
-    level_20: { title: 'Transcendent', desc: 'Reach Level 20', icon: '✨', condition: s => s.level >= 20 },
-    speed_demon: { title: 'Speed Demon', desc: 'Complete a speed drill with 100% accuracy', icon: '⚡', condition: s => s.modeStats?.speedDrill?.totalDrills >= 1 },
-    challenge_1: { title: 'Challenger', desc: 'Complete your first challenge', icon: '🧩', condition: s => s.modeStats?.challenge?.completed >= 1 },
-    challenge_10: { title: 'Puzzle Master', desc: 'Complete 10 challenges', icon: '🧠', condition: s => s.modeStats?.challenge?.completed >= 10 },
-    daily_3: { title: 'Consistent', desc: 'Complete 3 daily challenges', icon: '📅', condition: s => Object.keys(s.dailyChallengeCompleted || {}).length >= 3 },
-    daily_7: { title: 'Weekly Warrior', desc: 'Complete 7 daily challenges', icon: '🗓️', condition: s => Object.keys(s.dailyChallengeCompleted || {}).length >= 7 },
-    mastery_1: { title: 'Topic Master', desc: 'Master your first topic (100%)', icon: '🎓', condition: s => Object.values(s.topicMastery || {}).some(t => t.score >= 100) },
-    accuracy_90: { title: 'Sharpshooter', desc: 'Maintain 90%+ accuracy over 50+ problems', icon: '🎯', condition: s => s.totalProblemsAttempted >= 50 && (s.totalProblemsCorrect / s.totalProblemsAttempted) >= 0.9 },
-    streak_days_3: { title: 'Three Day Streak', desc: 'Practice 3 days in a row', icon: '📆', condition: s => s.streakDays >= 3 },
-    streak_days_7: { title: 'Weekly Habit', desc: 'Practice 7 days in a row', icon: '🔄', condition: s => s.streakDays >= 7 },
-    streak_days_30: { title: 'Monthly Dedication', desc: 'Practice 30 days in a row', icon: '🏋️', condition: s => s.streakDays >= 30 },
+    first_blood: { title: 'First Problem', desc: 'Solve your first problem', icon: '', condition: s => s.totalProblemsCorrect >= 1 },
+    streak_3: { title: 'Three-Step Streak', desc: '3 correct in a row', icon: '', condition: s => s.bestStreak >= 3 },
+    streak_5: { title: 'Five-Step Streak', desc: '5 correct in a row', icon: '', condition: s => s.bestStreak >= 5 },
+    streak_10: { title: 'Ten-Step Streak', desc: '10 correct in a row', icon: '', condition: s => s.bestStreak >= 10 },
+    streak_25: { title: 'Twenty-Five-Step Streak', desc: '25 correct in a row', icon: '', condition: s => s.bestStreak >= 25 },
+    problems_10: { title: 'Getting Started', desc: 'Solve 10 problems', icon: '', condition: s => s.totalProblemsCorrect >= 10 },
+    problems_50: { title: 'Dedicated', desc: 'Solve 50 problems', icon: '', condition: s => s.totalProblemsCorrect >= 50 },
+    problems_100: { title: 'Centurion', desc: 'Solve 100 problems', icon: '', condition: s => s.totalProblemsCorrect >= 100 },
+    problems_500: { title: 'Sustained Practice', desc: 'Solve 500 problems', icon: '', condition: s => s.totalProblemsCorrect >= 500 },
+    problems_1000: { title: 'Thousand Club', desc: 'Solve 1000 problems', icon: '', condition: s => s.totalProblemsCorrect >= 1000 },
+    level_5: { title: 'Adept', desc: 'Reach Level 5', icon: '', condition: s => s.level >= 5 },
+    level_10: { title: 'Master', desc: 'Reach Level 10', icon: '', condition: s => s.level >= 10 },
+    level_20: { title: 'Advanced Level', desc: 'Reach Level 20', icon: '', condition: s => s.level >= 20 },
+    speed_demon: { title: 'Accurate Drill', desc: 'Complete a speed drill with 100% accuracy', icon: '', condition: s => s.modeStats?.speedDrill?.totalDrills >= 1 },
+    challenge_1: { title: 'Challenger', desc: 'Complete your first challenge', icon: '', condition: s => s.modeStats?.challenge?.completed >= 1 },
+    challenge_10: { title: 'Challenge Practice', desc: 'Complete 10 challenges', icon: '', condition: s => s.modeStats?.challenge?.completed >= 10 },
+    daily_3: { title: 'Consistent', desc: 'Complete 3 daily challenges', icon: '', condition: s => Object.keys(s.dailyChallengeCompleted || {}).length >= 3 },
+    daily_7: { title: 'Weekly Practice', desc: 'Complete 7 daily challenges', icon: '', condition: s => Object.keys(s.dailyChallengeCompleted || {}).length >= 7 },
+    mastery_1: { title: 'Topic Master', desc: 'Master your first topic (100%)', icon: '', condition: s => Object.values(s.topicMastery || {}).some(t => t.score >= 100) },
+    accuracy_90: { title: 'Sharpshooter', desc: 'Maintain 90%+ accuracy over 50+ problems', icon: '', condition: s => s.totalProblemsAttempted >= 50 && (s.totalProblemsCorrect / s.totalProblemsAttempted) >= 0.9 },
+    streak_days_3: { title: 'Three Day Streak', desc: 'Practice 3 days in a row', icon: '', condition: s => s.streakDays >= 3 },
+    streak_days_7: { title: 'Weekly Habit', desc: 'Practice 7 days in a row', icon: '', condition: s => s.streakDays >= 7 },
+    streak_days_30: { title: 'Monthly Practice', desc: 'Practice 30 days in a row', icon: '', condition: s => s.streakDays >= 30 },
   };
 
   /* ---- Init ---- */
@@ -277,11 +277,11 @@ const GameState = (() => {
   /* ---- UI Notifications ---- */
   function showLevelUp(level) {
     const title = LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)];
-    showGameToast(`🎉 Level Up! Level ${level}: ${title}`, 'level-up');
+    showGameToast(`Level ${level}: ${title}`, 'level-up');
   }
 
   function showAchievement(ach) {
-    showGameToast(`${ach.icon} Achievement: ${ach.title}`, 'achievement');
+    showGameToast(`Achievement: ${ach.title}`, 'achievement');
   }
 
   function showXPGain(amount) {
@@ -313,11 +313,6 @@ const GameState = (() => {
 
   /* ---- Streak Display ---- */
   function getStreakEmoji() {
-    const s = state.currentStreak;
-    if (s >= 25) return '🔥🔥🔥';
-    if (s >= 10) return '🔥🔥';
-    if (s >= 5) return '🔥';
-    if (s >= 3) return '✨';
     return '';
   }
 

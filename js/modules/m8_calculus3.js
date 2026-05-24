@@ -132,7 +132,7 @@ topics: [
     { difficulty: 'hard', question: 'Irrotational: $\\nabla \\times \\vec{F} = \\vec{0}$. Implies $\\vec{F}$ is:', accept: ['conservative', 'gradient field'], placeholder: 'Property', explanation: 'Curl-free (irrotational) in simply connected domain implies conservative.' },
     { difficulty: 'easy', question: 'Conservative vector field: $\\vec{F} = \\nabla \\phi$. $\\phi$ is the:', accept: ['potential function', 'scalar potential'], placeholder: 'Name', explanation: '$\\phi$: scalar potential function.' },
     { difficulty: 'hard', question: '$\\nabla \\times (\\nabla \\phi) = $ ? (always)', accept: ['0', 'zero', '\\vec{0}'], placeholder: 'Value', explanation: 'Curl of gradient is always zero.' },
-    { difficulty: 'medium', question: 'Source: $\\nabla \\cdot \\vec{F} > 0$. Sink: $\\nabla \\cdot \\vec{F} <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Source: positive divergence. Sink: negative divergence.' },
+    { difficulty: 'medium', question: 'Outward flow has $\\nabla \\cdot \\vec{F} > 0$. Inward flow has $\\nabla \\cdot \\vec{F} <$ ?', accept: [0, '0'], placeholder: 'Sign', explanation: 'Positive divergence means local outward flow. Negative divergence means local inward flow.' },
     { difficulty: 'hard', question: 'Harmonic function: $\\nabla^2 f = 0$. Satisfies the _____ equation.', accept: ['Laplace', 'Laplace\'s'], placeholder: 'Name', explanation: 'Laplace equation: $\\Delta f = 0$. Solutions are harmonic.' },
     { difficulty: 'medium', question: 'Solenoidal field: $\\nabla \\cdot \\vec{F} = $ ?', accept: [0, '0'], placeholder: 'Value', explanation: 'Solenoidal: divergence-free. $\\nabla \\cdot \\vec{F} = 0$.' },
     { difficulty: 'hard', question: 'Helmholtz decomposition: any smooth vector field = gradient + _____ field.', accept: ['curl', 'solenoidal', 'divergence-free'], placeholder: 'Type', explanation: '$\\vec{F} = -\\nabla\\phi + \\nabla \\times \\vec{A}$.' },
@@ -165,7 +165,7 @@ topics: [
     { difficulty: 'medium', context: 'Dot product:', expression: '$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos$ {{0}}', blanks: [ { accept: ['theta', '\\theta'], size: 6 } ], explanation: 'Dot product equals the product of magnitudes times cosine of the angle between them.' },
     { difficulty: 'medium', context: 'Vector identities:', expression: '$\\nabla \\times (\\nabla f) =$ {{0}} for any smooth scalar field $f$.', blanks: [ { accept: ['0', 'zero', '\\vec{0}'], size: 5 } ], explanation: 'Curl of a gradient is always zero.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Vector Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Vector Strategy</h4>
     <ol><li><strong>Dot product</strong> for angles and projections (scalar result).</li>
     <li><strong>Cross product</strong> for perpendicular vectors and areas (vector result).</li>
     <li>$\\mathbf{u} \\cdot \\mathbf{v} = 0 \\iff$ perpendicular. $\\mathbf{u} \\times \\mathbf{v} = \\mathbf{0} \\iff$ parallel.</li></ol></div>` }
@@ -325,7 +325,7 @@ topics: [
     { difficulty: 'easy', context: 'Partial derivative rule:', expression: '$\\frac{\\partial}{\\partial x}[f(x,y)]$: treat {{0}} as a constant.', blanks: [ { accept: ['y'], size: 3 } ], explanation: 'When finding $f_x$, hold $y$ constant and differentiate w.r.t. $x$.' },
     { difficulty: 'medium', context: 'Cross product magnitude:', expression: '$|\\vec{a} \\times \\vec{b}| = |\\vec{a}||\\vec{b}|$ {{0}} $\\theta$', blanks: [ { accept: ['sin', '\\sin'], size: 4 } ], explanation: 'Cross product magnitude = product of magnitudes times sine of angle.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Partial Derivative Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Partial Derivative Strategy</h4>
     <ol><li><strong>Treat other variables as constants</strong> and differentiate normally.</li>
     <li><strong>Gradient:</strong> compute all partials and form the vector.</li>
     <li><strong>Critical points:</strong> set ALL partials = 0. Use second derivative test ($D$ test) to classify.</li></ol></div>` }
@@ -490,7 +490,7 @@ topics: [
     ], completionMessage: 'Green\'s theorem: $\\oint_C (P\\,dx + Q\\,dy) = \\iint_D (Q_x - P_y)\\,dA$.' }
     ], completionMessage: 'Polar integration for circular symmetry: convert $x^2+y^2 = r^2$ and include the $r$ Jacobian.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Multiple Integrals Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Multiple Integrals Strategy</h4>
     <ol><li><strong>Sketch the region</strong> and determine bounds.</li>
     <li><strong>Inner integral first:</strong> treat the outer variable as constant.</li>
     <li><strong>Polar for circles:</strong> Use $dA = r\\,dr\\,d\\theta$. Do not forget the $r$.</li>

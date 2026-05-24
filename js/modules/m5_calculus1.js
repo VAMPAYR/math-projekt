@@ -27,7 +27,7 @@
           ${WHY('Why does the limit not care about the value AT the point?', '<p>Consider a function with a hole: $f(x) = \\frac{x^2 - 4}{x - 2}$ is undefined at $x = 2$. But for all $x \\neq 2$, $f(x) = x + 2$, so $\\lim_{x \\to 2} f(x) = 4$. The limit describes behavior <strong>near</strong> a point, not <strong>at</strong> it. This separation is essential because the derivative formula $\\frac{f(a+h)-f(a)}{h}$ is undefined at $h = 0$, yet we need its limit as $h \\to 0$.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Teleporting Function</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: The Teleporting Function</h4>
           <p>Consider: $f(x) = \\begin{cases} x^2 & x \\neq 2 \\\\ 10 & x = 2 \\end{cases}$</p>
           <p>As $x \\to 2$, $f(x) \\to 4$. But $f(2) = 10$. The function "teleports" to 10 at $x = 2$. The limit exists ($L = 4$), but the function is <strong>not continuous</strong> at $x = 2$ because $\\lim_{x \\to 2} f(x) \\neq f(2)$.</p></div>` },
         formalDefinitions: [
@@ -45,7 +45,7 @@
     },
     mathGrammar: [
       { question: 'What does $\\lim_{x \\to a} f(x) = L$ mean in plain language?', answer: 'As $x$ gets closer and closer to $a$ (from both sides), $f(x)$ gets closer and closer to $L$. You never actually plug in $x = a$; you approach it. The limit cares about the journey. You are asking: where is this heading? You are not asking where it lands.' },
-      { question: 'Why can\'t I just plug in the value?', answer: 'Sometimes you can! If $f$ is continuous at $a$, then $\\lim_{x \\to a} f(x) = f(a)$. But for $\\frac{x^2 - 1}{x - 1}$ at $x = 1$, plugging in gives $\\frac{0}{0}$, which is undefined. The limit still exists ($= 2$) because you factor and cancel: $\\frac{(x+1)(x-1)}{x-1} = x + 1 \\to 2$.' },
+      { question: 'Why can\'t I just plug in the value?', answer: 'Direct substitution works when $f$ is continuous at $a$, because $\\lim_{x \\to a} f(x) = f(a)$. For $\\frac{x^2 - 1}{x - 1}$ at $x = 1$, substitution gives $\\frac{0}{0}$, which is undefined. The limit still exists ($= 2$) because factoring and canceling gives $\\frac{(x+1)(x-1)}{x-1} = x + 1 \\to 2$.' },
       { question: 'What is $\\frac{0}{0}$? Is it 0 or undefined?', answer: '$\\frac{0}{0}$ is called an "indeterminate form." It does not have a single fixed value. Depending on HOW both numerator and denominator approach zero, the limit could be any number, infinity, or nothing. You must simplify further to find the actual answer.' }
     ],
     concept: { html: `
@@ -271,7 +271,7 @@
             { question: 'What type of discontinuity?', accept: ['removable', 'Removable'], placeholder: 'Type', explanation: 'Limit exists but $f(2)$ undefined. Removable.' }
           ], completionMessage: 'Always check all 3 conditions for continuity.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>\ud83e\udde0 Limit Strategies</h4><ol><li><strong>Direct substitution</strong> first. If it works, you are done.</li><li><strong>$0/0$ form:</strong> Factor, rationalize, or use L'H\u00f4pital's rule.</li><li><strong>$\\infty/\\infty$:</strong> Divide by highest power of $x$.</li><li><strong>Squeeze Theorem</strong> for oscillating functions.</li></ol></div>` }
+        stuckGuide: { html: `<div class="callout callout-tip"><h4>Limit Strategies</h4><ol><li><strong>Direct substitution</strong> first. If it works, you are done.</li><li><strong>$0/0$ form:</strong> Factor, rationalize, or use L'H\u00f4pital's rule.</li><li><strong>$\\infty/\\infty$:</strong> Divide by highest power of $x$.</li><li><strong>Squeeze Theorem</strong> for oscillating functions.</li></ol></div>` }
       },
       {
         id: 'derivatives',
@@ -290,7 +290,7 @@
           ${WHY('Why does the chain rule work?', '<p>If $y = f(g(x))$, imagine a sequence of gears. $x$ turns the inner gear $g$, which turns the outer gear $f$. The total rate of turning is the product: $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$ where $u = g(x)$. Each gear multiplies the rate. Formally, this follows from the limit of $\\frac{f(g(x+h)) - f(g(x))}{h} = \\frac{f(g(x+h)) - f(g(x))}{g(x+h) - g(x)} \\cdot \\frac{g(x+h) - g(x)}{h}$ as $h \\to 0$.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Slope at a Point</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: The Slope at a Point</h4>
           <p>A straight line has a constant slope. But what is the "slope" of $f(x) = x^2$ at $x = 3$? The curve is bending; there is no single slope.</p>
           <p>Solution: draw the <strong>tangent line</strong> (the line that just touches the curve at that point). Its slope IS the derivative: $f'(3) = 6$.</p></div>` },
         formalDefinitions: [
@@ -386,7 +386,7 @@
           <p><strong>Formal Definition:</strong></p>
           <div class="math-block">$$f'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x) - f(x)}{\\Delta x}$$</div>
           <p><strong>Notation variants:</strong> $f'(x)$, $\\frac{dy}{dx}$, $\\frac{df}{dx}$, $Df(x)$, $\\dot{y}$ (for time derivatives).</p>
-          <div class="callout callout-warning"><h4>⚠ Differentiable Implies Continuous (Not Vice Versa)</h4>
+          <div class="callout callout-warning"><h4> Differentiable Implies Continuous (Not Vice Versa)</h4>
           <p>If $f'(a)$ exists, then $f$ is continuous at $a$. The converse is false: $f(x) = |x|$ is continuous at $0$ but not differentiable (the graph has a corner). Other non-differentiable cases: cusps (e.g., $x^{2/3}$ at 0) and vertical tangents.</p></div>` },
         examples: [{
           title: 'Chain Rule Application',
@@ -534,7 +534,7 @@
             });
           }
         }],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>\ud83e\udde0 Differentiation Strategy</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4>Differentiation Strategy</h4>
           <ol><li><strong>Sum/Difference:</strong> Differentiate term by term.</li>
           <li><strong>Product:</strong> $(fg)\' = f\'g + fg\'$.</li>
           <li><strong>Quotient:</strong> $\\frac{f\'g - fg\'}{g^2}$.</li>
@@ -556,8 +556,8 @@
           ${WHY('Why do related rates work?', '<p>If multiple quantities are connected by an equation and all change over time, differentiating the equation with respect to $t$ (using the chain rule) relates their rates of change. For example, if $x^2 + y^2 = r^2$ describes a constraint, then $2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0$ connects the rates. The chain rule is the bridge from static equations to dynamic relationships.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Optimal Box</h4>
-          <p>You have a 20cm �: 20cm sheet of cardboard. Cut squares from each corner, fold up the sides to make a box. What size squares maximize the volume?</p>
+          <div class="callout callout-puzzle"><h4> Puzzle: The Optimal Box</h4>
+          <p>You have a 20 cm by 20 cm sheet of cardboard. Cut squares from each corner, fold up the sides to make a box. What size squares maximize the volume?</p>
           <p>If the cut square has side $x$: volume $V(x) = x(20-2x)^2$. Find $V'(x) = 0$, verify it is a maximum. Calculus gives the exact optimal cut: $x = \\frac{10}{3}$ cm.</p></div>` },
         concept: { html: `
           <div class="callout callout-key"><h4>Finding Max/Min Values</h4>
@@ -584,7 +584,7 @@
           problem: 'A farmer has 200m of fencing to enclose a rectangular field along a river (no fence needed on the river side). What dimensions maximize the area?',
           steps: [
             { title: 'Set up variables', content: 'Let $x$ = width (perpendicular to river), $y$ = length (along river). Constraint: $2x + y = 200$, so $y = 200 - 2x$.', why: 'Three sides of fencing: two widths and one length.' },
-            { title: 'Write the objective function', content: '$A(x) = x \\cdot y = x(200 - 2x) = 200x - 2x^2$', why: 'Area = length �: width. Substitute the constraint to get a function of one variable.' },
+            { title: 'Write the objective function', content: '$A(x) = x \\cdot y = x(200 - 2x) = 200x - 2x^2$', why: 'Area = length times width. Substitute the constraint to get a function of one variable.' },
             { title: 'Differentiate and find critical points', content: '$A\'(x) = 200 - 4x = 0 \\Rightarrow x = 50$', why: 'Setting the derivative to zero finds where the rate of change of area is zero: a potential maximum or minimum.' },
             { title: 'Verify maximum', content: '$A\'\'(x) = -4 \\lt 0$, so $x = 50$ gives a maximum. $y = 200 - 2(50) = 100$. Area = $50 \\times 100 = 5000$ m².', why: 'Negative second derivative confirms upward-facing tangent, indicating a local (and absolute) maximum.' }
           ]
@@ -682,7 +682,7 @@
     ], completionMessage: 'Related rates: differentiate implicit equation with respect to time.' }
           ], completionMessage: 'Full curve analysis: first derivative for critical points, second derivative for classification.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>\ud83e\udde0 Optimization Workflow</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4>Optimization Workflow</h4>
           <ol><li><strong>Draw a picture</strong> and label quantities.</li>
           <li><strong>Write objective function</strong> in one variable using constraints.</li>
           <li><strong>Differentiate, set to zero, solve.</strong></li>
