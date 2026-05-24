@@ -23,7 +23,7 @@ const MiniGames = (() => {
 
     return `
       <div class="mini-game equation-balance" id="${gameId}">
-        <div class="game-title">⚖️ Equation Balance</div>
+        <div class="game-title">Equation Balance</div>
         <div class="game-description">Find the value that balances the equation. Show your reasoning.</div>
         <div class="balance-visual">
           <div class="balance-side left">$${prob.left}$</div>
@@ -52,19 +52,19 @@ const MiniGames = (() => {
     const val = parseFloat(input.value);
 
     if (Math.abs(val - answer) < 0.01) {
-      feedback.innerHTML = '<span class="game-correct">✓ Correct! The equation is balanced.</span>';
+      feedback.innerHTML = '<span class="game-correct">Correct. The equation is balanced.</span>';
       feedback.className = 'game-feedback correct';
       steps.style.display = 'block';
       if (typeof GameState !== 'undefined') GameState.recordCorrectAnswer('medium', 'game', null);
     } else {
-      feedback.innerHTML = '<span class="game-wrong">✗ Not balanced. Try again. Think: what operation undoes what is done to the variable?</span>';
+      feedback.innerHTML = '<span class="game-wrong">Not balanced. Try again. Think: what operation undoes what is done to the variable?</span>';
       feedback.className = 'game-feedback wrong';
       if (typeof GameState !== 'undefined') GameState.recordWrongAnswer();
     }
     if (typeof MathEngine !== 'undefined') setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
-  /* ---- "What Comes Next?" Pattern Game ---- */
+  /* ---- Pattern Finder Game ---- */
   function patternGame() {
     const patterns = [
       { seq: [2, 4, 6, 8], next: 10, rule: 'Add 2 each time (arithmetic sequence, common difference = 2)' },
@@ -82,11 +82,11 @@ const MiniGames = (() => {
 
     return `
       <div class="mini-game pattern-game" id="${gameId}">
-        <div class="game-title">🔢 What Comes Next?</div>
+        <div class="game-title">Pattern Finder</div>
         <div class="game-description">Find the pattern and predict the next number.</div>
         <div class="pattern-sequence">
-          ${pat.seq.map(n => '<span class="pattern-num">' + n + '</span>').join('<span class="pattern-arrow">→</span>')}
-          <span class="pattern-arrow">→</span>
+          ${pat.seq.map(n => '<span class="pattern-num">' + n + '</span>').join('<span class="pattern-arrow">&rarr;</span>')}
+          <span class="pattern-arrow">&rarr;</span>
           <span class="pattern-num mystery">?</span>
         </div>
         <div class="game-input-area">
@@ -106,11 +106,11 @@ const MiniGames = (() => {
     const val = parseFloat(input.value);
 
     if (Math.abs(val - answer) < 0.01) {
-      feedback.innerHTML = `<span class="game-correct">✓ Correct!</span><div class="pattern-rule"><strong>Rule:</strong> ${rule}</div>`;
+      feedback.innerHTML = `<span class="game-correct">Correct.</span><div class="pattern-rule"><strong>Rule:</strong> ${rule}</div>`;
       feedback.className = 'game-feedback correct';
       if (typeof GameState !== 'undefined') GameState.recordCorrectAnswer('medium', 'game', null);
     } else {
-      feedback.innerHTML = '<span class="game-wrong">✗ Look at how each number relates to the one before it. Is it adding? Multiplying? Something else?</span>';
+      feedback.innerHTML = '<span class="game-wrong">Compare consecutive terms and test addition, multiplication, or a second-level pattern.</span>';
       feedback.className = 'game-feedback wrong';
       if (typeof GameState !== 'undefined') GameState.recordWrongAnswer();
     }
@@ -125,7 +125,7 @@ const MiniGames = (() => {
       { prompt: 'Write an expression for "a number squared, minus 4"', answer: 'x^2-4', display: '$x^2 - 4$', hint: '"Squared" means raised to the power of 2.' },
       { prompt: 'Write an expression for "half of a number y"', answer: 'y/2', display: '$\\frac{y}{2}$', hint: '"Half" means divide by 2.' },
       { prompt: 'Write an expression for "the sum of two consecutive integers"', answer: 'n+(n+1)', display: '$n + (n+1) = 2n + 1$', hint: 'Consecutive integers: $n$ and $n+1$.' },
-      { prompt: 'Write an expression for "the area of a rectangle with length $l$ and width $w$"', answer: 'l*w', display: '$l \\times w$', hint: 'Area = length × width.' },
+      { prompt: 'Write an expression for "the area of a rectangle with length $l$ and width $w$"', answer: 'l*w', display: '$l \\times w$', hint: 'Area equals length times width.' },
     ];
 
     const ch = challenges[Math.floor(Math.random() * challenges.length)];
@@ -133,7 +133,7 @@ const MiniGames = (() => {
 
     return `
       <div class="mini-game expression-builder" id="${gameId}">
-        <div class="game-title">✏️ Build the Expression</div>
+        <div class="game-title">Build the Expression</div>
         <div class="game-description">Translate English into math notation.</div>
         <div class="game-prompt">${ch.prompt}</div>
         <div class="game-input-area">
@@ -153,7 +153,7 @@ const MiniGames = (() => {
   function checkExpression(gameId) {
     const hint = document.getElementById(gameId + '-hint');
     const feedback = document.getElementById(gameId + '-feedback');
-    feedback.innerHTML = '<span class="game-correct">Great attempt! Check the answer below.</span>';
+    feedback.innerHTML = '<span class="game-correct">Review the answer below.</span>';
     hint.style.display = 'block';
     if (typeof MathEngine !== 'undefined') setTimeout(() => MathEngine.renderAllMath(), 50);
   }
@@ -163,7 +163,7 @@ const MiniGames = (() => {
     return `
       <div class="games-section">
         <div class="phase-label hook">Interactive Games</div>
-        <h3>🎮 Practice Through Play</h3>
+        <h3>Practice Through Play</h3>
         <p class="game-section-desc">Reinforce concepts through interactive challenges. Each game explains the reasoning behind every answer.</p>
         ${equationBalance()}
         ${patternGame()}

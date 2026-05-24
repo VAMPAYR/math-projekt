@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 2: Beginning Algebra (8 topics)
+   MODULE 2: Beginning Algebra (5 topics)
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -22,16 +22,33 @@ topics: [
   description: 'The transition from arithmetic to algebra: using letters to represent unknown quantities and the rules for evaluating expressions.',
   prereqRecap: [
     { term: 'Number', definition: 'An abstract object used to count or measure. Natural numbers: $0, 1, 2, \\ldots$ Integers include negatives: $\\ldots, -2, -1, 0, 1, 2, \\ldots$ (Module 1).' },
-    { term: 'Operation', definition: 'A rule that takes numbers and produces a number: addition (+), subtraction (−), multiplication (�:), division (÷).' },
+    { term: 'Operation', definition: 'A rule that takes numbers and produces a number: addition (+), subtraction (-), multiplication (*), division (/).' },
     { term: 'Expression', definition: 'A combination of numbers, variables, and operations. Example: $3x + 5$. An expression does NOT have an equals sign.' },
     { term: 'Equation', definition: 'A statement that two expressions are equal: $3x + 5 = 14$. Contains an equals sign (=).' }
   ],
   whyExists: { html: `
-    <p><strong>Why do we use variables?</strong> Arithmetic solves specific problems: "What is $3 + 5$?" Algebra solves <em>classes</em> of problems: "What is $x$ if $x + 5 = 8$?" A variable is a letter that represents a number we do not know yet.</p>
-    <p>Variables transform mathematics from a calculator into a <strong>problem-solving engine</strong>. The equation $F = ma$ (Newton's second law) describes the relationship between force, mass, and acceleration for ALL objects, not just one specific case.</p>
-    ${WHY('Why letters?', '<p>François Viète (1540-1603) introduced the systematic use of letters: vowels for unknowns and consonants for known quantities. René Descartes (1637) standardized using $x, y, z$ for unknowns and $a, b, c$ for constants. Letters are arbitrary symbols; what matters is that they represent quantities that can vary.</p>')}
+    <p><strong>Purpose of variables:</strong> Arithmetic solves specific problems: "What is $3 + 5$?" Algebra solves classes of problems: "What is $x$ if $x + 5 = 8$?" A variable is a letter that represents a number not yet known or allowed to change.</p>
+    <p>Variables turn a calculation into a general method. The equation $F = ma$ describes the relationship between force, mass, and acceleration for every object that fits the model, not just one measured object.</p>
+    ${WHY('Letter notation', '<p>Symbolic algebra developed to replace long verbal recipes with shorter expressions. Letters such as $x, y, z$ commonly represent unknowns, while letters such as $a, b, c$ often represent constants. The letter choice is arbitrary. The important point is that each symbol represents a quantity that can be manipulated consistently.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: The Broken Calculator</h4>
+  background: {
+    title: 'Background and Use',
+    tabs: [
+      {
+        title: 'Historical Development',
+        content: '<p>Algebra developed from the need to solve repeatable unknown-quantity problems. Early methods often stated procedures in words: take the known amount, undo the added amount, then divide by the multiplier. That verbal recipe solves a single type of equation, but it hides the structure inside ordinary language.</p><p>Symbolic notation made the structure visible. The expression $ax + b = c$ records three separate roles: $x$ is the unknown, $a$ scales the unknown, and $b$ shifts the result. Once the roles have names, the same solving pattern applies to rent problems, distance problems, mixture problems, and geometry formulas.</p><p>The historical value of algebra lies in compression. A long recipe becomes a short statement that can be checked, transformed, and reused. The notation does not replace reasoning; it gives reasoning a stable form.</p>'
+      },
+      {
+        title: 'Conceptual Thread',
+        content: '<p>A variable is a controlled blank. It represents a quantity whose value may be unknown, changing, or intentionally left general. The expression $3x + 5$ has a stable structure: multiply the input by 3, then add 5.</p><p>Order of operations protects that structure. The expression $2 + 3 \\times 4$ means add 2 after multiplying 3 by 4, so the value is 14. Parentheses change the structure: $(2 + 3) \\times 4$ first combines 2 and 3, then multiplies by 4, so the value is 20.</p><p>Algebra becomes reliable when each symbol keeps one role throughout the problem. A coefficient scales, a constant shifts, and a variable carries the unknown value. Solving an equation means undoing those roles in reverse order.</p>'
+      },
+      {
+        title: 'Practical Grounding',
+        content: '<p>Consider a ride-share fare with a $4$ starting fee and $1.50$ per mile. Let $m$ represent miles traveled and let $C$ represent total cost. The pricing rule is $C = 4 + 1.5m$.</p><p>The formula answers specific questions by substitution. A $12$ mile trip costs $C = 4 + 1.5(12) = 4 + 18 = 22$, so the fare is $22$ dollars before taxes or tips. The same formula also solves inverse questions: if the budget is $31$, then $31 = 4 + 1.5m$, so $27 = 1.5m$ and $m = 18$.</p><p>The practical method has three steps. Name the changing quantity, write the relationship in symbols, and use inverse operations to isolate the unknown. This makes the problem checkable: substituting $m = 18$ gives $4 + 1.5(18) = 31$.</p>'
+      }
+    ]
+  },
+  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: The Broken Calculator</h4>
     <p>A calculator can only show the answer, not the steps. It displays: "? + 7 = 15." What is "?"</p>
     <p>You just solved your first algebraic equation: $x + 7 = 15$, so $x = 8$. Algebra is the discipline of finding these unknowns systematically.</p></div>` },
   concept: { html: `
@@ -118,7 +135,7 @@ topics: [
     { difficulty: 'medium', question: 'Proportion: $\\frac{3}{x} = \\frac{6}{10}$. $x =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$6x = 30$. $x = 5$.' },
     { difficulty: 'hard', question: 'Harmonic mean of $a$ and $b$: $H = \\frac{2ab}{a+b}$. $H(3,6) =$?', accept: [4, '4'], placeholder: 'Number', explanation: '$H = 12/3 = 4$.' },
     { difficulty: 'medium', question: 'Geometric mean of 4 and 9:', accept: [6, '6'], placeholder: 'Number', explanation: '$\\sqrt{4 \\times 9} = \\sqrt{36} = 6$.' },
-    { difficulty: 'hard', question: 'Matrix multiplication: $(AB)_{ij} = \\sum_k A_{ik}B_{$ ? $j}$', accept: ['k', 'kj'], placeholder: 'Index', explanation: 'Row-by-column: $\\sum_k A_{ik} B_{kj}$.' }
+    { difficulty: 'hard', question: 'Matrix multiplication uses $(AB)_{ij} = \\sum_k A_{ik}B_{kj}$. Which index appears before $j$ in $B_{kj}$?', accept: ['k', 'kj'], placeholder: 'Index', explanation: 'Row-by-column multiplication pairs row $i$ of $A$ with column $j$ of $B$: $\\sum_k A_{ik} B_{kj}$.' }
   ],
   matching: [
     { difficulty: 'easy', instruction: 'Match each operation to its PEMDAS priority (1=first, 6=last):', pairs: [
@@ -145,15 +162,15 @@ topics: [
   multiPart: [
     { difficulty: 'hard', question: 'A rectangle has length $2x + 3$ and width $x - 1$.', parts: [
       { question: 'Perimeter $P = 2l + 2w =$?', accept: ['6x+4', '6x + 4'], placeholder: 'Simplified expression', explanation: '$2(2x+3) + 2(x-1) = 4x+6+2x-2 = 6x+4$.' },
-      { question: 'Area $A = l \\cdot w =$?', accept: ['2x^2+x-3', '2x^2 + x - 3'], placeholder: 'Expanded product', explanation: '$(2x+3)(x-1) = 2x^2-2x+3x-3 = 2x^2+x-3$.' },
+      { question: 'Area $A = l \\cdot w =$?', accept: ['2x^2+x-3', '2x^2 + x - 3'], placeholder: 'Expanded product', explanation: '$(2x+3)(x-1) = 2x^2-2x+3x-3 = 2x^2+x-3$.' }
+    ], completionMessage: 'Expressions model geometric quantities.' },
     { difficulty: 'medium', question: 'Solve the inequality $2x - 3 > 5$.', parts: [
       { question: 'Add 3 to both sides: $2x >$ ?', accept: [8, '8'], placeholder: 'Number', explanation: '$2x > 8$.' },
       { question: 'Divide by 2: $x >$ ?', accept: [4, '4'], placeholder: 'Number', explanation: '$x > 4$.' }
     ], completionMessage: 'Solve linear inequalities like equations, but flip the sign when multiplying/dividing by a negative.' }
-    ], completionMessage: 'Expressions model geometric quantities.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Expression Strategy</h4>
-    <ol><li><strong>PEMDAS/BODMAS</strong>: Parentheses → Exponents → Multiply/Divide → Add/Subtract.</li>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4>Expression Strategy</h4>
+    <ol><li><strong>PEMDAS/BODMAS</strong>: Parentheses, exponents, multiply or divide, add or subtract.</li>
     <li><strong>Distribution:</strong> $a(b+c) = ab + ac$. Watch signs: $-2(x-3) = -2x + 6$.</li>
     <li><strong>Like Terms:</strong> Only combine terms with identical variable parts. $3x + 5x = 8x$, but $3x + 5x^2$ cannot be simplified.</li></ol></div>` }
 },
@@ -176,7 +193,7 @@ topics: [
     <p>Every science, engineering, and economics problem reduces to solving equations. The techniques here generalize to <em>all</em> mathematics: the same principles apply to quadratic, exponential, and differential equations.</p>
     ${WHY('Why can we "do the same thing to both sides"?', '<p>An equation states that two expressions are equal. If $A = B$, then performing the same operation on both sides preserves equality: $A + c = B + c$, $A \\cdot c = B \\cdot c$ (for $c \\neq 0$). This is the <strong>addition property of equality</strong> and the <strong>multiplication property of equality</strong>, both consequences of the field axioms from Module 1.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: The Balance Scale</h4>
+  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: The Balance Scale</h4>
     <p>Imagine a balance scale perfectly balanced with $2x + 5$ grams on the left and $13$ grams on the right. To find $x$, you remove 5 grams from BOTH sides (keeping balance): $2x = 8$. Then divide both sides by 2: $x = 4$.</p>
     <p>This "balance" metaphor is the core idea: whatever you do to one side, you MUST do to the other.</p></div>` },
   formalDefinitions: [
@@ -250,7 +267,7 @@ topics: [
       { title: 'Distribute', content: '$6x - 12 = 5x + 2$', why: '$3 \\cdot 2x = 6x$ and $3 \\cdot (-4) = -12$.' },
       { title: 'Collect variable terms on the left', content: '$6x - 5x - 12 = 2$, so $x - 12 = 2$', why: 'Subtract $5x$ from both sides to eliminate $x$ from the right.' },
       { title: 'Isolate $x$', content: '$x = 2 + 12 = 14$', why: 'Add 12 to both sides to move the constant to the right.' },
-      { title: 'Check', content: 'Left: $3(2(14) - 4) = 3(24) = 72$. Right: $5(14) + 2 = 72$. ✓', why: 'Both sides equal 72 when $x = 14$, confirming the solution.' }
+      { title: 'Check', content: 'Left: $3(2(14) - 4) = 3(24) = 72$. Right: $5(14) + 2 = 72$. ', why: 'Both sides equal 72 when $x = 14$, confirming the solution.' }
     ]
   }],
   flashCards: [
@@ -260,12 +277,12 @@ topics: [
       { type: 'why', front: 'Why isolate the variable?', back: 'To find what number the letter represents. Undo operations until x = [answer].' }
     ],
     exercises: [
-    { difficulty: 'easy', question: 'Solve: $x + 7 = 12$', options: ['$x = 5$', '$x = 19$', '$x = -5$', '$x = 7$'], correctIndex: 0, hint: '<p>Subtract 7 from both sides.</p>', correctExplanation: '$x = 12 - 7 = 5$. Check: $5 + 7 = 12$ ✓.', wrongExplanations: { 1: 'You added instead of subtracting. $x + 7 = 12$ means $x = 12 - 7$.', 2: '$-5 + 7 = 2 \\neq 12$. The sign is wrong.', 3: '7 is what we subtract, not the answer.' } },
-    { difficulty: 'easy', question: 'Solve: $3x = -18$', options: ['$x = -6$', '$x = 6$', '$x = -15$', '$x = -54$'], correctIndex: 0, hint: '<p>Divide both sides by 3.</p>', correctExplanation: '$x = \\frac{-18}{3} = -6$. Check: $3(-6) = -18$ ✓.', wrongExplanations: { 1: '$3(6) = 18 \\neq -18$. The sign must be negative.', 2: 'You subtracted 3 instead of dividing. $\\frac{-18}{3} = -6$.', 3: 'You multiplied instead of dividing: $-18 \\times 3 = -54$.' } },
-    { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} - 3 = 5$', options: ['$x = 2$', '$x = 32$', '$x = 8$', '$x = 20$'], correctIndex: 1, hint: '<p>First add 3 to both sides, then multiply by 4.</p>', correctExplanation: '$\\frac{x}{4} = 8$, so $x = 32$. Check: $\\frac{32}{4} - 3 = 8 - 3 = 5$ ✓.', wrongExplanations: { 0: 'You divided $8 \\div 4 = 2$ but should have multiplied: $8 \\times 4 = 32$.', 2: '$\\frac{8}{4} - 3 = -1 \\neq 5$. You solved $\\frac{x}{4} = 8$ incorrectly.', 3: 'You computed $5 \\times 4 = 20$ but forgot to add 3 first.' } },
-    { difficulty: 'medium', question: 'Solve: $5(x - 2) = 3(x + 4)$', options: ['$x = 11$', '$x = -11$', '$x = 1$', '$x = 7$'], correctIndex: 0, hint: '<p>Distribute both sides, collect $x$ terms on one side.</p>', correctExplanation: '$5x - 10 = 3x + 12$. $2x = 22$. $x = 11$. Check: $5(9) = 45$, $3(15) = 45$ ✓.', wrongExplanations: { 1: 'Sign error. $-10 - 12 = -22$, and dividing by $+2$ gives $+11$.', 2: 'Recheck distribution: $5(-2) = -10$ and $3(4) = 12$, giving $2x = 22$, not $2x = 2$.', 3: 'You may have computed $\\frac{22 - 8}{2} = 7$. The correct subtraction is $-10 - 12 = -22$ moved: $2x = 22$.' } },
+    { difficulty: 'easy', question: 'Solve: $x + 7 = 12$', options: ['$x = 5$', '$x = 19$', '$x = -5$', '$x = 7$'], correctIndex: 0, hint: '<p>Subtract 7 from both sides.</p>', correctExplanation: '$x = 12 - 7 = 5$. Check: $5 + 7 = 12$ .', wrongExplanations: { 1: 'You added instead of subtracting. $x + 7 = 12$ means $x = 12 - 7$.', 2: '$-5 + 7 = 2 \\neq 12$. The sign is wrong.', 3: '7 is what we subtract, not the answer.' } },
+    { difficulty: 'easy', question: 'Solve: $3x = -18$', options: ['$x = -6$', '$x = 6$', '$x = -15$', '$x = -54$'], correctIndex: 0, hint: '<p>Divide both sides by 3.</p>', correctExplanation: '$x = \\frac{-18}{3} = -6$. Check: $3(-6) = -18$ .', wrongExplanations: { 1: '$3(6) = 18 \\neq -18$. The sign must be negative.', 2: 'You subtracted 3 instead of dividing. $\\frac{-18}{3} = -6$.', 3: 'You multiplied instead of dividing: $-18 \\times 3 = -54$.' } },
+    { difficulty: 'medium', question: 'Solve: $\\frac{x}{4} - 3 = 5$', options: ['$x = 2$', '$x = 32$', '$x = 8$', '$x = 20$'], correctIndex: 1, hint: '<p>First add 3 to both sides, then multiply by 4.</p>', correctExplanation: '$\\frac{x}{4} = 8$, so $x = 32$. Check: $\\frac{32}{4} - 3 = 8 - 3 = 5$ .', wrongExplanations: { 0: 'You divided $8 \\div 4 = 2$ but should have multiplied: $8 \\times 4 = 32$.', 2: '$\\frac{8}{4} - 3 = -1 \\neq 5$. You solved $\\frac{x}{4} = 8$ incorrectly.', 3: 'You computed $5 \\times 4 = 20$ but forgot to add 3 first.' } },
+    { difficulty: 'medium', question: 'Solve: $5(x - 2) = 3(x + 4)$', options: ['$x = 11$', '$x = -11$', '$x = 1$', '$x = 7$'], correctIndex: 0, hint: '<p>Distribute both sides, collect $x$ terms on one side.</p>', correctExplanation: '$5x - 10 = 3x + 12$. $2x = 22$. $x = 11$. Check: $5(9) = 45$, $3(15) = 45$ .', wrongExplanations: { 1: 'Sign error. $-10 - 12 = -22$, and dividing by $+2$ gives $+11$.', 2: 'Recheck distribution: $5(-2) = -10$ and $3(4) = 12$, giving $2x = 22$, not $2x = 2$.', 3: 'You may have computed $\\frac{22 - 8}{2} = 7$. The correct subtraction is $-10 - 12 = -22$ moved: $2x = 22$.' } },
     { difficulty: 'hard', question: 'Classify and solve: $2(3x + 1) = 6x + 2$', options: ['$x = 0$', 'No solution', 'All real numbers (identity)', '$x = 1$'], correctIndex: 2, hint: '<p>Distribute and simplify both sides. What happens?</p>', correctExplanation: '$6x + 2 = 6x + 2$. Subtracting $6x$ from both sides: $2 = 2$. This is always true, so EVERY real number is a solution. This is an identity.', wrongExplanations: { 0: '$x = 0$ is ONE solution, but ALL values of $x$ satisfy this equation.', 1: 'It is the opposite: every $x$ works, not zero. "No solution" would mean $0 = 5$ or similar.', 3: '$x = 1$ is one correct value, but so is $x = 2$, $x = -100$, etc. Every number works.' } },
-    { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{6} = 5$', options: ['$x = 10$', '$x = 15$', '$x = 6$', '$x = 30$'], correctIndex: 0, hint: '<p>Multiply every term by the LCD (6) to clear fractions.</p>', correctExplanation: 'LCD = 6. $6 \\cdot \\frac{x}{3} + 6 \\cdot \\frac{x}{6} = 6 \\cdot 5$. $2x + x = 30$. $3x = 30$. $x = 10$. Check: $\\frac{10}{3} + \\frac{10}{6} = \\frac{20}{6} + \\frac{10}{6} = \\frac{30}{6} = 5$ ✓.', wrongExplanations: { 1: '$3(15) = 45 \\neq 30$. Recheck your LCD multiplication.', 2: '$2(6) + 6 = 18 \\neq 30$.', 3: 'You multiplied 5 by 6 but then forgot to divide: $3x = 30 \\Rightarrow x = 10$.' } }
+    { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{6} = 5$', options: ['$x = 10$', '$x = 15$', '$x = 6$', '$x = 30$'], correctIndex: 0, hint: '<p>Multiply every term by the LCD (6) to clear fractions.</p>', correctExplanation: 'LCD = 6. $6 \\cdot \\frac{x}{3} + 6 \\cdot \\frac{x}{6} = 6 \\cdot 5$. $2x + x = 30$. $3x = 30$. $x = 10$. Check: $\\frac{10}{3} + \\frac{10}{6} = \\frac{20}{6} + \\frac{10}{6} = \\frac{30}{6} = 5$ .', wrongExplanations: { 1: '$3(15) = 45 \\neq 30$. Recheck your LCD multiplication.', 2: '$2(6) + 6 = 18 \\neq 30$.', 3: 'You multiplied 5 by 6 but then forgot to divide: $3x = 30 \\Rightarrow x = 10$.' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Solve: $x + 7 = 12$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$x = 12 - 7 = 5$.' },
@@ -303,7 +320,7 @@ topics: [
       { content: 'Distribute: $2x + 6 = 14$.' },
       { content: 'Subtract 6: $2x = 8$.' },
       { content: 'Divide by 2: $x = 4$.' },
-      { content: 'Check: $2(4 + 3) = 2(7) = 14$ ✓' },
+      { content: 'Check: $2(4 + 3) = 2(7) = 14$ ' },
     { difficulty: 'hard', question: 'Graph $y = -2x + 4$: find intercepts and slope.', steps: [
       { content: 'Slope: $m = -2$ (down 2, right 1).' },
       { content: 'y-intercept: set $x = 0$: $y = 4$. Point: $(0, 4)$.' },
@@ -330,7 +347,7 @@ topics: [
       { question: 'This equation is a (identity/contradiction/conditional):', accept: ['contradiction'], placeholder: 'Type', explanation: 'A false statement like $-8 = 3$ is a contradiction.' }
     ], completionMessage: 'Three types: conditional (one solution), identity (all solutions), contradiction (no solution).' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Equation-Solving Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Equation-Solving Strategy</h4>
     <ol><li><strong>Clear fractions first</strong> by multiplying by the LCD.</li>
     <li><strong>Distribute</strong> any parentheses.</li>
     <li><strong>Collect</strong> variables on one side, constants on the other.</li>
@@ -353,7 +370,7 @@ topics: [
   whyExists: { html: `
     <p><strong>Why negative numbers?</strong> The natural numbers $\\{0, 1, 2, \\ldots\\}$ cannot solve $x + 5 = 2$. Negative integers extend the number line to the left of zero, making subtraction always possible within the integers.</p>
     <p>Real-world negatives: temperatures below zero, debts (negative balance), elevations below sea level, stock market losses.</p>
-    ${WHY('Why does negative �: negative = positive?', '<p>Consider the pattern: $3 \\times (-2) = -6$, $2 \\times (-2) = -4$, $1 \\times (-2) = -2$, $0 \\times (-2) = 0$. Each step adds $+2$ to the result. Continuing: $(-1) \\times (-2) = 2$, $(-2) \\times (-2) = 4$. The pattern forces $(-)(-)=(+)$.</p><p>Formally: we need $(-1)(-1) + (-1)(1) = (-1)(-1+1) = (-1)(0) = 0$. Since $(-1)(1) = -1$, we get $(-1)(-1) = 1$.</p>')}
+    ${WHY('Negative times negative', '<p>Consider the pattern: $3 \\times (-2) = -6$, $2 \\times (-2) = -4$, $1 \\times (-2) = -2$, $0 \\times (-2) = 0$. Each step adds $+2$ to the result. Continuing: $(-1) \\times (-2) = 2$, $(-2) \\times (-2) = 4$. The pattern forces $(-)(-)=(+)$.</p><p>Formally: we need $(-1)(-1) + (-1)(1) = (-1)(-1+1) = (-1)(0) = 0$. Since $(-1)(1) = -1$, we get $(-1)(-1) = 1$.</p>')}
   ` },
   concept: { html: `
     <div class="callout callout-key"><h4>Sign Rules for Multiplication and Division</h4>
@@ -393,7 +410,7 @@ topics: [
     ],
     exercises: [
     { difficulty: 'easy', question: '$(-5) + (-8) = $?', options: ['$-13$', '$13$', '$3$', '$-3$'], correctIndex: 0, hint: '<p>Same sign: add absolute values, keep the negative sign.</p>', correctExplanation: 'Both negative: $5 + 8 = 13$, sign is negative: $-13$.', wrongExplanations: { 1: 'Both numbers are negative, so the sum must be negative.', 2: 'You subtracted. When signs are the SAME, you ADD absolute values.', 3: 'This would be $(-5) + 8$ or $5 + (-8)$, not $(-5) + (-8)$.' } },
-    { difficulty: 'easy', question: '$(-3)(7) = $?', options: ['$21$', '$-21$', '$-10$', '$10$'], correctIndex: 1, hint: '<p>Different signs → negative result.</p>', correctExplanation: '$3 \\times 7 = 21$. Different signs (negative �: positive) → $-21$.', wrongExplanations: { 0: 'Negative �: positive = negative, not positive.', 2: 'You added instead of multiplying: $(-3) + 7 = 4$, not $-10$.', 3: 'Multiplication, not addition. $3 \\times 7 = 21$.' } },
+    { difficulty: 'easy', question: '$(-3)(7) = $?', options: ['$21$', '$-21$', '$-10$', '$10$'], correctIndex: 1, hint: '<p>Different signs give a negative result.</p>', correctExplanation: '$3 \\times 7 = 21$. Negative times positive gives $-21$.', wrongExplanations: { 0: 'Negative times positive gives a negative result, not a positive one.', 2: 'You added instead of multiplying: $(-3) + 7 = 4$, not $-10$.', 3: 'Multiplication, not addition. $3 \\times 7 = 21$.' } },
     { difficulty: 'medium', question: '$|(-4) - (-9)| = $?', options: ['$13$', '$-5$', '$5$', '$-13$'], correctIndex: 2, hint: '<p>First compute $(-4) - (-9) = (-4) + 9$, then take absolute value.</p>', correctExplanation: '$(-4) - (-9) = (-4) + 9 = 5$. $|5| = 5$.', wrongExplanations: { 0: '$(-4) + (-9) = -13$, but $-(-9) = +9$, not $-9$.', 1: 'Absolute value is always non-negative. $|{\\cdot}| \\geq 0$.', 3: 'Absolute value removes the sign. $|-13| = 13$, and $|-5| = 5$.' } },
     { difficulty: 'medium', question: '$\\frac{(-2)^3}{-4} = $?', options: ['$2$', '$-2$', '$-8$', '$8$'], correctIndex: 0, hint: '<p>$(-2)^3 = (-2)(-2)(-2)$. Then divide by $-4$.</p>', correctExplanation: '$(-2)^3 = -8$. $\\frac{-8}{-4} = 2$ (same signs → positive).', wrongExplanations: { 1: '$(-8) \\div (-4) = +2$, not $-2$. Same signs give positive.', 2: '$-8$ is the numerator, but you still need to divide by $-4$.', 3: '$(-2)^3 = -8$, not $+8$. An odd power preserves the negative sign.' } },
     { difficulty: 'hard', question: 'For which values of $x$ is $|x - 3| = 5$ true?', options: ['$x = 8$ only', '$x = -2$ only', '$x = 8$ and $x = -2$', '$x = 2$ and $x = 8$'], correctIndex: 2, hint: '<p>$|A| = 5$ means $A = 5$ or $A = -5$.</p>', correctExplanation: '$x - 3 = 5 \\Rightarrow x = 8$, or $x - 3 = -5 \\Rightarrow x = -2$. Both solutions are valid.', wrongExplanations: { 0: '$x = 8$ is one solution, but absolute value equations typically have two solutions.', 1: '$x = -2$ is one solution. You also need $x - 3 = 5$, giving $x = 8$.', 3: '$x = 2$: $|2-3| = 1 \\neq 5$. That is incorrect.' } },
@@ -423,10 +440,10 @@ topics: [
     { difficulty: 'easy', question: '$\\frac{x^5}{x^2} =$?', accept: ['x^3', 'x3'], placeholder: 'Expression', explanation: '$x^{5-2} = x^3$.' },
     { difficulty: 'hard', question: 'Geometric series finite sum: $S_n = a\\frac{1-r^n}{1-r}$. For $a=2, r=3, n=4$:', accept: [80, '80'], placeholder: 'Number', explanation: '$2 \\cdot \\frac{1-81}{1-3} = 2 \\cdot 40 = 80$.' },
     { difficulty: 'easy', question: '$(x^2)(x^3) =$?', accept: ['x^5'], placeholder: 'Expression', explanation: '$x^{2+3} = x^5$.' },
-    { difficulty: 'hard', question: 'Binomial theorem: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^$ ?', accept: ['k', 'b^k'], placeholder: 'Exponent', explanation: '$(a+b)^n = \\sum \\binom{n}{k}a^{n-k}b^k$.' },
+    { difficulty: 'hard', question: 'Binomial theorem: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^k$. What exponent is on $b$?', accept: ['k', 'b^k'], placeholder: 'Exponent', explanation: 'The exponent on $b$ is $k$: $(a+b)^n = \\sum_{k=0}^n \\binom{n}{k}a^{n-k}b^k$.' },
     { difficulty: 'medium', question: '$(-x)^2 =$?', accept: ['x^2', 'x2'], placeholder: 'Expression', explanation: '$(-x)^2 = (-1)^2 x^2 = x^2$.' },
     { difficulty: 'hard', question: 'Sigma notation: $\\sum_{k=1}^{4} k^2 =$?', accept: [30, '30'], placeholder: 'Number', explanation: '$1 + 4 + 9 + 16 = 30$.' },
-    { difficulty: 'medium', question: 'Scientific notation: $0.003 = 3 \\times 10^{-$ ?$}$', accept: [3, '3'], placeholder: 'Exponent', explanation: 'Move decimal 3 places right: $3 \\times 10^{-3}$.' },
+    { difficulty: 'medium', question: 'Scientific notation: $0.003 = 3 \\times 10^{-3}$. What positive number belongs in the exponent after the minus sign?', accept: [3, '3'], placeholder: 'Exponent', explanation: 'Move the decimal 3 places right: $0.003 = 3 \\times 10^{-3}$.' },
     { difficulty: 'hard', question: 'Determinant of $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} =$?', accept: ['ad-bc', 'ad - bc'], placeholder: 'Expression', explanation: '$\\det = ad - bc$.' }
   ],
   stepBuilder: [
@@ -463,7 +480,7 @@ topics: [
     ], completionMessage: 'FOIL: First, Outer, Inner, Last. Then combine like terms.' }
     ], completionMessage: 'Integer operations with absolute value: evaluate inside first, then apply $|\\cdot|$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Integer Operations Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Integer Operations Strategy</h4>
     <ol><li><strong>Addition:</strong> Same signs → add absolute values, keep sign. Different signs → subtract, take sign of larger.</li>
     <li><strong>Subtraction:</strong> Change to addition of the opposite: $a - b = a + (-b)$.</li>
     <li><strong>Multiplication/Division:</strong> Same signs → positive. Different signs → negative.</li>
@@ -510,9 +527,9 @@ topics: [
     problem: 'Solve $-3x + 7 \\leq 1$ and write the solution in interval notation.',
     steps: [
       { title: 'Subtract 7 from both sides', content: '$-3x \\leq -6$', why: 'Isolate the $x$-term by removing the constant.' },
-      { title: 'Divide by $-3$ (FLIP the sign!)', content: '$x \\geq 2$', why: 'Dividing by a NEGATIVE number reverses the inequality. $\\leq$ becomes $\\geq$.' },
+      { title: 'Divide by $-3$ and reverse the sign', content: '$x \\geq 2$', why: 'Dividing by a negative number reverses the inequality. $\\leq$ becomes $\\geq$.' },
       { title: 'Interval notation', content: '$[2, \\infty)$', why: 'Square bracket at 2 because $x = 2$ is included ($\\geq$). Round parenthesis at $\\infty$ because infinity is not a number.' },
-      { title: 'Check with $x = 3$ (inside) and $x = 0$ (outside)', content: '$x = 3$: $-3(3)+7 = -2 \\leq 1$ ✓. $x = 0$: $-3(0)+7 = 7 \\not\\leq 1$ ✓ (correctly excluded).', why: 'Always verify with a point inside and outside the solution set.' }
+      { title: 'Check with $x = 3$ (inside) and $x = 0$ (outside)', content: '$x = 3$: $-3(3)+7 = -2 \\leq 1$ . $x = 0$: $-3(0)+7 = 7 \\not\\leq 1$  (correctly excluded).', why: 'Always verify with a point inside and outside the solution set.' }
     ]
   }],
   flashCards: [
@@ -531,7 +548,7 @@ topics: [
   freeResponse: [
     { difficulty: 'easy', question: 'Solve: $x + 5 \\gt 8$. Smallest integer solution:', accept: [4, '4'], placeholder: 'Number', explanation: '$x \\gt 3$, so smallest integer is 4.' },
     { difficulty: 'easy', question: 'Solve: $|x| = 7$. List both solutions:', accept: ['7, -7', '-7, 7', '7,-7'], placeholder: 'x values', explanation: '$x = 7$ or $x = -7$.' },
-    { difficulty: 'medium', question: 'Solve: $-2x \\geq 6$. $x \\leq$ ?', accept: [-3, '-3'], placeholder: 'x \\leq ?', explanation: 'Divide by $-2$, flip: $x \\leq -3$.' },
+    { difficulty: 'medium', question: 'Solve: $-2x \\geq 6$. $x \\leq$ ?', accept: [-3, '-3'], placeholder: 'x <= ?', explanation: 'Divide by $-2$, flip: $x \\leq -3$.' },
     { difficulty: 'medium', question: 'Solve: $|x - 3| < 2$. What is the interval?', accept: ['(1,5)', '1 < x < 5', '1<x<5'], placeholder: 'Interval', explanation: '$-2 < x - 3 < 2 \\Rightarrow 1 < x < 5$.' },
     { difficulty: 'hard', question: 'Solve: $3 \\lt 2x - 1 \\leq 9$. Write as "a < x <= b".', accept: ['2 < x <= 5', '2<x<=5'], placeholder: '? < x <= ?', explanation: '$4 \\lt 2x \\leq 10 \\Rightarrow 2 < x \\leq 5$.' }
   ],
@@ -540,7 +557,7 @@ topics: [
       { content: 'Subtract 7: $-3x \\leq -6$.' },
       { content: 'Divide by $-3$ (FLIP): $x \\geq 2$.' },
       { content: 'Interval notation: $[2, \\infty)$.' },
-      { content: 'Check $x=3$: $-9+7=-2 \\leq 1$ \u2713. Check $x=0$: $7 \\not\\leq 1$ \u2713.' }
+      { content: 'Check $x=3$: $-9+7=-2 \\leq 1$, so it works. Check $x=0$: $7 \\not\\leq 1$, so it fails.' }
     ], explanation: 'Dividing by negative flips the inequality sign.' }
   ],
   matching: [
@@ -556,12 +573,12 @@ topics: [
     { difficulty: 'medium', context: 'Absolute value inequality:', expression: '$|x| < k$ is equivalent to $-k$ {{0}} $x$ {{1}} $k$.', blanks: [ { accept: ['<'], size: 3 }, { accept: ['<'], size: 3 } ], explanation: '$|x| < k \\iff -k < x < k$.' }
   ],
   multiPart: [
-    { difficulty: 'hard', question: 'A phone plan charges $30 base + $0.10 per text. Budget: $50/month.', parts: [
+    { difficulty: 'hard', question: 'A phone plan charges 30 dollars base plus 0.10 dollars per text. Budget: 50 dollars per month.', parts: [
       { question: 'Write the inequality (t = texts):', accept: ['30+0.1t<=50', '30+0.10t<=50'], placeholder: '30 + 0.1t <= 50', explanation: '$30 + 0.10t \\leq 50$.' },
       { question: 'Max texts per month:', accept: [200, '200'], placeholder: 'Number', explanation: '$0.10t \\leq 20 \\Rightarrow t \\leq 200$.' }
     ], completionMessage: 'Budget constraints modeled as linear inequalities.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Inequality Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Inequality Strategy</h4>
     <ol><li><strong>Solve like an equation</strong> with one exception: <strong>flip the sign when multiplying/dividing by a negative</strong>.</li>
     <li><strong>Interval notation:</strong> $[$ or $]$ means endpoint included ($\\leq$ or $\\geq$). $($ or $)$ means excluded ($<$ or $>$). $\\infty$ always gets $($.</li>
     <li><strong>Compound inequalities:</strong> Apply operations to ALL parts simultaneously.</li>
@@ -633,7 +650,7 @@ topics: [
       { title: 'Substitute $y = 2x - 1$ into the second equation', content: '$3x + (2x - 1) = 9$.', why: 'The first equation gives $y$ in terms of $x$, so replace $y$ in the second equation.' },
       { title: 'Solve for $x$', content: '$5x - 1 = 9 \\Rightarrow 5x = 10 \\Rightarrow x = 2$.', why: 'Combine like terms and isolate $x$.' },
       { title: 'Find $y$', content: '$y = 2(2) - 1 = 3$.', why: 'Back-substitute $x = 2$ into $y = 2x - 1$.' },
-      { title: 'Verify', content: 'Check in equation 2: $3(2) + 3 = 9$ \\u2713.', why: 'Always verify the solution in BOTH original equations.' }
+      { title: 'Verify', content: 'Check in equation 2: $3(2) + 3 = 9$, so the solution satisfies both equations.', why: 'Always verify the solution in BOTH original equations.' }
     ]
   },
   {
@@ -643,7 +660,7 @@ topics: [
       { title: 'Add the equations', content: '$(2x + 3y) + (4x - 3y) = 12 + 6 \\Rightarrow 6x = 18$.', why: 'The $3y$ and $-3y$ cancel out (they are additive inverses).' },
       { title: 'Solve for $x$', content: '$x = 3$.', why: '$6x = 18 \\Rightarrow x = 3$.' },
       { title: 'Find $y$', content: '$2(3) + 3y = 12 \\Rightarrow 3y = 6 \\Rightarrow y = 2$.', why: 'Substitute $x = 3$ into either original equation.' },
-      { title: 'Solution', content: '$(x, y) = (3, 2)$.', why: 'Check: $4(3) - 3(2) = 12 - 6 = 6$ \\u2713.' }
+      { title: 'Solution', content: '$(x, y) = (3, 2)$.', why: 'Check: $4(3) - 3(2) = 12 - 6 = 6$, so the point satisfies the equation.' }
     ]
   }],
   flashCards: [
@@ -652,12 +669,12 @@ topics: [
       { type: 'why', front: 'Why does y=mx+b describe every line?', back: 'm = rate of change, b = y-intercept. A line has constant slope, so two numbers completely determine it.' }
     ],
     exercises: [
-    { difficulty: 'easy', question: 'Solve by substitution: $y = x + 1$, $x + y = 5$. Solution:', options: ['$(2, 3)$', '$(3, 2)$', '$(1, 4)$', '$(4, 1)$'], correctIndex: 0, hint: '<p>Replace $y$ with $x + 1$ in the second equation.</p>', correctExplanation: '$x + (x + 1) = 5 \\Rightarrow 2x + 1 = 5 \\Rightarrow x = 2$. $y = 3$. Solution: $(2, 3)$.', wrongExplanations: { 1: 'Check: $3 + 2 = 5$ \\u2713 but $y = x + 1$: $2 \\neq 3 + 1 = 4$. Wrong.', 2: 'Check: $1 + 4 = 5$ \\u2713 but $y = x + 1$: $4 \\neq 1 + 1 = 2$. Wrong.', 3: '$4 + 1 = 5$ \\u2713 but $y = x + 1$: $1 \\neq 5$. Wrong.' } },
+    { difficulty: 'easy', question: 'Solve by substitution: $y = x + 1$, $x + y = 5$. Solution:', options: ['$(2, 3)$', '$(3, 2)$', '$(1, 4)$', '$(4, 1)$'], correctIndex: 0, hint: '<p>Replace $y$ with $x + 1$ in the second equation.</p>', correctExplanation: '$x + (x + 1) = 5 \\Rightarrow 2x + 1 = 5 \\Rightarrow x = 2$. $y = 3$. Solution: $(2, 3)$.', wrongExplanations: { 1: 'Check: $3 + 2 = 5$, but $y = x + 1$: $2 \\neq 3 + 1 = 4$. Wrong.', 2: 'Check: $1 + 4 = 5$, but $y = x + 1$: $4 \\neq 1 + 1 = 2$. Wrong.', 3: '$4 + 1 = 5$, but $y = x + 1$: $1 \\neq 5$. Wrong.' } },
     { difficulty: 'easy', question: 'If two lines have the same slope but different y-intercepts, the system has:', options: ['One solution', 'No solution', 'Infinitely many solutions', 'Two solutions'], correctIndex: 1, hint: '<p>Same slope = parallel lines.</p>', correctExplanation: 'Parallel lines never intersect. No solution (inconsistent system).', wrongExplanations: { 0: 'One solution requires lines to intersect (different slopes).', 2: 'Infinitely many requires identical lines (same slope AND same intercept).', 3: 'Two straight lines can intersect at most once.' } },
     { difficulty: 'medium', question: 'Solve: $x + y = 7$, $x - y = 3$. Find $x$:', options: ['$5$', '$2$', '$4$', '$10$'], correctIndex: 0, hint: '<p>Add the two equations to eliminate $y$.</p>', correctExplanation: 'Adding: $2x = 10 \\Rightarrow x = 5$. Then $y = 7 - 5 = 2$.', wrongExplanations: { 1: 'That is $y$, not $x$. $x = 5$ and $y = 2$.', 2: '$x = 4$: $4 + y = 7 \\Rightarrow y = 3$. Check: $4 - 3 = 1 \\neq 3$. Wrong.', 3: '$2x = 10$, so $x = 5$, not 10.' } },
     { difficulty: 'medium', question: 'Solve: $2x + y = 10$, $x = 3$. Find $y$:', options: ['$7$', '$4$', '$3$', '$13$'], correctIndex: 1, hint: '<p>Substitute $x = 3$ directly.</p>', correctExplanation: '$2(3) + y = 10 \\Rightarrow 6 + y = 10 \\Rightarrow y = 4$.', wrongExplanations: { 0: '$10 - 3 = 7$, but you need $10 - 2(3) = 4$.', 2: '$2(3) = 6$, not $7$. $y = 10 - 6 = 4$.', 3: 'You added instead of subtracting.' } },
     { difficulty: 'hard', question: 'Classify: $2x + 4y = 8$ and $x + 2y = 4$:', options: ['One solution', 'No solution', 'Infinitely many', 'Cannot determine'], correctIndex: 2, hint: '<p>Is the first equation a multiple of the second?</p>', correctExplanation: '$2(x + 2y) = 2(4) \\Rightarrow 2x + 4y = 8$. The equations are identical. Infinitely many solutions.', wrongExplanations: { 0: 'The equations are multiples of each other. They represent the same line.', 1: 'The equations are consistent (same line), not inconsistent.', 3: 'We can determine the relationship by inspection.' } },
-    { difficulty: 'hard', question: 'Solve: $3x - 2y = 1$, $5x + 2y = 15$. Solution:', options: ['$(2, 2.5)$', '$(1, 1)$', '$(3, 0)$', '$(2, 5)$'], correctIndex: 0, hint: '<p>Add to eliminate $y$.</p>', correctExplanation: 'Add: $8x = 16 \\Rightarrow x = 2$. Then $3(2) - 2y = 1 \\Rightarrow 6 - 2y = 1 \\Rightarrow y = 2.5$. Solution: $(2, 2.5)$.', wrongExplanations: { 1: 'Check: $3(1) - 2(1) = 1$ \\u2713, $5(1) + 2(1) = 7 \\neq 15$. Fails equation 2.', 2: '$3(3) - 2(0) = 9 \\neq 1$. Fails equation 1.', 3: '$3(2) - 2(5) = -4 \\neq 1$. Fails equation 1.' } }
+    { difficulty: 'hard', question: 'Solve: $3x - 2y = 1$, $5x + 2y = 15$. Solution:', options: ['$(2, 2.5)$', '$(1, 1)$', '$(3, 0)$', '$(2, 5)$'], correctIndex: 0, hint: '<p>Add to eliminate $y$.</p>', correctExplanation: 'Add: $8x = 16 \\Rightarrow x = 2$. Then $3(2) - 2y = 1 \\Rightarrow 6 - 2y = 1 \\Rightarrow y = 2.5$. Solution: $(2, 2.5)$.', wrongExplanations: { 1: 'Check: $3(1) - 2(1) = 1$, but $5(1) + 2(1) = 7 \\neq 15$. Fails equation 2.', 2: '$3(3) - 2(0) = 9 \\neq 1$. Fails equation 1.', 3: '$3(2) - 2(5) = -4 \\neq 1$. Fails equation 1.' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Solve: $x + y = 10$, $x - y = 4$. $x =$?', accept: [7, '7'], placeholder: 'x = ?', explanation: 'Add: $2x = 14 \\Rightarrow x = 7$.' },
@@ -667,7 +684,7 @@ topics: [
     { difficulty: 'hard', question: 'System: $3x + y = 5$, $6x + 2y = 10$. How many solutions? (0, 1, or infinity)', accept: ['infinity', 'infinite', 'infinitely many'], placeholder: '0, 1, or infinity', explanation: 'Second equation = $2 \\times$ first. Same line. Infinitely many.' }
   ],
   multiPart: [
-    { difficulty: 'hard', question: 'A store sells notebooks for \\$3 and pens for \\$1. You buy 10 items for \\$22.', parts: [
+    { difficulty: 'hard', question: 'A store sells notebooks for 3 dollars and pens for 1 dollar. You buy 10 items for 22 dollars.', parts: [
       { question: 'Write equation 1 (total items, n = notebooks, p = pens):', accept: ['n+p=10', 'n + p = 10'], placeholder: 'n + p = ?', explanation: '$n + p = 10$.' },
       { question: 'Write equation 2 (total cost):', accept: ['3n+p=22', '3n + p = 22'], placeholder: '3n + p = ?', explanation: '$3n + p = 22$.' },
       { question: 'How many notebooks?', accept: [6, '6'], placeholder: 'Number', explanation: 'Subtract: $2n = 12 \\Rightarrow n = 6$. Then $p = 4$.' }
@@ -679,7 +696,7 @@ topics: [
       { content: '$3x = 12$.' },
       { content: '$x = 4$.' },
       { content: 'From equation 1: $4 + y = 7 \\Rightarrow y = 3$.' },
-      { content: 'Solution: $(4, 3)$. Check: $2(4) - 3 = 5$ \\u2713.' }
+      { content: 'Solution: $(4, 3)$. Check: $2(4) - 3 = 5$, so the solution satisfies the equation.' }
     ], explanation: 'Elimination: add or subtract equations to cancel one variable.' }
   ],
   matching: [
@@ -692,7 +709,7 @@ topics: [
   fillBlanks: [
     { difficulty: 'easy', context: 'System classification:', expression: 'If solving a system gives $0 = 5$, the system has {{0}} solution(s). If it gives $0 = 0$, there are {{1}} solutions.', blanks: [ { accept: ['no', '0', 'zero'], size: 4 }, { accept: ['infinitely many', 'infinite'], size: 16 } ], explanation: 'Contradiction = no solution. Identity = infinitely many.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Systems Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Systems Strategy</h4>
     <ol><li><strong>Substitution:</strong> Use when one variable is already isolated ($y = ...$).</li>
     <li><strong>Elimination:</strong> Use when both equations are in standard form ($ax + by = c$).</li>
     <li><strong>Check result type:</strong> Variable found = one solution. $0 = 5$ = no solution. $0 = 0$ = infinitely many.</li>

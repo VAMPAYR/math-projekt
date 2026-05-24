@@ -4,6 +4,39 @@
    ============================================================ */
 const ProblemEngine = (() => {
 
+  function normalizeNestedProblems(problems, childKey) {
+    if (!Array.isArray(problems)) return [];
+
+    const normalized = [];
+    problems.forEach((problem) => {
+      if (!problem || !Array.isArray(problem[childKey])) {
+        normalized.push(problem);
+        return;
+      }
+
+      const current = { ...problem, [childKey]: [] };
+      const nested = [];
+
+      problem[childKey].forEach((entry) => {
+        const isNestedProblem = entry
+          && entry.question
+          && Array.isArray(entry[childKey])
+          && Object.prototype.hasOwnProperty.call(entry, 'difficulty');
+
+        if (isNestedProblem) {
+          nested.push(...normalizeNestedProblems([entry], childKey));
+        } else if (entry) {
+          current[childKey].push(entry);
+        }
+      });
+
+      normalized.push(current, ...nested);
+    });
+
+    problems.splice(0, problems.length, ...normalized);
+    return problems;
+  }
+
   /* ============================================================
      FREE-RESPONSE PROBLEMS
      User types their answer, checked against accepted values
@@ -12,8 +45,8 @@ const ProblemEngine = (() => {
     let html = `
       <div class="phase-section">
         <div class="phase-label practice">Free Response</div>
-        <h3>✏️ Solve It Yourself</h3>
-        <p class="phase-subtitle">Type your answer. No multiple choice crutch.</p>
+        <h3>Solve It Yourself</h3>
+        <p class="phase-subtitle">Type an answer without answer choices.</p>
         <div class="phase-content">
     `;
 
@@ -35,27 +68,25 @@ const ProblemEngine = (() => {
                      placeholder="${prob.placeholder || 'Type your answer...'}"
                      autocomplete="off"
                      onkeydown="if(event.key==='Enter')ProblemEngine.checkFreeResponse('${frId}',${idx},'${topicId}','${moduleId}')" />
-              <button class="fr-submit-btn" onclick="ProblemEngine.checkFreeResponse('${frId}',${idx},'${topicId}','${moduleId}')">
-                Check →
-              </button>
+              <button class="fr-submit-btn" onclick="ProblemEngine.checkFreeResponse('${frId}',${idx},'${topicId}','${moduleId}')">Check</button>
             </div>
             ${prob.inputHelp ? `<div class="fr-input-help">${prob.inputHelp}</div>` : ''}
           </div>
           ${prob.hint ? `
-            <button class="hint-btn" onclick="ProblemEngine.showFRHint('${frId}')">💡 Need a hint?</button>
+            <button class="hint-btn" onclick="ProblemEngine.showFRHint('${frId}')">Need a hint?</button>
             <div class="hint-content" id="${frId}-hint">${prob.hint}</div>
           ` : ''}
           <div class="exercise-feedback correct-feedback" id="${frId}-correct">
-            <h4>✓ Correct!</h4>
-            <p>${prob.explanation || 'Well done!'}</p>
+            <h4>Correct</h4>
+            <p>${prob.explanation || 'Correct.'}</p>
           </div>
           <div class="exercise-feedback incorrect-feedback" id="${frId}-incorrect">
-            <h4>✗ Not quite</h4>
+            <h4>Not quite</h4>
             <p id="${frId}-incorrect-text">Try again or reveal the solution.</p>
             <button class="reveal-btn" onclick="ProblemEngine.revealFRAnswer('${frId}',${idx},'${topicId}')">Show Solution</button>
           </div>
           <div class="exercise-feedback solution-feedback" id="${frId}-solution" style="display:none">
-            <h4>📖 Solution</h4>
+            <h4>Solution</h4>
             <div id="${frId}-solution-text"></div>
           </div>
         </div>
@@ -172,10 +203,11 @@ const ProblemEngine = (() => {
      User constructs solution by selecting correct steps in order
      ============================================================ */
   function renderStepBuilder(problems, moduleId, topicId) {
+    problems = normalizeNestedProblems(problems, 'steps');
     let html = `
       <div class="phase-section">
         <div class="phase-label challenge">Step Builder</div>
-        <h3>🔨 Build the Solution</h3>
+        <h3>Build the Solution</h3>
         <p class="phase-subtitle">Select the correct steps in the right order to solve the problem.</p>
         <div class="phase-content">
     `;
@@ -193,12 +225,14 @@ const ProblemEngine = (() => {
             <div class="sb-selected-steps" id="${sbId}-selected">
               <p class="sb-placeholder">Click steps below in the correct order</p>
             </div>
-            <div class="sb-divider">↓ Available Steps ↓</div>
+            <div class="sb-divider">Available Steps</div>
             <div class="sb-available-steps" id="${sbId}-available">
       `;
 
+      const steps = (prob.steps || []).filter(step => step && step.content);
+
       // Shuffle the steps for display
-      const shuffled = prob.steps.map((s, i) => ({ ...s, originalIndex: i }));
+      const shuffled = steps.map((s, i) => ({ ...s, originalIndex: i }));
       for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -207,7 +241,7 @@ const ProblemEngine = (() => {
       shuffled.forEach((step) => {
         html += `
           <button class="sb-step-btn" data-step-idx="${step.originalIndex}"
-                  onclick="ProblemEngine.selectStep('${sbId}', this, ${step.originalIndex}, ${prob.steps.length}, '${topicId}', ${idx})">
+                  onclick="ProblemEngine.selectStep('${sbId}', this, ${step.originalIndex}, ${steps.length}, '${topicId}', ${idx})">
             ${step.content}
           </button>
         `;
@@ -217,14 +251,14 @@ const ProblemEngine = (() => {
             </div>
           </div>
           <button class="sb-reset-btn" onclick="ProblemEngine.resetStepBuilder('${sbId}', '${topicId}', ${idx})">
-            🔄 Reset
+            Reset
           </button>
           <div class="exercise-feedback correct-feedback" id="${sbId}-correct">
-            <h4>✓ Perfect Construction!</h4>
+            <h4>Correct Construction</h4>
             <p>${prob.explanation || 'You built the solution correctly.'}</p>
           </div>
           <div class="exercise-feedback incorrect-feedback" id="${sbId}-incorrect">
-            <h4>✗ Wrong step</h4>
+            <h4>Wrong step</h4>
             <p id="${sbId}-incorrect-text">That step does not belong here. Try again.</p>
           </div>
         </div>
@@ -302,7 +336,7 @@ const ProblemEngine = (() => {
     let html = `
       <div class="phase-section">
         <div class="phase-label practice">Matching</div>
-        <h3>🔗 Match the Pairs</h3>
+        <h3>Match the Pairs</h3>
         <p class="phase-subtitle">Click a term, then click its match.</p>
         <div class="phase-content">
     `;
@@ -327,10 +361,11 @@ const ProblemEngine = (() => {
       `;
 
       prob.pairs.forEach((pair, pIdx) => {
+        const leftLabel = pair.left ?? pair.term ?? pair.prompt ?? '';
         html += `
           <button class="match-item match-left-item" data-match-id="${mId}" data-pair-idx="${pIdx}" data-side="left"
                   onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}')">
-            ${pair.left}
+            ${leftLabel}
           </button>
         `;
       });
@@ -338,10 +373,11 @@ const ProblemEngine = (() => {
       html += '</div><div class="matching-column matching-right">';
 
       shuffledRight.forEach((pair) => {
+        const rightLabel = pair.right ?? pair.definition ?? pair.answer ?? '';
         html += `
           <button class="match-item match-right-item" data-match-id="${mId}" data-pair-idx="${pair.idx}" data-side="right"
                   onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}')">
-            ${pair.right}
+            ${rightLabel}
           </button>
         `;
       });
@@ -351,8 +387,8 @@ const ProblemEngine = (() => {
           </div>
           <div class="match-score" id="${mId}-score">0 / ${prob.pairs.length} matched</div>
           <div class="exercise-feedback correct-feedback" id="${mId}-correct">
-            <h4>✓ All Matched!</h4>
-            <p>${prob.explanation || 'Great pattern recognition!'}</p>
+            <h4>All Matched</h4>
+            <p>${prob.explanation || 'All pairs matched.'}</p>
           </div>
         </div>
       `;
@@ -426,11 +462,52 @@ const ProblemEngine = (() => {
      FILL-IN-THE-BLANK
      Math expressions with blanks to fill
      ============================================================ */
+  function renderBlankLabel(index, inMath) {
+    const label = `Blank ${index + 1}`;
+    return inMath
+      ? `\\boxed{\\text{${label}}}`
+      : `<span class="fb-blank-token">${label}</span>`;
+  }
+
+  function renderFillBlankExpression(expression) {
+    let html = '';
+    let index = 0;
+
+    while (index < expression.length) {
+      const start = expression.indexOf('$', index);
+      if (start < 0) {
+        html += replaceBlankMarkers(expression.slice(index), false);
+        break;
+      }
+
+      html += replaceBlankMarkers(expression.slice(index, start), false);
+      const isDisplay = expression[start + 1] === '$';
+      const delimiter = isDisplay ? '$$' : '$';
+      const contentStart = start + delimiter.length;
+      const end = expression.indexOf(delimiter, contentStart);
+
+      if (end < 0) {
+        html += replaceBlankMarkers(expression.slice(start), false);
+        break;
+      }
+
+      const tex = replaceBlankMarkers(expression.slice(contentStart, end), true);
+      html += `${delimiter}${tex}${delimiter}`;
+      index = end + delimiter.length;
+    }
+
+    return html;
+  }
+
+  function replaceBlankMarkers(text, inMath) {
+    return text.replace(/\{\{(\d+)\}\}/g, (_, rawIndex) => renderBlankLabel(Number(rawIndex), inMath));
+  }
+
   function renderFillBlanks(problems, moduleId, topicId) {
     let html = `
       <div class="phase-section">
         <div class="phase-label practice">Fill the Gaps</div>
-        <h3>📝 Complete the Expression</h3>
+        <h3>Complete the Expression</h3>
         <p class="phase-subtitle">Fill in the missing parts of each mathematical expression.</p>
         <div class="phase-content">
     `;
@@ -439,16 +516,15 @@ const ProblemEngine = (() => {
       const fbId = `fb-${topicId}-${idx}`;
       const diffClass = prob.difficulty || 'medium';
 
-      // Replace {{n}} placeholders with input fields
-      let displayHtml = prob.expression;
-      prob.blanks.forEach((blank, bIdx) => {
-        displayHtml = displayHtml.replace(
-          `{{${bIdx}}}`,
-          `<input type="text" class="fb-input" id="${fbId}-blank-${bIdx}"
+      const displayHtml = renderFillBlankExpression(prob.expression);
+      const inputsHtml = prob.blanks.map((blank, bIdx) => `
+        <label class="fb-input-group" for="${fbId}-blank-${bIdx}">
+          <span>Blank ${bIdx + 1}</span>
+          <input type="text" class="fb-input" id="${fbId}-blank-${bIdx}"
                   placeholder="?" size="${blank.size || 4}"
-                  data-fb-id="${fbId}" data-blank-idx="${bIdx}" />`
-        );
-      });
+                  data-fb-id="${fbId}" data-blank-idx="${bIdx}" />
+        </label>
+      `).join('');
 
       html += `
         <div class="exercise-card fill-blank-card" id="${fbId}">
@@ -458,19 +534,18 @@ const ProblemEngine = (() => {
           </div>
           ${prob.context ? `<div class="exercise-question">${prob.context}</div>` : ''}
           <div class="fb-expression">${displayHtml}</div>
-          <button class="fr-submit-btn" onclick="ProblemEngine.checkFillBlanks('${fbId}',${idx},'${topicId}','${moduleId}')">
-            Check All →
-          </button>
+          <div class="fb-input-list">${inputsHtml}</div>
+          <button class="fr-submit-btn" onclick="ProblemEngine.checkFillBlanks('${fbId}',${idx},'${topicId}','${moduleId}')">Check</button>
           ${prob.hint ? `
-            <button class="hint-btn" onclick="ProblemEngine.showFRHint('${fbId}')">💡 Hint</button>
+            <button class="hint-btn" onclick="ProblemEngine.showFRHint('${fbId}')">Hint</button>
             <div class="hint-content" id="${fbId}-hint">${prob.hint}</div>
           ` : ''}
           <div class="exercise-feedback correct-feedback" id="${fbId}-correct">
-            <h4>✓ All correct!</h4>
-            <p>${prob.explanation || 'Perfect!'}</p>
+            <h4>All correct</h4>
+            <p>${prob.explanation || 'All blanks are correct.'}</p>
           </div>
           <div class="exercise-feedback incorrect-feedback" id="${fbId}-incorrect">
-            <h4>✗ Some blanks are wrong</h4>
+            <h4>Some blanks are wrong</h4>
             <p id="${fbId}-incorrect-text">Incorrect fields are highlighted. Fix them and recheck.</p>
           </div>
         </div>
@@ -531,10 +606,11 @@ const ProblemEngine = (() => {
      Progressive problems where each part builds on the previous
      ============================================================ */
   function renderMultiPart(problems, moduleId, topicId) {
+    problems = normalizeNestedProblems(problems, 'parts');
     let html = `
       <div class="phase-section">
         <div class="phase-label challenge">Multi-Part Challenge</div>
-        <h3>🏗️ Multi-Part Problems</h3>
+        <h3>Multi-Part Problems</h3>
         <p class="phase-subtitle">Each part builds on the previous. Complete them in order.</p>
         <div class="phase-content">
     `;
@@ -575,8 +651,8 @@ const ProblemEngine = (() => {
       html += `
           </div>
           <div class="exercise-feedback correct-feedback" id="${mpId}-complete">
-            <h4>🏆 Challenge Complete!</h4>
-            <p>${prob.completionMessage || 'Excellent work on this multi-part problem!'}</p>
+            <h4>Challenge Complete</h4>
+            <p>${prob.completionMessage || 'Problem complete.'}</p>
           </div>
         </div>
       `;
@@ -602,7 +678,7 @@ const ProblemEngine = (() => {
       input.classList.add('correct');
       input.disabled = true;
       if (feedback) {
-        feedback.innerHTML = `<span class="mp-correct">✓ ${part.explanation || 'Correct!'}</span>`;
+        feedback.innerHTML = `<span class="mp-correct">${part.explanation || 'Correct'}</span>`;
         feedback.classList.add('show');
       }
 
@@ -624,7 +700,7 @@ const ProblemEngine = (() => {
     } else {
       input.classList.add('incorrect');
       if (feedback) {
-        feedback.innerHTML = `<span class="mp-incorrect">✗ ${part.wrongHint || 'Not quite. Try again.'}</span>`;
+        feedback.innerHTML = `<span class="mp-incorrect">${part.wrongHint || 'Not quite. Try again.'}</span>`;
         feedback.classList.add('show');
       }
       GameState.recordWrongAnswer();

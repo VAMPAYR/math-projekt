@@ -5,13 +5,13 @@ An interactive math learning platform covering foundations through multivariable
 ## Live Features
 
 - **14 modules**: Foundations, Algebra (core, intermediate, advanced), Geometry, Precalculus, Trigonometry, Calculus 1-3, and Probability & Statistics
-- **2,000+ practice items**: Flashcards, worked examples, and auto-generated problems
+- **2,000+ practice items**: Flashcards, worked examples, and procedural practice problems
 - **Four study modes**: Learn, Practice, Challenge, and Speed Drill
 - **Desmos integration**: Interactive graphing embedded directly in lessons
 - **KaTeX rendering**: Publication-quality math notation throughout
-- **Progress tracking**: Completion state saved in your browser via localStorage
+- **Progress tracking**: Completion state saved in the browser through localStorage, with JSON export and import
 - **Mini-games**: Timed drills and game mechanics to reinforce core skills
-- **Fully offline**: No server, no accounts, no telemetry
+- **No backend**: No server, no accounts, no telemetry
 
 ## Getting Started
 
@@ -36,8 +36,9 @@ An interactive math learning platform covering foundations through multivariable
 3. **Start learning**
    - Pick a module from the sidebar (organized by difficulty).
    - Read the lesson, then switch to Practice or Challenge mode.
-   - Use the Speed Drill button (lightning bolt icon) for timed sessions.
-   - Your progress saves automatically in the browser.
+   - Use the Speed Drill button for timed sessions.
+   - Progress saves automatically in the browser.
+   - Use the Progress button to export or import saved progress.
 
 ## Project Structure
 
@@ -49,17 +50,27 @@ css/
 js/
   engine.js             Core engine: rendering, navigation, progress
   game_state.js         XP, streaks, and achievement tracking
-  problem_engine.js     Auto-generated problem sets
+  problem_engine.js     Interactive answer checking and practice rendering
   speed_drill.js        Timed drill mode
   visualizations.js     Desmos and custom visualization helpers
   mini_games.js         Interactive math mini-games
-  modules/              One file per curriculum module (m1-m9)
+  self_study_guides.js  Topic study guides
+  university_walkthroughs.js  Extended reasoning walkthroughs
+  modules/              Curriculum modules and extension files
 ```
 
 ## Requirements
 
 - A modern browser (Chrome, Firefox, Edge, Safari)
-- Internet connection only for first load (KaTeX and Desmos CDN assets are cached)
+- Internet access for first load of KaTeX, Desmos, and Google Fonts CDN assets
+
+## Dependencies
+
+Runtime dependencies and browser API usage are listed in [`DEPENDENCIES.md`](DEPENDENCIES.md).
+
+## Quality Tracking
+
+The current content and release checklist is tracked in [`QUALITY_UPGRADE_TRACKER.md`](QUALITY_UPGRADE_TRACKER.md).
 
 ## Contributing
 

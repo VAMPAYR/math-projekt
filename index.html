@@ -14,8 +14,8 @@
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/styles.css?v=plain-ui-33">
+  <link rel="stylesheet" href="css/game.css?v=plain-ui-34">
 </head>
 <body>
   <div class="app-container">
@@ -23,7 +23,7 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="sidebar-logo">
-          <div class="logo-icon">∑</div>
+          <div class="logo-icon">M</div>
           <div>
             <h1>Mathematics</h1>
             <div class="subtitle">Free Learning</div>
@@ -48,13 +48,15 @@
     <!-- Main content -->
     <main class="main-content">
       <header class="content-header">
-        <button class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Toggle sidebar">☰</button>
+        <button class="btn-text hamburger-btn" id="hamburger-btn" aria-label="Toggle sidebar">Menu</button>
         <div class="breadcrumbs" id="breadcrumbs">
           <span class="current">Home</span>
         </div>
         <div class="header-actions">
-          <button class="btn-icon" id="drill-nav-btn" aria-label="Speed Drill" title="Speed Drill" onclick="MathEngine.showDrillSelector()">⚡</button>
-          <button class="btn-icon" id="home-btn" aria-label="Home" title="Home">🏠</button>
+          <button class="btn-text theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark mode" title="Switch to dark mode">Dark</button>
+          <button class="btn-text" id="progress-tools-btn" aria-label="Progress tools" title="Progress tools" onclick="MathEngine.showProgressTools()">Progress</button>
+          <button class="btn-text" id="drill-nav-btn" aria-label="Speed Drill" title="Speed Drill" onclick="MathEngine.showDrillSelector()">Drill</button>
+          <button class="btn-text" id="home-btn" aria-label="Home" title="Home">Home</button>
         </div>
       </header>
       <div class="content-area">
@@ -66,33 +68,37 @@
   </div>
 
   <!-- Visualization toolkit -->
-  <script src="js/visualizations.js"></script>
+  <script src="js/visualizations.js?v=plain-ui-30"></script>
 
   <!-- Game systems (must load before engine) -->
-  <script src="js/game_state.js"></script>
-  <script src="js/problem_engine.js"></script>
-  <script src="js/speed_drill.js"></script>
+  <script src="js/game_state.js?v=plain-ui-30"></script>
+  <script src="js/problem_engine.js?v=plain-ui-30"></script>
+  <script src="js/speed_drill.js?v=plain-ui-30"></script>
 
   <!-- Content modules (order matters: must load before engine) -->
-  <script src="js/modules/m1_foundations.js"></script>
-  <script src="js/modules/m2_algebra_core.js"></script>
-  <script src="js/modules/m_geometry.js"></script>
-  <script src="js/modules/m3_intermediate_algebra.js"></script>
-  <script src="js/modules/m3_algebra_advanced.js"></script>
-  <script src="js/modules/m4_precalculus.js"></script>
-  <script src="js/modules/m5_trigonometry.js"></script>
-  <script src="js/modules/m5_calculus1.js"></script>
-  <script src="js/modules/m6_calculus1.js"></script>
-  <script src="js/modules/m6_calculus2.js"></script>
-  <script src="js/modules/m7_calculus2.js"></script>
-  <script src="js/modules/m7_calculus3.js"></script>
-  <script src="js/modules/m8_calculus3.js"></script>
-  <script src="js/modules/m9_probability.js"></script>
+  <script src="js/modules/m1_foundations.js?v=plain-ui-30"></script>
+  <script src="js/modules/m2_algebra_core.js?v=plain-ui-30"></script>
+  <script src="js/modules/m_geometry.js?v=plain-ui-30"></script>
+  <script src="js/modules/m3_intermediate_algebra.js?v=plain-ui-30"></script>
+  <script src="js/modules/m3_algebra_advanced.js?v=plain-ui-30"></script>
+  <script src="js/modules/m4_precalculus.js?v=plain-ui-30"></script>
+  <script src="js/modules/m5_trigonometry.js?v=plain-ui-30"></script>
+  <script src="js/modules/m5_calculus1.js?v=plain-ui-30"></script>
+  <script src="js/modules/m6_calculus1.js?v=plain-ui-30"></script>
+  <script src="js/modules/m6_calculus2.js?v=plain-ui-30"></script>
+  <script src="js/modules/m7_calculus2.js?v=plain-ui-30"></script>
+  <script src="js/modules/m7_calculus3.js?v=plain-ui-30"></script>
+  <script src="js/modules/m8_calculus3.js?v=plain-ui-30"></script>
+  <script src="js/modules/m9_probability.js?v=plain-ui-30"></script>
+  <script src="js/modules/m9_statistics_extensions.js?v=plain-ui-33"></script>
+  <script src="js/modules/topic_extensions.js?v=plain-ui-36"></script>
+  <script src="js/self_study_guides.js?v=plain-ui-36"></script>
+  <script src="js/university_walkthroughs.js?v=depth-5"></script>
 
   <!-- Mini-games -->
-  <script src="js/mini_games.js"></script>
+  <script src="js/mini_games.js?v=plain-ui-30"></script>
 
   <!-- Core engine (must load last) -->
-  <script src="js/engine.js"></script>
+  <script src="js/engine.js?v=plain-ui-36"></script>
 </body>
 </html>

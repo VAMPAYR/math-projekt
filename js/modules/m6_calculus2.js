@@ -27,7 +27,7 @@
           ${WHY('Why is FTC true?', '<p>Define $G(x) = \\int_a^x f(t)\\,dt$. Then $G\'(x) = \\lim_{h \\to 0} \\frac{G(x+h) - G(x)}{h} = \\lim_{h \\to 0} \\frac{1}{h}\\int_x^{x+h} f(t)\\,dt$. For small $h$, $f$ is approximately constant at $f(x)$ over $[x, x+h]$, so the integral is approximately $f(x) \\cdot h$. Dividing by $h$ gives $f(x)$. Therefore $G\' = f$: the function that accumulates area has the original function as its derivative. Accumulation and rate-of-change are inverse operations.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: Distance from Speed</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: Distance from Speed</h4>
           <p>A car accelerates: its speed at time $t$ is $v(t) = 2t$ m/s. How far does it travel from $t = 0$ to $t = 5$?</p>
           <p>Distance = area under the velocity curve = area of a triangle with base $5$ and height $10$: $\\frac{1}{2}(5)(10) = 25$ m. This "area under the curve" idea IS integration: $\\int_0^5 2t\\,dt = [t^2]_0^5 = 25$.</p></div>` },
         concept: { html: `
@@ -88,7 +88,7 @@
           <p><strong>Riemann Sum Definition:</strong></p>
           <div class="math-block">$$\\int_a^b f(x)\\,dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*)\\,\\Delta x$$</div>
           <p>where $\\Delta x = \\frac{b-a}{n}$ and $x_i^*$ is a sample point in the $i$-th subinterval.</p>
-          <div class="callout callout-notation"><h4>📐 Notation</h4>
+          <div class="callout callout-notation"><h4> Notation</h4>
           <p>$\\int$ is an elongated "S" for "sum." $dx$ indicates the variable of integration and the infinitesimal width. $C$ in indefinite integrals is the constant of integration: since $\\frac{d}{dx}[C] = 0$, any constant could be there.</p></div>` },
         examples: [{
           title: 'Evaluating a Definite Integral',
@@ -100,8 +100,8 @@
         }],
         flashCards: [
       { type: 'define', front: 'What is an integral?', back: 'Signed area between f(x) and x-axis from a to b. Above = positive, below = negative.' },
-      { type: 'why', front: 'Why is integration reverse of differentiation?', back: 'Fundamental Theorem: accumulating tiny rates rebuilds the total. If F’(x)=f(x), integral = F(b)-F(a).' },
-      { type: 'how', front: 'How does u-substitution work?', back: 'When integrand has f(g(x))*g’(x), let u=g(x), du=g’(x)dx. Reverses the chain rule.' },
+      { type: 'why', front: 'Why is integration reverse of differentiation?', back: 'Fundamental Theorem: accumulating tiny rates rebuilds the total. If F is an antiderivative of f, integral = F(b)-F(a).' },
+      { type: 'how', front: 'How does u-substitution work?', back: 'When the integrand has f(g(x)) times the derivative of g(x), let u = g(x). This reverses the chain rule.' },
       { type: 'why', front: 'Why does +C matter?', back: 'Many functions share the same derivative. x^2 and x^2+5 both give 2x. +C includes all antiderivatives.' }
     ],
     exercises: [{
@@ -127,7 +127,7 @@
           correctIndex: 2,
           hint: '<p>Antiderivative of $\\sin x$ is $-\\cos x$.</p>',
           correctExplanation: '$[-\\cos x]_0^{\\pi} = -\\cos\\pi - (-\\cos 0) = -(-1) + 1 = 2$.',
-          wrongExplanations: { 0: 'The function is non-negative on $[0,\\pi]$, so area \\gt 0.', 1: '$-(-1) + 1 = 2$, not 1.', 3: 'Watch the signs: $-\\cos\\pi = 1$ and $-\\cos 0 = -1$.' }
+          wrongExplanations: { 0: 'The function is non-negative on $[0,\\pi]$, so the area is positive.', 1: '$-(-1) + 1 = 2$, not 1.', 3: 'Watch the signs: $-\\cos\\pi = 1$ and $-\\cos 0 = -1$.' }
         },{
           difficulty: 'hard',
           question: 'FTC Part 1: If $F(x) = \\int_1^x t^2\\,dt$, then $F\'(x) =$?',
@@ -246,7 +246,7 @@
             });
           }
         }],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Integration Strategy</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Integration Strategy</h4>
           <ol><li><strong>Recognize the form:</strong> Does it match a basic antiderivative?</li>
           <li><strong>Simplify first:</strong> Expand products, split fractions.</li>
           <li><strong>Don't forget $+C$</strong> for indefinite integrals.</li>
@@ -268,7 +268,7 @@
           ${WHY('Why does partial fraction decomposition work?', '<p>Any proper rational function $P(x)/Q(x)$ can be decomposed into a sum of simpler fractions. This follows from the <strong>Fundamental Theorem of Algebra</strong>: every polynomial factors completely over the reals into linear and irreducible quadratic factors. Each factor contributes a term of the form $\\frac{A}{(x-r)^k}$ or $\\frac{Ax+B}{(x^2+bx+c)^k}$, and each of these CAN be integrated using basic formulas.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Unsolvable Integral?</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: The Unsolvable Integral?</h4>
           <p>Try finding $\\int 2x \\cos(x^2)\\,dx$ directly. No basic formula matches. But if you let $u = x^2$, then $du = 2x\\,dx$, and the integral becomes $\\int \\cos(u)\\,du = \\sin(u) + C = \\sin(x^2) + C$. Substitution transforms hard integrals into easy ones.</p></div>` },
         concept: { html: `
           <div class="callout callout-key"><h4>1. u-Substitution (Reverse Chain Rule)</h4>
@@ -345,7 +345,7 @@
             { title: 'Identify the form', content: '$\\sqrt{a^2 - x^2}$ with $a = 2$. Use $x = 2\\sin\\theta$.', why: 'The pattern $\\sqrt{a^2 - x^2}$ matches $x = a\\sin\\theta$ substitution.' },
             { title: 'Substitute', content: '$dx = 2\\cos\\theta\\,d\\theta$. $\\sqrt{4 - 4\\sin^2\\theta} = 2\\cos\\theta$.', why: '$4 - x^2 = 4(1-\\sin^2\\theta) = 4\\cos^2\\theta$. Square root: $2\\cos\\theta$.' },
             { title: 'Simplify and integrate', content: '$\\int \\frac{2\\cos\\theta}{2\\cos\\theta}\\,d\\theta = \\int d\\theta = \\theta + C$.', why: 'The cosines cancel. The integral is now trivial.' },
-            { title: 'Convert back to $x$', content: '$\\theta = \\sin^{-1}(x/2)$. Answer: $\\sin^{-1}(x/2) + C$.', why: 'Since $x = 2\\sin\\theta$, we have $\\theta = \\arcsin(x/2)$. Verify: $\\frac{d}{dx}[\\sin^{-1}(x/2)] = \\frac{1}{\\sqrt{4-x^2}}$ \\u2713.' }
+            { title: 'Convert back to $x$', content: '$\\theta = \\sin^{-1}(x/2)$. Answer: $\\sin^{-1}(x/2) + C$.', why: 'Since $x = 2\\sin\\theta$, we have $\\theta = \\arcsin(x/2)$. Differentiating $\\sin^{-1}(x/2)$ gives $\\frac{1}{\\sqrt{4-x^2}}$, which verifies the antiderivative.' }
           ]
         }],
         flashCards: [
@@ -439,7 +439,7 @@
           { difficulty: 'easy', context: 'u-Substitution:', expression: 'If $u = g(x)$, then $du =$ {{0}} $dx$.', blanks: [ { accept: ["g'(x)", 'g\'(x)'], size: 8 } ], explanation: 'Differentiate the substitution.' },
           { difficulty: 'medium', context: 'LIATE priority:', expression: 'In IBP, choose $u$ from: {{0}}, Inverse trig, Algebraic, Trig, Exponential.', blanks: [ { accept: ['Logarithmic', 'Log', 'Logs'], size: 12 } ], explanation: 'L = Logarithmic (first priority for $u$).' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Integration Technique Selection</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Integration Technique Selection</h4>
           <ol><li>Composite function with derivative? → <strong>u-substitution.</strong></li>
           <li>Product of two types? → <strong>IBP (LIATE).</strong></li>
           <li>Rational with factorable denominator? → <strong>Partial fractions.</strong></li>
@@ -461,7 +461,7 @@
           ${WHY('Why the factorial in the denominator?', '<p>When you differentiate $x^n$ repeatedly, each differentiation multiplies by the current power: $\\frac{d^n}{dx^n}x^n = n!$. The $n!$ in the denominator of $\\frac{f^{(n)}(a)}{n!}$ cancels this, ensuring each coefficient captures exactly the right derivative value. Without the factorial, the coefficients would grow uncontrollably.</p>')}
         ` },
         hook: { html: `
-          <div class="callout callout-puzzle"><h4>🧩 Puzzle: How Does Your Calculator Compute $\\sin(0.5)$?</h4>
+          <div class="callout callout-puzzle"><h4> Puzzle: How Does Your Calculator Compute $\\sin(0.5)$?</h4>
           <p>Calculators do not have sine tables. They use the Taylor series: $\\sin(x) = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$</p>
           <p>For $x = 0.5$: $0.5 - \\frac{0.125}{6} + \\frac{0.03125}{120} \\approx 0.4794$. Just three terms give 4 decimal places of accuracy.</p></div>` },
         concept: { html: `
@@ -589,7 +589,7 @@
             { question: 'Threshold: p-series converges when $p >$ ?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sum 1/n^p$ converges iff $p \\gt 1$.' }
           ], completionMessage: 'p-series test: converges iff $p \\gt 1$. The boundary $p = 1$ (harmonic) diverges.' }
         ],
-        stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Series Strategy</h4>
+        stuckGuide: { html: `<div class="callout callout-tip"><h4> Series Strategy</h4>
           <ol><li><strong>Use known series</strong> and substitute, rather than computing all derivatives.</li>
           <li><strong>Ratio Test</strong> is the default for convergence. Works on most series.</li>
           <li><strong>p-series:</strong> $\\sum 1/n^p$ converges iff $p \\gt 1$.</li>

@@ -24,10 +24,10 @@ topics: [
     { term: 'Exponent', definition: 'In $x^n$, $n$ is the exponent. It means multiply $x$ by itself $n$ times: $x^3 = x \\cdot x \\cdot x$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why polynomials?</strong> Polynomials are the simplest class of functions beyond constants and lines. They model real phenomena: $h(t) = -16t^2 + v_0 t + h_0$ (projectile height), revenue = price �: quantity, and area = length �: width.</p>
+    <p><strong>Why polynomials?</strong> Polynomials are the simplest class of functions beyond constants and lines. They model real phenomena: $h(t) = -16t^2 + v_0 t + h_0$ (projectile height), revenue = price times quantity, and area = length times width.</p>
     ${WHY('Why exponent rules?', '<p>Exponent rules are shortcuts derived from the definition. $x^3 \\cdot x^2 = (x \\cdot x \\cdot x)(x \\cdot x) = x^5 = x^{3+2}$. Once proven, these rules let us simplify without writing out all the factors.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: Area of a Garden</h4>
+  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: Area of a Garden</h4>
     <p>A rectangular garden has length $(x + 3)$ meters and width $(x + 2)$ meters. What is its area? You need to multiply two binomials: $(x+3)(x+2)$. After this topic, you will know how.</p></div>` },
   formalDefinitions: [
       { term: 'Polynomial', symbol: '$p(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + a_0$', definition: 'A finite sum of terms of the form $a_kx^k$ where $k \\in \\mathbb{N} \\cup \\{0\\}$ and $a_k \\in \\mathbb{R}$. The degree is the highest power with nonzero coefficient.' },
@@ -159,7 +159,7 @@ topics: [
       { left: 'Zero exponent', right: '$x^0 = 1$ ($x \\neq 0$)' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Polynomial Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Polynomial Strategy</h4>
     <ol><li><strong>Exponents:</strong> Product → add. Quotient → subtract. Power → multiply.</li>
     <li><strong>FOIL:</strong> First, Outer, Inner, Last. For larger polynomials, distribute every term.</li>
     <li><strong>Special products:</strong> Memorize $(a \\pm b)^2$ and $(a+b)(a-b)$. These appear constantly.</li></ol></div>` }
@@ -242,7 +242,7 @@ topics: [
     steps: [
       { title: 'GCF', content: '$2x^3 - 8x = 2x(x^2 - 4)$', why: 'GCF of $2x^3$ and $8x$ is $2x$.' },
       { title: 'Difference of squares', content: '$x^2 - 4 = (x+2)(x-2)$', why: '$x^2 - 4 = x^2 - 2^2$, so apply $a^2 - b^2 = (a+b)(a-b)$.' },
-      { title: 'Final answer', content: '$2x(x+2)(x-2)$', why: 'Always check: $2x \\cdot (x+2)(x-2) = 2x(x^2-4) = 2x^3 - 8x$ ✓.' }
+      { title: 'Final answer', content: '$2x(x+2)(x-2)$', why: 'Always check: $2x \\cdot (x+2)(x-2) = 2x(x^2-4) = 2x^3 - 8x$ .' }
     ]
   }],
   flashCards: [
@@ -252,9 +252,9 @@ topics: [
       { type: 'define', front: 'GCF vs Grouping?', back: 'GCF: pull out largest factor from ALL terms. Grouping: split into pairs, factor each, then factor out common binomial.' }
     ],
     exercises: [
-    { difficulty: 'easy', question: 'Factor: $6x^2 + 9x$', options: ['$3x(2x + 3)$', '$3(2x^2 + 3x)$', '$6x(x + 9)$', '$x(6x + 9)$'], correctIndex: 0, hint: '<p>Find the GCF of $6x^2$ and $9x$.</p>', correctExplanation: 'GCF = $3x$. $6x^2 \\div 3x = 2x$. $9x \\div 3x = 3$. Answer: $3x(2x+3)$.', wrongExplanations: { 1: 'Not fully factored: $3$ is a common factor but you missed the common $x$.', 2: '$6x \\cdot 9 = 54x \\neq 9x$. Check: $6x(x+9) = 6x^2 + 54x$.', 3: '$x(6x+9) = 6x^2 + 9x$ ✓ but not FULLY factored: $6x + 9 = 3(2x+3)$.' } },
+    { difficulty: 'easy', question: 'Factor: $6x^2 + 9x$', options: ['$3x(2x + 3)$', '$3(2x^2 + 3x)$', '$6x(x + 9)$', '$x(6x + 9)$'], correctIndex: 0, hint: '<p>Find the GCF of $6x^2$ and $9x$.</p>', correctExplanation: 'GCF = $3x$. $6x^2 \\div 3x = 2x$. $9x \\div 3x = 3$. Answer: $3x(2x+3)$.', wrongExplanations: { 1: 'Not fully factored: $3$ is a common factor but you missed the common $x$.', 2: '$6x \\cdot 9 = 54x \\neq 9x$. Check: $6x(x+9) = 6x^2 + 54x$.', 3: '$x(6x+9) = 6x^2 + 9x$  but not FULLY factored: $6x + 9 = 3(2x+3)$.' } },
     { difficulty: 'easy', question: 'Factor: $x^2 - 25$', options: ['$(x-5)^2$', '$(x+5)(x-5)$', '$(x+25)(x-1)$', 'Cannot be factored'], correctIndex: 1, hint: '<p>Difference of squares: $a^2 - b^2 = (a+b)(a-b)$.</p>', correctExplanation: '$x^2 - 25 = x^2 - 5^2 = (x+5)(x-5)$.', wrongExplanations: { 0: '$(x-5)^2 = x^2 - 10x + 25 \\neq x^2 - 25$.', 2: '$(x+25)(x-1) = x^2 + 24x - 25 \\neq x^2 - 25$.', 3: 'This IS factorable as a difference of squares.' } },
-    { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6$', options: ['$(x+2)(x+3)$', '$(x+1)(x+6)$', '$(x-2)(x-3)$', '$(x+5)(x+1)$'], correctIndex: 0, hint: '<p>Find $p + q = 5$ and $pq = 6$.</p>', correctExplanation: '$p = 2, q = 3$: $2+3=5$ ✓, $2 \\times 3 = 6$ ✓. So $(x+2)(x+3)$.', wrongExplanations: { 1: '$1 + 6 = 7 \\neq 5$.', 2: '$(-2)+(-3) = -5 \\neq 5$.', 3: '$5 \\times 1 = 5 \\neq 6$.' } },
+    { difficulty: 'medium', question: 'Factor: $x^2 + 5x + 6$', options: ['$(x+2)(x+3)$', '$(x+1)(x+6)$', '$(x-2)(x-3)$', '$(x+5)(x+1)$'], correctIndex: 0, hint: '<p>Find $p + q = 5$ and $pq = 6$.</p>', correctExplanation: '$p = 2, q = 3$: $2+3=5$ , $2 \\times 3 = 6$ . So $(x+2)(x+3)$.', wrongExplanations: { 1: '$1 + 6 = 7 \\neq 5$.', 2: '$(-2)+(-3) = -5 \\neq 5$.', 3: '$5 \\times 1 = 5 \\neq 6$.' } },
     { difficulty: 'medium', question: 'Factor: $2x^2 - 5x - 3$', options: ['$(2x+1)(x-3)$', '$(2x-1)(x+3)$', '$(2x-3)(x+1)$', '$(2x+3)(x-1)$'], correctIndex: 0, hint: '<p>Find factors of $2 \\times (-3) = -6$ that sum to $-5$.</p>', correctExplanation: 'Need $pq = -6$ and $p+q = -5$: $p = 1, q = -6$. Rewrite: $2x^2 + x - 6x - 3 = x(2x+1) - 3(2x+1) = (2x+1)(x-3)$.', wrongExplanations: { 1: '$(2x-1)(x+3) = 2x^2 + 5x - 3$. Sign on middle term is wrong.', 2: '$(2x-3)(x+1) = 2x^2 - x - 3$. Middle coefficient is $-1$, not $-5$.', 3: '$(2x+3)(x-1) = 2x^2 + x - 3$. Middle coefficient is $+1$.' } },
     { difficulty: 'hard', question: 'Factor completely: $x^4 - 16$', options: ['$(x^2+4)(x^2-4)$', '$(x^2+4)(x+2)(x-2)$', '$(x+2)^2(x-2)^2$', '$(x-2)^4$'], correctIndex: 1, hint: '<p>Apply difference of squares twice.</p>', correctExplanation: '$x^4 - 16 = (x^2)^2 - 4^2 = (x^2+4)(x^2-4)$. Then $x^2-4 = (x+2)(x-2)$. Note: $x^2+4$ cannot be factored over $\\mathbb{R}$.', wrongExplanations: { 0: 'Not fully factored: $x^2 - 4$ is itself a difference of squares.', 2: '$(x+2)^2(x-2)^2 = (x^2-4)^2 = x^4 - 8x^2 + 16 \\neq x^4 - 16$.', 3: '$(x-2)^4$ has degree 4 but expands to $x^4 - 8x^3 + \\cdots \\neq x^4 - 16$.' } },
     { difficulty: 'hard', question: 'Factor: $8x^3 - 27$', options: ['$(2x-3)(4x^2+6x+9)$', '$(2x-3)(4x^2-6x+9)$', '$(2x+3)(4x^2-6x+9)$', '$(2x-3)^3$'], correctIndex: 0, hint: '<p>Difference of cubes: $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$.</p>', correctExplanation: '$8x^3 = (2x)^3$, $27 = 3^3$. $(2x-3)((2x)^2 + (2x)(3) + 3^2) = (2x-3)(4x^2+6x+9)$.', wrongExplanations: { 1: 'The middle term in the trinomial factor is $+ab = +6x$, not $-6x$.', 2: 'First factor should be $(2x-3)$ since this is a DIFFERENCE.', 3: '$(2x-3)^3 = 8x^3 - 36x^2 + 54x - 27 \\neq 8x^3 - 27$.' } }
@@ -303,12 +303,12 @@ topics: [
     { difficulty: 'hard', question: 'Factor: $x^3 + 8 =$?', accept: ['(x+2)(x^2-2x+4)'], placeholder: 'Factored', explanation: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2-ab+b^2)$. $b = 2$.' },
     { difficulty: 'easy', question: 'Perfect square trinomial: $x^2 + 10x + 25 =$?', accept: ['(x+5)^2'], placeholder: 'Factored', explanation: '$(x + 5)^2$.' },
     { difficulty: 'hard', question: 'Factor completely: $3x^3 - 12x =$?', accept: ['3x(x-2)(x+2)', '3x(x+2)(x-2)'], placeholder: 'Factored', explanation: '$3x(x^2 - 4) = 3x(x-2)(x+2)$.' },
-    { difficulty: 'easy', question: 'Perfect square: $49 = $ ?$^2$', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
-    { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + $ ? $= (x+4)^2$', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' },
+    { difficulty: 'easy', question: 'Perfect square: $49 = 7^2$. What base is squared?', accept: [7, '7'], placeholder: 'Number', explanation: '$7^2 = 49$.' },
+    { difficulty: 'hard', question: 'Completing the square: $x^2 + 8x + 16 = (x+4)^2$. What term is added?', accept: [16, '16'], placeholder: 'Number', explanation: '$(8/2)^2 = 16$.' },
     { difficulty: 'easy', question: 'Zero product property: if $ab = 0$, then $a = 0$ or:', accept: ['b = 0', 'b=0'], placeholder: 'Conclusion', explanation: '$ab = 0 \\Rightarrow a = 0$ or $b = 0$.' },
     { difficulty: 'hard', question: 'Quadratic formula: two real roots when discriminant is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$b^2 - 4ac > 0$: two distinct real roots.' },
-    { difficulty: 'easy', question: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + $ ?$)$', accept: ['b^2', 'b2'], placeholder: 'Term', explanation: '$(a+b)(a^2 - ab + b^2)$.' },
-    { difficulty: 'hard', question: 'Quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2$ ?$}$', accept: ['a', '2a'], placeholder: 'Denominator', explanation: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.' },
+    { difficulty: 'easy', question: 'Sum of cubes: $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$. What final term appears in the second factor?', accept: ['b^2', 'b2'], placeholder: 'Term', explanation: '$(a+b)(a^2 - ab + b^2)$.' },
+    { difficulty: 'hard', question: 'Quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. What factor follows $2$ in the denominator?', accept: ['a', '2a'], placeholder: 'Denominator', explanation: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.' },
     { difficulty: 'medium', question: 'Leading coefficient of $-5x^3 + 2x^2 + 1$:', accept: [-5, '-5'], placeholder: 'Number', explanation: 'Leading term: $-5x^3$. LC: $-5$.' },
     { difficulty: 'hard', question: 'Vieta\'s: for $ax^2 + bx + c = 0$, product of roots $=$?', accept: ['c/a'], placeholder: 'Formula', explanation: 'Product of roots $= c/a$.' },
     { difficulty: 'medium', question: 'GCF of $6x^3$ and $9x^2$:', accept: ['3x^2', '3x2'], placeholder: 'GCF', explanation: '$\\gcd(6,9) = 3$. $\\min(x^3, x^2) = x^2$. GCF = $3x^2$.' },
@@ -354,7 +354,7 @@ topics: [
     ], completionMessage: 'AC method: multiply $a \\cdot c$, find pair summing to $b$, group.' }
     ], completionMessage: 'Factor step by step: GCF first, then recognize special patterns.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Factoring Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Factoring Strategy</h4>
     <ol><li><strong>Always GCF first.</strong></li>
     <li><strong>2 terms:</strong> Difference of squares or cubes?</li>
     <li><strong>3 terms:</strong> Find two numbers that multiply to $ac$ and add to $b$.</li>
@@ -417,7 +417,7 @@ topics: [
     steps: [
       { title: 'Try Factoring', content: 'Find $pq = 2 \\times 3 = 6$ and $p + q = -7$: $p = -1, q = -6$. Rewrite: $2x^2 - x - 6x + 3 = x(2x-1) - 3(2x-1) = (2x-1)(x-3) = 0$.', why: 'The AC method: multiply $a \\cdot c = 6$, find factors of 6 summing to $-7$.' },
       { title: 'Apply Zero Product Property', content: '$2x - 1 = 0 \\Rightarrow x = \\frac{1}{2}$, or $x - 3 = 0 \\Rightarrow x = 3$.', why: 'If a product is 0, at least one factor must be 0.' },
-      { title: 'Verify with Quadratic Formula', content: '$x = \\frac{7 \\pm \\sqrt{49 - 24}}{4} = \\frac{7 \\pm 5}{4}$. So $x = 3$ or $x = \\frac{1}{2}$ ✓.', why: '$a=2, b=-7, c=3$. $\\Delta = 49-24 = 25 \\gt 0$: two distinct real solutions.' }
+      { title: 'Verify with Quadratic Formula', content: '$x = \\frac{7 \\pm \\sqrt{49 - 24}}{4} = \\frac{7 \\pm 5}{4}$. So $x = 3$ or $x = \\frac{1}{2}$ .', why: '$a=2, b=-7, c=3$. $\\Delta = 49-24 = 25 \\gt 0$: two distinct real solutions.' }
     ]
   }],
   flashCards: [
@@ -428,7 +428,7 @@ topics: [
     { difficulty: 'easy', question: 'Solve by factoring: $x^2 - 9 = 0$', options: ['$x = 9$', '$x = 3$ only', '$x = 3$ or $x = -3$', '$x = \\pm 9$'], correctIndex: 2, hint: '<p>Factor as a difference of squares.</p>', correctExplanation: '$x^2 - 9 = (x+3)(x-3) = 0$. So $x = 3$ or $x = -3$.', wrongExplanations: { 0: '$x^2 = 9$ does not mean $x = 9$. Take the square root: $x = \\pm 3$.', 1: 'You forgot the negative root. $(-3)^2 = 9$ also works.', 3: '$x^2 = 9 \\Rightarrow x = \\pm \\sqrt{9} = \\pm 3$, not $\\pm 9$.' } },
     { difficulty: 'easy', question: 'The discriminant of $x^2 + 4x + 4 = 0$ is:', options: ['$-12$', '$0$', '$32$', '$8$'], correctIndex: 1, hint: '<p>$\\Delta = b^2 - 4ac$.</p>', correctExplanation: '$\\Delta = 4^2 - 4(1)(4) = 16 - 16 = 0$. One repeated solution: $x = -2$.', wrongExplanations: { 0: '$4^2 = 16$ and $4 \\cdot 1 \\cdot 4 = 16$. $16 - 16 = 0$, not $-12$.', 2: 'Check: $b^2 = 16$, $4ac = 16$. $16 - 16 = 0$.', 3: '$\\Delta = b^2 - 4ac$, not $b^2 - 2ac$.' } },
     { difficulty: 'medium', question: 'Use the quadratic formula to solve $x^2 - 6x + 5 = 0$:', options: ['$x = 1, 5$', '$x = -1, -5$', '$x = 2, 3$', '$x = 1, 6$'], correctIndex: 0, hint: '<p>$a=1, b=-6, c=5$.</p>', correctExplanation: '$x = \\frac{6 \\pm \\sqrt{36-20}}{2} = \\frac{6 \\pm 4}{2}$. $x = 5$ or $x = 1$.', wrongExplanations: { 1: '$b = -6$, so $-b = 6$ (positive). Solutions are positive.', 2: 'Check: $\\sqrt{16} = 4$, not $\\sqrt{36-20} = ?$. $\\frac{6+4}{2} = 5$ and $\\frac{6-4}{2} = 1$.', 3: '$\\frac{6+4}{2} = 5$, not 6.' } },
-    { difficulty: 'medium', question: 'Complete the square: $x^2 + 8x + \\text{?} = (x + \\text{?})^2$', options: ['$16, 4$', '$64, 8$', '$4, 2$', '$8, 4$'], correctIndex: 0, hint: '<p>$(\\frac{b}{2})^2 = (\\frac{8}{2})^2$.</p>', correctExplanation: '$(\\frac{8}{2})^2 = 16$. $(x+4)^2 = x^2 + 8x + 16$ ✓.', wrongExplanations: { 1: '$(8)^2 = 64$. You should halve the coefficient first: $(8/2)^2 = 16$.', 2: '$(2)^2 = 4$ but $(x+2)^2 = x^2 + 4x + 4 \\neq x^2 + 8x + ?$.', 3: 'The constant is $(b/2)^2 = 16$, and the number inside the parentheses is $b/2 = 4$.' } },
+    { difficulty: 'medium', question: 'Complete the square: $x^2 + 8x + \\text{?} = (x + \\text{?})^2$', options: ['$16, 4$', '$64, 8$', '$4, 2$', '$8, 4$'], correctIndex: 0, hint: '<p>$(\\frac{b}{2})^2 = (\\frac{8}{2})^2$.</p>', correctExplanation: '$(\\frac{8}{2})^2 = 16$. $(x+4)^2 = x^2 + 8x + 16$ .', wrongExplanations: { 1: '$(8)^2 = 64$. You should halve the coefficient first: $(8/2)^2 = 16$.', 2: '$(2)^2 = 4$ but $(x+2)^2 = x^2 + 4x + 4 \\neq x^2 + 8x + ?$.', 3: 'The constant is $(b/2)^2 = 16$, and the number inside the parentheses is $b/2 = 4$.' } },
     { difficulty: 'hard', question: 'How many real solutions does $3x^2 + 2x + 5 = 0$ have?', options: ['2', '1', '0', 'Infinitely many'], correctIndex: 2, hint: '<p>Compute the discriminant.</p>', correctExplanation: '$\\Delta = 4 - 60 = -56 \\lt 0$. Negative discriminant means NO real solutions (two complex solutions exist).', wrongExplanations: { 0: '$\\Delta \\lt 0$ means the parabola does not cross the x-axis. No real roots.', 1: '$\\Delta = 0$ gives one repeated root. Here $\\Delta = -56 \\neq 0$.', 3: 'A quadratic has at most 2 solutions, never infinitely many.' } },
     { difficulty: 'hard', question: 'Solve: $x^2 + 2x - 1 = 0$ (exact answer)', options: ['$x = -1 \\pm \\sqrt{2}$', '$x = 1 \\pm \\sqrt{2}$', '$x = -2 \\pm \\sqrt{2}$', '$x = \\pm \\sqrt{3}$'], correctIndex: 0, hint: '<p>Complete the square or use the quadratic formula.</p>', correctExplanation: '$x = \\frac{-2 \\pm \\sqrt{4+4}}{2} = \\frac{-2 \\pm 2\\sqrt{2}}{2} = -1 \\pm \\sqrt{2}$.', wrongExplanations: { 1: '$-b = -2$, so the "$-1$" comes from $\\frac{-2}{2} = -1$, not $+1$.', 2: '$\\frac{-2}{2} = -1$, not $-2$.', 3: '$\\Delta = 4 + 4 = 8$, and $\\sqrt{8} = 2\\sqrt{2}$. Dividing by 2 gives $\\sqrt{2}$, not $\\sqrt{3}$.' } }
   ],
@@ -456,7 +456,7 @@ topics: [
     { difficulty: 'easy', question: 'Domain of $f(x) = \\sqrt{x}$:', accept: ['x >= 0', '[0, inf)', 'x \\geq 0'], placeholder: 'Domain', explanation: 'Radicand must be non-negative.' },
     { difficulty: 'hard', question: 'Slant asymptote of $\\frac{x^2+1}{x}$:', accept: ['y=x', 'y = x'], placeholder: 'Equation', explanation: 'Divide: $x + 1/x$. As $x \\to \\infty$: $y \\approx x$.' },
     { difficulty: 'easy', question: '$\\frac{x^2 + 2x}{x} =$?', accept: ['x+2', 'x + 2'], placeholder: 'Expression', explanation: '$\\frac{x(x+2)}{x} = x + 2$.' },
-    { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{$ ? $}$', accept: ['x+1'], placeholder: 'Denominator', explanation: '$\\frac{1}{x} - \\frac{1}{x+1}$. Telescoping.' },
+    { difficulty: 'hard', question: 'Partial fraction: $\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{x+1}$. What denominator appears in the second fraction?', accept: ['x+1'], placeholder: 'Denominator', explanation: '$\\frac{1}{x} - \\frac{1}{x+1}$. Telescoping.' },
     { difficulty: 'medium', question: 'In $\\frac{f(x)}{g(x)}$, the denominator $g(x) \\neq$ ?', accept: [0, '0'], placeholder: 'Value', explanation: 'Division by zero is undefined.' },
     { difficulty: 'hard', question: 'Complex fractions: simplify $\\frac{1/a + 1/b}{1/a - 1/b} =$?', accept: ['(a+b)/(b-a)', '(b+a)/(b-a)'], placeholder: 'Expression', explanation: 'Multiply num and denom by $ab$: $\\frac{b+a}{b-a}$.' },
     { difficulty: 'medium', question: 'Domain of $\\frac{1}{x^2-9}$: exclude:', accept: ['3 and -3', 'x=3, x=-3'], placeholder: 'Values', explanation: '$x^2 - 9 = 0 \\Rightarrow x = \\pm 3$.' },
@@ -487,10 +487,10 @@ topics: [
     ] }
   ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'Quadratic formula:', expression: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{$ {{0}} $}$', blanks: [ { accept: ['2a'], size: 4 } ], explanation: 'Denominator is $2a$.' },
+    { difficulty: 'easy', context: 'Quadratic formula:', expression: '$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{ {{0}} }$', blanks: [ { accept: ['2a'], size: 4 } ], explanation: 'Denominator is $2a$.' },
     { difficulty: 'medium', context: 'Completing the square:', expression: 'To complete $x^2 + bx$, add $(${{0}}$)^2$ to both sides.', blanks: [ { accept: ['b/2'], size: 5 } ], explanation: 'Half the linear coefficient, then square it.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Quadratic Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Quadratic Strategy</h4>
     <ol><li><strong>Try factoring first</strong> (fastest if it works).</li>
     <li><strong>Quadratic formula</strong> always works: $x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$.</li>
     <li><strong>Check discriminant</strong> first if you only need the NUMBER of solutions.</li>
@@ -519,7 +519,7 @@ topics: [
       <li>Cancel common factors (not common TERMS).</li>
       <li>State restrictions: values that make any original denominator zero.</li>
     </ol>
-    ${WHY('Why can we cancel factors but not terms?', '<p>$\\frac{2 \\cdot 3}{2 \\cdot 5} = \\frac{3}{5}$ ✓ (cancel factor 2). But $\\frac{2 + 3}{2 + 5} = \\frac{5}{7} \\neq \\frac{3}{5}$ �:. Cancellation requires MULTIPLICATION, not addition. Formally: $\\frac{ac}{bc} = \\frac{a}{b}$ but $\\frac{a+c}{b+c} \\neq \\frac{a}{b}$ in general.</p>')}</div>
+    ${WHY('Why can we cancel factors but not terms?', '<p>$\\frac{2 \\cdot 3}{2 \\cdot 5} = \\frac{3}{5}$  (cancel factor 2). But $\\frac{2 + 3}{2 + 5} = \\frac{5}{7} \\neq \\frac{3}{5}$. Cancellation requires MULTIPLICATION, not addition. Formally: $\\frac{ac}{bc} = \\frac{a}{b}$ but $\\frac{a+c}{b+c} \\neq \\frac{a}{b}$ in general.</p>')}</div>
     <div class="callout callout-key"><h4>Operations with Rational Expressions</h4>
     <ul>
       <li><strong>Multiplication:</strong> $\\frac{A}{B} \\cdot \\frac{C}{D} = \\frac{AC}{BD}$ (multiply across, then simplify).</li>
@@ -587,7 +587,7 @@ topics: [
       { question: 'Solution? (all x except...)', accept: ['2', 'x=2', 'all except 2'], placeholder: 'Excluded value', explanation: 'All real $x$ except $x = 2$ (denominator zero).' }
     ], completionMessage: 'Identity after clearing fractions: solution is all $x$ in the domain.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Rational Expression Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Rational Expression Strategy</h4>
     <ol><li><strong>Factor</strong> everything first.</li>
     <li><strong>Cancel common FACTORS</strong> (never common terms).</li>
     <li><strong>To add/subtract:</strong> find LCD, convert, combine numerators.</li>

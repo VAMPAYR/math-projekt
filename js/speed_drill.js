@@ -218,27 +218,27 @@ const SpeedDrill = (() => {
   /* ---- Drill Categories ---- */
   const DRILL_CATEGORIES = {
     arithmetic: {
-      name: '🔢 Arithmetic',
+      name: 'Arithmetic',
       desc: 'Addition, subtraction, multiplication, division',
       generators: ['addition', 'subtraction', 'multiplication', 'division']
     },
     algebra: {
-      name: '📐 Algebra',
+      name: 'Algebra',
       desc: 'Solve equations, factor quadratics, exponents',
       generators: ['linearSolve', 'exponents', 'factoring']
     },
     calculus: {
-      name: '📊 Calculus',
+      name: 'Calculus',
       desc: 'Quick derivatives and integrals',
       generators: ['derivatives', 'integrals']
     },
     trig: {
-      name: '🔵 Trigonometry',
+      name: 'Trigonometry',
       desc: 'Unit circle values and identities',
       generators: ['unitCircle']
     },
     mixed: {
-      name: '🎲 Mixed Bag',
+      name: 'Mixed Bag',
       desc: 'Random problems from all categories',
       generators: ['addition', 'multiplication', 'linearSolve', 'exponents', 'derivatives', 'unitCircle', 'logarithms']
     }
@@ -251,8 +251,8 @@ const SpeedDrill = (() => {
     let html = `
       <div class="drill-selector">
         <div class="drill-header">
-          <h2>⚡ Speed Drill</h2>
-          <p>Race against the clock. How fast can you solve?</p>
+          <h2>Speed Drill</h2>
+          <p>Race against the clock and solve accurately under time pressure.</p>
         </div>
         <div class="drill-options">
           <div class="drill-setting">
@@ -264,8 +264,8 @@ const SpeedDrill = (() => {
       html += `
         <button class="drill-cat-btn ${catId === 'arithmetic' ? 'active' : ''}"
                 data-cat="${catId}" onclick="SpeedDrill.selectCategory('${catId}', this)">
-          <span class="cat-icon">${cat.name.split(' ')[0]}</span>
-          <span class="cat-name">${cat.name.split(' ').slice(1).join(' ')}</span>
+
+          <span class="cat-name">${cat.name}</span>
           <span class="cat-desc">${cat.desc}</span>
         </button>
       `;
@@ -293,7 +293,7 @@ const SpeedDrill = (() => {
           </div>
         </div>
         <button class="drill-start-btn" onclick="SpeedDrill.startDrill()">
-          🚀 Start Drill
+          Start Drill
         </button>
         <div class="drill-best-stats" id="drill-best-stats"></div>
       </div>
@@ -354,23 +354,23 @@ const SpeedDrill = (() => {
       <div class="drill-active">
         <div class="drill-top-bar">
           <div class="drill-timer" id="drill-timer">
-            <span class="timer-icon">⏱</span>
+
             <span class="timer-value" id="drill-timer-value">${drillState.timeRemaining}s</span>
           </div>
           <div class="drill-score" id="drill-score">
-            <span class="score-correct">✓ 0</span>
+            <span class="score-correct">Correct 0</span>
             <span class="score-separator">/</span>
             <span class="score-total">0</span>
           </div>
           <div class="drill-streak" id="drill-streak"></div>
-          <button class="drill-quit-btn" onclick="SpeedDrill.endDrill()">✕ End</button>
+          <button class="drill-quit-btn" onclick="SpeedDrill.endDrill()">End</button>
         </div>
         <div class="drill-problem-area" id="drill-problem-area">
           <div class="drill-question" id="drill-question"></div>
           <div class="drill-input-area">
             <input type="text" class="drill-input" id="drill-input" autocomplete="off"
                    onkeydown="if(event.key==='Enter')SpeedDrill.submitDrillAnswer()" />
-            <button class="drill-submit" onclick="SpeedDrill.submitDrillAnswer()">→</button>
+            <button class="drill-submit" onclick="SpeedDrill.submitDrillAnswer()">Submit</button>
           </div>
           <div class="drill-feedback" id="drill-feedback"></div>
         </div>
@@ -432,17 +432,17 @@ const SpeedDrill = (() => {
     if (isCorrect) {
       drillState.correct++;
       input.classList.add('correct');
-      feedback.innerHTML = `<span class="drill-correct-flash">✓</span>`;
+      feedback.innerHTML = `<span class="drill-correct-flash">Correct</span>`;
       GameState.recordCorrectAnswer(drillState.difficulty, 'drill', null);
     } else {
       input.classList.add('incorrect');
-      feedback.innerHTML = `<span class="drill-wrong-flash">✗ ${prob.display || prob.answer}</span>`;
+      feedback.innerHTML = `<span class="drill-wrong-flash">${prob.display || prob.answer}</span>`;
       GameState.recordWrongAnswer();
     }
 
     // Update score
     document.getElementById('drill-score').innerHTML = `
-      <span class="score-correct">✓ ${drillState.correct}</span>
+      <span class="score-correct">Correct ${drillState.correct}</span>
       <span class="score-separator">/</span>
       <span class="score-total">${drillState.attempted}</span>
     `;
@@ -451,7 +451,7 @@ const SpeedDrill = (() => {
     const streak = GameState.getStreak();
     const streakEl = document.getElementById('drill-streak');
     if (streakEl && streak >= 3) {
-      streakEl.innerHTML = `${GameState.getStreakEmoji()} ${streak}`;
+      streakEl.innerHTML = `Streak ${streak}`;
     }
 
     setTimeout(() => {
@@ -500,7 +500,7 @@ const SpeedDrill = (() => {
     const content = document.getElementById('content-inner');
     content.innerHTML = `
       <div class="drill-results">
-        <h2>⚡ Drill Complete!</h2>
+        <h2>Drill Complete</h2>
         <div class="drill-result-cards">
           <div class="result-card">
             <div class="result-value">${drillState.correct}</div>
@@ -519,11 +519,11 @@ const SpeedDrill = (() => {
             <div class="result-label">Problems/min</div>
           </div>
         </div>
-        <div class="drill-xp-earned">+${result.xp} XP earned!</div>
+        <div class="drill-xp-earned">+${result.xp} XP earned</div>
         <div class="drill-result-actions">
-          <button class="drill-retry-btn" onclick="SpeedDrill.startDrill()">🔄 Try Again</button>
-          <button class="drill-home-btn" onclick="MathEngine.goHome()">🏠 Home</button>
-          <button class="drill-new-btn" onclick="MathEngine.showDrillSelector()">⚡ New Drill</button>
+          <button class="drill-retry-btn" onclick="SpeedDrill.startDrill()">Try Again</button>
+          <button class="drill-home-btn" onclick="MathEngine.goHome()">Home</button>
+          <button class="drill-new-btn" onclick="MathEngine.showDrillSelector()">New Drill</button>
         </div>
       </div>
     `;
