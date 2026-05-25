@@ -34,9 +34,9 @@
         hook: {
           html: `
             <div class="callout callout-puzzle">
-              <h4>🧩 Puzzle: Area of a Garden</h4>
+              <h4> Puzzle: Area of a Garden</h4>
               <p>A rectangular garden has area $x^2 + 5x + 6$ square meters. What are the possible dimensions?</p>
-              <p>If the area is length �: width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
+              <p>If the area is length times width, we need two expressions that multiply to give $x^2 + 5x + 6$. We need two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>. Those are 2 and 3.</p>
               <p>So $x^2 + 5x + 6 = (x + 2)(x + 3)$. The garden is $(x+2)$ meters by $(x+3)$ meters.</p>
             </div>
           `
@@ -75,10 +75,10 @@
             problem: 'Factor $6x^2 + 11x - 10$.',
             steps: [
               { title: 'Compute $ac$', content: '$a \\cdot c = 6 \\cdot (-10) = -60$', why: 'The AC method: find two numbers whose product is $ac$ and whose sum is $b$.' },
-              { title: 'Find the pair', content: 'We need two numbers that multiply to $-60$ and add to $11$. Try: $15$ and $-4$. Check: $15 \\times (-4) = -60$ ✓ and $15 + (-4) = 11$ ✓.', why: 'Systematic search: start with factor pairs of 60 and assign signs to get the right sum.' },
+              { title: 'Find the pair', content: 'We need two numbers that multiply to $-60$ and add to $11$. Try: $15$ and $-4$. Check: $15 \\times (-4) = -60$  and $15 + (-4) = 11$ .', why: 'Systematic search: start with factor pairs of 60 and assign signs to get the right sum.' },
               { title: 'Rewrite the middle term', content: '$6x^2 + 15x - 4x - 10$', why: 'Replace $11x$ with $15x - 4x$. The polynomial is unchanged; the middle term is split.' },
               { title: 'Factor by grouping', content: '$3x(2x + 5) - 2(2x + 5) = (3x - 2)(2x + 5)$', why: 'Group first two and last two terms. Extract the GCF from each group. The common binomial factor $(2x + 5)$ emerges.' },
-              { title: 'Verify by expanding', content: '$(3x - 2)(2x + 5) = 6x^2 + 15x - 4x - 10 = 6x^2 + 11x - 10$ ✓', why: 'Always multiply back to confirm.' }
+              { title: 'Verify by expanding', content: '$(3x - 2)(2x + 5) = 6x^2 + 15x - 4x - 10 = 6x^2 + 11x - 10$ ', why: 'Always multiply back to confirm.' }
             ]
           }
         ],
@@ -204,7 +204,7 @@
         stuckGuide: {
           html: `
             <div class="callout callout-tip">
-              <h4>🧠 Factoring Decision Tree</h4>
+              <h4> Factoring Decision Tree</h4>
               <ol>
                 <li>Is there a GCF? Factor it out first.</li>
                 <li>How many terms? <p>2 terms:</strong> check difference of squares or sum/difference of cubes. <p>3 terms:</strong> use the trinomial methods. <p>4 terms:</strong> try grouping.</li>
@@ -237,7 +237,7 @@
         hook: {
           html: `
             <div class="callout callout-puzzle">
-              <h4>🧩 Puzzle: The Thrown Ball</h4>
+              <h4> Puzzle: The Thrown Ball</h4>
               <p>A ball is thrown upward at 20 m/s from a height of 1.5 m. Its height at time $t$ is $h(t) = -4.9t^2 + 20t + 1.5$. When does it hit the ground?</p>
               <p>Ground means $h(t) = 0$. This is a quadratic equation: $-4.9t^2 + 20t + 1.5 = 0$. Solving it reveals the exact moment of impact.</p>
             </div>
@@ -302,7 +302,7 @@
               <li><strong>Product of roots:</strong> $r_1 \\cdot r_2 = \\frac{c}{a}$</li>
             </ul>
             <p>These follow directly from $a(x-r_1)(x-r_2) = ax^2 - a(r_1+r_2)x + ar_1r_2$, comparing coefficients.</p>
-            <p>Practical use: check your solutions without re-substituting. For $x^2 - 5x + 6 = 0$: roots $2, 3$. Sum = $5 = -(-5)/1$ ✓. Product = $6 = 6/1$ ✓.</p></div>
+            <p>Practical use: check your solutions without re-substituting. For $x^2 - 5x + 6 = 0$: roots $2, 3$. Sum = $5 = -(-5)/1$ . Product = $6 = 6/1$ .</p></div>
 
             <div class="callout callout-key"><h4>Geometry: The Parabola $y = ax^2 + bx + c$</h4>
             <p><strong>Vertex Form:</strong> $y = a(x-h)^2 + k$ where $(h,k)$ is the vertex.</p>
@@ -319,7 +319,7 @@
             <p><strong>The Quadratic Formula:</strong></p>
             <div class="math-block">$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</div>
             <div class="callout callout-notation">
-              <h4>📐 Reading This Formula</h4>
+              <h4> Reading This Formula</h4>
               <p>$\\pm$ means "plus or minus," yielding two solutions. $b^2 - 4ac$ is under the square root (the discriminant $\\Delta$). The entire expression is divided by $2a$. This formula is derived by completing the square on the general form $ax^2 + bx + c = 0$.</p>
             </div>
             <p><strong>Vertex Form:</strong> $y = a(x - h)^2 + k$ where $(h, k)$ is the vertex of the parabola.</p>
@@ -336,7 +336,7 @@
               { title: 'Compute the discriminant', content: '$\\Delta = (-5)^2 - 4(2)(-3) = 25 + 24 = 49$', why: '$\\Delta \\gt 0$ means two distinct real roots. $\\Delta = 49 = 7^2$, so the roots will be rational.' },
               { title: 'Apply the formula', content: '$x = \\frac{-(-5) \\pm \\sqrt{49}}{2(2)} = \\frac{5 \\pm 7}{4}$', why: 'Substitute into the quadratic formula. The $\\pm$ splits into two cases.' },
               { title: 'Compute both solutions', content: '$x_1 = \\frac{5 + 7}{4} = \\frac{12}{4} = 3$ and $x_2 = \\frac{5 - 7}{4} = \\frac{-2}{4} = -\\frac{1}{2}$', why: 'The two signs of $\\pm$ give the two roots.' },
-              { title: 'Verify $x = 3$', content: '$2(9) - 5(3) - 3 = 18 - 15 - 3 = 0$ ✓', why: 'Always substitute back. Both roots should produce zero.' }
+              { title: 'Verify $x = 3$', content: '$2(9) - 5(3) - 3 = 18 - 15 - 3 = 0$ ', why: 'Always substitute back. Both roots should produce zero.' }
             ]
           },
           {
@@ -373,8 +373,8 @@
             options: ['$x = 4, x = -2$', '$x = -4, x = 2$', '$x = 4, x = 2$', '$x = -4, x = -2$'],
             correctIndex: 0,
             hint: '<p>Factor: find two numbers that multiply to $-8$ and add to $-2$.</p>',
-            correctExplanation: '$x^2 - 2x - 8 = (x - 4)(x + 2) = 0$. So $x = 4$ or $x = -2$. Check: $-4 \\times 2 = -8$ ✓ and $-4 + 2 = -2$ ✓.',
-            wrongExplanations: { 1: 'Check the signs in your factoring. $(-4)(2) = -8$ ✓, but $-4 + 2 = -2$ ✓ gives factors $(x - 4)(x + 2)$.', 2: 'These multiply to $8$, not $-8$. One factor must be negative.', 3: 'These add to $-6$, not $-2$.' }
+            correctExplanation: '$x^2 - 2x - 8 = (x - 4)(x + 2) = 0$. So $x = 4$ or $x = -2$. Check: $-4 \\times 2 = -8$  and $-4 + 2 = -2$ .',
+            wrongExplanations: { 1: 'Check the signs in your factoring. $(-4)(2) = -8$ , but $-4 + 2 = -2$  gives factors $(x - 4)(x + 2)$.', 2: 'These multiply to $8$, not $-8$. One factor must be negative.', 3: 'These add to $-6$, not $-2$.' }
           },
           {
             difficulty: 'hard',
@@ -423,7 +423,7 @@
     { difficulty: 'medium', question: 'Axis of symmetry for $y = x^2 - 6x + 5$: $x =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$x = -b/(2a) = 6/2 = 3$.' },
     { difficulty: 'easy', question: 'Solve: $x^2 - 4 = 0$:', accept: ['2, -2', '-2, 2', '2,-2'], placeholder: 'Solutions', explanation: '$(x-2)(x+2) = 0$. $x = \\pm 2$.' },
     { difficulty: 'hard', question: 'For $ax^2 + bx + c = 0$, product of roots is:', accept: ['c/a'], placeholder: 'Expression', explanation: 'By Vieta: product = $c/a$.' },
-    { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ?$ = (x+3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(6/2)^2 = 9$. $x^2 + 6x + 9 = (x+3)^2$.' },
+    { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + 9 = (x+3)^2$. What term is added?', accept: [9, '9'], placeholder: 'Number', explanation: '$(6/2)^2 = 9$. $x^2 + 6x + 9 = (x+3)^2$.' },
     { difficulty: 'hard', question: 'Nature of roots when discriminant = 0:', accept: ['one repeated root', 'double root', 'repeated'], placeholder: 'Description', explanation: '$b^2 - 4ac = 0$: one repeated (double) real root.' },
     { difficulty: 'medium', question: 'If the vertex of $y = a(x-h)^2 + k$ opens downward, then $a$ is:', accept: ['negative', 'a < 0'], placeholder: 'Sign', explanation: '$a < 0$: parabola opens downward.' },
     { difficulty: 'easy', question: 'Sum of roots of $x^2 - 5x + 6 = 0$:', accept: [5, '5'], placeholder: 'Number', explanation: 'Vieta: sum of roots = $-b/a = 5$.' },
@@ -431,18 +431,18 @@
     { difficulty: 'medium', question: 'For $ax^2 + bx + c$: axis of symmetry $x =$?', accept: ['-b/(2a)', '-b/2a'], placeholder: 'Formula', explanation: '$x = -b/(2a)$.' },
     { difficulty: 'easy', question: 'Roots of $x^2 - 1 = 0$:', accept: ['1, -1', '-1, 1'], placeholder: 'Roots', explanation: '$(x-1)(x+1) = 0$. $x = \\pm 1$.' },
     { difficulty: 'medium', question: 'Vertex form $y = 2(x-3)^2 + 1$: vertex is:', accept: ['(3,1)', '(3, 1)'], placeholder: 'Point', explanation: 'Vertex: $(h, k) = (3, 1)$.' },
-    { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + $ ? $= (x + 3)^2$', accept: [9, '9'], placeholder: 'Number', explanation: '$(b/2)^2 = (6/2)^2 = 9$.' },
+    { difficulty: 'medium', question: 'Complete the square: $x^2 + 6x + 9 = (x + 3)^2$. What term is added?', accept: [9, '9'], placeholder: 'Number', explanation: '$(b/2)^2 = (6/2)^2 = 9$.' },
     { difficulty: 'hard', question: 'Vertex of $y = x^2 - 8x + 12$:', accept: ['(4,-4)', '(4, -4)'], placeholder: 'Point', explanation: '$x = -(-8)/(2) = 4$. $y = 16 - 32 + 12 = -4$.' },
     { difficulty: 'easy', question: 'The $x$-coordinate of the vertex is $-b/(2a)$. For $y = 2x^2 + 4x + 1$, it is:', accept: [-1, '-1'], placeholder: 'Number', explanation: '$-4/(2 \\cdot 2) = -1$.' },
     { difficulty: 'hard', question: 'Quadratic opens upward when $a$ is:', accept: ['positive', '> 0'], placeholder: 'Sign', explanation: '$a > 0$: opens upward. $a < 0$: opens downward.' },
     { difficulty: 'easy', question: 'Parabola opens upward or downward based on sign of:', accept: ['a', 'leading coefficient'], placeholder: 'Term', explanation: '$a > 0$: up. $a < 0$: down.' },
     { difficulty: 'hard', question: 'Focus-directrix definition: parabola is the locus equidistant from:', accept: ['focus and directrix'], placeholder: 'What?', explanation: 'Parabola: distance to focus = distance to directrix.' },
-    { difficulty: 'easy', question: 'Standard form of quadratic: $ax^2 + bx + $ ?', accept: ['c'], placeholder: 'Term', explanation: '$ax^2 + bx + c$.' },
+    { difficulty: 'easy', question: 'Standard form of a quadratic is $ax^2 + bx + c$. What is the constant term?', accept: ['c'], placeholder: 'Term', explanation: '$ax^2 + bx + c$.' },
     { difficulty: 'hard', question: 'Sum of roots times product of roots: for $x^2 - 5x + 6$: $(-b/a)(c/a) =$?', accept: [30, '30'], placeholder: 'Number', explanation: 'Sum $= 5$, product $= 6$. $5 \\times 6 = 30$.' },
     { difficulty: 'easy', question: 'Zeros of $x^2 - 9$:', accept: ['3, -3', '3 and -3'], placeholder: 'Values', explanation: '$(x-3)(x+3) = 0$. $x = \\pm 3$.' },
     { difficulty: 'hard', question: 'Hyperbola vs ellipse: hyperbola has a _____ sign between terms.', accept: ['minus', 'negative'], placeholder: 'Sign', explanation: 'Ellipse: $+$. Hyperbola: $-$.' },
     { difficulty: 'medium', question: 'Product of roots of $x^2 + 3x - 10 = 0$:', accept: [-10, '-10'], placeholder: 'Number', explanation: 'Vieta: product = $c/a = -10$.' },
-    { difficulty: 'hard', question: 'Ellipse: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$. Foci at $x = \\pm$ ?', accept: ['c', 'sqrt(a^2-b^2)'], placeholder: 'Value', explanation: '$c = \\sqrt{a^2 - b^2}$.' },
+    { difficulty: 'hard', question: 'Ellipse: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$. Foci are at $x = \\pm c$. What is $c$?', accept: ['c', 'sqrt(a^2-b^2)'], placeholder: 'Value', explanation: '$c = \\sqrt{a^2 - b^2}$.' },
     { difficulty: 'medium', question: 'Vieta\'s: for $x^2 + bx + c = 0$, sum of roots $=$?', accept: ['-b', '-b/a'], placeholder: 'Formula', explanation: 'Sum $= -b/a$. (With $a=1$: sum $= -b$.)' },
     { difficulty: 'hard', question: 'Conic section: eccentricity $e = 0$:', accept: ['circle'], placeholder: 'Shape', explanation: 'Circle: $e = 0$. Ellipse: $0 < e < 1$. Parabola: $e = 1$. Hyperbola: $e > 1$.' },
     { difficulty: 'medium', question: 'Arithmetic series: $S_n = n(a_1 + a_n)/2$. For $a_1=1, a_{50}=99, n=50$:', accept: [2500, '2500'], placeholder: 'Sum', explanation: '$50(100)/2 = 2500$.' },
@@ -496,7 +496,7 @@
         stuckGuide: {
           html: `
             <div class="callout callout-tip">
-              <h4>🧠 Quadratic Strategy Selection</h4>
+              <h4> Quadratic Strategy Selection</h4>
               <ul>
                 <li><strong>Try factoring first</strong> if coefficients are small and the discriminant is a perfect square.</li>
                 <li><strong>Use completing the square</strong> when converting to vertex form or when the question specifically asks for it.</li>
@@ -524,13 +524,13 @@
           <p><strong>Why do logarithms exist?</strong> If $2^x = 8$, what is $x$? We need an operation that "undoes" exponentiation. That operation is the <strong>logarithm</strong>: $\\log_2(8) = 3$. Logarithms ask: "what exponent produces this result?" They are defined as the <strong>inverse function</strong> of $b^x$.</p>
           <p><strong>Practical application:</strong> The Richter earthquake scale, pH in chemistry, decibels in sound, and the number of binary digits needed to store $n$ items ($\\lceil\\log_2 n\\rceil$) all use logarithms. Interest compounding ($A = P(1 + r/n)^{nt}$) is pure exponential growth.</p>
           ${WHY('Why is $e \\approx 2.718$ special?', '<p>$e$ is the base where the exponential function equals its own derivative: $\\frac{d}{dx}e^x = e^x$. It emerges naturally from continuous compounding: $\\lim_{n \\to \\infty}(1 + 1/n)^n = e$. This means $e^x$ is the unique function that grows at a rate <strong>exactly proportional to its current value</strong>. No other base has this property.</p>')}
-          ${WHY('Why do log rules mirror exponent rules?', '<p>Every logarithm rule is a direct consequence of the corresponding exponent rule. $\\log(ab) = \\log a + \\log b$ because $b^{m+n} = b^m \\cdot b^n$. The product of exponentials becomes the sum of exponents. Since $\\log$ is the inverse of exponentiation, it converts multiplication back to addition. This is the historical reason logarithms were invented: to turn hard multiplication problems into easy addition problems (John Napier, 1614).</p>')}
+          ${WHY('Why do log rules mirror exponent rules?', '<p>Every logarithm rule is a direct consequence of the corresponding exponent rule. $\\log(ab) = \\log a + \\log b$ because $b^{m+n} = b^m \\cdot b^n$. The product of exponentials becomes the sum of exponents. Since $\\log$ is the inverse of exponentiation, it converts multiplication back to addition. This made logarithms valuable for computation before electronic calculators.</p>')}
         ` },
 
         hook: {
           html: `
             <div class="callout callout-puzzle">
-              <h4>🧩 Puzzle: The Rice on the Chessboard</h4>
+              <h4> Puzzle: The Rice on the Chessboard</h4>
               <p>A king offers a reward: 1 grain of rice on the first square of a chessboard, 2 on the second, 4 on the third, doubling each time. How many grains on the 64th square?</p>
               <p>Square 64 has $2^{63}$ grains. That is approximately $9.2 \\times 10^{18}$ grains, roughly 400 times the world's annual rice production. Exponential growth is deceptively powerful.</p>
             </div>
@@ -589,7 +589,7 @@
               </ul>
             </div>
             <div class="callout callout-notation">
-              <h4>📐 Common Notation</h4>
+              <h4> Common Notation</h4>
               <p>$\\log x$ (no base) typically means $\\log_{10} x$ in applied contexts. $\\ln x$ means $\\log_e x$ (natural logarithm, base $e \\approx 2.718$). In pure mathematics, $\\log$ often means $\\ln$. Context determines the convention.</p>
             </div>
           `
@@ -603,7 +603,7 @@
               { title: 'Express both sides with the same base', content: '$27 = 3^3$, so the equation becomes $3^{2x-1} = 3^3$', why: 'When both sides have the same base, the exponents must be equal. This is the most direct approach.' },
               { title: 'Set exponents equal', content: '$2x - 1 = 3$', why: 'If $b^a = b^c$ and $b \\gt 0$, $b \\neq 1$, then $a = c$. This is the one-to-one property of exponential functions.' },
               { title: 'Solve', content: '$2x = 4$, so $x = 2$', why: 'Standard linear equation solving.' },
-              { title: 'Verify', content: '$3^{2(2)-1} = 3^3 = 27$ ✓', why: 'Substitution confirms the solution.' }
+              { title: 'Verify', content: '$3^{2(2)-1} = 3^3 = 27$ ', why: 'Substitution confirms the solution.' }
             ]
           },
           {
@@ -677,7 +677,7 @@
     { difficulty: 'hard', question: 'Solve: $\\log_3(x - 1) = 2$. $x =$?', accept: [10, '10'], placeholder: 'Number', explanation: '$x - 1 = 3^2 = 9$. $x = 10$.' },
     { difficulty: 'medium', question: '$\\log_{10}(1000) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$10^3 = 1000$. So $\\log_{10}(1000) = 3$.' },
     { difficulty: 'easy', question: '$\\ln(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$e^0 = 1$, so $\\ln(1) = 0$.' },
-    { difficulty: 'hard', question: 'Change of base: $\\log_2(8) = \\frac{\\ln(8)}{\\ln($ ? $)}$', accept: [2, '2'], placeholder: 'Base', explanation: 'Change of base: $\\log_b a = \\frac{\\ln a}{\\ln b}$.' },
+    { difficulty: 'hard', question: 'Change of base: $\\log_2(8) = \\frac{\\ln(8)}{\\ln(2)}$. What base appears in the denominator?', accept: [2, '2'], placeholder: 'Base', explanation: 'Change of base: $\\log_b a = \\frac{\\ln a}{\\ln b}$.' },
     { difficulty: 'medium', question: '$e^{\\ln(5)} =$?', accept: [5, '5'], placeholder: 'Number', explanation: '$e$ and $\\ln$ are inverses. $e^{\\ln 5} = 5$.' },
     { difficulty: 'easy', question: '$\\log_2(1) =$?', accept: [0, '0'], placeholder: 'Number', explanation: '$2^0 = 1$. $\\log_2(1) = 0$.' },
     { difficulty: 'hard', question: '$\\ln(e^3) =$?', accept: [3, '3'], placeholder: 'Number', explanation: '$\\ln$ and $e$ are inverses: $\\ln(e^3) = 3$.' },
@@ -719,7 +719,7 @@
         ],
         fillBlanks: [
           { difficulty: 'easy', context: 'Log-exponential inverse:', expression: '$\\log_b(b^x) =$ {{0}} and $b^{\\log_b(x)} =$ {{1}}.', blanks: [ { accept: ['x'], size: 3 }, { accept: ['x'], size: 3 } ], explanation: 'Logs and exponentials are inverses.' },
-          { difficulty: 'medium', context: 'Change of base:', expression: '$\\log_b(x) = \\frac{\\ln x}{\\ln$ {{0}} $}$.', blanks: [ { accept: ['b'], size: 3 } ], explanation: 'Change of base formula.' }
+          { difficulty: 'medium', context: 'Change of base:', expression: '$\\log_b(x) = \\frac{\\ln x}{\\ln {{0}}}$.', blanks: [ { accept: ['b'], size: 3 } ], explanation: 'Change of base formula.' }
         ],
         multiPart: [
           { difficulty: 'hard', question: 'Solve $2^{2x} - 5 \\cdot 2^x + 4 = 0$.', parts: [
@@ -748,7 +748,7 @@
         stuckGuide: {
           html: `
             <div class="callout callout-tip">
-              <h4>🧠 Exponent/Log Problem Strategy</h4>
+              <h4> Exponent/Log Problem Strategy</h4>
               <ol>
                 <li><strong>Exponential equation:</strong> Try to express both sides with the same base. If impossible, take $\\log$ of both sides.</li>
                 <li><strong>Logarithmic equation:</strong> Combine logs using product/quotient rules, convert to exponential form, solve the resulting equation.</li>

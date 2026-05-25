@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 4: Precalculus : Functions & Graphs (4 topics)
-   Source: Precalculus (OpenStax/Stitz-Zeager), Thomas' Calculus Ch 1
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -29,7 +28,7 @@ topics: [
     <p>Calculus studies how functions change. Without a precise definition of "function," calculus cannot begin.</p>
     ${WHY('Formal definition', '<p>A function $f: A \\to B$ is a rule that assigns to each element $x \\in A$ exactly one element $f(x) \\in B$. The set $A$ is the <strong>domain</strong> (all valid inputs). The set $\\{f(x) : x \\in A\\}$ is the <strong>range</strong> (all actual outputs). The key requirement: one input, one output. Multiple inputs can give the same output (e.g., $f(x) = x^2$: $f(2) = f(-2) = 4$), but one input cannot give multiple outputs.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>🧩 Puzzle: The Vertical Line Test</h4>
+  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: The Vertical Line Test</h4>
     <p>Draw any curve on the coordinate plane. Sweep a vertical line across it. If any vertical line hits the curve more than once, the curve does NOT represent a function. Why? Because for that $x$-value, there would be two $y$-values (two outputs for one input).</p></div>` },
   formalDefinitions: [
       { term: 'Function', symbol: '$f: A \\to B$', definition: 'A rule that assigns to each element $x \\in A$ exactly one element $f(x) \\in B$. $A$ is the domain, $B$ is the codomain. The range is $\\{f(x) : x \\in A\\} \\subseteq B$.' },
@@ -174,7 +173,7 @@ topics: [
       { content: 'Distribute: $xy - x = y + 3$.' },
       { content: 'Collect $y$ terms: $xy - y = x + 3$.' },
       { content: '$y(x-1) = x+3$, so $y = \\frac{x+3}{x-1}$.' },
-      { content: '$f^{-1}(x) = \\frac{x+3}{x-1}$. This function IS its own inverse!' }
+      { content: '$f^{-1}(x) = \\frac{x+3}{x-1}$. This function is its own inverse.' }
     ], explanation: 'A function that equals its own inverse is called an involution: $f(f(x)) = x$.' }
   ],
   multiPart: [
@@ -187,7 +186,7 @@ topics: [
       { question: 'Vertex of the absolute value:', accept: ['(2,1)', '(2, 1)'], placeholder: 'Point', explanation: 'Vertex at $(h, k) = (2, 1)$.' },
       { question: 'Minimum value of $f$:', accept: [1, '1'], placeholder: 'Number', explanation: '$|x-2| \\geq 0$, so $f \\geq 1$.' }
     ], completionMessage: '$|x - h| + k$ has vertex $(h, k)$ and minimum value $k$.' }
-    ], completionMessage: 'Composition requires checking domains at each stage. $f \\circ g \\neq g \\circ f$ in general!' }
+    ], completionMessage: 'Composition requires checking domains at each stage. $f \\circ g \\neq g \\circ f$ in general.' }
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Complete the function evaluation steps:', expression: '$f(x) = 2x^2 - 3$. $f(4) = 2($ {{0}} $) - 3 =$ {{1}}', blanks: [ { accept: ['16'], size: 4 }, { accept: ['29'], size: 4 } ], explanation: '$f(4) = 2(16) - 3 = 32 - 3 = 29$.' },
@@ -207,7 +206,7 @@ topics: [
       { left: 'Inverse exists', right: 'Function is one-to-one' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Functions Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Functions Strategy</h4>
     <ol><li><strong>Domain:</strong> Start with all $\\mathbb{R}$, then SUBTRACT values that cause division by zero, negative square roots, or non-positive log arguments.</li>
     <li><strong>Composition:</strong> $(f \\circ g)(x) = f(g(x))$. INNER function first. Replace $x$ in $f$ with the entire expression $g(x)$.</li>
     <li><strong>Inverse:</strong> Swap $x$ and $y$ in $y = f(x)$, solve for $y$. Exists only if $f$ is one-to-one.</li></ol></div>` }
@@ -227,21 +226,51 @@ topics: [
     <p><strong>Why transformations?</strong> Instead of plotting hundreds of functions from scratch, master a few "parent" functions ($x^2$, $|x|$, $\\sqrt{x}$, $1/x$) and transform them. Four operations handle every modification: shift, stretch, compress, reflect.</p>
     ${WHY('Why does this work?', '<p>If $y = f(x)$ is a known graph, then $y = af(b(x-h)) + k$ modifies it systematically. The constants $a, b, h, k$ each do ONE thing to the graph. Understanding these four parameters lets you graph ANY transformation without plotting points.</p>')}
   ` },
+  background: {
+    title: 'Background and Use',
+    tabs: [
+      {
+        title: 'Historical Context',
+        content: '<p>Graph transformations depend on analytic geometry, which links equations with shapes on a coordinate plane. A parabola is no longer only a drawn curve; it is also the set of points satisfying an equation such as $y = x^2$.</p><p>Function notation made movement and scaling precise. The expression $f(x) + k$ changes every output after the function acts, so the graph moves vertically. The expression $f(x - h)$ changes the input before the function acts, so the graph moves horizontally.</p><p>This historical shift matters because it turns drawing into structure. A transformed graph can be read from its equation without plotting every point. The equation records how the parent graph has moved, stretched, compressed, or reflected.</p>'
+      },
+      {
+        title: 'How to Read It',
+        content: '<p>Outside changes affect output. In $f(x) + k$, every output increases by $k$, so the graph moves vertically. In $af(x)$, every output is multiplied by $a$, so vertical distances from the $x$-axis stretch or compress.</p><p>Inside changes affect input. In $f(x-h)$, the graph moves right by $h$ because the original input happens when $x-h$ reaches the old value. In $f(bx)$, features happen at smaller $x$-values when $b$ is larger than 1, so the graph compresses horizontally.</p>'
+      },
+      {
+        title: 'Practical Grounding',
+        content: '<p>Consider the height of a thrown ball. A simple parent model is $f(t) = -t^2$, which opens downward because gravity pulls the ball back toward the ground. This parent curve shows the shape of the motion, but it does not yet include launch height, launch strength, or launch time.</p><p>The model $h(t) = -2(t - 3)^2 + 18$ adds those details. The inside term $(t - 3)$ shifts the peak to $t = 3$, so the ball reaches its maximum height after 3 seconds. The outside coefficient $-2$ makes the parabola narrower and keeps it opening downward. The $+18$ sets the maximum height at 18 units.</p><p>The reading method is systematic. Start from the parent graph, identify inside changes, then identify outside changes. The vertex form $a(t-h)^2 + k$ gives the peak directly as $(h, k)$, and the sign of $a$ tells whether the parabola opens up or down.</p>'
+      }
+    ]
+  },
   concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 220" width="400" height="220" xmlns="http://www.w3.org/2000/svg">
-  <line x1="200" y1="10" x2="200" y2="210" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="20" y1="140" x2="380" y2="140" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 120 180 Q 160 100 200 140 Q 240 180 280 100" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
-  <text x="285" y="98" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">f(x)</text>
-  <path d="M 120 140 Q 160 60 200 100 Q 240 140 280 60" fill="none" stroke="#3b82f6" stroke-width="2"/>
-  <text x="285" y="58" fill="#3b82f6" font-size="10" font-family="Inter,sans-serif">f(x) + 2 ↑</text>
-  <path d="M 160 180 Q 200 100 240 140 Q 280 180 320 100" fill="none" stroke="#10b981" stroke-width="2"/>
-  <text x="325" y="98" fill="#10b981" font-size="10" font-family="Inter,sans-serif">f(x-1) →</text>
-  <path d="M 160 120 Q 180 160 200 140 Q 220 120 240 160" fill="none" stroke="#ef4444" stroke-width="2"/>
-  <text x="245" y="158" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">f(2x) compress</text>
-  <text x="200" y="20" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">+c shifts up, -h shifts right, �:a stretches</text>
+<svg viewBox="0 0 560 300" width="560" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="560" height="300" fill="transparent"/>
+  <line x1="260" y1="44" x2="260" y2="244" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="42" y1="164" x2="392" y2="164" stroke="#94a3b8" stroke-width="1"/>
+  <path d="M 95 216 Q 150 96 205 164 Q 260 224 330 102" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,5"/>
+  <path d="M 95 160 Q 150 40 205 108 Q 260 168 330 46" fill="none" stroke="#3b82f6" stroke-width="2.25"/>
+  <path d="M 150 216 Q 205 96 260 164 Q 315 224 385 102" fill="none" stroke="#10b981" stroke-width="2.25"/>
+  <path d="M 150 130 Q 178 196 205 164 Q 232 132 260 196" fill="none" stroke="#ef4444" stroke-width="2.25"/>
+
+  <g font-family="Inter,sans-serif" font-size="12">
+    <rect x="406" y="54" width="132" height="116" rx="6" fill="rgba(15,23,42,0.6)" stroke="#334155"/>
+    <line x1="418" y1="78" x2="444" y2="78" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,5"/>
+    <text x="452" y="82" fill="#cbd5e1">f(x)</text>
+    <line x1="418" y1="106" x2="444" y2="106" stroke="#3b82f6" stroke-width="2.25"/>
+    <text x="452" y="110" fill="#93c5fd">f(x) + k</text>
+    <line x1="418" y1="134" x2="444" y2="134" stroke="#10b981" stroke-width="2.25"/>
+    <text x="452" y="138" fill="#6ee7b7">f(x - h)</text>
+    <line x1="418" y1="158" x2="444" y2="158" stroke="#ef4444" stroke-width="2.25"/>
+    <text x="452" y="162" fill="#fca5a5">f(bx)</text>
+  </g>
+
+  <g font-family="Inter,sans-serif" font-size="12" fill="#e2e8f0">
+    <text x="42" y="268">Outside changes move or scale outputs.</text>
+    <text x="42" y="286">Inside changes move or scale inputs.</text>
+  </g>
 </svg>
 </div>
 <p class="math-diagram-label">Graph transformations: vertical shift f(x)+c, horizontal shift f(x-h), horizontal compress f(2x)</p>
@@ -256,8 +285,8 @@ topics: [
     <ul>
       <li><strong>Vertical shift:</strong> $y = f(x) + k$ moves UP $k$ units (down if $k \\lt 0$).</li>
       <li><strong>Horizontal shift:</strong> $y = f(x - h)$ moves RIGHT $h$ units (left if $h \\lt 0$).</li>
-      <li><strong>Vertical stretch/compress:</strong> $y = af(x)$. $|a| \\gt 1$ stretches, $0 < |a| \\lt 1$ compresses.</li>
-      <li><strong>Horizontal stretch/compress:</strong> $y = f(bx)$. $|b| \\gt 1$ compresses, $0 < |b| \\lt 1$ stretches.</li>
+      <li><strong>Vertical stretch/compress:</strong> $y = af(x)$. $|a| \\gt 1$ stretches, $0 \\lt |a| \\lt 1$ compresses.</li>
+      <li><strong>Horizontal stretch/compress:</strong> $y = f(bx)$. $|b| \\gt 1$ compresses, $0 \\lt |b| \\lt 1$ stretches.</li>
       <li><strong>Reflection over x-axis:</strong> $y = -f(x)$.</li>
       <li><strong>Reflection over y-axis:</strong> $y = f(-x)$.</li>
     </ul>
@@ -325,13 +354,13 @@ topics: [
       { content: 'Inside: $(x-3)$. Shift RIGHT 3 units.' },
       { content: 'Coefficient 2: Vertical STRETCH by factor 2 (steeper V).' },
       { content: 'Outside: $+1$. Shift UP 1 unit.' },
-      { content: 'Vertex: $(3, 1)$. No reflection (a \\gt 0).' },
+      { content: 'Vertex: $(3, 1)$. No reflection because $a > 0$.' }
+    ], explanation: 'Read transformations inside-to-outside: horizontal first, then vertical.' },
     { difficulty: 'hard', question: 'Find all zeros of $f(x) = x^3 - 3x^2 + 2x$.', steps: [
       { content: 'Factor out $x$: $x(x^2 - 3x + 2)$.' },
       { content: 'Factor quadratic: $x(x-1)(x-2)$.' },
       { content: 'Zeros: $x = 0, 1, 2$.' }
     ], explanation: 'Factor completely first. Each factor gives a zero.' }
-    ], explanation: 'Read transformations inside-to-outside: horizontal first, then vertical.' }
   ],
   fillBlanks: [
     { difficulty: 'easy', context: 'Complete the transformation rules:', expression: '$y = f(x) + k$ shifts the graph {{0}} by $k$ units. $y = f(x - h)$ shifts the graph {{1}} by $h$ units.', blanks: [ { accept: ['up', 'vertically up'], size: 6 }, { accept: ['right'], size: 6 } ], explanation: 'Vertical changes are outside $f$. Horizontal changes are inside, with opposite sign.' },
@@ -346,7 +375,7 @@ topics: [
       { left: '$3f(x)$', right: 'Vertical stretch by 3' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Transformations Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Transformations Strategy</h4>
     <ol><li><strong>Inside the function</strong> (affecting $x$): horizontal shifts and stretches. Signs are OPPOSITE what you expect.</li>
     <li><strong>Outside the function</strong> (affecting $y$): vertical shifts and stretches. Signs are as expected.</li>
     <li><strong>Order:</strong> Apply horizontal shifts/stretches first, then vertical.</li></ol></div>` }
@@ -431,7 +460,7 @@ topics: [
     { difficulty: 'easy', question: 'Exponential decay: base $b$ satisfies $0 < b <$ ?', accept: [1, '1'], placeholder: 'Value', explanation: '$0 < b < 1$: exponential decay.' },
     { difficulty: 'hard', question: 'Logistic growth: $P(t) = \\frac{L}{1 + Ae^{-kt}}$. $L$ represents:', accept: ['carrying capacity', 'max population'], placeholder: 'What?', explanation: '$L$: carrying capacity (upper bound on growth).' },
     { difficulty: 'easy', question: 'Decay rate 3%: multiplier is:', accept: ['0.97'], placeholder: 'Number', explanation: '$1 - 0.03 = 0.97$.' },
-    { difficulty: 'hard', question: 'Change of base: $\\log_a b = \\frac{\\ln b}{\\ln$ ?$}$', accept: ['a'], placeholder: 'Base', explanation: '$\\log_a b = \\frac{\\ln b}{\\ln a}$.' },
+    { difficulty: 'hard', question: 'Change of base: $\\log_a b = \\frac{\\ln b}{\\ln a}$. What base appears in the denominator?', accept: ['a'], placeholder: 'Base', explanation: '$\\log_a b = \\frac{\\ln b}{\\ln a}$.' },
     { difficulty: 'medium', question: '$\\log(x/y) = \\log x - \\log$ ?', accept: ['y', 'log y'], placeholder: 'Term', explanation: 'Quotient rule: $\\log(x/y) = \\log x - \\log y$.' },
     { difficulty: 'hard', question: 'Solve: $3^{2x} = 27$. $x =$?', accept: ['3/2', '1.5'], placeholder: 'Number', explanation: '$3^{2x} = 3^3$. $2x = 3$. $x = 3/2$.' },
     { difficulty: 'medium', question: 'Compound interest: $A = P(1 + r/n)^{nt}$. As $n \\to \\infty$:', accept: ['A = Pe^(rt)', 'continuous compounding'], placeholder: 'Limit', explanation: '$\\lim_{n \\to \\infty} P(1+r/n)^{nt} = Pe^{rt}$.' },
@@ -445,7 +474,7 @@ topics: [
       { left: 'Inverse', right: '$\\log_a(a^x) = x$' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Exp/Log Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Exp/Log Strategy</h4>
     <ol><li><strong>Convert:</strong> $\\log_a(x) = y \\iff a^y = x$. Switch between forms as needed.</li>
     <li><strong>Same base:</strong> $a^m = a^n \\Rightarrow m = n$.</li>
     <li><strong>Log properties</strong> convert products/quotients/powers to sums/differences/multiples.</li>
@@ -580,7 +609,7 @@ topics: [
       { left: 'Odd degree, $a_n \\lt 0$', right: 'Left up, right down' }
     ] }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Graph Analysis Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Graph Analysis Strategy</h4>
     <ol><li><strong>End behavior:</strong> Look at leading term only.</li>
     <li><strong>Zeros:</strong> Factor, set = 0. Check multiplicity for cross vs. bounce.</li>
     <li><strong>Asymptotes:</strong> Vertical from denominator zeros (after cancellation). Horizontal from degree comparison.</li>

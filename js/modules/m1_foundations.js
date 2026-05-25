@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 1: Mathematical Foundations (5 topics, 30 exercises)
-   Sources: Foundational Math, Velleman, Margaris
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -151,7 +150,7 @@ topics: [
       { question: 'Is $0.333...$ rational?', accept: ['yes'], placeholder: 'yes/no', explanation: '$0.\\overline{3} = 1/3 \\in \\mathbb{Q}$.' },
       { question: 'Is $\\pi$ rational?', accept: ['no'], placeholder: 'yes/no', explanation: '$\\pi$ is irrational.' }
     ], completionMessage: 'Integers $\\subset$ Rationals $\\subset$ Reals.' }
-    ], completionMessage: 'Inclusion-exclusion mastered! This technique extends to 3+ sets.' }
+    ], completionMessage: 'Inclusion-exclusion extends to 3 or more sets.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>Set Theory Strategy</h4>
     <ol><li>$\\cup$ = OR (combine). $\\cap$ = AND (overlap). Complement = NOT.</li>
@@ -191,7 +190,7 @@ topics: [
     ],
     background: {
       title: 'Where Do Numbers Come From?',
-      content: '<p>Humans invented counting before writing. Tally marks on bones date to 30,000 BCE. The concept of <strong>zero</strong> as a number (not just a placeholder) was independently discovered by Babylonians, Mayans, and Indians. The Indian mathematician <strong>Brahmagupta</strong> (628 CE) was the first to formalize rules for zero: any number plus zero equals itself, any number times zero equals zero.</p><p><strong>Negative numbers</strong> were resisted in Europe for centuries. As late as the 1700s, mathematicians called them "absurd" or "fictitious." Today, they are essential: bank balances, temperatures below zero, and debts all require negative numbers.</p><p><strong>Irrational numbers</strong> were discovered by the Pythagoreans around 500 BCE when they proved $\\sqrt{2}$ cannot be written as a fraction. This discovery reportedly caused a crisis in their philosophy, since they believed all reality was built from whole-number ratios.</p>'
+      content: '<p>Counting developed before formal symbolic mathematics because people needed to track objects, time, distance, and exchange. Number systems expanded whenever an existing system could not represent a needed quantity.</p><p><strong>Zero</strong> gives place value and represents the size of an empty collection. <strong>Negative numbers</strong> represent directed quantities such as debt, temperature below a reference point, and movement in the opposite direction. <strong>Irrational numbers</strong> show that some exact lengths, such as $\\sqrt{2}$, cannot be written as ratios of integers.</p><p>The sequence of number systems is practical before it is abstract: natural numbers count, integers allow subtraction, rationals allow division, reals fill continuous measurement, and complex numbers solve polynomial equations that real numbers cannot solve.</p>'
     },
     mathGrammar: [
       { question: 'What does the symbol "$\\in$" mean?', answer: '"Is an element of." When we write $3 \\in \\mathbb{Z}$, we are saying "3 belongs to the set of integers." Think of it as saying this thing lives inside this group.' },
@@ -243,8 +242,8 @@ topics: [
     </ul>
     ${WHY('Why do these matter?', '<p>Every algebraic manipulation you perform (adding to both sides, factoring, distributing) is justified by one of these axioms. They are the "rules of the game" for algebra. Any system satisfying all these axioms is called a <strong>field</strong>.</p>')}</div>
   
-    ${WHY('Why was zero invented?', '<p>The concept of "nothing" as a number was revolutionary. Indian mathematicians (Brahmagupta, 7th century) first treated zero as a number with its own arithmetic rules: a + 0 = a, a * 0 = 0. Without zero, we have no place-value system: 103 would be ambiguous (is it 13? 130?).</p>')}
-    ${WHY('Why do we need complex numbers?', '<p>x^2 + 1 = 0 has no real solution (no real number squared gives -1). Define i = sqrt(-1). Now x = i and x = -i are solutions. Complex numbers complete algebra: EVERY polynomial of degree n has exactly n complex roots (Fundamental Theorem of Algebra).</p>')}` },
+    ${WHY('Why was zero invented?', '<p>Zero records an empty amount and protects place value. Without zero, the numerals 13, 103, and 130 would be much harder to distinguish in positional notation. Arithmetic rules such as $a + 0 = a$ and $a \\cdot 0 = 0$ make zero behave as a number rather than a blank mark.</p>')}
+    ${WHY('Why do we need complex numbers?', '<p>$x^2 + 1 = 0$ has no real solution because no real number squared gives $-1$. Define $i = \\sqrt{-1}$. Now $x = i$ and $x = -i$ are solutions. Complex numbers complete algebra: every polynomial of degree $n$ has exactly $n$ complex roots when multiplicity is counted.</p>')}` },
   definition: { html: `<p><strong>Field:</strong> A set with two operations (+, $\\cdot$) satisfying commutativity, associativity, distributivity, identity, and inverse axioms.</p>` },
   examples: [{
     title: 'Classifying Numbers',
@@ -281,7 +280,7 @@ topics: [
     { difficulty: 'hard', question: 'The set $\\mathbb{Q}$ is closed under which operation?', options: ['Square root', 'Addition', 'Both', 'Neither'], correctIndex: 1, hint: '<p>Is the sum of two rationals always rational? Is $\\sqrt{p/q}$ always rational?</p>', correctExplanation: '$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd} \\in \\mathbb{Q}$. But $\\sqrt{1/2} = \\frac{1}{\\sqrt{2}}$ is irrational. Closed under addition, not square root.', wrongExplanations: { 0: '$\\sqrt{2/1} = \\sqrt{2}$ is irrational. Not closed under square root.', 2: 'Only addition (and subtraction, multiplication, division by nonzero).', 3: 'Addition IS closed: sum of two rationals is always rational.' } }
   ],
   freeResponse: [
-    { difficulty: 'easy', question: 'What is the additive inverse of $-7$?', accept: [7, '7'], placeholder: 'Enter a number', hint: '<p>The additive inverse of $a$ is $-a$, the number that gives 0 when added to $a$.</p>', explanation: '$-7 + 7 = 0$, so the additive inverse of $-7$ is $7$.', solution: '$-(-7) = 7$. Verify: $-7 + 7 = 0$. ✓' },
+    { difficulty: 'easy', question: 'What is the additive inverse of $-7$?', accept: [7, '7'], placeholder: 'Enter a number', hint: '<p>The additive inverse of $a$ is $-a$, the number that gives 0 when added to $a$.</p>', explanation: '$-7 + 7 = 0$, so the additive inverse of $-7$ is $7$.', solution: '$-(-7) = 7$. Verify: $-7 + 7 = 0$. ' },
     { difficulty: 'easy', question: 'What is the multiplicative identity?', accept: [1, '1'], placeholder: 'Enter a number', explanation: '$a \\cdot 1 = a$ for all $a$.' },
     { difficulty: 'medium', question: 'Simplify using the distributive property: $5(x + 3) - 2x$', accept: ['3x+15', '3x + 15'], placeholder: 'e.g. 3x+15', inputHelp: 'Write as ax+b', hint: '<p>Distribute: $5 \\cdot x + 5 \\cdot 3 = 5x + 15$. Then subtract $2x$.</p>', explanation: '$5x + 15 - 2x = 3x + 15$.', solution: '$5(x+3) - 2x = 5x + 15 - 2x = 3x + 15$' },
     { difficulty: 'medium', question: 'Is $\\sqrt{9}$ rational or irrational? Type "rational" or "irrational".', accept: ['rational'], placeholder: 'rational or irrational', explanation: '$\\sqrt{9} = 3$, which is an integer and therefore rational.' },
@@ -339,7 +338,7 @@ topics: [
       { question: 'Is the numerator $ad + bc$ an integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: 'Products and sums of integers are integers.' },
       { question: 'Is the denominator $bd$ a nonzero integer? (yes/no)', accept: ['yes'], placeholder: 'yes or no', explanation: '$b \\neq 0$ and $d \\neq 0$ implies $bd \\neq 0$.' },
       { question: 'Therefore $r_1 + r_2$ is in which number set? (Type the symbol letter)', accept: ['Q', 'ℚ'], placeholder: 'Q', explanation: 'The sum is a ratio of integers with nonzero denominator, so it is in $\\mathbb{Q}$.' }
-    ], completionMessage: 'You just constructed a complete closure proof for rational addition!' }
+    ], completionMessage: 'The steps form a complete closure proof for rational addition.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>Number Systems Strategy</h4>
     <ol><li><strong>Classification:</strong> Can it be written as $p/q$? Yes = rational. No = irrational.</li>
@@ -380,8 +379,8 @@ topics: [
     <ul>
       <li><strong>Addition (+):</strong> Combining quantities. $3 + 5 = 8$. <em>Commutative</em>: $a + b = b + a$. <em>Associative</em>: $(a + b) + c = a + (b + c)$. Identity: $a + 0 = a$.</li>
       <li><strong>Subtraction (-):</strong> Finding the difference. $8 - 3 = 5$. Subtraction is <em>adding the opposite</em>: $a - b = a + (-b)$. NOT commutative: $3 - 5 \\neq 5 - 3$.</li>
-      <li><strong>Multiplication (\\times):</strong> Repeated addition. $4 \\times 3 = 3 + 3 + 3 + 3 = 12$. Commutative: $a \\times b = b \\times a$. Identity: $a \\times 1 = a$. Zero property: $a \\times 0 = 0$.</li>
-      <li><strong>Division (\\div):</strong> Splitting into equal groups. $12 \\div 4 = 3$ means 12 split into 4 equal groups of 3. Division is <em>multiplication by the reciprocal</em>: $a \\div b = a \\times \\frac{1}{b}$.</li>
+      <li><strong>Multiplication ($\\times$):</strong> Repeated addition. $4 \\times 3 = 3 + 3 + 3 + 3 = 12$. Commutative: $a \\times b = b \\times a$. Identity: $a \\times 1 = a$. Zero property: $a \\times 0 = 0$.</li>
+      <li><strong>Division ($\\div$):</strong> Splitting into equal groups. $12 \\div 4 = 3$ means 12 split into 4 equal groups of 3. Division is <em>multiplication by the reciprocal</em>: $a \\div b = a \\times \\frac{1}{b}$.</li>
     </ul>
     ${WHY('Why is division by zero undefined?', '<p>If $6 \\div 0 = x$, then $0 \\times x = 6$. No number $x$ satisfies this (any number times 0 equals 0, never 6). The equation has no solution, so division by zero is undefined. It is not "infinity": $0 \\times \\infty$ is also undefined.</p>')}</div>
 

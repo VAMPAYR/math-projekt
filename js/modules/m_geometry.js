@@ -1,7 +1,6 @@
 /* ============================================================
    MODULE: Geometry
    Basic shapes, triangles, circles, area/volume, coordinate geometry
-   Source: Precalculus (Stewart) geometry chapters
    ============================================================ */
 (function() {
   if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -24,14 +23,14 @@
         { term: 'Measurement', definition: 'Assigning a number to a physical quantity (length, angle).' }
       ],
       whyExists: { html: `
-        <p><strong>Why study geometry?</strong> Geometry is the oldest branch of mathematics. It originated from the practical need to measure land (geo = earth, metron = measurement). The Egyptian surveyors who rebuilt property boundaries after Nile floods were doing geometry.</p>
-        <p><strong>Why start with points, lines, and angles?</strong> Euclid (300 BC) built ALL of geometry from just five axioms (postulates) and three undefined terms: <strong>point</strong>, <strong>line</strong>, and <strong>plane</strong>. Every geometric fact follows logically from these starting assumptions. This makes geometry the first fully <strong>axiomatic</strong> system in human history.</p>
+        <p><strong>Why study geometry?</strong> Geometry grew from the practical need to measure land, build structures, and describe space. A geometric statement turns a shape into precise claims about distance, angle, area, and position.</p>
+        <p><strong>Why start with points, lines, and angles?</strong> Classical Euclidean geometry begins from undefined terms and postulates. Every later result depends on those starting assumptions. This makes geometry a direct introduction to axiomatic reasoning.</p>
         <p><strong>Practical application:</strong> Architecture, engineering drawings, surveying, computer graphics, robotics path planning, and GPS triangulation all depend on geometric principles.</p>
         ${WHY('What are Euclid\'s five postulates?', '<p>1. A line segment can be drawn between any two points. 2. A line segment can be extended infinitely. 3. A circle can be drawn with any center and radius. 4. All right angles are equal. 5. (Parallel Postulate) Through a point not on a line, exactly one parallel line exists. The fifth postulate is special: denying it produces non-Euclidean geometry (used in Einstein\'s General Relativity).</p>')}
       ` },
       hook: { html: `
-        <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Angles in a Triangle</h4>
-        <p>Draw any triangle. Measure all three angles. Add them up. You always get $180°$. Why? Tear the three corners off a paper triangle and arrange them along a straight line. They fit perfectly. A straight line is $180°$, and the three angles of a triangle reconstruct exactly one straight line.</p></div>` },
+        <div class="callout callout-puzzle"><h4> Puzzle: The Angles in a Triangle</h4>
+        <p>Draw any triangle. Measure all three angles. Add them up. The sum is $180^\\circ$ in Euclidean geometry. Tear the three corners off a paper triangle and arrange them along a straight line. They fit because a straight line measures $180^\\circ$.</p></div>` },
       formalDefinitions: [
       { term: 'Point', symbol: '', definition: 'A location in space with no dimension (no length, width, or height). Represented by a dot and named with a capital letter.' },
       { term: 'Line', symbol: '$\\overleftrightarrow{AB}$', definition: 'A straight path extending infinitely in both directions. Defined by any two distinct points. Has one dimension (length only).' },
@@ -40,8 +39,8 @@
       { term: 'Perpendicular Lines', symbol: '$\\ell_1 \\perp \\ell_2$', definition: 'Lines that intersect at a $90^\\circ$ angle. The product of their slopes is $-1$: $m_1 \\cdot m_2 = -1$.' }
     ],
     background: {
-      title: 'Why Geometry? Measuring the Earth',
-      content: '<p>The word <strong>geometry</strong> comes from Greek: <em>geo</em> (earth) + <em>metron</em> (measure). It literally means "measuring the earth." Egyptians needed it to re-survey farmland after the Nile flooded every year.</p><p><strong>Euclid\'s Elements</strong> (300 BCE) organized geometry into axioms, definitions, and proofs. It remained the standard textbook for over 2,000 years. The axiomatic method Euclid used (start with obvious truths, derive everything else) became the model for all of mathematics.</p><p><strong>Why angles are measured in degrees:</strong> The Babylonians used a base-60 number system. Since 360 is close to 365 (days in a year) and divisible by 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, and 180, they chose $360^\\circ$ for a full rotation. This convention persists today.</p>'
+      title: 'Why Geometry? Measuring Space',
+      content: '<p>The word <strong>geometry</strong> comes from Greek roots associated with earth and measurement. The subject formalizes practical measurement into definitions, diagrams, and proofs.</p><p>Classical Euclidean geometry organized spatial reasoning through axioms, definitions, and theorems. That structure still matters because it shows how a small set of assumptions can generate many reliable conclusions.</p><p><strong>Why angles are measured in degrees:</strong> A full rotation is divided into $360^\\circ$. This convention is useful because 360 has many divisors, so common fractions of a turn have whole-number degree measures.</p>'
     },
     mathGrammar: [
       { question: 'Why do angles in a triangle always add to $180^\\circ$?', answer: 'Draw a triangle and extend one side. The exterior angle plus the interior angle form a straight line ($180^\\circ$). Now use the fact that alternate interior angles (from parallel lines) are equal. This forces the three interior angles to sum to exactly $180^\\circ$.' },
@@ -77,7 +76,7 @@
   <text x="400" y="75" fill="#ef4444" font-size="10" text-anchor="middle" font-family="Inter">180°</text>
 </svg>
 </div>
-<p class="math-diagram-label">Angle classification: acute (0°–90°), right (90°), obtuse (90°–180°), straight (180°)</p>
+<p class="math-diagram-label">Angle classification: acute (0°-90°), right (90°), obtuse (90°-180°), straight (180°)</p>
 
         <div class="callout callout-key"><h4>Undefined Terms</h4>
         <p><strong>Point:</strong> A location with no size. Represented by a dot, labeled with a capital letter ($A$, $B$, $C$).</p>
@@ -116,7 +115,7 @@
           { title: 'Set up variables', content: 'Let $x$ = smaller angle. Then larger angle = $2x + 35$.', why: 'Translate "35 more than twice" into algebra.' },
           { title: 'Use supplementary relationship', content: '$x + (2x + 35) = 180$', why: 'Supplementary angles sum to $180°$. This is the definition.' },
           { title: 'Solve', content: '$3x + 35 = 180 \\Rightarrow 3x = 145 \\Rightarrow x = 48.\\overline{3}°$', why: 'Standard linear equation solving.' },
-          { title: 'Find both', content: 'Smaller = $48.\\overline{3}°$, Larger = $2(48.\\overline{3}) + 35 = 131.\\overline{6}°$. Check: $48.\\overline{3} + 131.\\overline{6} = 180°$ ✓', why: 'Always verify the constraint is satisfied.' }
+          { title: 'Find both', content: 'Smaller = $48.\\overline{3}°$, Larger = $2(48.\\overline{3}) + 35 = 131.\\overline{6}°$. Check: $48.\\overline{3} + 131.\\overline{6} = 180°$ ', why: 'Always verify the constraint is satisfied.' }
         ]
       },
       {
@@ -126,11 +125,11 @@
           { title: 'Identify relationship', content: 'Co-interior (same-side interior) angles between parallel lines are supplementary.', why: 'This follows from the Parallel Postulate: corresponding angles are equal, and adjacent angles on a straight line sum to $180°$.' },
           { title: 'Set up equation', content: '$(3x + 10) + (2x + 20) = 180$', why: 'Co-interior angles sum to $180°$.' },
           { title: 'Solve', content: '$5x + 30 = 180 \\Rightarrow 5x = 150 \\Rightarrow x = 30$', why: 'Combine like terms, subtract 30, divide by 5.' },
-          { title: 'Find angles', content: '$3(30) + 10 = 100°$ and $2(30) + 20 = 80°$. Check: $100 + 80 = 180°$ ✓', why: 'Verification confirms the parallel-line property holds.' }
+          { title: 'Find angles', content: '$3(30) + 10 = 100°$ and $2(30) + 20 = 80°$. Check: $100 + 80 = 180°$ ', why: 'Verification confirms the parallel-line property holds.' }
         ]
       }],
       flashCards: [
-      { type: 'define', front: 'What is a point?', back: 'An exact location with no size. One of Euclid’s three undefined terms. Named with a capital letter like A or P.' },
+      { type: 'define', front: 'What is a point?', back: 'An exact location with no size. One of the undefined terms in Euclidean geometry. Named with a capital letter like A or P.' },
       { type: 'why', front: 'Why do triangle angles sum to 180 degrees?', back: 'Tear corners off a paper triangle, arrange along a line. They fit perfectly. A line = 180 degrees.' },
       { type: 'define', front: 'Acute vs Right vs Obtuse?', back: 'Acute: less than 90 degrees. Right: exactly 90. Obtuse: between 90 and 180. Straight: exactly 180.' },
       { type: 'how', front: 'Find a missing triangle angle?', back: 'Three angles sum to 180. Subtract known angles: 180 - 50 - 70 = 60 degrees.' }
@@ -237,7 +236,7 @@
     { difficulty: 'easy', context: 'Supplementary angles:', expression: 'Two angles are supplementary if they add up to {{0}}$°$.', blanks: [ { accept: ['180'], size: 4 } ], explanation: 'Supplementary: sum = $180°$.' },
     { difficulty: 'easy', context: 'Complementary angles:', expression: 'Two angles are complementary if they add up to {{0}}$°$.', blanks: [ { accept: ['90'], size: 4 } ], explanation: 'Complementary: sum = $90°$.' }
   ],
-      stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Angle Problem Strategy</h4><ol><li><strong>Identify the relationship:</strong> complementary ($90°$), supplementary ($180°$), vertical (equal), or parallel-line property.</li><li><strong>Set up an equation</strong> using that relationship.</li><li><strong>Solve</strong> and verify.</li></ol></div>` }
+      stuckGuide: { html: `<div class="callout callout-tip"><h4> Angle Problem Strategy</h4><ol><li><strong>Identify the relationship:</strong> complementary ($90°$), supplementary ($180°$), vertical (equal), or parallel-line property.</li><li><strong>Set up an equation</strong> using that relationship.</li><li><strong>Solve</strong> and verify.</li></ol></div>` }
     },
 
     /* ============ TOPIC 2: Triangles ============ */
@@ -256,7 +255,7 @@
         ${WHY('Why does the triangle angle sum equal $180°$?', '<p>Draw line $\\\\ell$ through one vertex, parallel to the opposite side. The angles formed at the vertex include the triangle\'s top angle plus two alternate interior angles (from the parallel line). These alternate interior angles equal the triangle\'s base angles (by the Parallel Postulate). The three angles together form a straight line ($180°$). Therefore the triangle\'s angles sum to $180°$.</p>')}
       ` },
       hook: { html: `
-        <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Pythagorean Proof</h4>
+        <div class="callout callout-puzzle"><h4> Puzzle: The Pythagorean Proof</h4>
         <p>Draw a right triangle with legs $3$ and $4$. Build a square on each side. The squares have areas $9$, $16$, and $25$. Notice: $9 + 16 = 25$. The area of the square on the hypotenuse equals the sum of the areas on the legs. This works for ANY right triangle.</p></div>` },
       formalDefinitions: [
       { term: 'Triangle', symbol: '$\\triangle ABC$', definition: 'A polygon with three sides and three angles. The sum of interior angles is always $180^\\circ$.' },
@@ -278,7 +277,7 @@
   <rect x="10" y="20" width="80" height="80" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1" transform="translate(0,0)"/>
   <text x="10" y="65" fill="#10b981" font-size="10" font-family="Inter">b²=16</text>
   <text x="280" y="60" fill="#e2e8f0" font-size="16" font-family="Inter" font-weight="600">a² + b² = c²</text>
-  <text x="280" y="85" fill="#94a3b8" font-size="13" font-family="Inter">9 + 16 = 25 ✓</text>
+  <text x="280" y="85" fill="#94a3b8" font-size="13" font-family="Inter">9 + 16 = 25 </text>
   <text x="280" y="120" fill="#f59e0b" font-size="13" font-family="Inter">The area of the square</text>
   <text x="280" y="140" fill="#f59e0b" font-size="13" font-family="Inter">on the hypotenuse (c²)</text>
   <text x="280" y="160" fill="#f59e0b" font-size="13" font-family="Inter">equals the sum of the</text>
@@ -359,7 +358,7 @@
       type: 'mc',
       options: ['Yes, because 6^2 + 8^2 = 10^2', 'No, because the sides are not equal', 'Yes, because all sides are even', 'Cannot determine'],
       correctIndex: 0,
-      solution: { steps: ['Check Pythagorean theorem: 36 + 64 = 100.', '10^2 = 100. True!', 'It is a right triangle with hypotenuse 10.'] }
+      solution: { steps: ['Check Pythagorean theorem: 36 + 64 = 100.', '10^2 = 100, so the equation holds.', 'It is a right triangle with hypotenuse 10.'] }
     }
     ],
     matching: [
@@ -402,7 +401,7 @@
     { difficulty: 'easy', question: 'Median of a triangle connects a vertex to the _____ of the opposite side.', accept: ['midpoint'], placeholder: 'Point', explanation: 'Median: vertex to midpoint of opposite side.' },
     { difficulty: 'hard', question: 'Orthocenter: intersection of:', accept: ['altitudes'], placeholder: 'What?', explanation: 'Orthocenter: intersection of the three altitudes.' },
     { difficulty: 'easy', question: '45-45-90 triangle: legs are equal and hypotenuse is leg $\\times$?', accept: ['sqrt(2)', '\\sqrt{2}', '1.414'], placeholder: 'Factor', explanation: 'Hypotenuse = leg $\\times \\sqrt{2}$.' },
-    { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{$ ? $}$', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' },
+    { difficulty: 'hard', question: 'Altitude of equilateral triangle with side $s$: $h = \\frac{s\\sqrt{3}}{2}$. What denominator appears in the formula?', accept: [2, '2'], placeholder: 'Number', explanation: '$h = \\frac{s\\sqrt{3}}{2}$.' },
     { difficulty: 'easy', question: '30-60-90 triangle: side ratios are $1 : \\sqrt{3} : $ ?', accept: [2, '2'], placeholder: 'Number', explanation: 'Short : medium : hypotenuse = $1 : \\sqrt{3} : 2$.' },
     { difficulty: 'hard', question: 'Ceva\'s theorem: concurrent cevians satisfy $\\frac{AF}{FB} \\cdot \\frac{BD}{DC} \\cdot \\frac{CE}{EA} =$?', accept: [1, '1'], placeholder: 'Value', explanation: 'Ceva: product of ratios along concurrent cevians = 1.' },
     { difficulty: 'easy', question: 'Equilateral triangle: all sides equal and all angles:', accept: [60, '60'], placeholder: 'Degrees', explanation: '$60°$ each ($180°/3$).' },
@@ -425,7 +424,7 @@
     { difficulty: 'easy', context: 'Sum of angles in a triangle:', expression: 'The sum of angles in a triangle is {{0}}$°$.', blanks: [ { accept: ['180'], size: 4 } ], explanation: '$180°$ always.' },
     { difficulty: 'medium', context: 'Isosceles triangle:', expression: 'An isosceles triangle has {{0}} equal sides.', blanks: [ { accept: ['2', 'two'], size: 4 } ], explanation: 'Isosceles: 2 equal sides and 2 equal base angles.' }
   ],
-      stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Triangle Strategy</h4><ol><li><strong>Right triangle?</strong> Use Pythagorean theorem.</li><li><strong>Congruence?</strong> Check SSS, SAS, ASA, or AAS.</li><li><strong>Similarity?</strong> Check AA (two equal angles) or proportional sides.</li><li><strong>Area?</strong> $A = \\frac{1}{2}bh$ or Heron's formula.</li></ol></div>` }
+      stuckGuide: { html: `<div class="callout callout-tip"><h4> Triangle Strategy</h4><ol><li><strong>Right triangle?</strong> Use Pythagorean theorem.</li><li><strong>Congruence?</strong> Check SSS, SAS, ASA, or AAS.</li><li><strong>Similarity?</strong> Check AA (two equal angles) or proportional sides.</li><li><strong>Area?</strong> $A = \\frac{1}{2}bh$ or Heron's formula.</li></ol></div>` }
     },
 
     /* ============ TOPIC 3: Circles ============ */
@@ -441,10 +440,10 @@
         <p><strong>Why is $\\pi$ what it is?</strong> Take ANY circle. Divide its circumference by its diameter. You always get $\\pi \\approx 3.14159$. This is a geometric constant: it does not depend on the circle\'s size. $\\pi$ encodes the relationship between straight-line distance (diameter) and curved distance (circumference).</p>
         <p><strong>Why is the area $\\pi r^2$?</strong> Imagine cutting a circle into many thin wedges and rearranging them into an approximate rectangle. The rectangle\'s width is $\\pi r$ (half the circumference) and height is $r$. Area = $\\pi r \\times r = \\pi r^2$. As the number of wedges approaches infinity, this becomes exact.</p>
         <p><strong>Practical application:</strong> Wheels, gears, pipes, lenses, satellite orbits, clock design, percentage pie charts, and the design of any round object.</p>
-        ${WHY('Why is $\\pi$ irrational?', '<p>$\\pi$ cannot be expressed as a fraction $p/q$ (proven by Johann Lambert, 1761). Its decimal expansion never terminates or repeats. It is also <strong>transcendental</strong>: it is not a root of any polynomial with integer coefficients (proven by Lindemann, 1882). This means squaring the circle (constructing a square with the same area as a given circle using only compass and straightedge) is provably impossible.</p>')}
+        ${WHY('Why is $\\pi$ irrational?', '<p>$\\pi$ cannot be expressed as a fraction $p/q$. Its decimal expansion never terminates or repeats. It is also <strong>transcendental</strong>: it is not a root of any polynomial with integer coefficients. This is why squaring the circle with only compass and straightedge is impossible.</p>')}
       ` },
       hook: { html: `
-        <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Bicycle Odometer</h4>
+        <div class="callout callout-puzzle"><h4> Puzzle: The Bicycle Odometer</h4>
         <p>A bicycle wheel has diameter 70 cm. After one full rotation, how far has the bike traveled? Exactly one circumference: $C = \\pi d = 70\\pi \\approx 219.9$ cm. Odometers count rotations and multiply by circumference. That is circle geometry in action.</p></div>` },
       concept: { html: `
 
@@ -476,7 +475,7 @@
           <li><strong>Arc Length:</strong> $s = r\\theta$ (where $\\theta$ is in radians)</li>
           <li><strong>Sector Area:</strong> $A = \\frac{1}{2}r^2\\theta$ (where $\\theta$ is in radians)</li>
         </ul>
-        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction �: circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
+        ${WHY('Why $s = r\\theta$?', '<p>A full circle has arc length $2\\pi r$ and angle $2\\pi$ radians. The fraction of the circle swept by angle $\\theta$ is $\\theta / (2\\pi)$. Arc length = fraction times circumference = $\\frac{\\theta}{2\\pi} \\cdot 2\\pi r = r\\theta$. This formula is <em>the reason</em> radians are used in mathematics: it makes the relationship between angle and arc length maximally simple.</p>')}</div>
 
         <div class="callout callout-key"><h4>Circle Equation (Coordinate Geometry)</h4>
         <p><strong>Standard form:</strong> $(x - h)^2 + (y - k)^2 = r^2$ with center $(h, k)$ and radius $r$.</p>
@@ -592,7 +591,7 @@
     { difficulty: 'easy', context: 'Area of rectangle:', expression: '$A =$ {{0}} $\\times w$', blanks: [ { accept: ['l', 'L', 'length'], size: 6 } ], explanation: 'Area = length times width.' },
     { difficulty: 'medium', context: 'Pythagorean theorem:', expression: '$a^2 + b^2 =$ {{0}} $^2$', blanks: [ { accept: ['c', 'C'], size: 3 } ], explanation: '$a^2 + b^2 = c^2$.' }
   ],
-      stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Circle Strategy</h4><ol><li>Identify what you know: radius, diameter, angle, arc, area?</li><li>Convert angles to radians if using $s = r\\theta$ or $A = \\frac{1}{2}r^2\\theta$.</li><li>Use the appropriate formula and solve for the unknown.</li></ol></div>` }
+      stuckGuide: { html: `<div class="callout callout-tip"><h4> Circle Strategy</h4><ol><li>Identify what you know: radius, diameter, angle, arc, area?</li><li>Convert angles to radians if using $s = r\\theta$ or $A = \\frac{1}{2}r^2\\theta$.</li><li>Use the appropriate formula and solve for the unknown.</li></ol></div>` }
     },
 
     /* ============ TOPIC 4: Area and Volume ============ */
@@ -610,15 +609,15 @@
         <p><strong>Practical application:</strong> Architects compute room volumes for HVAC, painters compute wall areas, manufacturers compute material needs for packaging, and civil engineers calculate excavation volumes.</p>
       ` },
       hook: { html: `
-        <div class="callout callout-puzzle"><h4>🧩 Puzzle: Paint for a Room</h4>
-        <p>A room is $5$ m �: $4$ m �: $3$ m tall. You need to paint all four walls (not floor or ceiling). Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
+        <div class="callout callout-puzzle"><h4> Puzzle: Paint for a Room</h4>
+        <p>A room is $5$ m by $4$ m by $3$ m tall. You need to paint all four walls, not the floor or ceiling. Total wall area = $2(5 \\times 3) + 2(4 \\times 3) = 30 + 24 = 54$ m². If one liter covers $10$ m², you need $5.4$ liters. Geometry solves real problems.</p></div>` },
       concept: { html: `
         <div class="callout callout-key"><h4>2D Area Formulas</h4>
         <ul>
           <li><strong>Rectangle:</strong> $A = lw$</li>
           <li><strong>Triangle:</strong> $A = \\frac{1}{2}bh$ (WHY: half a rectangle)</li>
           <li><strong>Parallelogram:</strong> $A = bh$ (WHY: shear a rectangle; area preserved)</li>
-          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (WHY: average of parallel sides �: height)</li>
+          <li><strong>Trapezoid:</strong> $A = \\frac{1}{2}(b_1 + b_2)h$ (average of parallel sides times height)</li>
           <li><strong>Circle:</strong> $A = \\pi r^2$</li>
         </ul></div>
 
@@ -710,7 +709,7 @@
     { difficulty: 'hard', question: 'Area of sector with radius 6 and central angle $60°$:', accept: ['6pi', '18.85'], placeholder: 'Area', explanation: '$A = \\frac{60}{360} \\cdot \\pi(6)^2 = \\frac{1}{6} \\cdot 36\\pi = 6\\pi$.' }
       ],
       stepBuilder: [
-        { difficulty: 'hard', question: 'A rectangular tank is $8$ m �: $5$ m �: $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
+        { difficulty: 'hard', question: 'A rectangular tank is $8$ m by $5$ m by $3$ m. Water fills it to $2$ m deep. Find: (a) volume of water, (b) empty volume, (c) how much more water is needed to fill it.', steps: [
           { content: 'Total volume: $8 \\times 5 \\times 3 = 120$ m³.' },
           { content: 'Water volume: $8 \\times 5 \\times 2 = 80$ m³.' },
           { content: 'Empty volume: $120 - 80 = 40$ m³.' },
@@ -733,7 +732,7 @@
     { difficulty: 'easy', context: 'Area of a circle:', expression: '$A = \\pi$ {{0}} $^2$', blanks: [ { accept: ['r', 'R'], size: 3 } ], explanation: '$A = \\pi r^2$.' },
     { difficulty: 'medium', context: 'Circumference:', expression: '$C = 2\\pi$ {{0}}', blanks: [ { accept: ['r', 'R'], size: 3 } ], explanation: '$C = 2\\pi r$.' }
   ],
-      stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Area/Volume Strategy</h4><ol><li>Identify the shape (2D or 3D).</li><li>Select the correct formula.</li><li>Identify the measurements: radius? base? height? slant height?</li><li>Substitute and compute. Include units (cm², cm³).</li></ol></div>` }
+      stuckGuide: { html: `<div class="callout callout-tip"><h4> Area/Volume Strategy</h4><ol><li>Identify the shape (2D or 3D).</li><li>Select the correct formula.</li><li>Identify the measurements: radius? base? height? slant height?</li><li>Substitute and compute. Include units (cm², cm³).</li></ol></div>` }
     },
 
     /* ============ TOPIC 5: Coordinate Geometry ============ */
@@ -746,12 +745,12 @@
         { term: 'Linear Equation', definition: '$y = mx + b$ where $m$ is slope and $b$ is y-intercept.' }
       ],
       whyExists: { html: `
-        <p><strong>Why coordinate geometry?</strong> René Descartes (1637) invented coordinate geometry by placing a grid on the geometric plane. This single idea merged algebra and geometry: every geometric shape becomes an equation, and every equation becomes a shape. A circle is $x^2 + y^2 = r^2$. A line is $y = mx + b$. This unification is one of the most powerful ideas in mathematics.</p>
+        <p><strong>Why coordinate geometry?</strong> Coordinate geometry places a grid on the plane. This merges algebra and geometry: a geometric shape becomes an equation, and an equation becomes a shape. A circle is $x^2 + y^2 = r^2$. A line is $y = mx + b$.</p>
         <p><strong>Why the distance formula?</strong> The distance between $(x_1, y_1)$ and $(x_2, y_2)$ is $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$. This IS the Pythagorean theorem: the horizontal distance $|x_2 - x_1|$ and vertical distance $|y_2 - y_1|$ are the legs of a right triangle, and $d$ is the hypotenuse.</p>
-        <p><strong>Practical application:</strong> GPS uses coordinate geometry. Computer screens are coordinate grids (pixels). Every graph, chart, and data visualization uses the Cartesian coordinate system Descartes invented.</p>
+        <p><strong>Practical application:</strong> GPS uses coordinates. Computer screens are coordinate grids. Every graph, chart, and data visualization depends on the same idea: locate points with ordered numerical positions.</p>
       ` },
       hook: { html: `
-        <div class="callout callout-puzzle"><h4>🧩 Puzzle: The Shortest Path</h4>
+        <div class="callout callout-puzzle"><h4> Puzzle: The Shortest Path</h4>
         <p>Two cities are at coordinates $(2, 3)$ and $(10, 9)$. The straight-line distance (\"as the crow flies\") is $\\sqrt{(10-2)^2 + (9-3)^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$ units. The Pythagorean theorem gives exact distances on any grid.</p></div>` },
       concept: { html: `
         <div class="callout callout-key"><h4>Distance Formula</h4>
@@ -788,7 +787,7 @@
           { title: 'Find slope', content: '$m = \\frac{9 - 3}{4 - 1} = \\frac{6}{3} = 2$', why: 'Slope = rise/run = $\\Delta y / \\Delta x$.' },
           { title: 'Use point-slope form', content: '$y - 3 = 2(x - 1)$', why: 'Point-slope: $y - y_1 = m(x - x_1)$ with $(1, 3)$.' },
           { title: 'Simplify', content: '$y = 2x + 1$', why: 'Distribute and add 3: $y - 3 = 2x - 2 \\Rightarrow y = 2x + 1$.' },
-          { title: 'Verify', content: 'Check $(4, 9)$: $2(4) + 1 = 9$ ✓', why: 'Substitute the other point to confirm.' }
+          { title: 'Verify', content: 'Check $(4, 9)$: $2(4) + 1 = 9$ ', why: 'Substitute the other point to confirm.' }
         ]
       },
       {
@@ -823,7 +822,7 @@
     exercises: [
         { difficulty: 'easy', question: 'The distance between $(0,0)$ and $(3,4)$ is:', options: ['$5$', '$7$', '$\\sqrt{7}$', '$25$'], correctIndex: 0, hint: '<p>$d = \\sqrt{3^2 + 4^2}$.</p>', correctExplanation: '$\\sqrt{9 + 16} = \\sqrt{25} = 5$. The classic $3$-$4$-$5$ Pythagorean triple.', wrongExplanations: { 1: '$3 + 4 = 7$. Distance uses squares, not plain addition.', 2: '$\\sqrt{7}$ would come from $\\sqrt{3+4}$, but the formula squares first.', 3: '$25 = 5^2$. You forgot to take the square root.' } },
         { difficulty: 'easy', question: 'The midpoint of $(2, 8)$ and $(6, 4)$ is:', options: ['$(4, 6)$', '$(8, 12)$', '$(4, 12)$', '$(2, 2)$'], correctIndex: 0, hint: '<p>Average each coordinate.</p>', correctExplanation: '$((2+6)/2, (8+4)/2) = (4, 6)$.', wrongExplanations: { 1: '$(2+6, 8+4) = (8, 12)$. You added instead of averaging.', 2: 'Mixed addition and averaging.', 3: '$(6-2)/2 = 2$ is the half-difference, not the midpoint x-coordinate.' } },
-        { difficulty: 'medium', question: 'The slope of a line perpendicular to $y = \\frac{3}{4}x + 1$ is:', options: ['$\\frac{3}{4}$', '$-\\frac{3}{4}$', '$-\\frac{4}{3}$', '$\\frac{4}{3}$'], correctIndex: 2, hint: '<p>Perpendicular slopes: $m_1 \\cdot m_2 = -1$.</p>', correctExplanation: 'Original slope = $3/4$. Perpendicular: $-1/(3/4) = -4/3$. Product: $(3/4)(-4/3) = -1$ ✓.', wrongExplanations: { 0: 'Same slope means parallel, not perpendicular.', 1: 'Negating the slope gives $-3/4$, but perpendicular requires the negative RECIPROCAL.', 3: '$4/3$ is the reciprocal but positive. Must also negate.' } }
+        { difficulty: 'medium', question: 'The slope of a line perpendicular to $y = \\frac{3}{4}x + 1$ is:', options: ['$\\frac{3}{4}$', '$-\\frac{3}{4}$', '$-\\frac{4}{3}$', '$\\frac{4}{3}$'], correctIndex: 2, hint: '<p>Perpendicular slopes: $m_1 \\cdot m_2 = -1$.</p>', correctExplanation: 'Original slope = $3/4$. Perpendicular: $-1/(3/4) = -4/3$. Product: $(3/4)(-4/3) = -1$ .', wrongExplanations: { 0: 'Same slope means parallel, not perpendicular.', 1: 'Negating the slope gives $-3/4$, but perpendicular requires the negative RECIPROCAL.', 3: '$4/3$ is the reciprocal but positive. Must also negate.' } }
       ],
       freeResponse: [
         { difficulty: 'easy', question: 'Slope of the line through $(1, 2)$ and $(5, 10)$:', accept: [2, '2'], placeholder: 'm = ?', explanation: '$m = (10-2)/(5-1) = 8/4 = 2$.' },
@@ -844,10 +843,10 @@
         ], explanation: 'Perpendicular lines have slopes that are negative reciprocals. Use point-slope form with the given point.' }
       ],
   fillBlanks: [
-    { difficulty: 'easy', context: 'Slope formula:', expression: '$m = \\frac{y_2 - y_1}{$ {{0}} $- x_1}$', blanks: [ { accept: ['x_2', 'x2'], size: 4 } ], explanation: 'Slope = rise / run.' },
+    { difficulty: 'easy', context: 'Slope formula:', expression: '$m = \\frac{y_2 - y_1}{ {{0}} - x_1}$', blanks: [ { accept: ['x_2', 'x2'], size: 4 } ], explanation: 'Slope = rise / run.' },
     { difficulty: 'medium', context: 'Parallel lines:', expression: 'Parallel lines have {{0}} slopes.', blanks: [ { accept: ['equal', 'the same'], size: 8 } ], explanation: 'Same slope means the lines never intersect.' }
   ],
-      stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Coordinate Geometry Strategy</h4><ol><li><strong>Two points?</strong> Use distance, midpoint, or slope formulas.</li><li><strong>Need equation?</strong> Find slope first, then use point-slope form.</li><li><strong>Parallel?</strong> Same slope. <strong>Perpendicular?</strong> Negative reciprocal slopes.</li></ol></div>` }
+      stuckGuide: { html: `<div class="callout callout-tip"><h4> Coordinate Geometry Strategy</h4><ol><li><strong>Two points?</strong> Use distance, midpoint, or slope formulas.</li><li><strong>Need equation?</strong> Find slope first, then use point-slope form.</li><li><strong>Parallel?</strong> Same slope. <strong>Perpendicular?</strong> Negative reciprocal slopes.</li></ol></div>` }
     }
 
     ]

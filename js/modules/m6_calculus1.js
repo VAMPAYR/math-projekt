@@ -1,6 +1,5 @@
 /* ============================================================
    MODULE 6: Calculus 1 : Limits & Derivatives (4 topics)
-   Source: Thomas' Calculus Chapters 2-4
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -167,7 +166,7 @@ topics: [
     { difficulty: 'medium', context: 'Limits at infinity:', expression: 'If $\\deg(\\text{num}) < \\deg(\\text{den})$, then $\\lim_{x \\to \\infty} \\frac{P(x)}{Q(x)} =$ {{0}}.', blanks: [ { accept: ['0'], size: 3 } ], explanation: 'Denominator grows faster: ratio approaches 0.' },
     { difficulty: 'easy', context: 'Power rule for integration:', expression: '$\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$, provided $n \\neq$ {{0}}.', blanks: [ { accept: ['-1'], size: 3 } ], explanation: 'Power rule fails at $n = -1$. That case gives $\\ln|x| + C$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Limits Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Limits Strategy</h4>
     <ol><li><strong>Try direct substitution first.</strong></li>
     <li><strong>$\\frac{0}{0}$?</strong> Factor, cancel. Or multiply by conjugate for roots.</li>
     <li><strong>$\\frac{\\infty}{\\infty}$?</strong> Divide by highest power of $x$.</li>
@@ -197,7 +196,7 @@ topics: [
       <li><strong>Sum/Difference:</strong> $(f \\pm g)\' = f\' \\pm g\'$</li>
       <li><strong>Product Rule:</strong> $(fg)\' = f\'g + fg\'$ ${WHY('Why not $f\' \\cdot g\'$?', '<p>Consider $f = x$, $g = x$. $(fg) = x^2$, so $(fg)\' = 2x$. But $f\' \\cdot g\' = 1 \\cdot 1 = 1 \\neq 2x$. The product rule accounts for BOTH factors changing simultaneously.</p>')}</li>
       <li><strong>Quotient Rule:</strong> $(\\frac{f}{g})\' = \\frac{f\'g - fg\'}{g^2}$</li>
-      <li><strong>Chain Rule:</strong> $\\frac{d}{dx}[f(g(x))] = f\'(g(x)) \\cdot g\'(x)$ ${WHY('Why?', '<p>The chain rule handles composition. If $y = f(u)$ and $u = g(x)$, then $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$. Rates multiply: if $y$ changes 3�: as fast as $u$, and $u$ changes 2�: as fast as $x$, then $y$ changes 6�: as fast as $x$.</p>')}</li>
+      <li><strong>Chain Rule:</strong> $\\frac{d}{dx}[f(g(x))] = f\'(g(x)) \\cdot g\'(x)$ ${WHY('Why?', '<p>The chain rule handles composition. If $y = f(u)$ and $u = g(x)$, then $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$. Rates multiply: if $y$ changes 3 times as fast as $u$, and $u$ changes 2 times as fast as $x$, then $y$ changes 6 times as fast as $x$.</p>')}</li>
     </ul></div>
     <div class="callout callout-key"><h4>Common Derivatives</h4>
     <ul>
@@ -224,7 +223,7 @@ topics: [
     exercises: [
     { difficulty: 'easy', question: '$\\frac{d}{dx}[x^5] = $?', options: ['$5x^4$', '$5x^5$', '$x^4$', '$4x^5$'], correctIndex: 0, hint: '<p>Power rule: bring down the exponent, reduce by 1.</p>', correctExplanation: 'Power rule: $nx^{n-1} = 5x^4$.', wrongExplanations: { 1: 'The exponent decreases by 1: $x^{5-1} = x^4$.', 2: 'You dropped the coefficient: $5 \\cdot x^4$, not just $x^4$.', 3: 'The coefficient comes from the old exponent (5), and the new exponent is $5-1=4$.' } },
     { difficulty: 'easy', question: '$\\frac{d}{dx}[\\cos x] = $?', options: ['$\\sin x$', '$-\\sin x$', '$-\\cos x$', '$\\sec^2 x$'], correctIndex: 1, hint: '<p>The derivative of cosine has a negative sign.</p>', correctExplanation: '$\\frac{d}{dx}[\\cos x] = -\\sin x$.', wrongExplanations: { 0: 'Missing the negative sign. $\\cos\' = -\\sin$, not $+\\sin$.', 2: '$-\\cos x$ is the derivative of $\\sin x$ integrated... no. $\\cos\' = -\\sin$.', 3: 'That is the derivative of $\\tan x$.' } },
-    { difficulty: 'medium', question: 'Find $f\'(x)$ if $f(x) = (3x + 1)^5$:', options: ['$5(3x+1)^4$', '$15(3x+1)^4$', '$5(3x+1)^4 \\cdot 3x$', '$(15x+5)^4$'], correctIndex: 1, hint: '<p>Chain rule: outer derivative �: inner derivative.</p>', correctExplanation: 'Outer: $5(3x+1)^4$. Inner derivative: $3$. Product: $15(3x+1)^4$.', wrongExplanations: { 0: 'Missing the inner derivative. Chain rule requires multiplying by $\\frac{d}{dx}[3x+1] = 3$.', 2: 'Inner derivative is $3$, not $3x$.', 3: 'You cannot distribute the 5 inside the parentheses.' } },
+    { difficulty: 'medium', question: 'Find $f\'(x)$ if $f(x) = (3x + 1)^5$:', options: ['$5(3x+1)^4$', '$15(3x+1)^4$', '$5(3x+1)^4 \\cdot 3x$', '$(15x+5)^4$'], correctIndex: 1, hint: '<p>Chain rule: outer derivative times inner derivative.</p>', correctExplanation: 'Outer: $5(3x+1)^4$. Inner derivative: $3$. Product: $15(3x+1)^4$.', wrongExplanations: { 0: 'Missing the inner derivative. Chain rule requires multiplying by $\\frac{d}{dx}[3x+1] = 3$.', 2: 'Inner derivative is $3$, not $3x$.', 3: 'You cannot distribute the 5 inside the parentheses.' } },
     { difficulty: 'medium', question: '$\\frac{d}{dx}[x \\cdot e^x] = $?', options: ['$e^x$', '$xe^x$', '$e^x + xe^x$', '$xe^x + e^{x-1}$'], correctIndex: 2, hint: '<p>Product rule: $f = x, g = e^x$.</p>', correctExplanation: '$f\'g + fg\' = (1)(e^x) + (x)(e^x) = e^x + xe^x = (1+x)e^x$.', wrongExplanations: { 0: 'Product rule gives TWO terms: $f\'g + fg\'$.', 1: 'Missing the $f\'g = 1 \\cdot e^x = e^x$ term.', 3: '$\\frac{d}{dx}[e^x] = e^x$, not $e^{x-1}$.' } },
     { difficulty: 'hard', question: '$\\frac{d}{dx}[\\sin(x^2)] = $?', options: ['$\\cos(x^2)$', '$2x\\cos(x^2)$', '$2x\\sin(x^2)$', '$\\cos(2x)$'], correctIndex: 1, hint: '<p>Chain rule: outer = $\\sin(u)$, inner = $u = x^2$.</p>', correctExplanation: 'Outer derivative: $\\cos(x^2)$. Inner derivative: $2x$. Chain rule: $2x\\cos(x^2)$.', wrongExplanations: { 0: 'Missing the inner derivative $2x$. Chain rule is essential here.', 2: 'The outer derivative of $\\sin$ is $\\cos$, not $\\sin$.', 3: '$\\cos(2x)$ is the derivative of $\\sin(2x)$, not $\\sin(x^2)$.' } },
     { difficulty: 'hard', question: '$\\frac{d}{dx}\\left[\\frac{x}{x+1}\\right] = $?', options: ['$\\frac{1}{x+1}$', '$\\frac{1}{(x+1)^2}$', '$\\frac{x}{(x+1)^2}$', '$\\frac{-1}{(x+1)^2}$'], correctIndex: 1, hint: '<p>Quotient rule: $\\frac{f\'g - fg\'}{g^2}$.</p>', correctExplanation: '$f = x, g = x+1. f\' = 1, g\' = 1$. $\\frac{1(x+1) - x(1)}{(x+1)^2} = \\frac{1}{(x+1)^2}$.', wrongExplanations: { 0: 'Denominator should be $(x+1)^2$, not $(x+1)$.', 2: 'Numerator: $(x+1) - x = 1$, not $x$.', 3: 'Numerator is $+1$, not $-1$.' } }
@@ -313,10 +312,10 @@ topics: [
     { difficulty: 'easy', context: 'Power rule:', expression: '$\\frac{d}{dx}[x^n] =$ {{0}} $\\cdot x^{n-1}$', blanks: [ { accept: ['n'], size: 3 } ], explanation: 'Bring down the exponent.' },
     { difficulty: 'medium', context: 'Chain rule:', expression: '$\\frac{d}{dx}[f(g(x))] = f\'($ {{0}} $) \\cdot$ {{1}}', blanks: [ { accept: ['g(x)'], size: 6 }, { accept: ["g'(x)"], size: 6 } ], explanation: 'Derivative of outside at inside, times derivative of inside.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Derivative Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Derivative Strategy</h4>
     <ol><li><strong>Identify the structure:</strong> Is it a sum, product, quotient, or composition?</li>
     <li><strong>Apply the matching rule:</strong> Sum → term by term. Product → $f'g + fg'$. Quotient → $\\frac{f'g-fg'}{g^2}$. Composition → chain rule.</li>
-    <li><strong>Chain rule:</strong> "Derivative of the outside �: derivative of the inside."</li></ol></div>` }
+    <li><strong>Chain rule:</strong> "Derivative of the outside times derivative of the inside."</li></ol></div>` }
 },
 
 /* TOPIC 6.3: Applications of Derivatives */
@@ -416,24 +415,24 @@ topics: [
     steps: [
       { title: 'Write the relationship', content: '$A = \\pi r^2$.', why: 'Area of a circle relates to radius.' },
       { title: 'Differentiate with respect to $t$', content: '$\\frac{dA}{dt} = 2\\pi r \\cdot \\frac{dr}{dt}$.', why: 'Chain rule: $r$ is a function of time. Both sides are differentiated with respect to $t$.' },
-      { title: 'Substitute known values', content: '$\\frac{dA}{dt} = 2\\pi(10)(3) = 60\\pi \\approx 188.5$ ft\\u00b2/s.', why: '$r = 10$ and $\\frac{dr}{dt} = 3$.' }
+      { title: 'Substitute known values', content: '$\\frac{dA}{dt} = 2\\pi(10)(3) = 60\\pi \\approx 188.5$ square feet per second.', why: '$r = 10$ and $\\frac{dr}{dt} = 3$.' }
     ]
   },
   {
     title: 'Optimization: Open-Top Box',
-    problem: 'A sheet of cardboard is 20 cm �: 20 cm. Cut equal squares from corners and fold up to make an open-top box. What cut size $x$ maximizes volume?',
+    problem: 'A sheet of cardboard is 20 cm by 20 cm. Cut equal squares from corners and fold up to make an open-top box. What cut size $x$ maximizes volume?',
     steps: [
-      { title: 'Express volume', content: 'Base: $(20-2x)$ �: $(20-2x)$. Height: $x$. $V = x(20-2x)^2$.', why: 'Each side loses $2x$ from the cut squares. The cut depth becomes the height.' },
+      { title: 'Express volume', content: 'Base: $(20-2x)$ by $(20-2x)$. Height: $x$. $V = x(20-2x)^2$.', why: 'Each side loses $2x$ from the cut squares. The cut depth becomes the height.' },
       { title: 'Expand and differentiate', content: '$V = x(400 - 80x + 4x^2) = 4x^3 - 80x^2 + 400x$. $\\frac{dV}{dx} = 12x^2 - 160x + 400$.', why: 'Polynomial multiplication, then power rule.' },
       { title: 'Set derivative = 0', content: '$12x^2 - 160x + 400 = 0$. $3x^2 - 40x + 100 = 0$. Quadratic formula: $x = \\frac{40 \\pm \\sqrt{1600-1200}}{6} = \\frac{40 \\pm 20}{6}$. $x = 10$ or $x = 10/3$.', why: 'Divide by 4, then use the quadratic formula.' },
       { title: 'Choose valid solution', content: '$x = 10$ makes base width $= 0$ (no box). So $x = 10/3 \\approx 3.33$ cm.', why: 'Physical constraint: $0 < x \\lt 10$. Only $x = 10/3$ gives a real box.' },
-      { title: 'Max volume', content: '$V = \\frac{10}{3}(20 - \\frac{20}{3})^2 = \\frac{10}{3} \\cdot (\\frac{40}{3})^2 = \\frac{10 \\cdot 1600}{27} \\approx 592.6$ cm\\u00b3.', why: 'Substitute $x = 10/3$ into the volume formula.' }
+      { title: 'Max volume', content: '$V = \\frac{10}{3}(20 - \\frac{20}{3})^2 = \\frac{10}{3} \\cdot (\\frac{40}{3})^2 = \\frac{10 \\cdot 1600}{27} \\approx 592.6$ cubic centimeters.', why: 'Substitute $x = 10/3$ into the volume formula.' }
     ]
   }],
   flashCards: [
       { type: 'why', front: 'Why does the derivative equal zero at a maximum or minimum?', back: 'At a peak, the function stops increasing and starts decreasing. The slope (derivative) transitions from positive to negative, passing through zero. Same logic for minima (negative to positive).' },
-      { type: 'how', front: 'How do you find absolute extrema on a closed interval?', back: 'Three steps: (1) find critical points (f’=0 or undefined), (2) evaluate f at critical points AND endpoints, (3) the largest value is the absolute max, smallest is the absolute min.' },
-      { type: 'how', front: 'How does the second derivative test work?', back: 'At a critical point c: f’’(c) > 0 means concave up (valley) = local min. f’’(c) < 0 means concave down (hill) = local max. f’’(c) = 0 is inconclusive.' }
+      { type: 'how', front: 'How do you find absolute extrema on a closed interval?', back: 'Three steps: (1) find critical points where the first derivative equals 0 or is undefined, (2) evaluate f at critical points and endpoints, (3) the largest value is the absolute max, smallest is the absolute min.' },
+      { type: 'how', front: 'How does the second derivative test work?', back: 'At a critical point c: second derivative positive means concave up (valley) = local min. Second derivative negative means concave down (hill) = local max. Second derivative equal to 0 is inconclusive.' }
     ],
     exercises: [
     { difficulty: 'easy', question: 'If $f\'(x) \\gt 0$ on $(a, b)$, then $f$ is:', options: ['Decreasing', 'Increasing', 'Constant', 'Concave up'], correctIndex: 1, hint: '<p>Positive derivative means positive slope.</p>', correctExplanation: 'Positive derivative → function is increasing on that interval.', wrongExplanations: { 0: 'Negative derivative means decreasing. Positive means increasing.', 2: 'Constant requires $f\'(x) = 0$, not $ \\gt 0$.', 3: 'Concavity is determined by the SECOND derivative, not the first.' } },
@@ -441,7 +440,7 @@ topics: [
     { difficulty: 'medium', question: '$f(x) = x^3 - 12x$ has a local minimum at:', options: ['$x = 0$', '$x = 2$', '$x = -2$', '$x = 12$'], correctIndex: 1, hint: '<p>$f\'(x) = 3x^2 - 12 = 0$. Then use second derivative test.</p>', correctExplanation: '$3x^2 = 12 \\Rightarrow x = \\pm 2$. $f\'\'(x) = 6x$. $f\'\'(2) = 12 \\gt 0$: local min at $x = 2$.', wrongExplanations: { 0: '$x = 0$: $f\'(0) = -12 \\neq 0$. Not a critical point.', 2: '$f\'\'(-2) = -12 \\lt 0$: local MAX, not min.', 3: '$x = 12$ is not a critical point.' } },
     { difficulty: 'medium', question: 'An inflection point is where:', options: ['$f\'(x) = 0$', '$f\'\'(x) = 0$ and concavity changes', '$f(x) = 0$', '$f\'\'(x) \\gt 0$'], correctIndex: 1, hint: '<p>Inflection = change in concavity.</p>', correctExplanation: 'An inflection point is where $f\'\'(x) = 0$ (or undefined) AND the concavity actually changes sign.', wrongExplanations: { 0: '$f\'(x) = 0$ gives critical points, not inflection points.', 2: '$f(x) = 0$ gives zeros/roots, unrelated to inflection.', 3: '$f\'\' > 0$ means concave up, not an inflection point.' } },
     { difficulty: 'hard', question: 'Find the absolute maximum of $f(x) = x^2$ on $[-1, 3]$:', options: ['$1$', '$9$', '$0$', '$3$'], correctIndex: 1, hint: '<p>Check critical points AND endpoints.</p>', correctExplanation: '$f\'(x) = 2x = 0 \\Rightarrow x = 0$. Evaluate: $f(-1) = 1$, $f(0) = 0$, $f(3) = 9$. Maximum = 9 at $x = 3$.', wrongExplanations: { 0: 'That is $f(-1) = 1$. But $f(3) = 9 \\gt 1$.', 2: 'That is the local (and global) minimum inside the interval.', 3: '$x = 3$ is where the max occurs, but the max VALUE is $f(3) = 9$.' } },
-    { difficulty: 'hard', question: 'A box with square base and no top has volume 32 cm³. Minimize surface area. Base side $x$, height $h$. Which equation relates them?', options: ['$x^2 + h = 32$', '$x^2 h = 32$', '$2x + h = 32$', '$xh^2 = 32$'], correctIndex: 1, hint: '<p>Volume of a box with square base: $V = x^2 \\cdot h$.</p>', correctExplanation: 'Volume = base area �: height = $x^2 \\cdot h = 32$. This is the constraint.', wrongExplanations: { 0: 'This would be a dimension sum, not a volume formula.', 2: 'This is a perimeter-like constraint, not volume.', 3: 'Volume is $x^2 h$, not $xh^2$. The base is square ($x \\times x$).' } }
+    { difficulty: 'hard', question: 'A box with square base and no top has volume 32 cm³. Minimize surface area. Base side $x$, height $h$. Which equation relates them?', options: ['$x^2 + h = 32$', '$x^2 h = 32$', '$2x + h = 32$', '$xh^2 = 32$'], correctIndex: 1, hint: '<p>Volume of a box with square base: $V = x^2 \\cdot h$.</p>', correctExplanation: 'Volume = base area times height = $x^2 \\cdot h = 32$. This is the constraint.', wrongExplanations: { 0: 'This would be a dimension sum, not a volume formula.', 2: 'This is a perimeter-like constraint, not volume.', 3: 'Volume is $x^2 h$, not $xh^2$. The base is square ($x \\times x$).' } }
   ],
   freeResponse: [
     { difficulty: 'easy', question: 'Find the critical point of $f(x) = x^2 - 6x$. $x =$?', accept: [3, '3'], placeholder: 'x = ?', explanation: '$f\'(x) = 2x - 6 = 0 \\Rightarrow x = 3$.' },
@@ -498,7 +497,7 @@ topics: [
       { question: 'Classify $x = 1$:', accept: ['min', 'local min', 'minimum'], placeholder: 'min or max', explanation: '$f\'\'(1) = 6 \\gt 0$: concave up = local min.' }
     ], completionMessage: 'Curve sketching combines first and second derivative tests to fully characterize a function.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Optimization Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Optimization Strategy</h4>
     <ol><li><strong>Draw a picture.</strong> Label variables.</li>
     <li><strong>Write the objective function</strong> (what to maximize/minimize).</li>
     <li><strong>Write the constraint</strong> and use it to eliminate one variable.</li>
@@ -562,7 +561,7 @@ topics: [
     ]
   }],
   flashCards: [
-      { type: 'define', front: 'What is the Fundamental Theorem of Calculus?', back: 'Part 1: d/dx integral from a to x of f(t)dt = f(x). Part 2: integral from a to b of f(x)dx = F(b)-F(a) where F’=f. Differentiation and integration are inverse operations.' },
+      { type: 'define', front: 'What is the Fundamental Theorem of Calculus?', back: 'Part 1: d/dx integral from a to x of f(t)dt = f(x). Part 2: integral from a to b of f(x)dx = F(b)-F(a) where F is an antiderivative of f. Differentiation and integration are inverse operations.' },
       { type: 'why', front: 'Why is the FTC so important?', back: 'Without it, computing integrals would require Riemann sum limits every time. The FTC says: just find an antiderivative and plug in the bounds. It transforms a limit problem into an algebra problem.' },
       { type: 'how', front: 'How to evaluate a definite integral?', back: 'Find antiderivative F(x), then compute F(b) - F(a). Example: integral from 1 to 3 of 2x dx = [x^2] from 1 to 3 = 9 - 1 = 8.' }
     ],
@@ -617,7 +616,7 @@ topics: [
     { difficulty: 'easy', context: 'FTC statement:', expression: '$\\int_a^b f(x)\\,dx = F($ {{0}} $) - F($ {{1}} $)$', blanks: [ { accept: ['b'], size: 3 }, { accept: ['a'], size: 3 } ], explanation: 'Upper bound minus lower bound.' },
     { difficulty: 'medium', context: 'U-substitution:', expression: 'If $u = g(x)$, then $du =$ {{0}} $dx$.', blanks: [ { accept: ["g'(x)"], size: 8 } ], explanation: '$du = g\'(x)\\,dx$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>🧠 Integration Strategy</h4>
+  stuckGuide: { html: `<div class="callout callout-tip"><h4> Integration Strategy</h4>
     <ol><li><strong>Recognize a basic form:</strong> power, trig, exponential.</li>
     <li><strong>Try u-substitution</strong> if you see a function and its derivative together.</li>
     <li><strong>Definite integrals:</strong> find antiderivative, then evaluate $F(b) - F(a)$.</li>
