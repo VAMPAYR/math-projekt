@@ -5,6 +5,59 @@
 (function() {
   if (!window.MATH_MODULES) window.MATH_MODULES = [];
   const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+  const integralFigure = (() => {
+    const segments = [
+      [[100, 180], [160, 60], [200, 80]],
+      [[200, 80], [260, 110], [300, 50]],
+      [[300, 50], [330, 20], [360, 40]]
+    ];
+    const a = 120, b = 300, axisY = 200;
+    const point = (segment, t) => segment[0].map((value, i) =>
+      (1 - t) ** 2 * value + 2 * (1 - t) * t * segment[1][i] + t ** 2 * segment[2][i]);
+    const parameterAtX = (segment, x) => {
+      let lo = 0, hi = 1;
+      for (let i = 0; i < 48; i++) {
+        const mid = (lo + hi) / 2;
+        if (point(segment, mid)[0] < x) lo = mid;
+        else hi = mid;
+      }
+      return (lo + hi) / 2;
+    };
+    const curveAtX = x => {
+      const segment = segments.find(s => x >= s[0][0] && x <= s[2][0]);
+      return point(segment, parameterAtX(segment, x));
+    };
+    const startT = parameterAtX(segments[0], a);
+    const startPoint = point(segments[0], startT);
+    // De Casteljau subdivision gives the exact remainder of the first
+    // quadratic after a. The fill and slices therefore follow the same curve.
+    const remainderControl = segments[0][1].map((value, i) =>
+      (1 - startT) * value + startT * segments[0][2][i]);
+    const endPoint = curveAtX(b);
+    const curvePath = `M ${segments[0][0].join(' ')} ` + segments
+      .map(s => `Q ${s[1].join(' ')} ${s[2].join(' ')}`).join(' ');
+    const areaPath = `M ${startPoint.join(' ')} Q ${remainderControl.join(' ')} ${segments[0][2].join(' ')} Q ${segments[1][1].join(' ')} ${segments[1][2].join(' ')} L ${b} ${axisY} L ${a} ${axisY} Z`;
+    const slices = Array.from({ length: 9 }, (_, i) => {
+      const x = a + (b - a) * i / 8;
+      return `<line data-figure="slice" x1="${x}" y1="${curveAtX(x)[1]}" x2="${x}" y2="${axisY}" stroke="var(--accent-blue)" stroke-width="0.7" opacity="0.35"/>`;
+    }).join('\n  ');
+    return `<svg viewBox="0 0 400 230" width="400" height="230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The definite integral is the area between a positive curve and the x-axis from a to b">
+  <title>Definite integral as accumulated area</title>
+  <desc>The shaded region follows the blue curve exactly between the vertical boundaries at a and b. The curve is above the x-axis on this interval, so the integral and the shaded area are positive.</desc>
+  <line data-figure="axis" x1="40" y1="${axisY}" x2="380" y2="${axisY}" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line x1="60" y1="20" x2="60" y2="210" stroke="var(--text-secondary)" stroke-width="1"/>
+  <path data-figure="area" d="${areaPath}" fill="var(--accent-blue)" fill-opacity="0.15" stroke="none"/>
+  ${slices}
+  <path data-figure="curve" d="${curvePath}" fill="none" stroke="var(--accent-blue)" stroke-width="2.5"/>
+  <line data-figure="boundary-a" x1="${a}" y1="${startPoint[1]}" x2="${a}" y2="${axisY}" stroke="var(--accent-green)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line data-figure="boundary-b" x1="${b}" y1="${endPoint[1]}" x2="${b}" y2="${axisY}" stroke="var(--accent-green)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="${a}" y="215" fill="var(--accent-green)" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">a</text>
+  <text x="${b}" y="215" fill="var(--accent-green)" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">b</text>
+  <text x="365" y="38" fill="var(--accent-blue)" font-size="12" font-family="Inter,sans-serif">f(x)</text>
+  <text x="210" y="165" fill="var(--text-primary)" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">shaded area</text>
+  <text x="210" y="184" fill="var(--text-primary)" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">= ∫ₐᵇ f(x)dx</text>
+</svg>`;
+  })();
   window.MATH_MODULES.push({
     id: 'calculus-2',
     order: 10,
@@ -33,20 +86,7 @@
         concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 230" width="400" height="230" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="200" x2="380" y2="200" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="60" y1="20" x2="60" y2="210" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 100 180 Q 160 60 200 80 Q 260 110 300 50 Q 330 20 360 40" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
-  <path d="M 120 165 Q 160 60 200 80 Q 260 110 300 50 L 300 200 L 120 200 Z" fill="rgba(59,130,246,0.15)" stroke="none"/>
-  <line x1="120" y1="120" x2="120" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="142.5" y1="91.30575636401909" x2="142.5" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="165" y1="80.01705587833979" x2="165" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="187.5" y1="92.98147277795397" x2="187.5" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="210" y1="122.3349657371032" x2="210" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="232.5" y1="150.27209981231712" x2="232.5" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="255" y1="159.84658435343363" x2="255" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="277.5" y1="145.25066551489283" x2="277.5" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/><line x1="300" y1="115.33803180598025" x2="300" y2="200" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
-  <line x1="120" y1="165" x2="120" y2="200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="300" y1="50" x2="300" y2="200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="120" y="215" fill="#10b981" font-size="12" text-anchor="middle" font-family="Inter">a</text>
-  <text x="300" y="215" fill="#10b981" font-size="12" text-anchor="middle" font-family="Inter">b</text>
-  <text x="365" y="38" fill="#3b82f6" font-size="12" font-family="Inter">f(x)</text>
-  <text x="200" y="170" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter">shaded area</text>
-  <text x="200" y="188" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter">= ∫ₐᵇ f(x)dx</text>
-</svg>
+${integralFigure}
 </div>
 <p class="math-diagram-label">The definite integral ∫ₐᵇ f(x)dx equals the signed area under the curve</p>
 

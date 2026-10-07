@@ -4,6 +4,33 @@
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
 const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+// The shaded region and each vertical slice share the same boundary geometry.
+const integralRegion = (() => {
+  const curves = [
+    [[100, 160], [140, 60], [200, 80]],
+    [[200, 80], [260, 100], [280, 140]]
+  ];
+  const start = curves[0][0];
+  const end = curves[1][2];
+  const path = `M ${start.join(' ')} ${curves.map(([, control, tip]) => `Q ${control.join(' ')} ${tip.join(' ')}`).join(' ')}`;
+  const curveY = x => {
+    const [p0, p1, p2] = curves.find(points => x >= points[0][0] && x <= points[2][0]);
+    // Solve the monotone quadratic Bezier's x(t), then evaluate its y(t).
+    const a = p0[0] - 2 * p1[0] + p2[0];
+    const b = 2 * (p1[0] - p0[0]);
+    const c = p0[0] - x;
+    const t = a === 0 ? -c / b : -2 * c / (b + Math.sqrt(b * b - 4 * a * c));
+    return (1 - t) ** 2 * p0[1] + 2 * (1 - t) * t * p1[1] + t ** 2 * p2[1];
+  };
+  const chordY = x => start[1] + (x - start[0]) * (end[1] - start[1]) / (end[0] - start[0]);
+  const slices = [120, 150, 180, 210, 240, 260].map(x =>
+    `<line data-region-slice="true" x1="${x}" y1="${chordY(x).toFixed(3)}" x2="${x}" y2="${curveY(x).toFixed(3)}" stroke="#10b981" stroke-width="1" opacity="0.55"/>`
+  ).join('\n  ');
+  return `<path data-region-boundary="true" d="${path} Z" fill="rgba(59,130,246,0.15)" stroke="none"/>
+  ${slices}
+  <path data-region-curve="true" d="${path}" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <line data-region-chord="true" x1="${start[0]}" y1="${start[1]}" x2="${end[0]}" y2="${end[1]}" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,3"/>`;
+})();
 
 window.MATH_MODULES.push({
 id: 'calculus3',
@@ -353,21 +380,23 @@ topics: [
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 350 220" width="350" height="220" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 350 220" width="350" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="integral-region-title integral-region-desc">
+  <title id="integral-region-title">Vertical slices of an integration region</title>
+  <desc id="integral-region-desc">Region R lies between a lower straight boundary g one and an upper curved boundary g two, from x equals a to x equals b. Each green vertical slice reaches both boundaries.</desc>
   <line x1="40" y1="180" x2="320" y2="180" stroke="#94a3b8" stroke-width="1"/>
   <line x1="60" y1="20" x2="60" y2="195" stroke="#94a3b8" stroke-width="1"/>
   <text x="325" y="183" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">x</text>
   <text x="63" y="17" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">y</text>
-  <path d="M 100 160 Q 140 60 200 80 Q 260 100 280 140" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2"/>
-  <line x1="100" y1="160" x2="280" y2="140" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="190" y="120" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Region R</text>
-  <line x1="120" y1="177" x2="120" y2="98" stroke="#10b981" stroke-width="0.8" opacity="0.4"/><line x1="150" y1="172.5" x2="150" y2="116" stroke="#10b981" stroke-width="0.8" opacity="0.4"/><line x1="180" y1="168" x2="180" y2="134" stroke="#10b981" stroke-width="0.8" opacity="0.4"/><line x1="210" y1="163.5" x2="210" y2="128" stroke="#10b981" stroke-width="0.8" opacity="0.4"/><line x1="240" y1="159" x2="240" y2="110" stroke="#10b981" stroke-width="0.8" opacity="0.4"/><line x1="260" y1="156" x2="260" y2="98" stroke="#10b981" stroke-width="0.8" opacity="0.4"/>
-  <text x="190" y="15" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">∬_R f(x,y) dA = volume above R under surface</text>
+  ${integralRegion}
+  <text x="190" y="127" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Region R</text>
+  <text x="173" y="65" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif">g₂(x)</text>
+  <text x="195" y="168" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif">g₁(x)</text>
+  <text x="190" y="15" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">Region R: integrate y between its boundaries</text>
   <text x="95" y="175" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">a</text>
   <text x="278" y="157" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">b</text>
 </svg>
 </div>
-<p class="math-diagram-label">Double integral: sum of f(x,y) over every tiny area element dA in region R</p>
+<p class="math-diagram-label">Vertical slices run from g₁(x) to g₂(x), for a ≤ x ≤ b. A double integral adds f(x,y) over the area elements in R; it gives volume under the surface when f ≥ 0.</p>
 
     <div class="callout callout-key"><h4>Fubini's Theorem</h4>
     <p>If $f$ is continuous on a rectangular region $R = [a,b] \\times [c,d]$, then:

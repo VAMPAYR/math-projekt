@@ -1195,9 +1195,9 @@ body {
 }
 
 .exercise-feedback.incorrect-feedback {
-  background: rgba(239, 68, 68, 0.06);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: var(--text-secondary);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: var(--text-primary);
 }
 
 .exercise-feedback h4 {
@@ -1293,8 +1293,15 @@ body {
 
 .viz-container canvas {
   display: block;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto;
   border-radius: var(--radius-sm);
+}
+
+.viz-container canvas[role="slider"]:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
 }
 
 .inline-model {
@@ -1936,7 +1943,8 @@ body {
 .math-diagram svg {
   max-width: 100%;
   height: auto;
-  max-height: 300px;
+  flex-shrink: 0;
+  display: block;
 }
 .math-diagram-label {
   text-align: center;
@@ -1945,12 +1953,59 @@ body {
   margin-top: 8px;
   font-style: italic;
 }
+
+/* Neutral SVG labels follow the surrounding surface in both themes. */
+.math-diagram svg :is(text, g)[fill="#f1f5f9"],
+.math-diagram svg :is(text, g)[fill="#e2e8f0"],
+.math-diagram svg :is(text, g)[fill="#cbd5e1"] {
+  fill: var(--text-primary);
+}
+
+.math-diagram svg :is(text, g)[fill="#94a3b8"] {
+  fill: var(--text-secondary);
+}
+
+.math-diagram svg :is(text, g)[fill="#93c5fd"] {
+  fill: var(--accent-blue);
+}
+
+.math-diagram svg :is(text, g)[fill="#86efac"] {
+  fill: var(--accent-green);
+}
+
+@media (max-width: 640px) {
+  .math-diagram.diagram-scroll {
+    position: relative;
+    justify-content: flex-start;
+    padding-bottom: 36px;
+    overscroll-behavior-x: contain;
+  }
+
+  .math-diagram.diagram-scroll::after {
+    content: 'Scroll horizontally to view the figure →';
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .math-diagram svg.diagram-wide {
+    min-width: var(--diagram-min-width, 480px);
+  }
+}
+
+.math-diagram.diagram-scroll:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
 /* All inline SVGs in content: prevent overlap */
 .phase-content svg,
 .callout svg,
 .concept-text svg {
   max-width: 100%;
-  max-height: 300px;
   height: auto;
   display: block;
   margin: 12px auto;
@@ -2182,7 +2237,7 @@ body {
 .graph-explorer-hint {
   margin: 0;
   font-size: 13px;
-  color: var(--text-tertiary);
+  color: var(--text-muted);
 }
 /* Formal Definitions */
 .formal-defs-section {
@@ -2597,18 +2652,21 @@ body {
     padding: 0 10px;
   }
 
+  /* Same transform mechanism as the 1024px breakpoint, so the two
+     responsive blocks never fight over positioning. */
   .sidebar {
     position: fixed;
-    left: -280px;
+    left: 0;
     top: 0;
     bottom: 0;
     width: 280px;
     z-index: 1000;
-    transition: left 0.3s ease;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .sidebar.open { left: 0; }
+  .sidebar.open { transform: translateX(0); }
   #sidebar-overlay {
     display: none;
     position: fixed;
@@ -2876,11 +2934,7 @@ body {
 }
 
 .content-area {
-  background:
-    linear-gradient(var(--border-subtle) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px),
-    var(--bg-primary);
-  background-size: 32px 32px;
+  background: var(--bg-primary);
 }
 
 .content-inner {
@@ -3286,10 +3340,7 @@ html[data-theme="dark"] .content-header {
 }
 
 html[data-theme="dark"] .content-area {
-  background:
-    linear-gradient(var(--border-subtle) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px),
-    var(--bg-primary);
+  background: var(--bg-primary);
 }
 
 html[data-theme="dark"] .btn-text,
@@ -3366,4 +3417,647 @@ html[data-theme="dark"] .background-tab-btn:hover,
 html[data-theme="dark"] .background-tab-btn.active {
   background: rgba(91, 141, 239, 0.16);
   border-color: var(--border-accent);
+}
+
+/* ============================================================
+   GRE MODULE COMPONENTS
+   Quantitative comparison, multi-select, foundation references
+   ============================================================ */
+
+/* ---- Quantitative Comparison ---- */
+.qc-given {
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 16px;
+  margin: 12px auto;
+  max-width: 480px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+}
+
+.qc-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.qc-quantity {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.qc-quantity-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.qc-quantity-value {
+  font-size: 17px;
+  color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+  .qc-table { grid-template-columns: 1fr; }
+}
+
+/* ---- Multi-Select ---- */
+.ms-option {
+  position: relative;
+}
+
+.ms-checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-medium);
+  border-radius: 4px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.ms-option.ms-selected {
+  border-color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.ms-option.ms-selected .ms-checkbox {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.ms-option.ms-missed {
+  border: 2px dashed var(--accent-amber);
+}
+
+.ms-submit-btn {
+  margin-top: 12px;
+}
+
+/* ---- Foundation References ---- */
+.foundation-refs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.foundation-ref-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-left: 3px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.foundation-ref-card:hover {
+  background: var(--bg-card-hover, var(--bg-tertiary));
+  border-color: var(--accent-blue);
+}
+
+.foundation-ref-card.completed {
+  border-left-color: var(--accent-green);
+}
+
+.foundation-ref-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.foundation-ref-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.foundation-ref-status {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.foundation-ref-card.completed .foundation-ref-status {
+  color: var(--accent-green);
+}
+
+.foundation-ref-note {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.foundation-ref-module {
+  font-size: 12px;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   KEYBOARD FOCUS VISIBILITY
+   Interactive controls previously had hover styles only
+   ============================================================ */
+.option-btn:focus-visible,
+.mode-btn:focus-visible,
+.nav-topic:focus-visible,
+.match-item:focus-visible,
+.sb-step-btn:focus-visible,
+.fr-submit-btn:focus-visible,
+.hint-btn:focus-visible,
+.reveal-btn:focus-visible,
+.nav-btn:focus-visible,
+.mark-complete-btn:focus-visible,
+.game-action-btn:focus-visible,
+.foundation-ref-card:focus-visible,
+.ms-option:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   UI REFRESH LAYER
+   Loaded last so it wins the cascade in both themes.
+   Softer surfaces, card-based sections, segmented controls,
+   stronger hierarchy. Uses theme tokens throughout.
+   ============================================================ */
+
+/* ---- Softer light palette (dark stays as defined) ---- */
+:root {
+  --bg-primary: #eef0f4;
+  --bg-tertiary: #e6eaf0;
+}
+
+/* ---- App shell ---- */
+.content-header {
+  height: var(--header-height);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.content-inner {
+  max-width: 940px;
+}
+
+/* ---- Sidebar polish ---- */
+.sidebar-nav .nav-topic {
+  border-left: 2px solid transparent;
+  border-radius: 0 8px 8px 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.sidebar-nav .nav-topic:hover {
+  background: var(--bg-tertiary);
+  border-left-color: var(--accent-blue);
+}
+
+/* ---- Topic header: clear page identity ---- */
+.topic-header {
+  padding: 22px 24px 20px;
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--accent-blue);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.topic-module-label {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  background: var(--accent-blue-glow);
+  border-radius: 999px;
+}
+
+.topic-title {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.topic-description {
+  color: var(--text-secondary);
+}
+
+/* ---- Mode selector: segmented control ---- */
+.mode-selector {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+}
+
+.mode-selector .mode-btn {
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  padding: 7px 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: none;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mode-selector .mode-btn:hover {
+  color: var(--text-primary);
+}
+
+.mode-selector .mode-btn.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Lesson path: numbered pills ---- */
+.lesson-path {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.lesson-path-item {
+  border-radius: 999px;
+  padding: 6px 14px 6px 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.lesson-path-item:hover {
+  border-color: var(--accent-blue);
+}
+
+.lesson-path-item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--accent-blue-glow);
+  color: var(--accent-blue);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---- Section cards: every phase gets a surface ---- */
+.phase-section,
+.formal-defs-section,
+.math-grammar-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 18px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.phase-section .phase-section {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.phase-section > h3,
+.formal-defs-section > h3,
+.math-grammar-section > h3 {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin: 10px 0 4px;
+}
+
+.phase-label {
+  letter-spacing: 0.08em;
+}
+
+.phase-label.abstraction {
+  color: var(--accent-purple);
+  background: var(--accent-purple-glow);
+}
+
+/* ---- Callouts: keep their tint in dark mode ---- */
+html[data-theme="dark"] .callout { border-left-width: 3px; }
+html[data-theme="dark"] .callout-puzzle { background: rgba(217, 154, 43, 0.08); }
+html[data-theme="dark"] .callout-key { background: rgba(91, 141, 239, 0.08); }
+html[data-theme="dark"] .callout-warning { background: rgba(239, 107, 97, 0.08); }
+html[data-theme="dark"] .callout-tip { background: rgba(37, 168, 115, 0.08); }
+html[data-theme="dark"] .callout-notation { background: rgba(140, 124, 246, 0.08); }
+html[data-theme="dark"] .callout-why { background: rgba(217, 154, 43, 0.08); }
+
+/* ---- Exercise and QC cards ---- */
+.exercise-card {
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exercise-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+.exercise-question {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.option-btn {
+  border-radius: 10px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.option-btn:hover:not(.disabled) {
+  border-color: var(--accent-blue);
+  background: var(--accent-blue-glow);
+}
+
+.qc-quantity {
+  border-top: 3px solid var(--accent-blue);
+}
+
+.qc-quantity-value {
+  font-size: 18px;
+  padding: 4px 0;
+}
+
+/* ---- Foundation refs: slightly stronger presence ---- */
+.foundation-refs-section {
+  border-left: 3px solid var(--accent-blue);
+}
+
+/* ---- Welcome page cards ---- */
+.module-card {
+  border-radius: 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   GERMANE-LOAD ACTIVITIES
+   Self-explanation gates, faded (completion) examples,
+   strategy discrimination. Generative interactions that
+   direct working memory toward schema construction.
+   ============================================================ */
+
+/* ---- Self-explanation gate on worked steps ---- */
+.step-gated .step-header {
+  border-left: 3px solid var(--accent-purple);
+}
+
+.self-explain {
+  padding: 4px 0 2px;
+}
+
+.se-prompt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.se-tag {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  background: var(--accent-purple-glow);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.se-input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.se-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px var(--accent-purple-glow);
+}
+
+.se-reveal-btn {
+  padding: 8px 16px;
+  font-weight: 600;
+  color: var(--accent-purple);
+  background: var(--accent-purple-glow);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.se-reveal-btn:hover { filter: brightness(0.97); }
+.se-reveal-btn:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 2px; }
+
+.se-compare {
+  margin-top: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--accent-purple-glow);
+  border-left: 3px solid var(--accent-purple);
+  border-radius: 6px;
+}
+
+/* ---- Faded (completion) worked examples ---- */
+.fe-steps {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fe-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.fe-step-given {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.fe-step-blank {
+  background: var(--bg-card);
+  border-color: var(--border-accent);
+  border-style: dashed;
+}
+
+.fe-step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent-blue);
+}
+
+.fe-step-given .fe-step-num { background: var(--text-muted); }
+
+.fe-step-body { flex: 1; line-height: 1.6; }
+
+.fe-blank-prompt {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.fe-blank-input {
+  width: 100%;
+  max-width: 340px;
+}
+
+.fe-blank-input.correct { border-color: var(--accent-green); }
+.fe-blank-input.incorrect { border-color: var(--accent-red); }
+
+.fe-blank-result {
+  display: none;
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.fe-blank-result.show { display: block; }
+.fe-ok { color: var(--accent-green); font-weight: 700; }
+.fe-no { color: var(--accent-red); font-weight: 700; }
+
+/* ---- Strategy discrimination ---- */
+.strategy-card .ss-question {
+  margin: 14px 0 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   SPACED-REPETITION REVIEW + RETENTION STRIP
+   ============================================================ */
+.retention-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 16px 0 4px;
+}
+
+.retention-strip.retention-empty {
+  display: block;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.retention-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.retention-num {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.retention-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.retention-item.retention-warn .retention-num { color: var(--accent-amber); }
+
+.firstnight-note {
+  margin: 8px 2px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.review-action {
+  border-left: 3px solid var(--accent-blue) !important;
+}
+
+.review-progress {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.review-card {
+  border-left: 3px solid var(--accent-purple);
+}
+
+.learning-science .phase-section h3 {
+  font-size: 18px;
+}
+
+@media (max-width: 560px) {
+  .retention-strip { grid-template-columns: repeat(2, 1fr); }
 }

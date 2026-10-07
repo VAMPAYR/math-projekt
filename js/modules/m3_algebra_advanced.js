@@ -6,6 +6,19 @@
 (function() {
   if (!window.MATH_MODULES) window.MATH_MODULES = [];
   const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+  // Equal 40-pixel units make swapping (x, y) a true reflection across y = x.
+  const inversePaths = (() => {
+    const values = [];
+    const last = Math.log2(6.25);
+    for (let x = -3; x < last; x += 0.025) values.push(x);
+    values.push(last);
+    const point = (x, y) => `${(150 + 40 * x).toFixed(3)} ${(270 - 40 * y).toFixed(3)}`;
+    return {
+      exponential: values.map((x, i) => `${i ? 'L' : 'M'} ${point(x, 2 ** x)}`).join(' '),
+      logarithm: values.filter(x => x >= -1.5 - 1e-9)
+        .map((x, i) => `${i ? 'L' : 'M'} ${point(2 ** x, x)}`).join(' ')
+    };
+  })();
 
   window.MATH_MODULES.push({
     id: 'algebra-advanced',
@@ -248,24 +261,26 @@
           html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 280" width="400" height="280" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="240" x2="380" y2="240" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="200" y1="20" x2="200" y2="260" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 60 230 Q 130 20 200 40 Q 270 20 340 230" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
-  <line x1="200" y1="20" x2="200" y2="260" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
-  <circle cx="200" cy="40" r="5" fill="#10b981"/>
-  <text x="210" y="35" fill="#10b981" font-size="11" font-family="Inter,sans-serif">vertex (h, k)</text>
-  <circle cx="110" cy="240" r="4" fill="#ef4444"/>
-  <circle cx="290" cy="240" r="4" fill="#ef4444"/>
-  <text x="90" y="258" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">root r₁</text>
-  <text x="275" y="258" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">root r₂</text>
-  <text x="155" y="15" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">axis: x = h</text>
-  <text x="310" y="100" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif">y = a(x-h)² + k</text>
-  <text x="310" y="118" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">a > 0: opens up</text>
-  <text x="310" y="134" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">a < 0: opens down</text>
+<svg viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="m3-parabola-title m3-parabola-desc">
+  <title id="m3-parabola-title">A downward-opening parabola</title>
+  <desc id="m3-parabola-desc">The curve crosses the horizontal axis at two roots, equally spaced from its axis of symmetry. The vertex is its highest point.</desc>
+  <line x1="40" y1="240" x2="380" y2="240" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line x1="200" y1="20" x2="200" y2="275" stroke="var(--text-secondary)" stroke-width="1"/>
+  <!-- This exact quadratic has y = 40 + (2/81)(x - 200)^2 in SVG coordinates. -->
+  <path data-curve="parabola" d="M 101 282 Q 200 -202 299 282" fill="none" stroke="var(--accent-blue)" stroke-width="2.5"/>
+  <line data-axis="symmetry" x1="200" y1="20" x2="200" y2="275" stroke="var(--accent-amber)" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle data-point="vertex" cx="200" cy="40" r="5" fill="var(--accent-green)"/>
+  <text x="210" y="35" fill="var(--accent-green)" font-size="11" font-family="Inter,sans-serif">vertex (h, k)</text>
+  <circle data-point="root" cx="110" cy="240" r="4" fill="var(--accent-red)"/>
+  <circle data-point="root" cx="290" cy="240" r="4" fill="var(--accent-red)"/>
+  <text x="76" y="258" fill="var(--accent-red)" font-size="10" font-family="Inter,sans-serif">root r₁</text>
+  <text x="302" y="258" fill="var(--accent-red)" font-size="10" font-family="Inter,sans-serif">root r₂</text>
+  <text x="155" y="15" fill="var(--accent-amber)" font-size="10" font-family="Inter,sans-serif">axis: x = h</text>
+  <text x="265" y="100" fill="var(--accent-blue)" font-size="12" font-family="Inter,sans-serif">y = a(x-h)² + k</text>
+  <text x="280" y="118" fill="var(--text-secondary)" font-size="10" font-family="Inter,sans-serif">a &lt; 0 here</text>
 </svg>
 </div>
-<p class="math-diagram-label">A parabola: vertex at (h, k), roots where it crosses the x-axis, axis of symmetry x = h</p>
+<p class="math-diagram-label">For a &lt; 0, the parabola opens downward. Its vertex is (h, k), its roots lie on the x-axis, and its axis of symmetry is x = h.</p>
 
             <p>A <strong>quadratic equation</strong> has the standard form $ax^2 + bx + c = 0$ where $a \\neq 0$. The word "quadratic" comes from the Latin <em>quadratus</em> (squared). These equations model projectile motion, optimization, area problems, and any phenomenon with a squared relationship.</p>
 
@@ -541,23 +556,27 @@
           html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 260" width="400" height="260" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="200" x2="380" y2="200" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="200" y1="20" x2="200" y2="240" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 50 198 Q 100 195 140 185 Q 180 160 200 130 Q 230 70 260 40 Q 280 25 320 20" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
-  <path d="M 198 50 Q 195 100 185 140 Q 160 180 130 200 Q 70 230 40 240 Q 25 248 20 250" fill="none" stroke="#10b981" stroke-width="2.5" transform="rotate(90 200 200) translate(0 -200) scale(1,-1) translate(0,-200)" />
-  <path d="M 200 198 Q 210 180 230 140 Q 260 80 300 40 Q 320 25 350 20" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="325" y="18" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif">y = bˣ</text>
-  <text x="310" y="60" fill="#10b981" font-size="11" font-family="Inter,sans-serif">y = log_b(x)</text>
-  <line x1="40" y1="40" x2="360" y2="240" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="340" y="248" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">y = x</text>
-  <circle cx="200" cy="130" r="4" fill="#3b82f6"/>
-  <text x="145" y="125" fill="#3b82f6" font-size="10" font-family="Inter,sans-serif">(0, 1)</text>
-  <text x="100" y="30" fill="#e2e8f0" font-size="12" font-family="Inter,sans-serif" text-anchor="middle">Exponential and its inverse (log)</text>
-  <text x="100" y="48" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif" text-anchor="middle">reflected across y = x</text>
+<svg viewBox="0 0 460 350" width="460" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="m3-inverse-title m3-inverse-desc">
+  <title id="m3-inverse-title">The exponential 2 to the x and its inverse logarithm</title>
+  <desc id="m3-inverse-desc">Both axes use the same scale. Swapping an exponential point's coordinates gives a point on the logarithm. The curves reflect across the diagonal y equals x. The exponential passes through zero, one; the logarithm passes through one, zero and is defined only for positive x.</desc>
+  <line data-axis="x" x1="30" y1="270" x2="420" y2="270" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line data-axis="y" x1="150" y1="20" x2="150" y2="330" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line data-axis="reflection" x1="90" y1="330" x2="400" y2="20" stroke="var(--accent-amber)" stroke-width="1" stroke-dasharray="4,3"/>
+  <path data-curve="exponential" d="${inversePaths.exponential}" fill="none" stroke="var(--accent-blue)" stroke-width="2.5"/>
+  <path data-curve="logarithm" d="${inversePaths.logarithm}" fill="none" stroke="var(--accent-green)" stroke-width="2.5"/>
+  <text x="190" y="34" fill="var(--accent-blue)" font-size="12" font-family="Inter,sans-serif">y = 2ˣ</text>
+  <text x="316" y="152" fill="var(--accent-green)" font-size="12" font-family="Inter,sans-serif">y = log₂(x)</text>
+  <text x="355" y="65" fill="var(--accent-amber)" font-size="11" font-family="Inter,sans-serif">y = x</text>
+  <circle data-point="exponential-intercept" cx="150" cy="230" r="4" fill="var(--accent-blue)"/>
+  <text x="103" y="222" fill="var(--accent-blue)" font-size="11" font-family="Inter,sans-serif">(0, 1)</text>
+  <circle data-point="logarithm-intercept" cx="190" cy="270" r="4" fill="var(--accent-green)"/>
+  <text x="201" y="287" fill="var(--accent-green)" font-size="11" font-family="Inter,sans-serif">(1, 0)</text>
+  <text x="426" y="274" fill="var(--text-secondary)" font-size="11" font-family="Inter,sans-serif">x</text>
+  <text x="146" y="14" fill="var(--text-secondary)" font-size="11" font-family="Inter,sans-serif">y</text>
+  <text x="133" y="286" fill="var(--text-secondary)" font-size="10" font-family="Inter,sans-serif">0</text>
 </svg>
 </div>
-<p class="math-diagram-label">Exponential y = bˣ and its inverse y = log_b(x), reflected across y = x</p>
+<p class="math-diagram-label">The curves y = 2ˣ and y = log₂(x) reflect across y = x because inverse functions swap input and output. Equal unit scales make that reflection visible.</p>
 
             <div class="callout callout-key">
               <h4>Laws of Exponents</h4>

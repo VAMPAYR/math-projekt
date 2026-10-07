@@ -27,8 +27,10 @@ topics: [
     <p><strong>Why polynomials?</strong> Polynomials are the simplest class of functions beyond constants and lines. They model real phenomena: $h(t) = -16t^2 + v_0 t + h_0$ (projectile height), revenue = price times quantity, and area = length times width.</p>
     ${WHY('Why exponent rules?', '<p>Exponent rules are shortcuts derived from the definition. $x^3 \\cdot x^2 = (x \\cdot x \\cdot x)(x \\cdot x) = x^5 = x^{3+2}$. Once proven, these rules let us simplify without writing out all the factors.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: Area of a Garden</h4>
-    <p>A rectangular garden has length $(x + 3)$ meters and width $(x + 2)$ meters. What is its area? You need to multiply two binomials: $(x+3)(x+2)$. After this topic, you will know how.</p></div>` },
+  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Garden You Can Cut Into Four Pieces</h4>
+    <p>A rectangular garden has length $(x + 3)$ meters and width $(x + 2)$ meters. What is its area?</p>
+    <p>Draw it: slice the length into $x$ and $3$, the width into $x$ and $2$. The garden falls into four rectangular patches with areas $x^2$, $2x$, $3x$, and $6$. Total: $x^2 + 5x + 6$.</p>
+    <p>You just multiplied two binomials geometrically. Every product rule in this topic (FOIL included) is this picture written in symbols: each term of one factor meets each term of the other exactly once, because each horizontal strip meets each vertical strip in exactly one patch.</p></div>` },
   formalDefinitions: [
       { term: 'Polynomial', symbol: '$p(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + a_0$', definition: 'A finite sum of terms of the form $a_kx^k$ where $k \\in \\mathbb{N} \\cup \\{0\\}$ and $a_k \\in \\mathbb{R}$. The degree is the highest power with nonzero coefficient.' },
       { term: 'Degree', symbol: '$\\deg(p)$', definition: 'The highest exponent appearing in the polynomial with a nonzero coefficient. $\\deg(3x^4 + x) = 4$. The zero polynomial has no defined degree.' },
@@ -193,25 +195,24 @@ topics: [
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 340 200" width="340" height="200" xmlns="http://www.w3.org/2000/svg">
-  <rect x="40" y="40" width="120" height="80" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="2"/>
-  <rect x="160" y="40" width="80" height="80" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="2"/>
-  <text x="100" y="85" fill="#3b82f6" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">x²</text>
-  <text x="200" y="85" fill="#10b981" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">3x</text>
-  <rect x="40" y="120" width="120" height="50" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="2"/>
-  <rect x="160" y="120" width="80" height="50" fill="rgba(139,92,246,0.1)" stroke="#8b5cf6" stroke-width="2"/>
-  <text x="100" y="150" fill="#f59e0b" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">2x</text>
-  <text x="200" y="150" fill="#8b5cf6" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">6</text>
+<svg viewBox="0 0 380 230" width="380" height="230" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="120" height="120" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="160" y="40" width="80" height="120" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="2"/>
+  <text x="100" y="105" fill="#3b82f6" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">x²</text>
+  <text x="200" y="105" fill="#10b981" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">3x</text>
+  <rect x="40" y="160" width="120" height="53.3333" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="160" y="160" width="80" height="53.3333" fill="rgba(139,92,246,0.1)" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="100" y="192" fill="#f59e0b" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">2x</text>
+  <text x="200" y="192" fill="#8b5cf6" font-size="14" text-anchor="middle" font-family="Inter,sans-serif">6</text>
   <text x="100" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">x</text>
   <text x="200" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">3</text>
-  <text x="25" y="85" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">x</text>
-  <text x="25" y="150" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">2</text>
-  <text x="280" y="60" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif">(x+3)(x+2)</text>
-  <text x="280" y="80" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">= x²+5x+6</text>
-  <text x="135" y="188" fill="#e2e8f0" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">Area model: factoring = finding rectangle dimensions</text>
+  <text x="25" y="105" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">x</text>
+  <text x="25" y="192" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">2</text>
+  <text x="260" y="85" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif">(x+3)(x+2)</text>
+  <text x="260" y="105" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">= x²+5x+6</text>
 </svg>
 </div>
-<p class="math-diagram-label">Area model: x² + 5x + 6 = (x+3)(x+2). Each cell is a term of the product.</p>
+<p class="math-diagram-label">Area model: x² + 5x + 6 = (x+3)(x+2). Each cell is a term of the product. The picture uses positive lengths; the algebraic identity holds for every real x.</p>
 
     <div class="callout callout-key"><h4>Factoring Strategy (Always Follow This Order)</h4>
     <ol>

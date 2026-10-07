@@ -13,8 +13,17 @@ Thumbs.db
 
 # Local reference material
 sources/
+books/
+references/
+*.pdf
+*.epub
+*.mobi
+*.azw
+*.azw3
+*.djvu
 
 # Local scratch scripts
+.claude/launch.json
 fix_m1.js
 fix_line.js
 
@@ -34,3 +43,4 @@ id_ed25519
 id_ed25519.*
 secrets/
 private/
+.gstack/

@@ -48,9 +48,10 @@ topics: [
       }
     ]
   },
-  hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: The Broken Calculator</h4>
-    <p>A calculator can only show the answer, not the steps. It displays: "? + 7 = 15." What is "?"</p>
-    <p>You just solved your first algebraic equation: $x + 7 = 15$, so $x = 8$. Algebra is the discipline of finding these unknowns systematically.</p></div>` },
+  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Broken Calculator</h4>
+    <p>A calculator can only show the answer, not the steps. It displays: "$? + 7 = 15$." You know instantly that $? = 8$: you mentally <em>undid</em> the $+7$.</p>
+    <p>Now it displays: "$3 \\cdot ? - 5 = 43$." Guess-and-check suddenly feels slow. But the same undo move still works, applied twice in reverse order: add back the $5$ (getting $48$), then divide out the $3$ (getting $16$).</p>
+    <p>That is what algebra is: the guessing you already do, turned into a procedure that never gets harder as the puzzles do. This topic builds the vocabulary; the next one builds the procedure.</p></div>` },
   concept: { html: `
     <div class="callout callout-key"><h4>Key Vocabulary</h4>
     <ul>
@@ -232,7 +233,7 @@ topics: [
   <text x="100" y="170" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">(x₁, y₁)</text>
   <circle cx="260" cy="102" r="4" fill="#f59e0b"/>
   <text x="265" y="95" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">(x₂, y₂)</text>
-  <text x="350" y="80" fill="#3b82f6" font-size="14" font-family="Inter,sans-serif">y = mx + b</text>
+  <text x="380" y="80" fill="#3b82f6" font-size="14" text-anchor="end" font-family="Inter,sans-serif">y = mx + b</text>
   <text x="190" y="30" fill="#e2e8f0" font-size="14" font-family="Inter,sans-serif" text-anchor="middle">slope m = rise / run = Δy / Δx</text>
 </svg>
 </div>
@@ -611,8 +612,8 @@ topics: [
   <line x1="40" y1="140" x2="310" y2="140" stroke="#94a3b8" stroke-width="1"/>
   <line x1="60" y1="240" x2="300" y2="60" stroke="#3b82f6" stroke-width="2"/>
   <line x1="60" y1="60" x2="300" y2="220" stroke="#10b981" stroke-width="2"/>
-  <circle cx="195" cy="155" r="6" fill="#ef4444" stroke="white" stroke-width="1.5"/>
-  <text x="205" y="148" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">solution</text>
+  <circle cx="187.0588" cy="144.7059" r="6" fill="#ef4444" stroke="white" stroke-width="1.5"/>
+  <text x="198" y="136" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">solution</text>
   <text x="280" y="55" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif">Line 1</text>
   <text x="280" y="235" fill="#10b981" font-size="11" font-family="Inter,sans-serif">Line 2</text>
   <text x="175" y="17" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Two lines cross at the solution</text>
