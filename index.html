@@ -14,8 +14,8 @@
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=plain-ui-33">
-  <link rel="stylesheet" href="css/game.css?v=plain-ui-34">
+  <link rel="stylesheet" href="css/styles.css?v=figures-gre-20261007">
+  <link rel="stylesheet" href="css/game.css?v=figures-gre-20261007">
 </head>
 <body>
   <div class="app-container">
@@ -53,6 +53,7 @@
           <span class="current">Home</span>
         </div>
         <div class="header-actions">
+          <button class="btn-text" id="sound-toggle-btn" aria-label="Toggle sound effects" aria-pressed="true" title="Turn sound effects off" onclick="SFX.toggle()">Sound On</button>
           <button class="btn-text theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark mode" title="Switch to dark mode">Dark</button>
           <button class="btn-text" id="progress-tools-btn" aria-label="Progress tools" title="Progress tools" onclick="MathEngine.showProgressTools()">Progress</button>
           <button class="btn-text" id="drill-nav-btn" aria-label="Speed Drill" title="Speed Drill" onclick="MathEngine.showDrillSelector()">Drill</button>
@@ -68,37 +69,42 @@
   </div>
 
   <!-- Visualization toolkit -->
-  <script src="js/visualizations.js?v=plain-ui-30"></script>
+  <script src="js/visualizations.js?v=figures-gre-20261007"></script>
+
+  <!-- Sound effects (synthesized, no assets) -->
+  <script src="js/sfx.js?v=figures-gre-20261007"></script>
 
   <!-- Game systems (must load before engine) -->
-  <script src="js/game_state.js?v=plain-ui-30"></script>
-  <script src="js/problem_engine.js?v=plain-ui-30"></script>
-  <script src="js/speed_drill.js?v=plain-ui-30"></script>
+  <script src="js/game_state.js?v=figures-gre-20261007"></script>
+  <script src="js/review_engine.js?v=figures-gre-20261007"></script>
+  <script src="js/problem_engine.js?v=figures-gre-20261007"></script>
+  <script src="js/speed_drill.js?v=figures-gre-20261007"></script>
 
   <!-- Content modules (order matters: must load before engine) -->
-  <script src="js/modules/m1_foundations.js?v=plain-ui-30"></script>
-  <script src="js/modules/m2_algebra_core.js?v=plain-ui-30"></script>
-  <script src="js/modules/m_geometry.js?v=plain-ui-30"></script>
-  <script src="js/modules/m3_intermediate_algebra.js?v=plain-ui-30"></script>
-  <script src="js/modules/m3_algebra_advanced.js?v=plain-ui-30"></script>
-  <script src="js/modules/m4_precalculus.js?v=plain-ui-30"></script>
-  <script src="js/modules/m5_trigonometry.js?v=plain-ui-30"></script>
-  <script src="js/modules/m5_calculus1.js?v=plain-ui-30"></script>
-  <script src="js/modules/m6_calculus1.js?v=plain-ui-30"></script>
-  <script src="js/modules/m6_calculus2.js?v=plain-ui-30"></script>
-  <script src="js/modules/m7_calculus2.js?v=plain-ui-30"></script>
-  <script src="js/modules/m7_calculus3.js?v=plain-ui-30"></script>
-  <script src="js/modules/m8_calculus3.js?v=plain-ui-30"></script>
-  <script src="js/modules/m9_probability.js?v=plain-ui-30"></script>
-  <script src="js/modules/m9_statistics_extensions.js?v=plain-ui-33"></script>
-  <script src="js/modules/topic_extensions.js?v=plain-ui-36"></script>
-  <script src="js/self_study_guides.js?v=plain-ui-36"></script>
-  <script src="js/university_walkthroughs.js?v=depth-5"></script>
+  <script src="js/modules/m1_foundations.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m2_algebra_core.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m_geometry.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m3_intermediate_algebra.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m3_algebra_advanced.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m4_precalculus.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m5_trigonometry.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m5_calculus1.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m6_calculus1.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m6_calculus2.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m7_calculus2.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m7_calculus3.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m8_calculus3.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m9_probability.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m9_statistics_extensions.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/topic_extensions.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m10_gre.js?v=figures-gre-20261007"></script>
+  <script src="js/self_study_guides.js?v=figures-gre-20261007"></script>
+  <script src="js/university_walkthroughs.js?v=figures-gre-20261007"></script>
 
   <!-- Mini-games -->
-  <script src="js/mini_games.js?v=plain-ui-30"></script>
+  <script src="js/mini_games.js?v=figures-gre-20261007"></script>
 
   <!-- Core engine (must load last) -->
-  <script src="js/engine.js?v=plain-ui-36"></script>
+  <script src="js/engine.js?v=figures-gre-20261007"></script>
 </body>
 </html>

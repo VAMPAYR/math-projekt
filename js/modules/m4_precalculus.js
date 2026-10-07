@@ -4,6 +4,12 @@
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
 const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+// The first quadratic curve has x(t) = 80 + 120t. The input x = 160
+// corresponds to t = 2/3; its output must come from the same curve.
+const functionDiagramT = (160 - 80) / (200 - 80);
+const functionPointY = (1 - functionDiagramT) ** 2 * 180
+  + 2 * (1 - functionDiagramT) * functionDiagramT * 40
+  + functionDiagramT ** 2 * 120;
 
 window.MATH_MODULES.push({
 id: 'precalculus',
@@ -56,16 +62,18 @@ topics: [
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+<svg data-figure="function-mapping" viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A function with a point and guides showing its input a and output f(a)">
+  <title>Each input has one output</title>
+  <desc>The highlighted point lies on the blue curve. The vertical guide identifies input a, and the horizontal guide identifies output f(a).</desc>
   <line x1="40" y1="200" x2="380" y2="200" stroke="#94a3b8" stroke-width="1"/>
   <line x1="60" y1="20" x2="60" y2="220" stroke="#94a3b8" stroke-width="1"/>
   <path d="M 80 180 Q 140 40 200 120 Q 260 200 320 60" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
   <line x1="160" y1="20" x2="160" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="165" y="18" fill="#10b981" font-size="10" font-family="Inter,sans-serif">x = a</text>
-  <line x1="60" y1="80" x2="160" y2="80" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-  <circle cx="160" cy="80" r="4" fill="#f59e0b"/>
-  <text x="168" y="76" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">(a, f(a))</text>
-  <text x="62" y="76" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">f(a)</text>
+  <line x1="60" y1="${functionPointY}" x2="160" y2="${functionPointY}" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="160" cy="${functionPointY}" r="4" fill="#f59e0b"/>
+  <text x="168" y="${functionPointY - 6}" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">(a, f(a))</text>
+  <text x="62" y="${functionPointY - 6}" fill="#ef4444" font-size="10" font-family="Inter,sans-serif">f(a)</text>
   <text x="200" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">A function: each input maps to exactly one output</text>
   <text x="330" y="55" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif">f(x)</text>
 </svg>

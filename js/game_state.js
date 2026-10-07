@@ -19,6 +19,7 @@ const GameState = (() => {
     currentStreak: 0, // consecutive correct answers
     bestStreak: 0,
     achievements: {},
+    hadPerfectDrill: false,
     dailyChallengeCompleted: {},
     modeStats: {
       learn: { completed: 0, xpEarned: 0 },
@@ -26,7 +27,9 @@ const GameState = (() => {
       challenge: { completed: 0, xpEarned: 0 },
       speedDrill: { bestWpm: 0, totalDrills: 0, xpEarned: 0 },
     },
-    topicMastery: {} // topicId -> { score: 0-100, problemsSolved: N }
+    masterySchemaVersion: 2,
+    topicMastery: {}, // moduleId::topicId -> { score: 0-100, problemsSolved: N }
+    legacyTopicMastery: {} // preserved histories whose module cannot be identified
   };
 
   let state = {};
@@ -63,6 +66,12 @@ const GameState = (() => {
     dailyChallengeComplete: 100,
     proofComplete: 60,
     matchingComplete: 15,
+    quantComparison: 20,
+    quantComparisonHard: 35,
+    multiSelectCorrect: 25,
+    miniGameCorrect: 15,
+    completionCorrect: 30,
+    strategyCorrect: 15,
     streakBonus3: 20,
     streakBonus5: 50,
     streakBonus10: 120,
@@ -86,7 +95,7 @@ const GameState = (() => {
     level_5: { title: 'Adept', desc: 'Reach Level 5', icon: '', condition: s => s.level >= 5 },
     level_10: { title: 'Master', desc: 'Reach Level 10', icon: '', condition: s => s.level >= 10 },
     level_20: { title: 'Advanced Level', desc: 'Reach Level 20', icon: '', condition: s => s.level >= 20 },
-    speed_demon: { title: 'Accurate Drill', desc: 'Complete a speed drill with 100% accuracy', icon: '', condition: s => s.modeStats?.speedDrill?.totalDrills >= 1 },
+    speed_demon: { title: 'Accurate Drill', desc: 'Complete a speed drill with 100% accuracy', icon: '', condition: s => !!s.hadPerfectDrill },
     challenge_1: { title: 'Challenger', desc: 'Complete your first challenge', icon: '', condition: s => s.modeStats?.challenge?.completed >= 1 },
     challenge_10: { title: 'Challenge Practice', desc: 'Complete 10 challenges', icon: '', condition: s => s.modeStats?.challenge?.completed >= 10 },
     daily_3: { title: 'Consistent', desc: 'Complete 3 daily challenges', icon: '', condition: s => Object.keys(s.dailyChallengeCompleted || {}).length >= 3 },
@@ -105,12 +114,97 @@ const GameState = (() => {
   }
 
   function load() {
+    let stored = {};
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      state = data ? { ...DEFAULT_STATE, ...JSON.parse(data) } : { ...DEFAULT_STATE };
-    } catch (e) {
-      state = { ...DEFAULT_STATE };
+      if (data) stored = JSON.parse(data);
+    } catch (e) { /* Use a fresh state when storage is blocked or corrupt. */ }
+    state = normalizeState(stored);
+    save();
+  }
+
+  function isMap(value) {
+    return !!value && typeof value === 'object' && !Array.isArray(value);
+  }
+
+  function copyJson(value) {
+    return JSON.parse(JSON.stringify(value));
+  }
+
+  function scopedModuleId(topicId, moduleId) {
+    if (typeof topicId !== 'string' || !topicId) return null;
+    const modules = Array.isArray(window.MATH_MODULES) ? window.MATH_MODULES : [];
+    const matches = modules.filter(mod => mod && Array.isArray(mod.topics)
+      && mod.topics.some(topic => topic && topic.id === topicId));
+    if (typeof moduleId === 'string' && moduleId) {
+      return matches.some(mod => mod.id === moduleId) ? moduleId : null;
     }
+    return matches.length === 1 ? matches[0].id : null;
+  }
+
+  function masteryKey(topicId, moduleId) {
+    const resolvedModuleId = scopedModuleId(topicId, moduleId);
+    return resolvedModuleId ? `${resolvedModuleId}::${topicId}` : null;
+  }
+
+  function normalizeMastery(saved) {
+    const topicMastery = {};
+    // Archived histories remain separate even if the curriculum later changes.
+    const legacyTopicMastery = isMap(saved.legacyTopicMastery) ? copyJson(saved.legacyTopicMastery) : {};
+    const entries = isMap(saved.topicMastery) ? Object.entries(saved.topicMastery) : [];
+    // A current scoped record wins over an older record for the same topic.
+    entries.sort(([a], [b]) => Number(b.includes('::')) - Number(a.includes('::')));
+    for (const [key, record] of entries) {
+      if (!isMap(record)) continue;
+      const parts = key.split('::');
+      const topicId = parts.length === 2 ? parts[1] : key;
+      const moduleId = parts.length === 2 ? parts[0] : record.moduleId;
+      const identityConflict = (record.topicId && record.topicId !== topicId)
+        || (parts.length === 2 && record.moduleId && record.moduleId !== moduleId);
+      const target = !identityConflict && masteryKey(topicId, moduleId);
+      if (target && !Object.prototype.hasOwnProperty.call(topicMastery, target)) {
+        topicMastery[target] = {
+          ...copyJson(record), moduleId: target.split('::')[0], topicId,
+          score: Number.isFinite(record.score) ? Math.max(0, Math.min(100, record.score)) : 0,
+          problemsSolved: Number.isFinite(record.problemsSolved) ? Math.max(0, Math.floor(record.problemsSolved)) : 0
+        };
+      } else {
+        // Do not combine histories or guess which duplicate topic earned them.
+        let archiveKey = key, suffix = 1;
+        while (Object.prototype.hasOwnProperty.call(legacyTopicMastery, archiveKey)) archiveKey = `${key}#${suffix++}`;
+        legacyTopicMastery[archiveKey] = copyJson(record);
+      }
+    }
+    return { topicMastery, legacyTopicMastery };
+  }
+
+  function normalizeState(value) {
+    const saved = isMap(value) ? value : {};
+    const result = { ...copyJson(DEFAULT_STATE), ...copyJson(saved) };
+    for (const [key, initial] of Object.entries(DEFAULT_STATE)) {
+      if (typeof initial === 'number') {
+        result[key] = Number.isFinite(saved[key]) && saved[key] >= 0 ? saved[key] : initial;
+      }
+    }
+    result.level = Math.max(1, Math.min(LEVEL_THRESHOLDS.length, Math.floor(result.level)));
+    result.lastActiveDate = typeof saved.lastActiveDate === 'string' ? saved.lastActiveDate : null;
+    result.hadPerfectDrill = saved.hadPerfectDrill === true;
+    result.achievements = isMap(saved.achievements) ? copyJson(saved.achievements) : {};
+    result.dailyChallengeCompleted = isMap(saved.dailyChallengeCompleted) ? copyJson(saved.dailyChallengeCompleted) : {};
+    result.modeStats = {};
+    const modes = isMap(saved.modeStats) ? saved.modeStats : {};
+    for (const [key, initial] of Object.entries(DEFAULT_STATE.modeStats)) {
+      const bucket = isMap(modes[key]) ? modes[key] : {};
+      result.modeStats[key] = { ...initial, ...copyJson(bucket) };
+      for (const [field, fallback] of Object.entries(initial)) {
+        result.modeStats[key][field] = Number.isFinite(bucket[field]) && bucket[field] >= 0 ? bucket[field] : fallback;
+      }
+    }
+    for (const [key, bucket] of Object.entries(modes)) {
+      if (!Object.prototype.hasOwnProperty.call(result.modeStats, key) && isMap(bucket)) result.modeStats[key] = copyJson(bucket);
+    }
+    Object.assign(result, normalizeMastery(saved), { masterySchemaVersion: 2 });
+    return result;
   }
 
   function save() {
@@ -135,7 +229,7 @@ const GameState = (() => {
   }
 
   /* ---- XP & Leveling ---- */
-  function addXP(amount, source) {
+  function addXP(amount, source, flatBonus = 0) {
     // Apply streak multiplier
     let multiplier = 1;
     if (state.currentStreak >= 25) multiplier = 2.0;
@@ -143,7 +237,9 @@ const GameState = (() => {
     else if (state.currentStreak >= 5) multiplier = 1.25;
     else if (state.currentStreak >= 3) multiplier = 1.1;
 
-    const xpGained = Math.round(amount * multiplier);
+    // The multiplier scales the base reward; one-time flat bonuses (streak
+    // milestones, mastery) are added afterward so they are not inflated.
+    const xpGained = Math.round(amount * multiplier) + Math.round(flatBonus);
     state.xp += xpGained;
 
     // Check level up
@@ -180,7 +276,7 @@ const GameState = (() => {
   }
 
   /* ---- Problem Tracking ---- */
-  function recordCorrectAnswer(difficulty, type, topicId) {
+  function recordCorrectAnswer(difficulty, type, topicId, moduleId) {
     state.totalProblemsCorrect++;
     state.totalProblemsAttempted++;
     state.currentSessionCorrect++;
@@ -198,27 +294,42 @@ const GameState = (() => {
     else if (type === 'proof') xp = XP_REWARDS.proofComplete;
     else if (type === 'matching') xp = XP_REWARDS.matchingComplete;
     else if (type === 'drill') xp = XP_REWARDS.drillProblem;
+    else if (type === 'quantComparison') xp = difficulty === 'hard' ? XP_REWARDS.quantComparisonHard : XP_REWARDS.quantComparison;
+    else if (type === 'multiSelect') xp = XP_REWARDS.multiSelectCorrect;
+    else if (type === 'completion') xp = XP_REWARDS.completionCorrect;
+    else if (type === 'strategy') xp = XP_REWARDS.strategyCorrect;
+    else if (type === 'game') xp = XP_REWARDS.miniGameCorrect;
     else if (difficulty === 'hard') xp = XP_REWARDS.mcqCorrectHard;
     else if (difficulty === 'medium') xp = XP_REWARDS.mcqCorrectMedium;
 
-    // Streak bonuses
-    if (state.currentStreak === 3) xp += XP_REWARDS.streakBonus3;
-    if (state.currentStreak === 5) xp += XP_REWARDS.streakBonus5;
-    if (state.currentStreak === 10) xp += XP_REWARDS.streakBonus10;
-    if (state.currentStreak === 25) xp += XP_REWARDS.streakBonus25;
+    // One-time flat bonuses (not scaled by the streak multiplier).
+    let flatBonus = 0;
+    const hitStreakMilestone = [3, 5, 10, 25].includes(state.currentStreak);
+    if (state.currentStreak === 3) flatBonus += XP_REWARDS.streakBonus3;
+    if (state.currentStreak === 5) flatBonus += XP_REWARDS.streakBonus5;
+    if (state.currentStreak === 10) flatBonus += XP_REWARDS.streakBonus10;
+    if (state.currentStreak === 25) flatBonus += XP_REWARDS.streakBonus25;
 
-    // Topic mastery
-    if (topicId) {
-      if (!state.topicMastery[topicId]) state.topicMastery[topicId] = { score: 0, problemsSolved: 0 };
-      state.topicMastery[topicId].problemsSolved++;
-      const newScore = Math.min(100, state.topicMastery[topicId].score + (difficulty === 'hard' ? 10 : difficulty === 'medium' ? 6 : 3));
-      if (newScore >= 100 && state.topicMastery[topicId].score < 100) {
-        xp += XP_REWARDS.topicMastery;
-      }
-      state.topicMastery[topicId].score = newScore;
+    if (window.SFX) {
+      if (hitStreakMilestone) SFX.streak();
+      else SFX.correct();
     }
 
-    const xpGained = addXP(xp, type === 'drill' ? 'speedDrill' : 'practice');
+    // Topic mastery
+    const topicKey = masteryKey(topicId, moduleId);
+    if (topicKey) {
+      if (!state.topicMastery[topicKey]) state.topicMastery[topicKey] = {
+        moduleId: topicKey.split('::')[0], topicId, score: 0, problemsSolved: 0
+      };
+      state.topicMastery[topicKey].problemsSolved++;
+      const newScore = Math.min(100, state.topicMastery[topicKey].score + (difficulty === 'hard' ? 10 : difficulty === 'medium' ? 6 : 3));
+      if (newScore >= 100 && state.topicMastery[topicKey].score < 100) {
+        flatBonus += XP_REWARDS.topicMastery;
+      }
+      state.topicMastery[topicKey].score = newScore;
+    }
+
+    const xpGained = addXP(xp, type === 'drill' ? 'speedDrill' : 'practice', flatBonus);
     save();
     return { xpGained, streak: state.currentStreak, bestStreak: state.bestStreak };
   }
@@ -227,6 +338,7 @@ const GameState = (() => {
     state.totalProblemsAttempted++;
     state.currentSessionAttempted++;
     state.currentStreak = 0;
+    if (window.SFX) SFX.incorrect();
     save();
     return { streak: 0 };
   }
@@ -248,6 +360,8 @@ const GameState = (() => {
     let xp = correct * XP_REWARDS.drillProblem;
     if (correct === total && total >= 5) xp += XP_REWARDS.drillPerfectRound;
     if (timeSeconds < 60 && correct >= 10) xp += XP_REWARDS.drillBonusSpeed;
+    if (correct === total && total > 0) state.hadPerfectDrill = true;
+    if (window.SFX) SFX.drillEnd();
     addXP(xp, 'speedDrill');
     save();
     return { wpm, xp };
@@ -255,9 +369,11 @@ const GameState = (() => {
 
   function recordDailyChallenge() {
     const today = new Date().toISOString().slice(0, 10);
+    if (state.dailyChallengeCompleted[today]) return { completed: false, xpGained: 0, date: today };
     state.dailyChallengeCompleted[today] = true;
-    addXP(XP_REWARDS.dailyChallengeComplete, 'practice');
+    const xpGained = addXP(XP_REWARDS.dailyChallengeComplete, 'practice');
     save();
+    return { completed: true, xpGained, date: today };
   }
 
   /* ---- Achievements ---- */
@@ -277,10 +393,12 @@ const GameState = (() => {
   /* ---- UI Notifications ---- */
   function showLevelUp(level) {
     const title = LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)];
+    if (window.SFX) SFX.levelUp();
     showGameToast(`Level ${level}: ${title}`, 'level-up');
   }
 
   function showAchievement(ach) {
+    if (window.SFX) SFX.achievement();
     showGameToast(`Achievement: ${ach.title}`, 'achievement');
   }
 
@@ -317,7 +435,7 @@ const GameState = (() => {
   }
 
   /* ---- Public Getters ---- */
-  function getState() { return { ...state }; }
+  function getState() { return copyJson(state); }
   function getLevel() { return state.level; }
   function getLevelTitle() { return LEVEL_TITLES[Math.min(state.level - 1, LEVEL_TITLES.length - 1)]; }
   function getXP() { return state.xp; }
@@ -331,7 +449,10 @@ const GameState = (() => {
   }
   function getAchievements() { return { ...ACHIEVEMENTS }; }
   function getUnlockedAchievements() { return { ...state.achievements }; }
-  function getTopicMastery(topicId) { return state.topicMastery[topicId] || { score: 0, problemsSolved: 0 }; }
+  function getTopicMastery(topicId, moduleId) {
+    const key = masteryKey(topicId, moduleId);
+    return key && state.topicMastery[key] ? copyJson(state.topicMastery[key]) : { score: 0, problemsSolved: 0 };
+  }
   function isDailyChallengeComplete() {
     const today = new Date().toISOString().slice(0, 10);
     return !!state.dailyChallengeCompleted[today];

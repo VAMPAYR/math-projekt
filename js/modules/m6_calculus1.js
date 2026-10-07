@@ -4,6 +4,33 @@
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
 const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+const secantFigure = (() => {
+  const start = [80, 180], firstControl = [140, 100], join = [200, 60];
+  const secondControl = [260, 30], end = [340, 25];
+  const point = (p0, p1, p2, t) => p0.map((value, i) =>
+    (1 - t) ** 2 * value + 2 * (1 - t) * t * p1[i] + t ** 2 * p2[i]);
+  // Both secant endpoints come from the same quadratic segments we render.
+  const a = point(start, firstControl, join, 0.5);
+  const b = point(join, secondControl, end, 0.25);
+  return `<svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Average rate of change is the slope of a secant joining two points on a curve">
+  <title>Average rate of change</title>
+  <desc>The two marked points lie on the blue curve. The dashed green secant joins them. Its horizontal change is b minus a and its vertical change is f of b minus f of a.</desc>
+  <line x1="40" y1="210" x2="380" y2="210" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line x1="60" y1="20" x2="60" y2="220" stroke="var(--text-secondary)" stroke-width="1"/>
+  <path data-figure="curve" d="M ${start.join(' ')} Q ${firstControl.join(' ')} ${join.join(' ')} Q ${secondControl.join(' ')} ${end.join(' ')}" fill="none" stroke="var(--accent-blue)" stroke-width="2.5"/>
+  <line data-figure="secant" x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--accent-green)" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line data-figure="run" x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${a[1]}" stroke="var(--accent-red)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line data-figure="rise" x1="${b[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--accent-amber)" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle data-figure="secant-start" cx="${a[0]}" cy="${a[1]}" r="4" fill="var(--accent-purple)"/>
+  <circle data-figure="secant-end" cx="${b[0]}" cy="${b[1]}" r="4" fill="var(--accent-purple)"/>
+  <text x="87" y="106" fill="var(--accent-purple)" font-size="10" font-family="Inter,sans-serif">(a, f(a))</text>
+  <text x="241" y="69" fill="var(--accent-purple)" font-size="10" font-family="Inter,sans-serif">(b, f(b))</text>
+  <text x="${(a[0] + b[0]) / 2}" y="132" fill="var(--accent-red)" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">b - a</text>
+  <text x="241" y="96" fill="var(--accent-amber)" font-size="10" font-family="Inter,sans-serif">f(b)-f(a)</text>
+  <text x="105" y="25" fill="var(--text-primary)" font-size="11" font-family="Inter,sans-serif">Average rate = [f(b)-f(a)] / (b-a)</text>
+  <text x="345" y="22" fill="var(--accent-blue)" font-size="11" font-family="Inter,sans-serif">f(x)</text>
+</svg>`;
+})();
 
 window.MATH_MODULES.push({
 id: 'calculus1',
@@ -29,22 +56,7 @@ topics: [
   concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="210" x2="380" y2="210" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="60" y1="20" x2="60" y2="220" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 80 180 Q 140 100 200 60 Q 260 30 340 25" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
-  <line x1="130" y1="140" x2="250" y2="60" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <line x1="130" y1="140" x2="250" y2="140" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="250" y1="140" x2="250" y2="60" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
-  <circle cx="130" cy="140" r="4" fill="#8b5cf6"/>
-  <circle cx="250" cy="60" r="4" fill="#8b5cf6"/>
-  <text x="140" y="155" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">(a, f(a))</text>
-  <text x="255" y="55" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">(b, f(b))</text>
-  <text x="180" y="158" fill="#ef4444" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">b - a</text>
-  <text x="262" y="105" fill="#f59e0b" font-size="10" font-family="Inter,sans-serif">f(b)-f(a)</text>
-  <text x="120" y="30" fill="#e2e8f0" font-size="12" font-family="Inter,sans-serif">Average rate = [f(b)-f(a)] / (b-a)</text>
-  <text x="345" y="22" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif">f(x)</text>
-</svg>
+${secantFigure}
 </div>
 <p class="math-diagram-label">Average rate of change: slope of the secant line between two points on f(x)</p>
 

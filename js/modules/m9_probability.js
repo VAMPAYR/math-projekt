@@ -5,6 +5,12 @@
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
 const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
 
+/* Sample the bell curve and its highlighted region from the same scale. */
+const normalCurvePoints = (from, to) => Array.from({ length: 81 }, (_, i) => {
+  const z = from + (to - from) * i / 80;
+  return `${(220 + 60 * z).toFixed(2)} ${(180 - 150 * Math.exp(-z * z / 2)).toFixed(2)}`;
+}).join(' L ');
+
 window.MATH_MODULES.push({
 id: 'probability-statistics',
 order: 14,
@@ -264,24 +270,25 @@ topics: [
 <div class="math-diagram">
 <svg viewBox="0 0 440 220" width="440" height="220" xmlns="http://www.w3.org/2000/svg">
   <line x1="20" y1="180" x2="420" y2="180" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 30 180 Q 80 178 120 170 Q 160 150 190 100 Q 210 50 220 30 Q 230 50 250 100 Q 280 150 320 170 Q 360 178 410 180" fill="rgba(59,130,246,0.12)" stroke="#3b82f6" stroke-width="2.5"/>
+  <path d="M 28 180 L ${normalCurvePoints(-3.2, 3.2)} L 412 180 Z" fill="rgba(59,130,246,0.12)" stroke="none"/>
+  <path d="M 160 180 L ${normalCurvePoints(-1, 1)} L 280 180 Z" fill="rgba(16,185,129,0.15)" stroke="none"/>
+  <path d="M ${normalCurvePoints(-3.2, 3.2)}" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
   <line x1="220" y1="30" x2="220" y2="180" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="220" y="198" fill="#f59e0b" font-size="12" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600">μ</text>
   <line x1="40" y1="177" x2="40" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="40" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">-3σ</text><line x1="100" y1="177" x2="100" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="100" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">-2σ</text><line x1="160" y1="177" x2="160" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="160" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">-1σ</text><line x1="280" y1="177" x2="280" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="280" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">+1σ</text><line x1="340" y1="177" x2="340" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="340" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">+2σ</text><line x1="400" y1="177" x2="400" y2="183" stroke="#94a3b8" stroke-width="1"/>
-    <text x="400" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">+3σ</text>
-  <rect x="160" y="98" width="120" height="82" fill="rgba(16,185,129,0.08)" stroke="none"/>
-  <text x="220" y="150" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">68%</text>
-  <text x="220" y="25" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Normal Distribution</text>
-  <text x="370" y="120" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">95% within ±2σ</text>
-  <text x="370" y="140" fill="#94a3b8" font-size="10" font-family="Inter,sans-serif">99.7% within ±3σ</text>
+    <text x="40" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ−3σ</text><line x1="100" y1="177" x2="100" y2="183" stroke="#94a3b8" stroke-width="1"/>
+    <text x="100" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ−2σ</text><line x1="160" y1="177" x2="160" y2="183" stroke="#94a3b8" stroke-width="1"/>
+    <text x="160" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ−σ</text><line x1="280" y1="177" x2="280" y2="183" stroke="#94a3b8" stroke-width="1"/>
+    <text x="280" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ+σ</text><line x1="340" y1="177" x2="340" y2="183" stroke="#94a3b8" stroke-width="1"/>
+    <text x="340" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ+2σ</text><line x1="400" y1="177" x2="400" y2="183" stroke="#94a3b8" stroke-width="1"/>
+    <text x="400" y="198" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">μ+3σ</text>
+  <text x="220" y="150" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">≈68%</text>
+  <text x="220" y="18" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Normal Distribution</text>
+  <text x="410" y="58" fill="#94a3b8" font-size="10" text-anchor="end" font-family="Inter,sans-serif">≈95% within ±2σ</text>
+  <text x="410" y="76" fill="#94a3b8" font-size="10" text-anchor="end" font-family="Inter,sans-serif">≈99.7% within ±3σ</text>
 </svg>
 </div>
-<p class="math-diagram-label">The normal (bell) curve: 68% of data falls within ±1 standard deviation of the mean</p>
+<p class="math-diagram-label">The normal (bell) curve: approximately 68% of probability lies within one standard deviation of the mean.</p>
 
     <div class="callout callout-key"><h4>Expected Value (Mean)</h4>
     <p>Discrete: $E[X] = \\sum_i x_i P(X = x_i)$. Continuous: $E[X] = \\int_{-\\infty}^{\\infty} x f(x)\\,dx$.</p>

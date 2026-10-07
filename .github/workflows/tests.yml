@@ -1,0 +1,36 @@
+name: Regression checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - name: Check JavaScript syntax
+        run: find js -name '*.js' -print0 | xargs -0 -n1 node --check
+      - name: Run regression tests
+        run: node --test tests/*.test.cjs
+      - name: Keep reference books out of the repository
+        shell: bash
+        run: |
+          books=$(git ls-files -- sources books references '*.pdf' '*.epub' '*.mobi' '*.azw' '*.azw3' '*.djvu')
+          if [ -n "$books" ]; then
+            echo 'Reference books and ebook files must remain untracked.'
+            exit 1
+          fi

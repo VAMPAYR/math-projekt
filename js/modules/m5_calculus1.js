@@ -5,6 +5,35 @@
 (function() {
   if (!window.MATH_MODULES) window.MATH_MODULES = [];
   const WHY = (title, body) => `<div class="why-box"><div class="why-box-header" onclick="MathEngine.toggleWhyBox(this)">${title}</div><div class="why-box-body">${body}</div></div>`;
+  const derivativeFigure = (() => {
+    // The two quadratic segments share a tangent at p. Use their control
+    // points for both the curve and its tangent, rather than sketching a line.
+    const start = [80, 200], leftControl = [150, 180], p = [200, 120];
+    const rightControl = [250, 60], end = [320, 40];
+    const slope = (p[1] - leftControl[1]) / (p[0] - leftControl[0]);
+    const tangentY = x => p[1] + slope * (x - p[0]);
+    const nearby = start.map((value, i) => (value + 2 * leftControl[i] + p[i]) / 4);
+    return `<svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A secant approaches the tangent to a smooth curve at a highlighted point">
+  <title>Derivative as the slope of a tangent</title>
+  <desc>The blue curve passes through the highlighted point. The solid green tangent matches its direction there. A dashed secant joins a nearby point to the highlighted point; the horizontal and vertical changes give its slope.</desc>
+  <line x1="40" y1="220" x2="380" y2="220" stroke="var(--text-secondary)" stroke-width="1"/>
+  <line x1="60" y1="20" x2="60" y2="230" stroke="var(--text-secondary)" stroke-width="1"/>
+  <path data-figure="curve" d="M ${start.join(' ')} Q ${leftControl.join(' ')} ${p.join(' ')} Q ${rightControl.join(' ')} ${end.join(' ')}" fill="none" stroke="var(--accent-blue)" stroke-width="2.5"/>
+  <text x="330" y="38" fill="var(--accent-blue)" font-size="12" font-family="Inter,sans-serif">f(x)</text>
+  <line data-figure="tangent" x1="130" y1="${tangentY(130)}" x2="255" y2="${tangentY(255)}" stroke="var(--accent-green)" stroke-width="1.8"/>
+  <text x="263" y="53" fill="var(--accent-green)" font-size="11" font-family="Inter,sans-serif">tangent</text>
+  <line data-figure="secant" x1="${nearby[0]}" y1="${nearby[1]}" x2="${p[0]}" y2="${p[1]}" stroke="var(--text-secondary)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle data-figure="nearby-point" cx="${nearby[0]}" cy="${nearby[1]}" r="3.5" fill="var(--text-secondary)"/>
+  <circle data-figure="tangent-point" cx="${p[0]}" cy="${p[1]}" r="5" fill="var(--accent-amber)"/>
+  <text x="215" y="132" fill="var(--accent-amber)" font-size="11" font-family="Inter,sans-serif">(a, f(a))</text>
+  <text x="100" y="28" fill="var(--text-primary)" font-size="13" font-family="Inter,sans-serif">slope of tangent = f'(a)</text>
+  <text x="100" y="46" fill="var(--text-secondary)" font-size="11" font-family="Inter,sans-serif">instantaneous rate of change</text>
+  <line data-figure="run" x1="${nearby[0]}" y1="${nearby[1]}" x2="${p[0]}" y2="${nearby[1]}" stroke="var(--accent-red)" stroke-width="1" stroke-dasharray="4,3"/>
+  <line data-figure="rise" x1="${p[0]}" y1="${nearby[1]}" x2="${p[0]}" y2="${p[1]}" stroke="var(--accent-red)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="${(nearby[0] + p[0]) / 2}" y="186" fill="var(--accent-red)" font-size="10" text-anchor="middle" font-family="Inter,sans-serif">Δx</text>
+  <text x="208" y="150" fill="var(--accent-red)" font-size="10" font-family="Inter,sans-serif">Δy</text>
+</svg>`;
+  })();
   window.MATH_MODULES.push({
     id: 'calculus-1',
     order: 8,
@@ -315,22 +344,7 @@
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg">
-  <line x1="40" y1="220" x2="380" y2="220" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="60" y1="20" x2="60" y2="230" stroke="#94a3b8" stroke-width="1"/>
-  <path d="M 80 200 Q 150 180 200 120 Q 250 60 320 40" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
-  <text x="330" y="38" fill="#3b82f6" font-size="12" font-family="Inter">f(x)</text>
-  <line x1="130" y1="220" x2="290" y2="80" stroke="#10b981" stroke-width="1.5"/>
-  <text x="295" y="78" fill="#10b981" font-size="11" font-family="Inter">tangent</text>
-  <circle cx="200" cy="120" r="5" fill="#f59e0b"/>
-  <text x="208" y="115" fill="#f59e0b" font-size="11" font-family="Inter">(a, f(a))</text>
-  <text x="150" y="30" fill="#e2e8f0" font-size="13" font-family="Inter">slope of tangent = f'(a)</text>
-  <text x="150" y="50" fill="#94a3b8" font-size="11" font-family="Inter">= instantaneous rate of change</text>
-  <line x1="130" y1="190" x2="200" y2="190" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="200" y1="190" x2="200" y2="120" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="158" y="205" fill="#ef4444" font-size="10" text-anchor="middle" font-family="Inter">Δx→0</text>
-  <text x="212" y="160" fill="#ef4444" font-size="10" font-family="Inter">Δy→0</text>
-</svg>
+${derivativeFigure}
 </div>
 <p class="math-diagram-label">The derivative f'(a) is the slope of the tangent line to f(x) at x = a</p>
 

@@ -20,8 +20,7 @@ const ProblemEngine = (() => {
       problem[childKey].forEach((entry) => {
         const isNestedProblem = entry
           && entry.question
-          && Array.isArray(entry[childKey])
-          && Object.prototype.hasOwnProperty.call(entry, 'difficulty');
+          && Array.isArray(entry[childKey]);
 
         if (isNestedProblem) {
           nested.push(...normalizeNestedProblems([entry], childKey));
@@ -83,7 +82,7 @@ const ProblemEngine = (() => {
           <div class="exercise-feedback incorrect-feedback" id="${frId}-incorrect">
             <h4>Not quite</h4>
             <p id="${frId}-incorrect-text">Try again or reveal the solution.</p>
-            <button class="reveal-btn" onclick="ProblemEngine.revealFRAnswer('${frId}',${idx},'${topicId}')">Show Solution</button>
+            <button class="reveal-btn" onclick="ProblemEngine.revealFRAnswer('${frId}',${idx},'${topicId}','${moduleId}')">Show Solution</button>
           </div>
           <div class="exercise-feedback solution-feedback" id="${frId}-solution" style="display:none">
             <h4>Solution</h4>
@@ -99,21 +98,24 @@ const ProblemEngine = (() => {
 
   function checkFreeResponse(frId, probIdx, topicId, moduleId) {
     const input = document.getElementById(`${frId}-input`);
-    if (!input) return;
+    if (!input || input.disabled) return;
     const userAnswer = input.value.trim();
     if (!userAnswer) return;
 
-    const prob = findFreeResponseProblem(topicId, probIdx);
+    const prob = findFreeResponseProblem(topicId, probIdx, moduleId);
     if (!prob) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
 
-    const isCorrect = checkAnswer(userAnswer, prob.accept, prob.type);
+    const isCorrect = checkAnswer(userAnswer, prob.accept, prob.type, prob.tolerance);
+    if (window.ReviewEngine) ReviewEngine.recordAttempt({ topicId, moduleId, field: 'freeResponse', index: probIdx, correct: isCorrect });
 
     if (isCorrect) {
       input.classList.add('correct');
+      input.classList.remove('incorrect');
       input.disabled = true;
       document.getElementById(`${frId}-correct`).classList.add('show');
       document.getElementById(`${frId}-incorrect`).classList.remove('show');
-      const result = GameState.recordCorrectAnswer(prob.difficulty, 'freeResponse', topicId);
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'freeResponse', topicId, moduleId);
       GameState.showXPGain(result.xpGained);
     } else {
       input.classList.add('incorrect');
@@ -123,6 +125,7 @@ const ProblemEngine = (() => {
       GameState.recordWrongAnswer();
       // Allow retry
       setTimeout(() => {
+        if (input.disabled) return;
         input.classList.remove('incorrect');
         input.value = '';
         input.focus();
@@ -132,53 +135,65 @@ const ProblemEngine = (() => {
     setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
-  function checkAnswer(userAnswer, accept, type) {
-    if (!accept) return false;
-    const cleaned = userAnswer.replace(/\s+/g, '').toLowerCase();
+  function checkAnswer(userAnswer, accept, type, tolerance = 0) {
+    if (accept === undefined || accept === null || userAnswer === undefined || userAnswer === null) return false;
+    const cleaned = String(userAnswer).replace(/\s+/g, '').toLowerCase();
+    if (!cleaned) return false;
 
     // Accept can be: string, number, array of acceptable answers, or regex
     if (Array.isArray(accept)) {
-      return accept.some(a => matchSingle(cleaned, a, type));
+      return accept.some(a => matchSingle(cleaned, a, type, tolerance, userAnswer));
     }
-    return matchSingle(cleaned, accept, type);
+    return matchSingle(cleaned, accept, type, tolerance, userAnswer);
   }
 
-  function matchSingle(cleaned, accepted, type) {
-    if (typeof accepted === 'number') {
-      const num = parseFloat(cleaned.replace(/[^0-9.\-\/]/g, ''));
-      if (isNaN(num)) return false;
-      // Handle fractions
-      if (cleaned.includes('/')) {
-        const parts = cleaned.split('/');
-        if (parts.length === 2) {
-          const frac = parseFloat(parts[0]) / parseFloat(parts[1]);
-          if (Math.abs(frac - accepted) < 0.001) return true;
-        }
-      }
-      return Math.abs(num - accepted) < 0.001;
-    }
+  function parseNumericAnswer(value) {
+    // Space around a slash is harmless; space within a numeral is not.
+    if (/[\d.]\s+[\d.]/.test(String(value))) return null;
+    let text = String(value).trim().replace(/\s+/g, '').toLowerCase().replace(/\u2212/g, '-');
+    // Accept the notation used in the lessons without evaluating expressions.
+    if (text.startsWith('$') && text.endsWith('$')) text = text.slice(1, -1);
+    if (text.startsWith('\\(') && text.endsWith('\\)')) text = text.slice(2, -2);
+    const latexFraction = text.match(/^([+-]?)\\(?:d?frac)\{([^{}]+)\}\{([^{}]+)\}$/);
+    if (latexFraction) text = `${latexFraction[1]}${latexFraction[2]}/${latexFraction[3]}`;
+    if (text.startsWith('(') && text.endsWith(')') && !text.slice(1, -1).includes('(')) text = text.slice(1, -1);
+
+    const numericToken = /^[+-]?(?:(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/;
+    const parts = text.split('/');
+    if (parts.length > 2 || !parts.every(part => numericToken.test(part))) return null;
+    const values = parts.map(part => Number(part.replace(/,/g, '')));
+    if (!values.every(Number.isFinite) || values[1] === 0) return null;
+    const result = parts.length === 2 ? values[0] / values[1] : values[0];
+    return Number.isFinite(result) ? result : null;
+  }
+
+  function matchSingle(cleaned, accepted, type, tolerance, rawAnswer) {
     if (accepted instanceof RegExp) {
+      // A global expression should not alternate outcomes across retries.
+      accepted.lastIndex = 0;
       return accepted.test(cleaned);
     }
+    const acceptedNumber = typeof accepted === 'number' ? accepted : parseNumericAnswer(accepted);
+    if (acceptedNumber !== null && Number.isFinite(acceptedNumber)) {
+      const number = parseNumericAnswer(rawAnswer);
+      if (number === null) return false;
+      const allowedError = Number.isFinite(tolerance) && tolerance >= 0 ? tolerance : 0;
+      const roundoff = Number.EPSILON * 4 * Math.max(Math.abs(number), Math.abs(acceptedNumber));
+      return Math.abs(number - acceptedNumber) <= allowedError + roundoff;
+    }
+    if (typeof accepted === 'number') return false;
     const acceptStr = String(accepted).replace(/\s+/g, '').toLowerCase();
     return cleaned === acceptStr
       || cleaned.replace(/[()]/g, '') === acceptStr.replace(/[()]/g, '')
       || cleaned.replace(/\*/g, '') === acceptStr.replace(/\*/g, '');
   }
 
-  function findFreeResponseProblem(topicId, probIdx) {
-    if (!window.MATH_MODULES) return null;
-    for (const mod of window.MATH_MODULES) {
-      const topic = mod.topics.find(t => t.id === topicId);
-      if (topic && topic.freeResponse && topic.freeResponse[probIdx]) {
-        return topic.freeResponse[probIdx];
-      }
-    }
-    return null;
+  function findFreeResponseProblem(topicId, probIdx, moduleId) {
+    return findTopicProblem(topicId, 'freeResponse', probIdx, moduleId);
   }
 
-  function revealFRAnswer(frId, probIdx, topicId) {
-    const prob = findFreeResponseProblem(topicId, probIdx);
+  function revealFRAnswer(frId, probIdx, topicId, moduleId) {
+    const prob = findFreeResponseProblem(topicId, probIdx, moduleId);
     if (!prob) return;
     const solEl = document.getElementById(`${frId}-solution`);
     const solText = document.getElementById(`${frId}-solution-text`);
@@ -214,6 +229,9 @@ const ProblemEngine = (() => {
 
     problems.forEach((prob, idx) => {
       const sbId = `sb-${topicId}-${idx}`;
+      // Reset state: the DOM is rebuilt on every render with the same id,
+      // so stale expectedNext would otherwise reject the correct first step.
+      stepBuilderState[sbId] = { selected: [], expectedNext: 0, topicId, moduleId };
       html += `
         <div class="exercise-card step-builder-card" id="${sbId}">
           <div class="exercise-header">
@@ -241,7 +259,7 @@ const ProblemEngine = (() => {
       shuffled.forEach((step) => {
         html += `
           <button class="sb-step-btn" data-step-idx="${step.originalIndex}"
-                  onclick="ProblemEngine.selectStep('${sbId}', this, ${step.originalIndex}, ${steps.length}, '${topicId}', ${idx})">
+                  onclick="ProblemEngine.selectStep('${sbId}', this, ${step.originalIndex}, ${steps.length}, '${topicId}', ${idx}, '${moduleId}')">
             ${step.content}
           </button>
         `;
@@ -250,7 +268,7 @@ const ProblemEngine = (() => {
       html += `
             </div>
           </div>
-          <button class="sb-reset-btn" onclick="ProblemEngine.resetStepBuilder('${sbId}', '${topicId}', ${idx})">
+          <button class="sb-reset-btn" onclick="ProblemEngine.resetStepBuilder('${sbId}', '${topicId}', ${idx}, '${moduleId}')">
             Reset
           </button>
           <div class="exercise-feedback correct-feedback" id="${sbId}-correct">
@@ -271,8 +289,12 @@ const ProblemEngine = (() => {
 
   const stepBuilderState = {};
 
-  function selectStep(sbId, btn, stepIdx, totalSteps, topicId, probIdx) {
-    if (!stepBuilderState[sbId]) stepBuilderState[sbId] = { selected: [], expectedNext: 0 };
+  function selectStep(sbId, btn, stepIdx, totalSteps, topicId, probIdx, moduleId) {
+    const previous = stepBuilderState[sbId];
+    const mod = findTopicModule(topicId, moduleId || previous?.moduleId);
+    if (!mod || (previous?.moduleId && previous.moduleId !== mod.id) || (previous?.topicId && previous.topicId !== topicId)) return;
+    moduleId = mod.id;
+    if (!previous) stepBuilderState[sbId] = { selected: [], expectedNext: 0, topicId, moduleId };
     const sbs = stepBuilderState[sbId];
 
     if (stepIdx === sbs.expectedNext) {
@@ -297,7 +319,7 @@ const ProblemEngine = (() => {
       // Check if complete
       if (sbs.selected.length === totalSteps) {
         document.getElementById(`${sbId}-correct`).classList.add('show');
-        const result = GameState.recordCorrectAnswer('medium', 'stepByStep', topicId);
+        const result = GameState.recordCorrectAnswer('medium', 'stepByStep', topicId, moduleId);
         GameState.showXPGain(result.xpGained);
       }
     } else {
@@ -311,8 +333,11 @@ const ProblemEngine = (() => {
     setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
-  function resetStepBuilder(sbId, topicId, probIdx) {
-    stepBuilderState[sbId] = { selected: [], expectedNext: 0 };
+  function resetStepBuilder(sbId, topicId, probIdx, moduleId) {
+    const previous = stepBuilderState[sbId];
+    const mod = findTopicModule(topicId, moduleId || previous?.moduleId);
+    if (!mod || (previous?.moduleId && previous.moduleId !== mod.id) || (previous?.topicId && previous.topicId !== topicId)) return;
+    stepBuilderState[sbId] = { selected: [], expectedNext: 0, topicId, moduleId: mod.id };
     const selectedArea = document.getElementById(`${sbId}-selected`);
     if (selectedArea) {
       selectedArea.innerHTML = '<p class="sb-placeholder">Click steps below in the correct order</p>';
@@ -343,6 +368,8 @@ const ProblemEngine = (() => {
 
     problems.forEach((prob, idx) => {
       const mId = `match-${topicId}-${idx}`;
+      // Reset state on every render so a re-opened topic can be matched again.
+      matchState[mId] = { selected: null, matched: 0, topicId, moduleId };
       const shuffledRight = [...prob.pairs.map((p, i) => ({ ...p, idx: i }))];
       for (let i = shuffledRight.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -364,7 +391,7 @@ const ProblemEngine = (() => {
         const leftLabel = pair.left ?? pair.term ?? pair.prompt ?? '';
         html += `
           <button class="match-item match-left-item" data-match-id="${mId}" data-pair-idx="${pIdx}" data-side="left"
-                  onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}')">
+                  onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}', '${moduleId}')">
             ${leftLabel}
           </button>
         `;
@@ -376,7 +403,7 @@ const ProblemEngine = (() => {
         const rightLabel = pair.right ?? pair.definition ?? pair.answer ?? '';
         html += `
           <button class="match-item match-right-item" data-match-id="${mId}" data-pair-idx="${pair.idx}" data-side="right"
-                  onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}')">
+                  onclick="ProblemEngine.matchSelect(this, '${mId}', ${prob.pairs.length}, '${topicId}', '${moduleId}')">
             ${rightLabel}
           </button>
         `;
@@ -400,8 +427,12 @@ const ProblemEngine = (() => {
 
   const matchState = {};
 
-  function matchSelect(btn, mId, totalPairs, topicId) {
-    if (!matchState[mId]) matchState[mId] = { selected: null, matched: 0 };
+  function matchSelect(btn, mId, totalPairs, topicId, moduleId) {
+    const previous = matchState[mId];
+    const mod = findTopicModule(topicId, moduleId || previous?.moduleId);
+    if (!mod || (previous?.moduleId && previous.moduleId !== mod.id) || (previous?.topicId && previous.topicId !== topicId)) return;
+    moduleId = mod.id;
+    if (!previous) matchState[mId] = { selected: null, matched: 0, topicId, moduleId };
     const ms = matchState[mId];
 
     if (btn.classList.contains('matched')) return;
@@ -437,20 +468,21 @@ const ProblemEngine = (() => {
 
           if (ms.matched === totalPairs) {
             document.getElementById(`${mId}-correct`).classList.add('show');
-            const result = GameState.recordCorrectAnswer('medium', 'matching', topicId);
+            const result = GameState.recordCorrectAnswer('medium', 'matching', topicId, moduleId);
             GameState.showXPGain(result.xpGained);
           }
         } else {
-          // Wrong match
-          ms.selected.btn.classList.remove('match-selected');
-          ms.selected.btn.classList.add('match-wrong');
+          // Wrong match. Capture the first button before clearing selection,
+          // otherwise the deferred cleanup cannot find it and its red stays.
+          const firstBtn = ms.selected.btn;
+          firstBtn.classList.remove('match-selected');
+          firstBtn.classList.add('match-wrong');
           btn.classList.add('match-wrong');
-          setTimeout(() => {
-            ms.selected?.btn?.classList.remove('match-wrong');
-            btn.classList.remove('match-wrong');
-            ms.selected = null;
-          }, 600);
           ms.selected = null;
+          setTimeout(() => {
+            firstBtn.classList.remove('match-wrong');
+            btn.classList.remove('match-wrong');
+          }, 600);
         }
       }
     }
@@ -557,15 +589,18 @@ const ProblemEngine = (() => {
   }
 
   function checkFillBlanks(fbId, probIdx, topicId, moduleId) {
-    const prob = findFillBlankProblem(topicId, probIdx);
+    const prob = findFillBlankProblem(topicId, probIdx, moduleId);
     if (!prob) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
+    const card = document.getElementById(fbId);
+    if (!card || card.dataset.solved === 'true') return;
 
     let allCorrect = true;
     prob.blanks.forEach((blank, bIdx) => {
       const input = document.getElementById(`${fbId}-blank-${bIdx}`);
-      if (!input) return;
+      if (!input) { allCorrect = false; return; }
       const userVal = input.value.trim();
-      const correct = checkAnswer(userVal, blank.accept, blank.type);
+      const correct = checkAnswer(userVal, blank.accept, blank.type, blank.tolerance);
       if (correct) {
         input.classList.add('correct');
         input.classList.remove('incorrect');
@@ -577,9 +612,10 @@ const ProblemEngine = (() => {
     });
 
     if (allCorrect) {
+      card.dataset.solved = 'true';
       document.getElementById(`${fbId}-correct`).classList.add('show');
       document.getElementById(`${fbId}-incorrect`).classList.remove('show');
-      const result = GameState.recordCorrectAnswer(prob.difficulty, 'freeResponse', topicId);
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'freeResponse', topicId, moduleId);
       GameState.showXPGain(result.xpGained);
     } else {
       document.getElementById(`${fbId}-incorrect`).classList.add('show');
@@ -590,15 +626,8 @@ const ProblemEngine = (() => {
     setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
-  function findFillBlankProblem(topicId, probIdx) {
-    if (!window.MATH_MODULES) return null;
-    for (const mod of window.MATH_MODULES) {
-      const topic = mod.topics.find(t => t.id === topicId);
-      if (topic && topic.fillBlanks && topic.fillBlanks[probIdx]) {
-        return topic.fillBlanks[probIdx];
-      }
-    }
-    return null;
+  function findFillBlankProblem(topicId, probIdx, moduleId) {
+    return findTopicProblem(topicId, 'fillBlanks', probIdx, moduleId);
   }
 
   /* ============================================================
@@ -639,8 +668,8 @@ const ProblemEngine = (() => {
               <input type="text" class="fr-input" id="${partId}-input"
                      placeholder="${part.placeholder || 'Your answer...'}"
                      ${pIdx > 0 ? 'disabled' : ''}
-                     onkeydown="if(event.key==='Enter')ProblemEngine.checkMultiPart('${mpId}',${idx},${pIdx},'${topicId}')" />
-              <button class="fr-submit-btn" onclick="ProblemEngine.checkMultiPart('${mpId}',${idx},${pIdx},'${topicId}')"
+                     onkeydown="if(event.key==='Enter')ProblemEngine.checkMultiPart('${mpId}',${idx},${pIdx},'${topicId}','${moduleId}')" />
+              <button class="fr-submit-btn" onclick="ProblemEngine.checkMultiPart('${mpId}',${idx},${pIdx},'${topicId}','${moduleId}')"
                       ${pIdx > 0 ? 'disabled' : ''}>Check</button>
             </div>
             <div class="mp-part-feedback" id="${partId}-feedback"></div>
@@ -662,16 +691,18 @@ const ProblemEngine = (() => {
     return html;
   }
 
-  function checkMultiPart(mpId, probIdx, partIdx, topicId) {
-    const prob = findMultiPartProblem(topicId, probIdx);
+  function checkMultiPart(mpId, probIdx, partIdx, topicId, moduleId) {
+    const prob = findMultiPartProblem(topicId, probIdx, moduleId);
     if (!prob || !prob.parts[partIdx]) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
 
     const part = prob.parts[partIdx];
     const input = document.getElementById(`${mpId}-part-${partIdx}-input`);
-    if (!input) return;
+    if (!input || input.disabled) return;
 
     const userAnswer = input.value.trim();
-    const isCorrect = checkAnswer(userAnswer, part.accept, part.type);
+    if (!userAnswer) return;
+    const isCorrect = checkAnswer(userAnswer, part.accept, part.type, part.tolerance);
     const feedback = document.getElementById(`${mpId}-part-${partIdx}-feedback`);
 
     if (isCorrect) {
@@ -694,7 +725,7 @@ const ProblemEngine = (() => {
       } else {
         // All parts complete
         document.getElementById(`${mpId}-complete`).classList.add('show');
-        const result = GameState.recordCorrectAnswer('hard', 'challenge', topicId);
+        const result = GameState.recordCorrectAnswer('hard', 'challenge', topicId, moduleId);
         GameState.showXPGain(result.xpGained);
       }
     } else {
@@ -705,6 +736,7 @@ const ProblemEngine = (() => {
       }
       GameState.recordWrongAnswer();
       setTimeout(() => {
+        if (input.disabled) return;
         input.classList.remove('incorrect');
         input.value = '';
         input.focus();
@@ -714,15 +746,439 @@ const ProblemEngine = (() => {
     setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
-  function findMultiPartProblem(topicId, probIdx) {
-    if (!window.MATH_MODULES) return null;
-    for (const mod of window.MATH_MODULES) {
-      const topic = mod.topics.find(t => t.id === topicId);
-      if (topic && topic.multiPart && topic.multiPart[probIdx]) {
-        return topic.multiPart[probIdx];
-      }
+  function findMultiPartProblem(topicId, probIdx, moduleId) {
+    return findTopicProblem(topicId, 'multiPart', probIdx, moduleId);
+  }
+
+  /* ============================================================
+     GENERIC PROBLEM LOOKUP
+     ============================================================ */
+  function findTopicModule(topicId, moduleId) {
+    const matches = (window.MATH_MODULES || []).filter(mod =>
+      (!moduleId || mod.id === moduleId) && (mod.topics || []).some(topic => topic.id === topicId));
+    // Old callers may omit the module only when the topic is unambiguous.
+    return matches.length === 1 ? matches[0] : null;
+  }
+
+  function findTopicProblem(topicId, key, probIdx, moduleId) {
+    const mod = findTopicModule(topicId, moduleId);
+    const topic = mod?.topics.find(t => t.id === topicId);
+    return topic?.[key]?.[probIdx] || null;
+  }
+
+  /* ============================================================
+     QUANTITATIVE COMPARISON (GRE format)
+     Two quantities, four fixed answer choices
+     ============================================================ */
+  const QC_CHOICES = [
+    'Quantity A is greater.',
+    'Quantity B is greater.',
+    'The two quantities are equal.',
+    'The relationship cannot be determined from the information given.'
+  ];
+
+  function renderQuantComparison(problems, moduleId, topicId) {
+    let html = `
+      <div class="phase-section">
+        <div class="phase-label practice">Quantitative Comparison</div>
+        <h3>Compare the Quantities</h3>
+        <p class="phase-subtitle">Decide which quantity is greater, whether they are equal, or whether the answer depends on unstated values. Same four choices every time.</p>
+        <div class="phase-content">
+    `;
+
+    problems.forEach((prob, idx) => {
+      const qcId = `qc-${topicId}-${idx}`;
+      const diffClass = prob.difficulty || 'medium';
+      html += `
+        <div class="exercise-card qc-card" id="${qcId}">
+          <div class="exercise-header">
+            <span class="exercise-badge ${diffClass}">${diffClass}</span>
+            <span class="exercise-number">Comparison ${idx + 1}</span>
+          </div>
+          ${prob.setup ? `<div class="qc-given">${prob.setup}</div>` : ''}
+          <div class="qc-table">
+            <div class="qc-quantity">
+              <div class="qc-quantity-label">Quantity A</div>
+              <div class="qc-quantity-value">${prob.quantityA}</div>
+            </div>
+            <div class="qc-quantity">
+              <div class="qc-quantity-label">Quantity B</div>
+              <div class="qc-quantity-value">${prob.quantityB}</div>
+            </div>
+          </div>
+          <div class="exercise-options qc-options">
+            ${QC_CHOICES.map((choice, i) => `
+              <button class="option-btn" id="${qcId}-opt-${i}"
+                      onclick="ProblemEngine.selectQC('${qcId}',${i},${idx},'${topicId}','${moduleId}')">
+                <span class="option-letter">${String.fromCharCode(65 + i)}</span>
+                <span>${choice}</span>
+              </button>
+            `).join('')}
+          </div>
+          ${prob.hint ? `
+            <button class="hint-btn" onclick="ProblemEngine.togglePEHint('${qcId}')">Need a hint?</button>
+            <div class="hint-content" id="${qcId}-hint">${prob.hint}</div>
+          ` : ''}
+          <div class="exercise-feedback correct-feedback" id="${qcId}-correct">
+            <h4>Correct</h4>
+            <div>${prob.explanation || 'Correct.'}</div>
+          </div>
+          <div class="exercise-feedback incorrect-feedback" id="${qcId}-incorrect">
+            <h4>Not quite</h4>
+            <div id="${qcId}-incorrect-text"></div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += '</div></div>';
+    return html;
+  }
+
+  function selectQC(qcId, selectedIdx, probIdx, topicId, moduleId) {
+    const prob = findTopicProblem(topicId, 'quantComparison', probIdx, moduleId);
+    if (!prob) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
+    const card = document.getElementById(qcId);
+    if (!card || card.dataset.answered === 'true') return;
+    card.dataset.answered = 'true';
+
+    const correctIdx = prob.correctIndex;
+    if (window.ReviewEngine) ReviewEngine.recordAttempt({ topicId, moduleId, field: 'quantComparison', index: probIdx, correct: selectedIdx === correctIdx });
+    for (let i = 0; i < QC_CHOICES.length; i++) {
+      const btn = document.getElementById(`${qcId}-opt-${i}`);
+      if (!btn) continue;
+      btn.classList.add('disabled');
+      if (i === correctIdx) btn.classList.add('correct');
+      else if (i === selectedIdx) btn.classList.add('incorrect');
     }
-    return null;
+
+    if (selectedIdx === correctIdx) {
+      document.getElementById(`${qcId}-correct`).classList.add('show');
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'quantComparison', topicId, moduleId);
+      GameState.showXPGain(result.xpGained);
+    } else {
+      const fb = document.getElementById(`${qcId}-incorrect`);
+      const fbText = document.getElementById(`${qcId}-incorrect-text`);
+      const perChoice = prob.wrongExplanations && prob.wrongExplanations[selectedIdx];
+      fbText.innerHTML = `${perChoice ? `<p>${perChoice}</p>` : ''}
+        <p><strong>Answer: ${String.fromCharCode(65 + correctIdx)}.</strong> ${prob.explanation || ''}</p>`;
+      fb.classList.add('show');
+      GameState.recordWrongAnswer();
+    }
+
+    setTimeout(() => MathEngine.renderAllMath(), 50);
+  }
+
+  /* ============================================================
+     MULTI-SELECT (GRE "select all that apply" format)
+     One or more options are correct; no partial credit
+     ============================================================ */
+  function renderMultiSelect(problems, moduleId, topicId) {
+    let html = `
+      <div class="phase-section">
+        <div class="phase-label practice">Multi-Select</div>
+        <h3>Select All That Apply</h3>
+        <p class="phase-subtitle">One or more choices are correct. You must pick every correct choice and nothing else, exactly as on the GRE.</p>
+        <div class="phase-content">
+    `;
+
+    problems.forEach((prob, idx) => {
+      const msId = `ms-${topicId}-${idx}`;
+      const diffClass = prob.difficulty || 'medium';
+      html += `
+        <div class="exercise-card ms-card" id="${msId}">
+          <div class="exercise-header">
+            <span class="exercise-badge ${diffClass}">${diffClass}</span>
+            <span class="exercise-number">Problem ${idx + 1}</span>
+          </div>
+          <div class="exercise-question">${prob.question}</div>
+          <div class="exercise-options ms-options">
+            ${prob.options.map((opt, i) => `
+              <button class="option-btn ms-option" id="${msId}-opt-${i}"
+                      aria-pressed="false"
+                      onclick="ProblemEngine.toggleMSOption('${msId}',${i})">
+                <span class="ms-checkbox" aria-hidden="true"></span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <button class="fr-submit-btn ms-submit-btn" onclick="ProblemEngine.checkMultiSelect('${msId}',${idx},'${topicId}','${moduleId}')">Check Selection</button>
+          ${prob.hint ? `
+            <button class="hint-btn" onclick="ProblemEngine.togglePEHint('${msId}')">Need a hint?</button>
+            <div class="hint-content" id="${msId}-hint">${prob.hint}</div>
+          ` : ''}
+          <div class="exercise-feedback correct-feedback" id="${msId}-correct">
+            <h4>Correct</h4>
+            <div>${prob.explanation || 'Correct.'}</div>
+          </div>
+          <div class="exercise-feedback incorrect-feedback" id="${msId}-incorrect">
+            <h4>Not quite</h4>
+            <div id="${msId}-incorrect-text"></div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += '</div></div>';
+    return html;
+  }
+
+  function toggleMSOption(msId, optIdx) {
+    const card = document.getElementById(msId);
+    if (!card || card.dataset.answered === 'true') return;
+    const btn = document.getElementById(`${msId}-opt-${optIdx}`);
+    if (!btn) return;
+    const selected = btn.classList.toggle('ms-selected');
+    btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
+  }
+
+  function checkMultiSelect(msId, probIdx, topicId, moduleId) {
+    const prob = findTopicProblem(topicId, 'multiSelect', probIdx, moduleId);
+    if (!prob || !Array.isArray(prob.correctIndices)) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
+    const card = document.getElementById(msId);
+    if (!card || card.dataset.answered === 'true') return;
+
+    const selected = [];
+    prob.options.forEach((_, i) => {
+      const btn = document.getElementById(`${msId}-opt-${i}`);
+      if (btn && btn.classList.contains('ms-selected')) selected.push(i);
+    });
+    if (selected.length === 0) return; /* require at least one pick */
+
+    card.dataset.answered = 'true';
+    const correctSet = new Set(prob.correctIndices);
+    const isCorrect = selected.length === correctSet.size && selected.every(i => correctSet.has(i));
+
+    prob.options.forEach((_, i) => {
+      const btn = document.getElementById(`${msId}-opt-${i}`);
+      if (!btn) return;
+      btn.classList.add('disabled');
+      const picked = btn.classList.contains('ms-selected');
+      if (correctSet.has(i)) btn.classList.add(picked ? 'correct' : 'ms-missed');
+      else if (picked) btn.classList.add('incorrect');
+    });
+
+    if (isCorrect) {
+      document.getElementById(`${msId}-correct`).classList.add('show');
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'multiSelect', topicId, moduleId);
+      GameState.showXPGain(result.xpGained);
+    } else {
+      const letters = prob.correctIndices.map(i => String.fromCharCode(65 + i)).join(', ');
+      document.getElementById(`${msId}-incorrect-text`).innerHTML =
+        `<p><strong>Correct choices: ${letters}.</strong> Outlined options were correct but unselected; red options should not have been selected.</p>
+         <p>${prob.explanation || ''}</p>`;
+      document.getElementById(`${msId}-incorrect`).classList.add('show');
+      GameState.recordWrongAnswer();
+    }
+
+    setTimeout(() => MathEngine.renderAllMath(), 50);
+  }
+
+  /* Shared hint toggle for the GRE problem types */
+  function togglePEHint(cardId) {
+    const hint = document.getElementById(`${cardId}-hint`);
+    if (hint) {
+      hint.classList.toggle('show');
+      setTimeout(() => MathEngine.renderAllMath(), 50);
+    }
+  }
+
+  /* ============================================================
+     FADED WORKED EXAMPLES (completion problems)
+     Early steps are shown fully worked; later steps are blanks
+     the learner must complete. This is the completion effect:
+     scaffolding fades so working memory goes to schema building.
+     ============================================================ */
+  function renderFadedExamples(problems, moduleId, topicId) {
+    let html = `
+      <div class="phase-section">
+        <div class="phase-label example">Complete the Solution</div>
+        <h3>Finish the Worked Example</h3>
+        <p class="phase-subtitle">The first steps are done for you. Fill in the remaining steps yourself. Completing a partial solution builds the method faster than reading a finished one.</p>
+        <div class="phase-content">
+    `;
+
+    problems.forEach((prob, idx) => {
+      const feId = `fe-${topicId}-${idx}`;
+      const diffClass = prob.difficulty || 'medium';
+      let blankCounter = 0;
+      const stepsHtml = prob.steps.map((step, sIdx) => {
+        if (step.given !== undefined) {
+          return `
+            <div class="fe-step fe-step-given">
+              <span class="fe-step-num">${sIdx + 1}</span>
+              <div class="fe-step-body">${step.given}</div>
+            </div>
+          `;
+        }
+        const b = blankCounter++;
+        return `
+          <div class="fe-step fe-step-blank">
+            <span class="fe-step-num">${sIdx + 1}</span>
+            <div class="fe-step-body">
+              <div class="fe-blank-prompt">${step.prompt}</div>
+              <input type="text" class="fr-input fe-blank-input" id="${feId}-blank-${b}" data-blank="${b}"
+                     placeholder="${step.placeholder || 'Your step...'}" autocomplete="off">
+              <div class="fe-blank-result" id="${feId}-blank-${b}-result"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      html += `
+        <div class="exercise-card faded-example-card" id="${feId}" data-blanks="${blankCounter}">
+          <div class="exercise-header">
+            <span class="exercise-badge ${diffClass}">${diffClass}</span>
+            <span class="exercise-number">Completion ${idx + 1}</span>
+          </div>
+          <div class="exercise-question">${prob.problem}</div>
+          <div class="fe-steps">${stepsHtml}</div>
+          <button class="fr-submit-btn" onclick="ProblemEngine.checkFaded('${feId}',${idx},'${topicId}','${moduleId}')">Check My Steps</button>
+          <div class="exercise-feedback correct-feedback" id="${feId}-correct">
+            <h4>Complete</h4>
+            <div>${prob.completionMessage || 'Every step checks out. You reconstructed the method yourself.'}</div>
+          </div>
+          <div class="exercise-feedback incorrect-feedback" id="${feId}-incorrect">
+            <h4>Some steps need another look</h4>
+            <div id="${feId}-incorrect-text"></div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += '</div></div>';
+    return html;
+  }
+
+  function checkFaded(feId, probIdx, topicId, moduleId) {
+    const prob = findTopicProblem(topicId, 'fadedExamples', probIdx, moduleId);
+    if (!prob) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
+    const card = document.getElementById(feId);
+    if (!card || card.dataset.solved === 'true') return;
+
+    const blanks = prob.steps.filter(s => s.given === undefined);
+    let allCorrect = true;
+    let anyFilled = false;
+
+    blanks.forEach((step, b) => {
+      const input = document.getElementById(`${feId}-blank-${b}`);
+      const result = document.getElementById(`${feId}-blank-${b}-result`);
+      if (!input || !result) { allCorrect = false; return; }
+      const val = input.value.trim();
+      if (!val) { allCorrect = false; return; }
+      anyFilled = true;
+      const ok = checkAnswer(val, step.accept, step.type, step.tolerance);
+      input.classList.toggle('correct', ok);
+      input.classList.toggle('incorrect', !ok);
+      result.innerHTML = ok
+        ? `<span class="fe-ok">Correct.</span> ${step.explanation || ''}`
+        : `<span class="fe-no">Not yet.</span> ${step.wrongHint || 'Rework this step from the ones above it.'}`;
+      result.classList.add('show');
+      if (!ok) allCorrect = false;
+    });
+
+    if (!anyFilled) return;
+
+    if (allCorrect && card.dataset.solved !== 'true') {
+      card.dataset.solved = 'true';
+      document.getElementById(`${feId}-correct`).classList.add('show');
+      document.getElementById(`${feId}-incorrect`).classList.remove('show');
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'completion', topicId, moduleId);
+      GameState.showXPGain(result.xpGained);
+    } else if (!allCorrect) {
+      document.getElementById(`${feId}-incorrect-text`).innerHTML =
+        'Fix the flagged steps and check again. Each blank builds on the steps above it.';
+      document.getElementById(`${feId}-incorrect`).classList.add('show');
+      GameState.recordWrongAnswer();
+    }
+
+    setTimeout(() => MathEngine.renderAllMath(), 50);
+  }
+
+  /* ============================================================
+     STRATEGY DISCRIMINATION
+     Before solving, the learner names which method applies.
+     Choosing the tool from competing options trains schema
+     selection: the skill that separates transfer from drill.
+     ============================================================ */
+  function renderStrategySelect(problems, moduleId, topicId) {
+    let html = `
+      <div class="phase-section">
+        <div class="phase-label model">Choose Your Tool</div>
+        <h3>Which Method Fits?</h3>
+        <p class="phase-subtitle">Do not solve these. For each one, decide which method you would use. Recognizing the type is the hard part of a real test; the arithmetic is the easy part.</p>
+        <div class="phase-content">
+    `;
+
+    problems.forEach((prob, idx) => {
+      const ssId = `ss-${topicId}-${idx}`;
+      const diffClass = prob.difficulty || 'medium';
+      html += `
+        <div class="exercise-card strategy-card" id="${ssId}">
+          <div class="exercise-header">
+            <span class="exercise-badge ${diffClass}">${diffClass}</span>
+            <span class="exercise-number">Scenario ${idx + 1}</span>
+          </div>
+          <div class="exercise-question">${prob.scenario}</div>
+          <div class="ss-question">Which method fits best?</div>
+          <div class="exercise-options ss-options">
+            ${prob.options.map((opt, i) => `
+              <button class="option-btn" id="${ssId}-opt-${i}"
+                      onclick="ProblemEngine.selectStrategy('${ssId}',${i},${idx},'${topicId}','${moduleId}')">
+                <span class="option-letter">${String.fromCharCode(65 + i)}</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="exercise-feedback correct-feedback" id="${ssId}-correct">
+            <h4>Right tool</h4>
+            <div>${prob.explanation || ''}</div>
+          </div>
+          <div class="exercise-feedback incorrect-feedback" id="${ssId}-incorrect">
+            <h4>A different tool fits better</h4>
+            <div id="${ssId}-incorrect-text"></div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += '</div></div>';
+    return html;
+  }
+
+  function selectStrategy(ssId, selectedIdx, probIdx, topicId, moduleId) {
+    const prob = findTopicProblem(topicId, 'strategySelect', probIdx, moduleId);
+    if (!prob) return;
+    moduleId = findTopicModule(topicId, moduleId)?.id;
+    const card = document.getElementById(ssId);
+    if (!card || card.dataset.answered === 'true') return;
+    card.dataset.answered = 'true';
+
+    const correctIdx = prob.correctIndex;
+    prob.options.forEach((_, i) => {
+      const btn = document.getElementById(`${ssId}-opt-${i}`);
+      if (!btn) return;
+      btn.classList.add('disabled');
+      if (i === correctIdx) btn.classList.add('correct');
+      else if (i === selectedIdx) btn.classList.add('incorrect');
+    });
+
+    if (selectedIdx === correctIdx) {
+      document.getElementById(`${ssId}-correct`).classList.add('show');
+      const result = GameState.recordCorrectAnswer(prob.difficulty, 'strategy', topicId, moduleId);
+      GameState.showXPGain(result.xpGained);
+    } else {
+      const perChoice = prob.wrongExplanations && prob.wrongExplanations[selectedIdx];
+      document.getElementById(`${ssId}-incorrect-text`).innerHTML =
+        `${perChoice ? `<p>${perChoice}</p>` : ''}<p><strong>Better fit: ${String.fromCharCode(65 + correctIdx)}.</strong> ${prob.explanation || ''}</p>`;
+      document.getElementById(`${ssId}-incorrect`).classList.add('show');
+      GameState.recordWrongAnswer();
+    }
+
+    setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
   /* ============================================================
@@ -734,9 +1190,19 @@ const ProblemEngine = (() => {
     renderMatching,
     renderFillBlanks,
     renderMultiPart,
+    renderQuantComparison,
+    renderMultiSelect,
+    renderFadedExamples,
+    renderStrategySelect,
     checkFreeResponse,
     checkFillBlanks,
     checkMultiPart,
+    checkFaded,
+    selectStrategy,
+    selectQC,
+    toggleMSOption,
+    checkMultiSelect,
+    togglePEHint,
     revealFRAnswer,
     showFRHint,
     selectStep,

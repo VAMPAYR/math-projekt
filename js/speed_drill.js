@@ -48,6 +48,36 @@ const SpeedDrill = (() => {
       }
     },
 
+    /* --- Percents (GRE staple) --- */
+    percents: {
+      name: 'Percents',
+      generate(difficulty) {
+        const percents = difficulty === 'easy' ? [10, 25, 50, 100]
+          : difficulty === 'medium' ? [5, 10, 15, 20, 25, 40, 50, 75]
+          : [4, 8, 12.5, 15, 30, 35, 60, 85];
+        const bases = difficulty === 'easy' ? [10, 20, 40, 50, 100, 200]
+          : difficulty === 'medium' ? [20, 40, 60, 80, 120, 150, 200, 300]
+          : [16, 48, 64, 96, 240, 320, 480, 640];
+        const p = percents[Math.floor(Math.random() * percents.length)];
+        const n = bases[Math.floor(Math.random() * bases.length)];
+        const answer = (p / 100) * n;
+        return { question: `$${p}\\%$ of $${n} = $?`, answer, display: `${answer}` };
+      }
+    },
+
+    /* --- Fractions to decimals (GRE staple) --- */
+    fractionDecimal: {
+      name: 'Fraction to Decimal',
+      generate(difficulty) {
+        const easy = [[1, 2, 0.5], [1, 4, 0.25], [3, 4, 0.75], [1, 5, 0.2], [2, 5, 0.4], [1, 10, 0.1]];
+        const medium = [[1, 8, 0.125], [3, 8, 0.375], [5, 8, 0.625], [7, 8, 0.875], [3, 5, 0.6], [4, 5, 0.8], [1, 20, 0.05]];
+        const hard = [[1, 16, 0.0625], [5, 16, 0.3125], [3, 20, 0.15], [7, 20, 0.35], [9, 40, 0.225], [11, 8, 1.375]];
+        const pool = difficulty === 'easy' ? easy : difficulty === 'medium' ? medium : hard;
+        const [num, den, answer] = pool[Math.floor(Math.random() * pool.length)];
+        return { question: `Write $\\dfrac{${num}}{${den}}$ as a decimal:`, answer, display: `${answer}` };
+      }
+    },
+
     /* --- Algebra --- */
     linearSolve: {
       name: 'Solve Linear Equations',
@@ -94,7 +124,7 @@ const SpeedDrill = (() => {
         return {
           question: `Factor: $x^2 ${bStr}x ${cStr}$`,
           answer: `(x${r1 >= 0 ? '-' : '+'}${Math.abs(r1)})(x${r2 >= 0 ? '-' : '+'}${Math.abs(r2)})`,
-          display: `$(x - ${r1})(x - ${r2})$`,
+          display: `$(x${r1 >= 0 ? ' - ' : ' + '}${Math.abs(r1)})(x${r2 >= 0 ? ' - ' : ' + '}${Math.abs(r2)})$`,
           checkFn: (input) => {
             const cleaned = input.replace(/\s+/g, '').toLowerCase();
             // Check both orderings
@@ -116,13 +146,13 @@ const SpeedDrill = (() => {
         const newExp = n - 1;
         return {
           question: `$\\frac{d}{dx}[${coeff}x^${n}] = $?`,
-          answer: `${newCoeff}x^${newExp}`,
-          display: `$${newCoeff}x^{${newExp}}$`,
+          answer: newExp === 1 ? `${newCoeff}x` : `${newCoeff}x^${newExp}`,
+          display: newExp === 1 ? `$${newCoeff}x$` : `$${newCoeff}x^{${newExp}}$`,
           checkFn: (input) => {
             const cleaned = input.replace(/\s+/g, '').toLowerCase();
-            return cleaned === `${newCoeff}x^${newExp}`
-              || cleaned === `${newCoeff}x^{${newExp}}`
-              || cleaned === `${newCoeff}*x^${newExp}`;
+            const forms = [`${newCoeff}x^${newExp}`, `${newCoeff}x^{${newExp}}`, `${newCoeff}*x^${newExp}`];
+            if (newExp === 1) forms.push(`${newCoeff}x`, `${newCoeff}*x`);
+            return forms.includes(cleaned);
           }
         };
       }
@@ -135,22 +165,24 @@ const SpeedDrill = (() => {
         const n = Math.floor(Math.random() * 6) + 1;
         const coeff = Math.floor(Math.random() * 4) + 1;
         const newExp = n + 1;
-        const newCoeff = coeff / newExp;
         const isClean = coeff % newExp === 0;
+        const cleanCoeff = coeff / newExp;                 // integer when isClean
+        const coeffStr = cleanCoeff === 1 ? '' : `${cleanCoeff}`;  // drop a leading 1
         const display = isClean
-          ? `$${coeff/newExp}x^{${newExp}} + C$`
+          ? `$${coeffStr}x^{${newExp}} + C$`
           : `$\\frac{${coeff}}{${newExp}}x^{${newExp}} + C$`;
         return {
           question: `$\\int ${coeff}x^{${n}}\\,dx = $?`,
-          answer: isClean ? `${coeff/newExp}x^${newExp}+c` : `${coeff}/${newExp}x^${newExp}+c`,
+          answer: isClean ? `${coeffStr}x^${newExp}+c` : `${coeff}/${newExp}x^${newExp}+c`,
           display: display,
           checkFn: (input) => {
             const cleaned = input.replace(/\s+/g, '').toLowerCase();
             if (isClean) {
-              const expected = `${coeff/newExp}x^${newExp}+c`;
-              return cleaned === expected || cleaned === expected.replace('+c', '+C');
+              const forms = [`${coeffStr}x^${newExp}+c`, `${coeffStr}x^{${newExp}}+c`];
+              if (cleanCoeff === 1) forms.push(`1x^${newExp}+c`, `1x^{${newExp}}+c`);
+              return forms.includes(cleaned);
             }
-            return cleaned.includes(`${coeff}/${newExp}`) && cleaned.includes(`x^${newExp}`) && cleaned.toLowerCase().includes('c');
+            return cleaned.includes(`${coeff}/${newExp}`) && cleaned.includes(`x^${newExp}`) && cleaned.includes('c');
           }
         };
       }
@@ -187,12 +219,11 @@ const SpeedDrill = (() => {
             if (cleaned === '1/2' && ans === '\\frac{1}{2}') return true;
             if (cleaned === 'sqrt(2)/2' && ans === '\\frac{\\sqrt{2}}{2}') return true;
             if (cleaned === 'sqrt(3)/2' && ans === '\\frac{\\sqrt{3}}{2}') return true;
-            const num = parseFloat(cleaned);
-            if (!isNaN(num)) {
-              const expected = askSin ? (v.sinNum ?? parseFloat(v.sin)) : (v.cosNum ?? parseFloat(v.cos));
-              return Math.abs(num - expected) < 0.01;
-            }
-            return false;
+            const numericAnswer = askSin ? (v.sinNum ?? Number(v.sin)) : (v.cosNum ?? Number(v.cos));
+            // Exact rational values stay exact. Irrational values allow
+            // three-decimal approximations, as shown in the lessons.
+            const tolerance = Number.isInteger(numericAnswer) || numericAnswer === 0.5 ? 0 : 0.0005;
+            return ProblemEngine.checkAnswer(input, [ans, numericAnswer], undefined, tolerance);
           }
         };
       }
@@ -236,6 +267,11 @@ const SpeedDrill = (() => {
       name: 'Trigonometry',
       desc: 'Unit circle values and identities',
       generators: ['unitCircle']
+    },
+    gre: {
+      name: 'GRE Quant',
+      desc: 'Percents, fraction-decimal conversions, mental arithmetic, and linear equations at test pace',
+      generators: ['percents', 'fractionDecimal', 'multiplication', 'division', 'linearSolve', 'exponents']
     },
     mixed: {
       name: 'Mixed Bag',
@@ -406,11 +442,12 @@ const SpeedDrill = (() => {
   }
 
   function submitDrillAnswer() {
-    if (!drillState || !drillState.active || !drillState.currentProblem) return;
+    if (!drillState || !drillState.active || !drillState.currentProblem || drillState.currentProblem.answered) return;
 
     const input = document.getElementById('drill-input');
     const userAnswer = input.value.trim();
     if (!userAnswer) return;
+    drillState.currentProblem.answered = true;
 
     drillState.attempted++;
     const prob = drillState.currentProblem;
@@ -419,12 +456,7 @@ const SpeedDrill = (() => {
     if (prob.checkFn) {
       isCorrect = prob.checkFn(userAnswer);
     } else {
-      const num = parseFloat(userAnswer);
-      if (!isNaN(num) && typeof prob.answer === 'number') {
-        isCorrect = Math.abs(num - prob.answer) < 0.01;
-      } else {
-        isCorrect = userAnswer.replace(/\s/g, '').toLowerCase() === String(prob.answer).replace(/\s/g, '').toLowerCase();
-      }
+      isCorrect = ProblemEngine.checkAnswer(userAnswer, prob.answer, prob.type, prob.tolerance);
     }
 
     const feedback = document.getElementById('drill-feedback');

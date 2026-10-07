@@ -43,25 +43,31 @@
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 350 250" width="350" height="250" xmlns="http://www.w3.org/2000/svg">
-  <line x1="30" y1="220" x2="330" y2="220" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="50" y1="20" x2="50" y2="230" stroke="#94a3b8" stroke-width="1"/>
-  <line x1="80" y1="200" x2="220" y2="100" stroke="#3b82f6" stroke-width="2.5"/>
-  <polygon points="220,100 208,108 212,116" fill="#3b82f6"/>
+<svg viewBox="0 0 460 250" width="460" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vector-addition-title vector-addition-desc">
+  <title id="vector-addition-title">Vector components and tip-to-tail addition</title>
+  <desc id="vector-addition-desc">Vectors v and w start at the origin. A dashed copy of w starts at the tip of v. The orange resultant v plus w runs from the origin to the tip of that copy.</desc>
+  <defs>
+    <marker id="vector-v-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#3b82f6"/></marker>
+    <marker id="vector-w-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#8b5cf6"/></marker>
+    <marker id="vector-sum-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b"/></marker>
+  </defs>
+  <line x1="30" y1="200" x2="440" y2="200" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="80" y1="20" x2="80" y2="230" stroke="#94a3b8" stroke-width="1"/>
+  <line data-vector="v" x1="80" y1="200" x2="220" y2="100" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#vector-v-arrow)"/>
   <text x="155" y="135" fill="#3b82f6" font-size="12" font-family="Inter,sans-serif" transform="rotate(-35 155 135)">v = &lt;a, b&gt;</text>
   <line x1="80" y1="200" x2="220" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
   <line x1="220" y1="200" x2="220" y2="100" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="150" y="215" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">a (x-component)</text>
   <text x="235" y="155" fill="#ef4444" font-size="11" font-family="Inter,sans-serif">b (y-component)</text>
-  <line x1="80" y1="200" x2="280" y2="160" stroke="#8b5cf6" stroke-width="2"/>
-  <polygon points="280,160 268,162 270,172" fill="#8b5cf6"/>
+  <line data-vector="w" x1="80" y1="200" x2="280" y2="160" stroke="#8b5cf6" stroke-width="2" marker-end="url(#vector-w-arrow)"/>
   <text x="195" y="195" fill="#8b5cf6" font-size="10" font-family="Inter,sans-serif">w</text>
-  <line x1="220" y1="100" x2="280" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <polygon points="280,60 268,65 272,72" fill="#f59e0b"/>
-  <text x="255" y="55" fill="#f59e0b" font-size="11" font-family="Inter,sans-serif">v + w</text>
-  <line x1="220" y1="100" x2="280" y2="160" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+  <line data-vector="translated-w" x1="220" y1="100" x2="420" y2="60" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#vector-w-arrow)"/>
+  <text x="320" y="68" fill="#8b5cf6" font-size="11" font-family="Inter,sans-serif">w (translated)</text>
+  <line data-vector="sum" x1="80" y1="200" x2="420" y2="60" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#vector-sum-arrow)"/>
+  <text x="315" y="122" fill="#f59e0b" font-size="12" font-family="Inter,sans-serif">v + w</text>
   <circle cx="80" cy="200" r="3" fill="#e2e8f0"/>
-  <text x="150" y="30" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Vector addition: tip-to-tail</text>
+  <text x="65" y="217" fill="#94a3b8" font-size="11" font-family="Inter,sans-serif">O</text>
+  <text x="255" y="25" fill="#e2e8f0" font-size="12" text-anchor="middle" font-family="Inter,sans-serif">Vector addition: tip-to-tail</text>
 </svg>
 </div>
 <p class="math-diagram-label">Vectors: components (a, b), magnitude, and tip-to-tail addition</p>

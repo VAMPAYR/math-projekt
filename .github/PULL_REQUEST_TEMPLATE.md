@@ -39,6 +39,7 @@ Add screenshots when the interface changed.
 - [ ] The app runs locally.
 - [ ] The changed page renders.
 - [ ] The browser console shows no new errors.
+- [ ] Progress persists after reload, and JSON export/import restores progress.
 - [ ] Math notation renders correctly.
 - [ ] New problems include explanations.
 - [ ] Free-response problems include accepted answers.

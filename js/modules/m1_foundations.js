@@ -130,27 +130,27 @@ topics: [
       { content: 'So $x \\in A$ AND ($x \\in B$ OR $x \\in C$).' },
       { content: 'Case 1: $x \\in A$ and $x \\in B$, so $x \\in A \\cap B$.' },
       { content: 'Case 2: $x \\in A$ and $x \\in C$, so $x \\in A \\cap C$.' },
-      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' },
+      { content: 'Therefore $x \\in (A \\cap B) \\cup (A \\cap C)$. $\\blacksquare$' }
+    ], explanation: 'This proves the distributive law for sets by element-chasing.' },
     { difficulty: 'hard', question: 'Prove by contradiction: $\\sqrt{2}$ is irrational.', steps: [
       { content: 'Assume $\\sqrt{2} = p/q$ in lowest terms.' },
       { content: '$2 = p^2/q^2$, so $p^2 = 2q^2$. Then $p$ is even.' },
       { content: 'Let $p = 2k$. Then $4k^2 = 2q^2$, so $q^2 = 2k^2$. Then $q$ is even.' },
       { content: 'Contradiction: $p/q$ was supposed to be in lowest terms, but both are even.' }
     ], explanation: 'Proof by contradiction: assume the opposite and derive a logical impossibility.' }
-    ], explanation: 'This proves the distributive law for sets by element-chasing.' }
   ],
   multiPart: [
     { difficulty: 'hard', question: 'In a class of 100 students: 60 take math, 45 take physics, 20 take both.', parts: [
       { question: 'How many take math or physics (or both)?', accept: [85], placeholder: 'Number', explanation: '$60 + 45 - 20 = 85$ by inclusion-exclusion.' },
       { question: 'How many take neither?', accept: [15], placeholder: 'Number', explanation: '$100 - 85 = 15$.' },
       { question: 'How many take math but NOT physics?', accept: [40], placeholder: 'Number', explanation: '$60 - 20 = 40$ (math only).' },
-      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' },
+      { question: 'How many take physics but NOT math?', accept: [25], placeholder: 'Number', explanation: '$45 - 20 = 25$ (physics only).' }
+    ], completionMessage: 'Inclusion-exclusion extends to 3 or more sets.' },
     { difficulty: 'medium', question: 'Classify these numbers.', parts: [
       { question: 'Is $-3$ an integer?', accept: ['yes'], placeholder: 'yes/no', explanation: '$-3 \\in \\mathbb{Z}$.' },
       { question: 'Is $0.333...$ rational?', accept: ['yes'], placeholder: 'yes/no', explanation: '$0.\\overline{3} = 1/3 \\in \\mathbb{Q}$.' },
       { question: 'Is $\\pi$ rational?', accept: ['no'], placeholder: 'yes/no', explanation: '$\\pi$ is irrational.' }
     ], completionMessage: 'Integers $\\subset$ Rationals $\\subset$ Reals.' }
-    ], completionMessage: 'Inclusion-exclusion extends to 3 or more sets.' }
   ],
   stuckGuide: { html: `<div class="callout callout-tip"><h4>Set Theory Strategy</h4>
     <ol><li>$\\cup$ = OR (combine). $\\cap$ = AND (overlap). Complement = NOT.</li>
@@ -178,9 +178,9 @@ topics: [
     </ul>
     ${WHY('Why is the square root of 2 irrational?', '<p>Proof by contradiction: Suppose $\\sqrt{2} = p/q$ in lowest terms. Then $2q^2 = p^2$, so $p^2$ is even, so $p$ is even ($p = 2k$). Then $2q^2 = 4k^2$, so $q^2 = 2k^2$, so $q$ is even. But both $p$ and $q$ even contradicts "lowest terms." Therefore $\\sqrt{2}$ is irrational.</p>')}
   ` },
-  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle</h4>
-    <p>Can you find a fraction $p/q$ (with integers $p, q$) such that $(p/q)^2 = 2$? Try a few: $1/1, 3/2, 7/5, 17/12, ...$</p>
-    <p>Each gets closer but never equals $\\sqrt{2}$ exactly. This is because $\\sqrt{2}$ is <strong>irrational</strong>: it cannot be expressed as a ratio of integers.</p></div>` },
+  hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Fraction That Never Lands</h4>
+    <p>Can you find a fraction $p/q$ (with integers $p, q$) such that $(p/q)^2 = 2$? Try a few: $1/1, 3/2, 7/5, 17/12, ...$ Each candidate squares to something tantalizingly close: $\\left(\\frac{17}{12}\\right)^2 = \\frac{289}{144}$, just $\\frac{1}{144}$ away from $2$.</p>
+    <p>You can keep improving forever, but no fraction ever lands exactly. That is not a failure of patience: it is a provable property of the number itself. $\\sqrt{2}$ is <strong>irrational</strong>, and the proof below shows why no ratio of integers can ever square to $2$.</p></div>` },
   formalDefinitions: [
       { term: 'Natural Numbers', symbol: '$\\mathbb{N}$', definition: 'The set $\\{1, 2, 3, \\ldots\\}$ (or $\\{0, 1, 2, \\ldots\\}$ in some conventions). Closed under addition and multiplication.' },
       { term: 'Integers', symbol: '$\\mathbb{Z}$', definition: 'The set $\\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$. Extends $\\mathbb{N}$ to include additive inverses. Closed under addition, subtraction, and multiplication.' },
@@ -200,7 +200,10 @@ topics: [
     concept: { html: `
 
 <div class="math-diagram">
-<svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg">
+<svg data-figure="real-number-line" viewBox="0 0 500 140" width="500" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A number line with one half and pi over four between zero and one, and square root of two between one and two">
+  <title>Place real numbers on one common scale</title>
+  <desc>Each unit spans 50 drawing units. Positive one half, pi over four, and square root of two lie to the right of zero at their numerical positions.</desc>
+  <g transform="translate(0,50)">
   <line x1="20" y1="40" x2="480" y2="40" stroke="#94a3b8" stroke-width="2"/>
   <polygon points="480,40 470,35 470,45" fill="#94a3b8"/>
   <line x1="80" y1="33" x2="80" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
@@ -212,12 +215,16 @@ topics: [
     <text x="330" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">2</text><line x1="380" y1="33" x2="380" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
     <text x="380" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">3</text><line x1="430" y1="33" x2="430" y2="47" stroke="#94a3b8" stroke-width="1.5"/>
     <text x="430" y="65" fill="#e2e8f0" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">4</text>
-  <circle cx="205" cy="40" r="5" fill="#3b82f6"/>
-  <text x="205" y="25" fill="#3b82f6" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">½</text>
-  <circle cx="350" cy="40" r="5" fill="#10b981"/>
-  <text x="350" y="25" fill="#10b981" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">√2≈1.41</text>
-  <circle cx="262" cy="40" r="5" fill="#f59e0b"/>
-  <text x="262" y="25" fill="#f59e0b" font-size="11" text-anchor="middle" font-family="Inter,sans-serif">π/4≈0.79</text>
+  </g>
+  <line x1="255" y1="85" x2="242" y2="72" stroke="#3b82f6"/>
+  <circle cx="255" cy="90" r="5" fill="#3b82f6"/>
+  <text x="242" y="68" fill="#3b82f6" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">½</text>
+  <line x1="${230 + 50 * Math.SQRT2}" y1="85" x2="332" y2="49" stroke="#10b981"/>
+  <circle cx="${230 + 50 * Math.SQRT2}" cy="90" r="5" fill="#10b981"/>
+  <text x="340" y="45" fill="#10b981" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">√2≈1.41</text>
+  <line x1="${230 + 50 * Math.PI / 4}" y1="85" x2="220" y2="30" stroke="#f59e0b"/>
+  <circle cx="${230 + 50 * Math.PI / 4}" cy="90" r="5" fill="#f59e0b"/>
+  <text x="210" y="25" fill="#f59e0b" font-size="13" text-anchor="middle" font-family="Inter,sans-serif">π/4≈0.79</text>
 </svg>
 </div>
 <p class="math-diagram-label">The number line: integers at tick marks, with ½, √2, and π/4 between them</p>
@@ -417,6 +424,30 @@ topics: [
     ${WHY('Why this order?', '<p>Convention, chosen for consistency. Multiplication binds more tightly than addition because it represents repeated addition: $3 + 4 \\times 2$ means "3 plus two groups of 4" = $3 + 8$, not "seven groups of 2." Without a convention, $3 + 4 \\times 2$ would be ambiguous.</p>')}</div>
   ` },
   definition: { html: '<p><strong>Natural Numbers:</strong> $\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$ (counting numbers).</p><p><strong>Whole Numbers:</strong> $\\{0, 1, 2, 3, \\ldots\\}$ (naturals plus zero).</p><p><strong>GCF:</strong> Greatest Common Factor: the largest number dividing both $a$ and $b$.</p><p><strong>LCD:</strong> Least Common Denominator: the smallest number that both denominators divide evenly into.</p>' },
+  abstraction: { html: String.raw`
+    <p><strong>Division is one operation with four faces, and a fraction is a division you have not finished yet.</strong></p>
+    <p>Take $12 \div 3$. The single answer $4$ replies to four different questions:</p>
+    <ul>
+      <li><strong>Sharing:</strong> split $12$ into $3$ equal shares, giving $4$ in each. ("how much per group")</li>
+      <li><strong>Grouping / measuring:</strong> how many groups of $3$ fit inside $12$, giving $4$ groups. ("how many fit")</li>
+      <li><strong>Rate / per one:</strong> $12$ for every $3$ is $4$ for every $1$, the unit rate. ("per one")</li>
+      <li><strong>Undoing multiplication:</strong> the number that times $3$ gives $12$, namely $4$. ("the inverse")</li>
+    </ul>
+    <p>One idea sits under all four: <em>division re-measures a quantity in a new unit.</em> "$12 \div 3$" means "measure $12$ with a ruler whose unit is $3$," and the answer is how many of that unit you get.</p>
+    <p><strong>A fraction is that measurement written down before it is carried out.</strong> $\frac{a}{b}$ is exactly $a \div b$: "$\frac{3}{4}$" is "$3$ measured in quarters." So a fraction is not two numbers stacked, it is a single number, the exact answer to a division, held in place. That is why $\frac{3}{4}$, $\frac{6}{8}$, and $0.75$ are the same number: one measurement, different-sized rulers.</p>
+    <div class="callout callout-key"><h4>A fraction wears three hats, and it is the same number in each</h4>
+    <ul>
+      <li><strong>A point:</strong> $\frac{3}{4}$ sits three-quarters of the way from $0$ to $1$.</li>
+      <li><strong>A division:</strong> $\frac{3}{4} = 3 \div 4$.</li>
+      <li><strong>An operator:</strong> "$\frac{3}{4}$ of $12$" scales $12$ by $\frac{3}{4}$: cut into $4$, keep $3$, giving $9$.</li>
+    </ul></div>
+    <p>Keep the <strong>grouping</strong> face in mind and the rules that seem arbitrary become obvious:</p>
+    <ul>
+      <li>Dividing by a fraction <em>grows</em> the answer, because a smaller unit fits more times: how many $\frac{1}{2}$-cups are in $3$ cups? Six.</li>
+      <li>"Flip and multiply" is not a trick: asking how many $\frac{2}{3}$-units fit in a number is the same as scaling that number by the reciprocal $\frac{3}{2}$.</li>
+    </ul>
+    <p><strong>The portable payoff:</strong> whenever a problem says <em>per</em>, <em>each</em>, <em>how many fit</em>, <em>split</em>, <em>share</em>, <em>rate</em>, or <em>of</em>, it is a division or a fraction in disguise. Name the face, and the method follows on its own. That is why one deep understanding of division carries you through rate problems, mixtures, tiling, scaling, and probability, with no separate recipe for each.</p>
+  ` },
   examples: [{
     title: 'Adding Fractions with Unlike Denominators',
     problem: 'Compute $\\frac{2}{5} + \\frac{3}{4}$.',
@@ -434,6 +465,15 @@ topics: [
       { title: 'Exponents', content: '$3^2 = 9$. Expression becomes $2 + 3 \\times 9 \\div 9$.', why: 'Exponents before multiplication.' },
       { title: 'Multiplication and division (left to right)', content: '$3 \\times 9 = 27$. Then $27 \\div 9 = 3$. Expression becomes $2 + 3$.', why: 'Multiplication and division have equal precedence: evaluate left to right.' },
       { title: 'Addition', content: '$2 + 3 = 5$.', why: 'Final operation.' }
+    ]
+  },
+  {
+    title: 'Why dividing by a fraction makes the answer bigger',
+    problem: String.raw`How many $\frac{3}{4}$-cup scoops are in $6$ cups of flour?`,
+    steps: [
+      { title: 'Predict the size of the answer', content: String.raw`More than $6$. Each scoop holds less than a cup, so more than six of them fit. Dividing by a number below $1$ makes the count grow.`, why: 'This is the grouping face of division: how many small units fit inside the whole.', predict: String.raw`Before any arithmetic: will the answer be more than $6$ or fewer than $6$? Say why in one sentence.` },
+      { title: 'Turn the division into a multiplication', content: String.raw`$6 \div \frac{3}{4} = 6 \times \frac{4}{3}$. Asking "how many $\frac{3}{4}$-units fit" is the same as scaling $6$ by the reciprocal $\frac{4}{3}$.`, why: 'Flip-and-multiply is the reciprocal answering "how many units fit," not a rule to memorize.', predict: String.raw`Rewrite $6 \div \frac{3}{4}$ as a multiplication. What do you multiply $6$ by, and why that number?` },
+      { title: 'Compute and check', content: String.raw`$6 \times \frac{4}{3} = \frac{24}{3} = 8$ scoops. Check by undoing it: $8 \times \frac{3}{4} = 6$ cups.` }
     ]
   }],
   flashCards: [
@@ -453,6 +493,12 @@ topics: [
     { difficulty: 'hard', question: '$5 - 2 \\times 3 + 4^2 \\div 8 =$?', options: ['$7$', '$1$', '$3$', '$-2$'], correctIndex: 1, hint: '<p>PEMDAS: exponents, then multiplication/division (L to R), then addition/subtraction (L to R).</p>', correctExplanation: '$4^2 = 16$. $2 \\times 3 = 6$. $16 \\div 8 = 2$. $5 - 6 + 2 = 1$.', wrongExplanations: { 0: '$5 - 6 + 2 = 1$, not 7. Remember: subtraction before the remaining addition, left to right.', 2: 'Check each step: $4^2 = 16$, $16 \\div 8 = 2$, $2 \\times 3 = 6$. Then $5 - 6 + 2$.', 3: '$5 - 6 = -1$, then $-1 + 2 = 1$.' } }
   ],
   freeResponse: [
+    { difficulty: 'medium', question: String.raw`<strong>Apply it (rate):</strong> A printer prints $90$ pages in $4$ minutes at a steady rate. How many pages per minute?`, accept: [22.5, '22.5', '45/2'], placeholder: 'pages per minute', explanation: String.raw`Division as "per one": $90 \div 4 = 22.5$ pages each minute.` },
+    { difficulty: 'medium', question: String.raw`<strong>Apply it (measuring):</strong> How many $\frac{2}{3}$-meter ribbons can be cut from a $6$-meter roll?`, accept: [9, '9'], placeholder: 'number of ribbons', explanation: String.raw`The grouping face: $6 \div \frac{2}{3} = 6 \times \frac{3}{2} = 9$. A shorter unit fits more times.` },
+    { difficulty: 'medium', question: String.raw`<strong>Apply it (fraction as operator):</strong> A recipe uses $\frac{3}{4}$ of a $200$-gram bag of sugar. How many grams?`, accept: [150, '150'], placeholder: 'grams', explanation: String.raw`"$\frac{3}{4}$ of $200$": divide first, $200 \div 4 = 50$, then $\times 3 = 150$.` },
+    { difficulty: 'hard', question: String.raw`<strong>Apply it (undo an operator):</strong> $\frac{3}{4}$ of a number is $18$. What is the number?`, accept: [24, '24'], placeholder: 'the number', explanation: String.raw`Undo the scaling by dividing: $18 \div \frac{3}{4} = 18 \times \frac{4}{3} = 24$. Check: $\frac{3}{4}\times 24 = 18$.` },
+    { difficulty: 'hard', question: String.raw`<strong>Apply it (GCF in the wild):</strong> A $48$ cm by $36$ cm board is tiled with identical squares and no cutting. What is the largest square side, in cm?`, accept: [12, '12'], placeholder: 'cm', explanation: String.raw`The side must divide both $48$ and $36$, so take the GCF. Euclid: $48 \bmod 36 = 12$, then $36 \bmod 12 = 0$, so $\gcd = 12$ cm.` },
+    { difficulty: 'hard', question: String.raw`<strong>Apply it (LCM in the wild):</strong> Two buses leave together; one departs every $12$ minutes, the other every $15$. After how many minutes do they next leave together?`, accept: [60, '60'], placeholder: 'minutes', explanation: String.raw`The next shared time is the LCM: $\operatorname{lcm}(12,15) = \frac{12 \times 15}{\gcd(12,15)} = \frac{180}{3} = 60$ minutes.` },
     { difficulty: 'easy', question: '$7 \\times 8 =$?', accept: [56, '56'], placeholder: 'Number', explanation: '$7 \\times 8 = 56$.' },
     { difficulty: 'easy', question: 'Simplify: $\\frac{12}{18}$', accept: ['2/3'], placeholder: 'Fraction', explanation: 'GCF of 12 and 18 is 6. $\\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$.' },
     { difficulty: 'medium', question: 'Convert 0.75 to a fraction:', accept: ['3/4'], placeholder: 'Fraction', explanation: '$0.75 = \\frac{75}{100} = \\frac{3}{4}$.' },
@@ -486,11 +532,16 @@ topics: [
     { difficulty: 'easy', context: 'Order of operations:', expression: 'In PEMDAS, the E stands for {{0}} and the M stands for {{1}}.', blanks: [ { accept: ['exponents'], size: 10 }, { accept: ['multiplication'], size: 14 } ], explanation: 'P-E-M-D-A-S: Parentheses, Exponents, Multiplication, Division, Addition, Subtraction.' },
     { difficulty: 'medium', context: 'Fraction division:', expression: 'To divide by a fraction, multiply by its {{0}}.', blanks: [ { accept: ['reciprocal', 'inverse'], size: 10 } ], explanation: '$\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$.' }
   ],
-  stuckGuide: { html: `<div class="callout callout-tip"><h4>Arithmetic Strategy</h4>
-    <ol><li><strong>Fractions:</strong> Same denominator? Add numerators. Different? Find LCD first.</li>
-    <li><strong>Fraction multiplication:</strong> Multiply straight across, then simplify.</li>
-    <li><strong>Fraction division:</strong> Flip the second fraction, then multiply.</li>
-    <li><strong>Order of operations:</strong> PEMDAS. Parentheses first, then exponents, then multiply/divide (left to right), then add/subtract (left to right).</li></ol></div>` }
+  stuckGuide: { html: String.raw`<div class="callout callout-tip"><h4>Fast methods, once the idea is clear</h4>
+    <ol>
+      <li><strong>Compare two fractions in one step (cross-multiply).</strong> For $\frac{a}{b}$ against $\frac{c}{d}$ (both positive), compare $a\cdot d$ with $b\cdot c$; the larger product sits over the larger fraction. $\frac{5}{8}$ against $\frac{7}{11}$: $5\cdot 11 = 55$ versus $8\cdot 7 = 56$, so $\frac{7}{11}$ is larger. This is just clearing both denominators at once.</li>
+      <li><strong>Benchmark to one half.</strong> Double the numerator: if it beats the denominator, the fraction beats $\frac{1}{2}$. $\frac{5}{9}$: $10 \gt 9$, so it sits above a half.</li>
+      <li><strong>Find the GCF fast (Euclid's method).</strong> Replace the pair with (smaller number, remainder) until the remainder is $0$; the last nonzero value is the GCF. $\gcd(48, 18)$: $48 \bmod 18 = 12$, then $18 \bmod 12 = 6$, then $12 \bmod 6 = 0$, so the GCF is $6$. No factor lists, and it never slows down.</li>
+      <li><strong>Find the LCD (or LCM) fast.</strong> $\operatorname{lcm}(a,b) = \dfrac{a \cdot b}{\gcd(a,b)}$. So $\operatorname{lcm}(8, 6) = \frac{48}{2} = 24$. Once you can find the GCF, the LCD is free.</li>
+      <li><strong>Simplify in one shot.</strong> Divide top and bottom by the GCF a single time, not by $2$, then $3$, then again. $\frac{12}{18}$ with $\gcd = 6$ becomes $\frac{2}{3}$ at once.</li>
+      <li><strong>Take a fraction of a number by dividing first.</strong> "$\frac{3}{8}$ of $40$": divide by $8$ to get $5$, then times $3$ to get $15$. Dividing first keeps the numbers small.</li>
+      <li><strong>Order of operations:</strong> PEMDAS. Parentheses, then exponents, then multiply and divide left to right, then add and subtract left to right.</li>
+    </ol></div>` }
 },
 
 /* TOPIC 1.3: Propositional Logic */

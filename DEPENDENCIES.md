@@ -11,7 +11,9 @@ index.html
 css/styles.css
 css/game.css
 js/visualizations.js
+js/sfx.js
 js/game_state.js
+js/review_engine.js
 js/problem_engine.js
 js/speed_drill.js
 js/mini_games.js
@@ -42,6 +44,7 @@ js/modules/m8_calculus3.js
 js/modules/m9_probability.js
 js/modules/m9_statistics_extensions.js
 js/modules/topic_extensions.js
+js/modules/m10_gre.js
 ```
 
 ## External Browser Assets
@@ -71,9 +74,12 @@ URL.createObjectURL
 FileReader
 Canvas
 SVG
+Web Audio API
 ```
 
-`localStorage` stores topic completion, XP, streaks, achievements, mastery data, and theme preference. The Progress tools export and import this data as JSON so learners can move progress between browsers or devices.
+The Web Audio API synthesizes all sound effects in `js/sfx.js`. No audio asset files exist or are downloaded; sounds are generated as oscillator tones at answer time, and a header toggle mutes them (persisted in `localStorage`).
+
+`localStorage` stores topic completion, XP, streaks, achievements, mastery data, sound preference, theme preference, and the spaced-repetition review schedule (`math_hero_srs`, written by `js/review_engine.js`). The review schedule uses previous answers and review intervals to choose when practice items become due. The Progress tools export and import this data as JSON so learners can move progress between browsers or devices.
 
 ## Optional Local Servers
 
@@ -97,9 +103,19 @@ http://localhost:8000
 
 ## Local Reference Material
 
-The `sources/` directory is local reference material only. It is excluded from Git by `.gitignore` and must not be committed, copied into public documentation, or pushed to the repository.
+The `sources/`, `books/`, and `references/` directories are local reference material only. They and common ebook/PDF extensions are excluded from Git by `.gitignore` and must not be committed, copied into public documentation, or pushed to the repository.
 
 Use reference material only to check coverage and mathematical accuracy. Public explanations must be original writing. Do not copy or lightly paraphrase protected text.
+
+## Test tooling
+
+The checks in `tests/*.test.cjs` use Node.js built-in test, assertion, filesystem,
+and VM modules. They add no browser runtime dependency or build step. Run them
+with `node --test tests/*.test.cjs`.
+
+`tests/browser-smoke.cjs` is an optional browser check that uses an existing
+Playwright installation and Chromium. Playwright is development tooling only;
+the site does not load it. The script expects a running local static server.
 
 ## Offline Behavior
 

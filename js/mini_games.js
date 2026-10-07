@@ -4,6 +4,21 @@
    ============================================================ */
 const MiniGames = (() => {
 
+  function finishCard(card, input) {
+    card.dataset.solved = 'true';
+    input.disabled = true;
+    card.querySelectorAll('.game-submit').forEach(button => { button.disabled = true; });
+  }
+
+  function numericAttempt(card, input, answer) {
+    if (card.dataset.solved === 'true') return null;
+    const value = String(input.value).trim();
+    if (!value || card.dataset.lastAttempt === value) return null;
+    // Enter followed by a click is one attempt; changing the value permits a retry.
+    card.dataset.lastAttempt = value;
+    return typeof ProblemEngine !== 'undefined' && ProblemEngine.checkAnswer(value, answer);
+  }
+
   /* ---- Equation Balance Game ----
      User must balance an equation by dragging/typing the missing value */
   function equationBalance() {
@@ -46,12 +61,16 @@ const MiniGames = (() => {
   }
 
   function checkBalance(gameId, answer) {
+    const card = document.getElementById(gameId);
     const input = document.getElementById(gameId + '-input');
     const feedback = document.getElementById(gameId + '-feedback');
     const steps = document.getElementById(gameId + '-steps');
-    const val = parseFloat(input.value);
+    if (!card || !input || !feedback || !steps) return;
+    const correct = numericAttempt(card, input, answer);
+    if (correct === null) return;
 
-    if (Math.abs(val - answer) < 0.01) {
+    if (correct) {
+      finishCard(card, input);
       feedback.innerHTML = '<span class="game-correct">Correct. The equation is balanced.</span>';
       feedback.className = 'game-feedback correct';
       steps.style.display = 'block';
@@ -80,8 +99,12 @@ const MiniGames = (() => {
     const pat = patterns[Math.floor(Math.random() * patterns.length)];
     const gameId = 'pat-' + Date.now();
 
+    // Store the rule (which contains LaTeX backslashes) in a data attribute
+    // instead of an inline onclick string, so backslashes are not eaten as
+    // JS escape sequences. The handler reads it back from the DOM.
+    const ruleAttr = pat.rule.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
     return `
-      <div class="mini-game pattern-game" id="${gameId}">
+      <div class="mini-game pattern-game" id="${gameId}" data-rule="${ruleAttr}">
         <div class="game-title">Pattern Finder</div>
         <div class="game-description">Find the pattern and predict the next number.</div>
         <div class="pattern-sequence">
@@ -92,20 +115,25 @@ const MiniGames = (() => {
         <div class="game-input-area">
           <label>Next number:</label>
           <input type="number" class="game-input" id="${gameId}-input"
-                 onkeydown="if(event.key==='Enter')MiniGames.checkPattern('${gameId}',${pat.next},'${pat.rule.replace(/'/g, "\\'")}')" />
-          <button class="game-submit" onclick="MiniGames.checkPattern('${gameId}',${pat.next},'${pat.rule.replace(/'/g, "\\'")}')">Check</button>
+                 onkeydown="if(event.key==='Enter')MiniGames.checkPattern('${gameId}',${pat.next})" />
+          <button class="game-submit" onclick="MiniGames.checkPattern('${gameId}',${pat.next})">Check</button>
         </div>
         <div class="game-feedback" id="${gameId}-feedback"></div>
       </div>
     `;
   }
 
-  function checkPattern(gameId, answer, rule) {
+  function checkPattern(gameId, answer) {
+    const card = document.getElementById(gameId);
     const input = document.getElementById(gameId + '-input');
     const feedback = document.getElementById(gameId + '-feedback');
-    const val = parseFloat(input.value);
+    if (!card || !input || !feedback) return;
+    const rule = card.dataset.rule || '';
+    const correct = numericAttempt(card, input, answer);
+    if (correct === null) return;
 
-    if (Math.abs(val - answer) < 0.01) {
+    if (correct) {
+      finishCard(card, input);
       feedback.innerHTML = `<span class="game-correct">Correct.</span><div class="pattern-rule"><strong>Rule:</strong> ${rule}</div>`;
       feedback.className = 'game-feedback correct';
       if (typeof GameState !== 'undefined') GameState.recordCorrectAnswer('medium', 'game', null);
@@ -132,9 +160,9 @@ const MiniGames = (() => {
     const gameId = 'expr-' + Date.now();
 
     return `
-      <div class="mini-game expression-builder" id="${gameId}">
+      <div class="mini-game expression-builder" id="${gameId}" data-answer="${ch.answer}">
         <div class="game-title">Build the Expression</div>
-        <div class="game-description">Translate English into math notation.</div>
+        <div class="game-description">Translate English into math notation. Any algebraically equivalent form counts.</div>
         <div class="game-prompt">${ch.prompt}</div>
         <div class="game-input-area">
           <input type="text" class="game-input" id="${gameId}-input" placeholder="Type your expression..."
@@ -150,11 +178,100 @@ const MiniGames = (() => {
     `;
   }
 
+  /* Normalize an expression string to something safely evaluable:
+     whitelist characters, expand ^ and implicit multiplication. */
+  function normalizeExpression(raw) {
+    let s = String(raw).replace(/\s+/g, '').toLowerCase();
+    if (!s || !/^[a-z0-9+\-*/^().]+$/.test(s)) return null;
+    s = s.replace(/\^/g, '**');
+    s = s.replace(/(\d)([a-z(])/g, '$1*$2');     /* 3n -> 3*n, 2( -> 2*( */
+    s = s.replace(/([a-z)])(\()/g, '$1*(');      /* n( -> n*(, )( -> )*( */
+    s = s.replace(/(\))([a-z0-9])/g, ')*$2');    /* )n -> )*n */
+    /* lw -> l*w; run twice so lwh also splits fully */
+    s = s.replace(/([a-z])([a-z])/g, '$1*$2');
+    s = s.replace(/([a-z])([a-z])/g, '$1*$2');
+    return s;
+  }
+
+  function extractVariables(normalized) {
+    return [...new Set((normalized.match(/[a-z]/g) || []))].sort();
+  }
+
+  function evaluateExpression(normalized, varNames, values) {
+    try {
+      /* Input is whitelisted to single-letter identifiers and arithmetic,
+         so no free identifiers beyond the declared parameters exist. */
+      const fn = new Function(...varNames, `"use strict"; return (${normalized});`);
+      const result = fn(...values);
+      return (typeof result === 'number' && isFinite(result)) ? result : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /* Two expressions are treated as equivalent when they agree on
+     several sample points: the standard trick for checking algebraic
+     identities without a symbolic engine. */
+  function expressionsMatch(userNorm, answerNorm) {
+    const answerVars = extractVariables(answerNorm);
+    let userVars = extractVariables(userNorm);
+
+    /* Allow a different letter when the answer uses a single variable */
+    let mappedUser = userNorm;
+    if (answerVars.length === 1 && userVars.length === 1 && userVars[0] !== answerVars[0]) {
+      mappedUser = userNorm.split(userVars[0]).join(answerVars[0]);
+      userVars = answerVars;
+    }
+    if (userVars.join(',') !== answerVars.join(',')) return false;
+
+    const samples = [[2.3, 3.7, 5.1], [7.9, 1.3, 2.9], [0.6, 8.2, 4.4]];
+    for (const sample of samples) {
+      const values = answerVars.map((_, i) => sample[i % sample.length]);
+      const a = evaluateExpression(answerNorm, answerVars, values);
+      const u = evaluateExpression(mappedUser, answerVars, values);
+      if (a === null || u === null) return false;
+      if (Math.abs(a - u) > 1e-9 * Math.max(1, Math.abs(a))) return false;
+    }
+    return true;
+  }
+
   function checkExpression(gameId) {
+    const card = document.getElementById(gameId);
+    const input = document.getElementById(gameId + '-input');
     const hint = document.getElementById(gameId + '-hint');
     const feedback = document.getElementById(gameId + '-feedback');
-    feedback.innerHTML = '<span class="game-correct">Review the answer below.</span>';
-    hint.style.display = 'block';
+    if (!card || !input || !feedback) return;
+    if (card.dataset.solved === 'true') return;
+
+    const userNorm = normalizeExpression(input.value);
+    const answerNorm = normalizeExpression(card.dataset.answer);
+    if (!userNorm) {
+      feedback.innerHTML = '<span class="game-wrong">Use numbers, letters, and the symbols + - * / ^ ( ) only.</span>';
+      feedback.className = 'game-feedback wrong';
+      return;
+    }
+
+    if (answerNorm && expressionsMatch(userNorm, answerNorm)) {
+      finishCard(card, input);
+      feedback.innerHTML = '<span class="game-correct">Correct. Your expression is equivalent to the target.</span>';
+      feedback.className = 'game-feedback correct';
+      hint.style.display = 'block';
+      if (typeof GameState !== 'undefined') {
+        const result = GameState.recordCorrectAnswer('medium', 'game', null);
+        GameState.showXPGain(result.xpGained);
+      }
+    } else {
+      const attempts = (parseInt(card.dataset.attempts || '0', 10) + 1);
+      card.dataset.attempts = String(attempts);
+      if (typeof GameState !== 'undefined') GameState.recordWrongAnswer();
+      if (attempts >= 2) {
+        feedback.innerHTML = '<span class="game-wrong">Not equivalent. The answer is revealed below; try rebuilding it from the wording.</span>';
+        hint.style.display = 'block';
+      } else {
+        feedback.innerHTML = '<span class="game-wrong">Not equivalent to the target expression. Reread the wording and try once more.</span>';
+      }
+      feedback.className = 'game-feedback wrong';
+    }
     if (typeof MathEngine !== 'undefined') setTimeout(() => MathEngine.renderAllMath(), 50);
   }
 
