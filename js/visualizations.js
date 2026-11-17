@@ -25,6 +25,7 @@ const Viz = (() => {
   const PALETTE = [COLORS.blue, COLORS.purple, COLORS.cyan, COLORS.green, COLORS.amber, COLORS.red, COLORS.pink];
   const redraws = new Map();
   const interactions = new Map();
+  const scrollRegions = new Map();
 
   function refreshThemeColors() {
     const dark = document.documentElement.dataset.theme === 'dark';
@@ -61,6 +62,8 @@ const Viz = (() => {
       if (!canvas.isConnected) {
         interactions.get(canvas)?.();
         interactions.delete(canvas);
+        scrollRegions.get(canvas)?.();
+        scrollRegions.delete(canvas);
         redraws.delete(canvas);
       }
     }
@@ -78,7 +81,43 @@ const Viz = (() => {
       resetInteraction(canvas);
     }
     interactions.clear();
+    for (const cleanup of scrollRegions.values()) cleanup();
+    scrollRegions.clear();
     redraws.clear();
+  }
+
+  function configureScrollRegion(container, canvas) {
+    scrollRegions.get(canvas)?.();
+    if (!container.classList || !container.setAttribute) return;
+    const update = () => {
+      const scrollable = container.scrollWidth > container.clientWidth + 1;
+      container.classList.toggle('viz-scrollable', scrollable);
+      if (scrollable) {
+        container.tabIndex = 0;
+        container.setAttribute('role', 'region');
+        container.setAttribute('aria-label', 'Scrollable math figure. Use left and right arrow keys to view the full figure.');
+      } else {
+        container.removeAttribute('tabindex');
+        container.removeAttribute('role');
+        container.removeAttribute('aria-label');
+      }
+    };
+    const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(update) : null;
+    if (observer) {
+      observer.observe(container);
+      observer.observe(canvas);
+    } else {
+      window.addEventListener('resize', update);
+    }
+    update();
+    scrollRegions.set(canvas, () => {
+      observer?.disconnect();
+      if (!observer) window.removeEventListener('resize', update);
+      container.classList.remove('viz-scrollable');
+      container.removeAttribute('tabindex');
+      container.removeAttribute('role');
+      container.removeAttribute('aria-label');
+    });
   }
 
   function resetInteraction(canvas) {
@@ -112,6 +151,8 @@ const Viz = (() => {
     canvas.style.maxWidth = '100%';
     canvas.style.height = 'auto';
     canvas.style.aspectRatio = `${width} / ${height}`;
+    if (canvas.style.setProperty) canvas.style.setProperty('--viz-readable-width', `${Math.min(width, 600)}px`);
+    configureScrollRegion(container, canvas);
     const ctx = canvas.getContext('2d');
     if (!ctx) return null;
     ctx.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
@@ -215,7 +256,9 @@ const Viz = (() => {
     if (!r) return;
     const { ctx } = r;
 
-    r.canvas.setAttribute('aria-label', title || labels.join('; ') || 'Function graph');
+    const graphName = title || 'Function graph';
+    const legend = labels.length ? `. Curves: ${labels.join('; ')}` : '';
+    r.canvas.setAttribute('aria-label', `${graphName}. Horizontal range ${xMin} to ${xMax}; vertical range ${yMin} to ${yMax}${legend}`);
     const padL = 50, padR = 20, padB = 40;
     ctx.font = '12px Inter, sans-serif';
     let legendX = padL, legendRow = 0;
@@ -574,6 +617,11 @@ const Viz = (() => {
       canvas.setAttribute('aria-valuenow', deg);
       canvas.setAttribute('aria-valuetext', `${deg} degrees; cosine ${cosVal}; sine ${sinVal}`);
 
+      ctx.font = '12px Inter, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = COLORS.text;
+      ctx.fillText('Drag point or use arrow keys (Shift: 15°)', 12, 20, w - 24);
+
       ctx.font = '13px JetBrains Mono, monospace';
       ctx.textAlign = 'left';
       ctx.fillStyle = COLORS.amber;
@@ -686,6 +734,23 @@ const Viz = (() => {
       ctx.lineWidth = 1.5;
       if (yMin <= 0 && yMax >= 0) { ctx.beginPath(); ctx.moveTo(padL, toSY(0)); ctx.lineTo(padL + pw, toSY(0)); ctx.stroke(); }
       if (xMin <= 0 && xMax >= 0) { ctx.beginPath(); ctx.moveTo(toSX(0), padT); ctx.lineTo(toSX(0), padT + ph); ctx.stroke(); }
+
+      /* Numeric scales are needed to interpret both the curve and its tangent. */
+      ctx.fillStyle = COLORS.axisLabel;
+      ctx.font = '11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      for (const x of ticks(xMin, xMax, xStep)) {
+        if (Math.abs(x) >= 1e-10) ctx.fillText(formatNum(x), toSX(x), padT + ph + 20);
+      }
+      ctx.textAlign = 'right';
+      for (const y of ticks(yMin, yMax, yStep)) {
+        if (Math.abs(y) >= 1e-10) ctx.fillText(formatNum(y), padL - 8, toSY(y) + 4);
+      }
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = COLORS.text;
+      ctx.font = '11px Inter, sans-serif';
+      ctx.fillText('Move the pointer or use arrow keys to change x', w / 2, h - 6, w - 24);
 
       /* Plot function */
       ctx.save();
@@ -803,6 +868,18 @@ const Viz = (() => {
       ctx.strokeStyle = COLORS.axis; ctx.lineWidth = 1.5;
       if (yMin <= 0 && yMax >= 0) { ctx.beginPath(); ctx.moveTo(padL, toSY(0)); ctx.lineTo(padL + pw, toSY(0)); ctx.stroke(); }
       if (xMin <= 0 && xMax >= 0) { ctx.beginPath(); ctx.moveTo(toSX(0), padT); ctx.lineTo(toSX(0), padT + ph); ctx.stroke(); }
+
+      /* Show the scale for the interval and the heights of the rectangles. */
+      ctx.fillStyle = COLORS.axisLabel;
+      ctx.font = '11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      for (const x of ticks(xMin, xMax, xStep)) {
+        if (Math.abs(x) >= 1e-10) ctx.fillText(formatNum(x), toSX(x), padT + ph + 20);
+      }
+      ctx.textAlign = 'right';
+      for (const y of ticks(yMin, yMax, yStep)) {
+        if (Math.abs(y) >= 1e-10) ctx.fillText(formatNum(y), padL - 8, toSY(y) + 4);
+      }
 
       ctx.save();
       ctx.beginPath(); ctx.rect(padL, padT, pw, ph); ctx.clip();

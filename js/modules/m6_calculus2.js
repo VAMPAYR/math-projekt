@@ -74,10 +74,10 @@
           { term: 'Antiderivative', definition: 'A function $F$ where $F\' = f$. Example: $F(x) = x^3/3$ is an antiderivative of $f(x) = x^2$.' }
         ],
         whyExists: { html: `
-          <p><strong>Why does integration exist?</strong> Differentiation asks: given position, find velocity. Integration asks the reverse: given velocity, find position. More broadly, integration computes <strong>accumulated totals</strong> from rates: total distance from speed, total profit from marginal revenue, total mass from density.</p>
+          <p><strong>Why does integration exist?</strong> Differentiation can find velocity from position. Integrating velocity gives the change in position; an initial position determines the position itself. More broadly, integration computes <strong>accumulated totals</strong> from rates: distance from speed, profit change from marginal profit, and mass from density over a region.</p>
           <p><strong>Why is area under a curve the answer?</strong> If a car moves at speed $v(t)$, in a tiny time interval $dt$, it covers $v(t)\\,dt$ distance. The total distance is the sum of all these tiny rectangles: $\\sum v(t_i)\\Delta t$. As $\\Delta t \\to 0$, this Riemann sum becomes $\\int v(t)\\,dt$. The integral IS the area because area is what accumulation looks like geometrically.</p>
-          <p><strong>The Fundamental Theorem of Calculus (FTC):</strong> FTC says $\\int_a^b f(x)\\,dx = F(b) - F(a)$ where $F' = f$. This connects the two branches: <strong>differential</strong> calculus (rates) and <strong>integral</strong> calculus (accumulation) are inverses of each other. Every antiderivative gives you an integral, and every integral gives you an antiderivative.</p>
-          ${WHY('Why is FTC true?', '<p>Define $G(x) = \\int_a^x f(t)\\,dt$. Then $G\'(x) = \\lim_{h \\to 0} \\frac{G(x+h) - G(x)}{h} = \\lim_{h \\to 0} \\frac{1}{h}\\int_x^{x+h} f(t)\\,dt$. For small $h$, $f$ is approximately constant at $f(x)$ over $[x, x+h]$, so the integral is approximately $f(x) \\cdot h$. Dividing by $h$ gives $f(x)$. Therefore $G\' = f$: the function that accumulates area has the original function as its derivative. Accumulation and rate-of-change are inverse operations.</p>')}
+          <p><strong>The Fundamental Theorem of Calculus (FTC):</strong> If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$ there, then $\\int_a^b f(x)\\,dx = F(b) - F(a)$. A definite integral is a number describing signed accumulation; an indefinite integral denotes a family of antiderivatives on an interval. The theorem connects these ideas under its hypotheses.</p>
+          ${WHY('Why is FTC true?', '<p>For continuous $f$, define $G(x) = \\int_a^x f(t)\\,dt$. For $h \\ne 0$, the difference quotient is $\\frac{G(x+h) - G(x)}{h} = \\frac{1}{h}\\int_x^{x+h} f(t)\\,dt$. Continuity makes this average approach $f(x)$ as $h \\to 0$. Thus $G\'(x)=f(x)$ at interior points. An antiderivative differs from $G$ by a constant on the interval, which yields the endpoint formula.</p>')}
         ` },
         hook: { html: `
           <div class="callout callout-puzzle"><h4> Puzzle: Distance from Speed</h4>
@@ -96,8 +96,8 @@ ${integralFigure}
           <p>The FTC is the central result of calculus. It connects the two main operations (differentiation and integration):</p>
           <p><strong>Part 1 (FTC1):</strong> If $f$ is continuous on $[a,b]$ and $F(x) = \\int_a^x f(t)\\,dt$, then $F'(x) = f(x)$.</p>
           <p>Interpretation: the derivative of the area function is the original function. Differentiation undoes integration.</p>
-          <p><strong>Part 2 (FTC2):</strong> $\\int_a^b f(x)\\,dx = F(b) - F(a)$ where $F' = f$.</p>
-          <p>Interpretation: to compute a definite integral, find ANY antiderivative $F$ and evaluate $F(b) - F(a)$. This eliminates the need for Riemann sums.</p></div>
+          <p><strong>Part 2 (FTC2):</strong> If $f$ is continuous on $[a,b]$ and $F' = f$ on that interval, then $\\int_a^b f(x)\\,dx = F(b) - F(a)$.</p>
+          <p>Interpretation: an antiderivative defined across the whole interval gives the signed accumulation by its endpoint change. Check continuity and domain before applying the formula: $1/x$ on $[-1,1]$ cannot be evaluated across zero this way.</p></div>
 
           <div class="callout callout-key"><h4>Properties of Definite Integrals</h4>
           <ul>
@@ -488,25 +488,26 @@ ${integralFigure}
       {
         id: 'taylor-series',
         title: 'Taylor and Maclaurin Series',
-        description: 'Representing functions as infinite polynomials. The most powerful approximation tool in mathematics.',
+        description: 'Taylor polynomials, their infinite series, and when they represent a function.',
         prereqRecap: [
           { term: 'Derivative', definition: '$f\'(x)$ is the rate of change. $f^{(n)}(x)$ is the $n$th derivative.' },
           { term: 'Factorial', definition: '$n! = n \\times (n-1) \\times \\cdots \\times 1$. $0! = 1$ by convention.' },
           { term: 'Convergence', definition: 'An infinite sum has a finite value. $\\sum_{n=0}^{\\infty} \\frac{1}{2^n} = 2$.' }
         ],
         whyExists: { html: `
-          <p><strong>Why represent functions as infinite polynomials?</strong> Polynomials are the easiest functions to compute: just addition and multiplication. If $\\sin(x) = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\cdots$, then computing $\\sin(0.5)$ becomes arithmetic. This is exactly how computers and calculators evaluate transcendental functions.</p>
-          <p><strong>Why does it work?</strong> If $f(x)$ can be written as a power series $\\sum c_n x^n$, then $f(0) = c_0$, $f'(0) = c_1$, $f''(0) = 2c_2$, etc. Solving for the coefficients: $c_n = \\frac{f^{(n)}(0)}{n!}$. The Taylor series encodes ALL information about $f$ near $a$ using its derivatives at $a$. Each derivative contributes one more term of accuracy.</p>
+          <p><strong>Why use polynomial approximations?</strong> Polynomials use addition and multiplication. For example, $\\sin(x) = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\cdots$ can approximate $\\sin(0.5)$ by arithmetic. Numerical libraries may use different approximations and range-reduction methods.</p>
+          <p><strong>Why do the coefficients have this form?</strong> If $f(x)$ equals a power series $\\sum c_n x^n$ near zero, differentiating the series gives $c_n = \\frac{f^{(n)}(0)}{n!}$. Derivatives at a point determine the formal Taylor coefficients, but they do not always determine the original function nearby. To establish equality, show that the Taylor remainder tends to zero at the input in question.</p>
           <p><strong>Practical application:</strong> Physics linearizes complex forces using Taylor expansions. $\\sin\\theta \\approx \\theta$ for small angles drives pendulum theory. Signal processing, numerical methods, and differential equation solvers all rely on Taylor approximations.</p>
           ${WHY('Why the factorial in the denominator?', '<p>When you differentiate $x^n$ repeatedly, each differentiation multiplies by the current power: $\\frac{d^n}{dx^n}x^n = n!$. The $n!$ in the denominator of $\\frac{f^{(n)}(a)}{n!}$ cancels this, ensuring each coefficient captures exactly the right derivative value. Without the factorial, the coefficients would grow uncontrollably.</p>')}
         ` },
         hook: { html: `
           <div class="callout callout-puzzle"><h4> Puzzle: How Does Your Calculator Compute $\\sin(0.5)$?</h4>
-          <p>Calculators do not have sine tables. They use the Taylor series: $\\sin(x) = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$</p>
+          <p>One way to approximate sine uses its Taylor series: $\\sin(x) = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots$</p>
           <p>For $x = 0.5$: $0.5 - \\frac{0.125}{6} + \\frac{0.03125}{120} \\approx 0.4794$. Just three terms give 4 decimal places of accuracy.</p></div>` },
         concept: { html: `
-          <p>The <strong>Taylor series</strong> of $f(x)$ centered at $a$ represents $f$ as an infinite polynomial:</p>
-          <div class="math-block">$$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$$</div>
+          <p>If all derivatives exist at $a$, the <strong>Taylor series</strong> of $f$ centered there is the formal power series</p>
+          <div class="math-block">$$\\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!}(x-a)^n$$</div>
+          <p>This series equals $f(x)$ only where the Taylor remainders tend to zero. Even convergence of the series is not enough: define $f(x)=e^{-1/x^2}$ for $x\\ne0$ and $f(0)=0$. Every derivative at zero is zero, so its Taylor series is identically zero, although $f(x)>0$ for $x\\ne0$.</p>
           <p>When $a = 0$, it is called a <strong>Maclaurin series</strong>.</p>
           <div class="callout callout-key"><h4>Essential Maclaurin Series</h4>
           <ul>
@@ -521,10 +522,10 @@ ${integralFigure}
           <ul>
             <li><strong>Ratio Test:</strong> $L = \\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right|$. Converges if $L \\lt 1$, diverges if $L \\gt 1$.</li>
             <li><strong>Root Test:</strong> $L = \\lim_{n \\to \\infty} \\sqrt[n]{|a_n|}$. Same criteria.</li>
-            <li><strong>Integral Test:</strong> $\\sum a_n$ converges iff $\\int_1^\\infty f(x)\\,dx$ converges, where $f(n) = a_n$.</li>
+            <li><strong>Integral Test:</strong> If $f$ is positive, continuous and decreasing for all $x\\geq N$, and $a_n=f(n)$ for integers $n\\geq N$, then $\\sum_{n=N}^{\\infty}a_n$ and $\\int_N^\\infty f(x)\\,dx$ either both converge or both diverge. A finite initial part does not affect convergence.</li>
             <li><strong>Comparison Test:</strong> Compare to a known convergent/divergent series.</li>
           </ul>
-          <p><strong>Radius of Convergence:</strong> The Taylor series converges for $|x - a| < R$ where $R$ is found via the Ratio Test.</p>` },
+          <p><strong>Radius of Convergence:</strong> A power series converges for $|x-a|<R$ and diverges for $|x-a|>R$; check endpoints separately. The ratio or root test can sometimes find $R$, but either test may be inconclusive. Convergence still does not guarantee that a Taylor series equals its function.</p>` },
         examples: [{
           title: 'Finding a Taylor Series',
           problem: 'Find the Maclaurin series for $f(x) = e^{-x^2}$.',
@@ -535,8 +536,8 @@ ${integralFigure}
           ]
         }],
         flashCards: [
-      { type: 'define', front: 'What is a Taylor series?', back: 'f(x) = sum of f^(n)(a)/n! * (x-a)^n. It represents a function as an infinite polynomial centered at x=a. When a=0, it is called a Maclaurin series.' },
-      { type: 'why', front: 'Why use Taylor series?', back: 'They approximate complex functions with polynomials. sin(x) near 0 is approximately x - x^3/6. Calculators use Taylor polynomials to compute trig, exp, and log values.' },
+      { type: 'define', front: 'What is a Taylor series?', back: 'The formal sum of f^(n)(a)/n! * (x-a)^n, when all derivatives exist at a. It equals f only where the remainders tend to zero. A series centered at 0 is called a Maclaurin series.' },
+      { type: 'why', front: 'Why use Taylor series?', back: 'Taylor polynomials can approximate functions locally when their remainder is controlled. For example, sin(x) near 0 is approximately x - x^3/6.' },
       { type: 'how', front: 'How to find the radius of convergence?', back: 'Use the ratio test: R = lim|a_n/a_{n+1}|. The series converges for |x-a| < R and diverges for |x-a| > R. At |x-a| = R, test separately.' }
     ],
     exercises: [{
@@ -613,7 +614,7 @@ ${integralFigure}
         matching: [
           { difficulty: 'medium', instruction: 'Match convergence test to best use case:', pairs: [
             { left: 'Ratio Test', right: 'Series with factorials or exponentials' },
-            { left: 'Integral Test', right: 'Decreasing positive functions' },
+            { left: 'Integral Test', right: 'Positive, continuous, eventually decreasing functions' },
             { left: 'Comparison Test', right: 'Comparing to known series' },
             { left: 'Alternating Series Test', right: 'Series with $(-1)^n$ factor' }
           ] }

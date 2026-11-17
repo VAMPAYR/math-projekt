@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Interactive math learning platform: foundations through calculus 3 with puzzles, visualizations, and step-by-step solutions.">
-  <title>Mathematics</title>
+  <meta name="description" content="Learn mathematical foundations and theoretical physics through connected lessons, worked examples, and interactive figures.">
+  <title>Math Projekt: Mathematics and Theoretical Physics</title>
 
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -14,8 +14,8 @@
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=figures-gre-20261007">
-  <link rel="stylesheet" href="css/game.css?v=figures-gre-20261007">
+  <link rel="stylesheet" href="css/styles.css?v=meaning-20261116">
+  <link rel="stylesheet" href="css/game.css?v=meaning-20261116">
 </head>
 <body>
   <div class="app-container">
@@ -25,7 +25,7 @@
         <div class="sidebar-logo">
           <div class="logo-icon">M</div>
           <div>
-            <h1>Mathematics</h1>
+            <h1>Mathematics &amp; Physics</h1>
             <div class="subtitle">Free Learning</div>
           </div>
         </div>
@@ -69,42 +69,56 @@
   </div>
 
   <!-- Visualization toolkit -->
-  <script src="js/visualizations.js?v=figures-gre-20261007"></script>
+  <script src="js/visualizations.js?v=meaning-20261116"></script>
 
   <!-- Sound effects (synthesized, no assets) -->
-  <script src="js/sfx.js?v=figures-gre-20261007"></script>
+  <script src="js/sfx.js?v=meaning-20261116"></script>
 
   <!-- Game systems (must load before engine) -->
-  <script src="js/game_state.js?v=figures-gre-20261007"></script>
-  <script src="js/review_engine.js?v=figures-gre-20261007"></script>
-  <script src="js/problem_engine.js?v=figures-gre-20261007"></script>
-  <script src="js/speed_drill.js?v=figures-gre-20261007"></script>
+  <script src="js/game_state.js?v=meaning-20261116"></script>
+  <script src="js/review_engine.js?v=meaning-20261116"></script>
+  <script src="js/problem_engine.js?v=meaning-20261116"></script>
+  <script src="js/speed_drill.js?v=meaning-20261116"></script>
 
   <!-- Content modules (order matters: must load before engine) -->
-  <script src="js/modules/m1_foundations.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m2_algebra_core.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m_geometry.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m3_intermediate_algebra.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m3_algebra_advanced.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m4_precalculus.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m5_trigonometry.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m5_calculus1.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m6_calculus1.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m6_calculus2.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m7_calculus2.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m7_calculus3.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m8_calculus3.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m9_probability.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m9_statistics_extensions.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/topic_extensions.js?v=figures-gre-20261007"></script>
-  <script src="js/modules/m10_gre.js?v=figures-gre-20261007"></script>
-  <script src="js/self_study_guides.js?v=figures-gre-20261007"></script>
-  <script src="js/university_walkthroughs.js?v=figures-gre-20261007"></script>
+  <script src="js/modules/m1_foundations.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_mathematical_meaning.js?v=meaning-20261116"></script>
+  <script src="js/modules/m2_algebra_core.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_geometry.js?v=meaning-20261116"></script>
+  <script src="js/modules/m3_intermediate_algebra.js?v=meaning-20261116"></script>
+  <script src="js/modules/m3_algebra_advanced.js?v=meaning-20261116"></script>
+  <script src="js/modules/m4_precalculus.js?v=meaning-20261116"></script>
+  <script src="js/modules/m5_trigonometry.js?v=meaning-20261116"></script>
+  <script src="js/modules/m5_calculus1.js?v=meaning-20261116"></script>
+  <script src="js/modules/m6_calculus1.js?v=meaning-20261116"></script>
+  <script src="js/modules/m6_calculus2.js?v=meaning-20261116"></script>
+  <script src="js/modules/m7_calculus2.js?v=meaning-20261116"></script>
+  <script src="js/modules/m7_calculus3.js?v=meaning-20261116"></script>
+  <script src="js/modules/m8_calculus3.js?v=meaning-20261116"></script>
+  <script src="js/modules/m9_probability.js?v=meaning-20261116"></script>
+  <script src="js/modules/m9_statistics_extensions.js?v=meaning-20261116"></script>
+  <script src="js/modules/topic_extensions.js?v=meaning-20261116"></script>
+  <script src="js/modules/m10_gre.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_math.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_methods.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_mechanics.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_fields.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_quantum.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_continuum.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_advanced_fields.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_advanced_quantum.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_gravity.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_analytical_mechanics.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_quantum_methods.js?v=meaning-20261116"></script>
+  <script src="js/modules/m_landau_advanced_kinetics.js?v=meaning-20261116"></script>
+  <script src="js/learning_paths.js?v=meaning-20261116"></script>
+  <script src="js/self_study_guides.js?v=meaning-20261116"></script>
+  <script src="js/university_walkthroughs.js?v=meaning-20261116"></script>
 
   <!-- Mini-games -->
-  <script src="js/mini_games.js?v=figures-gre-20261007"></script>
+  <script src="js/mini_games.js?v=meaning-20261116"></script>
 
   <!-- Core engine (must load last) -->
-  <script src="js/engine.js?v=figures-gre-20261007"></script>
+  <script src="js/engine.js?v=meaning-20261116"></script>
 </body>
 </html>

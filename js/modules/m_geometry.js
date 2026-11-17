@@ -682,6 +682,10 @@
       id: 'area-volume',
       title: 'Area and Volume of Geometric Solids',
       description: 'Computing area of polygons and volume of 3D solids. Why each formula works.',
+      foundationRefs: [
+        { moduleId: 'foundations', topicId: 'basic-arithmetic', note: 'Multiplication combines measurements, while division compares a quantity with a unit or another quantity.' },
+        { moduleId: 'beginning-algebra', topicId: 'variables-expressions', note: 'A formula records how quantities change together; the units help interpret each factor.' }
+      ],
       prereqRecap: [
         { term: 'Rectangle Area', definition: '$A = l \\times w$. The foundational area formula from which all others derive.' },
         { term: 'Dimension', definition: 'Length is 1D, area is 2D, volume is 3D. Units: cm, cm², cm³.' }
@@ -744,10 +748,20 @@
         <div class="callout callout-tip"><h4>Model the material or space you actually need</h4>
         <p>Area measures a region; perimeter measures its boundary. A fence needs length, a floor covering needs area, and a filled tank needs volume. Convert all lengths to a common unit before multiplying. Since $1$ m is $100$ cm, $1$ m² is $10{,}000$ cm² and $1$ m³ is $1{,}000{,}000$ cm³.</p>
         <p>Surface-area formulas count specific faces. An open-top cylinder has one base, so its area is $\\pi r^2+2\\pi rh$. A cone without its base has lateral area $\\pi r\\ell$. Volume uses perpendicular height $h$, while cone surface area uses slant height $\\ell$. The right circular cone formulas above assume its apex lies directly above the center of the base.</p>
-        <p>Decompose a composite region into nonoverlapping pieces, then add their areas. Subtract holes only when they lie within the larger region. If similar solids scale by a factor $k$, every length multiplies by $k$, each surface area by $k^2$, and volume by $k^3$. A larger container therefore does not need material in the same ratio as its capacity.</p></div>
+        <p>Decompose a composite region into nonoverlapping pieces, then add their areas. Subtract holes only when they lie within the larger region. If similar solids scale by a factor $k$, every length multiplies by $k$, each surface area by $k^2$, and volume by $k^3$. A larger container therefore does not need material in the same ratio as its capacity.</p>
+        <p><strong>Why the exponents change:</strong> For a rectangular box, $V=lwh$. Scaling all three lengths by $k$ gives $(kl)(kw)(kh)=k^3lwh$: the factor appears once for each independent length. A face area has two length factors, so it scales by $k^2$. The factor $k$ compares lengths in the same units and is dimensionless; area and volume keep square and cubic units.</p>
+        <p>These powers require uniform scaling. If only a box's height doubles while its base stays fixed, its volume doubles, not multiplies by eight. Identify which dimensions actually change before applying a scale law.</p></div>
       ` },
       definition: { html: `<p><strong>Area:</strong> The measure of a 2D region in square units. <strong>Volume:</strong> The measure of a 3D region in cubic units.</p>` },
       examples: [{
+        title: 'Compare uniform and one-direction scaling',
+        problem: 'A rectangular floor is 2 m by 3 m. Compare doubling both dimensions with doubling only the 2 m side.',
+        steps: [
+          { title: 'Find the original quantities', content: 'Area $=2(3)=6$ m². Perimeter $=2(2+3)=10$ m.', why: 'Area counts square units while perimeter measures the boundary in length units.' },
+          { title: 'Double both dimensions', content: 'The new floor is 4 m by 6 m. Its area is 24 m² and perimeter is 20 m.', why: 'Both lengths scale by 2, so the area scales by $2^2=4$ and the perimeter by 2.' },
+          { title: 'Double just one dimension', content: 'A 4 m by 3 m floor has area 12 m² and perimeter 14 m.', why: 'Only one factor in the area product doubles. The shape is not a uniform scaling, so a single factor cannot be applied to every length.' }
+        ]
+      }, {
         title: 'Volume of a Cone',
         problem: 'A cone has radius $6$ cm and height $10$ cm. Find its volume.',
         steps: [
@@ -829,6 +843,7 @@
     { difficulty: 'medium', context: 'Circumference:', expression: '$C = 2\\pi$ {{0}}', blanks: [ { accept: ['r', 'R'], size: 3 } ], explanation: '$C = 2\\pi r$.' }
     ],
       freeResponse: [
+        { difficulty: 'medium', question: 'A rectangle measures 3 m by 5 m. Its 3 m side is tripled while the other side is unchanged. What is the new area in square meters?', accept: [45], placeholder: 'Area in square meters', hint: '<p>Change only the stated dimension, then multiply the two lengths.</p>', explanation: 'The new dimensions are 9 m by 5 m, so the area is $9(5)=45$ m². The original 15 m² was multiplied by 3, not by $3^2$, because only one dimension changed.' },
         { difficulty: 'easy', question: 'Area of a triangle with base $10$ and height $6$:', accept: [30, '30'], placeholder: 'Area', explanation: '$A = \\frac{1}{2}(10)(6) = 30$ square units.' },
         { difficulty: 'easy', question: 'Volume of a cube with side length $4$:', accept: [64, '64'], placeholder: 'Cubic units', explanation: '$V = 4^3 = 64$ cubic units.' },
         { difficulty: 'medium', question: 'A cone has radius $3$ and height $12$. Volume (use $\\pi$):', accept: ['36π', '36pi', '113.1'], placeholder: 'use π', explanation: '$V = \\frac{1}{3}\\pi(9)(12) = 36\\pi \\approx 113.1$.' },

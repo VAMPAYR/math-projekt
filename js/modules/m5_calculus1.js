@@ -50,7 +50,7 @@
           { term: 'Infinity', definition: '$\\infty$ is not a number. It means "growing without bound." $x \\to \\infty$ means $x$ increases past every finite value.' }
         ],
         whyExists: { html: `
-          <p><strong>Why do limits exist?</strong> The derivative asks: what is the slope of a curve at a single point? That requires dividing zero by zero ($\\frac{\\Delta y}{\\Delta x}$ as $\\Delta x \\to 0$). Limits formalize this: instead of dividing by zero, we describe what the ratio <strong>approaches</strong> as $\\Delta x$ gets arbitrarily small.</p>
+          <p><strong>Why do limits exist?</strong> The derivative asks: what is the slope of a curve at a single point? The average slope $\\frac{\\Delta y}{\\Delta x}$ is defined when $\\Delta x\\ne0$. The derivative is the limit of those quotients as $\\Delta x$ approaches zero; the limit may or may not exist.</p>
           <p><strong>Why the epsilon-delta definition?</strong> "Approaches" is vague. Cauchy and Weierstrass made it precise: for every tolerance $\\epsilon \\gt 0$ (no matter how small), there exists a distance $\\delta \\gt 0$ such that if $0 \\lt |x - a| \\lt \\delta$, then $|f(x) - L| \\lt \\epsilon$. This eliminates all ambiguity. It says: "you name the accuracy, I guarantee it by staying close enough."</p>
           <p><strong>Practical application:</strong> Limits are the foundation of all of calculus. Every derivative, every integral, every series convergence test rests on limits. Engineers use limits to model instantaneous velocity (speedometers), instantaneous rates of chemical reactions, and the behavior of signals at boundary frequencies.</p>
           ${WHY('Why does the limit not care about the value AT the point?', '<p>Consider a function with a hole: $f(x) = \\frac{x^2 - 4}{x - 2}$ is undefined at $x = 2$. But for all $x \\neq 2$, $f(x) = x + 2$, so $\\lim_{x \\to 2} f(x) = 4$. The limit describes behavior <strong>near</strong> a point, not <strong>at</strong> it. This separation is essential because the derivative formula $\\frac{f(a+h)-f(a)}{h}$ is undefined at $h = 0$, yet we need its limit as $h \\to 0$.</p>')}
@@ -171,7 +171,7 @@
         }],
         flashCards: [
       { type: 'define', front: 'What is a limit?', back: 'lim f(x) as x approaches a = L means f(x) gets close to L near a. The value f(a) does not matter.' },
-      { type: 'why', front: 'Why do limits exist in calculus?', back: 'Derivatives need 0/0. Limits formalize what a ratio APPROACHES without dividing by zero.' },
+      { type: 'why', front: 'Why do limits exist in calculus?', back: 'Difference quotients use nonzero increments. A derivative is their limit as the increment approaches zero, when that limit exists.' },
       { type: 'define', front: 'What is continuity?', back: 'f continuous at a means: f(a) exists, limit exists, and they are equal. You can draw the graph without lifting your pen.' },
       { type: 'why', front: 'Why does the limit ignore the value AT the point?', back: 'f(x) = (x^2-4)/(x-2) is undefined at x=2, but near x=2, f(x) is near 4. Limits describe nearby behavior.' }
     ],
@@ -315,8 +315,8 @@
           <p><strong>Why do derivatives exist?</strong> Speed is distance divided by time. But that gives <strong>average</strong> speed. What if you want speed at one exact instant? You cannot divide zero distance by zero time. The derivative solves this: $f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}$. It takes the average rate over a shrinking interval and finds what it approaches.</p>
           <p><strong>Why is the derivative defined as a limit?</strong> Because instantaneous rate of change cannot be computed by division alone; it is the <strong>limit</strong> of average rates as the interval collapses to zero width. This is the precise meaning of "instantaneous."</p>
           <p><strong>Practical application:</strong> Velocity ($v = dx/dt$), acceleration ($a = dv/dt$), marginal cost in economics ($dC/dq$), rate of drug absorption in pharmacology ($dC/dt$), and current in electrical circuits ($I = dQ/dt$) are all derivatives.</p>
-          ${WHY('Why does the power rule $d/dx[x^n] = nx^{n-1}$ work?', '<p>Expand $(x+h)^n$ using the binomial theorem: $(x+h)^n = x^n + nx^{n-1}h + \\binom{n}{2}x^{n-2}h^2 + \\cdots$. Subtract $x^n$ and divide by $h$: $\\frac{(x+h)^n - x^n}{h} = nx^{n-1} + \\text{terms with } h$. As $h \\to 0$, all terms with $h$ vanish, leaving $nx^{n-1}$. The binomial theorem (a consequence of the distributive axiom) is the mechanism.</p>')}
-          ${WHY('Why does the chain rule work?', '<p>If $y = f(g(x))$, imagine a sequence of gears. $x$ turns the inner gear $g$, which turns the outer gear $f$. The total rate of turning is the product: $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$ where $u = g(x)$. Each gear multiplies the rate. Formally, this follows from the limit of $\\frac{f(g(x+h)) - f(g(x))}{h} = \\frac{f(g(x+h)) - f(g(x))}{g(x+h) - g(x)} \\cdot \\frac{g(x+h) - g(x)}{h}$ as $h \\to 0$.</p>')}
+          ${WHY('Why does the power rule $d/dx[x^n] = nx^{n-1}$ work?', '<p>Expand $(x+h)^n$ using the binomial theorem: $(x+h)^n = x^n + nx^{n-1}h + \\binom{n}{2}x^{n-2}h^2 + \\cdots$. Subtract $x^n$ and divide by $h$: $\\frac{(x+h)^n - x^n}{h} = nx^{n-1} + \\text{terms with } h$. As $h \\to 0$, all terms with $h$ vanish, leaving $nx^{n-1}$. For a positive integer exponent, the binomial theorem (a consequence of the distributive axiom) is the mechanism.</p>')}
+          ${WHY('Why does the chain rule work?', '<p>If $y = f(g(x))$, imagine a sequence of gears. $x$ turns the inner gear $g$, which turns the outer gear $f$. The total rate of turning is the product: $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$ where $u = g(x)$. Each gear multiplies the rate. When both functions are differentiable, the change in $g$ is $g^{\\prime}(x)h+o(h)$, and the change in $f$ is its derivative at $g(x)$ times that input change plus a smaller error. Dividing by nonzero $h$ and taking the limit gives the product. This argument also covers cases where $g(x+h)=g(x)$ for some increments, without dividing by that zero change.</p>')}
         ` },
         hook: { html: `
           <div class="callout callout-puzzle"><h4> Puzzle: The Slope at a Point</h4>
@@ -337,8 +337,8 @@
     },
     mathGrammar: [
       { question: 'What does $\\frac{d}{dx}$ mean?', answer: 'Read it as "the derivative with respect to $x$ of..." It is an operator: you apply it to a function. $\\frac{d}{dx}[x^2] = 2x$. It asks: "How fast does this function change as $x$ changes?"' },
-      { question: 'Why is the power rule $\\frac{d}{dx}[x^n] = nx^{n-1}$?', answer: 'Start from the definition: $\\frac{(x+h)^n - x^n}{h}$ as $h \\to 0$. Expanding $(x+h)^n$ using the binomial theorem, the first term after $x^n$ is $nx^{n-1}h$. Dividing by $h$ gives $nx^{n-1}$ plus terms that vanish as $h \\to 0$. The reason you multiply by $n$ comes from the binomial theorem, which counts how many ways the product can change.' },
-      { question: 'Why do we multiply by the exponent AND reduce it by one?', answer: 'The exponent tells you how many copies of $x$ are multiplied together. The derivative counts how much the product changes when $x$ changes. Each of the $n$ copies contributes to the change, giving factor $n$. One copy gets "used up" by differentiation, dropping the power to $n-1$.' },
+      { question: 'Why is the power rule $\\frac{d}{dx}[x^n] = nx^{n-1}$?', answer: 'For a positive integer $n$, start from the definition: $\\frac{(x+h)^n - x^n}{h}$ with $h\\ne 0$ as $h \\to 0$. Expanding $(x+h)^n$ using the binomial theorem, the first term after $x^n$ is $nx^{n-1}h$. Dividing by $h$ gives $nx^{n-1}$ plus terms that vanish as $h \\to 0$. The reason you multiply by $n$ comes from the binomial theorem, which counts how many ways the product can change.' },
+      { question: 'Why do we multiply by the exponent AND reduce it by one?', answer: 'For a positive integer exponent, it tells you how many copies of $x$ are multiplied together. The derivative counts how much the product changes when $x$ changes. Each of the $n$ copies contributes to the change, giving factor $n$. One copy gets "used up" by differentiation, dropping the power to $n-1$.' },
       { question: 'When do I use the chain rule?', answer: 'Whenever you have a function inside another function. $\\sin(x^2)$ is $\\sin(\\text{something})$ where the something is $x^2$. The chain rule says: differentiate the outer ($\\cos(x^2)$), then multiply by the derivative of the inner ($2x$). Result: $2x\\cos(x^2)$.' }
     ],
     concept: { html: `
@@ -359,12 +359,12 @@ ${derivativeFigure}
           <p>$f'(x) = \\lim_{h \\to 0} \\frac{(x+h)^n - x^n}{h}$</p>
           <p>By the Binomial Theorem: $(x+h)^n = x^n + nx^{n-1}h + \\binom{n}{2}x^{n-2}h^2 + \\cdots + h^n$</p>
           <p>Subtracting $x^n$ and dividing by $h$: $\\frac{nx^{n-1}h + \\binom{n}{2}x^{n-2}h^2 + \\cdots}{h} = nx^{n-1} + \\text{terms with } h$</p>
-          <p>As $h \\to 0$, all terms with $h$ vanish, leaving $f'(x) = nx^{n-1}$. This proof works for positive integer $n$; the rule extends to all real $n$ via logarithmic differentiation.</p></div>
+          <p>As $h \\to 0$, all terms with $h$ vanish, leaving $f'(x) = nx^{n-1}$. This proof works for positive integer $n$. For any real $n$ and $x>0$, logarithmic differentiation gives the same rule; other points require a domain and differentiability check.</p></div>
 
           <div class="callout callout-key"><h4>Complete Differentiation Rules</h4>
           <ul>
             <li><strong>Constant:</strong> $\\frac{d}{dx}[c] = 0$</li>
-            <li><strong>Power Rule:</strong> $\\frac{d}{dx}[x^n] = nx^{n-1}$ for all real $n$</li>
+            <li><strong>Power Rule:</strong> $\\frac{d}{dx}[x^n] = nx^{n-1}$ for real $n$ when $x>0$. Integer powers and certain rational powers also allow other differentiable points; check the domain.</li>
             <li><strong>Constant Multiple:</strong> $\\frac{d}{dx}[cf(x)] = c \\cdot f'(x)$</li>
             <li><strong>Sum/Difference:</strong> $[f \\pm g]' = f' \\pm g'$</li>
             <li><strong>Product Rule:</strong> $[fg]' = f'g + fg'$ (Leibniz rule). Mnemonic: "first times derivative of second plus second times derivative of first."</li>
@@ -474,14 +474,14 @@ ${derivativeFigure}
           { difficulty: 'medium', question: '$\\frac{d}{dx}[\\sin(3x)] =$?', accept: ['3cos(3x)', '3\\cos(3x)'], placeholder: 'Expression', explanation: 'Chain rule: $\\cos(3x) \\cdot 3 = 3\\cos(3x)$.' },
           { difficulty: 'medium', question: '$\\frac{d}{dx}[x^2 \\cdot e^x]$ at $x = 0$ equals:', accept: [0, '0'], placeholder: 'Number', explanation: 'Product rule: $2xe^x + x^2e^x$. At $x=0$: $0 + 0 = 0$.' },
           { difficulty: 'hard', question: 'Find $f\'(2)$ if $f(x) = x^3 - 4x$:', accept: [8, '8'], placeholder: 'Number', explanation: '$f\'(x) = 3x^2 - 4$. $f\'(2) = 12 - 4 = 8$.' },
-          { difficulty: 'hard', question: '$\\frac{d}{dx}[\\ln(x^2)] =$?', accept: ['2/x', '2x^{-1}'], placeholder: 'Expression', explanation: 'Chain rule: $\\frac{2x}{x^2} = \\frac{2}{x}$. Or: $\\ln(x^2) = 2\\ln x$, so derivative is $2/x$.' },
+          { difficulty: 'hard', question: '$\\frac{d}{dx}[\\ln(x^2)] =$?', accept: ['2/x', '2x^{-1}'], placeholder: 'Expression', explanation: 'Chain rule: $\\frac{2x}{x^2} = \\frac{2}{x}$. Alternatively, $\\ln(x^2) = 2\\ln|x|$ for $x\\ne0$, so the derivative is $2/x$ on both sides of zero.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(5x^3) =$?', accept: ['15x^2', '15x2'], placeholder: 'Expression', explanation: 'Power rule: $5 \\cdot 3x^2 = 15x^2$.' },
     { difficulty: 'medium', question: '$\\frac{d}{dx}(e^{3x}) =$?', accept: ['3e^(3x)', '3e^{3x}'], placeholder: 'Expression', explanation: 'Chain rule: $e^{3x} \\cdot 3 = 3e^{3x}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(\\sin x) =$?', accept: ['cos(x)', 'cosx', '\\cos x'], placeholder: 'Expression', explanation: 'Derivative of $\\sin x$ is $\\cos x$.' },
     { difficulty: 'hard', question: '$\\frac{d}{dx}(\\arctan x) =$?', accept: ['1/(1+x^2)', '1/(x^2+1)'], placeholder: 'Expression', explanation: '$\\frac{d}{dx}\\arctan x = \\frac{1}{1+x^2}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(x^{10}) =$?', accept: ['10x^9', '10x9'], placeholder: 'Expression', explanation: '$10x^9$ by the power rule.' },
     { difficulty: 'medium', question: 'Product rule: $\\frac{d}{dx}(x \\cdot e^x) =$?', accept: ['e^x+xe^x', 'e^x + xe^x', '(1+x)e^x'], placeholder: 'Expression', explanation: '$f\'g + fg\' = 1 \\cdot e^x + x \\cdot e^x = (1+x)e^x$.' },
-    { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} =$?', accept: ['(gf\'-fg\')/(g^2)', '(fg\'-gf\')/g^2'], placeholder: 'Formula', explanation: '$\\frac{gf\' - fg\'}{g^2}$.' },
+    { difficulty: 'medium', question: 'Quotient rule: $\\frac{d}{dx}\\frac{f}{g} =$?', accept: ['(gf\'-fg\')/(g^2)', '(gf\'-fg\')/g^2', '(f\'g-fg\')/g^2'], placeholder: 'Formula', explanation: '$\\frac{gf\' - fg\'}{g^2}$ where $g\\ne 0$.' },
     { difficulty: 'hard', question: 'Implicit differentiation: if $x^2 + y^2 = 25$, then $dy/dx =$?', accept: ['-x/y'], placeholder: 'Expression', explanation: '$2x + 2y(dy/dx) = 0$. $dy/dx = -x/y$.' },
     { difficulty: 'hard', question: 'Chain rule: $\\frac{d}{dx}\\sqrt{x^2+1} =$?', accept: ['x/sqrt(x^2+1)', 'x/(x^2+1)^(1/2)'], placeholder: 'Expression', explanation: '$\\frac{1}{2}(x^2+1)^{-1/2} \\cdot 2x = \\frac{x}{\\sqrt{x^2+1}}$.' },
     { difficulty: 'easy', question: '$\\frac{d}{dx}(7) =$?', accept: [0, '0'], placeholder: 'Number', explanation: 'Derivative of a constant is 0.' },
@@ -621,12 +621,12 @@ ${derivativeFigure}
           wrongExplanations: { 1: 'Missed $x-2 = 0$.', 2: 'Derivative is $3x^2-6x$, not $3x^2-3$.', 3: '$f\'(3) = 9 \\neq 0$.' }
         },{
           difficulty: 'hard',
-          question: 'A box with square base (side $x$) and volume 32 cm\u00b3. Which minimizes surface area?',
+          question: 'A closed box has a square base (side $x$) and volume 32 cm\u00b3. Which value of $x$ minimizes surface area?',
           options: ['$x = 2$', '$x = 4$', '$x = 8$', '$x = \\sqrt[3]{32}$'],
-          correctIndex: 1,
+          correctIndex: 3,
           hint: '<p>$V = x^2h = 32$, so $h = 32/x^2$. $S = 2x^2 + 4xh$.</p>',
-          correctExplanation: '$S(x) = 2x^2 + 128/x$. $S\'(x) = 4x - 128/x^2 = 0$. $x^3 = 32$. $x = \\sqrt[3]{32} \\approx 3.17$. Check: $x = 4$ is closest answer; exact is $2\\sqrt[3]{4}$.',
-          wrongExplanations: { 0: 'Too small. $S\'(2) = 8 - 32 \\lt 0$, still decreasing.', 2: 'Too large. $S\'(8) = 32 - 2 \\gt 0$, past minimum.', 3: '$\\sqrt[3]{32} \\approx 3.17$, close to 4.' }
+          correctExplanation: '$S(x) = 2x^2 + 128/x$. $S\'(x) = 4x - 128/x^2 = 0$. $x^3 = 32$. The minimum occurs at $x = \\sqrt[3]{32} \\approx 3.17$ cm; the second derivative $4+256/x^3$ is positive for $x>0$.',
+          wrongExplanations: { 0: 'At $x=2$, the derivative is negative, so area is still decreasing.', 1: 'At $x=4$, the derivative is positive; the minimum occurs earlier.', 2: 'At $x=8$, the derivative is positive; the minimum occurs earlier.' }
         }],
         freeResponse: [
           { difficulty: 'easy', question: '$f(x) = x^2 - 6x + 5$. Find the x-coordinate of the vertex (minimum):', accept: [3, '3'], placeholder: 'Number', explanation: '$f\'(x) = 2x - 6 = 0 \\Rightarrow x = 3$.' },

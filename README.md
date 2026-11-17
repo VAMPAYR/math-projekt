@@ -1,12 +1,14 @@
 # Math Projekt
 
-Interactive math lessons, visual models, and GRE Quant practice.
+Interactive mathematics and theoretical physics, from first principles to worked applications.
 
 An interactive math learning platform covering foundations through multivariable calculus, with puzzles, visualizations, and step-by-step solutions. Runs entirely in the browser with zero dependencies to install.
 
 ## Live Features
 
-- **15 modules**: Foundations, Algebra (core, intermediate, advanced), Geometry, Precalculus, Trigonometry, Calculus 1-3, Probability & Statistics, and GRE Quantitative Reasoning
+- **28 modules**: Foundations, mathematical meaning, algebra, geometry, precalculus, trigonometry, calculus, probability and statistics, GRE Quant, and mathematical and physics preparation for the Landau theoretical minimum
+- **Connected Landau preparation**: A guided path links arithmetic, calculus, mathematical methods, mechanics, fields, quantum and statistical physics, and continuous media. It includes written explanations and practice; it does not administer an oral examination. The [Landau Institute chair](https://chair.itp.ac.ru/index.php?lang=en&sub=minimum) describes the official examination scope. These lessons are preparation and do not certify examination readiness.
+- **Transparent coverage**: The [Landau coverage map](docs/landau-coverage.md) connects the official subjects to available lessons and identifies topics that need further depth.
 - **GRE prep layer**: Ten topics with original problems in all four GRE Quant formats, strategy limits, worked examples, and links to foundational lessons. Chart questions include their data in Practice mode. Test guidance links to official ETS pages; this is independent practice, not an official test simulation
 - **2,000+ practice items**: Flashcards, worked examples, and procedural practice problems
 - **Ten interaction types**: Multiple choice, quantitative comparison, multi-select, numeric entry, fill-in-the-blank, step builder, matching, multi-part problems, strategy selection, and faded worked examples
@@ -80,6 +82,7 @@ js/
   mini_games.js         Interactive math mini-games
   self_study_guides.js  Topic study guides
   university_walkthroughs.js  Extended reasoning walkthroughs
+  learning_paths.js      Linked routes through mathematics and physics
   modules/              Curriculum modules and extension files
 ```
 

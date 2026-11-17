@@ -1288,7 +1288,8 @@ body {
   border-radius: var(--radius-md);
   padding: 20px;
   margin: 20px 0;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .viz-container canvas {
@@ -1302,6 +1303,29 @@ body {
 .viz-container canvas[role="slider"]:focus-visible {
   outline: 2px solid var(--accent-blue);
   outline-offset: 3px;
+}
+
+.viz-container.viz-scrollable:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.viz-container.viz-scrollable::after {
+  content: 'Scroll horizontally to see the full figure ↔';
+  display: block;
+  position: sticky;
+  left: 0;
+  width: max-content;
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .viz-container canvas {
+    min-width: var(--viz-readable-width, 0px);
+  }
 }
 
 .inline-model {
@@ -2236,8 +2260,48 @@ body {
 }
 .graph-explorer-hint {
   margin: 0;
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.graph-explorer:focus-within {
+  border-color: var(--accent-blue);
+}
+@media (max-width: 640px) {
+  /* Desmos stacks its expression list beneath the graph on narrow screens.
+     Give the graph enough vertical space to remain useful beside that list. */
+  .graph-explorer-container {
+    height: clamp(400px, 72vh, 540px) !important;
+  }
+}
+
+/* Keep every navigation action visible at phone widths. */
+@media (max-width: 480px) {
+  header.content-header {
+    height: auto;
+    min-height: var(--header-height);
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 8px 8px;
+  }
+  .header-actions {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    flex: 0 0 100%;
+    gap: 4px;
+    margin-left: 0;
+  }
+  .content-header .header-actions .btn-text {
+    min-width: 0;
+    min-height: 44px;
+    height: auto;
+    padding: 3px 2px;
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  .content-header button:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: -2px;
+  }
 }
 /* Formal Definitions */
 .formal-defs-section {

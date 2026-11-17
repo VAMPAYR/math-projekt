@@ -458,7 +458,13 @@ const MathEngine = (() => {
     let html = `
       <div class="welcome-screen">
         <h2>Mathematics</h2>
-        <p class="tagline">From counting to calculus. Every concept explained from first principles.</p>
+        <p class="tagline">Build mathematical foundations and connect them to models in physics.</p>
+        <section class="phase-section" aria-labelledby="path-entry-title">
+          <div class="phase-label concept">Explore the connections</div>
+          <h3 id="path-entry-title">A path from arithmetic to theoretical physics</h3>
+          <p>See how ideas build on each other, then choose a starting point that fits what you already know.</p>
+          <button type="button" class="nav-btn primary" onclick="MathEngine.showLearningPath()">Explore the learning path</button>
+        </section>
 
         <!-- Getting Started Guide -->
         <div class="welcome-guide">
@@ -469,20 +475,20 @@ const MathEngine = (() => {
           <div class="guide-body">
             <div class="guide-section">
               <h4>What is mathematics?</h4>
-              <p>Mathematics is the study of patterns, quantities, and structures. It begins with counting objects (1, 2, 3...) and builds upward: addition combines groups, multiplication repeats addition, algebra uses letters as placeholders for unknown numbers, and calculus measures change. Every topic on this platform grows from these foundations. If you can count to ten, you have everything you need to start.</p>
+              <p>Mathematics studies patterns, quantities, and structures. Addition can combine quantities; multiplication can count equal groups or scale a quantity. Algebra expresses relationships between values, and calculus studies limits, change, and accumulation. Begin with the foundations you need and return to them as new questions arise.</p>
             </div>
             <div class="guide-section">
               <h4>Mathematics is a language</h4>
-              <p>Mathematics has grammar, vocabulary, and syntax, like any formal language. The symbol $+$ tells the reader to combine. The symbol $=$ states equality between two expressions. A variable like $x$ represents a number that has not been identified yet. An equation is a sentence. A proof is a justified argument.</p>
-              <p>This platform treats mathematics as a language. Each Math Grammar block explains what a symbol means, why an operation exists, and when the operation applies. The goal is comprehension rather than memorization. Strong grammar lets learners build solutions to unfamiliar problems.</p>
+              <p>Mathematics has grammar, vocabulary, and syntax, like any formal language. The symbol $+$ can represent addition; $=$ states equality between two expressions. A variable such as $x$ may stand for an unknown, an input, or another object specified by context. An equation states a relationship. A proof is a justified argument.</p>
+              <p>Math Grammar blocks explain symbols, operations, and their conditions in selected topics. Use definitions alongside worked examples and practice to reason about unfamiliar problems.</p>
             </div>
             <div class="guide-section">
               <h4>Why study mathematics?</h4>
               <p>Mathematics trains a specific kind of thinking: identify the relevant quantities, remove irrelevant detail, define relationships, and reason precisely from those definitions. This skill transfers to engineering, medicine, finance, law, software, and research. The content matters because it builds a disciplined method for solving unfamiliar problems.</p>
             </div>
             <div class="guide-section">
-              <h4>You need zero prior knowledge</h4>
-              <p>Module 1 starts with the meaning of number and addition. Terms are defined before they carry technical weight. Formulas include reasoning, not only procedure. When a topic uses a concept from an earlier module, the topic recaps the needed definition at the top.</p>
+              <h4>Where to begin</h4>
+              <p>The foundations module starts with numbers and operations. Later lessons may assume earlier ideas. Use linked foundations and the learning path to revisit definitions or examples whenever a step feels unclear.</p>
             </div>
             <div class="guide-section">
               <h4>How each topic is organized</h4>
@@ -497,29 +503,8 @@ const MathEngine = (() => {
             </div>
             <div class="guide-section">
               <h4>Recommended path</h4>
-              <p>Start at Module 1 and work through in order. Each module builds on the one before it. The modules are:</p>
-              <ol>
-                <li><strong>Foundations</strong>: Numbers, arithmetic, sets, logic, proof</li>
-                <li><strong>Beginning Algebra</strong>: Variables, equations, inequalities</li>
-                <li><strong>Geometry</strong>: Points, lines, angles, triangles, circles</li>
-                <li><strong>Intermediate Algebra</strong>: Polynomials, factoring, rational expressions</li>
-                <li><strong>Advanced Algebra</strong>: Quadratics, exponentials, logarithms</li>
-                <li><strong>Precalculus</strong>: Functions, graphs, transformations</li>
-                <li><strong>Trigonometry</strong>: Angles, unit circle, identities</li>
-                <li><strong>Calculus 1A-1B</strong>: Limits, derivatives, applications</li>
-                <li><strong>Calculus 2A-2B</strong>: Integration, series, sequences</li>
-                <li><strong>Calculus 3A-3B</strong>: Vectors, multivariable functions, multiple integrals</li>
-                <li><strong>Probability &amp; Statistics</strong> : Counting, distributions, data analysis</li>
-              </ol>
-              <h4 style="margin-top: 1rem; color: var(--accent);">Planned Subjects</h4>
-              <p>Future modules may include:</p>
-              <ul>
-                <li><strong>Linear Algebra</strong>: vectors, matrices, eigenvalues, transformations</li>
-                <li><strong>Differential Equations</strong>: ODEs, systems, phase portraits</li>
-                <li><strong>Discrete Mathematics</strong>: logic, proofs, graph theory, combinatorics</li>
-                <li><strong>Number Theory</strong>: primes, modular arithmetic, cryptography</li>
-                <li><strong>Real Analysis</strong>: rigorous limits, continuity, measure theory</li>
-              </ul>
+              <p>Start with a foundation you want to strengthen, then follow connections to related ideas and applications. The learning path is a guide rather than a single mandatory order.</p>
+              <button type="button" class="nav-btn" onclick="MathEngine.showLearningPath()">Open the learning path</button>
               <p>Each topic has a Mark Complete button for progress tracking. Use the Progress tools to export or import saved progress.</p>
             </div>
             <div class="guide-section">
@@ -527,9 +512,9 @@ const MathEngine = (() => {
               <ul>
                 <li><strong>= </strong> means "equals" (the left side has the same value as the right)</li>
                 <li><strong>+ &minus; &times; &divide;</strong> are addition, subtraction, multiplication, division</li>
-                <li><strong>x, y, n</strong> are letters representing unknown numbers (variables)</li>
+                <li><strong>x, y, n</strong> are variables that may represent inputs, unknowns, or other quantities</li>
                 <li><strong>f(x)</strong> means "a function called f, applied to input x" (explained fully in Precalculus)</li>
-                <li>Anything else is defined the first time it appears</li>
+                <li>Check each topic's definitions and linked foundations for unfamiliar notation</li>
               </ul>
             </div>
           </div>
@@ -644,44 +629,6 @@ const MathEngine = (() => {
     });
 
     html += `</div>
-
-        <!-- Planned Subjects -->
-        <div class="coming-soon-section">
-          <h3>Planned Subjects</h3>
-          <p>The following subjects are candidates for later modules:</p>
-          <div class="coming-soon-grid">
-            <div class="coming-soon-card">
-
-              <h4>Linear Algebra</h4>
-              <p>Vectors, matrices, eigenvalues, linear transformations, and systems of equations in higher dimensions.</p>
-            </div>
-            <div class="coming-soon-card">
-
-              <h4>Differential Equations</h4>
-              <p>Ordinary and partial differential equations. Modeling growth, decay, oscillation, and diffusion.</p>
-            </div>
-            <div class="coming-soon-card">
-
-              <h4>Number Theory</h4>
-              <p>Prime numbers, divisibility, modular arithmetic, and cryptography foundations.</p>
-            </div>
-            <div class="coming-soon-card">
-
-              <h4>Discrete Mathematics</h4>
-              <p>Logic, sets, graph theory, combinatorics, and the mathematics behind computer science.</p>
-            </div>
-            <div class="coming-soon-card">
-
-              <h4>Abstract Algebra</h4>
-              <p>Groups, rings, and fields. These structures explain symmetry, operations, and equation behavior.</p>
-            </div>
-            <div class="coming-soon-card">
-
-              <h4>Real Analysis</h4>
-              <p>Rigorous foundations of calculus. Sequences, series, continuity, and measure theory.</p>
-            </div>
-          </div>
-        </div>
 
     </div>`;
     disposeVisualizations();
@@ -1145,56 +1092,83 @@ const MathEngine = (() => {
     renderSidebar();
     const content = document.getElementById('content-inner');
     const breadcrumbs = document.getElementById('breadcrumbs');
-    if (breadcrumbs) breadcrumbs.innerHTML = '<span style="cursor:pointer" onclick="MathEngine.goHome()">Home</span><span class="separator">&rsaquo;</span><span class="current">How Learning Works</span>';
-
+    if (breadcrumbs) breadcrumbs.innerHTML = '<span class="current">How Learning Works</span>';
     disposeVisualizations();
     content.innerHTML = `
       <div class="learning-science">
         <div class="topic-header">
-          <div class="topic-module-label">The Method</div>
-          <h2 class="topic-title">How Learning Actually Works</h2>
-          <p class="topic-description">This app is built on decades of research on how memory forms. The findings are not intuitive, so most study habits are the wrong ones. Here is what the evidence says, and how each idea shows up in the tools here.</p>
+          <div class="topic-module-label">Study methods</div>
+          <h2 class="topic-title">How to study and transfer ideas</h2>
+          <p class="topic-description">Use examples, explanation, practice, and feedback together. What works best depends on your knowledge, the material, and the task.</p>
         </div>
-
         <div class="phase-section">
-          <div class="phase-label concept">The core reframe</div>
-          <h3>You are not studying to learn. You are studying to forget less.</h3>
-          <p>Any new material starts fading the moment you meet it. The measure of a study method is not how good it feels, but how much of that forgetting it cancels. Rereading feels productive and cancels almost none. Testing yourself feels harder and cancels most of it.</p>
+          <h3>Start with a worked example</h3>
+          <p>For an unfamiliar method, follow one solved problem and explain why each step is permitted. Cover the next step and predict it before revealing the explanation. Then solve a related problem with less help.</p>
         </div>
-
         <div class="phase-section">
-          <div class="phase-label practice">1. Testing is the best study tool, not just a way to grade</div>
-          <p>Reading something once and then trying to recall it beats reading it four times, on both how much and how accurately you remember. A single self-test roughly halves how much you forget. This is why the app pushes you to answer, not just read, and why the <strong>Review</strong> queue exists.</p>
+          <h3>Recall, check, and revisit</h3>
+          <p>After studying, try to reconstruct a definition or solution without looking, then compare it with feedback. Revisit the idea over several sessions. The review queue suggests intervals based on earlier answers; it cannot know exactly when you would forget an item.</p>
         </div>
-
         <div class="phase-section">
-          <div class="phase-label model">2. Test soon, then space it out</div>
-          <p>The strongest schedule is: meet the material, test yourself soon after (that day or the next), then again at growing gaps. Cramming right before you need it is the weakest. The app schedules each item you answer to resurface just before you would forget it, with the first review deliberately placed after a night of sleep, when your brain does most of its consolidating.</p>
+          <h3>Contrast cases and transfer</h3>
+          <p>Mix related problem types once you can attempt them and ask which feature determines the method. For example, compare a differential equation with an initial value against one with boundary values. Change an assumption and check whether the original conclusion still follows. Use units, domains, a limiting case, or a second method to test your answer.</p>
+          <p>In one undergraduate physics study, interleaving improved memory and problem-solving performance under the studied conditions. Results depend on the learner, materials, and feedback. <a href="https://www.nature.com/articles/s41539-021-00110-x" target="_blank" rel="noopener noreferrer">Read the physics study</a>.</p>
         </div>
-
         <div class="phase-section">
-          <div class="phase-label stuck">3. Errors are the point, not the enemy</div>
-          <p>Getting an answer wrong, then seeing the correct one, is one of the strongest signals for your brain to change. The app never hides the correct answer after a miss, and it brings missed items back sooner. A wrong answer you learn from is worth more than a right one you already knew.</p>
+          <h3>Use success as evidence, not proof of mastery</h3>
+          <p>A correct numerical answer shows success on that question. To assess understanding, explain the reasoning, solve a new variation without prompts, and state when the method would fail. Mistakes can identify a useful gap when you inspect the feedback and retry.</p>
+          <p>Research on stepwise retrieval during worked examples found benefits for later recall and problem solving in the tasks studied; it did not establish improvement on every kind of conceptual transfer. <a href="https://doi.org/10.1016/j.learninstruc.2025.102196" target="_blank" rel="noopener noreferrer">Read the study</a>.</p>
         </div>
+        <button type="button" class="nav-btn primary" onclick="MathEngine.goHome()">Back to Home</button>
+      </div>`;
+    resetMathFlags();
+    renderAllMath();
+  }
 
-        <div class="phase-section">
-          <div class="phase-label definition">4. Feeling confident is not the same as knowing</div>
-          <p>People who reread feel sure they have learned the material and are usually wrong. People who self-test feel less sure and usually do best. Recognizing something ("I've seen this") is a weaker state than recalling it ("I can produce this"). The app favors open-ended recall over multiple choice for exactly this reason: typing an answer from memory proves mastery in a way that picking from a list does not.</p>
-        </div>
+  function pathCard(item, showDirection = false) {
+    const done = isTopicComplete(item.moduleId, item.topicId);
+    const status = done ? 'Completed' : 'Open lesson';
+    return `<button type="button" class="foundation-ref-card${done ? ' completed' : ''}"
+      onclick="MathEngine.navigateTo('${item.moduleId}','${item.topicId}')">
+      <div class="foundation-ref-top"><span class="foundation-ref-title">${item.topicTitle}</span>
+      <span class="foundation-ref-status">${status}</span></div>
+      <div class="foundation-ref-note">${showDirection ? `<strong>${item.direction}:</strong> ` : ''}${item.note}</div>
+      <div class="foundation-ref-module">${item.moduleTitle} &rarr;</div>
+    </button>`;
+  }
 
-        <div class="phase-section">
-          <div class="phase-label example">5. Effort is the signal that learning is happening</div>
-          <p>If recalling something feels effortful, that strain is your nervous system doing the work of change. If it were effortless, nothing would need to change. The app is built to make you struggle a little on purpose: predict before you see the answer, complete a partial solution, choose the method before you compute. Comfort is not the goal; durable memory is.</p>
-        </div>
+  function renderLearningConnections(moduleId, topicId) {
+    const paths = window.MathLearningPaths;
+    if (!paths) return '';
+    const connections = paths.connections(modules, moduleId, topicId);
+    if (!connections.length) return '';
+    return `<section class="phase-section foundation-refs-section" aria-label="Connected lessons">
+      <div class="phase-label concept">Connections</div><h3>How this idea connects</h3>
+      <p class="phase-subtitle">Move between a foundation and an application. The notes explain why each link matters.</p>
+      <div class="foundation-refs-grid">${connections.map(item => pathCard(item, true)).join('')}</div>
+    </section>`;
+  }
 
-        <div class="phase-section">
-          <div class="phase-label concept">Beyond the app</div>
-          <p>Three things multiply everything above: <strong>sleep</strong> (memories are rebuilt during deep sleep, especially the first night after learning), <strong>focus</strong> (you can only encode what you attend to, so remove distractions), and <strong>teaching it to someone</strong> (explaining forces the same retrieval that testing does). Getting these right matters more than any app feature.</p>
-        </div>
-
-        <button class="nav-btn primary" onclick="MathEngine.goHome()">Back to Home</button>
+  function showLearningPath() {
+    currentModule = null;
+    currentTopic = null;
+    renderSidebar();
+    const content = document.getElementById('content-inner');
+    const breadcrumbs = document.getElementById('breadcrumbs');
+    if (breadcrumbs) breadcrumbs.innerHTML = '<span class="current">Learning path</span>';
+    const paths = window.MathLearningPaths;
+    const stages = paths ? paths.availableStages(modules) : [];
+    disposeVisualizations();
+    content.innerHTML = `<div class="learning-path">
+      <div class="topic-header"><div class="topic-module-label">Connected learning</div>
+        <h2 class="topic-title">From foundations to theoretical physics</h2>
+        <p class="topic-description">Use this as a suggested route, not a rigid sequence. Some topics branch or can be studied in parallel. Each link opens the relevant lesson.</p>
+        <p>The available lessons offer preparation across mathematical and physical topics. The historical Landau minimum required substantially more depth; completing these pages alone does not certify examination readiness. See the <a href="https://chair.itp.ac.ru/index.php?lang=en&amp;sub=minimum" target="_blank" rel="noopener noreferrer">Landau Institute's subject list</a> and our <a href="docs/landau-coverage.html" target="_blank" rel="noopener noreferrer">coverage and remaining gaps</a>.</p>
       </div>
-    `;
+      ${stages.length ? stages.map(stage => `<section class="phase-section"><h3>${stage.title}</h3><p>${stage.description}</p><div class="foundation-refs-grid">${stage.items.map(item => pathCard(item)).join('')}</div></section>`).join('') : '<p>No learning-path lessons are available.</p>'}
+      <section class="phase-section"><h3>A practice cycle</h3><p>Study a worked example, predict a step, solve a related problem, and use the feedback. Return later, then compare problems that look similar but require different methods. Check the original conditions and explain where the method can fail.</p><button type="button" class="nav-btn" onclick="MathEngine.showLearningScience()">Read about study methods</button></section>
+      <button type="button" class="nav-btn" onclick="MathEngine.goHome()">Back to Home</button>
+    </div>`;
     resetMathFlags();
     renderAllMath();
   }
@@ -1316,7 +1290,10 @@ const MathEngine = (() => {
     /* Prerequisites Recap */
     if (topic.prereqRecap) html += renderPrereqRecap(topic.prereqRecap);
 
-    /* Foundation cross-references (used by the GRE module) */
+    /* Curated links show how this topic relates to other lessons. */
+    html += renderLearningConnections(moduleId, topicId);
+
+    /* Explicit prerequisites supplied by a topic. */
     if (topic.foundationRefs && topic.foundationRefs.length) {
       html += renderFoundationRefs(topic.foundationRefs);
     }
@@ -2251,7 +2228,7 @@ const MathEngine = (() => {
       <div class="phase-section foundation-refs-section" id="lesson-foundations">
         <div class="phase-label concept">Foundations</div>
         <h3>Lessons This Topic Builds On</h3>
-        <p class="phase-subtitle">The full math behind this topic lives in these earlier lessons. Each note says exactly which part matters here. Review what you need, then return; this page adds only the test-specific layer.</p>
+        <p class="phase-subtitle">Each note identifies a connection to this topic. Review the linked lesson when useful, then return to apply the idea here.</p>
         <div class="foundation-refs-grid">${cards}</div>
       </div>
     `;
@@ -2801,6 +2778,7 @@ const MathEngine = (() => {
     reviewAnswerQC,
     reviewAnswerFree,
     showLearningScience,
+    showLearningPath,
     toggleTheme
   };
 })();

@@ -9,9 +9,34 @@ let browser;
   browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   const errors = [];
+  const missingAssets = [];
+  const appUrl = new URL(process.env.MATH_TEST_URL || 'http://127.0.0.1:8765');
+  const localAsset = url => {
+    const parsed = new URL(url);
+    return parsed.origin === appUrl.origin && /\.(?:js|css)$/i.test(parsed.pathname);
+  };
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(process.env.MATH_TEST_URL || 'http://127.0.0.1:8765', { waitUntil: 'networkidle' });
+  page.on('response', response => {
+    if (localAsset(response.url()) && response.status() >= 400) missingAssets.push(`${response.status()} ${new URL(response.url()).pathname}`);
+  });
+  page.on('requestfailed', request => {
+    if (localAsset(request.url())) missingAssets.push(`${request.failure()?.errorText || 'Request failed'} ${new URL(request.url()).pathname}`);
+  });
+  await page.goto(appUrl.href, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => typeof MathEngine !== 'undefined' && document.querySelector('.module-card'));
+  assert.ok(await page.evaluate(() => typeof window.katex?.render === 'function'), 'KaTeX failed to load');
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 1000 });
+    const clippedActions = await page.evaluate(() => {
+      const header = document.querySelector('.content-header').getBoundingClientRect();
+      return [...document.querySelectorAll('.content-header button')].filter(button => {
+        const rect = button.getBoundingClientRect();
+        return rect.left < 0 || rect.right > innerWidth + 1 || rect.bottom > header.bottom + 1 || rect.width < 44 || rect.height < 44;
+      }).map(button => button.id);
+    });
+    assert.deepEqual(clippedActions, [], `Mobile header actions are clipped or too small at ${width}px`);
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
   await page.evaluate(() => {
     if (typeof Desmos === 'undefined') throw new Error('Desmos did not load during online browser validation');
     const original = Desmos.GraphingCalculator;
@@ -55,7 +80,15 @@ let browser;
       content.querySelectorAll('.viz-container canvas').forEach(canvas => {
         const rect = canvas.getBoundingClientRect();
         if (Math.abs(rect.width / rect.height - canvas.width / canvas.height) > 0.01) findings.push('Canvas aspect ratio changed');
-        if (rect.right > canvas.parentElement.getBoundingClientRect().right + 2) findings.push('Canvas clipped by container');
+        const parent = canvas.parentElement;
+        if (rect.right > parent.getBoundingClientRect().right + 2) {
+          const style = getComputedStyle(parent);
+          const accessibleScroll = ['auto', 'scroll'].includes(style.overflowX)
+            && parent.scrollWidth > parent.clientWidth
+            && parent.classList.contains('viz-scrollable')
+            && parent.tabIndex === 0 && parent.getAttribute('role') === 'region';
+          if (!accessibleScroll) findings.push('Canvas clipped without an accessible scroll region');
+        }
       });
       return findings;
     });
@@ -76,6 +109,20 @@ let browser;
   for (const mod of modules) {
     for (const topicId of mod.topics) await inspectFigures(mod.id, topicId, 390);
   }
+  // Narrow-screen charts must remain readable and separately operable by keyboard.
+  await inspectFigures('calculus-1', 'derivatives', 390);
+  const scrollRegion = page.locator('.viz-container.viz-scrollable').first();
+  await scrollRegion.waitFor();
+  await scrollRegion.focus();
+  for (let i = 0; i < 12; i++) await page.keyboard.press('ArrowRight');
+  await page.waitForFunction(() => document.querySelector('.viz-container.viz-scrollable')?.scrollLeft > 0);
+  const tangent = scrollRegion.locator('canvas[role="slider"]');
+  await tangent.focus();
+  const previousX = await tangent.getAttribute('aria-valuenow');
+  await page.keyboard.press('ArrowRight');
+  assert.notEqual(await tangent.getAttribute('aria-valuenow'), previousX, 'Tangent keyboard control stopped working');
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.waitForFunction(() => !document.querySelector('.viz-container.viz-scrollable'));
   // A theme change must preserve the learner's answer and figure control.
   await page.evaluate(() => MathEngine.navigateTo('gre-quant', 'gre-algebra-toolkit'));
   const input = page.locator('.free-response-card .fr-input').first();
@@ -134,8 +181,9 @@ let browser;
   assert.deepEqual(await page.evaluate(() => GameState.getTopicMastery('gre-algebra-toolkit', 'gre-quant')), mastery,
     'Import did not preserve module-specific mastery');
   assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('math_hero_progress'))['gre-quant::gre-algebra-toolkit'].completed), true);
-  console.log(JSON.stringify({ checked, modesChecked, progressRoundTrip: 'passed', errors, defects }, null, 2));
+  console.log(JSON.stringify({ checked, modesChecked, progressRoundTrip: 'passed', errors, missingAssets, defects }, null, 2));
   await browser.close();
   assert.deepEqual(errors, [], 'Browser runtime errors');
+  assert.deepEqual(missingAssets, [], 'Missing local JavaScript or CSS assets');
   assert.deepEqual(defects, [], 'Curriculum or figure defects');
 })().catch(async error => { console.error(error); if (browser) await browser.close(); process.exitCode = 1; });

@@ -314,3 +314,28 @@ test('REGRESSION: the highlighted normal region follows the same Gaussian curve'
     assert.ok(Math.abs(y - (180 - 150 * Math.exp(-z * z / 2))) < 0.011);
   }
 });
+
+test('derivative and integral figures show numerical scales and interaction instructions', () => {
+  const f = fixture();
+  const tangent = f.add('tangent-scales');
+  f.viz.derivativeVisualizer('tangent-scales', x => x * x, x => 2 * x);
+  const labels = tangent.canvas.ctx.commands.filter(command => command.name === 'fillText');
+  assert.ok(labels.some(command => command.y === 380 && /^-?\d/.test(String(command.text))), 'missing horizontal scale');
+  assert.ok(labels.some(command => command.x === 42 && /^-?\d/.test(String(command.text))), 'missing vertical scale');
+  assert.ok(labels.some(command => String(command.text).includes('arrow keys')));
+  const integral = f.add('integral-scales');
+  f.viz.integralVisualizer('integral-scales', x => x * x);
+  const integralLabels = integral.canvas.ctx.commands.filter(command => command.name === 'fillText');
+  assert.ok(integralLabels.some(command => command.y === 380 && /^-?\d/.test(String(command.text))));
+  assert.ok(integralLabels.some(command => command.x === 42 && /^-?\d/.test(String(command.text))));
+  const circle = f.add('circle-instructions');
+  f.viz.unitCircle('circle-instructions');
+  assert.ok(circle.canvas.ctx.commands.some(command => String(command.text).includes('Drag point or use arrow keys')));
+});
+
+test('function graph description includes the displayed coordinate ranges', () => {
+  const f = fixture();
+  const chart = f.add('accessible-graph');
+  f.viz.plotFunction('accessible-graph', x => x, { title: 'Linear function', xMin: -2, xMax: 5, yMin: -3, yMax: 4, labels: ['y = x'] });
+  assert.match(chart.canvas.getAttribute('aria-label'), /Linear function.*Horizontal range -2 to 5; vertical range -3 to 4.*y = x/);
+});

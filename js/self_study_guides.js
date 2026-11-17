@@ -817,3 +817,45 @@
     guide.cards.push({ title: 'Plan, Solve, and Verify', content });
   });
 })();
+
+/* Short conceptual links point to related methods before the longer walkthrough. */
+(function() {
+  const S = String.raw;
+  const bridges = {
+    'precalculus:systems-matrices': S`<p>A matrix describes a linear transformation by specifying what happens to basis vectors. An eigenvector is a direction that the transformation scales without changing its line. In a coupled differential equation, eigenvector directions can turn interacting coordinates into independent modes when a full eigenbasis exists.</p><p>First check the basis and the equation's signs. Then use <a href="#" onclick="MathEngine.navigateTo('calculus2','first-order-differential-equations'); return false;">differential equations</a> to interpret each mode over time.</p>`,
+    'trigonometry:unit-circle': S`<p>The point $(\cos\theta,\sin\theta)$ can also be written $\cos\theta+i\sin\theta$. Multiplying by this complex number rotates another complex number by $\theta$ radians. This connects the unit circle to periodic motion and differential equations; it does not turn a complex number into a real displacement unless a real component is specified.</p><p>Compare the real and imaginary components in <a href="#" onclick="MathEngine.navigateTo('trigonometry','trig-graphs-inverse'); return false;">trigonometric graphs</a>.</p>`,
+    'calculus2:first-order-differential-equations': S`<p>A differential equation is a constraint on how a quantity changes. Before solving, name the quantity, units, sign convention, and initial value. If several quantities exchange material, add their rate equations to see whether a total is conserved. A solution must satisfy both the equation and the initial condition.</p><p>The same balance appears as initial amount plus accumulated net rate in <a href="#" onclick="MathEngine.navigateTo('calculus1','integration-ftc'); return false;">the fundamental theorem of calculus</a>.</p>`,
+    'calculus-3:partial-derivatives': S`<p>Partial derivatives measure sensitivity along coordinate directions. When several inputs change together, the chain rule combines those sensitivities with the inputs' rates. This is the same local linear idea as a tangent line, extended to several coordinates.</p><p>Apply it to trajectories in <a href="#" onclick="MathEngine.navigateTo('calculus3','vector-functions-motion'); return false;">vector-valued motion</a>.</p>`,
+    'calculus3:multiple-integrals': S`<p>An integral adds small contributions over a region. A coordinate change describes the same region with new coordinates and includes a Jacobian that measures how a small coordinate cell changes area or volume. Units help distinguish an area integral from a mass integral.</p><p>Check a circular result against <a href="#" onclick="MathEngine.navigateTo('geometry','area-volume'); return false;">familiar area formulas</a>.</p>`,
+    'calculus3:vector-fields-line-integrals': S`<p>A line integral accumulates a field's component along a path. When the field is the gradient of a single-valued potential on the relevant domain, the integral depends only on the endpoints. A closed-loop integral that is not zero rules out such a global potential.</p><p>Review <a href="#" onclick="MathEngine.navigateTo('calculus-3','partial-derivatives'); return false;">partial derivatives and gradients</a> to construct a potential field.</p>`,
+    'probability-statistics:random-variables': S`<p>Expected value combines possible outcomes using their probabilities. Variance describes squared deviations from the mean. When adding random variables, retain the covariance term unless independence or another justified condition makes it zero.</p><p>Use <a href="#" onclick="MathEngine.navigateTo('probability-statistics','correlation-regression'); return false;">correlation and regression</a> to compare linear association with dependence.</p>`,
+    'calculus-2:taylor-series': S`<p>A Taylor approximation replaces a function locally with information from its derivatives. Near a stable equilibrium, the quadratic part of a potential can produce an approximate harmonic oscillator. The approximation needs a small-displacement regime and does not automatically describe distant motion.</p><p>Review <a href="#" onclick="MathEngine.navigateTo('calculus-1','derivatives'); return false;">derivatives and rates of change</a> to connect the potential to force.</p>`
+  };
+
+  Object.entries(bridges).forEach(([key, content]) => {
+    const guide = window.MATH_SELF_STUDY_GUIDES[key];
+    if (!guide || !Array.isArray(guide.cards)) return;
+    if (!guide.cards.some(card => card.title === 'Mathematical Connections')) {
+      guide.cards.push({ title: 'Mathematical Connections', content });
+    }
+  });
+})();
+
+/* Connect the meanings of operations to worked applications in other topics. */
+(function () {
+  const operationConnections = {
+    "beginning-algebra:linear-equations-one-var": "<p>Subtraction measures a signed change relative to a stated starting point. Adding the opposite reverses that change: if $12$ items fall to $5$, the change is $5-12=-7$ items and $12+(-7)=5$.</p><p>The same operation isolates a variable in an equation, but the quantities must have compatible units. See <a href=\"#\" onclick=\"MathEngine.navigateTo('calculus-1','derivatives'); return false;\">rates of change</a> for differences divided by elapsed time.</p>",
+    "geometry:area-volume": "<p>Multiplication combines a quantity with a scale or rate; units show what the result measures. A rectangle $3$ meters by $2$ meters has area $3(2)=6$ square meters.</p><p>Doubling only one side doubles area; doubling both sides multiplies area by four. A changing width requires adding many local contributions, as in <a href=\"#\" onclick=\"MathEngine.navigateTo('calculus1','integration-ftc'); return false;\">integration</a>.</p>",
+    "trigonometry:unit-circle": "<p>Division compares quantities. In a right triangle, opposite side divided by hypotenuse is a dimensionless ratio: for sides $3,4,5$, $\\sin\\theta=3/5$. Scaling all sides equally leaves the angle and ratio unchanged.</p><p>The divisor must be nonzero. Compare this ratio with <a href=\"#\" onclick=\"MathEngine.navigateTo('probability-statistics','conditional-probability-bayes'); return false;\">conditional probability</a>, where division changes the reference set.</p>",
+    "calculus-1:derivatives": "<p>A difference quotient divides a change in output by a change in input. Its units are output units per input unit. A derivative is the limit of those quotients as the nonzero input change tends to zero.</p><p>For nonlinear motion, an average rate over an interval need not equal the instantaneous rate at either end. Compare with <a href=\"#\" onclick=\"MathEngine.navigateTo('trigonometry','unit-circle'); return false;\">dimensionless ratios</a>.</p>",
+    "probability-statistics:conditional-probability-bayes": "<p>Division can restrict a comparison to a new reference group. $P(A\\mid B)=P(A\\cap B)/P(B)$ asks what fraction of the probability assigned to $B$ also belongs to $A$.</p><p>The formula requires $P(B)>0$; switching the condition changes the denominator. See <a href=\"#\" onclick=\"MathEngine.navigateTo('precalculus','systems-matrices'); return false;\">linear combinations</a> for another way multiplication and addition combine weighted contributions.</p>",
+    "precalculus:systems-matrices": "<p>Operations can act on entire vectors. A matrix combines coordinates by multiplication and addition. An inverse reverses the transformation only when the information needed to recover the input has not been lost.</p><p>A zero scaling factor collapses different inputs to the same output, so no inverse can recover them. Compare <a href=\"#\" onclick=\"MathEngine.navigateTo('beginning-algebra','linear-equations-one-var'); return false;\">reversing arithmetic operations</a>.</p>"
+  };
+  Object.entries(operationConnections).forEach(([key, content]) => {
+    const target = window.MATH_SELF_STUDY_GUIDES[key];
+    if (!target || !Array.isArray(target.cards)) return;
+    if (!target.cards.some(item => item.title === 'What the Operation Means')) {
+      target.cards.push({ title: 'What the Operation Means', content });
+    }
+  });
+})();

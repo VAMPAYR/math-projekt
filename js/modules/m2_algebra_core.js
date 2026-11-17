@@ -183,6 +183,10 @@ topics: [
   id: 'linear-equations-one-var',
   title: 'Solving Linear Equations in One Variable',
   description: 'The systematic process of isolating a variable to find its value. The foundation of all equation-solving in mathematics.',
+  foundationRefs: [
+    { moduleId: 'foundations', topicId: 'basic-arithmetic', note: 'Division by a nonzero quantity reverses multiplication; keep track of the units and what is known.' },
+    { moduleId: 'foundations', topicId: 'proof-techniques', note: 'A reversible step preserves the full solution set; a one-way step needs a separate check.' }
+  ],
   prereqRecap: [
     { term: 'Variable', definition: 'A letter representing an unknown quantity. Example: $x$ in $2x + 3 = 7$ (Topic 2.1).' },
     { term: 'Expression', definition: 'A combination of numbers, variables, and operations without an equals sign (Topic 2.1).' },
@@ -191,15 +195,15 @@ topics: [
   ],
   whyExists: { html: `
     <p><strong>Why solve equations?</strong> An equation encodes a real-world constraint. "If a phone costs $x$ dollars and tax is 8%, the total is $1.08x = 54$. What is $x$?" Solving the equation reveals $x = 50$.</p>
-    <p>Every science, engineering, and economics problem reduces to solving equations. The techniques here generalize to <em>all</em> mathematics: the same principles apply to quadratic, exponential, and differential equations.</p>
-    ${WHY('Why can we "do the same thing to both sides"?', '<p>An equation states that two expressions are equal. If $A = B$, then performing the same operation on both sides preserves equality: $A + c = B + c$, $A \\cdot c = B \\cdot c$ (for $c \\neq 0$). This is the <strong>addition property of equality</strong> and the <strong>multiplication property of equality</strong>, both consequences of the field axioms from Module 1.</p>')}
+    <p>Equations model many questions in science, engineering, and economics. Equality and solution sets remain useful in quadratic, exponential, and differential equations, but the methods and conditions for solving each type can differ.</p>
+    ${WHY('Why can we "do the same thing to both sides"?', '<p>An equation states that two expressions are equal. If $A = B$, then performing the same operation on both sides preserves equality: $A + c = B + c$, $A \\cdot c = B \\cdot c$ for any real $c$. These are the <strong>addition and multiplication properties of equality</strong>. Reversing multiplication by dividing by $c$ requires $c \\neq 0$; multiplication by zero preserves equality but loses information.</p>')}
   ` },
   hook: { html: `<div class="callout callout-puzzle"><h4> Puzzle: The Balance Scale</h4>
     <p>Imagine a balance scale perfectly balanced with $2x + 5$ grams on the left and $13$ grams on the right. To find $x$, you remove 5 grams from BOTH sides (keeping balance): $2x = 8$. Then divide both sides by 2: $x = 4$.</p>
     <p>This "balance" metaphor is the core idea: whatever you do to one side, you MUST do to the other.</p></div>` },
   formalDefinitions: [
       { term: 'Linear Equation', symbol: '$ax + b = 0$', definition: 'An equation where the variable appears only to the first power. General form: $ax + b = 0$ where $a \\neq 0$. Has exactly one solution: $x = -b/a$.' },
-      { term: 'Solution Set', symbol: '$\\{x : ax + b = 0\\}$', definition: 'The set of all values of $x$ that make the equation true. For a linear equation in one variable, the solution set contains exactly one element, or is empty (inconsistent), or equals $\\mathbb{R}$ (identity).' },
+      { term: 'Solution Set', symbol: '$\\{x : ax + b = 0\\}$', definition: 'The set of all values of $x$ that make the equation true. For $ax+b=0$ with $a\\neq0$, it contains exactly one real value. A general equation $ax+b=cx+d$ can instead simplify to a contradiction with no solution, or an identity true for every real number.' },
       { term: 'Equivalent Equations', symbol: '', definition: 'Two equations with identical solution sets. Operations that preserve equivalence: adding/subtracting the same value from both sides, multiplying/dividing both sides by a nonzero constant.' }
     ],
     graphExplorer: [
@@ -209,14 +213,14 @@ topics: [
     ],
     background: {
       title: 'Why Do We Solve Equations?',
-      content: '<p>An equation is a statement that two expressions are equal. <strong>Solving</strong> an equation means finding all values that make this statement true.</p><p><strong>Why we add/subtract to both sides:</strong> An equation is a balance. If you add the same weight to both sides of a balance scale, it stays balanced. This is the Addition Property of Equality: if $a = b$, then $a + c = b + c$.</p><p><strong>Why we multiply/divide both sides:</strong> Multiplication Property of Equality: if $a = b$, then $ac = bc$ (provided $c \\neq 0$). Division by zero is forbidden because it destroys information: $0 \\cdot 5 = 0 \\cdot 7$ does not mean $5 = 7$.</p><p>Every step in solving an equation must be <em>reversible</em>. If you do something that loses information (like squaring both sides), you must check your answers because you may have introduced false solutions.</p>'
+      content: '<p>An equation is a statement that two expressions are equal. <strong>Solving</strong> an equation means finding all values that make this statement true.</p><p><strong>Why we add/subtract to both sides:</strong> An equation is a balance. If you add the same weight to both sides of a balance scale, it stays balanced. This is the Addition Property of Equality: if $a = b$, then $a + c = b + c$.</p><p><strong>Why we multiply/divide both sides:</strong> Multiplication Property of Equality: if $a = b$, then $ac = bc$ for any real $c$. To reverse multiplication by dividing, $c$ must be nonzero. Multiplication by zero loses information: $0 \\cdot 5 = 0 \\cdot 7$ does not mean $5 = 7$.</p><p>A reversible step preserves the solution set. A non-reversible step, such as squaring both sides, can introduce extra solutions, so check each candidate in the original equation.</p>'
     },
     mathGrammar: [
       { question: 'Why do we "do the same thing to both sides"?', answer: 'An equation is a balance scale. The left side weighs the same as the right. If you add 5 kg to just one side, the scale tips. You must add 5 kg to BOTH sides to keep it balanced. This is the golden rule. Everything in equation-solving comes back to this idea.' },
       { question: 'How do I decide which operation to use?', answer: 'Look at what is happening TO the variable and do the OPPOSITE. If $x$ is being added to ($x + 3 = 7$), subtract. If $x$ is being multiplied ($3x = 12$), divide. If $x$ is being subtracted from ($x - 5 = 2$), add. You are peeling away layers. Whatever was done to the variable, do the opposite to undo it.' },
       { question: 'What does "isolate the variable" mean?', answer: 'Get the variable alone on one side of the equation. Everything else goes to the other side using inverse operations. $3x + 5 = 14$ becomes $3x = 9$ (subtract 5), then $x = 3$ (divide by 3). Each step peels away one layer.' },
       { question: 'When is an equation unsolvable?', answer: 'When simplification leads to a false statement like $0 = 5$. This means no value of $x$ makes the equation true. Example: $2x + 1 = 2x + 5$ simplifies to $1 = 5$, which is never true.' },
-      { question: 'What does a variable represent?', answer: 'A variable is a placeholder for an unknown number. The letter $x$ is the most common, but any letter works. In $3x + 2 = 11$, the variable $x$ represents the one specific number that makes this statement true.' }
+      { question: 'What does a variable represent?', answer: 'A variable can represent an unknown, a changing quantity, or a general input. Its meaning depends on the problem. In the particular equation $3x+2=11$, the solution is the specific value $x=3$.' }
     ],
     concept: { html: `
 
@@ -239,6 +243,10 @@ topics: [
 </div>
 <p class="math-diagram-label">The slope of a line: rise over run between two points</p>
 
+    <div class="callout callout-key"><h4>Equality, reversibility, and division</h4>
+    <p>An equation describes which values make two expressions equal. Applying the same defined operation to equal values preserves equality, but it does not automatically preserve <em>all and only</em> the original solutions. To reverse multiplication, the multiplier must be nonzero.</p>
+    <p>For example, $5x=20$ has $x=4$ because $20/5=4$. But $0x=0$ is true for every real $x$, while $0x=6$ has no solution. Dividing either equation by zero is not a way to distinguish these cases. Multiplying both sides of $x=2$ by zero produces $0=0$, which is true for every $x$ and has lost the original information.</p>
+    <p>Squaring gives another one-way step: $x=2$ implies $x^2=4$, but $x^2=4$ also admits $x=-2$. If a method introduces possible extra solutions, substitute each candidate into the original equation. This is the same distinction used when canceling factors, taking inverse functions, or solving a physical model with constraints.</p></div>
     <div class="callout callout-key"><h4>The Equation-Solving Algorithm</h4>
     <ol>
       <li><strong>Simplify</strong> each side separately (distribute, combine like terms).</li>
@@ -262,6 +270,14 @@ topics: [
     <p><strong>Equivalent Equations:</strong> Equations with the same solution set. $2x = 6$ and $x = 3$ are equivalent.</p>
   ` },
   examples: [{
+    title: 'A fixed charge and a rate',
+    problem: 'A trip costs 6 dollars plus 4 dollars per kilometer. The total is 26 dollars. How far was the trip?',
+    steps: [
+      { title: 'Name the unknown and build the equation', content: 'Let $d$ be distance in kilometers. The stated charge gives $6+4d=26$ dollars.', why: 'The rate times distance has units $(\\text{dollars}/\\text{km})(\\text{km})=\\text{dollars}$.' },
+      { title: 'Undo the operations', content: 'Subtract the fixed charge: $4d=20$. Divide by the nonzero rate: $d=5$ km.', why: 'Division asks how many kilometers of 4 dollars each fit into the 20-dollar distance charge.' },
+      { title: 'Check and change a condition', content: 'At 5 km the charge is $6+4(5)=26$ dollars. If the rate were zero and the fixed charge were 6 dollars, a total of 6 dollars would fit every distance; a total of 26 would fit none.', why: 'With a zero rate, the total does not determine distance. The original division step would be undefined.' }
+    ]
+  }, {
     title: 'Solving a Multi-Step Equation',
     problem: 'Solve: $3(2x - 4) = 5x + 2$',
     steps: [
@@ -286,6 +302,7 @@ topics: [
     { difficulty: 'hard', question: 'Solve: $\\frac{x}{3} + \\frac{x}{6} = 5$', options: ['$x = 10$', '$x = 15$', '$x = 6$', '$x = 30$'], correctIndex: 0, hint: '<p>Multiply every term by the LCD (6) to clear fractions.</p>', correctExplanation: 'LCD = 6. $6 \\cdot \\frac{x}{3} + 6 \\cdot \\frac{x}{6} = 6 \\cdot 5$. $2x + x = 30$. $3x = 30$. $x = 10$. Check: $\\frac{10}{3} + \\frac{10}{6} = \\frac{20}{6} + \\frac{10}{6} = \\frac{30}{6} = 5$ .', wrongExplanations: { 1: '$3(15) = 45 \\neq 30$. Recheck your LCD multiplication.', 2: '$2(6) + 6 = 18 \\neq 30$.', 3: 'You multiplied 5 by 6 but then forgot to divide: $3x = 30 \\Rightarrow x = 10$.' } }
   ],
   freeResponse: [
+    { difficulty: 'medium', question: 'A taxi charges 4 dollars plus 3 dollars per kilometer. If the total is 22 dollars, how many kilometers were traveled?', accept: [6], placeholder: 'Distance in kilometers', hint: '<p>Remove the fixed charge, then divide the remaining charge by the nonzero rate.</p>', explanation: '$4+3d=22$, so $3d=18$ and $d=6$ km. Check: $4+3(6)=22$ dollars.' },
     { difficulty: 'easy', question: 'Solve: $x + 7 = 12$. $x =$?', accept: [5, '5'], placeholder: 'x = ?', explanation: '$x = 12 - 7 = 5$.' },
     { difficulty: 'medium', question: 'Solve: $3x - 9 = 0$. $x =$?', accept: [3, '3'], placeholder: 'x = ?', explanation: '$3x = 9 \\Rightarrow x = 3$.' },
     { difficulty: 'medium', question: 'Solve: $5x + 2 = 3x + 10$. $x =$?', accept: [4, '4'], placeholder: 'x = ?', hint: '<p>Get all $x$ terms on one side.</p>', explanation: '$5x - 3x = 10 - 2 \\Rightarrow 2x = 8 \\Rightarrow x = 4$.' },
@@ -303,7 +320,7 @@ topics: [
     { difficulty: 'medium', question: 'x-intercept of $y = 2x - 6$:', accept: [3, '3', '(3,0)'], placeholder: 'Number', explanation: 'Set $y = 0$: $2x = 6$. $x = 3$.' },
     { difficulty: 'medium', question: 'Line $y = 3x - 2$ and $y = 3x + 5$ are:', accept: ['parallel'], placeholder: 'Relation', explanation: 'Same slope ($m = 3$): parallel lines.' },
     { difficulty: 'hard', question: 'Perpendicular to $y = 2x + 1$: slope is:', accept: ['-1/2', '-0.5'], placeholder: 'Number', explanation: 'Perpendicular: negative reciprocal. $-1/2$.' },
-    { difficulty: 'easy', question: 'Slope of vertical line:', accept: ['undefined', 'infinity'], placeholder: 'Value', explanation: 'Vertical: $\\Delta x = 0$. Division by zero: undefined.' },
+    { difficulty: 'easy', question: 'Slope of vertical line:', accept: ['undefined'], placeholder: 'Value', explanation: 'Vertical: $\\Delta x = 0$. Division by zero: undefined.' },
     { difficulty: 'hard', question: 'Distance between $(1,2)$ and $(4,6)$:', accept: [5, '5'], placeholder: 'Number', explanation: '$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.' },
     { difficulty: 'easy', question: 'Midpoint of $(2, 4)$ and $(6, 8)$:', accept: ['(4,6)', '(4, 6)'], placeholder: 'Point', explanation: '$(\\frac{2+6}{2}, \\frac{4+8}{2}) = (4, 6)$.' },
     { difficulty: 'hard', question: 'Line through $(0,0)$ and $(3,4)$: equation:', accept: ['y=4x/3', 'y = (4/3)x'], placeholder: 'Equation', explanation: '$m = 4/3$. $y = (4/3)x$.' },
@@ -594,12 +611,12 @@ topics: [
   title: 'Systems of Linear Equations',
   description: 'Solving two or more equations simultaneously. When one equation is not enough to determine the unknowns.',
   prereqRecap: [
-    { term: 'Linear Equation', definition: '$ax + b = 0$ has one variable and one solution (Topic 2.2).' },
+    { term: 'Linear Equation', definition: '$ax+b=0$ has exactly one real solution when $a\\neq0$. A general equation can instead simplify to a contradiction or an identity (Topic 2.2).' },
     { term: 'Graphing Lines', definition: '$y = mx + b$ is a line with slope $m$ and y-intercept $b$.' },
     { term: 'Substitution', definition: 'Replacing a variable with an equivalent expression.' }
   ],
   whyExists: { html: `
-    <p><strong>Why systems?</strong> One equation with two unknowns has infinitely many solutions: $x + y = 10$ is satisfied by $(1,9), (5,5), (3,7), \\ldots$. A second equation provides an additional constraint, typically narrowing to a unique solution.</p>
+    <p><strong>Why systems?</strong> One nondegenerate linear equation in two real variables has infinitely many solutions: $x + y = 10$ is satisfied by $(1,9), (5,5), (3,7), \\ldots$. A second equation adds a constraint. Depending on the two equations, the system can have one solution, none, or infinitely many.</p>
     <p>Real-world: two products with prices and quantities, supply and demand curves crossing at equilibrium, mixing solutions of different concentrations.</p>
     ${WHY('Why does this work geometrically?', '<p>Each linear equation in two variables represents a LINE in the coordinate plane. Two lines can: (1) intersect at one point = one solution, (2) be parallel = no solution, (3) be the same line = infinitely many solutions. The algebraic methods find the intersection point.</p>')}
   ` },
