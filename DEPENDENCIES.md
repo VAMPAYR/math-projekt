@@ -30,6 +30,7 @@ The module files define the public learning content and practice data.
 
 ```text
 js/modules/m1_foundations.js
+js/modules/m_mathematical_meaning.js
 js/modules/m2_algebra_core.js
 js/modules/m_geometry.js
 js/modules/m3_intermediate_algebra.js

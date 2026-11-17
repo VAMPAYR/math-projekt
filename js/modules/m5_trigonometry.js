@@ -65,6 +65,10 @@ topics: [
   id: 'unit-circle',
   title: 'Angles, Radians & the Unit Circle',
   description: 'Measuring angles in radians and defining trig functions as coordinates on the unit circle.',
+  foundationRefs: [
+    { moduleId: 'foundations', topicId: 'basic-arithmetic', note: 'A ratio uses division to compare two quantities; check the denominator and the units.' },
+    { moduleId: 'geometry', topicId: 'triangles', note: 'Similar triangles have matching angles and proportional corresponding sides.' }
+  ],
   prereqRecap: [
     { term: 'Angle', definition: 'Formed by two rays sharing a common endpoint (vertex). Measured in degrees (360° = full rotation) or radians.' },
     { term: 'Circle', definition: 'The set of all points at distance $r$ (radius) from a center point.' },
@@ -205,12 +209,24 @@ topics: [
     </ul>
     ${WHY('Domain restriction', '<p>$\\sin x$ is not one-to-one on all of $\\mathbb{R}$ because it repeats every $2\\pi$. To define an inverse, restrict sine to $[-\\pi/2, \\pi/2]$, where it is one-to-one and covers all of $[-1,1]$. Cosine and tangent require similar restrictions.</p>')}
     <p>An inverse returns one principal angle. It does not list every solution of a trig equation. For example, $\\arcsin(1/2)=\\pi/6$, but $\\sin\\theta=1/2$ also holds at $5\\pi/6$ and after adding full turns. Also, $\\sin^{-1}x$ means $\\arcsin x$; the reciprocal is $1/\\sin x=\\csc x$.</p></div>
+    <div class="callout callout-key"><h4>What a trigonometric ratio compares</h4>
+    <p>For a chosen acute angle in a right triangle, sine compares the opposite length with the hypotenuse, cosine compares the adjacent length with the hypotenuse, and tangent compares opposite with adjacent. Dividing lengths measured in the same unit gives a dimensionless ratio. The angle must be named first because changing the reference angle changes which leg is opposite.</p>
+    <p>Take a 3–4–5 right triangle and choose the angle opposite the side of length 3. Its sine is $3/5$, cosine $4/5$, and tangent $3/4$. Doubling all sides gives 6–8–10, but the ratios remain $6/10=3/5$, $8/10=4/5$, and $6/8=3/4$. Similarity explains why the ratios depend on that angle rather than the triangle's overall size.</p>
+    <p>For the other acute angle, the legs exchange roles: sine is $4/5$ and tangent is $4/3$. For arbitrary rotations, the unit circle extends the definitions with signed coordinates. Tangent is $\\sin\\theta/\\cos\\theta$ only where $\\cos\\theta\\ne0$; it is undefined at a vertical direction. A ratio of unlike units, such as distance divided by time, instead represents a rate and keeps units.</p></div>
     <div class="callout callout-tip"><h4>Choose the angle, ratio, and unit</h4>
     <p>In a right triangle, name the angle first. The opposite and adjacent sides depend on that choice; the hypotenuse stays opposite the right angle. Choose the ratio containing the known side and the desired side. Use degrees when a question gives $^\\circ$, and radians when it gives $\\pi$ or a radian measure.</p>
     <p>For an ordinary sector with $0\\le\\theta\\le2\\pi$, arc length is $s=r\\theta$ and area is $\\tfrac12r^2\\theta$. Convert a degree angle before using these formulas. A negative rotation gives a signed angle; a physical arc length uses the magnitude of that angle.</p></div>
   ` },
   definition: { html: `<p><strong>Radian:</strong> The angle subtended by an arc of length equal to the radius. $1$ radian $\\approx 57.3°$.</p><p><strong>Unit Circle:</strong> Circle with center $(0,0)$ and radius 1.</p>` },
   examples: [{
+    title: 'Transfer a ratio between similar triangles',
+    problem: 'A right triangle has legs 3 m and 4 m and hypotenuse 5 m. A similar triangle has hypotenuse 15 m. For the corresponding angle opposite the 3 m leg, find both corresponding leg lengths.',
+    steps: [
+      { title: 'Identify the scale', content: '$15/5=3$, so the length scale is 3.', why: 'Corresponding sides of similar triangles have the same dimensionless scale factor.' },
+      { title: 'Scale each leg', content: 'The opposite leg is $3(3)=9$ m; the adjacent leg is $4(3)=12$ m.', why: 'Both lengths change by the same factor, while their ratios to the hypotenuse stay fixed.' },
+      { title: 'Check the ratios and the new condition', content: '$9/15=3/5$ and $12/15=4/5$. If only one leg were changed, the angle could change and similarity would need to be established again.', why: 'A ratio can be transferred only when the corresponding angle and similarity conditions hold.' }
+    ]
+  }, {
     title: 'Unit Circle Evaluation',
     problem: 'Find $\\sin(\\frac{5\\pi}{6})$ and $\\cos(\\frac{7\\pi}{4})$.',
     steps: [
@@ -304,6 +320,7 @@ topics: [
     }
     ],
   freeResponse: [
+    { difficulty: 'medium', question: 'A right triangle has an opposite leg of 6 cm and a hypotenuse of 10 cm for angle $\\theta$. A similar triangle has the corresponding hypotenuse 25 cm. Find the corresponding opposite leg in centimeters.', accept: [15], placeholder: 'Length in centimeters', hint: '<p>Keep the ratio of corresponding opposite side to hypotenuse the same.</p>', explanation: '$x/25=6/10$, so $x=25(6/10)=15$ cm. Both triangles have the same sine for the corresponding angle.' },
     { difficulty: 'easy', question: '$\\sin(\\frac{\\pi}{6}) =$?', accept: ['1/2', '0.5'], placeholder: 'e.g. 1/2', explanation: '$\\sin(30°) = \\frac{1}{2}$.' },
     { difficulty: 'easy', question: '$\\cos(0) =$?', accept: [1, '1'], placeholder: 'Number', explanation: 'Point $(1,0)$ on unit circle.' },
     { difficulty: 'easy', question: '$\\tan(\\frac{\\pi}{4}) =$?', accept: [1, '1'], placeholder: 'Number', explanation: '$\\sin/\\cos = 1$.' },

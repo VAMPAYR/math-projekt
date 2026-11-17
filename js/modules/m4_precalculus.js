@@ -30,7 +30,7 @@ topics: [
     { term: 'Interval Notation', definition: '$(a,b)$ = all $x$ with $a < x < b$; $[a,b]$ = $a \\leq x \\leq b$. Parenthesis excludes endpoint, bracket includes it (Module 2).' }
   ],
   whyExists: { html: `
-    <p><strong>Why functions?</strong> A function captures a <em>deterministic relationship</em>: given input $x$, the output $f(x)$ is uniquely determined. Temperature as a function of time, position as a function of velocity, profit as a function of price.</p>
+    <p><strong>Why functions?</strong> A function captures a <em>deterministic relationship</em>: given an allowed input $x$, the output $f(x)$ is uniquely determined. Examples include a specified object's position as a function of time or a pricing model that assigns one profit to each allowed price.</p>
     <p>Calculus studies how functions change. Without a precise definition of "function," calculus cannot begin.</p>
     ${WHY('Formal definition', '<p>A function $f: A \\to B$ is a rule that assigns to each element $x \\in A$ exactly one element $f(x) \\in B$. The set $A$ is the <strong>domain</strong> (all valid inputs). The set $\\{f(x) : x \\in A\\}$ is the <strong>range</strong> (all actual outputs). The key requirement: one input, one output. Multiple inputs can give the same output (e.g., $f(x) = x^2$: $f(2) = f(-2) = 4$), but one input cannot give multiple outputs.</p>')}
   ` },
@@ -51,12 +51,12 @@ topics: [
     ],
     background: {
       title: 'Why Functions? The Language of Science',
-      content: '<p>A <strong>function</strong> is a rule that converts one quantity into another, with no ambiguity. Every input produces exactly one output. This strict definition is what makes functions useful: they are predictable.</p><p><strong>Why domain matters:</strong> You cannot take the square root of a negative number (in $\\mathbb{R}$). You cannot divide by zero. The domain tells you which inputs are valid. Ignoring domain restrictions leads to contradictions and false results.</p><p><strong>Why functions are the language of science:</strong> Every physical law is expressed as a function. $F = ma$ (force is a function of mass and acceleration). $E = mc^2$ (energy is a function of mass). $v = at$ (velocity is a function of time). Without functions, we cannot state any quantitative relationship.</p>'
+      content: '<p>A <strong>function</strong> assigns exactly one output to each allowed input; its input and output may themselves be vectors, functions, or other objects. This rule does not guarantee that a physical measurement is noise-free or that the rule applies outside its model.</p><p><strong>Why domain matters:</strong> The domain is the specified set of inputs. It may be restricted by the expression, the mathematical setting, or the model. For example, $f(x)=x^2$ can describe the area of a square with side length $x \\geq 0$, even though the expression is defined for every real $x$.</p><p><strong>Functions in science:</strong> $F=ma$ can describe force as a function of mass and acceleration in a stated model. Other laws are expressed as relations, differential equations, operators, or probabilistic models. Choose the representation and assumptions that fit the question.</p>'
     },
     mathGrammar: [
       { question: 'What does $f(x)$ mean?', answer: '$f(x)$ is read "f of x." It means: apply the function $f$ to the input $x$. If $f(x) = 2x + 1$, then $f(3) = 2(3) + 1 = 7$. The parentheses here do NOT mean multiplication. They mean: feed this value into the function.' },
-      { question: 'Why do we use functions?', answer: 'Functions formalize the idea of a rule that converts inputs to outputs. Every formula in science is a function: distance = speed $\\times$ time, force = mass $\\times$ acceleration. Functions let us predict, compute, and communicate relationships precisely.' },
-      { question: 'How do I find the domain?', answer: 'Ask: "What inputs would break this function?" Two common restrictions: (1) Cannot divide by zero. (2) Cannot take the square root of a negative number (in real numbers). The domain is EVERYTHING ELSE.' },
+      { question: 'Why do we use functions?', answer: 'Functions specify one output for each allowed input. For a constant-speed model, distance depends on speed and time; force can depend on both mass and acceleration. Other scientific models use relations, operators, or probability rather than a single-valued function of one input.' },
+      { question: 'How do I find the domain?', answer: 'Start with the domain stated in the problem or model, then check that the rule is defined there. In real-valued examples, exclude zero denominators and negative square-root inputs. A model may impose additional restrictions: $f(t)=t^2$ may be used only for $t \\geq 0$ when t is elapsed time.' },
       { question: 'What does "undefined" mean?', answer: 'The function has no output for that input. $f(x) = \\frac{1}{x}$ is undefined at $x = 0$ because $\\frac{1}{0}$ has no answer. The function literally has no answer for that input. It breaks.' }
     ],
     concept: { html: `
@@ -85,7 +85,7 @@ topics: [
     <p>$f(5) = 25 + 3 = 28$. Replace every $x$ with $5$.</p>
     ${WHY('Why $f(x)$ and not $y$?', '<p>$y = x^2 + 3$ ambiguously refers to both the equation and the output value. $f(x) = x^2 + 3$ explicitly names the function ($f$) and shows the input ($x$). This lets us write $f(2)$, $f(a+h)$, $g(x)$ for different functions, and compose functions like $f(g(x))$.</p>')}</div>
     <div class="callout callout-key"><h4>Domain: Finding Valid Inputs</h4>
-    <p>Unless restricted, the domain is all real numbers EXCEPT:</p>
+    <p>Start with the domain stated for the function. If a real formula is given without a specified domain, its <em>natural domain</em> is the set of real inputs for which the formula is defined. A model may restrict this set further. Common restrictions include:</p>
     <ul>
       <li>Values that make a <strong>denominator zero</strong>: $f(x) = \\frac{1}{x-3}$ has domain $\\mathbb{R} \\setminus \\{3\\}$.</li>
       <li>Values that make a <strong>square root negative</strong>: $f(x) = \\sqrt{x-2}$ has domain $[2, \\infty)$.</li>
@@ -100,7 +100,7 @@ topics: [
   definition: { html: `
     <p><strong>Function:</strong> A rule $f: A \\to B$ assigning each $x \\in A$ exactly one $f(x) \\in B$.</p>
     <p><strong>Domain:</strong> Set of all valid inputs $A$. <strong>Range:</strong> Set of all actual outputs $\\{f(x) : x \\in A\\}$.</p>
-    <p><strong>Inverse Function:</strong> $f^{-1}$ reverses $f$: $f^{-1}(f(x)) = x$. Exists only if $f$ is one-to-one (passes horizontal line test).</p>
+    <p><strong>Inverse Function:</strong> If $f:A \\to B$ is one-to-one, it has an inverse from its range $f(A)$ to $A$: $f^{-1}(f(x))=x$. To have an inverse defined on all of the stated codomain $B$, $f$ must also be onto $B$. For example, $f(x)=x^2$ on $[0,\\infty)$ has inverse $\\sqrt{y}$ on its range $[0,\\infty)$; choosing a larger codomain does not make negative inputs valid for that inverse.</p>
   ` },
   examples: [{
     title: 'Domain and Composition',

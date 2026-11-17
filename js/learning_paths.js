@@ -5,6 +5,7 @@
     { title: '1. Quantities and reasoning', description: 'Make sense of operations, units, statements, and proof before using them in models.', items: [
       ['foundations', 'number-systems', 'What number systems permit and why division needs a nonzero divisor.'],
       ['foundations', 'basic-arithmetic', 'Use operations as relationships between quantities, not only as procedures.'],
+      ['mathematical-meaning', null, 'Explore what operations, functions, equality, and models mean across different situations.'],
       ['foundations', 'proof-techniques', 'Distinguish examples from arguments that cover every allowed case.']
     ] },
     { title: '2. Equations, shape, and functions', description: 'Translate a situation into constraints; use diagrams and equations to check each other.', items: [
@@ -52,6 +53,7 @@
   ];
   // Each edge states a meaningful dependency or transfer, not a universal prerequisite.
   const edges = [
+    [['foundations','basic-arithmetic'], ['mathematical-meaning',null], 'Interpret arithmetic operations as relationships that can be transferred to other contexts.'],
     [['foundations','set-theory'], ['foundations','number-systems'], 'Sets let us specify the collections to which numbers belong.'],
     [['foundations','propositional-logic'], ['foundations','proof-techniques'], 'A proof uses valid logical implications to justify a conclusion.'],
     [['foundations','number-systems'], ['foundations','basic-arithmetic'], 'Number systems set the allowed inputs and answers for arithmetic.'],

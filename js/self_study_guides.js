@@ -840,3 +840,22 @@
     }
   });
 })();
+
+/* Connect the meanings of operations to worked applications in other topics. */
+(function () {
+  const operationConnections = {
+    "beginning-algebra:linear-equations-one-var": "<p>Subtraction measures a signed change relative to a stated starting point. Adding the opposite reverses that change: if $12$ items fall to $5$, the change is $5-12=-7$ items and $12+(-7)=5$.</p><p>The same operation isolates a variable in an equation, but the quantities must have compatible units. See <a href=\"#\" onclick=\"MathEngine.navigateTo('calculus-1','derivatives'); return false;\">rates of change</a> for differences divided by elapsed time.</p>",
+    "geometry:area-volume": "<p>Multiplication combines a quantity with a scale or rate; units show what the result measures. A rectangle $3$ meters by $2$ meters has area $3(2)=6$ square meters.</p><p>Doubling only one side doubles area; doubling both sides multiplies area by four. A changing width requires adding many local contributions, as in <a href=\"#\" onclick=\"MathEngine.navigateTo('calculus1','integration-ftc'); return false;\">integration</a>.</p>",
+    "trigonometry:unit-circle": "<p>Division compares quantities. In a right triangle, opposite side divided by hypotenuse is a dimensionless ratio: for sides $3,4,5$, $\\sin\\theta=3/5$. Scaling all sides equally leaves the angle and ratio unchanged.</p><p>The divisor must be nonzero. Compare this ratio with <a href=\"#\" onclick=\"MathEngine.navigateTo('probability-statistics','conditional-probability-bayes'); return false;\">conditional probability</a>, where division changes the reference set.</p>",
+    "calculus-1:derivatives": "<p>A difference quotient divides a change in output by a change in input. Its units are output units per input unit. A derivative is the limit of those quotients as the nonzero input change tends to zero.</p><p>For nonlinear motion, an average rate over an interval need not equal the instantaneous rate at either end. Compare with <a href=\"#\" onclick=\"MathEngine.navigateTo('trigonometry','unit-circle'); return false;\">dimensionless ratios</a>.</p>",
+    "probability-statistics:conditional-probability-bayes": "<p>Division can restrict a comparison to a new reference group. $P(A\\mid B)=P(A\\cap B)/P(B)$ asks what fraction of the probability assigned to $B$ also belongs to $A$.</p><p>The formula requires $P(B)>0$; switching the condition changes the denominator. See <a href=\"#\" onclick=\"MathEngine.navigateTo('precalculus','systems-matrices'); return false;\">linear combinations</a> for another way multiplication and addition combine weighted contributions.</p>",
+    "precalculus:systems-matrices": "<p>Operations can act on entire vectors. A matrix combines coordinates by multiplication and addition. An inverse reverses the transformation only when the information needed to recover the input has not been lost.</p><p>A zero scaling factor collapses different inputs to the same output, so no inverse can recover them. Compare <a href=\"#\" onclick=\"MathEngine.navigateTo('beginning-algebra','linear-equations-one-var'); return false;\">reversing arithmetic operations</a>.</p>"
+  };
+  Object.entries(operationConnections).forEach(([key, content]) => {
+    const target = window.MATH_SELF_STUDY_GUIDES[key];
+    if (!target || !Array.isArray(target.cards)) return;
+    if (!target.cards.some(item => item.title === 'What the Operation Means')) {
+      target.cards.push({ title: 'What the Operation Means', content });
+    }
+  });
+})();

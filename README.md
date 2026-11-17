@@ -6,7 +6,7 @@ An interactive math learning platform covering foundations through multivariable
 
 ## Live Features
 
-- **27 modules**: Foundations, algebra, geometry, precalculus, trigonometry, calculus, probability and statistics, GRE Quant, and mathematical and physics preparation for the Landau theoretical minimum
+- **28 modules**: Foundations, mathematical meaning, algebra, geometry, precalculus, trigonometry, calculus, probability and statistics, GRE Quant, and mathematical and physics preparation for the Landau theoretical minimum
 - **Connected Landau preparation**: A guided path links arithmetic, calculus, mathematical methods, mechanics, fields, quantum and statistical physics, and continuous media. It includes written explanations and practice; it does not administer an oral examination. The [Landau Institute chair](https://chair.itp.ac.ru/index.php?lang=en&sub=minimum) describes the official examination scope. These lessons are preparation and do not certify examination readiness.
 - **Transparent coverage**: The [Landau coverage map](docs/landau-coverage.md) connects the official subjects to available lessons and identifies topics that need further depth.
 - **GRE prep layer**: Ten topics with original problems in all four GRE Quant formats, strategy limits, worked examples, and links to foundational lessons. Chart questions include their data in Practice mode. Test guidance links to official ETS pages; this is independent practice, not an official test simulation

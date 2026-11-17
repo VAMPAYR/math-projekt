@@ -169,7 +169,7 @@ topics: [
     { term: 'Equation', definition: 'A statement that two expressions are equal, written with $=$. Example: $2 + 3 = 5$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why do we need different number systems?</strong> Every number system has equations it cannot solve.</p>
+    <p><strong>Why do we need different number systems?</strong> Each system has equations it cannot solve. Here natural numbers start at 1; some conventions include 0.</p>
     <ul>
       <li>$x + 3 = 3$: No natural number works. We need <strong>zero</strong> and the <strong>integers</strong> $\\mathbb{Z}$.</li>
       <li>$2x = 1$: No integer works. We need <strong>rationals</strong> $\\mathbb{Q}$.</li>
@@ -190,12 +190,12 @@ topics: [
     ],
     background: {
       title: 'Where Do Numbers Come From?',
-      content: '<p>Counting developed before formal symbolic mathematics because people needed to track objects, time, distance, and exchange. Number systems expanded whenever an existing system could not represent a needed quantity.</p><p><strong>Zero</strong> gives place value and represents the size of an empty collection. <strong>Negative numbers</strong> represent directed quantities such as debt, temperature below a reference point, and movement in the opposite direction. <strong>Irrational numbers</strong> show that some exact lengths, such as $\\sqrt{2}$, cannot be written as ratios of integers.</p><p>The sequence of number systems is practical before it is abstract: natural numbers count, integers allow subtraction, rationals allow division, reals fill continuous measurement, and complex numbers solve polynomial equations that real numbers cannot solve.</p>'
+      content: '<p>Counting developed before formal symbolic mathematics because people needed to track objects, time, distance, and exchange. Number systems expanded whenever an existing system could not represent a needed quantity.</p><p><strong>Zero</strong> gives place value and represents the size of an empty collection. <strong>Negative numbers</strong> represent directed quantities such as debt, temperature below a reference point, and movement in the opposite direction. <strong>Irrational numbers</strong> show that some exact lengths, such as $\\sqrt{2}$, cannot be written as ratios of integers.</p><p>The sequence of number systems is practical before it is abstract: natural numbers count, integers allow subtraction, rationals allow division by nonzero rational numbers, reals fill continuous measurement, and complex numbers solve polynomial equations that real numbers cannot solve.</p>'
     },
     mathGrammar: [
       { question: 'What does the symbol "$\\in$" mean?', answer: '"Is an element of." When we write $3 \\in \\mathbb{Z}$, we are saying "3 belongs to the set of integers." Think of it as saying this thing lives inside this group.' },
       { question: 'What is a set?', answer: 'A collection of distinct objects (just a group of things), written with curly braces. $\\{1, 2, 3\\}$ is a set. The order does not matter: $\\{3, 1, 2\\}$ is the same set. No duplicates allowed.' },
-      { question: 'Why do we need different number sets?', answer: 'Each number set was invented because the previous one could not handle something. $\\mathbb{N}$ cannot represent \"nothing\" (so we added $0$). $\\mathbb{Z}$ allows debts (negative). $\\mathbb{Q}$ allows division results. $\\mathbb{R}$ fills in the gaps ($\\sqrt{2}$). $\\mathbb{C}$ allows $\\sqrt{-1}$.' }
+      { question: 'Why do we need different number sets?', answer: 'Number systems let us describe different quantities and solve different equations. This lesson uses $\\mathbb{N}=\\{1,2,3,\\ldots\\}$; other conventions include $0$. Integers include negatives, rationals represent quotients with nonzero integer denominators, reals include irrational numbers such as $\\sqrt{2}$, and complex numbers include $i$ with $i^2=-1$.' }
     ],
     concept: { html: `
 
@@ -232,7 +232,7 @@ topics: [
     <div class="callout callout-key"><h4>The Number System Hierarchy</h4>
     <p>$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R} \\subset \\mathbb{C}$</p>
     <ul>
-      <li>$\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}$ (Natural numbers: counting)</li>
+      <li>$\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$ (Natural numbers in this lesson; some conventions include $0$)</li>
       <li>$\\mathbb{Z} = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}$ (Integers: include negatives)</li>
       <li>$\\mathbb{Q} = \\{p/q : p, q \\in \\mathbb{Z}, q \\neq 0\\}$ (Rationals: fractions)</li>
       <li>$\\mathbb{R}$ = rationals $\\cup$ irrationals (Real numbers: the complete number line)</li>
@@ -247,7 +247,7 @@ topics: [
       <li><strong>Identity:</strong> $a + 0 = a$ and $a \\cdot 1 = a$</li>
       <li><strong>Inverse:</strong> $a + (-a) = 0$ and $a \\cdot (1/a) = 1$ (for $a \\neq 0$)</li>
     </ul>
-    ${WHY('Why do these matter?', '<p>Every algebraic manipulation you perform (adding to both sides, factoring, distributing) is justified by one of these axioms. They are the "rules of the game" for algebra. Any system satisfying all these axioms is called a <strong>field</strong>.</p>')}</div>
+    ${WHY('Why do these matter?', '<p>Every algebraic manipulation you perform (adding to both sides, factoring, distributing) is justified by one of these axioms. They are the "rules of the game" for algebra. A field satisfies these rules along with closure and associativity of multiplication, among its other requirements.</p>')}</div>
   
     ${WHY('Why was zero invented?', '<p>Zero records an empty amount and protects place value. Without zero, the numerals 13, 103, and 130 would be much harder to distinguish in positional notation. Arithmetic rules such as $a + 0 = a$ and $a \\cdot 0 = 0$ make zero behave as a number rather than a blank mark.</p>')}
     ${WHY('Why do we need complex numbers?', '<p>$x^2 + 1 = 0$ has no real solution because no real number squared gives $-1$. Define $i = \\sqrt{-1}$. Now $x = i$ and $x = -i$ are solutions. Complex numbers complete algebra: every polynomial of degree $n$ has exactly $n$ complex roots when multiplicity is counted.</p>')}` },
@@ -357,10 +357,10 @@ topics: [
 {
   id: 'basic-arithmetic',
   title: 'Basic Arithmetic: Operations, Fractions \u0026 Decimals',
-  description: 'The four fundamental operations on whole numbers, fractions, and decimals. Every calculation in mathematics reduces to these building blocks.',
+  description: 'The four fundamental operations on whole numbers, fractions, and decimals. Arithmetic underlies many quantitative calculations across mathematics.',
   prereqRecap: [],
   whyExists: { html: `
-    <p><strong>Why start here?</strong> All of mathematics builds on arithmetic. Algebra generalizes arithmetic with variables. Calculus extends it to continuous change. Statistics applies it to data. Without fluency in basic operations, fractions, and decimals, every subsequent topic becomes inaccessible.</p>
+    <p><strong>Why start here?</strong> Arithmetic gives tools used throughout quantitative mathematics. Algebra relates operations to variables, calculus studies change and accumulation, and statistics analyzes data. Understanding operations, fractions, and decimals helps you interpret and check models in these subjects.</p>
     ${WHY('What IS a number?', '<p>A number is an abstraction for quantity. The symbol "3" represents three of anything: three apples, three meters, three ideas. Mathematics studies the properties of these abstractions, independent of what they count.</p>')}
   ` },
   formalDefinitions: [
@@ -372,12 +372,12 @@ topics: [
     ],
     background: {
       title: 'Why Do We Have Four Operations?',
-      content: '<p><strong>Addition</strong> combines compatible quantities and describes changes in position, volume, and many other quantities.</p><p><strong>Subtraction</strong> answers the question "what is left?" It is the inverse of addition. Without subtraction, we cannot measure differences or changes.</p><p><strong>Multiplication</strong> is repeated addition, but it is much more than that. It scales quantities. When you multiply the length and width of a rectangle, you get its area. This connection between multiplication and geometry is fundamental to all of physics and engineering.</p><p><strong>Division</strong> answers "how many groups?" or "how much per group?" It is the inverse of multiplication. Division by zero is undefined because no number times zero produces a nonzero result. This is a logical impossibility, not a convention.</p>'
+      content: '<p><strong>Addition</strong> combines compatible quantities and describes changes in position, volume, and many other quantities.</p><p><strong>Subtraction</strong> answers the question "what is left?" It is the inverse of addition. Without subtraction, we cannot measure differences or changes.</p><p><strong>Multiplication</strong> agrees with repeated addition for a nonnegative integer factor. More generally, it scales quantities. When you multiply the length and width of a rectangle, you get its area. This connection between multiplication and geometry is fundamental to all of physics and engineering.</p><p><strong>Division</strong> answers "how many groups?" or "how much per group?" It is the inverse of multiplication. Division by zero is undefined because no number times zero produces a nonzero result. This is a logical impossibility, not a convention.</p>'
     },
     mathGrammar: [
       { question: 'What does "$=$" actually mean?', answer: 'The equals sign means "the left side and the right side represent the same mathematical object." It is a statement of equality, not an instruction. $2 + 3 = 5$ means these are two names for the same thing.' },
       { question: 'Why do we subtract?', answer: 'Subtraction answers "how much more?" or "what remains?" $7 - 3 = 4$ means: starting from 7, if you remove 3, you have 4 left. It is the inverse of addition: it undoes what addition does.' },
-      { question: 'Why do we multiply instead of adding repeatedly?', answer: '$5 \\times 4$ means "add five copies of 4": $4 + 4 + 4 + 4 + 4 = 20$. Multiplication is faster notation for repeated addition. But it also has a geometric meaning: the area of a $5 \\times 4$ rectangle is $20$ square units.' },
+      { question: 'Why do we multiply instead of adding repeatedly?', answer: '$5 \\times 4$ means "add five copies of 4": $4 + 4 + 4 + 4 + 4 = 20$. For a nonnegative integer factor, multiplication expresses repeated addition. It also describes scaling and has a geometric meaning: the area of a $5 \\times 4$ rectangle is $20$ square units.' },
       { question: 'Why is division by zero undefined?', answer: 'Division asks "what times the divisor gives the dividend?" $12 \\div 3 = 4$ because $4 \\times 3 = 12$. For $12 \\div 0 = ?$, we need $? \\times 0 = 12$. No number times zero gives 12. There is no number that works, so the operation has no answer. That is what undefined means.' },
       { question: 'What is PEMDAS/BODMAS and why?', answer: 'Order of operations: Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right). Without this convention, two people could read the same problem and get different answers. The rules exist so everyone agrees. Without it, $2 + 3 \\times 4$ could mean 20 or 14.' }
     ],
@@ -386,13 +386,13 @@ topics: [
     <ul>
       <li><strong>Addition (+):</strong> Combining quantities. $3 + 5 = 8$. <em>Commutative</em>: $a + b = b + a$. <em>Associative</em>: $(a + b) + c = a + (b + c)$. Identity: $a + 0 = a$.</li>
       <li><strong>Subtraction (-):</strong> Finding the difference. $8 - 3 = 5$. Subtraction is <em>adding the opposite</em>: $a - b = a + (-b)$. NOT commutative: $3 - 5 \\neq 5 - 3$.</li>
-      <li><strong>Multiplication ($\\times$):</strong> Repeated addition. $4 \\times 3 = 3 + 3 + 3 + 3 = 12$. Commutative: $a \\times b = b \\times a$. Identity: $a \\times 1 = a$. Zero property: $a \\times 0 = 0$.</li>
+      <li><strong>Multiplication ($\\times$):</strong> With a nonnegative integer factor, repeated addition applies: $4 \\times 3 = 3 + 3 + 3 + 3 = 12$. Commutative: $a \\times b = b \\times a$. Identity: $a \\times 1 = a$. Zero property: $a \\times 0 = 0$.</li>
       <li><strong>Division ($\\div$):</strong> Splitting into equal groups. $12 \\div 4 = 3$ means 12 split into 4 equal groups of 3. Division is <em>multiplication by the reciprocal</em>: $a \\div b = a \\times \\frac{1}{b}$.</li>
     </ul>
     ${WHY('Why is division by zero undefined?', '<p>If $6 \\div 0 = x$, then $0 \\times x = 6$. No number $x$ satisfies this (any number times 0 equals 0, never 6). The equation has no solution, so division by zero is undefined. It is not "infinity": $0 \\times \\infty$ is also undefined.</p>')}</div>
 
     <div class="callout callout-key"><h4>Fractions</h4>
-    <p>A fraction $\\frac{a}{b}$ represents $a$ parts out of $b$ equal parts. $a$ = numerator (how many), $b$ = denominator (size of each part).</p>
+    <p>For $b \\ne 0$, $\\frac{a}{b}$ is the quotient of $a$ by $b$. If $a$ is a nonnegative integer and $b$ is a positive integer, it can count $a$ pieces of size $1/b$, where $b$ is the number of equal pieces in one whole.</p>
     <ul>
       <li><strong>Equivalent fractions:</strong> $\\frac{a}{b} = \\frac{a \\times k}{b \\times k}$ for any $k \\neq 0$. Example: $\\frac{1}{2} = \\frac{2}{4} = \\frac{3}{6} = \\frac{50}{100}$.</li>
       <li><strong>Simplifying:</strong> Divide numerator and denominator by their GCF. $\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$.</li>
@@ -404,7 +404,7 @@ topics: [
     ${WHY('Why does "multiply by the reciprocal" work for division?', '<p>$\\frac{2}{3} \\div \\frac{4}{5}$ asks: "How many $\\frac{4}{5}$-sized pieces fit in $\\frac{2}{3}$?" Written as a complex fraction: $\\frac{\\frac{2}{3}}{\\frac{4}{5}}$. Multiply top and bottom by $\\frac{5}{4}$: $\\frac{\\frac{2}{3} \\times \\frac{5}{4}}{\\frac{4}{5} \\times \\frac{5}{4}} = \\frac{\\frac{10}{12}}{1} = \\frac{5}{6}$.</p>')}</div>
 
     <div class="callout callout-key"><h4>Decimals</h4>
-    <p>Decimals represent fractions with powers of 10 as denominators.</p>
+    <p>Terminating decimals represent fractions with powers of 10 as denominators. Repeating decimals are also rational; an infinite nonrepeating decimal represents an irrational number.</p>
     <ul>
       <li><strong>Place value:</strong> $3.75 = 3 + \\frac{7}{10} + \\frac{5}{100} = 3\\frac{75}{100} = 3\\frac{3}{4}$.</li>
       <li><strong>Fraction to decimal:</strong> Divide numerator by denominator. $\\frac{3}{8} = 3 \\div 8 = 0.375$.</li>
@@ -421,11 +421,11 @@ topics: [
       <li><strong>A</strong>ddition and <strong>S</strong>ubtraction (left to right)</li>
     </ol>
     <p>Example: $3 + 4 \\times 2 = 3 + 8 = 11$ (NOT $14$). $\\quad (3 + 4) \\times 2 = 7 \\times 2 = 14$.</p>
-    ${WHY('Why this order?', '<p>Convention, chosen for consistency. Multiplication binds more tightly than addition because it represents repeated addition: $3 + 4 \\times 2$ means "3 plus two groups of 4" = $3 + 8$, not "seven groups of 2." Without a convention, $3 + 4 \\times 2$ would be ambiguous.</p>')}</div>
+    ${WHY('Why this order?', '<p>Convention, chosen for consistency. By convention, multiplication binds more tightly than addition: $3 + 4 \\times 2$ means "3 plus two groups of 4" = $3 + 8$, not "seven groups of 2." Without a convention, $3 + 4 \\times 2$ would be ambiguous.</p>')}</div>
   ` },
   definition: { html: '<p><strong>Natural Numbers:</strong> $\\mathbb{N} = \\{1, 2, 3, \\ldots\\}$ (counting numbers).</p><p><strong>Whole Numbers:</strong> $\\{0, 1, 2, 3, \\ldots\\}$ (naturals plus zero).</p><p><strong>GCF:</strong> Greatest Common Factor: the largest number dividing both $a$ and $b$.</p><p><strong>LCD:</strong> Least Common Denominator: the smallest number that both denominators divide evenly into.</p>' },
   abstraction: { html: String.raw`
-    <p><strong>Division is one operation with four faces, and a fraction is a division you have not finished yet.</strong></p>
+    <p><strong>Division relates a value, a nonzero divisor, and a quotient. Fractions express that quotient exactly.</strong></p>
     <p>Take $12 \div 3$. The single answer $4$ replies to four different questions:</p>
     <ul>
       <li><strong>Sharing:</strong> split $12$ into $3$ equal shares, giving $4$ in each. ("how much per group")</li>
@@ -433,8 +433,8 @@ topics: [
       <li><strong>Rate / per one:</strong> $12$ for every $3$ is $4$ for every $1$, the unit rate. ("per one")</li>
       <li><strong>Undoing multiplication:</strong> the number that times $3$ gives $12$, namely $4$. ("the inverse")</li>
     </ul>
-    <p>One idea sits under all four: <em>division re-measures a quantity in a new unit.</em> "$12 \div 3$" means "measure $12$ with a ruler whose unit is $3$," and the answer is how many of that unit you get.</p>
-    <p><strong>A fraction is that measurement written down before it is carried out.</strong> $\frac{a}{b}$ is exactly $a \div b$: "$\frac{3}{4}$" is three units of size one quarter, or 3 divided into 4 equal shares. So a fraction is not two numbers stacked, it is a single number, the exact answer to a division, held in place. That is why $\frac{3}{4}$, $\frac{6}{8}$, and $0.75$ are the same number: one measurement, different-sized rulers.</p>
+    <p>All four interpretations satisfy the same equation: if $b\ne0$, $a/b=q$ exactly when $bq=a$. When $a$ and $b$ measure the same kind of quantity, the quotient can count how many units of size $b$ fit into $a$. With different units, the quotient can instead describe a rate or density.</p>
+    <p><strong>A fraction is an exact number, not an unfinished calculation.</strong> For $b\ne0$, $\frac{a}{b}$ is exactly $a\div b$. For example, $\frac{3}{4}$ is three units of size one quarter, or the size of each share when 3 units are split equally into 4. The equivalent forms $\frac34$, $\frac68$, and $0.75$ name the same number; each form can make a different calculation easier.</p>
     <div class="callout callout-key"><h4>A fraction wears three hats, and it is the same number in each</h4>
     <ul>
       <li><strong>A point:</strong> $\frac{3}{4}$ sits three-quarters of the way from $0$ to $1$.</li>
@@ -481,16 +481,16 @@ topics: [
       { type: 'why', front: 'Why is division by zero undefined?', back: 'If 6 / 0 = x, then 0 * x = 6. No x satisfies this. Zero times anything is zero, never 6.' },
       { type: 'why', front: 'Why do fractions need a common denominator for addition?', back: '1/3 and 1/4 are different-sized pieces. Convert to same-sized pieces (twelfths) before combining.' },
       { type: 'how', front: 'How do you divide fractions?', back: 'Multiply by the reciprocal: (a/b) / (c/d) = (a/b) * (d/c). Flipping and multiplying eliminates the complex fraction.' },
-      { type: 'why', front: 'Why does PEMDAS exist?', back: 'Convention for consistency. Multiplication binds tighter because it IS repeated addition: 3 + 4*2 = 3 + 8 = 11.' },
-      { type: 'define', front: 'What is a fraction?', back: 'a/b = a parts out of b equal parts. a = numerator (count), b = denominator (piece size). b cannot be zero.' }
+      { type: 'why', front: 'Why does PEMDAS exist?', back: 'The convention makes grouping unambiguous: multiplication precedes addition, so 3 + 4*2 = 3 + 8 = 11.' },
+      { type: 'define', front: 'What is a fraction?', back: 'a/b is the quotient of a by nonzero b. For positive integers, b counts the equal parts in one whole and each part has size 1/b.' }
     ],
     exercises: [
     { difficulty: 'easy', question: '$8 + 6 \\times 3 =$?', options: ['$42$', '$26$', '$30$', '$14$'], correctIndex: 1, hint: '<p>Multiplication before addition.</p>', correctExplanation: '$6 \\times 3 = 18$. $8 + 18 = 26$. Multiplication first (PEMDAS).', wrongExplanations: { 0: '$(8 + 6) \\times 3 = 42$, but without parentheses, multiply first.', 2: 'Check order of operations: $6 \\times 3 = 18$, then $8 + 18 = 26$.', 3: 'Recheck: $6 \\times 3 = 18$, not 6.' } },
     { difficulty: 'easy', question: '$\\frac{1}{3} + \\frac{1}{6} =$?', options: ['$\\frac{2}{9}$', '$\\frac{1}{2}$', '$\\frac{2}{6}$', '$\\frac{1}{9}$'], correctIndex: 1, hint: '<p>Find LCD of 3 and 6.</p>', correctExplanation: 'LCD = 6. $\\frac{2}{6} + \\frac{1}{6} = \\frac{3}{6} = \\frac{1}{2}$.', wrongExplanations: { 0: 'You added denominators: $\\frac{1+1}{3+6}$. Only add NUMERATORS after finding LCD.', 2: '$\\frac{2}{6} = \\frac{1}{3}$, which is just the first fraction. You need to add $\\frac{1}{6}$ too.', 3: '$\\frac{1}{9}$ adds the denominators. Find the LCD instead.' } },
-    { difficulty: 'medium', question: '$\\frac{3}{4} \\times \\frac{2}{5} =$?', options: ['$\\frac{5}{9}$', '$\\frac{6}{20}$', '$\\frac{3}{10}$', '$\\frac{6}{9}$'], correctIndex: 2, hint: '<p>Multiply numerators, multiply denominators, then simplify.</p>', correctExplanation: '$\\frac{3 \\times 2}{4 \\times 5} = \\frac{6}{20} = \\frac{3}{10}$.', wrongExplanations: { 0: 'You added instead of multiplied.', 1: 'Correct but not simplified. $\\frac{6}{20} = \\frac{3}{10}$.', 3: 'Check your multiplication: $3 \\times 2 = 6$, $4 \\times 5 = 20$.' } },
-    { difficulty: 'medium', question: '$\\frac{5}{6} \\div \\frac{2}{3} =$?', options: ['$\\frac{10}{18}$', '$\\frac{5}{4}$', '$\\frac{15}{12}$', '$\\frac{5}{9}$'], correctIndex: 1, hint: '<p>Multiply by the reciprocal: $\\frac{5}{6} \\times \\frac{3}{2}$.</p>', correctExplanation: '$\\frac{5}{6} \\times \\frac{3}{2} = \\frac{15}{12} = \\frac{5}{4} = 1\\frac{1}{4}$.', wrongExplanations: { 0: 'You multiplied straight across without flipping the second fraction.', 2: 'Correct but not simplified. $\\frac{15}{12} = \\frac{5}{4}$.', 3: 'You divided numerators and denominators separately, which is not how fraction division works.' } },
+    { difficulty: 'medium', question: '$\\frac{3}{4} \\times \\frac{2}{5} =$?', options: ['$\\frac{5}{9}$', '$\\frac{6}{10}$', '$\\frac{3}{10}$', '$\\frac{6}{9}$'], correctIndex: 2, hint: '<p>Multiply numerators, multiply denominators, then simplify.</p>', correctExplanation: '$\\frac{3 \\times 2}{4 \\times 5} = \\frac{6}{20} = \\frac{3}{10}$.', wrongExplanations: { 0: 'You added instead of multiplied.', 1: 'The denominator is $4 \\times 5 = 20$, not 10.', 3: 'Check your multiplication: $3 \\times 2 = 6$, $4 \\times 5 = 20$.' } },
+    { difficulty: 'medium', question: '$\\frac{5}{6} \\div \\frac{2}{3} =$?', options: ['$\\frac{5}{9}$', '$\\frac{5}{4}$', '$\\frac{15}{8}$', '$\\frac{5}{12}$'], correctIndex: 1, hint: '<p>Multiply by the reciprocal: $\\frac{5}{6} \\times \\frac{3}{2}$.</p>', correctExplanation: '$\\frac{5}{6} \\times \\frac{3}{2} = \\frac{15}{12} = \\frac{5}{4} = 1\\frac{1}{4}$.', wrongExplanations: { 0: 'This multiplies by the second fraction instead of its reciprocal.', 2: 'The denominator should be $6 \\times 2 = 12$, not 8.', 3: 'The numerator should be $5 \\times 3 = 15$, not 5.' } },
     { difficulty: 'hard', question: 'Evaluate: $\\frac{2}{3} + \\frac{3}{4} - \\frac{1}{6}$', options: ['$\\frac{5}{12}$', '$\\frac{15}{12}$', '$\\frac{4}{12}$', '$\\frac{1}{4}$'], correctIndex: 1, hint: '<p>LCD of 3, 4, and 6 is 12.</p>', correctExplanation: '$\\frac{8}{12} + \\frac{9}{12} - \\frac{2}{12} = \\frac{15}{12} = \\frac{5}{4} = 1\\frac{1}{4}$.', wrongExplanations: { 0: '$\\frac{5}{12}$ would be $8 + 9 - 12$, but it should be $8 + 9 - 2 = 15$.', 2: 'Check: $\\frac{2}{3} = \\frac{8}{12}$, $\\frac{3}{4} = \\frac{9}{12}$, $\\frac{1}{6} = \\frac{2}{12}$. $8 + 9 - 2 = 15$.', 3: '$\\frac{3}{12} = \\frac{1}{4}$. But $8 + 9 - 2 = 15$, not 3.' } },
-    { difficulty: 'hard', question: '$5 - 2 \\times 3 + 4^2 \\div 8 =$?', options: ['$7$', '$1$', '$3$', '$-2$'], correctIndex: 1, hint: '<p>PEMDAS: exponents, then multiplication/division (L to R), then addition/subtraction (L to R).</p>', correctExplanation: '$4^2 = 16$. $2 \\times 3 = 6$. $16 \\div 8 = 2$. $5 - 6 + 2 = 1$.', wrongExplanations: { 0: '$5 - 6 + 2 = 1$, not 7. Remember: subtraction before the remaining addition, left to right.', 2: 'Check each step: $4^2 = 16$, $16 \\div 8 = 2$, $2 \\times 3 = 6$. Then $5 - 6 + 2$.', 3: '$5 - 6 = -1$, then $-1 + 2 = 1$.' } }
+    { difficulty: 'hard', question: '$5 - 2 \\times 3 + 4^2 \\div 8 =$?', options: ['$7$', '$1$', '$3$', '$-2$'], correctIndex: 1, hint: '<p>PEMDAS: exponents, then multiplication/division (L to R), then addition/subtraction (L to R).</p>', correctExplanation: '$4^2 = 16$. $2 \\times 3 = 6$. $16 \\div 8 = 2$. $5 - 6 + 2 = 1$.', wrongExplanations: { 0: '$5 - 6 + 2 = 1$, not 7. Addition and subtraction have equal precedence, so evaluate from left to right.', 2: 'Check each step: $4^2 = 16$, $16 \\div 8 = 2$, $2 \\times 3 = 6$. Then $5 - 6 + 2$.', 3: '$5 - 6 = -1$, then $-1 + 2 = 1$.' } }
   ],
   freeResponse: [
     { difficulty: 'medium', question: String.raw`<strong>Apply it (rate):</strong> A printer prints $90$ pages in $4$ minutes at a steady rate. How many pages per minute?`, accept: [22.5, '22.5', '45/2'], placeholder: 'pages per minute', explanation: String.raw`Division as "per one": $90 \div 4 = 22.5$ pages each minute.` },
@@ -821,7 +821,7 @@ arithmetic.concept.html += String.raw`
     <h4>What an operation means depends on the objects</h4>
     <p><strong>Addition combines compatible quantities.</strong> If a tank contains 3 liters and receives 2 liters, its new volume is 5 liters. To add 3 meters and 40 centimeters, first express them in the same unit: $3+0.40=3.40$ meters. Adding a length to a time does not specify a physical quantity.</p>
     <p><strong>Subtraction finds a change or comparison.</strong> If position changes from 8 meters to 3 meters, final minus initial is $3-8=-5$ meters. A negative difference records direction relative to the chosen axis. Reversing the order gives the opposite change. Distance traveled needs more information about the route; it is not generally the signed change.</p>
-    <p><strong>Multiplication composes scales.</strong> Scaling a length by $-2$ reverses its direction on an oriented line and doubles its magnitude. For a positive integer multiplier, multiplication agrees with repeated addition. For real multipliers, scaling and the distributive law extend the idea beyond counting copies. Multiplying two lengths gives an area: $(3\,\mathrm m)(4\,\mathrm m)=12\,\mathrm{m}^2$.</p>
+    <p><strong>Multiplication composes scales.</strong> Scaling a directed displacement by $-2$ reverses its direction on an oriented line and doubles its magnitude. For a positive integer multiplier, multiplication agrees with repeated addition. For real multipliers, scaling and the distributive law extend the idea beyond counting copies. For a rectangle, multiplying its two side lengths gives its area: $(3\,\mathrm m)(4\,\mathrm m)=12\,\mathrm{m}^2$.</p>
     <p><strong>Division reverses multiplication by a nonzero quantity.</strong> $a/b=q$ means $bq=a$, provided $b\neq0$. The same equation can answer two different questions: $12$ liters shared among 3 containers gives 4 liters per container, while $12$ liters divided into 3-liter portions gives 4 portions. Keep the units: $12\,\mathrm m/(3\,\mathrm s)=4\,\mathrm{m/s}$, but $12\,\mathrm m/(3\,\mathrm m)=4$ is a dimensionless ratio.</p>
     <p>Division by zero has no real value. If $a\ne0$, no number $q$ satisfies $0q=a$; if $a=0$, every $q$ satisfies $0q=0$, so there is no unique quotient. A limit with a denominator approaching zero is a separate question: its behavior depends on the whole expression.</p>
     <p><strong>Read each rule with its domain.</strong> For real numbers, multiplication commutes, but subtraction and division generally do not. Even multiplication need not commute for other objects: matrix multiplication can give $AB\ne BA$. Cancellation of $c$ in $ac=bc$ requires $c\ne0$ in the real numbers. For example, canceling $x$ from $x(x-2)=0$ loses the valid solution $x=0$.</p>
@@ -833,6 +833,53 @@ arithmetic.concept.html += String.raw`
     <p>A finite sum combines a specified list. An infinite sum $\sum_{n=1}^{\infty}a_n$ means the limit of its partial sums, if that limit exists. Infinitely many shrinking terms do not automatically give a finite answer: $\sum 1/n$ diverges even though $1/n\to0$.</p>
     <p>Continue with <a href="#" onclick="MathEngine.navigateTo('precalculus','exponentials-logarithms'); return false;">exponents and logarithms</a>, <a href="#" onclick="MathEngine.navigateTo('calculus-1','derivatives'); return false;">rates of change</a>, or <a href="#" onclick="MathEngine.navigateTo('calculus-2','integration-fundamentals'); return false;">accumulation by integration</a>.</p>
   </div>`;
+
+arithmetic.concept.html += String.raw`
+  <div class="callout callout-key">
+    <h4>Interpret the relationship before calculating</h4>
+    <p>A mathematical operation is a rule with inputs and an output. Its meaning in a model comes from the quantities and the question: adding changes combines compatible changes; subtraction compares two values in a chosen order; multiplication scales a quantity or combines units; and division asks which factor produces a given result.</p>
+    <p><strong>The same equation can describe different situations.</strong> In $rq=A$, $r$ could be a rate in meters per minute, $q$ a duration in minutes, and $A$ a distance in meters, if the rate is constant. If $r$ is instead dollars per item and $q$ a count of items, $A$ is a cost. Solving $q=A/r$ requires $r\ne0$ in either model; the units tell us what the quotient represents.</p>
+    <p><strong>Check what an operation preserves.</strong> Adding the same real number to each side of an equation preserves its solutions because subtraction undoes the addition. Multiplying each side by a nonzero real number also preserves solutions; multiplying by zero turns every equality into $0=0$ and can introduce candidates. Always test a candidate in the original equation.</p>
+    <p><strong>An inverse may need a restricted domain.</strong> Squaring sends both $3$ and $-3$ to $9$, so the output alone cannot identify the input over all real numbers. Restricting the input to $x\geq0$ makes the inverse $\sqrt{y}$ for $y\geq0$. Multiplying by zero similarly loses information: every real input becomes zero, so that operation has no inverse.</p>
+    <p><strong>Track units and assumptions.</strong> Converting $2$ meters to $200$ centimeters changes the number used to describe the length, not the length itself. To compare two lengths, write $2\,\mathrm m/(50\,\mathrm{cm})=200\,\mathrm{cm}/(50\,\mathrm{cm})=4$. The ratio is dimensionless. A quotient of distance by time instead has units of speed; it tells an average over the stated interval.</p>
+    <p>Use these ideas in <a href="#" onclick="MathEngine.navigateTo('precalculus','functions-domain-range'); return false;">functions and domains</a>, <a href="#" onclick="MathEngine.navigateTo('geometry','area-volume'); return false;">geometric measurement</a>, and <a href="#" onclick="MathEngine.navigateTo('probability-statistics','counting-probability'); return false;">probability</a>. Each link changes the objects or assumptions, while keeping the relationships explicit.</p>
+  </div>`;
+
+arithmetic.examples.push(
+  {
+    title: 'Build a model from a rate and an initial amount',
+    problem: String.raw`A machine starts with $10$ meters of material and adds $2.5$ meters per minute at a constant rate for $6$ minutes. How much material is present at the end?`,
+    steps: [
+      { title: 'Name the quantities', content: String.raw`The rate is $2.5\,\mathrm{m/min}$ and the elapsed time is $6\,\mathrm{min}$. Their product has units of meters.`, why: 'The model assumes the rate applies throughout the stated time.' },
+      { title: 'Combine the change and starting amount', content: String.raw`The added amount is $(2.5)(6)=15$ meters. The final amount is $10+15=25$ meters.`, why: 'Multiplication accumulates a constant rate; addition combines compatible amounts.' },
+      { title: 'Check and transfer', content: String.raw`Subtract the start from the result: $25-10=15$ meters, agreeing with the calculated addition. If the rate varies, one instantaneous rate is insufficient; use the appropriate average rate or integrate the rate over time.`, why: 'An answer depends on the model and its assumptions, not only on the arithmetic.' }
+    ]
+  },
+  {
+    title: 'Use a quotient and a changed denominator in probability',
+    problem: String.raw`A bag contains $3$ red and $9$ blue tokens, identical except for color. Two are drawn uniformly without replacement. Find the probability that both are red.`,
+    steps: [
+      { title: 'Model the first draw', content: String.raw`There are $3$ favorable tokens among $12$ equally likely tokens, so the first-draw probability is $3/12=1/4$.`, why: 'A count ratio gives this probability because the individual tokens are equally likely.' },
+      { title: 'Update the condition', content: String.raw`Given a red first draw, $2$ red tokens remain among $11$ total. The conditional probability of red on the second draw is $2/11$.`, why: 'Without replacement, both the favorable and total counts change.' },
+      { title: 'Combine and compare', content: String.raw`The probability of both events is $(3/12)(2/11)=1/22$. With replacement it would be $(3/12)^2=1/16$, because the second draw would again use the original counts.`, why: 'Multiplication combines a first-event probability with the probability of the second given the first.' }
+    ]
+  },
+  {
+    title: 'Decide whether reversing an operation is unique',
+    problem: String.raw`A rule squares a real input and produces $9$. Find the possible inputs. How does the answer change if inputs are restricted to $x\geq0$?`,
+    steps: [
+      { title: 'Solve the original equation', content: String.raw`Both $3$ and $-3$ satisfy $x^2=9$, so the output alone does not identify a unique real input.`, why: 'A rule that maps two different inputs to the same output cannot have a two-sided inverse on that entire domain.' },
+      { title: 'Apply the restriction', content: String.raw`With $x\geq0$, only $x=3$ remains. On this restricted domain the inverse of squaring is the principal square root.`, why: 'State the domain before choosing an inverse.' },
+      { title: 'Check both cases', content: String.raw`$3^2=9$ and $(-3)^2=9$; only the first input also meets $x\geq0$.`, why: 'Substitution checks the original equation and the additional condition.' }
+    ]
+  }
+);
+
+arithmetic.exercises.push(
+  { difficulty: 'medium', question: String.raw`A liquid has a uniform concentration of $5\,\mathrm{g/L}$. How much dissolved material is in $0.4\,\mathrm L$?`, options: [String.raw`$2\,\mathrm g$`, String.raw`$12.5\,\mathrm g$`, String.raw`$5.4\,\mathrm g$`, String.raw`$2\,\mathrm{g/L}$`], correctIndex: 0, hint: '<p>Multiply amount per liter by the number of liters; cancel the units.</p>', correctExplanation: String.raw`$(5\,\mathrm{g/L})(0.4\,\mathrm L)=2\,\mathrm g$, assuming the concentration is uniform.`, wrongExplanations: { 1: 'Dividing 5 by 0.4 does not compute the amount in the given volume.', 2: 'Adding a concentration to a volume does not produce a mass.', 3: 'Multiplying by liters cancels the per-liter unit, leaving grams.' } },
+  { difficulty: 'medium', question: String.raw`Why does squaring not have an inverse on the entire real line?`, options: [String.raw`Every square is negative`, String.raw`Different inputs such as $2$ and $-2$ can have the same output`, String.raw`Squaring cannot act on zero`, String.raw`Every input produces a different output`], correctIndex: 1, hint: '<p>Compare the outputs for one positive input and its negative.</p>', correctExplanation: String.raw`$2^2=(-2)^2=4$, so the output does not uniquely determine the real input. Restricting the domain to nonnegative inputs permits the inverse $\sqrt{y}$.`, wrongExplanations: { 0: 'Squares of real numbers are nonnegative.', 2: 'Squaring zero is defined and gives zero.', 3: 'The inputs 2 and -2 both produce 4.' } },
+  { difficulty: 'medium', question: String.raw`A bag has $3$ red and $9$ blue tokens. After a uniformly random red draw without replacement, what is the probability that the next token is red?`, options: [String.raw`$1/4$`, String.raw`$2/11$`, String.raw`$3/11$`, String.raw`$2/12$`], correctIndex: 1, hint: '<p>Update both the red count and the total count after the first draw.</p>', correctExplanation: String.raw`After the red draw, 2 red tokens remain among 11 tokens, so the probability is $2/11$.`, wrongExplanations: { 0: 'This uses the original counts and ignores the first draw.', 2: 'One red token has already been removed.', 3: 'The total count also falls from 12 to 11.' } }
+);
 
 arithmetic.examples.push(
   {
@@ -876,7 +923,7 @@ arithmetic.freeResponse.push(
 
 numberSystems.concept.html += String.raw`
   <div class="callout callout-key">
-    <h4>What does $\pi^2/6$ mean?</h4>
+    <h4>Example: interpreting an exact expression</h4>
     <p>Start with the number $\pi$, the circumference-to-diameter ratio of a Euclidean circle. Squaring gives $\pi^2=\pi\cdot\pi$. Dividing that number by 6 gives the unique real $q$ satisfying $6q=\pi^2$. Its decimal value is approximately $1.6449340668$; the expression $\pi^2/6$ is exact, while this decimal is rounded.</p>
     <p>Geometry supplies one interpretation. A circular sector of radius $\sqrt{\pi}$ units and angle $\pi/3$ radians has area $\frac12r^2\theta=\pi^2/6$ square units. The sector area is one sixth of $\pi^2$ square units. By contrast, a full unit circle has area $\pi$ square units.</p>
     <p>The same number is also the value of the <strong>Basel series</strong>:</p>
