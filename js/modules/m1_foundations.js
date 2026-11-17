@@ -1,5 +1,5 @@
 /* ============================================================
-   MODULE 1: Mathematical Foundations (5 topics, 30 exercises)
+   MODULE 1: Mathematical Foundations
    ============================================================ */
 (function() {
 if (!window.MATH_MODULES) window.MATH_MODULES = [];
@@ -16,14 +16,14 @@ topics: [
 {
   id: 'set-theory',
   title: 'Set Theory: Operations & Power Sets',
-  description: 'Sets are the language of mathematics. Every mathematical object can be defined in terms of sets.',
+  description: 'Sets provide a common language for mathematical objects, relationships, and collections.',
   prereqRecap: [
     { term: 'Set', definition: 'A well-defined collection of distinct objects, called <strong>elements</strong> or <strong>members</strong>. Notation: $A = \\{1, 2, 3\\}$. $2 \\in A$ means 2 is in $A$.' },
     { term: 'Subset', definition: '$A \\subseteq B$ means every element of $A$ is also in $B$. Example: $\\{1, 2\\} \\subseteq \\{1, 2, 3\\}$.' },
     { term: 'Empty Set', definition: '$\\emptyset = \\{\\}$, the set with no elements. $\\emptyset \\subseteq A$ for every set $A$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why set theory?</strong> Sets provide a universal language. Numbers, functions, relations, geometric figures, probability spaces: all are defined using sets.</p>
+    <p><strong>Why set theory?</strong> Sets provide a common foundation and language. Numbers, functions, relations, geometric figures, and probability spaces can be represented using sets.</p>
     ${WHY('Why is this surprising? (Cantors diagonal argument)', '<p>Cantor proved that the set of real numbers is "larger" than the set of natural numbers, even though both are infinite. The proof: suppose you could list all reals $r_1, r_2, \\ldots$ Construct a new number differing from each $r_n$ in its $n$-th digit. This number is not on the list. Contradiction. Therefore no listing is possible.</p>')}
   ` },
   hook: { html: `<div class="callout callout-puzzle"><h4>Puzzle: The Party Problem</h4>
@@ -372,10 +372,10 @@ topics: [
     ],
     background: {
       title: 'Why Do We Have Four Operations?',
-      content: '<p><strong>Addition</strong> is the most natural operation: combining groups. Every human culture invented it independently.</p><p><strong>Subtraction</strong> answers the question "what is left?" It is the inverse of addition. Without subtraction, we cannot measure differences or changes.</p><p><strong>Multiplication</strong> is repeated addition, but it is much more than that. It scales quantities. When you multiply the length and width of a rectangle, you get its area. This connection between multiplication and geometry is fundamental to all of physics and engineering.</p><p><strong>Division</strong> answers "how many groups?" or "how much per group?" It is the inverse of multiplication. Division by zero is undefined because no number times zero produces a nonzero result. This is a logical impossibility, not a convention.</p>'
+      content: '<p><strong>Addition</strong> combines compatible quantities and describes changes in position, volume, and many other quantities.</p><p><strong>Subtraction</strong> answers the question "what is left?" It is the inverse of addition. Without subtraction, we cannot measure differences or changes.</p><p><strong>Multiplication</strong> is repeated addition, but it is much more than that. It scales quantities. When you multiply the length and width of a rectangle, you get its area. This connection between multiplication and geometry is fundamental to all of physics and engineering.</p><p><strong>Division</strong> answers "how many groups?" or "how much per group?" It is the inverse of multiplication. Division by zero is undefined because no number times zero produces a nonzero result. This is a logical impossibility, not a convention.</p>'
     },
     mathGrammar: [
-      { question: 'What does "$=$" actually mean?', answer: 'The equals sign means "the left side and the right side represent the same number." It is a statement of fact, not an instruction. $2 + 3 = 5$ means these are two names for the same thing.' },
+      { question: 'What does "$=$" actually mean?', answer: 'The equals sign means "the left side and the right side represent the same mathematical object." It is a statement of equality, not an instruction. $2 + 3 = 5$ means these are two names for the same thing.' },
       { question: 'Why do we subtract?', answer: 'Subtraction answers "how much more?" or "what remains?" $7 - 3 = 4$ means: starting from 7, if you remove 3, you have 4 left. It is the inverse of addition: it undoes what addition does.' },
       { question: 'Why do we multiply instead of adding repeatedly?', answer: '$5 \\times 4$ means "add five copies of 4": $4 + 4 + 4 + 4 + 4 = 20$. Multiplication is faster notation for repeated addition. But it also has a geometric meaning: the area of a $5 \\times 4$ rectangle is $20$ square units.' },
       { question: 'Why is division by zero undefined?', answer: 'Division asks "what times the divisor gives the dividend?" $12 \\div 3 = 4$ because $4 \\times 3 = 12$. For $12 \\div 0 = ?$, we need $? \\times 0 = 12$. No number times zero gives 12. There is no number that works, so the operation has no answer. That is what undefined means.' },
@@ -434,7 +434,7 @@ topics: [
       <li><strong>Undoing multiplication:</strong> the number that times $3$ gives $12$, namely $4$. ("the inverse")</li>
     </ul>
     <p>One idea sits under all four: <em>division re-measures a quantity in a new unit.</em> "$12 \div 3$" means "measure $12$ with a ruler whose unit is $3$," and the answer is how many of that unit you get.</p>
-    <p><strong>A fraction is that measurement written down before it is carried out.</strong> $\frac{a}{b}$ is exactly $a \div b$: "$\frac{3}{4}$" is "$3$ measured in quarters." So a fraction is not two numbers stacked, it is a single number, the exact answer to a division, held in place. That is why $\frac{3}{4}$, $\frac{6}{8}$, and $0.75$ are the same number: one measurement, different-sized rulers.</p>
+    <p><strong>A fraction is that measurement written down before it is carried out.</strong> $\frac{a}{b}$ is exactly $a \div b$: "$\frac{3}{4}$" is three units of size one quarter, or 3 divided into 4 equal shares. So a fraction is not two numbers stacked, it is a single number, the exact answer to a division, held in place. That is why $\frac{3}{4}$, $\frac{6}{8}$, and $0.75$ are the same number: one measurement, different-sized rulers.</p>
     <div class="callout callout-key"><h4>A fraction wears three hats, and it is the same number in each</h4>
     <ul>
       <li><strong>A point:</strong> $\frac{3}{4}$ sits three-quarters of the way from $0$ to $1$.</li>
@@ -443,10 +443,10 @@ topics: [
     </ul></div>
     <p>Keep the <strong>grouping</strong> face in mind and the rules that seem arbitrary become obvious:</p>
     <ul>
-      <li>Dividing by a fraction <em>grows</em> the answer, because a smaller unit fits more times: how many $\frac{1}{2}$-cups are in $3$ cups? Six.</li>
+      <li>Dividing a positive amount by a positive fraction below 1 gives a larger number, because a smaller unit fits more times: how many $\frac{1}{2}$-cups are in $3$ cups? Six.</li>
       <li>"Flip and multiply" is not a trick: asking how many $\frac{2}{3}$-units fit in a number is the same as scaling that number by the reciprocal $\frac{3}{2}$.</li>
     </ul>
-    <p><strong>The portable payoff:</strong> whenever a problem says <em>per</em>, <em>each</em>, <em>how many fit</em>, <em>split</em>, <em>share</em>, <em>rate</em>, or <em>of</em>, it is a division or a fraction in disguise. Name the face, and the method follows on its own. That is why one deep understanding of division carries you through rate problems, mixtures, tiling, scaling, and probability, with no separate recipe for each.</p>
+    <p><strong>The portable payoff:</strong> Words such as <em>per</em>, <em>how many fit</em>, <em>split</em>, and <em>rate</em> often suggest division. The word <em>of</em> can indicate multiplication, as in three quarters of twelve. Identify the quantities and their units before choosing an operation. That is why one deep understanding of division carries you through rate problems, mixtures, tiling, scaling, and probability, with no separate recipe for each.</p>
   ` },
   examples: [{
     title: 'Adding Fractions with Unlike Denominators',
@@ -471,7 +471,7 @@ topics: [
     title: 'Why dividing by a fraction makes the answer bigger',
     problem: String.raw`How many $\frac{3}{4}$-cup scoops are in $6$ cups of flour?`,
     steps: [
-      { title: 'Predict the size of the answer', content: String.raw`More than $6$. Each scoop holds less than a cup, so more than six of them fit. Dividing by a number below $1$ makes the count grow.`, why: 'This is the grouping face of division: how many small units fit inside the whole.', predict: String.raw`Before any arithmetic: will the answer be more than $6$ or fewer than $6$? Say why in one sentence.` },
+      { title: 'Predict the size of the answer', content: String.raw`More than $6$. Each scoop holds less than a cup, so more than six of them fit. Dividing a positive quantity by a positive number below $1$ makes the numerical result larger.`, why: 'This is the grouping face of division: how many small units fit inside the whole.', predict: String.raw`Before any arithmetic: will the answer be more than $6$ or fewer than $6$? Say why in one sentence.` },
       { title: 'Turn the division into a multiplication', content: String.raw`$6 \div \frac{3}{4} = 6 \times \frac{4}{3}$. Asking "how many $\frac{3}{4}$-units fit" is the same as scaling $6$ by the reciprocal $\frac{4}{3}$.`, why: 'Flip-and-multiply is the reciprocal answering "how many units fit," not a rule to memorize.', predict: String.raw`Rewrite $6 \div \frac{3}{4}$ as a multiplication. What do you multiply $6$ by, and why that number?` },
       { title: 'Compute and check', content: String.raw`$6 \times \frac{4}{3} = \frac{24}{3} = 8$ scoops. Check by undoing it: $8 \times \frac{3}{4} = 6$ cups.` }
     ]
@@ -738,14 +738,14 @@ topics: [
 {
   id: 'proof-techniques',
   title: 'Proof Techniques',
-  description: 'Direct proof, contrapositive, contradiction, and existence proofs. How mathematicians establish truth beyond doubt.',
+  description: 'Direct proof, contrapositive, contradiction, and existence proofs. How conclusions follow from stated assumptions.',
   prereqRecap: [
     { term: 'Conditional', definition: '$P \\to Q$ ("if $P$ then $Q$"). The standard form of a theorem (Topic 1.3).' },
     { term: 'Contrapositive', definition: '$\\neg Q \\to \\neg P$, logically equivalent to $P \\to Q$ (Topic 1.3).' },
     { term: 'Even/Odd', definition: 'Even: $n = 2k$ for some integer $k$. Odd: $n = 2k + 1$.' }
   ],
   whyExists: { html: `
-    <p><strong>Why proofs?</strong> In mathematics, checking examples is insufficient. $n^2 - n + 41$ is prime for $n = 0, 1, 2, \\ldots, 40$ but NOT for $n = 41$. Only a proof guarantees truth for ALL cases.</p>
+    <p><strong>Why proofs?</strong> In mathematics, checking examples is insufficient. $n^2 - n + 41$ is prime for $n = 0, 1, 2, \\ldots, 40$ but NOT for $n = 41$. A proof establishes a conclusion for every case covered by its assumptions; checking examples alone does not establish an unrestricted claim.</p>
   ` },
   concept: { html: `
     <div class="callout callout-key"><h4>Proof Methods</h4>
@@ -778,7 +778,7 @@ topics: [
     { difficulty: 'medium', question: 'To prove $P \\to Q$ by contrapositive, you prove:', options: ['$Q \\to P$', '$\\neg P \\to \\neg Q$', '$\\neg Q \\to \\neg P$', '$P \\wedge \\neg Q$'], correctIndex: 2, hint: '<p>Contrapositive: negate both and reverse.</p>', correctExplanation: '$\\neg Q \\to \\neg P$ is logically equivalent to $P \\to Q$.', wrongExplanations: { 0: 'That is the converse, NOT equivalent.', 1: 'That is the inverse, NOT equivalent.', 3: 'That is the negation of $P \\to Q$.' } },
     { difficulty: 'medium', question: 'Which proof technique works for "The sum of two even integers is even"?', options: ['Contradiction', 'Direct proof', 'Cases', 'Induction'], correctIndex: 1, hint: '<p>Use the definition of even: $n = 2k$.</p>', correctExplanation: 'Direct: $m = 2a, n = 2b \\Rightarrow m + n = 2(a+b)$, which is even. $\\blacksquare$', wrongExplanations: { 0: 'Contradiction is unnecessary for this straightforward claim.', 2: 'No case split is needed.', 3: 'Induction is for statements indexed by natural numbers.' } },
     { difficulty: 'hard', question: 'If $n^2$ is even, then $n$ is even. Best technique?', options: ['Direct proof', 'Contrapositive', 'Contradiction', 'Induction'], correctIndex: 1, hint: '<p>Try the contrapositive: "If $n$ is odd, then $n^2$ is odd."</p>', correctExplanation: 'Contrapositive: If $n$ is odd ($n = 2k+1$), then $n^2 = 4k^2+4k+1 = 2(2k^2+2k)+1$ is odd. $\\blacksquare$', wrongExplanations: { 0: 'Direct proof is difficult here because even $n^2$ does not directly reveal $n$.', 2: 'Contradiction works but contrapositive is more direct.', 3: 'Not an induction problem.' } },
-    { difficulty: 'hard', question: 'Two examples of a statement being true constitutes:', options: ['A valid proof', 'A proof for those cases only', 'Evidence but not proof', 'A proof by cases'], correctIndex: 2, hint: '<p>How many cases does a universal claim cover?</p>', correctExplanation: 'Examples provide evidence but NEVER prove a universal claim. Infinitely many cases exist, and you cannot check them all by example.', wrongExplanations: { 0: 'No finite number of examples proves a "for all" claim.', 1: 'A "proof for those cases" is not a standard mathematical concept in this context.', 3: 'Proof by cases requires exhaustive coverage of ALL cases.' } }
+    { difficulty: 'hard', question: 'A claim says $P(n)$ holds for every integer. You verify it for $n=1$ and $n=2$. What follows?', options: ['The claim is proved for every integer.', 'The two checked cases hold; the remaining cases are not established.', 'The claim is disproved.', 'Mathematical induction follows automatically.'], correctIndex: 1, hint: '<p>Does the stated domain contain integers beyond the two checked?</p>', correctExplanation: 'The verification establishes those two cases. It does not establish the claim for all integers.', wrongExplanations: { 0: 'Two cases do not exhaust the integers.', 2: 'A counterexample would have to make the claim false.', 3: 'Induction requires a base case and a justified inductive step.' } }
   ],
   freeResponse: [
     { difficulty: 'medium', question: 'Prove: If $n$ is even, then $n + 2$ is even. What is $n + 2$ in terms of $k$ (where $n = 2k$)?', accept: ['2k+2', '2(k+1)', '2k + 2'], placeholder: 'e.g. 2k+2', explanation: '$n = 2k \\Rightarrow n + 2 = 2k + 2 = 2(k + 1)$, which is even.' },
@@ -809,4 +809,99 @@ topics: [
 
 ] // end topics array
 }); // end module push
+
+// Connect arithmetic notation to the structures and models it describes.
+// These additions are original explanations and examples, not book excerpts.
+const foundations = window.MATH_MODULES[window.MATH_MODULES.length - 1];
+const arithmetic = foundations.topics.find(topic => topic.id === 'basic-arithmetic');
+const numberSystems = foundations.topics.find(topic => topic.id === 'number-systems');
+
+arithmetic.concept.html += String.raw`
+  <div class="callout callout-key">
+    <h4>What an operation means depends on the objects</h4>
+    <p><strong>Addition combines compatible quantities.</strong> If a tank contains 3 liters and receives 2 liters, its new volume is 5 liters. To add 3 meters and 40 centimeters, first express them in the same unit: $3+0.40=3.40$ meters. Adding a length to a time does not specify a physical quantity.</p>
+    <p><strong>Subtraction finds a change or comparison.</strong> If position changes from 8 meters to 3 meters, final minus initial is $3-8=-5$ meters. A negative difference records direction relative to the chosen axis. Reversing the order gives the opposite change. Distance traveled needs more information about the route; it is not generally the signed change.</p>
+    <p><strong>Multiplication composes scales.</strong> Scaling a length by $-2$ reverses its direction on an oriented line and doubles its magnitude. For a positive integer multiplier, multiplication agrees with repeated addition. For real multipliers, scaling and the distributive law extend the idea beyond counting copies. Multiplying two lengths gives an area: $(3\,\mathrm m)(4\,\mathrm m)=12\,\mathrm{m}^2$.</p>
+    <p><strong>Division reverses multiplication by a nonzero quantity.</strong> $a/b=q$ means $bq=a$, provided $b\neq0$. The same equation can answer two different questions: $12$ liters shared among 3 containers gives 4 liters per container, while $12$ liters divided into 3-liter portions gives 4 portions. Keep the units: $12\,\mathrm m/(3\,\mathrm s)=4\,\mathrm{m/s}$, but $12\,\mathrm m/(3\,\mathrm m)=4$ is a dimensionless ratio.</p>
+    <p>Division by zero has no real value. If $a\ne0$, no number $q$ satisfies $0q=a$; if $a=0$, every $q$ satisfies $0q=0$, so there is no unique quotient. A limit with a denominator approaching zero is a separate question: its behavior depends on the whole expression.</p>
+    <p><strong>Read each rule with its domain.</strong> For real numbers, multiplication commutes, but subtraction and division generally do not. Even multiplication need not commute for other objects: matrix multiplication can give $AB\ne BA$. Cancellation of $c$ in $ac=bc$ requires $c\ne0$ in the real numbers. For example, canceling $x$ from $x(x-2)=0$ loses the valid solution $x=0$.</p>
+  </div>
+  <div class="callout callout-key">
+    <h4>Powers, roots, logarithms, and sums</h4>
+    <p>For an integer $n\geq1$, $a^n$ multiplies $n$ copies of $a$. When $a\ne0$, the exponent laws give $a^0=1$ and $a^{-n}=1/a^n$. A root asks for a number whose power gives the target: $\sqrt{9}=3$ is the nonnegative square root, although both $3$ and $-3$ solve $x^2=9$.</p>
+    <p>For $a>0$ and real $x$, $a^x$ extends the exponent rules continuously. A logarithm reverses this operation: for $b>0$, $b\ne1$, and $y>0$, $\log_b y=x$ exactly when $b^x=y$. In $100(1.1)^t$, for example, $t$ counts periods, not necessarily years. Solving for time with logarithms is meaningful only after the growth period and units are stated.</p>
+    <p>A finite sum combines a specified list. An infinite sum $\sum_{n=1}^{\infty}a_n$ means the limit of its partial sums, if that limit exists. Infinitely many shrinking terms do not automatically give a finite answer: $\sum 1/n$ diverges even though $1/n\to0$.</p>
+    <p>Continue with <a href="#" onclick="MathEngine.navigateTo('precalculus','exponentials-logarithms'); return false;">exponents and logarithms</a>, <a href="#" onclick="MathEngine.navigateTo('calculus-1','derivatives'); return false;">rates of change</a>, or <a href="#" onclick="MathEngine.navigateTo('calculus-2','integration-fundamentals'); return false;">accumulation by integration</a>.</p>
+  </div>`;
+
+arithmetic.examples.push(
+  {
+    title: 'The same quotient, two interpretations',
+    problem: String.raw`A $12$-liter supply fills containers of $\frac34$ liter each. How many containers can it fill? What is the quotient if the 12 liters are instead shared equally among 3 containers?`,
+    steps: [
+      { title: 'Choose the interpretation and units', content: String.raw`For portions, divide total volume by volume per container: $12\,\mathrm L/(\frac34\,\mathrm L)$. The result counts containers.`, why: 'The divisor is the size of each group, so matching units cancel.' },
+      { title: 'Solve and check', content: String.raw`$12/(3/4)=12(4/3)=16$. Check: $16(3/4)=12$ liters.`, why: 'Multiplication by the reciprocal reverses multiplication by the nonzero divisor.' },
+      { title: 'Change the question', content: String.raw`For 3 equal containers, $12\,\mathrm L/3=4\,\mathrm L$ per container. The divisor is a count, so the answer retains volume units.`, why: 'The equation selects the interpretation; the unit check helps distinguish it.' }
+    ]
+  },
+  {
+    title: 'A rate is a quotient of totals',
+    problem: String.raw`A traveler goes $60$ km in one hour, then $60$ km in two hours. Find the average speed for the full journey.`,
+    steps: [
+      { title: 'Define the quantity', content: String.raw`Average speed is total distance divided by total time: $(60+60)\,\mathrm{km}/(1+2)\,\mathrm h$.`, why: 'The two legs occupy different amounts of time; their speeds do not have equal weight.' },
+      { title: 'Calculate and check', content: String.raw`$120/3=40\,\mathrm{km/h}$. It lies between the two leg speeds, 60 and 30 km/h, and is closer to 30 because that speed lasted longer.`, why: 'An unweighted average of the two speeds would answer a different question.' },
+      { title: 'Transfer', content: String.raw`If each leg instead lasted one hour at the same two speeds, the total would be $90$ km in 2 hours, giving $45\,\mathrm{km/h}$.`, why: 'Changing the time weights changes the average even when the two speeds are unchanged.' }
+    ]
+  },
+  {
+    title: 'When cancellation loses a solution',
+    problem: String.raw`Solve $x(x-2)=0$. A student divides both sides by $x$ and concludes that $x=2$ is the only answer. What went wrong?`,
+    steps: [
+      { title: 'Check the restriction', content: String.raw`Dividing by $x$ is allowed only in the case $x\ne0$. The original equation also permits $x=0$.`, why: 'A transformation can narrow the domain unless its conditions are recorded.' },
+      { title: 'Split the cases', content: String.raw`If $x=0$, the original equation holds. If $x\ne0$, division gives $x-2=0$, so $x=2$.`, why: 'The zero-product rule gives the same two cases directly.' },
+      { title: 'Check the result', content: String.raw`Both $0(0-2)=0$ and $2(2-2)=0$. The solution set is $\{0,2\}$.`, why: 'Substitution into the original equation checks each candidate.' }
+    ]
+  }
+);
+
+arithmetic.exercises.push(
+  { difficulty: 'medium', question: String.raw`A machine processes $18$ meters of material in $3$ seconds at a constant rate. What is its rate?`, options: [String.raw`$6\,\mathrm{m/s}$`, String.raw`$6\,\mathrm{s/m}$`, String.raw`$21\,\mathrm m$`, String.raw`$54\,\mathrm{m\,s}$`], correctIndex: 0, hint: '<p>Divide the distance by the time and carry the units.</p>', correctExplanation: String.raw`$18\,\mathrm m/(3\,\mathrm s)=6\,\mathrm{m/s}$.`, wrongExplanations: { 1: 'Seconds per meter is the reciprocal quantity, not distance per time.', 2: 'Adding time to distance does not produce a rate.', 3: 'Multiplication produces meter-seconds, not meters per second.' } },
+  { difficulty: 'medium', question: String.raw`Which transformation can remove a solution when $x=0$ is permitted?`, options: [String.raw`Adding $2$ to both sides`, String.raw`Multiplying both sides by $3$`, String.raw`Dividing both sides by $x$`, String.raw`Subtracting $5$ from both sides`], correctIndex: 2, hint: '<p>Check whether the operation is defined at the permitted input.</p>', correctExplanation: String.raw`Division by $x$ excludes $x=0$, so a solution there can be lost.`, wrongExplanations: { 0: 'Adding the same value preserves equality for every real x.', 1: 'Multiplication by a nonzero constant preserves equivalent real equations.', 3: 'Subtracting the same value preserves equality for every real x.' } },
+  { difficulty: 'medium', question: String.raw`Which statement about $\sqrt{9}$ and $x^2=9$ is correct over the reals?`, options: [String.raw`$\sqrt9=\pm3$`, String.raw`$\sqrt9=3$, and the equation has solutions $3$ and $-3$`, String.raw`$\sqrt9=-3$ only`, String.raw`The equation has no real solutions`], correctIndex: 1, hint: '<p>Distinguish the principal square root from all solutions of an equation.</p>', correctExplanation: String.raw`The symbol $\sqrt9$ denotes the nonnegative root, 3; both 3 and -3 square to 9.`, wrongExplanations: { 0: 'The radical symbol denotes one nonnegative value, not both solutions.', 2: 'The principal square root is nonnegative.', 3: 'Both 3 and -3 satisfy the equation.' } }
+);
+arithmetic.freeResponse.push(
+  { difficulty: 'medium', question: String.raw`A $6$-liter quantity is divided into portions of $\frac34$ liter. How many portions are there?`, accept: [8], placeholder: 'Number of portions', hint: '<p>Divide total volume by volume per portion, then check by multiplication.</p>', explanation: String.raw`$6/(3/4)=8$ portions, and $8(3/4)=6$ liters.`, solution: String.raw`$6/(3/4)=6(4/3)=8$; multiplying 8 portions by $3/4$ liter checks the total.` },
+  { difficulty: 'medium', question: String.raw`A trip covers $60$ km in one hour and $60$ km in two hours. What is its average speed in km/h?`, accept: [40], placeholder: 'km/h', hint: '<p>Use total distance divided by total time.</p>', explanation: String.raw`The trip covers $120$ km in $3$ hours, so average speed is $40\,\mathrm{km/h}$.` }
+);
+
+numberSystems.concept.html += String.raw`
+  <div class="callout callout-key">
+    <h4>What does $\pi^2/6$ mean?</h4>
+    <p>Start with the number $\pi$, the circumference-to-diameter ratio of a Euclidean circle. Squaring gives $\pi^2=\pi\cdot\pi$. Dividing that number by 6 gives the unique real $q$ satisfying $6q=\pi^2$. Its decimal value is approximately $1.6449340668$; the expression $\pi^2/6$ is exact, while this decimal is rounded.</p>
+    <p>Geometry supplies one interpretation. A circular sector of radius $\sqrt{\pi}$ units and angle $\pi/3$ radians has area $\frac12r^2\theta=\pi^2/6$ square units. The sector area is one sixth of $\pi^2$ square units. By contrast, a full unit circle has area $\pi$ square units.</p>
+    <p>The same number is also the value of the <strong>Basel series</strong>:</p>
+    <p>$$\sum_{n=1}^{\infty}\frac1{n^2}=1+\frac14+\frac19+\frac1{16}+\cdots=\frac{\pi^2}{6}.$$</p>
+    <p>The ellipsis is a limit of finite partial sums, not a final term. The first four terms total $205/144\approx1.42361$. For $N\geq1$, comparing the decreasing function $1/x^2$ with rectangles gives $1/(N+1)\leq\sum_{n=N+1}^{\infty}1/n^2\leq1/N$. At $N=4$ this bounds the infinite sum between about $1.62361$ and $1.67361$. The bound supports convergence; it does not by itself prove the exact value.</p>
+    <details><summary>Why does a circle constant appear in the sum?</summary>
+      <p>One rigorous route uses Fourier series and Parseval's theorem. On $(-\pi,\pi)$, the function $f(x)=x$ has sine coefficients $b_n=2(-1)^{n+1}/n$ and zero cosine coefficients. Parseval equates its mean-square integral to the sum of squared coefficients:</p>
+      <p>$$\frac1\pi\int_{-\pi}^{\pi}x^2\,dx=\frac{2\pi^2}{3}=\sum_{n=1}^{\infty}\frac4{n^2}.$$</p>
+      <p>Dividing by 4 gives $\sum_{n=1}^{\infty}1/n^2=\pi^2/6$. Parseval is a theorem about the mean-square size of a function and its Fourier coefficients; this calculation uses it rather than proving it here. The interval endpoints and the periodic extension account for $\pi$ entering the calculation.</p>
+    </details>
+    <p>Use the exact expression when algebraic structure matters; use a decimal with an error bound for numerical work. Explore the link with <a href="#" onclick="MathEngine.navigateTo('calculus-2','integration-fundamentals'); return false;">integration</a> and <a href="#" onclick="MathEngine.navigateTo('precalculus','exponentials-logarithms'); return false;">inverse operations</a>.</p>
+  </div>`;
+
+numberSystems.examples.push({
+  title: 'Interpret and bound an exact constant',
+  problem: String.raw`Explain $\pi^2/6$ as a quotient and estimate $\sum_{n=1}^{\infty}1/n^2$ using its first four terms.`,
+  steps: [
+    { title: 'Read the expression', content: String.raw`$\pi^2/6$ is the number that gives $\pi^2$ when multiplied by 6. It is approximately 1.644934, not 1.644934 exactly.`, why: 'Division by nonzero 6 is the inverse of scaling by 6.' },
+    { title: 'Build a partial sum', content: String.raw`$1+1/4+1/9+1/16=205/144\approx1.42361$. The remaining terms are positive.`, why: 'A partial sum is a finite approximation, not the entire infinite sum.' },
+    { title: 'Bound the remainder', content: String.raw`The remainder after four terms lies between $1/5$ and $1/4$, so the infinite sum lies between $205/144+1/5$ and $205/144+1/4$.`, why: 'An integral comparison controls all omitted terms at once.' },
+    { title: 'Identify the theorem', content: String.raw`The Basel identity establishes that the limit is exactly $\pi^2/6$. The bounds alone do not establish that equality.`, why: 'Numerical agreement and a proof of an exact identity answer different questions.' }
+  ]
+});
+numberSystems.exercises.push(
+  { difficulty: 'medium', question: String.raw`What does $\pi^2/6$ mean as a quotient?`, options: [String.raw`The real number $q$ for which $6q=\pi^2$`, String.raw`The number $q$ for which $q^2=\pi/6$`, String.raw`The circumference of every circle`, String.raw`Exactly $1.6449$`], correctIndex: 0, hint: '<p>Translate division into its inverse multiplication equation.</p>', correctExplanation: String.raw`Since $6\ne0$, $\pi^2/6$ is the unique real $q$ satisfying $6q=\pi^2$.`, wrongExplanations: { 1: 'That equation asks for a square root, not the stated quotient.', 2: 'Circumference depends on the radius or diameter.', 3: '1.6449 is a rounded approximation, not the exact value.' } },
+  { difficulty: 'hard', question: String.raw`Let $S_N=\sum_{n=1}^{N}1/n^2$. What is true for every positive integer $N$?`, options: [String.raw`$S_N=\pi^2/6$`, String.raw`$0<\pi^2/6-S_N\leq1/N$`, String.raw`$S_N>\pi^2/6$`, String.raw`The remainder equals $1/N$`], correctIndex: 1, hint: '<p>The omitted terms are positive; compare their sum with an integral.</p>', correctExplanation: String.raw`The omitted positive tail is at most $\int_N^\infty x^{-2}\,dx=1/N$.`, wrongExplanations: { 0: 'Each finite partial sum omits positive terms.', 2: 'All omitted terms are positive, so the partial sum is below the limit.', 3: 'The integral gives an upper bound, not exact equality.' } }
+);
 })();

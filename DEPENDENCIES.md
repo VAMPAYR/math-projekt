@@ -20,6 +20,7 @@ js/mini_games.js
 js/engine.js
 js/self_study_guides.js
 js/university_walkthroughs.js
+js/learning_paths.js
 js/modules/*.js
 ```
 
@@ -45,6 +46,18 @@ js/modules/m9_probability.js
 js/modules/m9_statistics_extensions.js
 js/modules/topic_extensions.js
 js/modules/m10_gre.js
+js/modules/m_landau_math.js
+js/modules/m_landau_methods.js
+js/modules/m_landau_mechanics.js
+js/modules/m_landau_fields.js
+js/modules/m_landau_quantum.js
+js/modules/m_landau_continuum.js
+js/modules/m_landau_advanced_fields.js
+js/modules/m_landau_advanced_quantum.js
+js/modules/m_landau_gravity.js
+js/modules/m_landau_analytical_mechanics.js
+js/modules/m_landau_quantum_methods.js
+js/modules/m_landau_advanced_kinetics.js
 ```
 
 ## External Browser Assets
